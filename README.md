@@ -16,6 +16,8 @@ Capital Framework includes the following components:
 - [cf-pagination](https://github.com/cfpb/cf-pagination)
 - [cf-typography](https://github.com/cfpb/cf-typography)
 
+[See a demo of them all on one page &rarr;](http://cfpb.github.io/capital-framework)
+
 
 ## Contributing
 
@@ -35,7 +37,7 @@ You can use Capital Framework in two ways:
 
 ### "I just want to get the stuff and make something quickly"
 
-1. Download the zip file of the latest release (link coming soon),
+1. Download the zip file of the [latest release](https://github.com/cfpb/capital-framework/releases),
    which contains the contents of the `dist/` folder.
 2. Unzip it.
 3. Get going!
