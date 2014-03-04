@@ -58,7 +58,7 @@ You can use Capital Framework in two ways:
         git clone --depth 1 git://github.com/cfpb/capital-framework.git
 
         # move the repository to your own project name
-        mv front-end my-project
+        mv capital-framework my-project
 
         # cd into the project root
         cd my-project
