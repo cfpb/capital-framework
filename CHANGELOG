@@ -1,0 +1,54 @@
+v0.4.0:
+  date: 2014-02-21
+  changes:
+    - Final updates for first public release.
+
+v0.3.1:
+  date: 2013-12-16
+  changes:
+    - Update README; small fixes.
+
+v0.3.0:
+  date: 2013-12-16
+  changes:
+    - Enable fj- components with JS files in them / more complex `src` structures.
+
+v0.2.2:
+  date: 2013-12-16
+  changes:
+    - Add grunt-contrib-compress and grunt-release scripts.
+    - Create initial compress task.
+    - Add typography demo.
+
+v0.2.1:
+  date: 2013-12-13
+  changes:
+    - Add expandables component to `bower.json` dependencies.
+
+v0.2.0:
+  date: 2013-12-06
+  changes:
+    - More intelligent directing of assets to `src` and `dist`.
+    - Add test page in both `src` and `dist`. Can view with uniminified CSS/JS in `src`.
+    - Automatic copying of Bower component assets and replacement of paths in the compiled CSS.
+    - Set up JavaScript tasks for both end of `body` and in the `head`.
+
+v0.1.3:
+  date: 2013-11-08
+  changes:
+    - Add new fonts that went into `/dist`.
+
+v0.1.2:
+  date: 2013-11-08
+  changes:
+    - Improvements to Bower asset management.
+
+v0.1.1:
+  date: 2013-11-08
+  changes:
+    - Add new meta files.
+
+v0.1.0:
+  date: 2013-11-08
+  changes:
+    - First commit with grunt-cfpb-internal.
