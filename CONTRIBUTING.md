@@ -39,7 +39,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 A few notes on this...
 
-**Don't go crazy with Less** 
+**Don't go crazy with Less**  
 Leverage basic features of Less to take advantage of the efficiency and
 maintainability that a CSS preprocessor offers, while hopefully avoiding the
 pitfalls of taking it too far and decreasing maintainability.
