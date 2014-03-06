@@ -10,6 +10,29 @@ model:
 5. We'll talk about it and decide to merge or request additional changes.
 
 
+# Governance notes
+
+- Currently there are two project shepherds with the responsibility of
+  maintaining the framework and shepherding the change process.
+- Anyone can make a pull request to update the framework.
+- Bug fixes should have a low barrier to entry requiring only one of the
+  project shepherds to review and accept.
+- New features or big changes require discussion during the CFPB weekly
+  front end developer meetings to raise any potential red flags
+  (for example if it needs to be run by the Digital Product Guide).
+  Presuming none:
+  - Make sure code is reviewed by at least one other front end developer
+    (hopefully not a maintainer)
+  - The request for change can then be accepted by one of the two project shepherds.
+- All submitted code should be run through a linting tool to catch simple errors.
+  - We will provide guidance on how to do this, with CFPB code style-specific rules.
+- Criteria for vetting third party components for inclusion:
+  - Browser compatibility
+  - Accessibility
+  - Adoption/activity/maturity
+  - Ease of applying our styling
+
+
 # Style guide
 
 In lieu of a formal styleguide, take care to maintain the existing coding style.
