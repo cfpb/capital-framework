@@ -22,7 +22,8 @@ model:
   project shepherds to review and accept.
 - New features or big changes require discussion during the CFPB weekly
   front end developer meetings to raise any potential red flags
-  (for example if it needs to be run by the Digital Product Guide).
+  (for example, if the change would have significant implications to the
+  CFPB Design Manual).
   Presuming none:
   - Make sure code is reviewed by at least one other front end developer
     (hopefully not a maintainer)
