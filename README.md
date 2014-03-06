@@ -1,7 +1,11 @@
 # Capital Framework
 
-Capital Framework is a modular front-end framework developed at the
-[Consumer Financial Protection Bureau](http://cfpb.github.io/).
+Capital Framework is a modular front-end framework
+developed at the [Consumer Financial Protection Bureau](http://cfpb.github.io/).
+What sets this apart from other frameworks is the combination of
+modular components, accessibility standards, and support for Internet Explorer 7.
+Capital Framework also promotes a front end workflow using tools like
+[Bower](http://bower.io/) and [Grunt](http://gruntjs.com/).
 
 This is the master repo which allows for building the framework with some or all of the components that we have
 developed so far.
@@ -17,6 +21,39 @@ Capital Framework includes the following components:
 - [cf-typography](https://github.com/cfpb/cf-typography)
 
 [See a demo of them all on one page &rarr;](http://cfpb.github.io/capital-framework)
+
+
+## About the Toolset and Workflow
+
+Every project is different and the Capital Framework toolset and workflow
+should provide flexibility to customize and extend the framework as needed.
+Alternately you can use a pre compiled version of the framework for rapid prototyping.
+
+### Component management
+
+Much like [Topcoat](https://github.com/topcoat) each component is its own repository.
+Managing all of these repositories within your project is done using Bower.
+This setup provides a lot of flexibility;
+for example you can choose to include only the components that you need,
+and you can add or update components as you need them, all through Bower.
+This makes it easier for projects using the framework
+to take advantage of updates and bug fixes at their own convenience.
+We hope this leads to more contributions to the framework;
+meaning if something is broken and you fix it you'll be fixing it for everyone (but only if they want it).
+
+### A modern workflow
+
+We're using Grunt to compile our Less files, minify and concatenate CSS and JS,
+automatically add vendor prefixes when they are needed, run tests, etc.
+And since it's already in the framework you'll be able to use it for whatever else your project might need.
+
+### Project scaffolding
+
+*Still in research*
+
+Setting up the framework for your project and creating new components should be quick and easy.
+We are currently [looking into](https://github.com/cfpb/capital-framework/issues/49)
+[Yeoman.io](http://yeoman.io/).
 
 
 ## Contributing
