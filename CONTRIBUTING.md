@@ -37,9 +37,9 @@ model:
   - Ease of applying our styling
 
 
-## Style guide
+## Coding style
 
-In lieu of a formal styleguide, take care to maintain the existing coding style.
+In lieu of a formal style guide, take care to maintain the existing coding style.
 
 A few notes on this...
 
