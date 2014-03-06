@@ -23,7 +23,7 @@ Capital Framework includes the following components:
 [See a demo of them all on one page &rarr;](http://cfpb.github.io/capital-framework)
 
 
-## About the Toolset and Workflow
+## About the toolset and workflow
 
 Every project is different and the Capital Framework toolset and workflow
 should provide flexibility to customize and extend the framework as needed.
@@ -64,7 +64,7 @@ We welcome your feedback and contributions.
 - [File a bug](https://github.com/cfpb/capital-framework/issues/new?body=%23%23%20URL%0D%0D%0D%23%23%20Actual%20Behavior%0D%0D%0D%23%23%20Expected%20Behavior%0D%0D%0D%23%23%20Steps%20to%20Reproduce%0D%0D%0D%23%23%20Screenshot&labels=bug)
 
 
-## Getting Started
+## Getting started
 
 You can use Capital Framework in two ways:
 
@@ -123,4 +123,4 @@ You can use Capital Framework in two ways:
 
 ---
 
-*This file was generated on Fri Feb 21 2014 18:09:24.*
+*This file was generated on Thu Mar 6 2014 17:33:00.*
