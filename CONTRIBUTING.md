@@ -50,7 +50,7 @@ then enhanced with `min-width` media queries.
 By doing this we create a base experience that all devices can use
 and one that does not require media query support.
 (Note that this does not prevent you from creating your desktop styles first
-as long as you end up with a stylesheet that is mobile first in the end).
+as long as you end up with a stylesheet that is mobile first in the end.)
 
 
 # Licensing
