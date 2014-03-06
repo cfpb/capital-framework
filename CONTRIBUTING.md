@@ -26,7 +26,7 @@ model:
   CFPB Design Manual).
   Presuming none:
   - Make sure code is reviewed by at least one other front end developer
-    (hopefully not a maintainer)
+    (hopefully not a shepherd)
   - The request for change can then be accepted by one of the two project shepherds.
 - All submitted code should be run through a linting tool to catch simple errors.
   - We will provide guidance on how to do this, with CFPB code style-specific rules.
