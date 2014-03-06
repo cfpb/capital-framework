@@ -1,4 +1,7 @@
-# Making contributions
+# Contributing
+
+
+## Making contributions
 
 If you'd like to contribute to Capital Framework, please use the fork-and-pull
 model:
@@ -10,7 +13,7 @@ model:
 5. We'll talk about it and decide to merge or request additional changes.
 
 
-# Governance notes
+## Governance notes
 
 - Currently there are two project shepherds with the responsibility of
   maintaining the framework and shepherding the change process.
@@ -33,7 +36,7 @@ model:
   - Ease of applying our styling
 
 
-# Style guide
+## Style guide
 
 In lieu of a formal styleguide, take care to maintain the existing coding style.
 
@@ -53,7 +56,7 @@ and one that does not require media query support.
 as long as you end up with a stylesheet that is mobile first in the end.)
 
 
-# Licensing
+## Licensing
 
 The project is in the public domain within the United States, and
 copyright and related rights in the work worldwide are waived through
