@@ -52,7 +52,8 @@ And since it's already in the framework you'll be able to use it for whatever el
 *Still in research*
 
 Setting up the framework for your project and creating new components should be quick and easy.
-We are currently [looking into](https://github.com/cfpb/capital-framework/issues/49) [Yeoman.io](http://yeoman.io/).
+We are currently [looking into](https://github.com/cfpb/capital-framework/issues/49)
+[Yeoman.io](http://yeoman.io/).
 
 
 ## Contributing
