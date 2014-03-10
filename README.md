@@ -100,10 +100,10 @@ You can use Capital Framework in two ways:
         cd my-project
 2. `npm install` – Initializes Grunt in this folder and installs dependencies.
 3. `grunt vendor` – Pulls in Bower components.
-4. `grunt compile` (or just `grunt`) – Compiles LESS files, updates vendor prefixes,
+4. `grunt compile` (or just `grunt`) – Compiles Less files, updates vendor prefixes,
 concatenates JS files, and rewrites image and font asset paths.
-5. Develop your project in the `src` folder. Add your project's LESS in `src/static/css` and JS in `src/static/js`.
-6. Repeat step 4 to recompile LESS. (Or optionally setup the watch task to recompile on the fly.)
+5. Develop your project in the `src` folder. Add your project's Less in `src/static/css` and JS in `src/static/js`.
+6. Repeat step 4 to recompile Less. (Or optionally setup the watch task to recompile on the fly.)
 
 #### Adding/removing/updating Bower components
 
