@@ -27,7 +27,6 @@ Capital Framework includes the following components:
 
 Every project is different and the Capital Framework toolset and workflow
 should provide flexibility to customize and extend the framework as needed.
-Alternately you can use a pre compiled version of the framework for rapid prototyping.
 
 ### Component management
 
