@@ -104,6 +104,12 @@ You can use Capital Framework in two ways:
 concatenates JS files, and rewrites image and font asset paths.
 5. Develop your project in the `src` folder. Add your project's Less in `src/static/css` and JS in `src/static/js`.
 6. Repeat step 4 to recompile Less. (Or optionally setup the watch task to recompile on the fly.)
+7. `grunt dist` – Minifies CSS and JS and appends a banner to them, creates a
+`dist` folder (or empties it out if one already exists), and moves files from
+`src` to `dist`.
+Note that unminified CSS and JS and folders within `vendor` are not copied over
+unless there are rules within `copy:dist` to override this
+(for example review how we handle html5shiv within the `copy:dist` task).
 
 #### Adding/removing/updating Bower components
 
