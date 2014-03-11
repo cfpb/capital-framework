@@ -8,7 +8,7 @@ They also aim to meet accessibility standards and support Internet Explorer 7
 since these are features that are crucial to the success of web products at the
 CFPB.
 
-Currently Capital Framework includes the following components:
+Capital Framework currently includes the following components:
 
 - [cf-buttons](https://github.com/cfpb/cf-buttons)
 - [cf-colors](https://github.com/cfpb/cf-colors)
