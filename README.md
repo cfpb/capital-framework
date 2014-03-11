@@ -24,7 +24,8 @@ Capital Framework currently includes the following components:
 ## The benefits of modular components
 
 Much like [Topcoat](https://github.com/topcoat) each component is its own repository.
-Managing all of these repositories within your project is done using [Bower](http://bower.io/).
+Our recommendation for managing all of these repositories within your project
+is to use [Bower](http://bower.io/).
 This setup provides a lot of flexibility;
 for example you can choose to include only the components that you need,
 and you can add or update components as you need them, all through Bower.
