@@ -24,7 +24,7 @@ Capital Framework currently includes the following components:
 ## The benefits of modular components
 
 Much like [Topcoat](https://github.com/topcoat) each component is its own repository.
-Managing all of these repositories within your project is done using Bower.
+Managing all of these repositories within your project is done using [Bower](http://bower.io/).
 This setup provides a lot of flexibility;
 for example you can choose to include only the components that you need,
 and you can add or update components as you need them, all through Bower.
@@ -39,8 +39,8 @@ meaning if something is broken and you fix it you'll be fixing it for everyone
 
 This repository is an example of how one would bundle all of the Capital Framework
 components together and use them within a project.
-It also acts as a front-end workflow recommendation utilizing tools like
-[Bower](http://bower.io/) and [Grunt](http://gruntjs.com/).
+It also acts as a front-end workflow recommendation utilizing tools like Bower
+and [Grunt](http://gruntjs.com/).
 
 
 ### A modern workflow
