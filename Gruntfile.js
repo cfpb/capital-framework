@@ -269,7 +269,6 @@ module.exports = function(grunt) {
               '!static/**',
               // Only include minified assets in css/ and js/
               'static/css/*.min.css',
-              'static/js/html5shiv-printshiv.js',
               'static/js/*.min.js',
               'static/fonts/**',
 
