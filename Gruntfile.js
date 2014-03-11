@@ -170,7 +170,7 @@ module.exports = function(grunt) {
      */
     uglify: {
       options: {
-        banner: '' // Banner now prepended by the grunt-banner task.
+        preserveComments: 'some'
       },
       // headScripts: {
       //   src: 'src/vendor/html5shiv/html5shiv-printshiv.js',
