@@ -24,6 +24,8 @@ If you would like to create a new component please review our notes on the
 Each component should build out a demo and docs page using
 [grunt-topdoc](https://github.com/topcoat/grunt-topdoc) and
 [cf-component-demo](https://github.com/cfpb/cf-component-demo).
+Read more about them at
+[components/#demodocs-pages]({{ site.baseurl }}/components/#demodocs-pages).
 
 
 ## Browser testing
