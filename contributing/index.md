@@ -15,18 +15,8 @@ model:
 4. Submit a pull request to open a discussion about your proposed changes.
 5. We'll talk about it and decide to merge or request additional changes.
 
-
-## Creating a new component
-
-If you'd like to create a new component please review our [roadmap](/roadmap/)
-first to make sure we haven't already started.
-Also consider if we can leverage any existing code from CFPB web products.
-
-We hope to have a starter repo or a scaffolding system set up for creating
-new components quickly but this is still in research.
-We are currently looking into [Yeoman.io](http://yeoman.io/).
-In the meantime you can contribute to the discussion by following
-[this issue](https://github.com/cfpb/cf-demo/issues/49).
+If you would like to create a new component please review our notes on the
+[About the components page]({{ site.baseurl }}/components/)
 
 
 ## Coding style

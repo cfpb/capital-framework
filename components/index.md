@@ -21,6 +21,16 @@ _Styleguides built with the excellent [Topdoc](https://github.com/topcoat/topdoc
 We welcome your feedback and contributions.  
 [Find out about contributing]({{ site.baseurl }}/contributing/)
 
+If you'd like to create a new component please review our [roadmap](/roadmap/)
+first to make sure we haven't already started.
+Also consider if we can leverage any existing code from CFPB web products.
+
+We hope to have a starter repo or a scaffolding system set up for creating
+new components quickly but this is still in research.
+We are currently looking into [Yeoman.io](http://yeoman.io/).
+In the meantime you can contribute to the discussion by following
+[this issue](https://github.com/cfpb/cf-demo/issues/49).
+
 
 ## Compiling a component
 
