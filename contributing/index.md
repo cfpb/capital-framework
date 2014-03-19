@@ -51,6 +51,11 @@ Leverage basic features of Less to take advantage of the efficiency and
 maintainability that a CSS preprocessor offers, while hopefully avoiding the
 pitfalls of taking it too far and decreasing maintainability.
 
+For example:
+
+- Use `unit()` to document em calculations.
+[Read the discussion](https://github.com/cfpb/cf-demo/issues/10).
+
 **Shoot for mobile first declarations**  
 In most cases styles should be declared mobile first,
 then enhanced with `min-width` media queries.
