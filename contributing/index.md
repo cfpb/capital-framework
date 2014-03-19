@@ -46,7 +46,7 @@ The recommendation: Use our custom BEM naming conventions; see below:
 .block-name_element-name__element-modifier
 ```
 
-**Don't go crazy with Less**  
+**Use Less but don't go crazy**  
 Leverage basic features of Less to take advantage of the efficiency and
 maintainability that a CSS preprocessor offers, while hopefully avoiding the
 pitfalls of taking it too far and decreasing maintainability.
