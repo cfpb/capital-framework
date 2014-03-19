@@ -19,6 +19,10 @@ If you would like to create a new component please review our notes on the
 [About the components page]({{ site.baseurl }}/components/)
 
 
+## Browser testing
+
+Use [this snippet]({{ site.baseurl }}/contributing/browser-testing.html) as a list of browsers to test in.
+
 ## Coding style
 
 In lieu of a formal style guide, take care to maintain the existing coding style.
