@@ -23,6 +23,15 @@ If you would like to create a new component please review our notes on the
 
 Use [this snippet]({{ site.baseurl }}/contributing/browser-testing.html) as a list of browsers to test in.
 
+
+## JavaScript testing
+
+JavaScript tests that are set up within component build processes are there to
+promote stable code.
+Before making a pull request please make sure that all tests pass and that any
+new functionality is tested.
+
+
 ## Coding style
 
 In lieu of a formal style guide, take care to maintain the existing coding style.
