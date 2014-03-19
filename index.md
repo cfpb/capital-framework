@@ -39,3 +39,6 @@ Jade templates for creating docs and demos for Capital Framework components:
 
 A set of common Grunt tasks for Capital Framework components:  
 [cf-grunt-config](https://github.com/cfpb/cf-grunt-config)
+
+Project-wide documentation for Capital Framework:  
+[capital-framework](https://github.com/cfpb/capital-framework)
