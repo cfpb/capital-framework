@@ -34,6 +34,17 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 
 A few notes on this...
 
+**CSS naming conventions**  
+The discussion: [https://github.com/cfpb/cf-demo/issues/40](https://github.com/cfpb/cf-demo/issues/40)  
+The recommendation: Use our custom BEM naming conventions; see below:
+
+```
+.block-name
+.block-name_element-name
+.block-name__block-modifier
+.block-name_element-name__element-modifier
+```
+
 **Don't go crazy with Less**  
 Leverage basic features of Less to take advantage of the efficiency and
 maintainability that a CSS preprocessor offers, while hopefully avoiding the
