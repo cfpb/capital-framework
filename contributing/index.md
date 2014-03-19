@@ -19,6 +19,13 @@ If you would like to create a new component please review our notes on the
 [About the components page]({{ site.baseurl }}/components/)
 
 
+## Include a demo and docs page
+
+Each component should build out a demo and docs page using
+[grunt-topdoc](https://github.com/topcoat/grunt-topdoc) and
+[cf-component-demo](https://github.com/cfpb/cf-component-demo).
+
+
 ## Browser testing
 
 Use [this snippet]({{ site.baseurl }}/contributing/browser-testing.html) as a list of browsers to test in.
