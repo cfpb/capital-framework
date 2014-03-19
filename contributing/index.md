@@ -55,12 +55,12 @@ Open an issue if you think they should be updated.
 The discussion: [https://github.com/cfpb/cf-demo/issues/40](https://github.com/cfpb/cf-demo/issues/40)  
 The recommendation: Use our custom BEM naming conventions; see below:
 
-```
+{% highlight css %}
 .block-name
 .block-name_element-name
 .block-name__block-modifier
 .block-name_element-name__element-modifier
-```
+{% endhighlight %}
 
 **Use Less but don't go crazy**  
 Leverage basic features of Less to take advantage of the efficiency and
