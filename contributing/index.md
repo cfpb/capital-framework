@@ -35,6 +35,12 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 
 A few notes on this...
 
+**Adhere to any linting errors or warnings**  
+Linting tasks that are set up within component build processes are there to
+promote consistency.
+Please follow their advice.
+Open an issue if you think they should be updated.
+
 **CSS naming conventions**  
 The discussion: [https://github.com/cfpb/cf-demo/issues/40](https://github.com/cfpb/cf-demo/issues/40)  
 The recommendation: Use our custom BEM naming conventions; see below:
