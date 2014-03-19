@@ -35,9 +35,9 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 
 A few notes on this...
 
-**Adhere to any testing or linting errors or warnings**  
-Javascript tests and linting tasks that are set up within component build
-processes are there to promote stable and consistent code.
+**Adhere to any linting errors or warnings**  
+Linting tasks that are set up within component build processes are there to
+promote consistency.
 Please follow their advice.
 Open an issue if you think they should be updated.
 
