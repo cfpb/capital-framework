@@ -1,0 +1,20 @@
+<aside>
+  {% capture subtitle %}{{ site.subtitle }}{% endcapture %}
+  {% unless subtitle contains "Liquid error" %}
+  <div class="intro">
+    {{ subtitle | markdownify }}
+  </div>
+  {% endunless %}
+  <a class="skip-link visuallyhidden focusable" href="#main">Skip to Main Content</a>
+  <nav role="navigation">
+    <ul>
+      {% for link in site.navigation %}
+        {% if link.internal == true %}
+          <li><a href="{{ site.baseurl }}/{{ link.url }}">{{ link.text }}</a></li>
+        {% else %}
+          <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+</aside>
