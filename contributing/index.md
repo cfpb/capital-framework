@@ -20,6 +20,7 @@ model:
 
 If you'd like to create a new component please review our [roadmap](/roadmap/)
 first to make sure we haven't already started.
+Also consider if we can leverage any existing code from CFPB web products.
 
 We hope to have a starter repo or a scaffolding system set up for creating
 new components quickly but this is still in research.
