@@ -15,17 +15,30 @@ model:
 4. Submit a pull request to open a discussion about your proposed changes.
 5. We'll talk about it and decide to merge or request additional changes.
 
+If you would like to create a new component please review our notes on the
+[About the components page]({{ site.baseurl }}/components/)
 
-## Creating a new component
 
-If you'd like to create a new component please review our [roadmap](/roadmap/)
-first to make sure we haven't already started.
+## Include a demo and docs page
 
-We hope to have a starter repo or a scaffolding system set up for creating
-new components quickly but this is still in research.
-We are currently looking into [Yeoman.io](http://yeoman.io/).
-In the meantime you can contribute to the discussion by following
-[this issue](https://github.com/cfpb/cf-demo/issues/49).
+Each component should build out a demo and docs page using
+[grunt-topdoc](https://github.com/topcoat/grunt-topdoc) and
+[cf-component-demo](https://github.com/cfpb/cf-component-demo).
+Read more about them at
+[components/#demodocs-pages]({{ site.baseurl }}/components/#demodocs-pages).
+
+
+## Browser testing
+
+Use [this snippet]({{ site.baseurl }}/contributing/browser-testing.html) as a list of browsers to test in.
+
+
+## JavaScript testing
+
+JavaScript tests that are set up within component build processes are there to
+promote stable code.
+Before making a pull request please make sure that all tests pass and that any
+new functionality is tested.
 
 
 ## Coding style
@@ -34,10 +47,32 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 
 A few notes on this...
 
-**Don't go crazy with Less**  
+**Adhere to any linting errors or warnings**  
+Linting tasks that are set up within component build processes are there to
+promote consistency.
+Please follow their advice.
+Open an issue if you think they should be updated.
+
+**CSS naming conventions**  
+The discussion: [https://github.com/cfpb/cf-demo/issues/40](https://github.com/cfpb/cf-demo/issues/40)  
+The recommendation: Use our custom BEM naming conventions; see below:
+
+{% highlight css %}
+.block-name
+.block-name_element-name
+.block-name__block-modifier
+.block-name_element-name__element-modifier
+{% endhighlight %}
+
+**Use Less but don't go crazy**  
 Leverage basic features of Less to take advantage of the efficiency and
 maintainability that a CSS preprocessor offers, while hopefully avoiding the
 pitfalls of taking it too far and decreasing maintainability.
+
+For example:
+
+- Use `unit()` to document em calculations.
+[Read the discussion](https://github.com/cfpb/cf-demo/issues/10).
 
 **Shoot for mobile first declarations**  
 In most cases styles should be declared mobile first,

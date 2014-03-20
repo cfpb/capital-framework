@@ -21,6 +21,16 @@ _Styleguides built with the excellent [Topdoc](https://github.com/topcoat/topdoc
 We welcome your feedback and contributions.  
 [Find out about contributing]({{ site.baseurl }}/contributing/)
 
+If you'd like to create a new component please review our [roadmap]({{ site.baseurl }}/roadmap/)
+first to make sure we haven't already started.
+Also consider if we can leverage any existing code from CFPB web products.
+
+We hope to have a starter repo or a scaffolding system set up for creating
+new components quickly but this is still in research.
+We are currently looking into [Yeoman.io](http://yeoman.io/).
+In the meantime you can contribute to the discussion by following
+[this issue](https://github.com/cfpb/capital-framework/issues/49).
+
 
 ## Compiling a component
 
@@ -45,3 +55,19 @@ and integrate it into your build process.
 It's not currently in the Bower registry, so you'll have to point to this Git repo's URL.
 
 You can also just view the CSS in the `demo` folder and snag what you want.
+
+
+## Demo/Docs pages
+
+Each component builds out a demo and docs page.
+The demo page is a simple html page with no extra styling which is useful for
+browser testing the component.
+The docs page is a generated style guide documenting the component markup and CSS.
+
+These pages are generated using the [grunt-topdoc](https://github.com/topcoat/grunt-topdoc)
+task which uses templates from [cf-component-demo](https://github.com/cfpb/cf-component-demo).
+Components are set up to generate these pages along with the default Grunt tasks.
+
+Make sure that any new CSS is appropriately documented using Topdoc.
+Please refer to the [Getting Started](https://github.com/cfpb/cf-component-demo/blob/master/README.md#getting-started)
+section of cf-component-demo for further information.
