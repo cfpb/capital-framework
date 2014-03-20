@@ -21,7 +21,7 @@ _Styleguides built with the excellent [Topdoc](https://github.com/topcoat/topdoc
 We welcome your feedback and contributions.  
 [Find out about contributing]({{ site.baseurl }}/contributing/)
 
-If you'd like to create a new component please review our [roadmap](/roadmap/)
+If you'd like to create a new component please review our [roadmap]({{ site.baseurl }}/roadmap/)
 first to make sure we haven't already started.
 Also consider if we can leverage any existing code from CFPB web products.
 
