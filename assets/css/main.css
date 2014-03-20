@@ -198,11 +198,12 @@ Layout
 */
 
 /* offset the fixed position header for jump links */
-section:before {
+.main-content [id]:target:before { 
     display: block; 
-    content: ""; 
-    height: 60px; 
-    margin: -60px 0 0; 
+    content: " "; 
+    margin-top: -80px; 
+    height: 80px; 
+    visibility: hidden; 
 }
 
 .wrap {
