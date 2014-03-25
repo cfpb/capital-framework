@@ -3,6 +3,23 @@ layout: page
 title:  "Making contributions"
 ---
 
+## Table of contents
+
+- [Current open pull requests]({{ site.baseurl }}/contributing/#current-open-pull-requests)
+- [Making contributions]({{ site.baseurl }}/contributing/#making-contributions)
+- [Demos and docs]({{ site.baseurl }}/contributing/#demos-and-docs)
+- [Browser testing]({{ site.baseurl }}/contributing/#browser-testing)
+- [JavaScript testing]({{ site.baseurl }}/contributing/#javascript-testing)
+- [Coding style]({{ site.baseurl }}/contributing/#coding-style)
+- [Governance]({{ site.baseurl }}/contributing/#governance)
+- [Licensing]({{ site.baseurl }}/contributing/#licensing)
+
+
+## Current open pull requests
+
+The [status]({{ site.baseurl }}/contributing/status.html) page helps us to keep
+tabs on which repositories have open pull requests.
+
 
 ## Making contributions
 
@@ -16,16 +33,16 @@ model:
 5. We'll talk about it and decide to merge or request additional changes.
 
 If you would like to create a new component please review our notes on the
-[About the components page]({{ site.baseurl }}/components/)
+[About the components page]({{ site.baseurl }}/components/#contributing)
 
 
-## Include a demo and docs page
+## Demos and docs
 
 Each component should build out a demo and docs page using
 [grunt-topdoc](https://github.com/topcoat/grunt-topdoc) and
 [cf-component-demo](https://github.com/cfpb/cf-component-demo).
 Read more about them at
-[components/#demodocs-pages]({{ site.baseurl }}/components/#demodocs-pages).
+[components/#demos-and-docs]({{ site.baseurl }}/components/#demos-and-docs).
 
 
 ## Browser testing
@@ -83,7 +100,7 @@ and one that does not require media query support.
 as long as you end up with a stylesheet that is mobile first in the end.)
 
 
-## Governance notes
+## Governance
 
 - Currently there are two project shepherds with the responsibility of
   maintaining the framework and shepherding the change process.

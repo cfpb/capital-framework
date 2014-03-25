@@ -4,6 +4,19 @@ title:  "About the cf-demo repository"
 ---
 
 
+## Table of contents
+
+- [About the cf-demo repository]({{ site.baseurl }}/cf-demo/#about-the-cf-demo-repository)
+- [The code]({{ site.baseurl }}/cf-demo/#the-code)
+- [Contributing]({{ site.baseurl }}/cf-demo/#contributing)
+- [Getting started]({{ site.baseurl }}/cf-demo/#getting-started)
+  - [Using the compiled version]({{ site.baseurl }}/cf-demo/#using-the-compiled-version)
+  - [Using the build system]({{ site.baseurl }}/cf-demo/#using-the-build-system)
+    - [Requirements]({{ site.baseurl }}/cf-demo/#requirements)
+    - [Workflow]({{ site.baseurl }}/cf-demo/#workflow)
+    - [Adding/removing/updating Bower components]({{ site.baseurl }}/cf-demo/#addingremovingupdating-bower-components)
+
+
 ## About the cf-demo repository
 
 {% include workflow-intro.md %}
@@ -53,7 +66,9 @@ dependencies.
    Some experience with Grunt a plus._
 
 
-### "I just want to get the stuff and make something quickly"
+### Using the compiled version
+
+_"I just want to get the stuff and make something quickly"_
 
 1. Download the zip file of the [latest release](https://github.com/cfpb/cf-demo/releases),
    which contains the contents of the `dist/` folder.
@@ -64,7 +79,9 @@ dependencies.
 3. Get going!
 
 
-### "I want to build my own"
+### Using the build system
+
+_"I want to build my own"_
 
 
 #### Requirements
