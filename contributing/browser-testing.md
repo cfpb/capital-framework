@@ -8,7 +8,7 @@ title:  "Browser Testing"
 
 Paste these into github issues. They will be [converted into checkboxes](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments).
 
-```
+```markdown
 ## Browsers
 
 - [ ] Chrome
