@@ -4,6 +4,18 @@ title:  "About the components"
 ---
 
 
+## Table of contents
+
+- [About the components]({{ site.baseurl }}/components/#about-the-components)
+- [The code]({{ site.baseurl }}/components/#the-code)
+- [Contributing]({{ site.baseurl }}/components/#contributing)
+- [Compiling a component]({{ site.baseurl }}/components/#compiling-a-component)
+  - [Requirements]({{ site.baseurl }}/components/#requirements)
+  - [Workflow]({{ site.baseurl }}/components/#workflow)
+- [Using components independent of Capital Framework]({{ site.baseurl }}/components/#using-components-independent-of-capital-framework)
+- [Demos and docs]({{ site.baseurl }}/components/#demos-and-docs)
+
+
 ## About the components
 
 {% include components-intro.md %}
@@ -57,7 +69,7 @@ It's not currently in the Bower registry, so you'll have to point to this Git re
 You can also just view the CSS in the `demo` folder and snag what you want.
 
 
-## Demo/Docs pages
+## Demos and docs
 
 Each component builds out a demo and docs page.
 The demo page is a simple html page with no extra styling which is useful for

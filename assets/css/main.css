@@ -77,6 +77,11 @@ Lists
     margin-bottom: 1em;
 }
 
+.main-content ul ul,
+.main-content ol ol {
+    margin-bottom: 0;
+}
+
 li h3,
 li h4 {
     margin: 0;
