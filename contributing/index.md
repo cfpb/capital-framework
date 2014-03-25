@@ -16,7 +16,7 @@ model:
 5. We'll talk about it and decide to merge or request additional changes.
 
 If you would like to create a new component please review our notes on the
-[About the components page]({{ site.baseurl }}/components/)
+[About the components page]({{ site.baseurl }}/components/#contributing)
 
 
 ## Include a demo and docs page
