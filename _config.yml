@@ -4,10 +4,6 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 markdown: kramdown
 pygments: true
 
-# Kramdown options
-kramdown:
-  input: GFM
-
 # Title
 name: Capital Framework
 subtitle: Everything you wanted to know about Capital Framework
