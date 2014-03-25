@@ -23,3 +23,9 @@ Paste these into github issues. They will be [converted into checkboxes](https:/
 - [ ] Android 4
 - [ ] Blackberry Bold
 ```
+
+```css
+.classname {
+	color: red;
+}
+```
