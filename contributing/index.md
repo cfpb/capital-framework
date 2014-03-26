@@ -11,6 +11,11 @@ title:  "Making contributions"
 - [Browser testing]({{ site.baseurl }}/contributing/#browser-testing)
 - [JavaScript testing]({{ site.baseurl }}/contributing/#javascript-testing)
 - [Coding style]({{ site.baseurl }}/contributing/#coding-style)
+  - [Adhere to any linting errors or warnings]({{ site.baseurl }}/contributing/#adhere-to-any-linting-errors-or-warnings)
+  - [Follow our CSS naming conventions]({{ site.baseurl }}/contributing/#follow-our-css-naming-conventions)
+  - [Use Less but don't go crazy]({{ site.baseurl }}/contributing/#use-less-but-dont-go-crazy)
+  - [Shoot for mobile first declarations]({{ site.baseurl }}/contributing/#shoot-for-mobile-first-declarations)
+  - [Automatically create an alternate stylesheet for older IE]({{ site.baseurl }}/contributing/#automatically-create-an-alternate-stylesheet-for-older-ie)
 - [Governance]({{ site.baseurl }}/contributing/#governance)
 - [Licensing]({{ site.baseurl }}/contributing/#licensing)
 
@@ -64,13 +69,17 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 
 A few notes on this...
 
-**Adhere to any linting errors or warnings**  
+
+### Adhere to any linting errors or warnings
+
 Linting tasks that are set up within component build processes are there to
 promote consistency.
 Please follow their advice.
 Open an issue if you think they should be updated.
 
-**CSS naming conventions**  
+
+### Follow our CSS naming conventions
+
 The discussion: [https://github.com/cfpb/cf-demo/issues/40](https://github.com/cfpb/cf-demo/issues/40)  
 The recommendation: Use our custom BEM naming conventions; see below:
 
@@ -81,7 +90,9 @@ The recommendation: Use our custom BEM naming conventions; see below:
 .block-name_element-name__element-modifier
 {% endhighlight %}
 
-**Use Less but don't go crazy**  
+
+### Use Less but don't go crazy
+
 Leverage basic features of Less to take advantage of the efficiency and
 maintainability that a CSS preprocessor offers, while hopefully avoiding the
 pitfalls of taking it too far and decreasing maintainability.
@@ -91,13 +102,42 @@ For example:
 - Use `unit()` to document em calculations.
 [Read the discussion](https://github.com/cfpb/cf-demo/issues/10).
 
-**Shoot for mobile first declarations**  
+
+### Shoot for mobile first declarations
+
 In most cases styles should be declared mobile first,
 then enhanced with `min-width` media queries.
 By doing this we create a base experience that all devices can use
 and one that does not require media query support.
 (Note that this does not prevent you from creating your desktop styles first
 as long as you end up with a stylesheet that is mobile first in the end.)
+
+
+### Automatically create an alternate stylesheet for older IE
+
+Use [grunt-legacssy](https://github.com/robinpokorny/grunt-legacssy) to
+automatically create an alternate version of your stylesheet.
+The alternate version will be stripped of media query rules matching your
+specified criteria while leaving the contents of those rules intact.
+Use conditional comments to serve this alternate stylesheet to older versions
+of Internet Explorer.
+Follow the conditonal comment usage shown in the
+[HTML file for cf-pagination](https://github.com/cfpb/cf-pagination/blob/gh-pages/demo/index.html).
+
+Our recommended configuration for grunt-legacssy:
+
+{% highlight js %}
+legacssy: {
+  demo: {
+    options: {
+      legacyWidth: 960
+    },
+    files: {
+      'main.lt-ie9.css': 'main.css'
+    }
+  }
+}
+{% endhighlight %}
 
 
 ## Governance
