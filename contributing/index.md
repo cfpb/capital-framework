@@ -100,11 +100,16 @@ and one that does not require media query support.
 as long as you end up with a stylesheet that is mobile first in the end.)
 
 **Automatically create an alternate stylesheet for older IE**  
-Use the [grunt-legacssy](https://github.com/robinpokorny/grunt-legacssy) Grunt
-task to automatically create an alternate version of your stylesheet.
-By using this task, the alternate version will be stripped of media query rules
-matching your specified criteria while leaving the contents of those rules intact.
-Here is our recommended configuration for the Grunt task:
+Use [grunt-legacssy](https://github.com/robinpokorny/grunt-legacssy) to
+automatically create an alternate version of your stylesheet.
+The alternate version will be stripped of media query rules matching your
+specified criteria while leaving the contents of those rules intact.
+Use conditional comments to serve this alternate stylesheet to older versions
+of Internet Explorer.
+Follow the conditonal comment usage shown in the
+[HTML file for cf-pagination](https://github.com/cfpb/cf-pagination/blob/gh-pages/demo/index.html).
+
+Our recommended configuration for grunt-legacssy:
 
 {% highlight js %}
 legacssy: {
