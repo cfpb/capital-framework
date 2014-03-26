@@ -64,43 +64,11 @@ In the meantime you can contribute to the discussion by following
 
 #### Step 1: Add to `bower.json`
 
-Adding a new dependency starts by adding it to `bower.json`,
-then running `grunt vendor` to download the updated dependency list.
-Your new dependency should now be in `src/vendor/`.
+{% include adding-deps-step1.md %}
 
 #### Step 2: Wiring assets
 
-No wiring is necessary for Less files if you've added a new Capital Framework
-component.
-You can begin using its variables and mixins in your component's Less file
-immediately.
-This is possible because the default `grunt` task will combine
-[all Less files](https://github.com/cfpb/cf-grunt-config/blob/master/tasks/options/concat.js#L5)
-together that exist within folders matching `src/vendor/cf-*/*.less` and
-[compiles](https://github.com/cfpb/cf-grunt-config/blob/master/tasks/options/less.js#L12)
-them as one.
-
-_Notes on wiring Capital Framework JavaScript files to come._
-
-{% comment %}
-No wiring is necessary if you've added a new Capital Framework component.
-You can begin using its Less variables and mixins in your component's Less file
-immediately.
-Likewise you can use Capital Framework component JavaScript files immediately.
-This is possible because the default `grunt` task will combine
-[all Less files](https://github.com/cfpb/cf-grunt-config/blob/master/tasks/options/concat.js#L5)
-and all JavaScript files together that exist within folders matching 
-`src/vendor/cf-*/*.less` and `src/vendor/cf-*/*.js`, and
-[compiles](https://github.com/cfpb/cf-grunt-config/blob/master/tasks/options/less.js#L12)
-or [concatenates](https://github.com/cfpb/cf-expandables/blob/gh-pages/Gruntfile.js#L92)
-them as one.
-{% endcomment %}
-
-If you need to add a third party component then you'll need to wire up the
-assets for your particular use case.
-Begin by following the above models for Less and JavaScript files.
-This means updating the concat or uglify tasks to point to the assets that
-you want to be included.
+{% include adding-deps-step2.md %}
 
 
 ## Using components independent of Capital Framework

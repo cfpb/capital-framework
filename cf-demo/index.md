@@ -15,6 +15,7 @@ title:  "About the cf-demo repository"
     - [Requirements]({{ site.baseurl }}/cf-demo/#requirements)
     - [Workflow]({{ site.baseurl }}/cf-demo/#workflow)
     - [Adding/removing/updating Bower components]({{ site.baseurl }}/cf-demo/#addingremovingupdating-bower-components)
+  - [Adding new dependencies]({{ site.baseurl }}/cf-demo/#adding-new-dependencies)
 
 
 ## About the cf-demo repository
@@ -132,3 +133,14 @@ unless there are rules within `copy:dist` to override this
 2. If this new package has CSS linking to fonts or images, the paths to them will automatically be rewritten as a
    root relative link like `/static/fonts/`. If you have other asset types you will need to update the
    `string-replace` task in Gruntfile.js.
+
+
+### Adding new dependencies
+
+#### Step 1: Add to `bower.json`
+
+{% include adding-deps-step1.md %}
+
+#### Step 2: Wiring assets
+
+{% include adding-deps-step2.md %}
