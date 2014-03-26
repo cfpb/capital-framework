@@ -12,6 +12,7 @@ title:  "Status on Capital Framework repositories"
   <li><span data-user="cfpb" data-repo="cf-expandables"></span> - cf-expandables</li>
   <li><span data-user="cfpb" data-repo="cf-forms"></span> - cf-forms</li>
   <li><span data-user="cfpb" data-repo="cf-grid"></span> - cf-grid</li>
+  <li><span data-user="cfpb" data-repo="cf-icons"></span> - cf-icons</li>
   <li><span data-user="cfpb" data-repo="cf-pagination"></span> - cf-pagination</li>
   <li><span data-user="cfpb" data-repo="cf-typography"></span> - cf-typography</li>
   <li><span data-user="cfpb" data-repo="cf-tabs"></span> - cf-tabs</li>
