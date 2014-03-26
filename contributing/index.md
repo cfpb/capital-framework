@@ -11,6 +11,11 @@ title:  "Making contributions"
 - [Browser testing]({{ site.baseurl }}/contributing/#browser-testing)
 - [JavaScript testing]({{ site.baseurl }}/contributing/#javascript-testing)
 - [Coding style]({{ site.baseurl }}/contributing/#coding-style)
+  - [Adhere to any linting errors or warnings]({{ site.baseurl }}/contributing/#adhere-to-any-linting-errors-or-warnings)
+  - [Follow our CSS naming convention]({{ site.baseurl }}/contributing/#follow-our-css-naming-convention)
+  - [Use Less but don't go crazy]({{ site.baseurl }}/contributing/#use-less-but-dont-go-crazy)
+  - [Shoot for mobile first declarations]({{ site.baseurl }}/contributing/#shoot-for-mobile-first-declarations)
+  - [Automatically create an alternate stylesheet for older IE]({{ site.baseurl }}/contributing/#automatically-create-an-alternate-stylesheet-for-older-ie)
 - [Governance]({{ site.baseurl }}/contributing/#governance)
 - [Licensing]({{ site.baseurl }}/contributing/#licensing)
 
