@@ -73,7 +73,7 @@ Please follow their advice.
 Open an issue if you think they should be updated.
 
 
-### CSS naming conventions
+### Follow our CSS naming convention
 
 The discussion: [https://github.com/cfpb/cf-demo/issues/40](https://github.com/cfpb/cf-demo/issues/40)  
 The recommendation: Use our custom BEM naming conventions; see below:
