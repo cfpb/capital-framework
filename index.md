@@ -27,6 +27,8 @@ Capital Framework is a set of front-end components developed at the
 {% include workflow-intro.md %}
 
 
+![cf-demo in relation to components]({{ site.baseurl }}/assets/img/cf-overview.png)
+
 ## Get the code
 
 {% include components-repositories.md %}
