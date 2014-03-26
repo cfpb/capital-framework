@@ -99,6 +99,26 @@ and one that does not require media query support.
 (Note that this does not prevent you from creating your desktop styles first
 as long as you end up with a stylesheet that is mobile first in the end.)
 
+**Automatically create an alternate stylesheet for older IE**  
+Use the [grunt-legacssy](https://github.com/robinpokorny/grunt-legacssy) Grunt
+task to automatically create an alternate version of your stylesheet.
+By using this task, the alternate version will be stripped of media query rules
+matching your specified criteria while leaving the contents of those rules intact.
+Here is our recommended configuration for the Grunt task:
+
+{% highlight js %}
+legacssy: {
+  demo: {
+    options: {
+      legacyWidth: 960
+    },
+    files: {
+      'main.lt-ie9.css': 'main.css'
+    }
+  }
+}
+{% endhighlight %}
+
 
 ## Governance
 
