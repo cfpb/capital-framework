@@ -12,6 +12,7 @@ title:  "About the components"
 - [Compiling a component]({{ site.baseurl }}/components/#compiling-a-component)
   - [Requirements]({{ site.baseurl }}/components/#requirements)
   - [Workflow]({{ site.baseurl }}/components/#workflow)
+  - [Adding new dependencies]({{ site.baseurl }}/components/#adding-new-dependencies)
 - [Using components independent of Capital Framework]({{ site.baseurl }}/components/#using-components-independent-of-capital-framework)
 - [Demos and docs]({{ site.baseurl }}/components/#demos-and-docs)
 
@@ -58,6 +59,19 @@ In the meantime you can contribute to the discussion by following
 2. `npm install` – Initializes Grunt in this folder and installs dependencies.
 3. `grunt vendor` – Pulls in Bower components.
 4. `grunt` – Compiles LESS files and generates the docs and demo pages.
+
+### Adding new dependencies
+
+Adding a new dependency starts by adding it to `bower.json`,
+then running `grunt vendor` to download the updated dependency list.
+Your new dependency should now be in `src/vendor/`.
+
+If you've added a new Capital Framework component then you can begin using its
+Less variables and mixins in your component's Less file immediately.
+This is possible because the default `grunt` task will
+[combine all Less files](https://github.com/cfpb/cf-grunt-config/blob/master/tasks/options/concat.js#L5)
+together that exist within folders that match this pattern `src/vendor/cf-*`
+and [compile them as one](https://github.com/cfpb/cf-grunt-config/blob/master/tasks/options/less.js#L12).
 
 
 ## Using components independent of Capital Framework
