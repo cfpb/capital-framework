@@ -64,13 +64,17 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 
 A few notes on this...
 
-**Adhere to any linting errors or warnings**  
+
+### Adhere to any linting errors or warnings
+
 Linting tasks that are set up within component build processes are there to
 promote consistency.
 Please follow their advice.
 Open an issue if you think they should be updated.
 
-**CSS naming conventions**  
+
+### CSS naming conventions
+
 The discussion: [https://github.com/cfpb/cf-demo/issues/40](https://github.com/cfpb/cf-demo/issues/40)  
 The recommendation: Use our custom BEM naming conventions; see below:
 
@@ -81,7 +85,9 @@ The recommendation: Use our custom BEM naming conventions; see below:
 .block-name_element-name__element-modifier
 {% endhighlight %}
 
-**Use Less but don't go crazy**  
+
+### Use Less but don't go crazy
+
 Leverage basic features of Less to take advantage of the efficiency and
 maintainability that a CSS preprocessor offers, while hopefully avoiding the
 pitfalls of taking it too far and decreasing maintainability.
@@ -91,7 +97,9 @@ For example:
 - Use `unit()` to document em calculations.
 [Read the discussion](https://github.com/cfpb/cf-demo/issues/10).
 
-**Shoot for mobile first declarations**  
+
+### Shoot for mobile first declarations
+
 In most cases styles should be declared mobile first,
 then enhanced with `min-width` media queries.
 By doing this we create a base experience that all devices can use
@@ -99,7 +107,9 @@ and one that does not require media query support.
 (Note that this does not prevent you from creating your desktop styles first
 as long as you end up with a stylesheet that is mobile first in the end.)
 
-**Automatically create an alternate stylesheet for older IE**  
+
+### Automatically create an alternate stylesheet for older IE
+
 Use [grunt-legacssy](https://github.com/robinpokorny/grunt-legacssy) to
 automatically create an alternate version of your stylesheet.
 The alternate version will be stripped of media query rules matching your
