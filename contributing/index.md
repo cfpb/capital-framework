@@ -12,7 +12,7 @@ title:  "Making contributions"
 - [JavaScript testing]({{ site.baseurl }}/contributing/#javascript-testing)
 - [Coding style]({{ site.baseurl }}/contributing/#coding-style)
   - [Adhere to any linting errors or warnings]({{ site.baseurl }}/contributing/#adhere-to-any-linting-errors-or-warnings)
-  - [Follow our CSS naming convention]({{ site.baseurl }}/contributing/#follow-our-css-naming-convention)
+  - [Follow our CSS naming conventions]({{ site.baseurl }}/contributing/#follow-our-css-naming-conventions)
   - [Use Less but don't go crazy]({{ site.baseurl }}/contributing/#use-less-but-dont-go-crazy)
   - [Shoot for mobile first declarations]({{ site.baseurl }}/contributing/#shoot-for-mobile-first-declarations)
   - [Automatically create an alternate stylesheet for older IE]({{ site.baseurl }}/contributing/#automatically-create-an-alternate-stylesheet-for-older-ie)
@@ -78,7 +78,7 @@ Please follow their advice.
 Open an issue if you think they should be updated.
 
 
-### Follow our CSS naming convention
+### Follow our CSS naming conventions
 
 The discussion: [https://github.com/cfpb/cf-demo/issues/40](https://github.com/cfpb/cf-demo/issues/40)  
 The recommendation: Use our custom BEM naming conventions; see below:
