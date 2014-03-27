@@ -52,7 +52,8 @@ Read more about them at
 
 ## Browser testing
 
-Use [this snippet]({{ site.baseurl }}/contributing/browser-testing.html) as a list of browsers to test in.
+Use this [testing snippet]({{ site.baseurl }}/contributing/testing-snippet.html)
+as a list of browsers to test in.
 
 
 ## JavaScript testing
