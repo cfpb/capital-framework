@@ -36,14 +36,12 @@ We welcome your feedback and contributions.
 
 If you'd like to create a new component please review our [roadmap]({{ site.baseurl }}/roadmap/)
 first to make sure we haven't already started.
-Also consider if we can leverage any existing code from CFPB web products.
-
 We hope to have a starter repo or a scaffolding system set up for creating
-new components quickly but this is still in research.
-We are currently looking into [Yeoman.io](http://yeoman.io/).
-In the meantime you can contribute to the discussion by following
-[this issue](https://github.com/cfpb/capital-framework/issues/49).
-You can also clone and edit an existing component to get you started.
+new components quickly but this is still in [research](https://github.com/cfpb/capital-framework/issues/49).
+In the meantime our current recommendation is to clone and edit an existing
+component.
+
+Please consider if we can leverage any existing code from CFPB web products.
 
 
 ## Compiling a component
