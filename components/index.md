@@ -12,6 +12,7 @@ title:  "About the components"
 - [Compiling a component]({{ site.baseurl }}/components/#compiling-a-component)
   - [Requirements]({{ site.baseurl }}/components/#requirements)
   - [Workflow]({{ site.baseurl }}/components/#workflow)
+  - [Adding new dependencies]({{ site.baseurl }}/components/#adding-new-dependencies)
 - [Using components independent of Capital Framework]({{ site.baseurl }}/components/#using-components-independent-of-capital-framework)
 - [Demos and docs]({{ site.baseurl }}/components/#demos-and-docs)
 
@@ -58,6 +59,16 @@ In the meantime you can contribute to the discussion by following
 2. `npm install` – Initializes Grunt in this folder and installs dependencies.
 3. `grunt vendor` – Pulls in Bower components.
 4. `grunt` – Compiles LESS files and generates the docs and demo pages.
+
+### Adding new dependencies
+
+#### Step 1: Add to `bower.json`
+
+{% include adding-deps-step1.md %}
+
+#### Step 2: Wiring assets
+
+{% include adding-deps-step2.md %}
 
 
 ## Using components independent of Capital Framework
