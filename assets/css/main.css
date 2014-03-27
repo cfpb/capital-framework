@@ -155,6 +155,21 @@ a.skip-link:focus {
     border-bottom: none;
 }
 
+/*
+Code
+==================================
+*/
+
+pre.highlight,
+.highlight pre {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px;
+}
 
 /*
 Responsive images
@@ -302,14 +317,6 @@ li h4 {
     font-family: "Avenir Next W01", Arial, sans-serif;
     font-weight: normal;
     font-style: normal; 
-}
-
-.highlight {
-    max-width: 100%;
-    font-size: 0.875em;
-    overflow-y: scroll;
-    background-color: #E7E7E6;
-    padding: 0 10px;
 }
 
 /*
