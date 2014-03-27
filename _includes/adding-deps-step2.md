@@ -21,3 +21,6 @@ assets for your particular use case.
 Begin by following the above models for Less and JavaScript files.
 This means updating the concat or uglify tasks to point to the assets that
 you want to be included.
+When working with cf-demo you will need to import any Less files into your own
+Less file as seen in
+[`cf-demo/src/css/main.less`](https://github.com/cfpb/cf-demo/blob/master/src/static/css/main.less).
