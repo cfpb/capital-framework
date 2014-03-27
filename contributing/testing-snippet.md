@@ -24,10 +24,15 @@ Paste this into github issues and they will be
 - [ ] Android 4
 - [ ] Blackberry Bold
 
+## Accessibility
+
+- [ ] Keyboard friendly
+- [ ] Screen reader friendly
+
 ## Other
 
-- [ ] Keyboard accessibility
-- [ ] Screen reader accessibility
+- [ ] Is useable without CSS
+- [ ] Is useable without JS
 - [ ] Flexible from small to large screens
 ~~~
 {: .highlight }
