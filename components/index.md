@@ -43,6 +43,7 @@ new components quickly but this is still in research.
 We are currently looking into [Yeoman.io](http://yeoman.io/).
 In the meantime you can contribute to the discussion by following
 [this issue](https://github.com/cfpb/capital-framework/issues/49).
+You can also clone and edit an existing component to get you started.
 
 
 ## Compiling a component
