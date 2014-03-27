@@ -10,6 +10,7 @@ title:  "Making contributions"
 - [Demos and docs]({{ site.baseurl }}/contributing/#demos-and-docs)
 - [Browser testing]({{ site.baseurl }}/contributing/#browser-testing)
 - [JavaScript testing]({{ site.baseurl }}/contributing/#javascript-testing)
+- [Accessibility testing]({{ site.baseurl }}/contributing/#accessibility-testing)
 - [Coding style]({{ site.baseurl }}/contributing/#coding-style)
   - [Adhere to any linting errors or warnings]({{ site.baseurl }}/contributing/#adhere-to-any-linting-errors-or-warnings)
   - [Follow our CSS naming conventions]({{ site.baseurl }}/contributing/#follow-our-css-naming-conventions)
@@ -52,7 +53,7 @@ Read more about them at
 
 ## Browser testing
 
-Use this [testing snippet]({{ site.baseurl }}/contributing/testing-snippet.html)
+Use this [testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html)
 as a way to publicly track manual testing in our recommended set of browsers.
 
 
@@ -68,7 +69,7 @@ new functionality is tested.
 
 Components should conform to [Section 508](http://www.section508.gov/)
 and [WCAG 2.0 level AA](http://www.w3.org/TR/WCAG20/) guidelines.
-Use this [testing snippet]({{ site.baseurl }}/contributing/testing-snippet.html)
+Use this [testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html)
 as a way to publicly track manual testing.
 As each component is different we ask that you update the snippet to track
 the accessibility guidlines you have tested for.
