@@ -15,6 +15,7 @@ title:  "About the components"
   - [Adding new dependencies]({{ site.baseurl }}/components/#adding-new-dependencies)
 - [Using components independent of Capital Framework]({{ site.baseurl }}/components/#using-components-independent-of-capital-framework)
 - [Demos and docs]({{ site.baseurl }}/components/#demos-and-docs)
+- [Starting new components]({{ site.baseurl }}/components/#starting-new-components)
 
 
 ## About the components
@@ -33,15 +34,6 @@ _Styleguides built with the excellent [Topdoc](https://github.com/topcoat/topdoc
 
 We welcome your feedback and contributions.  
 [Find out about contributing]({{ site.baseurl }}/contributing/)
-
-If you'd like to create a new component please review our [roadmap]({{ site.baseurl }}/roadmap/)
-first to make sure we haven't already started.
-We hope to have a starter repo or a scaffolding system set up for creating
-new components quickly but this is still in [research](https://github.com/cfpb/capital-framework/issues/49).
-In the meantime our current recommendation is to clone and edit an existing
-component.
-
-Please consider if we can leverage any existing code from CFPB web products.
 
 
 ## Compiling a component
@@ -93,3 +85,15 @@ Components are set up to generate these pages along with the default Grunt tasks
 Make sure that any new CSS is appropriately documented using Topdoc.
 Please refer to the [Getting Started](https://github.com/cfpb/cf-component-demo/blob/master/README.md#getting-started)
 section of cf-component-demo for further information.
+
+
+## Starting new components
+
+If you'd like to create a new component please review our [roadmap]({{ site.baseurl }}/roadmap/)
+first to make sure we haven't already started.
+We hope to have a starter repo or a scaffolding system set up for creating
+new components quickly but this is still in [research](https://github.com/cfpb/capital-framework/issues/49).
+In the meantime our current recommendation is to clone and edit an existing
+component.
+
+Also consider if we can leverage any existing code from CFPB web products.
