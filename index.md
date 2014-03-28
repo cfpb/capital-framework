@@ -26,8 +26,10 @@ Capital Framework is a set of front-end components developed at the
 
 {% include workflow-intro.md %}
 
-
 ![cf-demo in relation to components]({{ site.baseurl }}/assets/img/cf-overview.png)
+
+_The Octocat character and designs are © GitHub, Inc._
+
 
 ## Get the code
 
