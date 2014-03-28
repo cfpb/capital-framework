@@ -117,6 +117,10 @@ Note that unminified CSS and JS and folders within `vendor` are not copied over
 unless there are rules within `copy:dist` to override this
 (for example review how we handle html5shiv within the `copy:dist` task).
 
+Optionally you can easily push the contents of the `dist` folder up to GitHub
+pages by running `grunt gh-pages`.
+For more information read the `grunt gh-pages`
+[overview](https://github.com/tschaub/grunt-gh-pages#overview).
 
 #### Adding/removing/updating Bower components
 
