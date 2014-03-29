@@ -187,6 +187,12 @@ code:after {
     letter-spacing: -0.2em;
 }
 
+code a,
+code a:link,
+code a:visited {
+    border-bottom: 0;
+}
+
 .highlight code {
     padding: 6px 10px;
     font-size: 13px;
