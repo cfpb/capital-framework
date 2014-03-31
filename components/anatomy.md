@@ -4,7 +4,7 @@ title:  "Component repository anatomy"
 description: "An explanation of the folders and files that make up a component repository."
 parent:
   name: "About the components"
-  url: "components/index.html"
+  url: "components/#anatomy-of-a-component"
 ---
 
 

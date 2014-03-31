@@ -346,8 +346,9 @@ Style
 }
 
 .back {
-    font-size: 0.75em;
-    line-height: 3;
+    margin-top: 3em;
+    padding: 1em 0;
+    border-top: 1px solid #75787B;
 }
 
 .content-header {
@@ -356,10 +357,6 @@ Style
     border: 1px solid #75787B;
     border-left: 0;
     border-right: 0;
-}
-
-.back + .content-header {
-    margin-top: -2.25em;
 }
 
 .content-header_heading {
@@ -515,10 +512,6 @@ Desktop Styles
     Style
     ==============================
     */
-
-    .back {
-        text-align: right;
-    }
 
     /*
     Repo list
