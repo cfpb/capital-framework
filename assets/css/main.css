@@ -347,7 +347,7 @@ Style
 
 .back {
     font-size: 0.75em;
-    line-height: 2;
+    line-height: 3;
 }
 
 .content-header {
@@ -359,7 +359,7 @@ Style
 }
 
 .back + .content-header {
-    margin-top: -1.5em;
+    margin-top: -2.25em;
 }
 
 .content-header_heading {
