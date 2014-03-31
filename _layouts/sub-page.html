@@ -2,15 +2,8 @@
 layout: page
 ---
 
-<header class="content-header">
-    <h2 class="content-header_heading">{{ page.title }}</h2>
-    {% if page.description %}
-    <p class="content-header_description">{{ page.description }}</p>
-    {% endif %}
-</header>
+{% include content-header.html %}
 
 {{ content }}
 
-<p class="back">
-    <a href="{{ site.baseurl }}/{{ page.parent.url }}">&laquo; back to <strong>{{ page.parent.name }}</strong></a>
-</p>
+{% include back.html %}
