@@ -383,6 +383,11 @@ Style
     margin-top: 1em;
 }
 
+.toc {
+    padding-bottom: 1em;
+    border-bottom: 1px dotted #75787B;
+}
+
 footer {
     font-size: 0.75em;
     color: #75787B;

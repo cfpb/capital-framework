@@ -1,6 +1,8 @@
 {% if page.toc %}
 
-## Table of contents
+<div class="toc">
+
+<h2>Table of contents</h2>
 
 <ul>
 {% for item_i in page.toc.list %}
@@ -30,5 +32,7 @@
 </li>
 {% endfor %}
 </ul>
+
+</div>
 
 {% endif %}
