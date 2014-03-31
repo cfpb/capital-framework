@@ -338,6 +338,13 @@ Style
     float: right;
 }
 
+.beginners-message {
+    margin: 1.2em 0 2em;
+    color: #75787B;
+    font-size: 0.875em; /* 12 / 16 */
+    font-style: italic;
+}
+
 .back {
     font-size: 0.75em;
     line-height: 2;
