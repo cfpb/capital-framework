@@ -63,6 +63,10 @@ li {
     font-size: .9375em;
 }
 
+li li {
+    font-size: 1em;
+}
+
 .page-title {
     margin-top: .727272727em; /* 16/22 */
 }
