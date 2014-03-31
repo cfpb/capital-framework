@@ -4,7 +4,7 @@ title:  "About the cf-demo repository"
 toc:
   root: /cf-demo/
   list:
-  - name: "About the cf-demo repository"
+  - name: "The purpose of cf-demo"
   - name: "The code"
   - name: "Contributing"
   - name: "Getting started"
@@ -22,7 +22,7 @@ toc:
 {% include toc.html %}
 
 
-## About the cf-demo repository
+## The purpose of cf-demo
 
 {% include workflow-intro.md %}
 
