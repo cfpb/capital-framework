@@ -8,7 +8,6 @@ parent:
 ---
 
 
-
 <pre class="highlight">
 <code>{% for term in site.data.component-repo-terms %}<a href="{{ site.baseurl }}/components/anatomy.html#{{ term.slug }}">{{ term.name }}</a>
 {% endfor %}</code>
