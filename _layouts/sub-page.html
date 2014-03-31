@@ -4,7 +4,9 @@ layout: page
 
 <header class="content-header">
     <h2 class="content-header_heading">{{ page.title }}</h2>
+    {% if page.description %}
     <p class="content-header_description">{{ page.description }}</p>
+    {% endif %}
 </header>
 
 {{ content }}
