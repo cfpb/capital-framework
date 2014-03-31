@@ -53,8 +53,10 @@ Read more about them at
 
 ## Browser testing
 
-Use this [testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html)
-as a way to publicly track manual testing in our recommended set of browsers.
+Components should be cross browser tested.
+When contributing code please publicly track the tests you have run using the
+[testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html).
+Included is a list of browsers that we recommend testing in.
 
 
 ## JavaScript testing
@@ -63,14 +65,16 @@ JavaScript tests that are set up within component build processes are there to
 promote stable code.
 Before making a pull request please make sure that all tests pass and that any
 new functionality is tested.
+When contributing code please publicly track that all tests have passed using the
+[testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html).
 
 
 ## Accessibility testing
 
 Components should conform to [Section 508](http://www.section508.gov/)
 and [WCAG 2.0 level AA](http://www.w3.org/TR/WCAG20/) guidelines.
-Use this [testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html)
-as a way to publicly track manual testing.
+When contributing code please publicly track the tests you have run using the
+[testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html).
 As each component is different we ask that you update the snippet to track
 the accessibility guidlines you have tested for.
 
@@ -88,6 +92,8 @@ Linting tasks that are set up within component build processes are there to
 promote consistency.
 Please follow their advice.
 Open an issue if you think they should be updated.
+When contributing code please publicly track that there are no linting errors
+or warnings using the [testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html).
 
 
 ### Follow our CSS naming conventions
