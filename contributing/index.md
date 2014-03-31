@@ -1,24 +1,28 @@
 ---
 layout: default
 title:  "Making contributions"
+toc:
+  root: /contributing/
+  list:
+  - name: "Current open pull requests"
+  - name: "Making contributions"
+  - name: "Demos and docs"
+  - name: "Browser testing"
+  - name: "JavaScript testing"
+  - name: "Accessibility testing"
+  - name: "Coding style"
+    list:
+    - name: "Adhere to any linting errors or warnings"
+    - name: "Follow our CSS naming conventions"
+    - name: "Use Less but don't go crazy"
+    - name: "Shoot for mobile first declarations"
+    - name: "Automatically create an alternate stylesheet for older IE"
+  - name: "Governance"
+  - name: "Licensing"
 ---
 
-## Table of contents
 
-- [Current open pull requests]({{ site.baseurl }}/contributing/#current-open-pull-requests)
-- [Making contributions]({{ site.baseurl }}/contributing/#making-contributions)
-- [Demos and docs]({{ site.baseurl }}/contributing/#demos-and-docs)
-- [Browser testing]({{ site.baseurl }}/contributing/#browser-testing)
-- [JavaScript testing]({{ site.baseurl }}/contributing/#javascript-testing)
-- [Accessibility testing]({{ site.baseurl }}/contributing/#accessibility-testing)
-- [Coding style]({{ site.baseurl }}/contributing/#coding-style)
-  - [Adhere to any linting errors or warnings]({{ site.baseurl }}/contributing/#adhere-to-any-linting-errors-or-warnings)
-  - [Follow our CSS naming conventions]({{ site.baseurl }}/contributing/#follow-our-css-naming-conventions)
-  - [Use Less but don't go crazy]({{ site.baseurl }}/contributing/#use-less-but-dont-go-crazy)
-  - [Shoot for mobile first declarations]({{ site.baseurl }}/contributing/#shoot-for-mobile-first-declarations)
-  - [Automatically create an alternate stylesheet for older IE]({{ site.baseurl }}/contributing/#automatically-create-an-alternate-stylesheet-for-older-ie)
-- [Governance]({{ site.baseurl }}/contributing/#governance)
-- [Licensing]({{ site.baseurl }}/contributing/#licensing)
+{% include toc.html %}
 
 
 ## Current open pull requests

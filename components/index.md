@@ -1,23 +1,26 @@
 ---
 layout: default
 title:  "About the components"
+toc:
+  root: /components/
+  list:
+  - name: "An introduction to the component methodology"
+  - name: "Anatomy of a component"
+  - name: "The code"
+  - name: "Contributing"
+  - name: "Compiling a component"
+    list:
+    - name: "Requirements"
+    - name: "Workflow"
+    - name: "Grunt tasks explained"
+    - name: "Adding new dependencies"
+  - name: "Using components independent of Capital Framework"
+  - name: "Demos and docs"
+  - name: "Starting new components"
 ---
 
 
-## Table of contents
-
-- [An introduction to the component methodology]({{ site.baseurl }}/components/#an-introduction-to-the-component-methodology)
-- [Anatomy of a component]({{ site.baseurl }}/components/#anatomy-of-a-component)
-- [The code]({{ site.baseurl }}/components/#the-code)
-- [Contributing]({{ site.baseurl }}/components/#contributing)
-- [Compiling a component]({{ site.baseurl }}/components/#compiling-a-component)
-  - [Requirements]({{ site.baseurl }}/components/#requirements)
-  - [Workflow]({{ site.baseurl }}/components/#workflow)
-  - [Grunt tasks explained]({{ site.baseurl }}/components/#grunt-tasks-explained)
-  - [Adding new dependencies]({{ site.baseurl }}/components/#adding-new-dependencies)
-- [Using components independent of Capital Framework]({{ site.baseurl }}/components/#using-components-independent-of-capital-framework)
-- [Demos and docs]({{ site.baseurl }}/components/#demos-and-docs)
-- [Starting new components]({{ site.baseurl }}/components/#starting-new-components)
+{% include toc.html %}
 
 
 ## An introduction to the component methodology
