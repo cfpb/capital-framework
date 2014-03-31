@@ -266,7 +266,7 @@ Layout
     padding: 0 20px;
 }
 
-header {
+header[role="banner"] {
     width: 100%;
     border-bottom: 4px solid #2CB34A;
     background-color: #fff;
