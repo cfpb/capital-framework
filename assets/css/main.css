@@ -340,6 +340,32 @@ Style
 
 .back {
     font-size: 0.75em;
+    line-height: 2;
+    text-align: right;
+}
+
+.content-header {
+    margin: 1.875em 0; /* 30 / 16 */
+    padding: 2em 0;
+    border: 1px solid #75787B;
+    border-left: 0;
+    border-right: 0;
+}
+
+.back + .content-header {
+    margin-top: -1.5em;
+}
+
+.content-header_heading {
+    margin: 0;
+    font-size: 1.625em; /* 26 / 16 */
+    font-family: "Avenir Next W01", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.content-header_description {
+    margin: 0.5em 0 0;
 }
 
 footer {
