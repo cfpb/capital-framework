@@ -341,7 +341,6 @@ Style
 .back {
     font-size: 0.75em;
     line-height: 2;
-    text-align: right;
 }
 
 .content-header {
@@ -509,6 +508,10 @@ Desktop Styles
     Style
     ==============================
     */
+
+    .back {
+        text-align: right;
+    }
 
     /*
     Repo list
