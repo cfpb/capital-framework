@@ -1,13 +1,14 @@
 ---
-layout: page
+layout: sub-page
 title:  "Testing checklist"
+description: |
+  Paste this into github issues and they will be
+  [converted into checkboxes](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments).
+parent:
+  name: "Contributing"
+  url: "contributing/#browser-testing"
 ---
 
-
-## Testing checklist
-
-Paste this into github issues and they will be
-[converted into checkboxes](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments).
 
 ~~~
 ## Browsers
