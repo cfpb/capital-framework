@@ -1,10 +1,11 @@
 ---
-layout: page
-title:  "Status on Capital Framework repositories"
+layout: sub-page
+title:  "Open pull requests"
+parent:
+  name: "About the components"
+  url: "contributing/#current-open-pull-requests"
 ---
 
-
-## Open pull requests
 
 <ul>
   <li><span data-user="cfpb" data-repo="cf-buttons"></span> - cf-buttons</li>
