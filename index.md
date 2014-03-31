@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "An introduction to Capital Framework"
+is_root: true
 ---
 
 

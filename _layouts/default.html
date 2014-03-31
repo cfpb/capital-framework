@@ -30,7 +30,18 @@
       {% include sidebar.html %}
 
       <section id="main" class="main-content" role="main">
+
+        {% if page.is_root != true %}
+        {% include beginners-message.html %}
+        {% endif %}
+
+        {% include content-header.html %}
         {{ content }}
+
+        {% if page.parent %}
+        {% include back.html %}
+        {% endif %}
+
       </section>
 
 

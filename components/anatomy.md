@@ -1,5 +1,5 @@
 ---
-layout: sub-page
+layout: default
 title:  "Component repository anatomy"
 description: "An explanation of the folders and files that make up a component repository."
 parent:

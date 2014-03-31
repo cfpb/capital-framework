@@ -1,5 +1,5 @@
 ---
-layout: sub-page
+layout: default
 title:  "Open pull requests"
 parent:
   name: "About the components"

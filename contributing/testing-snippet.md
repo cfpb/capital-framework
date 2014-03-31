@@ -1,5 +1,5 @@
 ---
-layout: sub-page
+layout: default
 title:  "Testing checklist"
 description: When contributing code please publicly track the tests you have
   run using the testing checklist snippet.
