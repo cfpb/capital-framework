@@ -16,6 +16,9 @@ _Information on new components can be found on our [project roadmap]({{ site.bas
 [style guide](http://cfpb.github.io/cf-forms/docs/)  
 **cf-grid:**
 [repo](https://github.com/cfpb/cf-grid)  
+**cf-icons:**
+[repo](https://github.com/cfpb/cf-icons) /
+[style guide](http://cfpb.github.io/cf-icons/docs/)  
 **cf-pagination:**
 [repo](https://github.com/cfpb/cf-pagination) /
 [style guide](http://cfpb.github.io/cf-pagination/docs/)  
