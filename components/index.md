@@ -1,26 +1,37 @@
 ---
-layout: page
+layout: default
 title:  "About the components"
+toc:
+  root: /components/
+  list:
+  - name: "An introduction to the component methodology"
+  - name: "Anatomy of a component"
+  - name: "The code"
+  - name: "Contributing"
+  - name: "Compiling a component"
+    list:
+    - name: "Requirements"
+    - name: "Workflow"
+    - name: "Grunt tasks explained"
+    - name: "Adding new dependencies"
+  - name: "Using components independent of Capital Framework"
+  - name: "Demos and docs"
+  - name: "Starting new components"
 ---
 
 
-## Table of contents
-
-- [About the components]({{ site.baseurl }}/components/#about-the-components)
-- [The code]({{ site.baseurl }}/components/#the-code)
-- [Contributing]({{ site.baseurl }}/components/#contributing)
-- [Compiling a component]({{ site.baseurl }}/components/#compiling-a-component)
-  - [Requirements]({{ site.baseurl }}/components/#requirements)
-  - [Workflow]({{ site.baseurl }}/components/#workflow)
-  - [Adding new dependencies]({{ site.baseurl }}/components/#adding-new-dependencies)
-- [Using components independent of Capital Framework]({{ site.baseurl }}/components/#using-components-independent-of-capital-framework)
-- [Demos and docs]({{ site.baseurl }}/components/#demos-and-docs)
-- [Starting new components]({{ site.baseurl }}/components/#starting-new-components)
+{% include toc.html %}
 
 
-## About the components
+## An introduction to the component methodology
 
 {% include components-intro.md %}
+
+
+## Anatomy of a component
+
+If you're looking for an explanation of the folders and files that make up a
+component repository then please read the [component anatomy page]({{ site.baseurl }}/components/anatomy.html).
 
 
 ## The code
@@ -50,6 +61,11 @@ We welcome your feedback and contributions.
 2. `npm install` – Initializes Grunt in this folder and installs dependencies.
 3. `grunt vendor` – Pulls in Bower components.
 4. `grunt` – Compiles LESS files and generates the docs and demo pages.
+
+### Grunt tasks explained
+
+Please [read our guide]({{ site.baseurl }}/components/grunt-tasks.html) for a
+high level explanation of the above Grunt tasks.
 
 ### Adding new dependencies
 

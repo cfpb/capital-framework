@@ -29,7 +29,6 @@ body {
     line-height: 1.466666667;
 }
 
-h1,
 h3,
 h4,
 h5 {
@@ -38,15 +37,14 @@ h5 {
 }
 
 h1 {
-    font-size: 1.25em;
-    color: #75787B;
-    margin: 0;
-    line-height: 54px;
-    display: inline-block;
-    float: left;
+    font-size: 1.625em; /* 26 / 16 */
+    font-family: "Avenir Next W01", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
 }
 
 h2 {
+    font-family: "Avenir Next W01", Arial, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1.375em;
@@ -61,6 +59,10 @@ h4 {
 p,
 li {
     font-size: .9375em;
+}
+
+li li {
+    font-size: 1em;
 }
 
 .page-title {
@@ -187,6 +189,12 @@ code:after {
     letter-spacing: -0.2em;
 }
 
+code a,
+code a:link,
+code a:visited {
+    border-bottom: 0;
+}
+
 .highlight code {
     padding: 6px 10px;
     font-size: 13px;
@@ -260,20 +268,11 @@ Layout
     padding: 0 20px;
 }
 
-header {
+header[role="banner"] {
     width: 100%;
     border-bottom: 4px solid #2CB34A;
     background-color: #fff;
-    position: fixed;
-    top: 0;
-    z-index: 99999;
-    height: 3.625em;
 }
-
-.content {
-    margin-top: 80px;
-}
-
 
 /*
 Helpers
@@ -321,15 +320,64 @@ Style
 ==================================
 */
 
+.title {
+    font-family: "Avenir Next W01", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.25em; /* 20 / 16 */
+    color: #75787B;
+    margin-top: 0.6em; /* 12 / 20 */
+}
+
 .intro {
     color: #75787B;
 }
 
 .logo {
     width: 150px;
-    margin-top: .75em; /*this is a pretty hacky job of vertically centering the logo */
     padding-right: 20px;
     float: right;
+}
+
+.beginners-message {
+    margin: 1.2em 0 2em;
+    color: #75787B;
+    font-size: 0.875em; /* 14 / 16 */
+    font-style: italic;
+}
+
+.back {
+    margin-top: 3em;
+    padding: 1em 0;
+    border-top: 1px solid #75787B;
+}
+
+.content-header {
+    margin: 1.875em 0; /* 30 / 16 */
+    padding: 2em 0;
+    border: 1px solid #75787B;
+    border-left: 0;
+    border-right: 0;
+}
+
+.content-header_heading {
+    margin: 0;
+}
+
+.content-header_description {
+    margin: 0.5em 0 0;
+}
+
+.content-header_description p {
+    margin: 0;
+}
+
+.content-header_description p + p {
+    margin-top: 1em;
+}
+
+.toc {
+    padding-bottom: 1em;
+    border-bottom: 1px dotted #75787B;
 }
 
 footer {
@@ -416,6 +464,21 @@ Desktop Styles
 ==================================
 */
 
+@media screen and (min-width: 45em) {
+
+    header[role="banner"] {
+        position: fixed;
+        top: 0;
+        z-index: 99999;
+        height: 3.625em;
+    }
+
+    .content {
+        margin-top: 80px;
+    }
+
+}
+
 @media screen and (min-width: 45em) and (min-height: 32.5em) {
 
     /*
@@ -428,14 +491,15 @@ Desktop Styles
         margin: 0;
     }
 
+    .title {
+        font-size: 1.625em;
+        line-height: 1;
+    }
+
     /*
     Layout
     ==============================
     */
-
-    .logo {
-        float: right;
-    }
 
     aside {
         position: fixed;

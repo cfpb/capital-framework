@@ -1,13 +1,16 @@
 ---
-layout: page
+layout: default
 title:  "Testing checklist"
+description: When contributing code please publicly track the tests you have
+  run using the testing checklist snippet.
+parent:
+  name: "Contributing"
+  url: "contributing/#browser-testing"
 ---
 
 
-## Testing checklist
-
-Paste this into github issues and they will be
-[converted into checkboxes](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments).
+_Paste this checklist into an issue or pull request on GitHub and it will be
+converted into a [GFM Task List](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments)._
 
 ~~~
 ## Browsers
@@ -34,5 +37,7 @@ Paste this into github issues and they will be
 - [ ] Is useable without CSS
 - [ ] Is useable without JS
 - [ ] Flexible from small to large screens
+- [ ] No linting errors or warnings
+- [ ] JavaScript tests are passing
 ~~~
 {: .highlight }

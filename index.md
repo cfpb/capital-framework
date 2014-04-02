@@ -1,13 +1,11 @@
 ---
 layout: default
-title: "An introduction to Capital Framework"
+title: "Nice to meet you"
+description: |
+  Capital Framework is a set of front-end components developed at the
+  [Consumer Financial Protection Bureau](http://cfpb.github.io/).
+is_root: true
 ---
-
-
-## Nice to meet you
-
-Capital Framework is a set of front-end components developed at the
-[Consumer Financial Protection Bureau](http://cfpb.github.io/).
 
 
 ## Defining features:

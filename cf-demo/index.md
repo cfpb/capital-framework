@@ -1,24 +1,28 @@
 ---
-layout: page
+layout: default
 title:  "About the cf-demo repository"
+toc:
+  root: /cf-demo/
+  list:
+  - name: "The purpose of cf-demo"
+  - name: "The code"
+  - name: "Contributing"
+  - name: "Getting started"
+    list:
+    - name: "Using the compiled version"
+    - name: "Using the build system"
+      list:
+      - name: "Requirements"
+      - name: "Workflow"
+      - name: "Adding/removing/updating Bower components"
+    - name: "Adding new dependencies"
 ---
 
 
-## Table of contents
-
-- [About the cf-demo repository]({{ site.baseurl }}/cf-demo/#about-the-cf-demo-repository)
-- [The code]({{ site.baseurl }}/cf-demo/#the-code)
-- [Contributing]({{ site.baseurl }}/cf-demo/#contributing)
-- [Getting started]({{ site.baseurl }}/cf-demo/#getting-started)
-  - [Using the compiled version]({{ site.baseurl }}/cf-demo/#using-the-compiled-version)
-  - [Using the build system]({{ site.baseurl }}/cf-demo/#using-the-build-system)
-    - [Requirements]({{ site.baseurl }}/cf-demo/#requirements)
-    - [Workflow]({{ site.baseurl }}/cf-demo/#workflow)
-    - [Adding/removing/updating Bower components]({{ site.baseurl }}/cf-demo/#addingremovingupdating-bower-components)
-  - [Adding new dependencies]({{ site.baseurl }}/cf-demo/#adding-new-dependencies)
+{% include toc.html %}
 
 
-## About the cf-demo repository
+## The purpose of cf-demo
 
 {% include workflow-intro.md %}
 

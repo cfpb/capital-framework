@@ -21,7 +21,7 @@
         {% if site.logourl != null %}
           <img class="logo" src="{{ site.baseurl }}/{{ site.logourl }}" alt="{{ site.logoalt }}">
         {% endif %}
-        <h1><a class="title-link" href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+        <h1 class="title"><a class="title-link" href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
       </div>
     </header>
 
@@ -30,7 +30,18 @@
       {% include sidebar.html %}
 
       <section id="main" class="main-content" role="main">
+
+        {% if page.is_root != true %}
+        {% include beginners-message.html %}
+        {% endif %}
+
+        {% include content-header.html %}
         {{ content }}
+
+        {% if page.parent %}
+        {% include back.html %}
+        {% endif %}
+
       </section>
 
 

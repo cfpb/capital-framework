@@ -1,0 +1,38 @@
+{% if page.toc %}
+
+<div class="toc">
+
+<h2>Table of contents</h2>
+
+<ul>
+{% for item_i in page.toc.list %}
+{% assign name = item_i.name | downcase | replace:' ','-' | replace:'.','' | replace:'/','' | replace:"'",'' %}
+<li>
+	<a href="{{ site.baseurl }}{{ page.toc.root }}#{{ name }}">{{ item_i.name }}</a>
+	{% if item_i.list %}
+	<ul>
+	{% for item_j in item_i.list %}
+	{% assign name = item_j.name | downcase | replace:' ','-' | replace:'.','' | replace:'/','' | replace:"'",'' %}
+	<li>
+		<a href="{{ site.baseurl }}{{ page.toc.root }}#{{ name }}">{{ item_j.name }}</a>
+		{% if item_i.list %}
+		<ul>
+		{% for item_k in item_j.list %}
+		{% assign name = item_k.name | downcase | replace:' ','-' | replace:'.','' | replace:'/','' | replace:"'",'' %}
+		<li>
+			<a href="{{ site.baseurl }}{{ page.toc.root }}#{{ name }}">{{ item_k.name }}</a>
+		</li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+	</li>
+	{% endfor %}
+	</ul>
+	{% endif %}
+</li>
+{% endfor %}
+</ul>
+
+</div>
+
+{% endif %}
