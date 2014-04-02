@@ -29,7 +29,6 @@ body {
     line-height: 1.466666667;
 }
 
-h1,
 h3,
 h4,
 h5 {
@@ -38,12 +37,10 @@ h5 {
 }
 
 h1 {
-    font-size: 1.25em;
-    color: #75787B;
-    margin: 0;
-    line-height: 54px;
-    display: inline-block;
-    float: left;
+    font-size: 1.625em; /* 26 / 16 */
+    font-family: "Avenir Next W01", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
 }
 
 h2 {
@@ -274,16 +271,7 @@ header[role="banner"] {
     width: 100%;
     border-bottom: 4px solid #2CB34A;
     background-color: #fff;
-    position: fixed;
-    top: 0;
-    z-index: 99999;
-    height: 3.625em;
 }
-
-.content {
-    margin-top: 80px;
-}
-
 
 /*
 Helpers
@@ -331,13 +319,20 @@ Style
 ==================================
 */
 
+.title {
+    font-family: "Avenir Next W01", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.25em; /* 20 / 16 */
+    color: #75787B;
+    margin-top: 0.6em; /* 12 / 20 */
+}
+
 .intro {
     color: #75787B;
 }
 
 .logo {
     width: 150px;
-    margin-top: .75em; /*this is a pretty hacky job of vertically centering the logo */
     padding-right: 20px;
     float: right;
 }
@@ -365,10 +360,6 @@ Style
 
 .content-header_heading {
     margin: 0;
-    font-size: 1.625em; /* 26 / 16 */
-    font-family: "Avenir Next W01", Arial, sans-serif;
-    font-weight: 400;
-    line-height: 1.2;
 }
 
 .content-header_description {
@@ -472,6 +463,21 @@ Desktop Styles
 ==================================
 */
 
+@media screen and (min-width: 45em) {
+
+    header[role="banner"] {
+        position: fixed;
+        top: 0;
+        z-index: 99999;
+        height: 3.625em;
+    }
+
+    .content {
+        margin-top: 80px;
+    }
+
+}
+
 @media screen and (min-width: 45em) and (min-height: 32.5em) {
 
     /*
@@ -484,14 +490,15 @@ Desktop Styles
         margin: 0;
     }
 
+    .title {
+        font-size: 1.625em;
+        line-height: 1;
+    }
+
     /*
     Layout
     ==============================
     */
-
-    .logo {
-        float: right;
-    }
 
     aside {
         position: fixed;
