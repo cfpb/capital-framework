@@ -39,6 +39,8 @@ model:
 1. Fork a repository to your personal account.
 2. Create a branch and make your changes.
 3. Test the changes locally/in your personal fork.
+If the repository contains tests make sure they all pass.
+For more information review the [Javascript testing](#javascript-testing) section.
 4. Submit a pull request to open a discussion about your proposed changes.
 5. We'll talk about it and decide to merge or request additional changes.
 
@@ -69,6 +71,7 @@ JavaScript tests that are set up within component build processes are there to
 promote stable code.
 Before making a pull request please make sure that all tests pass and that any
 new functionality is tested.
+If a component contains tests they can be run with the `grunt test` command.
 When contributing code please publicly track that all tests have passed using the
 [testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html).
 
