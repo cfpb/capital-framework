@@ -69,11 +69,10 @@ Included is a list of browsers that we recommend testing in.
 
 JavaScript tests that are set up within component build processes are there to
 promote stable code.
-Before making a pull request please make sure that all tests pass and that any
-new functionality is tested.
-If a component contains tests they can be run with the `grunt test` command.
-When contributing code please publicly track that all tests have passed using the
-[testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html).
+They can be run with the `grunt test` command.
+Before making a pull request please publicly track that all tests have passed
+using the [testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html).
+New tests should be written for any new functionality added.
 
 
 ## Accessibility testing
