@@ -74,6 +74,8 @@ Before making a pull request please publicly track that all tests have passed
 using the [testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html).
 New tests should be written for any new functionality added.
 
+To view the qUnit test page simply open `test/<component-name>.html` in your browser.
+
 
 ## Accessibility testing
 
