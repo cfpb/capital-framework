@@ -72,9 +72,11 @@ promote stable code.
 They can be run with the `grunt test` command.
 Before making a pull request please publicly track that all tests have passed
 using the [testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html).
-New tests should be written for any new functionality added.
+New tests should be written in [QUnit](https://qunitjs.com/) for any new
+functionality added.
 
-To view the qUnit test page simply open `test/<component-name>.html` in your browser.
+Read our _[Setting up component tests with QUnit]({{ site.baseurl }}/contributing/qunit.html)_
+guide for more information.
 
 
 ## Accessibility testing
