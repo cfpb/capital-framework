@@ -436,6 +436,42 @@ ul.repo-list {
 }
 
 /*
+Repo table (status page)
+----------------------------------
+*/
+.repo-table th,
+.repo-table td {
+  padding: 4px 8px;
+  border: 1px solid #E3E4E5;
+  vertical-align: bottom;
+}
+.repo-table th:first-child,
+.repo-table td:first-child {
+  border-left: none;
+}
+.repo-table th:last-child,
+.repo-table td:last-child {
+  border-right: none;
+}
+.repo-table th {
+  text-align: left;
+}
+.repo-table thead th {
+  background-color: #E3E4E5;
+  border-color: #FFF;
+  font-family: "Avenir Next W01", Arial, sans-serif;
+  font-weight: 500;
+}
+.repo-table tbody th {
+  font-family: Consolas, Monaco, Courier, monospace;
+  width: 160px;
+}
+.repo-table tbody th,
+.repo-table tbody td {
+  font-size: 0.875em;
+}
+
+/*
 Helper Classes
 ==================================
 */

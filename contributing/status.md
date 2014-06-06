@@ -1,33 +1,15 @@
 ---
 layout: default
-title:  "Open pull requests"
+title:  "Repository status"
 parent:
   name: "About the components"
   url: "contributing/#current-open-pull-requests"
 ---
 
-
-<!-- <ul>
-  <li><span data-user="cfpb" data-repo="cf-buttons"></span> - cf-buttons</li>
-  <li><span data-user="cfpb" data-repo="cf-colors"></span> - cf-colors</li>
-  <li><span data-user="cfpb" data-repo="cf-expandables"></span> - cf-expandables</li>
-  <li><span data-user="cfpb" data-repo="cf-forms"></span> - cf-forms</li>
-  <li><span data-user="cfpb" data-repo="cf-grid"></span> - cf-grid</li>
-  <li><span data-user="cfpb" data-repo="cf-icons"></span> - cf-icons</li>
-  <li><span data-user="cfpb" data-repo="cf-pagination"></span> - cf-pagination</li>
-  <li><span data-user="cfpb" data-repo="cf-typography"></span> - cf-typography</li>
-  <li><span data-user="cfpb" data-repo="cf-tabs"></span> - cf-tabs</li>
-  <li><span data-user="cfpb" data-repo="cf-tables"></span> - cf-tables</li>
-  <li><span data-user="cfpb" data-repo="capital-framework"></span> - capital-framework</li>
-  <li><span data-user="cfpb" data-repo="cf-demo"></span> - cf-demo</li>
-  <li><span data-user="cfpb" data-repo="cf-component-demo"></span> - cf-component-demo</li>
-  <li><span data-user="cfpb" data-repo="cf-grunt-config"></span> - cf-grunt-config</li>
-</ul> -->
-
 <table class="repo-table">
     <thead>
         <tr>
-            <th>Repo</th>
+            <th>Repository</th>
             <th>Open issues</th>
             <th>Open PRs</th>
             <th>Current release</th>
@@ -40,11 +22,19 @@ parent:
 </table>
 
 <script src="{{ site.baseurl }}/assets/js/jquery-1.11.0.min.js"></script>
-<script src="{{ site.baseurl }}/assets/js/jquery-pullrequests.min.js"></script>
+<script src="//cdn.jsdelivr.net/jstorage/0.1/jstorage.min.js"></script>
+<script src="https://cdn.rawgit.com/oauth-io/oauth-js/master/dist/oauth.min.js"></script>
 <script>
-jQuery(function($) {
-  //$('[data-user][data-repo]').pullrequests();
+function apiURL(url, params) {
+    if (params === undefined) {
+        params = "";
+    }
+    API_URL = "https://api.github.com"
 
+    return API_URL + url + "?access_token=" + $.jStorage.get("github_key") + params
+}
+
+function loadData() {
   var repoList = [
     'cf-buttons',
     'cf-colors',
@@ -54,27 +44,25 @@ jQuery(function($) {
     'cf-icons',
     'cf-pagination',
     'cf-typography',
-    'cf-tabs',
-    'cf-tables',
+    //'cf-tabs', repos with no commits are currently problematic
+    //'cf-tables',
     'capital-framework',
     'cf-demo',
     'cf-component-demo',
     'cf-grunt-config'
   ];
-  //var items = [];
 
-  //$.getJSON( 'https://api.github.com/repos/cfpb/' + repoList[0], function( data ) {
   $.each(repoList, function(key, name) {
     console.log("Outputting info for " + name);
 
     // Create row
-    $('.repo-table tbody').html('<tr class="repo-table_row ' + name + '"></tr>');
+    $('.repo-table tbody').append('<tr class="repo-table_row ' + name + '"></tr>');
 
     // Output repo name
     $('.' + name).append('<th><a href="https://github.com/cfpb/' + name + '">' + name + '</a></th>');
 
     // Issues API call
-    $.getJSON('https://api.github.com/repos/cfpb/' + name + '/issues', function(data) {
+    $.getJSON(apiURL('/repos/cfpb/' + name + '/issues'), function(data) {
       // Output issue count
       $('.' + name).append('<td><a href="https://github.com/cfpb/' + name + '/issues">' + data.length + '</a></td>');
       
@@ -88,28 +76,49 @@ jQuery(function($) {
       $('.' + name).append('<td><a href="https://github.com/cfpb/' + name + '/pulls">' + prCount + '</a></td>');
       
       // Tags API call
-      $.getJSON('https://api.github.com/repos/cfpb/' + name + '/tags', function(tags) {
+      $.getJSON(apiURL('/repos/cfpb/' + name + '/tags'), function(tags) {
         if (tags.length) {
           console.log(tags);
           // Output most recent tag
           $('.' + name).append('<td><a href="https://github.com/cfpb/' + name + '/releases/tag/' + tags[0].name + '">' + tags[0].name + '</a></td>');
 
           var mostRecentTagSHA = tags[0].commit.sha;
-        }
 
-        // Determine number of commits since most recent tag
-        $.getJSON('https://api.github.com/repos/cfpb/' + name + '/commits', function(commits) {
-          //console.log(commits);
-          var commitsSinceTag = 0,
-              i = 0;
-          while (commits[i].sha != mostRecentTagSHA) {
-            commitsSinceTag++;
-            i++;
-          }
-          $('.' + name).append('<td><a href="https://github.com/cfpb/' + name + '/commits">' + commitsSinceTag + '</a></td>');
-        }); // end commits API callback
+          // Determine number of commits since most recent tag
+          $.getJSON(apiURL('/repos/cfpb/' + name + '/commits'), function(commits) {
+            if (commits.length) {
+              console.log(commits);
+              var commitsSinceTag = 0,
+                  i = 0;
+              while (commits[i].sha != mostRecentTagSHA) {
+                commitsSinceTag++;
+                i++;
+              }
+              $('.' + name).append('<td><a href="https://github.com/cfpb/' + name + '/commits">' + commitsSinceTag + '</a></td>');
+            } // end if commits check
+          }); // end commits API callback
+        } else {
+          // if repo has no tags, output 'n/a'
+          $('.' + name).append('<td>n/a</td>');
+        } // end if tags check
       }); // end tags API callback
     }); // end issues API callback
   }); // end each repo loop
+} // end loadData
+
+jQuery(function($) {
+  // AU-THEN-TI-CATE
+
+  OAuth.initialize('LWajr2F90vtJiWka2aWoA8RbAkQ');
+
+  if ($.jStorage.get("github_key") === null) {
+      OAuth.popup('github', function(err, result) {
+          $.jStorage.set("github_key", result.access_token);
+          debugger
+          loadData();
+      });
+  } else {
+      loadData();
+  }
 }); // end ready
 </script>
