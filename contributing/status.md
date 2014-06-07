@@ -124,11 +124,11 @@ jQuery(function($) {
   OAuth.initialize('LWajr2F90vtJiWka2aWoA8RbAkQ');
 
   if ($.jStorage.get("github_key") === null) {
-    $(".auth-instructions").fadeIn();
+    $(".auth-instructions").slideDown();
     OAuth.popup('github', function(err, result) {
       $.jStorage.set("github_key", result.access_token);
       debugger
-      $(".auth-instructions").fadeOut();
+      $(".auth-instructions").slideUp();
       loadData();
     });
   } else {
