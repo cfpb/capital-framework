@@ -6,6 +6,18 @@ parent:
   url: "contributing/#current-open-pull-requests"
 ---
 
+<div class="auth-instructions">
+    <p>
+        Please authenticate with GitHub to view this page.
+        This app only reads public repository data.
+        You are not asked to give write access to anything.
+    </p>
+    <p>
+        If you haven't been presented with the authentication dialogue,
+        please check to make sure that you aren't blocking popups.
+    </p>
+</div>
+
 <table class="repo-table">
     <thead>
         <tr>
@@ -112,13 +124,15 @@ jQuery(function($) {
   OAuth.initialize('LWajr2F90vtJiWka2aWoA8RbAkQ');
 
   if ($.jStorage.get("github_key") === null) {
-      OAuth.popup('github', function(err, result) {
-          $.jStorage.set("github_key", result.access_token);
-          debugger
-          loadData();
-      });
-  } else {
+    $(".auth-instructions").fadeIn();
+    OAuth.popup('github', function(err, result) {
+      $.jStorage.set("github_key", result.access_token);
+      debugger
+      $(".auth-instructions").fadeOut();
       loadData();
+    });
+  } else {
+    loadData();
   }
 }); // end ready
 </script>
