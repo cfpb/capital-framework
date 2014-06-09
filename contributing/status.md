@@ -65,7 +65,6 @@ function loadData() {
   ];
 
   $.each(repoList, function(key, name) {
-    console.log("Outputting info for " + name);
 
     // Create row
     $('.repo-table tbody').append('<tr class="repo-table_row ' + name + '"></tr>');
@@ -90,7 +89,6 @@ function loadData() {
       // Tags API call
       $.getJSON(apiURL('/repos/cfpb/' + name + '/tags'), function(tags) {
         if (tags.length) {
-          console.log(tags);
           // Output most recent tag
           $('.' + name).append('<td><a href="https://github.com/cfpb/' + name + '/releases/tag/' + tags[0].name + '">' + tags[0].name + '</a></td>');
 
@@ -99,7 +97,6 @@ function loadData() {
           // Determine number of commits since most recent tag
           $.getJSON(apiURL('/repos/cfpb/' + name + '/commits'), function(commits) {
             if (commits.length) {
-              console.log(commits);
               var commitsSinceTag = 0,
                   i = 0;
               while (commits[i].sha != mostRecentTagSHA) {
@@ -127,7 +124,6 @@ jQuery(function($) {
     $(".auth-instructions").slideDown();
     OAuth.popup('github', function(err, result) {
       $.jStorage.set("github_key", result.access_token);
-      debugger
       $(".auth-instructions").slideUp();
       loadData();
     });
