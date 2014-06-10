@@ -41,12 +41,14 @@ function apiURL(url, params) {
     if (params === undefined) {
         params = "";
     }
-    API_URL = "https://api.github.com"
 
-    return API_URL + url + "?access_token=" + $.jStorage.get("github_key") + params
+    API_URL = "https://api.github.com";
+
+    return API_URL + url + "?access_token=" + $.jStorage.get("github_key") + params;
 }
 
 function loadData() {
+
   var repoList = [
     'cf-buttons',
     'cf-colors',
@@ -76,72 +78,99 @@ function loadData() {
     // Add repo name
     row += '<th><a href="' + repoURL + '">' + name + '</a></th>';
 
-    // Issues API call
-    $.ajax({
-      url: apiURL('/repos/cfpb/' + name + '/issues'),
-      async: false,
-      dataType: 'json',
-      success: function(data) {
-        // Output issue count
-        row += '<td><a href="' + repoURL + '/issues">' + data.length + '</a></td>';
+    var repoData = {};
+
+    // Run API calls asynchronously
+    $.when(
+
+      // Issues API call
+      $.ajax({
+        url: apiURL('/repos/cfpb/' + name + '/issues'),
+        dataType: 'json',
+        success: function(data) {
+          repoData.issues = data;
+        }
+      }),
+
+      // Tags API call
+      $.ajax({
+        url: apiURL('/repos/cfpb/' + name + '/tags'),
+        dataType: 'json',
+        success: function(data) {
+          repoData.tags = data;
+        }
+      }),
+
+      // Commits API call
+      $.ajax({
+        url: apiURL('/repos/cfpb/' + name + '/commits'),
+        dataType: 'json',
+        success: function(data) {
+          repoData.commits = data;
+        }
+      })
+
+    ).then(function () {
+      // When calls are complete, finish building the row and append
+
+      // Output issue count
+      row += '<td><a href="' + repoURL + '/issues">' + repoData.issues.length + '</a></td>';
+      
+      // Count PRs
+      var prCount = 0;
+      $.each(repoData.issues, function(issue) {
+        if (issue.pull_request) {
+          prCount++;
+        }
+      });
+
+      // Output PR count
+      row += '<td><a href="' + repoURL + '/pulls">' + prCount + '</a></td>';
+
+      // Test whether tags were returned
+      if (repoData.tags.length) {
         
-        // Count PRs
-        var prCount = 0;
-        $.each(data, function(issue) {
-          if (issue.pull_request) {
-            prCount++;
+        // Output most recent tag
+        row += '<td><a href="' + repoURL + '/releases/tag/' + repoData.tags[0].name + '">' + repoData.tags[0].name + '</a></td>';
+
+        var mostRecentTagSHA = repoData.tags[0].commit.sha;
+
+        // Test whether commits were returned
+        if (repoData.commits) {
+          // Determine number of commits since most recent tag
+
+          var commitsSinceTag = 0,
+              i = 0;
+          while (repoData.commits[i].sha != mostRecentTagSHA) {
+            commitsSinceTag++;
+            i++;
           }
-        });
-        row += '<td><a href="' + repoURL + '/pulls">' + prCount + '</a></td>';
-        
-        // Tags API call
-        $.ajax({
-          url: apiURL('/repos/cfpb/' + name + '/tags'),
-          async: false,
-          dataType: 'json',
-          success: function(tags) {
-            if (tags.length) {
-              // Output most recent tag
-              row += '<td><a href="' + repoURL + '/releases/tag/' + tags[0].name + '">' + tags[0].name + '</a></td>';
 
-              var mostRecentTagSHA = tags[0].commit.sha;
+          // Output number of commits since most recent tag
+          row += '<td><a href="' + repoURL + '/commits">' + commitsSinceTag + '</a></td>';
+        }
 
-              // Determine number of commits since most recent tag
-              $.ajax({
-                url: apiURL('/repos/cfpb/' + name + '/commits'),
-                async: false,
-                dataType: 'json',
-                success: function(commits) {
-                  if (commits.length) {
-                    var commitsSinceTag = 0,
-                        i = 0;
-                    while (commits[i].sha != mostRecentTagSHA) {
-                      commitsSinceTag++;
-                      i++;
-                    }
-                    row += '<td><a href="' + repoURL + '/commits">' + commitsSinceTag + '</a></td>';
-                  } // end if commits check
-                } // end commits API call success function
-              }); // end commits API request
-            } else {
-              // if repo has no tags, output 'n/a'
-              row += '<td>n/a</td>';
-            } // end if tags check
-          } // end tags API call success function
-        }); // end tags API request
-      } // end issues API call success function
-    }); // end issues API request
+      } else {
+
+        // if repo has no tags, output 'n/a'
+        row += '<td>n/a</td>';
+
+      } // end if tags check
+
+      // Close row
+      row += '</tr>';
+
+      // Append row
+      $('.repo-table tbody').append(row);
+
+    }); // end of promise structure
     
-    // Close row
-    row += '</tr>';
-
-    // Append row
-    $('.repo-table tbody').append(row);
   }); // end each repo loop
+
 } // end loadData
 
 jQuery(function($) {
-  // AU-THEN-TI-CATE
+  // Authenticate, and when done, load the data
 
   OAuth.initialize('LWajr2F90vtJiWka2aWoA8RbAkQ');
 
