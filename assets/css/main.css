@@ -106,9 +106,9 @@ Links
 */
 
 a {
-    -webkit-transition: .2s;
-       -moz-transition: .2s;
-            transition: .2s;
+    -webkit-transition: .1s;
+       -moz-transition: .1s;
+            transition: .1s;
 }
 
 a,
@@ -433,6 +433,52 @@ ul.repo-list {
 
 .repo-list h4 {
     text-transform: none;
+}
+
+/*
+Repo table (status page)
+----------------------------------
+*/
+
+.auth-instructions {
+    display: none;
+    padding: 1em 2em;
+    margin-bottom: 2em;
+    background: #FFECD1;
+}
+.repo-table th,
+.repo-table td {
+    padding: 4px 8px;
+    border: 1px solid #E3E4E5;
+    vertical-align: bottom;
+}
+.repo-table th:first-child,
+.repo-table td:first-child {
+    border-left: none;
+}
+.repo-table th:last-child,
+.repo-table td:last-child {
+    border-right: none;
+}
+.repo-table th {
+    text-align: left;
+}
+.repo-table thead th {
+    background: #E3E4E5;
+    border-color: #FFF;
+    font-family: "Avenir Next W01", Arial, sans-serif;
+    font-weight: 500;
+}
+.repo-table tbody th {
+    font-family: Consolas, Monaco, Courier, monospace;
+    width: 160px;
+}
+.repo-table tbody th,
+.repo-table tbody td {
+    font-size: 0.875em;
+}
+.repo-table a {
+    border-width: 0;
 }
 
 /*
