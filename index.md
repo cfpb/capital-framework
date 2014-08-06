@@ -2,17 +2,25 @@
 layout: default
 title: "Nice to meet you"
 description: |
-  Capital Framework is a set of front-end components developed at the
-  [Consumer Financial Protection Bureau](http://cfpb.github.io/).
+  Capital Framework
+  is a set of
+  HTML, CSS, and JavaScript patterns
+  by the [Consumer Financial Protection Bureau](http://cfpb.github.io/)
+  with the following goals:
+  consolidate front-end code patterns
+  across CFPB web products
+  in a [collaborative way](/capital-framework/components/#an-introduction-to-the-component-methodology),
+  adhere to 
+  design and UX standards
+  set forth by the [CFPB Design Manual](http://cfpb.github.io/design-manual/),
+  respect the guiding principles of accessibility,
+  and support a wide range of browsers,
+  even down to IE7.
+
+  As a work of the United States Government, all code is open source and in the public domain (excluding any exceptions listed within a Capital Framework components TERMS).
+  We encourage you to use this framework in your own projects and to contribute back.
 is_root: true
 ---
-
-
-## Defining features:
-
-- Components are broken into distinct [modular repositories]({{ site.baseurl }}/components/#an-introduction-to-the-component-methodology).
-- Coding meets accessibility standards.
-- Built to support Internet Explorer down to version 7.
 
 
 ## Test drive
