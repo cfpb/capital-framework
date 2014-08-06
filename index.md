@@ -23,7 +23,7 @@ is_root: true
 
 ## Test drive
 
-You can quickly grab componenets through the command line with Bower:
+You can quickly grab componenet's through the command line with Bower:
 
 ~~~
 $ bower install git://github.com/cfpb/cf-grid.git
