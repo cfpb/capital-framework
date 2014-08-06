@@ -108,8 +108,7 @@ or warnings using the [testing checklist snippet]({{ site.baseurl }}/contributin
 
 ### Follow our CSS naming conventions
 
-The discussion: [https://github.com/cfpb/capital-framework/issues/40](https://github.com/cfpb/capital-framework/issues/40)  
-The recommendation: Use our custom BEM naming conventions; see below:
+**We are using a customized BEM format**
 
 {% highlight css %}
 .block-name
@@ -118,7 +117,10 @@ The recommendation: Use our custom BEM naming conventions; see below:
 .block-name_element-name__element-modifier
 {% endhighlight %}
 
-#### Particulars
+*If you're curious how we landed here please review the discussion:
+[https://github.com/cfpb/capital-framework/issues/40](https://github.com/cfpb/capital-framework/issues/40)*
+
+#### More on BEM
 
 **Don't create elements of modifiers**
 
@@ -132,11 +134,12 @@ another block.
 
 For example, in this structural diagram...
 
-````
+~~~
 .press-contacts
   .press-contacts_main-list.list
     .list_item
-````
+~~~
+{: .highlight }
 
 `.press-contacts_main-list` is an element of `.press-contacts` but can override
 elements of `.list` like so: `.press-contacts_main-list .lit_item`.
