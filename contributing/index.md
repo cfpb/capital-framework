@@ -142,7 +142,7 @@ For example, in this structural diagram...
 {: .highlight }
 
 `.press-contacts_main-list` is an element of `.press-contacts` but can override
-elements of `.list` like so: `.press-contacts_main-list .lit_item`.
+elements of `.list` like so: `.press-contacts_main-list .list_item`.
 It is essentially overriding `.list`.
 
 As for naming conventions you should make sure to use the original block name
