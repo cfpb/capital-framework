@@ -14,7 +14,7 @@ description: |
 
   As a work of the United States Government, all code is open source and in the
   public domain (excluding any exceptions listed within a Capital Framework
-  components TERMS).
+  component's TERMS).
   We encourage you to use this framework in your own projects and to contribute
   back.
 is_root: true
