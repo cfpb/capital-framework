@@ -124,8 +124,9 @@ or warnings using the [testing checklist snippet]({{ site.baseurl }}/contributin
 
 **Don't create elements of modifiers**
 
-Modifiers with elements like `.list__spaced_item` are confusing and should be
-avoided in favor of `.list__spaced .list_item`.
+Appending an element name to a modifier class can result in a confusing class
+name like `.list__space_item`.
+Avoid this in favor of using a descendant, like this: `.list__spaced .list_item`.
 
 **Notes when nesting blocks**
 
