@@ -108,8 +108,7 @@ or warnings using the [testing checklist snippet]({{ site.baseurl }}/contributin
 
 ### Follow our CSS naming conventions
 
-The discussion: [https://github.com/cfpb/cf-demo/issues/40](https://github.com/cfpb/cf-demo/issues/40)  
-The recommendation: Use our custom BEM naming conventions; see below:
+**We are using a customized BEM format**
 
 {% highlight css %}
 .block-name
@@ -117,6 +116,39 @@ The recommendation: Use our custom BEM naming conventions; see below:
 .block-name__block-modifier
 .block-name_element-name__element-modifier
 {% endhighlight %}
+
+*If you're curious how we landed here please review the discussion:
+[https://github.com/cfpb/capital-framework/issues/40](https://github.com/cfpb/capital-framework/issues/40)*
+
+#### More on BEM
+
+**Don't create elements of modifiers**
+
+Appending an element name to a modifier class can result in a confusing class
+name like `.list__space_item`.
+Avoid this in favor of using a descendant, like this: `.list__spaced .list_item`.
+
+**Notes when nesting blocks**
+
+Keep in mind that here will be scenarios where an element overrides elements of
+another block.
+
+For example, in this structural diagram...
+
+~~~
+.press-contacts
+  .press-contacts_main-list.list
+    .list_item
+~~~
+{: .highlight }
+
+`.press-contacts_main-list` is an element of `.press-contacts` but can override
+elements of `.list` like so: `.press-contacts_main-list .list_item`.
+It is overriding the standard `.list`'s `.list_item` styles.
+
+As for naming conventions you should make sure to use the original block name
+when overriding a block with an element.
+For example notice how `.press-contacts_main-list` uses **`list`** in its name.
 
 
 ### Use Less but don't go crazy

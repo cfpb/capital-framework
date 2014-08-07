@@ -2,22 +2,55 @@
 layout: default
 title: "Nice to meet you"
 description: |
-  Capital Framework is a set of front-end components developed at the
-  [Consumer Financial Protection Bureau](http://cfpb.github.io/).
+  Capital Framework is a set of HTML, CSS, and JavaScript patterns by the
+  [Consumer Financial Protection Bureau](https://cfpb.github.io/) with the
+  following goals:
+  consolidate front-end code patterns across CFPB web products in a
+  [collaborative way](https://cfpb.github.io/capital-framework/components/#an-introduction-to-the-component-methodology),
+  adhere to design and UX standards set forth by the
+  [CFPB Design Manual](https://cfpb.github.io/design-manual/),
+  respect the guiding principles of accessibility,
+  and support a wide range of browsers, even down to IE7.
+
+  As a work of the United States Government, all code is open source and in the
+  public domain (excluding any exceptions listed within a Capital Framework
+  component's TERMS).
+  We encourage you to use this framework in your own projects and to contribute
+  back.
 is_root: true
 ---
 
 
-## Defining features:
+## Test drive
 
-- Components are broken into distinct modular repositories.
-- Coding meets accessibility standards.
-- Built to support Internet Explorer down to version 7.
+You can quickly grab componenet's through the command line with Bower:
 
+~~~
+$ bower install git://github.com/cfpb/cf-grid.git
+~~~
+{: .highlight }
 
-## Modular components?
+Once downloaded you can import the Capital Framework source files that you need:
 
-{% include components-intro.md %}
+{% highlight css %}
+@import "bower_components/cf-grid/src/cf-grid.less";
+
+// Set up a wrapper for your page using the grid_wrapper mixin from cf-grid.
+.my-page-wrapper {
+    .grid_wrapper();
+}
+
+// Set up some structural elements using the grid_column mixin from cf-grid.
+.my-main-content {
+    .grid_column(8);
+}
+.my-sidebar {
+    .grid_column(4);
+}
+{% endhighlight %}
+{: .highlight }
+
+That's it! You've just set up a simple two column layout.
 
 
 ## The workflow
