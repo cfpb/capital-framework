@@ -42,7 +42,7 @@ We hope to have a starter repo or a scaffolding system set up but this is still
 in research.
 We are currently looking into [Yeoman.io](http://yeoman.io/).
 In the meantime you can contribute to our discussion on scaffolding by following
-[this issue](https://github.com/cfpb/cf-demo/issues/49).
+[this issue](https://github.com/cfpb/capital-framework/issues/49).
 
 
 ## The code
