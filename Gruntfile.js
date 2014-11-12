@@ -306,24 +306,39 @@ module.exports = function(grunt) {
     },
 
     /**
+     * Shell: https://github.com/sindresorhus/grunt-shell
+     *
+     * Run shell commands.
+     * For running and executing Jekyll tasks
+     */
+
+    shell: {
+      jekyllBuild : {
+        command : 'jekyll build'
+      },
+      jekyllServe : {
+        command : 'jekyll serve'
+      }
+    },
+
+    /**
      * Watch: https://github.com/gruntjs/grunt-contrib-watch
      *
      * Run predefined tasks whenever watched file patterns are added, changed or deleted.
      * Add files to monitor below.
      */
+
     watch: {
-      gruntfile: {
-        files: ['Gruntfile.js', 'static/css/*.less', '<%%= uglify.bodyScripts.src %%>'],
-        tasks: ['default']
+      scripts: {
+        files: ['Gruntfile.js', 'static/css/*.less', 'static/js/app.js'],
+        tasks: ['default', 'shell:jekyllServe'],
+        options: {
+          spawn: false,
+          interrupt: true,
+          atBegin : true,
+          livereload : true
+        },
       },
-      css: {
-        files: ['static/css/*.less'],
-        tasks: ['cssdev']
-      },
-      cssjs: {
-        files: ['static/css/*.less', 'static/js/app.js'],
-        tasks: ['cssdev', 'jsdev']
-      }
     },
 
     /**
