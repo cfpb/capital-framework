@@ -1,0 +1,39 @@
+{
+  "name": "capital-framework",
+  "version": "0.1.0",
+  "description": "Project-wide documentation for Capital Framework.",
+  "homepage": "http://cfpb.github.io/capital-framework/",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "email": "tech@cfpb.gov",
+    "url": "http://consumerfinance.gov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/capital-framework.git"
+  },
+  "license": "CC0",
+  "dependencies": {
+    "cf-core": "cfpb/cf-core#~0.8.0",
+    "cf-buttons": "cfpb/cf-buttons",
+    "cf-expandables": "cfpb/cf-expandables#~0.6.1",
+    "cf-forms": "cfpb/cf-forms#~1.1.0",
+    "cf-grid": "cfpb/cf-grid#~0.9.0",
+    "cf-icons": "cfpb/cf-icons",
+    "cf-pagination": "cfpb/cf-pagination#~0.4.1"
+  },
+  "exportsOverride": {
+    "cf-*": {
+      "css": "src/**/*.css",
+      "less": "src/**/*.less",
+      "fonts": "src/fonts/*.*",
+      "js": "src/**/*.js"
+    },
+    "html5shiv": {
+      "js": "dist/html5shiv-printshiv.min.js"
+    },
+    "jquery.easing": {
+      "js": "js/jquery.easing.js"
+    }
+  }
+}
