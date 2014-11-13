@@ -1,0 +1,19 @@
+- title: "Getting Started"
+  href: "/getting-started/"
+  subcategories:
+    - subtitle: "The Yeoman Generator"
+      subhref: "#yeoman"
+    - subtitle: "Downloading Source files"
+      subhref: "#download"
+
+- title: "Components"
+  subcategories:
+    - subtitle: "Component 1"
+      subhref: "#"
+
+- title: "Contributing"
+  href: "/contributing/"
+
+
+- title: "About"
+  href: "/about/"

@@ -24,25 +24,6 @@ author:
 logourl: assets/img/logo.png
 logoalt: The Consumer Financial Protection Bureau
 
-# Navigation
-# List links that should appear in the site sidebar here
-navigation:
-- text: Nice to meet you
-  url: index.html
-  internal: true
-- text: About the components
-  url: components/
-  internal: true
-- text: About the demo/workflow
-  url: cf-demo/
-  internal: true
-- text: Roadmap
-  url: roadmap/
-  internal: true
-- text: Contributing
-  url: contributing/
-  internal: true
-
 # Repo list
 # List repos that you would like to appear on the homepage here
 repos:

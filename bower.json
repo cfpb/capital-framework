@@ -20,7 +20,8 @@
     "cf-forms": "cfpb/cf-forms#~1.1.0",
     "cf-grid": "cfpb/cf-grid#~0.9.0",
     "cf-icons": "cfpb/cf-icons",
-    "cf-pagination": "cfpb/cf-pagination#~0.4.1"
+    "cf-pagination": "cfpb/cf-pagination#~0.4.1",
+    "cf-layout": "cfpb/cf-layout#~0.1.0"
   },
   "exportsOverride": {
     "cf-*": {
