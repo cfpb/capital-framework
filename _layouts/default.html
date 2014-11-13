@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/normalize.css">
-    <link rel="stylesheet" href="//fast.fonts.net/cssapi/0a274127-32a9-474a-bbdb-f23f410e88c5.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/syntax.css">
     <!--[if lt IE 9]>
@@ -16,6 +14,7 @@
 
   </head>
   <body>
+  <div class="body-wrapper">
     {% include header.html %}
 
     <div class="wrap content">
@@ -23,26 +22,15 @@
 
       <section id="main" class="main-content" role="main">
 
-        {% if page.is_root != true %}
-        {% include beginners-message.html %}
-        {% endif %}
-
         {% include content-header.html %}
         {{ content }}
 
-        {% if page.parent %}
-        {% include back.html %}
-        {% endif %}
-
       </section>
 
-
-      <footer role="contentinfo">
-        <p>This project is maintained by <a href="{{ site.author.url }}">{{ site.author.name }}</a>.</p>
-
-        <p>Hosted on <a href="http://pages.github.com/">GitHub Pages</a>.</p>
-      </footer>
-
     </div><!-- /.wrap -->
+
+      {% include footer.html %}
+
+  </div><!-- /.body-wrapper -->
   </body>
 </html>

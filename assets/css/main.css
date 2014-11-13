@@ -7604,6 +7604,19 @@ figure img {
   name: EOF
   eof: true
 */
+html,
+body {
+  height: 100%;
+}
+/* for sticky footer */
+.body-wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+nav ul {
+  list-style: none;
+}
 /* ==========================================================================
    helper classes
    ========================================================================== */
@@ -7644,11 +7657,11 @@ pre {
   font-family: "Input Mono", Consolas, monaco, monospace;
 }
 /* ==========================================================================
-   Header styles
+   Header
    ========================================================================== */
 @media (min-width: 1100px) {
   .site-header {
-    padding: 3.25em 0;
+    padding: 3em 0;
   }
   .site-header .content-l_col {
     vertical-align: middle;
@@ -7728,6 +7741,34 @@ pre {
   font-size: 1.5em;
   padding: .5em .5em;
 }
+@media (min-width: 1100px) {
+  .hero_code {
+    width: 60%;
+  }
+}
 .hero_p {
   margin-bottom: 0;
+}
+/* ==========================================================================
+   Main content
+   ========================================================================== */
+.main-content {
+  padding: 2em 0;
+}
+.section-image {
+  width: 65%;
+  margin: 0 auto;
+}
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  display: table-row;
+  /* for sticky footer */
+  height: 1px;
+  /* for sticky footer */
+  background: #f1f2f2;
+}
+.site-footer_wrapper {
+  padding: 2em 0;
 }
