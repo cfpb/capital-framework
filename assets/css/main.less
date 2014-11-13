@@ -9,6 +9,14 @@
     .webfont-demi();
 }
 
+.sans {
+    .webfont-regular();
+}
+
+pre {
+    font-family: "Input Mono", Consolas, monaco, monospace;
+}
+
 /* ==========================================================================
    Header styles
    ========================================================================== */
@@ -57,3 +65,28 @@
     vertical-align: middle;
 }
 
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+    background: @green-tint;
+    border-top: 6px solid @green;
+    padding: 1.4em 0;
+}
+
+.hero_heading {
+    .webfont-demi();
+    font-size: 3.5em;
+}
+
+.hero_code {
+    background: @darkgray;
+    color: @gray-10;
+    font-size: 1.5em;
+    padding: .5em .5em;
+}
+
+.hero_p {
+    margin-bottom: 0;
+}

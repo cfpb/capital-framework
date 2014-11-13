@@ -7615,6 +7615,34 @@ figure img {
 .lt-ie9 .demi {
   font-weight: normal !important;
 }
+.sans {
+  font-family: "AvenirNextLTW01-Regular", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.sans em,
+.sans i {
+  font-family: "AvenirNextLTW01-Italic", Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+.lt-ie9 .sans em,
+.lt-ie9 .sans i {
+  font-style: normal !important;
+}
+.sans strong,
+.sans b {
+  font-family: "AvenirNextLTW01-Demi", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+.lt-ie9 .sans strong,
+.lt-ie9 .sans b {
+  font-weight: normal !important;
+}
+pre {
+  font-family: "Input Mono", Consolas, monaco, monospace;
+}
 /* ==========================================================================
    Header styles
    ========================================================================== */
@@ -7676,4 +7704,30 @@ figure img {
 .lt-ie9 .global-nav_list strong,
 .lt-ie9 .global-nav_list b {
   font-weight: normal !important;
+}
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  background: #dbedd4;
+  border-top: 6px solid #2cb34a;
+  padding: 1.4em 0;
+}
+.hero_heading {
+  font-family: "AvenirNextLTW01-Demi", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.5em;
+}
+.lt-ie9 .hero_heading {
+  font-weight: normal !important;
+}
+.hero_code {
+  background: #43484e;
+  color: #f1f2f2;
+  font-size: 1.5em;
+  padding: .5em .5em;
+}
+.hero_p {
+  margin-bottom: 0;
 }
