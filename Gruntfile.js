@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     /**
      * Bower: https://github.com/yatskevich/grunt-bower-task
      *
-     * Install Bower packages and migrate static assets.
+     * Install Bower packages and migrate assets.
      */
     bower: {
       install: {
@@ -28,9 +28,9 @@ module.exports = function(grunt) {
           cleanTargetDir: true,
           layout: function(type, component) {
             if (type === 'img') {
-              return path.join('../static/img');
+              return path.join('../assets/img');
             } else if (type === 'fonts') {
-              return path.join('../static/fonts');
+              return path.join('../assets/fonts');
             } else {
               return path.join(component);
             }
@@ -84,16 +84,16 @@ module.exports = function(grunt) {
           // 'vendor/history.js/jquery.history.js',
           'vendor/chosen/chosen.jquery.js',
           'vendor/cf-*/*.js',
-          'static/js/jquery.custom-input.js',
-          'static/js/jquery.custom-select.js',
-          'static/js/jquery.cf_input-split.js',
+          'assets/js/jquery.custom-input.js',
+          'assets/js/jquery.custom-select.js',
+          'assets/js/jquery.cf_input-split.js',
           'vendor/string_score/string_score.js',
-          'static/js/jquery.type-and-filter.js',
-          'static/js/breakpoint-handler.js',
-          // 'static/js/jquery.cf_pagination.js',
-          'static/js/app.js'
+          'assets/js/jquery.type-and-filter.js',
+          'assets/js/breakpoint-handler.js',
+          // 'assets/js/jquery.cf_pagination.js',
+          'assets/js/app.js'
         ],
-        dest: 'static/js/main.js'
+        dest: 'assets/js/main.js'
       }
     },
 
@@ -108,7 +108,7 @@ module.exports = function(grunt) {
           paths: grunt.file.expand('vendor/**/'),
         },
         files: {
-          'static/css/main.css': ['static/css/main.less']
+          'assets/css/main.css': ['assets/css/main.less']
         }
       }
     },
@@ -125,9 +125,9 @@ module.exports = function(grunt) {
         map: false
       },
       main: {
-        // Prefix `static/css/main.css` and overwrite.
+        // Prefix `assets/css/main.css` and overwrite.
         expand: true,
-        src: ['static/css/main.css']
+        src: ['assets/css/main.css']
       },
     },
 
@@ -144,11 +144,11 @@ module.exports = function(grunt) {
       },
       // headScripts: {
       //   src: 'vendor/html5shiv/html5shiv-printshiv.js',
-      //   dest: 'static/js/html5shiv-printshiv.js'
+      //   dest: 'assets/js/html5shiv-printshiv.js'
       // },
       bodyScripts: {
-        src: ['static/js/main.js'],
-        dest: 'static/js/main.min.js'
+        src: ['assets/js/main.js'],
+        dest: 'assets/js/main.min.js'
       }
     },
 
@@ -185,7 +185,7 @@ module.exports = function(grunt) {
           linebreak: true
         },
         files: {
-          src: ['static/css/*.min.css']
+          src: ['assets/css/*.min.css']
         }
       },
       js: {
@@ -195,7 +195,7 @@ module.exports = function(grunt) {
           linebreak: true
         },
         files: {
-          src: ['static/js/*.min.js']
+          src: ['assets/js/*.min.js']
         }
       }
     },
@@ -211,7 +211,7 @@ module.exports = function(grunt) {
           processImport: false
         },
         files: {
-          'static/css/main.min.css': ['static/css/main.css'],
+          'assets/css/main.min.css': ['assets/css/main.css'],
         }
       },
       'ie-alternate': {
@@ -219,7 +219,7 @@ module.exports = function(grunt) {
           processImport: false
         },
         files: {
-          'static/css/main.ie.min.css': ['static/css/main.ie.css'],
+          'assets/css/main.ie.min.css': ['assets/css/main.ie.css'],
         }
       }
     },
@@ -238,7 +238,7 @@ module.exports = function(grunt) {
           legacyWidth: 60
         },
         files: {
-          'static/css/main.ie.css': 'static/css/main.css'
+          'assets/css/main.ie.css': 'assets/css/main.css'
         }
       }
     },
@@ -262,7 +262,7 @@ module.exports = function(grunt) {
               'vendor/slick-carousel/slick.min.js',
               'vendor/slick-carousel/slick.css'
             ],
-            dest: 'static'
+            dest: 'assets'
           }
         ]
       }
@@ -302,7 +302,7 @@ module.exports = function(grunt) {
           EventEmitter: true
         }
       },
-      all: ['static/js/main.js']
+      all: ['assets/js/main.js']
     },
 
     /**
@@ -329,15 +329,15 @@ module.exports = function(grunt) {
      */
 
     watch: {
-      scripts: {
-        files: ['Gruntfile.js', 'static/css/*.less', 'static/js/app.js'],
-        tasks: ['default', 'shell:jekyllServe'],
-        options: {
-          spawn: false,
-          interrupt: true,
-          atBegin : true,
-          livereload : true
-        },
+      files: [ 'Gruntfile.js',
+               'assets/css/*.less',
+               'assets/js/app.js'],
+      tasks: ['cssdev', 'jsdev'],
+      options: {
+        spawn: false,
+        interrupt: true,
+        atBegin : true,
+        livereload : true
       },
     },
 
@@ -374,7 +374,7 @@ module.exports = function(grunt) {
       var key = families[i];
       topdoc[key] = {
         options: {
-          source: 'static/css/',
+          source: 'assets/css/',
           destination: 'docs/' + key + '/',
           template: 'node_modules/cf-component-demo/docs/',
           templateData: {
@@ -419,9 +419,9 @@ module.exports = function(grunt) {
    * Create custom task aliases and combinations.
    */
   grunt.registerTask('vendor', ['bower:install', 'string-replace:chosen', 'concat:cf-less']);
-  grunt.registerTask('cssdev', ['less', 'autoprefixer', 'legacssy', 'cssmin', 'usebanner:css']);
-  grunt.registerTask('jsdev', ['concat:bodyScripts', 'uglify', 'usebanner:js']);
-  grunt.registerTask('default', ['cssdev', 'jsdev', 'copy:vendor', 'concurrent:topdoc']);
+  grunt.registerTask('cssdev', ['less', 'autoprefixer', 'legacssy', 'cssmin']);
+  grunt.registerTask('jsdev', ['concat:bodyScripts', 'uglify']);
+  grunt.registerTask('default', ['cssdev', 'jsdev', 'copy:vendor']);
   grunt.registerTask('test', ['jshint']);
 
 };

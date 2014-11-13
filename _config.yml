@@ -1,8 +1,8 @@
 # Base configuration
-permalink: /:title 
+permalink: /:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 markdown: kramdown
-pygments: true
+highlighter: true
 
 # Title
 name: Capital Framework

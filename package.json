@@ -12,6 +12,7 @@
   "keywords": [
     "capital-framework"
   ],
+  "postinstall": "grunt vendor",
   "devDependencies": {
     "grunt": "~0.4.4",
     "grunt-autoprefixer": "~0.6.5",
