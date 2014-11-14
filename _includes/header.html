@@ -7,7 +7,7 @@
     <nav class="global-nav content-l_col content-l_col-2-3">
       <ul class="global-nav_list">
         {% for link in site.data.nav %}
-          <li class="nav-list-item"><a href="{{ site.url }}{{ link.href }}">{{ link.title }}</a></li>
+          <li class="nav-list-item"><a href="{{ site.baseurl }}{{ link.href }}">{{ link.title }}</a></li>
         {% endfor %}
       </ul>
     </nav>

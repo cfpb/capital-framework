@@ -7,6 +7,7 @@
       subhref: "#download"
 
 - title: "Components"
+  href: "/components/"
   subcategories:
     - subtitle: "Component 1"
       subhref: "#"

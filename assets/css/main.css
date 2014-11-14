@@ -7604,19 +7604,6 @@ figure img {
   name: EOF
   eof: true
 */
-html,
-body {
-  height: 100%;
-}
-/* for sticky footer */
-.body-wrapper {
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-nav ul {
-  list-style: none;
-}
 /* ==========================================================================
    helper classes
    ========================================================================== */
@@ -7655,6 +7642,24 @@ nav ul {
 }
 pre {
   font-family: "Input Mono", Consolas, monaco, monospace;
+}
+/* ==========================================================================
+   Universal
+   ========================================================================== */
+html,
+body {
+  height: 100%;
+}
+/* for sticky footer */
+.body-wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 /* ==========================================================================
    Header
@@ -7723,7 +7728,6 @@ pre {
    ========================================================================== */
 .hero {
   background: #dbedd4;
-  border-top: 6px solid #2cb34a;
   padding: 1.4em 0;
 }
 .hero_heading {

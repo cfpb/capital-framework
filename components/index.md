@@ -1,115 +1,35 @@
 ---
 layout: default
-title:  "About the components"
-toc:
-  root: /components/
-  list:
-  - name: "An introduction to the component methodology"
-  - name: "Anatomy of a component"
-  - name: "The code"
-  - name: "Contributing"
-  - name: "Compiling a component"
-    list:
-    - name: "Requirements"
-    - name: "Workflow"
-    - name: "Grunt tasks explained"
-    - name: "Adding new dependencies"
-  - name: "Using components independent of Capital Framework"
-  - name: "Demos and docs"
-  - name: "Starting new components"
+title:  "Components"
 ---
 
-
-{% include toc.html %}
-
-
-## An introduction to the component methodology
-
-{% include components-intro.md %}
+The Capital Framework is divided into a series of components. These components can be used individually, but are designed to work together. For information on how to get started using Capital Framework, please read the [Getting Started](getting-started) page. 
 
 
-## Anatomy of a component
+## [cf-core](https://cfpb.github.io/cf-core/docs/)
 
-If you're looking for an explanation of the folders and files that make up a
-component repository then please read the [component anatomy page]({{ site.baseurl }}/components/anatomy.html).
+cf-core contains core styles for starting a Capital Framework project. It includes Normalize.css, variables, media query and utility mixins, class utilities, typography, and standard base styling. 
 
+## [cf-buttons](http://cfpb.github.io/cf-buttons/docs/)
 
-## The code
+cf-buttons contains button styles including default, secondary, destructive, disabled, super, and compound buttons, button links, buttons with icons, and button groups.
 
-{% include components-repositories.md %}
+## [cf-expandables](http://cfpb.github.io/cf-expandables/docs/)
 
-_Styleguides built with the excellent [Topdoc](https://github.com/topcoat/topdoc/)._
+cf-expandables contains a felxible show/hide component. 
 
+## [cf-forms](http://cfpb.github.io/cf-forms/docs/)
 
-## Contributing
+cf-forms contains enhanced form styles including inputs, input states, and grouped form styles.
 
-We welcome your feedback and contributions.  
-[Find out about contributing]({{ site.baseurl }}/contributing/)
+## [cf-grid](http://cfpb.github.io/cf-grid/docs/)
 
+cf-grid contains a Less-based CSS3 grid system that encourages semantic HTML. 
 
-## Compiling a component
+## [cf-icons](http://cfpb.github.io/cf-icons/docs/)
 
-### Requirements
+cf-icons contains a custom icon font and useful CSS styles for working with the icons.
 
-- [npm](https://npmjs.org/)
-- [grunt-cli](http://gruntjs.com/getting-started)
-- That's it! NPM will help you install everything else you need.
+## [cf-pagination](http://cfpb.github.io/cf-pagination/docs/)
 
-### Workflow
-
-1. Clone a component repo and `cd` into its root
-2. `npm install` – Initializes Grunt in this folder and installs dependencies.
-3. `grunt vendor` – Pulls in Bower components.
-4. `grunt` – Compiles LESS files and generates the docs and demo pages.
-
-### Grunt tasks explained
-
-Please [read our guide]({{ site.baseurl }}/components/grunt-tasks.html) for a
-high level explanation of the above Grunt tasks.
-
-### Adding new dependencies
-
-#### Step 1: Add to `bower.json`
-
-{% include adding-deps-step1.md %}
-
-#### Step 2: Wiring assets
-
-{% include adding-deps-step2.md %}
-
-
-## Using components independent of Capital Framework
-
-If you're already using [Bower](http://bower.io/), simply add this component as a dependency
-and integrate it into your build process.
-It's not currently in the Bower registry, so you'll have to point to this Git repo's URL.
-
-You can also just view the CSS in the `demo` folder and snag what you want.
-
-
-## Demos and docs
-
-Each component builds out a demo and docs page.
-The demo page is a simple html page with no extra styling which is useful for
-browser testing the component.
-The docs page is a generated style guide documenting the component markup and CSS.
-
-These pages are generated using the [grunt-topdoc](https://github.com/topcoat/grunt-topdoc)
-task which uses templates from [cf-component-demo](https://github.com/cfpb/cf-component-demo).
-Components are set up to generate these pages along with the default Grunt tasks.
-
-Make sure that any new CSS is appropriately documented using Topdoc.
-Please refer to the [Getting Started](https://github.com/cfpb/cf-component-demo/blob/master/README.md#getting-started)
-section of cf-component-demo for further information.
-
-
-## Starting new components
-
-If you'd like to create a new component please review our [roadmap]({{ site.baseurl }}/roadmap/)
-first to make sure we haven't already started.
-We hope to have a starter repo or a scaffolding system set up for creating
-new components quickly but this is still in [research](https://github.com/cfpb/capital-framework/issues/49).
-In the meantime our current recommendation is to clone and edit an existing
-component.
-
-Also consider if we can leverage any existing code from CFPB web products.
+cf-pagination contains basic pagination styling for working with multipage displays such as search results or blog archives.
