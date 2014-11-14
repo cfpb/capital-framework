@@ -20,12 +20,10 @@
     <main class="content content__1-3" id="main" role="main">
       <div class="content_bar"></div>
       <div class="content_wrapper">
-        <aside class="content_sidebar">
-            Section navigation
-        </aside>
+        {% include section-nav.html %}
         <section class="content_main">
-            {% include content-header.html %}
-            {{ content }}
+          {% include content-header.html %}
+          {{ content }}
         </section>
       </div>
     </main>

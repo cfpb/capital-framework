@@ -1,0 +1,13 @@
+<aside class="content_sidebar sans">
+    {% for link in site.data.nav %}
+      {% if link.title == page.title and link.subcategories != null %}
+        <nav>
+          <ul>
+            {% for subpage in link.subcategories %}
+              <li><a href="{{ site.baseurl }}{{ subpage.subhref }}">{{ subpage.subtitle }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+      {% endif %}
+    {% endfor %}
+</aside>

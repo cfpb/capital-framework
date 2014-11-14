@@ -3,21 +3,19 @@ layout: default
 title:  "Contributing"
 ---
 
-## Contributing guidelines
-
-### Demos and docs
+## Demos and docs
 
 Each component should build out a demo and docs page using
 [grunt-topdoc](https://github.com/topcoat/grunt-topdoc). The demo page is a simple html page with no extra styling which is useful for browser testing the component. The docs page is a generated style guide documenting the component markup and CSS.
 
 These pages are generated using the grunt-topdoc task which uses templates from cf-component-demo. Components are set up to generate these pages along with the default Grunt tasks.
 
-### Browser testing
+## Browser testing
 
 Components should be cross browser tested. When contributing code please publicly track the tests you have run using the
 [testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html).
 
-### JavaScript testing
+## JavaScript testing
 
 JavaScript tests can be run with the `grunt test` command. Before making a pull request please publicly track that all tests have passed
 using the [testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html).
@@ -25,7 +23,7 @@ using the [testing checklist snippet]({{ site.baseurl }}/contributing/testing-sn
 New unit tests should be written using [QUnit](https://qunitjs.com/) for any functionality added.
 
 
-### Accessibility testing
+## Accessibility testing
 
 Components should conform to [Section 508](http://www.section508.gov/)
 and [WCAG 2.0 level AA](http://www.w3.org/TR/WCAG20/) guidelines.
@@ -36,19 +34,19 @@ As each component is different we ask that you update the snippet to track
 the accessibility guidlines you have tested for.
 
 
-### Coding style
+## Coding style
 
 In lieu of a formal style guide, take care to maintain the existing coding style.
 
 
-#### Adhere to any linting errors or warnings
+### Adhere to any linting errors or warnings
 
 Linting tasks that are set up within component build processes are there to
 promote consistency. When contributing code please publicly track that there are no linting errors
 or warnings using the [testing checklist snippet]({{ site.baseurl }}/contributing/testing-snippet.html).
 
 
-#### Follow our CSS naming conventions
+### Follow our CSS naming conventions
 
 **We are using a customized BEM format**
 
@@ -66,13 +64,13 @@ name like `.list__space_item`.
 Avoid this in favor of using a descendant, like this: `.list__spaced .list_item`.
 
 
-#### Shoot for mobile first declarations
+### Shoot for mobile first declarations
 
 In most cases styles should be declared mobile first,
 then enhanced with `min-width` media queries. By doing this we create a base experience that all devices can use and one that does not require media query support.
 
 
-#### Automatically create an alternate stylesheet for older IE
+### Automatically create an alternate stylesheet for older IE
 
 Use [grunt-legacssy](https://github.com/robinpokorny/grunt-legacssy) to
 automatically create an alternate version of your stylesheet.
