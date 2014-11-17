@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "Getting Started"
+title:  "Getting started"
 ---
 
 The Capital Framework provides a set of modular HTML, CSS, and JavaScript patterns that can be used both collectively and individually. Our recommended workflow is to use the cf-generator Yeoman generator to scaffold out a new Capital Framework project. This allows you to pick and choose your modules as well as providing a solid front end build process.
