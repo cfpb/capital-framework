@@ -13,20 +13,20 @@ To use the Yeoman generator, you will need [Node.js](http://nodejs.org/), [Yeoma
 
 [Node.js](http://nodejs.org/) can be downloaded and installed directly from the Node website, or by using a package manager for your system. At the CFPB we use Homebrew. To install the dependencies:
 
-```bash
+{% highlight bash %}
 $ brew install node #if installing node with homebrew
 $ npm install -g grunt-cli bower yo generator-cf
-``` 
+{% endhighlight %}
 
 ### Scaffolding out a project
 
 To create a new project, create a directory, cd into that directory, and run the `yo cf` command:
 
-```bash
+{% highlight bash %}
 $ mkdir my-awesome-projet
 $ cd my-awesome-project
 $ yo cf
-```
+{% endhighlight %}
 
 The generator will prompt you to complete information about the project and choose the Capital Framework modules you would like to use.
 
