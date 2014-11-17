@@ -3,6 +3,7 @@
       {% if link.title == page.title and link.subcategories != null %}
         <nav>
           <ul>
+            <li><a href="{{ site.baseurl }}{{ link.href }}">{{ link.title }}</a></li>
             {% for subpage in link.subcategories %}
               <li><a href="{{ site.baseurl }}{{ subpage.subhref }}">{{ subpage.subtitle }}</a></li>
             {% endfor %}

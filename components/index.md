@@ -33,3 +33,7 @@ cf-icons contains a custom icon font and useful CSS styles for working with the 
 ## [cf-pagination](http://cfpb.github.io/cf-pagination/docs/)
 
 cf-pagination contains basic pagination styling for working with multipage displays such as search results or blog archives.
+
+## [cf-layout](http://cfpb.github.io/cf-layout/docs/)
+
+cf-layout contains a set of HTML & CSS layout helpers, such as common layout patterns and dividers. 
