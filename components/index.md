@@ -3,7 +3,7 @@ layout: default
 title:  "Components"
 ---
 
-The Capital Framework is divided into a series of components. These components can be used individually, but are designed to work together. For information on how to get started using Capital Framework, please read the [Getting Started](getting-started) page. 
+The Capital Framework is divided into a series of components. These components can be used individually, but are designed to work together. For information on how to get started using Capital Framework, please read the [Getting Started](../getting-started/) page. 
 
 
 ## [cf-core](https://cfpb.github.io/cf-core/docs/)

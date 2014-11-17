@@ -24,4 +24,4 @@ We actively test Capital Framework components in the following browsers:
 
 We deeply value accessible web products and work to ensure that all of our componets are 508 compliant. We actively test components to ensure that they are keyboard and screen reader friendly.
 
-For more information, please see our [testing checklist]()
+For more information, please see our [testing checklist](../contributing/testing-snippet.html).
