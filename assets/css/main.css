@@ -7735,6 +7735,7 @@ nav ul {
   font-style: normal;
   font-weight: bold;
   font-size: 3.5em;
+  margin: 0;
 }
 .lt-ie9 .hero_heading {
   font-weight: normal !important;
@@ -7744,6 +7745,7 @@ nav ul {
   color: #f1f2f2;
   font-size: 1.5em;
   padding: .5em .5em;
+  margin: 1.5em 0;
 }
 @media (min-width: 1100px) {
   .hero_code {
@@ -7753,12 +7755,65 @@ nav ul {
 .hero_p {
   margin-bottom: 0;
 }
+.jump-link {
+  position: relative;
+  margin-right: 1.5em;
+  border-bottom-width: 1px;
+  font-family: "AvenirNextLTW01-Medium", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+.lt-ie9 .jump-link {
+  font-weight: normal !important;
+}
+.jump-link:after {
+  content: "\e002";
+  right: -1.25em;
+}
+.jump-link__download:after {
+  content: "\e406";
+  right: -1.5em;
+}
+.jump-link__external-link:after {
+  content: "\e610";
+}
+.jump-link:after {
+  font-family: 'CFPB Minicons';
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  bottom: 0;
+  border-bottom: none;
+}
+.jump-link__back {
+  margin-left: 1.25em;
+}
+.jump-link__back:after {
+  content: '';
+}
+.jump-link__back:before {
+  font-family: 'CFPB Minicons';
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: "\e000";
+  position: absolute;
+  left: -1.25em;
+  top: .2em;
+  padding-right: .25em;
+  border-bottom: none;
+}
+.list__links .jump-link {
+  margin-top: -1px;
+}
 /* ==========================================================================
    Main content
    ========================================================================== */
-.main-content {
-  padding: 2em 0;
-}
 .section-image {
   width: 65%;
   margin: 0 auto;

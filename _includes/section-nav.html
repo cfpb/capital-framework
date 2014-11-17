@@ -5,7 +5,7 @@
           <ul>
             <li><a href="{{ site.baseurl }}{{ link.href }}">{{ link.title }}</a></li>
             {% for subpage in link.subcategories %}
-              <li><a href="{{ site.baseurl }}{{ subpage.subhref }}">{{ subpage.subtitle }}</a></li>
+              <li><a href="{{ subpage.subhref }}">{{ subpage.subtitle }}</a></li>
             {% endfor %}
           </ul>
         </nav>

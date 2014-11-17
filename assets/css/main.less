@@ -99,6 +99,7 @@ nav ul {
 .hero_heading {
     .webfont-demi();
     font-size: 3.5em;
+    margin: 0;
 }
 
 .hero_code {
@@ -106,6 +107,7 @@ nav ul {
     color: @gray-10;
     font-size: 1.5em;
     padding: .5em .5em;
+    margin: 1.5em 0;
 }
 
 @media (min-width: 1100px) {
@@ -118,13 +120,68 @@ nav ul {
     margin-bottom: 0;
 }
 
+.jump-link {
+    position: relative;
+    // Right margin gives the absolutely positioned icon somewhere to go without
+    // inheriting the bottom border.
+    margin-right: 1.5em;
+    border-bottom-width: 1px;
+    .webfont-medium();
+    &:after {
+        // Inserts the cf-icon-right (arrow) glyph.
+        content: "\e002";
+        right: -1.25em;
+    }
+    &__download {
+        &:after {
+            // Inserts the cf-icon-download glyph.
+            content: "\e406";
+            right: -1.5em;
+        }
+    }
+
+    &__external-link {
+        &:after {
+            // Inserts the cf-icon-external-link glyph.
+            content: "\e610";
+        }
+    }
+
+    &:after {
+        .cf-icon();
+        position: absolute;
+        bottom: 0;
+        border-bottom: none;
+    }
+
+    &__back {
+        margin-left: 1.25em;
+
+        &:after {
+            content: ''
+        }
+
+        &:before {
+            .cf-icon();
+            // Inserts the cf-icon-left (arrow) glyph.
+            content: "\e000";
+            position: absolute;
+            left: -1.25em;
+            top: .2em;
+            padding-right: .25em;
+            border-bottom: none;
+        }
+    }
+
+    .list__links & {
+        margin-top: -1px;
+    }
+}
+
+
 /* ==========================================================================
    Main content
    ========================================================================== */
-
-.main-content {
-    padding: 2em 0;
-}
 
 .section-image {
     width: 65%;

@@ -19,14 +19,3 @@ baseurl: '/capital-framework'
 author:
   name: The CFPB
   url: http://cfpb.github.io/
-
-# Point the logo URL at a file in your repo or hosted elsewhere by your organization
-logourl: assets/img/logo.png
-logoalt: The Consumer Financial Protection Bureau
-
-# Repo list
-# List repos that you would like to appear on the homepage here
-repos:
-- name: capital-framework
-  description: The workflow/example project
-  url: https://github.com/cfpb/capital-framework
