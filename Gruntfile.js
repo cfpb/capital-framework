@@ -330,7 +330,7 @@ module.exports = function(grunt) {
 
     watch: {
       files: [ 'Gruntfile.js',
-               'assets/css/*.less',
+               'assets/css/**/*.less',
                'assets/js/app.js'],
       tasks: ['cssdev', 'jsdev'],
       options: {

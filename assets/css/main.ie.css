@@ -8180,6 +8180,328 @@ figure img {
 */
 
 /* ==========================================================================
+   helper classes
+   ========================================================================== */
+
+.demi {
+  font-family: "AvenirNextLTW01-Demi", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.lt-ie9 .demi {
+  font-weight: normal !important;
+}
+
+.sans {
+  font-family: "AvenirNextLTW01-Regular", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.sans em,
+.sans i {
+  font-family: "AvenirNextLTW01-Italic", Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.lt-ie9 .sans em,
+.lt-ie9 .sans i {
+  font-style: normal !important;
+}
+
+.sans strong,
+.sans b {
+  font-family: "AvenirNextLTW01-Demi", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.lt-ie9 .sans strong,
+.lt-ie9 .sans b {
+  font-weight: normal !important;
+}
+
+/* ==========================================================================
+   Universal
+   ========================================================================== */
+
+html,
+body {
+  height: 100%;
+}
+
+/* for sticky footer */
+
+.body-wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.title_heading {
+  margin: 0;
+  font-size: 1.625em;
+}
+
+.title_heading a {
+  color: #75787b;
+}
+
+.global-nav_list {
+  margin: 0;
+  padding: 0;
+  font-family: "AvenirNextLTW01-Regular", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.global-nav_list em,
+.global-nav_list i {
+  font-family: "AvenirNextLTW01-Italic", Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.lt-ie9 .global-nav_list em,
+.lt-ie9 .global-nav_list i {
+  font-style: normal !important;
+}
+
+.global-nav_list strong,
+.global-nav_list b {
+  font-family: "AvenirNextLTW01-Demi", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.lt-ie9 .global-nav_list strong,
+.lt-ie9 .global-nav_list b {
+  font-weight: normal !important;
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  background: #dbedd4;
+  padding: 1.4em 0;
+}
+
+.hero_heading {
+  font-family: "AvenirNextLTW01-Demi", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.5em;
+  margin: 0;
+}
+
+.lt-ie9 .hero_heading {
+  font-weight: normal !important;
+}
+
+.hero_code {
+  background: #43484e;
+  color: #f1f2f2;
+  font-size: 1.5em;
+  padding: .5em .5em;
+  margin: 1.5em 0;
+}
+
+.hero_p {
+  margin-bottom: 0;
+}
+
+.jump-link {
+  position: relative;
+  margin-right: 1.5em;
+  border-bottom-width: 1px;
+  font-family: "AvenirNextLTW01-Medium", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.lt-ie9 .jump-link {
+  font-weight: normal !important;
+}
+
+.jump-link:after {
+  content: "\e002";
+  right: -1.25em;
+}
+
+.jump-link__download:after {
+  content: "\e406";
+  right: -1.5em;
+}
+
+.jump-link__external-link:after {
+  content: "\e610";
+}
+
+.jump-link:after {
+  font-family: 'CFPB Minicons';
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  bottom: 0;
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   Main content
+   ========================================================================== */
+
+.section-image {
+  width: 65%;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  display: table-row;
+  /* for sticky footer */
+  height: 1px;
+  /* for sticky footer */
+  background: #f1f2f2;
+}
+
+.site-footer_wrapper {
+  padding: 2em 0;
+}
+
+/* ==========================================================================
+   Secondary Nav
+   ========================================================================== */
+
+.nav-secondary {
+  margin-bottom: 1.875em;
+}
+
+.nav-secondary_list {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-secondary_item {
+  list-style: none;
+}
+
+.nav-secondary_item + .nav-secondary_item {
+  margin-top: 10px;
+}
+
+.nav-secondary_link {
+  display: inline-block;
+  padding: 0.27777778em 0.83333333em;
+  border-left-style: solid;
+  border-left-width: 5px;
+  font-family: "AvenirNextLTW01-Medium", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125em;
+  color: #0072ce;
+  border-color: transparent;
+}
+
+.lt-ie9 .nav-secondary_link {
+  font-weight: normal !important;
+}
+
+.nav-secondary_link:visited,
+.nav-secondary_link.visited {
+  border-color: transparent;
+  color: #0072ce;
+}
+
+.nav-secondary_link:hover,
+.nav-secondary_link.hover {
+  border-color: #2cb34a;
+  color: #101820;
+}
+
+.nav-secondary_link:focus,
+.nav-secondary_link.focus {
+  border-color: #2cb34a;
+  color: #101820;
+}
+
+.nav-secondary_link:active,
+.nav-secondary_link.active {
+  border-color: #2cb34a;
+  color: #101820;
+}
+
+.nav-secondary_link__current {
+  color: #101820;
+  border-color: #2cb34a;
+}
+
+.nav-secondary_link__current:visited,
+.nav-secondary_link__current.visited {
+  border-color: #2cb34a;
+  color: #101820;
+}
+
+.nav-secondary_link__current:hover,
+.nav-secondary_link__current.hover {
+  border-color: #2cb34a;
+  color: #101820;
+}
+
+.nav-secondary_link__current:focus,
+.nav-secondary_link__current.focus {
+  border-color: #2cb34a;
+  color: #101820;
+}
+
+.nav-secondary_link__current:active,
+.nav-secondary_link__current.active {
+  border-color: #2cb34a;
+  color: #101820;
+}
+
+.nav-secondary_link__button {
+  width: 100%;
+  font-family: "AvenirNextLTW01-Demi", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.lt-ie9 .nav-secondary_link__button {
+  font-weight: normal !important;
+}
+
+.nav-secondary_link__button:focus {
+  outline: thin dotted;
+}
+
+.nav-secondary_link__button {
+  display: none;
+}
+
+/* ==========================================================================
    Syntax highlighting
    based on Hyde: https://github.com/poole/hyde/tree/master/public
    ========================================================================== */
@@ -8559,7 +8881,7 @@ figure img {
 
 code,
 pre {
-  font-family: "Input Mono", Consolas, monaco, "Courier New", monospace;
+  font-family: "Input Mono", Consolas, Monaco, "Courier New", monospace;
 }
 
 code {
@@ -8573,9 +8895,9 @@ code {
 pre {
   display: block;
   margin-top: 0;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  font-size: .8rem;
+  margin-bottom: 1em;
+  padding: 1em;
+  font-size: .8em;
   line-height: 1.4;
   white-space: pre;
   white-space: pre-wrap;
@@ -8600,326 +8922,4 @@ pre code {
 
 .highlight pre {
   margin-bottom: 0;
-}
-
-/* ==========================================================================
-   helper classes
-   ========================================================================== */
-
-.demi {
-  font-family: "AvenirNextLTW01-Demi", Arial, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-}
-
-.lt-ie9 .demi {
-  font-weight: normal !important;
-}
-
-.sans {
-  font-family: "AvenirNextLTW01-Regular", Arial, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-}
-
-.sans em,
-.sans i {
-  font-family: "AvenirNextLTW01-Italic", Arial, sans-serif;
-  font-style: italic;
-  font-weight: normal;
-}
-
-.lt-ie9 .sans em,
-.lt-ie9 .sans i {
-  font-style: normal !important;
-}
-
-.sans strong,
-.sans b {
-  font-family: "AvenirNextLTW01-Demi", Arial, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-}
-
-.lt-ie9 .sans strong,
-.lt-ie9 .sans b {
-  font-weight: normal !important;
-}
-
-/* ==========================================================================
-   Universal
-   ========================================================================== */
-
-html,
-body {
-  height: 100%;
-}
-
-/* for sticky footer */
-
-.body-wrapper {
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* ==========================================================================
-   Header
-   ========================================================================== */
-
-.title_heading {
-  margin: 0;
-  font-size: 1.625em;
-}
-
-.title_heading a {
-  color: #75787b;
-}
-
-.global-nav_list {
-  margin: 0;
-  padding: 0;
-  font-family: "AvenirNextLTW01-Regular", Arial, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-.global-nav_list em,
-.global-nav_list i {
-  font-family: "AvenirNextLTW01-Italic", Arial, sans-serif;
-  font-style: italic;
-  font-weight: normal;
-}
-
-.lt-ie9 .global-nav_list em,
-.lt-ie9 .global-nav_list i {
-  font-style: normal !important;
-}
-
-.global-nav_list strong,
-.global-nav_list b {
-  font-family: "AvenirNextLTW01-Demi", Arial, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-}
-
-.lt-ie9 .global-nav_list strong,
-.lt-ie9 .global-nav_list b {
-  font-weight: normal !important;
-}
-
-/* ==========================================================================
-   Hero
-   ========================================================================== */
-
-.hero {
-  background: #dbedd4;
-  padding: 1.4em 0;
-}
-
-.hero_heading {
-  font-family: "AvenirNextLTW01-Demi", Arial, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 3.5em;
-  margin: 0;
-}
-
-.lt-ie9 .hero_heading {
-  font-weight: normal !important;
-}
-
-.hero_code {
-  background: #43484e;
-  color: #f1f2f2;
-  font-size: 1.5em;
-  padding: .5em .5em;
-  margin: 1.5em 0;
-}
-
-.hero_p {
-  margin-bottom: 0;
-}
-
-.jump-link {
-  position: relative;
-  margin-right: 1.5em;
-  border-bottom-width: 1px;
-  font-family: "AvenirNextLTW01-Medium", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-}
-
-.lt-ie9 .jump-link {
-  font-weight: normal !important;
-}
-
-.jump-link:after {
-  content: "\e002";
-  right: -1.25em;
-}
-
-.jump-link__download:after {
-  content: "\e406";
-  right: -1.5em;
-}
-
-.jump-link__external-link:after {
-  content: "\e610";
-}
-
-.jump-link:after {
-  font-family: 'CFPB Minicons';
-  display: inline-block;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  position: absolute;
-  bottom: 0;
-  border-bottom: none;
-}
-
-/* ==========================================================================
-   Main content
-   ========================================================================== */
-
-.section-image {
-  width: 65%;
-  margin: 0 auto;
-}
-
-/* ==========================================================================
-   Footer
-   ========================================================================== */
-
-.site-footer {
-  display: table-row;
-  /* for sticky footer */
-  height: 1px;
-  /* for sticky footer */
-  background: #f1f2f2;
-}
-
-.site-footer_wrapper {
-  padding: 2em 0;
-}
-
-/* ==========================================================================
-   Secondary Nav
-   ========================================================================== */
-
-.nav-secondary {
-  margin-bottom: 1.875em;
-}
-
-.nav-secondary_list {
-  margin: 0;
-  padding: 0;
-}
-
-.nav-secondary_item {
-  list-style: none;
-}
-
-.nav-secondary_item + .nav-secondary_item {
-  margin-top: 10px;
-}
-
-.nav-secondary_link {
-  display: inline-block;
-  padding: 0.27777778em 0.83333333em;
-  border-left-style: solid;
-  border-left-width: 5px;
-  font-family: "AvenirNextLTW01-Medium", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.125em;
-  color: #0072ce;
-  border-color: transparent;
-}
-
-.lt-ie9 .nav-secondary_link {
-  font-weight: normal !important;
-}
-
-.nav-secondary_link:visited,
-.nav-secondary_link.visited {
-  border-color: transparent;
-  color: #0072ce;
-}
-
-.nav-secondary_link:hover,
-.nav-secondary_link.hover {
-  border-color: #2cb34a;
-  color: #101820;
-}
-
-.nav-secondary_link:focus,
-.nav-secondary_link.focus {
-  border-color: #2cb34a;
-  color: #101820;
-}
-
-.nav-secondary_link:active,
-.nav-secondary_link.active {
-  border-color: #2cb34a;
-  color: #101820;
-}
-
-.nav-secondary_link__current {
-  color: #101820;
-  border-color: #2cb34a;
-}
-
-.nav-secondary_link__current:visited,
-.nav-secondary_link__current.visited {
-  border-color: #2cb34a;
-  color: #101820;
-}
-
-.nav-secondary_link__current:hover,
-.nav-secondary_link__current.hover {
-  border-color: #2cb34a;
-  color: #101820;
-}
-
-.nav-secondary_link__current:focus,
-.nav-secondary_link__current.focus {
-  border-color: #2cb34a;
-  color: #101820;
-}
-
-.nav-secondary_link__current:active,
-.nav-secondary_link__current.active {
-  border-color: #2cb34a;
-  color: #101820;
-}
-
-.nav-secondary_link__button {
-  width: 100%;
-  font-family: "AvenirNextLTW01-Demi", Arial, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  text-align: left;
-  text-transform: uppercase;
-}
-
-.lt-ie9 .nav-secondary_link__button {
-  font-weight: normal !important;
-}
-
-.nav-secondary_link__button:focus {
-  outline: thin dotted;
-}
-
-.nav-secondary_link__button {
-  display: none;
 }
