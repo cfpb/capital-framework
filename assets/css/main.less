@@ -153,29 +153,6 @@ nav ul {
         bottom: 0;
         border-bottom: none;
     }
-
-    &__back {
-        margin-left: 1.25em;
-
-        &:after {
-            content: ''
-        }
-
-        &:before {
-            .cf-icon();
-            // Inserts the cf-icon-left (arrow) glyph.
-            content: "\e000";
-            position: absolute;
-            left: -1.25em;
-            top: .2em;
-            padding-right: .25em;
-            border-bottom: none;
-        }
-    }
-
-    .list__links & {
-        margin-top: -1px;
-    }
 }
 
 
@@ -200,4 +177,91 @@ nav ul {
 
 .site-footer_wrapper {
     padding: 2em 0;
+}
+
+/* ==========================================================================
+   Secondary Nav
+   ========================================================================== */
+
+
+.nav-secondary {
+    margin-bottom: unit(30px / @base-font-size-px, em);
+
+    &_list {
+        margin: 0;
+        padding: 0;
+    }
+
+    &_item {
+        list-style: none;
+
+        .respond-to-min(801px, {
+            & + & {
+                margin-top: 10px;
+            }
+        });
+    }
+
+    &_link {
+        @font-size-small: 16px;
+        @font-size-large: 18px;
+
+        .respond-to-max(800px, {
+            display: block;
+            // width: 100%; // Needed to override button styles
+            padding: unit((@grid_gutter-width / 2) / @font-size-small, em)
+                     unit(@grid_gutter-width / @font-size-small, em);
+            border-bottom-style: solid;
+            border-width: 0; // Needed to override button styles
+            border-bottom-width: 1px;
+            background: @gray-10;
+            .webfont-medium();
+            font-size: unit(@font-size-small / @base-font-size-px, em);
+            .u-link__colors(@darkgray, @darkgray, @darkgray, @darkgray, @darkgray,
+                            @gray-20, @gray-20, @gray-20, @gray-20, @gray-20);
+            text-align: left; // Needed to override button styles
+        });
+
+        .respond-to-max(600px, {
+            padding-left: unit((@grid_gutter-width / 2) / @font-size-small, em);
+            padding-right: unit((@grid_gutter-width / 2) / @font-size-small, em);
+        });
+
+        .respond-to-min(801px, {
+            display: inline-block;
+            padding: unit(5px / @font-size-large, em)
+                     unit(15px / @font-size-large, em);
+            border-left-style: solid;
+            border-left-width: 5px;
+            .webfont-medium();
+            font-size: unit(@font-size-large / @base-font-size-px, em);
+            .u-link__colors(@pacific, @pacific, @black, @black, @black,
+                            transparent, transparent, @green, @green, @green);
+        });
+
+        &__current {
+            .respond-to-max(800px, {
+                display: none;
+            });
+            .respond-to-min(801px, {
+                .u-link__colors(@black, @black, @black, @black, @black,
+                                @green, @green, @green, @green, @green);
+            });
+        }
+
+        &__button {
+            width: 100%;
+            .webfont-demi();
+            text-align: left;
+            text-transform: uppercase;
+
+            &:focus {
+                outline: thin dotted;
+            }
+
+            .respond-to-min(801px, {
+                display: none;
+            });
+        }
+    }
 }
