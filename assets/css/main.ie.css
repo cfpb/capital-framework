@@ -8250,6 +8250,10 @@ nav ul {
    Header
    ========================================================================== */
 
+.site-header {
+  padding: 3em 0;
+}
+
 .title_heading {
   margin: 0;
   font-size: 1.625em;
@@ -8290,6 +8294,16 @@ nav ul {
 .lt-ie9 .global-nav_list strong,
 .lt-ie9 .global-nav_list b {
   font-weight: normal !important;
+}
+
+.global-nav_list {
+  border-top: 1px solid #e3e4e5;
+}
+
+.nav-list-item a {
+  display: block;
+  border-bottom: 1px solid #e3e4e5;
+  padding: 1em;
 }
 
 /* ==========================================================================
@@ -8362,6 +8376,14 @@ nav ul {
   position: absolute;
   bottom: 0;
   border-bottom: none;
+}
+
+.hero_heading {
+  font-size: 2em;
+}
+
+.hero_code {
+  font-size: 1em;
 }
 
 /* ==========================================================================

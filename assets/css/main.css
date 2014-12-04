@@ -7661,29 +7661,8 @@ nav ul {
 /* ==========================================================================
    Header
    ========================================================================== */
-@media (min-width: 1100px) {
-  .site-header {
-    padding: 3em 0;
-  }
-  .site-header .content-l_col {
-    vertical-align: middle;
-  }
-  .site-header .content-l_col + .content-l_col {
-    margin-top: 0;
-  }
-  .global-nav {
-    text-align: right;
-  }
-  .nav-list-item {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  .lt-ie8 .nav-list-item {
-    display: inline;
-  }
-  .nav-list-item:last-child {
-    margin-right: 0px;
-  }
+.site-header {
+  padding: 3em 0;
 }
 .title_heading {
   margin: 0;
@@ -7719,6 +7698,37 @@ nav ul {
 .lt-ie9 .global-nav_list strong,
 .lt-ie9 .global-nav_list b {
   font-weight: normal !important;
+}
+@media (min-width: 770px) {
+  .site-header .content-l_col {
+    vertical-align: middle;
+  }
+  .site-header .content-l_col + .content-l_col {
+    margin-top: 0;
+  }
+  .global-nav {
+    text-align: right;
+  }
+  .nav-list-item {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .lt-ie8 .nav-list-item {
+    display: inline;
+  }
+  .nav-list-item:last-child {
+    margin-right: 0px;
+  }
+}
+@media (max-width: 770px) {
+  .global-nav_list {
+    border-top: 1px solid #e3e4e5;
+  }
+  .nav-list-item a {
+    display: block;
+    border-bottom: 1px solid #e3e4e5;
+    padding: 1em;
+  }
 }
 /* ==========================================================================
    Hero
@@ -7784,6 +7794,14 @@ nav ul {
   position: absolute;
   bottom: 0;
   border-bottom: none;
+}
+@media (max-width: 770px) {
+  .hero_heading {
+    font-size: 2em;
+  }
+  .hero_code {
+    font-size: 1em;
+  }
 }
 /* ==========================================================================
    Main content
