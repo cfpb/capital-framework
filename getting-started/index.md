@@ -29,7 +29,3 @@ $ yo cf
 {% endhighlight %}
 
 The generator will prompt you to complete information about the project and choose the Capital Framework modules you would like to use.
-
-## Downloading the compiled source
-
-If you would prefer to download the compiled CSS and JavaScript source files, we have a downloadable package available.

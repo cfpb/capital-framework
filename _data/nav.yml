@@ -3,8 +3,6 @@
   subcategories:
     - subtitle: "generator-cf"
       subhref: "https://github.com/cfpb/generator-cf"
-    - subtitle: "Compiled source"
-      subhref: "#download"
 
 - title: "Components"
   href: "/components/"
