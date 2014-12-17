@@ -40,29 +40,6 @@ module.exports = function(grunt) {
     },
 
     /**
-     * String replace: https://github.com/erickrdch/grunt-string-replace
-     *
-     * Replace strings on files by using string or regex patters.
-     */
-    'string-replace': {
-      chosen: {
-        files: {
-          'vendor/chosen/': 'vendor/chosen/chosen.css'
-        }
-      },
-      options: {
-        replacements: [{
-          pattern: /url\('chosen-sprite.png'\)/ig,
-          replacement: 'url("../img/chosen-sprite.png")'
-        },
-        {
-          pattern: /url\('chosen-sprite@2x.png'\)/ig,
-          replacement: 'url("../img/chosen-sprite@2x.png")'
-        }]
-      }
-    },
-
-    /**
      * Concat: https://github.com/gruntjs/grunt-contrib-concat
      *
      * Concatenate cf-* Less files prior to compiling them.
@@ -81,16 +58,7 @@ module.exports = function(grunt) {
         src: [
           'vendor/jquery/jquery.js',
           'vendor/jquery.easing/jquery.easing.js',
-          // 'vendor/history.js/jquery.history.js',
-          'vendor/chosen/chosen.jquery.js',
           'vendor/cf-*/*.js',
-          'assets/js/jquery.custom-input.js',
-          'assets/js/jquery.custom-select.js',
-          'assets/js/jquery.cf_input-split.js',
-          'vendor/string_score/string_score.js',
-          'assets/js/jquery.type-and-filter.js',
-          'assets/js/breakpoint-handler.js',
-          // 'assets/js/jquery.cf_pagination.js',
           'assets/js/app.js'
         ],
         dest: 'assets/js/main.js'
