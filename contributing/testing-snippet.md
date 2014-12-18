@@ -1,11 +1,7 @@
 ---
 layout: default
 title:  "Testing checklist"
-description: When contributing code please publicly track the tests you have
-  run using the testing checklist snippet.
-parent:
-  name: "Contributing"
-  url: "contributing/#browser-testing"
+parent: "Contributing"
 ---
 
 
