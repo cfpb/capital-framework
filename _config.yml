@@ -1,8 +1,8 @@
 # Base configuration
-permalink: /:title 
+permalink: /:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 markdown: kramdown
-pygments: true
+highlighter: pygments
 
 # Title
 name: Capital Framework
@@ -19,33 +19,3 @@ baseurl: '/capital-framework'
 author:
   name: The CFPB
   url: http://cfpb.github.io/
-
-# Point the logo URL at a file in your repo or hosted elsewhere by your organization
-logourl: assets/img/logo.png
-logoalt: The Consumer Financial Protection Bureau
-
-# Navigation
-# List links that should appear in the site sidebar here
-navigation:
-- text: Nice to meet you
-  url: index.html
-  internal: true
-- text: About the components
-  url: components/
-  internal: true
-- text: About the demo/workflow
-  url: cf-demo/
-  internal: true
-- text: Roadmap
-  url: roadmap/
-  internal: true
-- text: Contributing
-  url: contributing/
-  internal: true
-
-# Repo list
-# List repos that you would like to appear on the homepage here
-repos:
-- name: capital-framework
-  description: The workflow/example project
-  url: https://github.com/cfpb/capital-framework
