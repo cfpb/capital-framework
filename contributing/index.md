@@ -13,12 +13,12 @@ These pages are generated using the grunt-topdoc task which uses templates from 
 ## Browser testing
 
 Components should be cross browser tested. When contributing code please publicly track the tests you have run using the
-[testing checklist snippet](/testing-snippet.html).
+[testing checklist snippet](testing-snippet.html).
 
 ## JavaScript testing
 
 JavaScript tests can be run with the `grunt test` command. Before making a pull request please publicly track that all tests have passed
-using the [testing checklist snippet](/testing-snippet.html).
+using the [testing checklist snippet](testing-snippet.html).
 
 New unit tests should be written using [QUnit](https://qunitjs.com/) for any functionality added.
 
@@ -28,7 +28,7 @@ New unit tests should be written using [QUnit](https://qunitjs.com/) for any fun
 Components should conform to [Section 508](http://www.section508.gov/)
 and [WCAG 2.0 level AA](http://www.w3.org/TR/WCAG20/) guidelines.
 When contributing code please publicly track the tests you have run using the
-[testing checklist snippet](/testing-snippet.html).
+[testing checklist snippet](testing-snippet.html).
 
 As each component is different we ask that you update the snippet to track
 the accessibility guidlines you have tested for.
@@ -43,7 +43,7 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 
 Linting tasks that are set up within component build processes are there to
 promote consistency. When contributing code please publicly track that there are no linting errors
-or warnings using the [testing checklist snippet](/testing-snippet.html).
+or warnings using the [testing checklist snippet](testing-snippet.html).
 
 
 ### Follow our CSS naming conventions
@@ -104,7 +104,7 @@ If you'd like to contribute to an existing Capital Framework component, please u
 
 We hope to soon offer a Yeoman generator for creating new components quickly. In the meantime our current recommendation is to clone and edit an existing component.
 
-Please read our [Anatomy of a Component](/anatomy.html) page for more information on the different aspects of a component.
+Please read our [Anatomy of a Component](anatomy.html) page for more information on the different aspects of a component.
 
 ## Licensing
 
