@@ -3,6 +3,8 @@
   subcategories:
     - subtitle: "generator-cf"
       subhref: "https://github.com/cfpb/generator-cf"
+    - subtitle: "Compiled source"
+      subhref: "https://cfpb.github.io/capital-framework/assets/cf.zip"
 
 - title: "Components"
   href: "/components/"
