@@ -237,6 +237,23 @@ module.exports = function(grunt) {
     },
 
     /**
+    * Compress: https://github.com/gruntjs/grunt-contrib-compress
+    *
+    * Compress the dist directory so that it can be downloaded as a zip
+    */
+
+    compress: {
+      main: {
+        options: {
+          archive: 'assets/cf.zip'
+        },
+        files: [
+          {expand: true, cwd: 'build/dist/', src: ['**'], dest: 'capital-framework/'}
+        ]
+      }
+    },
+
+    /**
      * JSHint: https://github.com/gruntjs/grunt-contrib-jshint
      *
      * Validate files with JSHint.
@@ -389,7 +406,6 @@ module.exports = function(grunt) {
   grunt.registerTask('vendor', ['bower:install', 'string-replace:chosen', 'concat:cf-less']);
   grunt.registerTask('cssdev', ['less', 'autoprefixer', 'legacssy', 'cssmin']);
   grunt.registerTask('jsdev', ['concat:bodyScripts', 'uglify']);
-  grunt.registerTask('default', ['cssdev', 'jsdev', 'copy:vendor']);
+  grunt.registerTask('default', ['cssdev', 'jsdev', 'copy:vendor', 'compress']);
   grunt.registerTask('test', ['jshint']);
-
 };
