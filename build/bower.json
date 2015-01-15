@@ -14,6 +14,7 @@
   },
   "license": "CC0",
   "dependencies": {
+    "cf-core": "*",
     "cf-buttons": "*",
     "cf-expandables": "~0.6.2",
     "cf-forms": "~1.1.1",

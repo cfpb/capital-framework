@@ -1,0 +1,2682 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+  <!-- <![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>cf-icons docs</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic">
+    <link rel="stylesheet" type="text/css" href="static/docs/brackets.css">
+    <link rel="stylesheet" type="text/css" href="static/docs/docs.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+  </head>
+  <body>
+    <div class="docs-sidebar-wrapper">
+      <div class="docs-sidebar-wrapper_body">
+        <div class="docs-masthead">
+          <h1 class="docs-title"><span class="docs-icon">&lt;/&gt;</span> cf-icons docs
+          </h1><a href="https://github.com/cfpb/cf-icons" class="docs-repo">view the repository</a>
+        </div>
+        <div id="less-variables" class="docs-component">
+          <h2 class="docs-component_header"><span>Less variables</span></h2>
+          <div class="docs-component_intro">
+            <ul class="docs-notes">
+              <li>These variables can be overriden in your project's Less file.</li>
+            </ul>
+          </div>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">CSS prefix</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>@cf-icon-prefix: cf-icon;</code></pre>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Path to icon font files</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>@cf-icon-path: '../fonts';</code></pre>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Toggle IE7 support</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>@cf-icon-ie7-support: true;</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>More on IE7 support can be found in the 'IE7 Support' section.</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+        </div>
+        <div id="ie7-support" class="docs-component">
+          <h2 class="docs-component_header"><span>IE7 Support</span></h2>
+          <div class="docs-component_intro">
+            <ul class="docs-notes">
+              <li>IE7 support is added by using dynamic properties (CSS expressions).</li>
+              <li>To turn off IE7 support simply set @cf-icon-ie7-support to false.</li>
+            </ul>
+          </div>
+        </div>
+        <div id="the-basics" class="docs-component">
+          <h2 class="docs-component_header"><span>The basics</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">@font-face declaration</h3>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Base icon class</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-notes">
+                  <li>The cf-icon-prefix class applies all shared icon styles including the font family.</li>
+                  <li>All icons must use two classes, one for this base class and another to set the font character. For example: &lt;span class='cf-icon cf-icon-left'&gt;&lt;/span&gt;.</li>
+                  <li>Please use the span element instead of the i element. This avoids font family cascading conflicts when using an italic webfont on i elements and then another font for the icons. Note that this issue only pops up in older versions of Internet Explorer.</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">@font-face {
+  font-family: 'CFPB Minicons';
+  src: url('../fonts/cf-icons.eot');
+  src: url('../fonts/cf-icons.eot?#iefix') format('embedded-opentype'), url('../fonts/cf-icons.woff') format('woff'), url('../fonts/cf-icons.ttf') format('truetype'), url('../fonts/cf-icons.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.cf-icon {
+  font-family: 'CFPB Minicons';
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}</code></pre>
+          </div>
+        </div>
+        <div id="navigation-icons" class="docs-component">
+          <h2 class="docs-component_header"><span>Navigation icons</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">left</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-left"></span>
+<span class="cf-icon cf-icon-left-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-left&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-left-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-left\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-left-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">right</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-right"></span>
+<span class="cf-icon cf-icon-right-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-right&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-right-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-right\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-right-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">up</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-up"></span>
+<span class="cf-icon cf-icon-up-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-up&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-up-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-up\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-up-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">down</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-down"></span>
+<span class="cf-icon cf-icon-down-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-down&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-down-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-down\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-down-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">arrow-left</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-arrow-left"></span>
+<span class="cf-icon cf-icon-arrow-left-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-arrow-left&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-arrow-left-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-arrow-left\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-arrow-left-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">arrow-right</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-arrow-right"></span>
+<span class="cf-icon cf-icon-arrow-right-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-arrow-right&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-arrow-right-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-arrow-right\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-arrow-right-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">arrow-up</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-arrow-up"></span>
+<span class="cf-icon cf-icon-arrow-up-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-arrow-up&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-arrow-up-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-arrow-up\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-arrow-up-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">arrow-down</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-arrow-down"></span>
+<span class="cf-icon cf-icon-arrow-down-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-arrow-down&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-arrow-down-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-arrow-down\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-arrow-down-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.cf-icon-left:before {
+  content: &quot;\e000&quot;;
+}
+.lt-ie8 .cf-icon-left {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e000');
+}
+.cf-icon-left-round:before {
+  content: &quot;\e001&quot;;
+}
+.lt-ie8 .cf-icon-left-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e001');
+}
+.cf-icon-right:before {
+  content: &quot;\e002&quot;;
+}
+.lt-ie8 .cf-icon-right {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e002');
+}
+.cf-icon-right-round:before {
+  content: &quot;\e003&quot;;
+}
+.lt-ie8 .cf-icon-right-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e003');
+}
+.cf-icon-up:before {
+  content: &quot;\e004&quot;;
+}
+.lt-ie8 .cf-icon-up {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e004');
+}
+.cf-icon-up-round:before {
+  content: &quot;\e005&quot;;
+}
+.lt-ie8 .cf-icon-up-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e005');
+}
+.cf-icon-down:before {
+  content: &quot;\e006&quot;;
+}
+.lt-ie8 .cf-icon-down {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e006');
+}
+.cf-icon-down-round:before {
+  content: &quot;\e007&quot;;
+}
+.lt-ie8 .cf-icon-down-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e007');
+}
+.cf-icon-arrow-left:before {
+  content: &quot;\e008&quot;;
+}
+.lt-ie8 .cf-icon-arrow-left {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e008');
+}
+.cf-icon-arrow-left-round:before {
+  content: &quot;\e009&quot;;
+}
+.lt-ie8 .cf-icon-arrow-left-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e009');
+}
+.cf-icon-arrow-right:before {
+  content: &quot;\e010&quot;;
+}
+.lt-ie8 .cf-icon-arrow-right {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e010');
+}
+.cf-icon-arrow-right-round:before {
+  content: &quot;\e011&quot;;
+}
+.lt-ie8 .cf-icon-arrow-right-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e011');
+}
+.cf-icon-arrow-up:before {
+  content: &quot;\e012&quot;;
+}
+.lt-ie8 .cf-icon-arrow-up {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e012');
+}
+.cf-icon-arrow-up-round:before {
+  content: &quot;\e013&quot;;
+}
+.lt-ie8 .cf-icon-arrow-up-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e013');
+}
+.cf-icon-arrow-down:before {
+  content: &quot;\e014&quot;;
+}
+.lt-ie8 .cf-icon-arrow-down {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e014');
+}
+.cf-icon-arrow-down-round:before {
+  content: &quot;\e015&quot;;
+}
+.lt-ie8 .cf-icon-arrow-down-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e015');
+}</code></pre>
+          </div>
+        </div>
+        <div id="status-icons" class="docs-component">
+          <h2 class="docs-component_header"><span>Status icons</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">approved</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-approved"></span>
+<span class="cf-icon cf-icon-approved-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-approved&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-approved-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-approved\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-approved-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">error</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-error"></span>
+<span class="cf-icon cf-icon-error-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-error&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-error-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-error\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-error-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">help</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-help"></span>
+<span class="cf-icon cf-icon-help-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-help&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-help-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-help\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-help-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">delete</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-delete"></span>
+<span class="cf-icon cf-icon-delete-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-delete&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-delete-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-delete\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-delete-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">plus</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-plus"></span>
+<span class="cf-icon cf-icon-plus-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-plus&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-plus-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-plus\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-plus-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">minus</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-minus"></span>
+<span class="cf-icon cf-icon-minus-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-minus&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-minus-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-minus\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-minus-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">update</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-update"></span>
+<span class="cf-icon cf-icon-update-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-update&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-update-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-update\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-update-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.cf-icon-approved:before {
+  content: &quot;\e100&quot;;
+}
+.lt-ie8 .cf-icon-approved {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e100');
+}
+.cf-icon-approved-round:before {
+  content: &quot;\e101&quot;;
+}
+.lt-ie8 .cf-icon-approved-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e101');
+}
+.cf-icon-error:before {
+  content: &quot;\e102&quot;;
+}
+.lt-ie8 .cf-icon-error {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e102');
+}
+.cf-icon-error-round:before {
+  content: &quot;\e103&quot;;
+}
+.lt-ie8 .cf-icon-error-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e103');
+}
+.cf-icon-help:before {
+  content: &quot;\e104&quot;;
+}
+.lt-ie8 .cf-icon-help {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e104');
+}
+.cf-icon-help-round:before {
+  content: &quot;\e105&quot;;
+}
+.lt-ie8 .cf-icon-help-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e105');
+}
+.cf-icon-delete:before {
+  content: &quot;\e106&quot;;
+}
+.lt-ie8 .cf-icon-delete {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e106');
+}
+.cf-icon-delete-round:before {
+  content: &quot;\e107&quot;;
+}
+.lt-ie8 .cf-icon-delete-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e107');
+}
+.cf-icon-plus:before {
+  content: &quot;\e108&quot;;
+}
+.lt-ie8 .cf-icon-plus {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e108');
+}
+.cf-icon-plus-round:before {
+  content: &quot;\e109&quot;;
+}
+.lt-ie8 .cf-icon-plus-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e109');
+}
+.cf-icon-minus:before {
+  content: &quot;\e110&quot;;
+}
+.lt-ie8 .cf-icon-minus {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e110');
+}
+.cf-icon-minus-round:before {
+  content: &quot;\e111&quot;;
+}
+.lt-ie8 .cf-icon-minus-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e111');
+}
+.cf-icon-update:before {
+  content: &quot;\e112&quot;;
+}
+.lt-ie8 .cf-icon-update {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e112');
+}
+.cf-icon-update-round:before {
+  content: &quot;\e113&quot;;
+}
+.lt-ie8 .cf-icon-update-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e113');
+}</code></pre>
+          </div>
+        </div>
+        <div id="social-icons" class="docs-component">
+          <h2 class="docs-component_header"><span>Social icons</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">youtube</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-youtube"></span>
+<span class="cf-icon cf-icon-youtube-square"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-youtube&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-youtube-square&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-youtube\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-youtube-square\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">linkedin</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-linkedin"></span>
+<span class="cf-icon cf-icon-linkedin-square"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-linkedin&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-linkedin-square&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-linkedin\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-linkedin-square\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">facebook</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-facebook"></span>
+<span class="cf-icon cf-icon-facebook-square"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-facebook&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-facebook-square&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-facebook\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-facebook-square\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">flickr</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-flickr"></span>
+<span class="cf-icon cf-icon-flickr-square"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-flickr&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-flickr-square&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-flickr\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-flickr-square\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">plus</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-twitter"></span>
+<span class="cf-icon cf-icon-twitter-square"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-twitter&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-twitter-square&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-twitter\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-twitter-square\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">github</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-github"></span>
+<span class="cf-icon cf-icon-github-square"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-github&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-github-square&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-github\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-github-square\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">email-social</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-email-social"></span>
+<span class="cf-icon cf-icon-email-social-square"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-email-social&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-email-social-square&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-email-social\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-email-social-square\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.cf-icon-youtube:before {
+  content: &quot;\e200&quot;;
+}
+.lt-ie8 .cf-icon-youtube {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e200');
+}
+.cf-icon-youtube-square:before {
+  content: &quot;\e201&quot;;
+}
+.lt-ie8 .cf-icon-youtube-square {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e201');
+}
+.cf-icon-linkedin:before {
+  content: &quot;\e202&quot;;
+}
+.lt-ie8 .cf-icon-linkedin {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e202');
+}
+.cf-icon-linkedin-square:before {
+  content: &quot;\e203&quot;;
+}
+.lt-ie8 .cf-icon-linkedin-square {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e203');
+}
+.cf-icon-facebook:before {
+  content: &quot;\e204&quot;;
+}
+.lt-ie8 .cf-icon-facebook {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e204');
+}
+.cf-icon-facebook-square:before {
+  content: &quot;\e205&quot;;
+}
+.lt-ie8 .cf-icon-facebook-square {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e205');
+}
+.cf-icon-flickr:before {
+  content: &quot;\e206&quot;;
+}
+.lt-ie8 .cf-icon-flickr {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e206');
+}
+.cf-icon-flickr-square:before {
+  content: &quot;\e207&quot;;
+}
+.lt-ie8 .cf-icon-flickr-square {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e207');
+}
+.cf-icon-twitter:before {
+  content: &quot;\e208&quot;;
+}
+.lt-ie8 .cf-icon-twitter {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e208');
+}
+.cf-icon-twitter-square:before {
+  content: &quot;\e209&quot;;
+}
+.lt-ie8 .cf-icon-twitter-square {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e209');
+}
+.cf-icon-github:before {
+  content: &quot;\e210&quot;;
+}
+.lt-ie8 .cf-icon-github {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e210');
+}
+.cf-icon-github-square:before {
+  content: &quot;\e211&quot;;
+}
+.lt-ie8 .cf-icon-github-square {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e211');
+}
+.cf-icon-email-social:before {
+  content: &quot;\e212&quot;;
+}
+.lt-ie8 .cf-icon-email-social {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e212');
+}
+.cf-icon-email-social-square:before {
+  content: &quot;\e213&quot;;
+}
+.lt-ie8 .cf-icon-email-social-square {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e213');
+}</code></pre>
+          </div>
+        </div>
+        <div id="communication-icons" class="docs-component">
+          <h2 class="docs-component_header"><span>Communication icons</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">web</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-web"></span>
+<span class="cf-icon cf-icon-web-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-web&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-web-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-web\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-web-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">email</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-email"></span>
+<span class="cf-icon cf-icon-email-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-email&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-email-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-email\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-email-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">mail</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-mail"></span>
+<span class="cf-icon cf-icon-mail-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-mail&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-mail-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-mail\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-mail-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">phone</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-phone"></span>
+<span class="cf-icon cf-icon-phone-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-phone&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-phone-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-phone\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-phone-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">technology</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-technology"></span>
+<span class="cf-icon cf-icon-technology-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-technology&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-technology-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-technology\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-technology-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">fax</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-fax"></span>
+<span class="cf-icon cf-icon-fax-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-fax&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-fax-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-fax\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-fax-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.cf-icon-web:before {
+  content: &quot;\e300&quot;;
+}
+.lt-ie8 .cf-icon-web {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e300');
+}
+.cf-icon-web-round:before {
+  content: &quot;\e301&quot;;
+}
+.lt-ie8 .cf-icon-web-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e301');
+}
+.cf-icon-email:before {
+  content: &quot;\e302&quot;;
+}
+.lt-ie8 .cf-icon-email {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e302');
+}
+.cf-icon-email-round:before {
+  content: &quot;\e303&quot;;
+}
+.lt-ie8 .cf-icon-email-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e303');
+}
+.cf-icon-mail:before {
+  content: &quot;\e304&quot;;
+}
+.lt-ie8 .cf-icon-mail {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e304');
+}
+.cf-icon-mail-round:before {
+  content: &quot;\e305&quot;;
+}
+.lt-ie8 .cf-icon-mail-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e305');
+}
+.cf-icon-phone:before {
+  content: &quot;\e306&quot;;
+}
+.lt-ie8 .cf-icon-phone {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e306');
+}
+.cf-icon-phone-round:before {
+  content: &quot;\e307&quot;;
+}
+.lt-ie8 .cf-icon-phone-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e307');
+}
+.cf-icon-technology:before {
+  content: &quot;\e308&quot;;
+}
+.lt-ie8 .cf-icon-technology {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e308');
+}
+.cf-icon-technology-round:before {
+  content: &quot;\e309&quot;;
+}
+.lt-ie8 .cf-icon-technology-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e309');
+}
+.cf-icon-fax:before {
+  content: &quot;\e310&quot;;
+}
+.lt-ie8 .cf-icon-fax {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e310');
+}
+.cf-icon-fax-round:before {
+  content: &quot;\e311&quot;;
+}
+.lt-ie8 .cf-icon-fax-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e311');
+}</code></pre>
+          </div>
+        </div>
+        <div id="document-icons" class="docs-component">
+          <h2 class="docs-component_header"><span>Document icons</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">document</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-document"></span>
+<span class="cf-icon cf-icon-document-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-document&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-document-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-document\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-document-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">pdf</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-pdf"></span>
+<span class="cf-icon cf-icon-pdf-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-pdf&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-pdf-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-pdf\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-pdf-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">upload</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-upload"></span>
+<span class="cf-icon cf-icon-upload-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-upload&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-upload-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-upload\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-upload-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">copy</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-copy"></span>
+<span class="cf-icon cf-icon-copy-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-copy&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-copy-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-copy\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-copy-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">edit</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-edit"></span>
+<span class="cf-icon cf-icon-edit-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-edit&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-edit-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-edit\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-edit-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">attach</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-attach"></span>
+<span class="cf-icon cf-icon-attach-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-attach&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-attach-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-attach\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-attach-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">print</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-print"></span>
+<span class="cf-icon cf-icon-print-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-print&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-print-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-print\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-print-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">save</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-save"></span>
+<span class="cf-icon cf-icon-save-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-save&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-save-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-save\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-save-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">appendix</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-appendix"></span>
+<span class="cf-icon cf-icon-appendix-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-appendix&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-appendix-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-appendix\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-appendix-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">supplement</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-supplement"></span>
+<span class="cf-icon cf-icon-supplement-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-supplement&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-supplement-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-supplement\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-supplement-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">rss</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-rss"></span>
+<span class="cf-icon cf-icon-rss-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-rss&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-rss-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-rss\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-rss-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.cf-icon-document:before {
+  content: &quot;\e400&quot;;
+}
+.lt-ie8 .cf-icon-document {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e400');
+}
+.cf-icon-document-round:before {
+  content: &quot;\e401&quot;;
+}
+.lt-ie8 .cf-icon-document-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e401');
+}
+.cf-icon-pdf:before {
+  content: &quot;\e402&quot;;
+}
+.lt-ie8 .cf-icon-pdf {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e402');
+}
+.cf-icon-pdf-round:before {
+  content: &quot;\e403&quot;;
+}
+.lt-ie8 .cf-icon-pdf-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e403');
+}
+.cf-icon-upload:before {
+  content: &quot;\e404&quot;;
+}
+.lt-ie8 .cf-icon-upload {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e404');
+}
+.cf-icon-upload-round:before {
+  content: &quot;\e405&quot;;
+}
+.lt-ie8 .cf-icon-upload-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e405');
+}
+.cf-icon-download:before {
+  content: &quot;\e406&quot;;
+}
+.lt-ie8 .cf-icon-download {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e406');
+}
+.cf-icon-download-round:before {
+  content: &quot;\e407&quot;;
+}
+.lt-ie8 .cf-icon-download-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e407');
+}
+.cf-icon-copy:before {
+  content: &quot;\e408&quot;;
+}
+.lt-ie8 .cf-icon-copy {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e408');
+}
+.cf-icon-copy-round:before {
+  content: &quot;\e409&quot;;
+}
+.lt-ie8 .cf-icon-copy-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e409');
+}
+.cf-icon-edit:before {
+  content: &quot;\e410&quot;;
+}
+.lt-ie8 .cf-icon-edit {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e410');
+}
+.cf-icon-edit-round:before {
+  content: &quot;\e411&quot;;
+}
+.lt-ie8 .cf-icon-edit-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e411');
+}
+.cf-icon-attach:before {
+  content: &quot;\e412&quot;;
+}
+.lt-ie8 .cf-icon-attach {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e412');
+}
+.cf-icon-attach-round:before {
+  content: &quot;\e413&quot;;
+}
+.lt-ie8 .cf-icon-attach-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e413');
+}
+.cf-icon-print:before {
+  content: &quot;\e414&quot;;
+}
+.lt-ie8 .cf-icon-print {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e414');
+}
+.cf-icon-print-round:before {
+  content: &quot;\e415&quot;;
+}
+.lt-ie8 .cf-icon-print-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e415');
+}
+.cf-icon-save:before {
+  content: &quot;\e416&quot;;
+}
+.lt-ie8 .cf-icon-save {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e416');
+}
+.cf-icon-save-round:before {
+  content: &quot;\e417&quot;;
+}
+.lt-ie8 .cf-icon-save-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e417');
+}
+.cf-icon-appendix:before {
+  content: &quot;\e418&quot;;
+}
+.lt-ie8 .cf-icon-appendix {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e418');
+}
+.cf-icon-appendix-round:before {
+  content: &quot;\e419&quot;;
+}
+.lt-ie8 .cf-icon-appendix-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e419');
+}
+.cf-icon-supplement:before {
+  content: &quot;\e420&quot;;
+}
+.lt-ie8 .cf-icon-supplement {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e420');
+}
+.cf-icon-supplement-round:before {
+  content: &quot;\e421&quot;;
+}
+.lt-ie8 .cf-icon-supplement-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e421');
+}
+.cf-icon-rss:before {
+  content: &quot;\e422&quot;;
+}
+.lt-ie8 .cf-icon-rss {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e422');
+}
+.cf-icon-rss-round:before {
+  content: &quot;\e423&quot;;
+}
+.lt-ie8 .cf-icon-rss-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e423');
+}</code></pre>
+          </div>
+        </div>
+        <div id="financial-product-icons" class="docs-component">
+          <h2 class="docs-component_header"><span>Financial product icons</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">bank-account</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-bank-account"></span>
+<span class="cf-icon cf-icon-bank-account-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-bank-account&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-bank-account-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-bank-account\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-bank-account-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">credit-card</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-credit-card"></span>
+<span class="cf-icon cf-icon-credit-card-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-credit-card&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-credit-card-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-credit-card\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-credit-card-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">loan</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-loan"></span>
+<span class="cf-icon cf-icon-loan-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-loan&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-loan-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-loan\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-loan-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">money-transfer</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-money-transfer"></span>
+<span class="cf-icon cf-icon-money-transfer-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-money-transfer&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-money-transfer-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-money-transfer\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-money-transfer-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">mortgage</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-mortgage"></span>
+<span class="cf-icon cf-icon-mortgage-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-mortgage&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-mortgage-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-mortgage\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-mortgage-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">debt-collection</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-debt-collection"></span>
+<span class="cf-icon cf-icon-debt-collection-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-debt-collection&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-debt-collection-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-debt-collection\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-debt-collection-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">credit-report</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-credit-report"></span>
+<span class="cf-icon cf-icon-credit-report-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-credit-report&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-credit-report-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-credit-report\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-credit-report-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">money</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-money"></span>
+<span class="cf-icon cf-icon-money-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-money&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-money-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-money\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-money-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">quick-cash</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-quick-cash"></span>
+<span class="cf-icon cf-icon-quick-cash-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-quick-cash&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-quick-cash-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-quick-cash\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-quick-cash-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">contract</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-contract"></span>
+<span class="cf-icon cf-icon-contract-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-contract&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-contract-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-contract\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-contract-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">complaint</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-complaint"></span>
+<span class="cf-icon cf-icon-complaint-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-complaint&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-complaint-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-complaint\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-complaint-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">getting-credit-card</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-getting-credit-card"></span>
+<span class="cf-icon cf-icon-getting-credit-card-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-getting-credit-card&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-getting-credit-card-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-getting-credit-card\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-getting-credit-card-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">buying-car</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-buying-car"></span>
+<span class="cf-icon cf-icon-buying-car-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-buying-car&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-buying-car-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-buying-car\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-buying-car-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">paying-college</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-paying-college"></span>
+<span class="cf-icon cf-icon-paying-college-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-paying-college&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-paying-college-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-paying-college\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-paying-college-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">owning-home</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-owning-home"></span>
+<span class="cf-icon cf-icon-owning-home-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-owning-home&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-owning-home-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-owning-home\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-owning-home-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">debt</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-debt"></span>
+<span class="cf-icon cf-icon-debt-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-debt&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-debt-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-debt\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-debt-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">building-credit</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-building-credit"></span>
+<span class="cf-icon cf-icon-building-credit-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-building-credit&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-building-credit-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-building-credit\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-building-credit-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">prepaid-cards</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-prepaid-cards"></span>
+<span class="cf-icon cf-icon-prepaid-cards-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-prepaid-cards&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-prepaid-cards-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-prepaid-cards\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-prepaid-cards-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">payday-loan</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-payday-loan"></span>
+<span class="cf-icon cf-icon-payday-loan-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-payday-loan&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-payday-loan-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-payday-loan\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-payday-loan-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">retirement</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-retirement"></span>
+<span class="cf-icon cf-icon-retirement-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-retirement&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-retirement-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-retirement\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-retirement-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.cf-icon-bank-account:before {
+  content: &quot;\e500&quot;;
+}
+.lt-ie8 .cf-icon-bank-account {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e500');
+}
+.cf-icon-bank-account-round:before {
+  content: &quot;\e501&quot;;
+}
+.lt-ie8 .cf-icon-bank-account-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e501');
+}
+.cf-icon-credit-card:before {
+  content: &quot;\e502&quot;;
+}
+.lt-ie8 .cf-icon-credit-card {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e502');
+}
+.cf-icon-credit-card-round:before {
+  content: &quot;\e503&quot;;
+}
+.lt-ie8 .cf-icon-credit-card-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e503');
+}
+.cf-icon-loan:before {
+  content: &quot;\e504&quot;;
+}
+.lt-ie8 .cf-icon-loan {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e504');
+}
+.cf-icon-loan-round:before {
+  content: &quot;\e505&quot;;
+}
+.lt-ie8 .cf-icon-loan-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e505');
+}
+.cf-icon-money-transfer:before {
+  content: &quot;\e506&quot;;
+}
+.lt-ie8 .cf-icon-money-transfer {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e506');
+}
+.cf-icon-money-transfer-round:before {
+  content: &quot;\e507&quot;;
+}
+.lt-ie8 .cf-icon-money-transfer-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e507');
+}
+.cf-icon-mortgage:before {
+  content: &quot;\e508&quot;;
+}
+.lt-ie8 .cf-icon-mortgage {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e508');
+}
+.cf-icon-mortgage-round:before {
+  content: &quot;\e509&quot;;
+}
+.lt-ie8 .cf-icon-mortgage-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e509');
+}
+.cf-icon-debt-collection:before {
+  content: &quot;\e510&quot;;
+}
+.lt-ie8 .cf-icon-debt-collection {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e510');
+}
+.cf-icon-debt-collection-round:before {
+  content: &quot;\e511&quot;;
+}
+.lt-ie8 .cf-icon-debt-collection-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e511');
+}
+.cf-icon-credit-report:before {
+  content: &quot;\e512&quot;;
+}
+.lt-ie8 .cf-icon-credit-report {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e512');
+}
+.cf-icon-credit-report-round:before {
+  content: &quot;\e513&quot;;
+}
+.lt-ie8 .cf-icon-credit-report-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e513');
+}
+.cf-icon-money:before {
+  content: &quot;\e514&quot;;
+}
+.lt-ie8 .cf-icon-money {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e514');
+}
+.cf-icon-money-round:before {
+  content: &quot;\e515&quot;;
+}
+.lt-ie8 .cf-icon-money-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e515');
+}
+.cf-icon-quick-cash:before {
+  content: &quot;\e516&quot;;
+}
+.lt-ie8 .cf-icon-quick-cash {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e516');
+}
+.cf-icon-quick-cash-round:before {
+  content: &quot;\e517&quot;;
+}
+.lt-ie8 .cf-icon-quick-cash-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e517');
+}
+.cf-icon-contract:before {
+  content: &quot;\e518&quot;;
+}
+.lt-ie8 .cf-icon-contract {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e518');
+}
+.cf-icon-contract-round:before {
+  content: &quot;\e519&quot;;
+}
+.lt-ie8 .cf-icon-contract-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e519');
+}
+.cf-icon-complaint:before {
+  content: &quot;\e520&quot;;
+}
+.lt-ie8 .cf-icon-complaint {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e520');
+}
+.cf-icon-complaint-round:before {
+  content: &quot;\e521&quot;;
+}
+.lt-ie8 .cf-icon-complaint-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e521');
+}
+.cf-icon-getting-credit-card:before {
+  content: &quot;\e522&quot;;
+}
+.lt-ie8 .cf-icon-getting-credit-card {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e522');
+}
+.cf-icon-getting-credit-card-round:before {
+  content: &quot;\e523&quot;;
+}
+.lt-ie8 .cf-icon-getting-credit-card-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e523');
+}
+.cf-icon-buying-car:before {
+  content: &quot;\e524&quot;;
+}
+.lt-ie8 .cf-icon-buying-car {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e524');
+}
+.cf-icon-buying-car-round:before {
+  content: &quot;\e525&quot;;
+}
+.lt-ie8 .cf-icon-buying-car-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e525');
+}
+.cf-icon-paying-college:before {
+  content: &quot;\e526&quot;;
+}
+.lt-ie8 .cf-icon-paying-college {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e526');
+}
+.cf-icon-paying-college-round:before {
+  content: &quot;\e527&quot;;
+}
+.lt-ie8 .cf-icon-paying-college-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e527');
+}
+.cf-icon-owning-home:before {
+  content: &quot;\e528&quot;;
+}
+.lt-ie8 .cf-icon-owning-home {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e528');
+}
+.cf-icon-owning-home-round:before {
+  content: &quot;\e529&quot;;
+}
+.lt-ie8 .cf-icon-owning-home-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e529');
+}
+.cf-icon-debt:before {
+  content: &quot;\e530&quot;;
+}
+.lt-ie8 .cf-icon-debt {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e530');
+}
+.cf-icon-debt-round:before {
+  content: &quot;\e531&quot;;
+}
+.lt-ie8 .cf-icon-debt-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e531');
+}
+.cf-icon-building-credit:before {
+  content: &quot;\e532&quot;;
+}
+.lt-ie8 .cf-icon-building-credit {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e532');
+}
+.cf-icon-building-credit-round:before {
+  content: &quot;\e533&quot;;
+}
+.lt-ie8 .cf-icon-building-credit-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e533');
+}
+.cf-icon-prepaid-cards:before {
+  content: &quot;\e534&quot;;
+}
+.lt-ie8 .cf-icon-prepaid-cards {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e534');
+}
+.cf-icon-prepaid-cards-round:before {
+  content: &quot;\e535&quot;;
+}
+.lt-ie8 .cf-icon-prepaid-cards-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e535');
+}
+.cf-icon-payday-loan:before {
+  content: &quot;\e536&quot;;
+}
+.lt-ie8 .cf-icon-payday-loan {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e536');
+}
+.cf-icon-payday-loan-round:before {
+  content: &quot;\e537&quot;;
+}
+.lt-ie8 .cf-icon-payday-loan-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e537');
+}
+.cf-icon-retirement:before {
+  content: &quot;\e538&quot;;
+}
+.lt-ie8 .cf-icon-retirement {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e538');
+}
+.cf-icon-retirement-round:before {
+  content: &quot;\e539&quot;;
+}
+.lt-ie8 .cf-icon-retirement-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e539');
+}</code></pre>
+          </div>
+        </div>
+        <div id="web-icons" class="docs-component">
+          <h2 class="docs-component_header"><span>Web icons</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">user</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-user"></span>
+<span class="cf-icon cf-icon-user-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-user&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-user-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-user\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-user-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">wifi</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-wifi"></span>
+<span class="cf-icon cf-icon-wifi-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-wifi&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-wifi-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-wifi\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-wifi-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">search</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-search"></span>
+<span class="cf-icon cf-icon-search-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-search&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-search-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-search\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-search-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">share</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-share"></span>
+<span class="cf-icon cf-icon-share-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-share&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-share-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-share\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-share-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">link</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-link"></span>
+<span class="cf-icon cf-icon-link-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-link&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-link-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-link\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-link-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">external-link</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-external-link"></span>
+<span class="cf-icon cf-icon-external-link-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-external-link&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-external-link-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-external-link\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-external-link-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">audio-mute</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-audio-mute"></span>
+<span class="cf-icon cf-icon-audio-mute-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-audio-mute&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-audio-mute-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-audio-mute\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-audio-mute-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">audio-low</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-audio-low"></span>
+<span class="cf-icon cf-icon-audio-low-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-audio-low&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-audio-low-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-audio-low\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-audio-low-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">audio-medium</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-audio-medium"></span>
+<span class="cf-icon cf-icon-audio-medium-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-audio-medium&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-audio-medium-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-audio-medium\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-audio-medium-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">audio-max</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-audio-max"></span>
+<span class="cf-icon cf-icon-audio-max-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-audio-max&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-audio-max-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-audio-max\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-audio-max-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">favorite</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-favorite"></span>
+<span class="cf-icon cf-icon-favorite-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-favorite&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-favorite-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-favorite\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-favorite-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">unfavorite</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-unfavorite"></span>
+<span class="cf-icon cf-icon-unfavorite-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-unfavorite&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-unfavorite-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-unfavorite\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-unfavorite-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">bookmark</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-bookmark"></span>
+<span class="cf-icon cf-icon-bookmark-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-bookmark&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-bookmark-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-bookmark\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-bookmark-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">unbookmark</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-unbookmark"></span>
+<span class="cf-icon cf-icon-unbookmark-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-unbookmark&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-unbookmark-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-unbookmark\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-unbookmark-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">settings</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-settings"></span>
+<span class="cf-icon cf-icon-settings-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-settings&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-settings-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-settings\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-settings-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">menu</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-menu"></span>
+<span class="cf-icon cf-icon-menu-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-menu&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-menu-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-menu\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-menu-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">lock</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-lock"></span>
+<span class="cf-icon cf-icon-lock-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-lock&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-lock-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-lock\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-lock-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">unlock</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-unlock"></span>
+<span class="cf-icon cf-icon-unlock-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-unlock&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-unlock-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-unlock\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-unlock-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">clock</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-clock"></span>
+<span class="cf-icon cf-icon-clock-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-clock&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-clock-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-clock\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-clock-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">chart</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-chart"></span>
+<span class="cf-icon cf-icon-chart-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-chart&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-chart-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-chart\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-chart-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">play</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-play"></span>
+<span class="cf-icon cf-icon-play-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-play&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-play-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-play\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-play-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">newspaper</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-newspaper"></span>
+<span class="cf-icon cf-icon-newspaper-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-newspaper&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-newspaper-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-newspaper\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-newspaper-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">microphone</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-microphone"></span>
+<span class="cf-icon cf-icon-microphone-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-microphone&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-microphone-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-microphone\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-microphone-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">bullhorn</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-bullhorn"></span>
+<span class="cf-icon cf-icon-bullhorn-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-bullhorn&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-bullhorn-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-bullhorn\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-bullhorn-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">double-quote</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-double-quote"></span>
+<span class="cf-icon cf-icon-double-quote-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-double-quote&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-double-quote-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-double-quote\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-double-quote-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">speech-bubble</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-speech-bubble"></span>
+<span class="cf-icon cf-icon-speech-bubble-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-speech-bubble&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-speech-bubble-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-speech-bubble\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-speech-bubble-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">information</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-information"></span>
+<span class="cf-icon cf-icon-information-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-information&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-information-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-information\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-information-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">lightbulb</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-lightbulb"></span>
+<span class="cf-icon cf-icon-lightbulb-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-lightbulb&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-lightbulb-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-lightbulb\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-lightbulb-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">dialogue</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-dialogue"></span>
+<span class="cf-icon cf-icon-dialogue-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-dialogue&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-dialogue-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-dialogue\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-dialogue-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">date</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-date"></span>
+<span class="cf-icon cf-icon-date-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-date&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-date-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-date\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-date-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.cf-icon-user:before {
+  content: &quot;\e600&quot;;
+}
+.lt-ie8 .cf-icon-user {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e600');
+}
+.cf-icon-user-round:before {
+  content: &quot;\e601&quot;;
+}
+.lt-ie8 .cf-icon-user-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e601');
+}
+.cf-icon-wifi:before {
+  content: &quot;\e602&quot;;
+}
+.lt-ie8 .cf-icon-wifi {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e602');
+}
+.cf-icon-wifi-round:before {
+  content: &quot;\e603&quot;;
+}
+.lt-ie8 .cf-icon-wifi-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e603');
+}
+.cf-icon-search:before {
+  content: &quot;\e604&quot;;
+}
+.lt-ie8 .cf-icon-search {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e604');
+}
+.cf-icon-search-round:before {
+  content: &quot;\e605&quot;;
+}
+.lt-ie8 .cf-icon-search-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e605');
+}
+.cf-icon-share:before {
+  content: &quot;\e606&quot;;
+}
+.lt-ie8 .cf-icon-share {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e606');
+}
+.cf-icon-share-round:before {
+  content: &quot;\e607&quot;;
+}
+.lt-ie8 .cf-icon-share-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e607');
+}
+.cf-icon-link:before {
+  content: &quot;\e608&quot;;
+}
+.lt-ie8 .cf-icon-link {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e608');
+}
+.cf-icon-link-round:before {
+  content: &quot;\e609&quot;;
+}
+.lt-ie8 .cf-icon-link-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e609');
+}
+.cf-icon-external-link:before {
+  content: &quot;\e610&quot;;
+}
+.lt-ie8 .cf-icon-external-link {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e610');
+}
+.cf-icon-external-link-round:before {
+  content: &quot;\e611&quot;;
+}
+.lt-ie8 .cf-icon-external-link-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e611');
+}
+.cf-icon-audio-mute:before {
+  content: &quot;\e612&quot;;
+}
+.lt-ie8 .cf-icon-audio-mute {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e612');
+}
+.cf-icon-audio-mute-round:before {
+  content: &quot;\e616&quot;;
+}
+.lt-ie8 .cf-icon-audio-mute-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e616');
+}
+.cf-icon-audio-low:before {
+  content: &quot;\e613&quot;;
+}
+.lt-ie8 .cf-icon-audio-low {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e613');
+}
+.cf-icon-audio-low-round:before {
+  content: &quot;\e617&quot;;
+}
+.lt-ie8 .cf-icon-audio-low-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e617');
+}
+.cf-icon-audio-medium:before {
+  content: &quot;\e614&quot;;
+}
+.lt-ie8 .cf-icon-audio-medium {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e614');
+}
+.cf-icon-audio-medium-round:before {
+  content: &quot;\e618&quot;;
+}
+.lt-ie8 .cf-icon-audio-medium-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e618');
+}
+.cf-icon-audio-max:before {
+  content: &quot;\e615&quot;;
+}
+.lt-ie8 .cf-icon-audio-max {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e615');
+}
+.cf-icon-audio-max-round:before {
+  content: &quot;\e619&quot;;
+}
+.lt-ie8 .cf-icon-audio-max-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e619');
+}
+.cf-icon-favorite:before {
+  content: &quot;\e620&quot;;
+}
+.lt-ie8 .cf-icon-favorite {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e620');
+}
+.cf-icon-favorite-round:before {
+  content: &quot;\e621&quot;;
+}
+.lt-ie8 .cf-icon-favorite-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e621');
+}
+.cf-icon-unfavorite:before {
+  content: &quot;\e622&quot;;
+}
+.lt-ie8 .cf-icon-unfavorite {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e622');
+}
+.cf-icon-unfavorite-round:before {
+  content: &quot;\e623&quot;;
+}
+.lt-ie8 .cf-icon-unfavorite-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e623');
+}
+.cf-icon-bookmark:before {
+  content: &quot;\e624&quot;;
+}
+.lt-ie8 .cf-icon-bookmark {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e624');
+}
+.cf-icon-bookmark-round:before {
+  content: &quot;\e625&quot;;
+}
+.lt-ie8 .cf-icon-bookmark-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e625');
+}
+.cf-icon-unbookmark:before {
+  content: &quot;\e626&quot;;
+}
+.lt-ie8 .cf-icon-unbookmark {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e626');
+}
+.cf-icon-unbookmark-round:before {
+  content: &quot;\e627&quot;;
+}
+.lt-ie8 .cf-icon-unbookmark-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e627');
+}
+.cf-icon-settings:before {
+  content: &quot;\e628&quot;;
+}
+.lt-ie8 .cf-icon-settings {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e628');
+}
+.cf-icon-settings-round:before {
+  content: &quot;\e629&quot;;
+}
+.lt-ie8 .cf-icon-settings-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e629');
+}
+.cf-icon-menu:before {
+  content: &quot;\e630&quot;;
+}
+.lt-ie8 .cf-icon-menu {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e630');
+}
+.cf-icon-menu-round:before {
+  content: &quot;\e631&quot;;
+}
+.lt-ie8 .cf-icon-menu-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e631');
+}
+.cf-icon-lock:before {
+  content: &quot;\e632&quot;;
+}
+.lt-ie8 .cf-icon-lock {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e632');
+}
+.cf-icon-lock-round:before {
+  content: &quot;\e633&quot;;
+}
+.lt-ie8 .cf-icon-lock-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e633');
+}
+.cf-icon-unlock:before {
+  content: &quot;\e634&quot;;
+}
+.lt-ie8 .cf-icon-unlock {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e634');
+}
+.cf-icon-unlock-round:before {
+  content: &quot;\e635&quot;;
+}
+.lt-ie8 .cf-icon-unlock-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e635');
+}
+.cf-icon-clock:before {
+  content: &quot;\e636&quot;;
+}
+.lt-ie8 .cf-icon-clock {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e636');
+}
+.cf-icon-clock-round:before {
+  content: &quot;\e637&quot;;
+}
+.lt-ie8 .cf-icon-clock-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e637');
+}
+.cf-icon-chart:before {
+  content: &quot;\e638&quot;;
+}
+.lt-ie8 .cf-icon-chart {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e638');
+}
+.cf-icon-chart-round:before {
+  content: &quot;\e639&quot;;
+}
+.lt-ie8 .cf-icon-chart-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e639');
+}
+.cf-icon-play:before {
+  content: &quot;\e640&quot;;
+}
+.lt-ie8 .cf-icon-play {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e640');
+}
+.cf-icon-play-round:before {
+  content: &quot;\e641&quot;;
+}
+.lt-ie8 .cf-icon-play-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e641');
+}
+.cf-icon-newspaper:before {
+  content: &quot;\e700&quot;;
+}
+.lt-ie8 .cf-icon-newspaper {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e700');
+}
+.cf-icon-newspaper-round:before {
+  content: &quot;\e701&quot;;
+}
+.lt-ie8 .cf-icon-newspaper-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e701');
+}
+.cf-icon-microphone:before {
+  content: &quot;\e702&quot;;
+}
+.lt-ie8 .cf-icon-microphone {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e702');
+}
+.cf-icon-microphone-round:before {
+  content: &quot;\e703&quot;;
+}
+.lt-ie8 .cf-icon-microphone-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e703');
+}
+.cf-icon-bullhorn:before {
+  content: &quot;\e704&quot;;
+}
+.lt-ie8 .cf-icon-bullhorn {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e704');
+}
+.cf-icon-bullhorn-round:before {
+  content: &quot;\e705&quot;;
+}
+.lt-ie8 .cf-icon-bullhorn-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e705');
+}
+.cf-icon-double-quote:before {
+  content: &quot;\e708&quot;;
+}
+.lt-ie8 .cf-icon-double-quote {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e708');
+}
+.cf-icon-double-quote-round:before {
+  content: &quot;\e709&quot;;
+}
+.lt-ie8 .cf-icon-double-quote-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e709');
+}
+.cf-icon-speech-bubble:before {
+  content: &quot;\e710&quot;;
+}
+.lt-ie8 .cf-icon-speech-bubble {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e710');
+}
+.cf-icon-speech-bubble-round:before {
+  content: &quot;\e711&quot;;
+}
+.lt-ie8 .cf-icon-speech-bubble-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e711');
+}
+.cf-icon-information:before {
+  content: &quot;\e712&quot;;
+}
+.lt-ie8 .cf-icon-information {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e712');
+}
+.cf-icon-information-round:before {
+  content: &quot;\e713&quot;;
+}
+.lt-ie8 .cf-icon-information-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e713');
+}
+.cf-icon-lightbulb:before {
+  content: &quot;\e714&quot;;
+}
+.lt-ie8 .cf-icon-lightbulb {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e714');
+}
+.cf-icon-lightbulb-round:before {
+  content: &quot;\e715&quot;;
+}
+.lt-ie8 .cf-icon-lightbulb-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e715');
+}
+.cf-icon-dialogue:before {
+  content: &quot;\e716&quot;;
+}
+.lt-ie8 .cf-icon-dialogue {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e716');
+}
+.cf-icon-dialogue-round:before {
+  content: &quot;\e717&quot;;
+}
+.lt-ie8 .cf-icon-dialogue-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e717');
+}
+.cf-icon-date:before {
+  content: &quot;\e718&quot;;
+}
+.lt-ie8 .cf-icon-date {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e718');
+}
+.cf-icon-date-round:before {
+  content: &quot;\e719&quot;;
+}
+.lt-ie8 .cf-icon-date-round {
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e719');
+}</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="docs-sidebar-wrapper_sidebar">
+        <ul class="docs-nav">
+          <li class="docs-nav_item"><a href="/docs/cf-core" class="docs-nav_link">cf-core</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-buttons" class="docs-nav_link">cf-buttons</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-expandables" class="docs-nav_link">cf-expandables</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-forms" class="docs-nav_link">cf-forms</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-grid" class="docs-nav_link">cf-grid</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-icons" class="docs-nav_link">cf-icons</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-layout" class="docs-nav_link">cf-layout</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-pagination" class="docs-nav_link">cf-pagination</a></li>
+        </ul>
+      </div>
+    </div>
+    <script src="static/docs/main.min.js"></script>
+  </body>
+</html>

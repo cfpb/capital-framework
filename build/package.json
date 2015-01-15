@@ -13,6 +13,7 @@
     "build"
   ],
   "devDependencies": {
+    "cf-component-demo": "git://github.com/cfpb/cf-component-demo.git#0.9.1",
     "grunt": "~0.4.5",
     "grunt-autoprefixer": "~2.0.0",
     "grunt-banner": "~0.2.3",

@@ -301,6 +301,39 @@ module.exports = function(grunt) {
 
   };
 
+    /**
+   * Creates a dynamic Topdoc options object from the dependencies in bower.json.
+   * You could then run each sub-task separately like `grunt topdoc:cf-core`, or
+   * use `grunt topdoc` to run all Topdoc sub-tasks.
+   */
+  function dynamicTopdocTasks() {
+    var topdoc = {},
+        families = Object.keys(config.pkg.dependencies),
+        navItems = [];
+    for (var i = 0; i < families.length; i++) {
+      navItems.push([families[i], '/docs/' + families[i]]);
+    }
+    for (var i = 0; i < families.length; i++) {
+      var key = families[i];
+      topdoc[key] = {
+        options: {
+          source: 'dist/static/css/',
+          destination: 'dist/docs/' + key + '/',
+          template: 'node_modules/cf-component-demo/docs/',
+          templateData: {
+            family: key,
+            title: key + ' docs',
+            repo: 'https://github.com/cfpb/' + key,
+            navItems: navItems
+          }
+        }
+      };
+    }
+    return topdoc;
+  }
+
+  config.topdoc = dynamicTopdocTasks();
+
   /**
    * Initialize a configuration object for the current project.
    */
@@ -313,7 +346,7 @@ module.exports = function(grunt) {
   grunt.registerTask('css', ['less', 'autoprefixer', 'legacssy', 'cssmin', 'usebanner:css']);
   grunt.registerTask('js', ['concat:js', 'uglify', 'usebanner:js']);
   grunt.registerTask('test', ['jshint']);
-  grunt.registerTask('build', ['test', 'css', 'js', 'copy']);
+  grunt.registerTask('build', ['test', 'css', 'js', 'copy', 'topdoc']);
   grunt.registerTask('default', ['build']);
 
 };

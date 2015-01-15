@@ -8036,6 +8036,55 @@ figure img {
   eof: true
 */
 
+.feature-header {
+  display: inline-block;
+  padding-bottom: 0.625em;
+  margin-bottom: 1.875em;
+  border-bottom: 4px solid #2cb34a;
+}
+
+.feature-header_name {
+  display: inline-block;
+  margin: 0;
+  line-height: 1;
+}
+
+.feature-header_docs {
+  display: inline-block;
+  vertical-align: top;
+  font-family: "AvenirNextLTW01-Regular", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.feature-header_docs em,
+.feature-header_docs i {
+  font-family: "AvenirNextLTW01-Italic", Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.lt-ie9 .feature-header_docs em,
+.lt-ie9 .feature-header_docs i {
+  font-style: normal !important;
+}
+
+.feature-header_docs strong,
+.feature-header_docs b {
+  font-family: "AvenirNextLTW01-Demi", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.lt-ie9 .feature-header_docs strong,
+.lt-ie9 .feature-header_docs b {
+  font-weight: normal !important;
+}
+
+.feature-header_name + .feature-header_docs {
+  margin-left: 1em;
+}
+
 .color-demo {
   display: inline-block;
   box-sizing: border-box;

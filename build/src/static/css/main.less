@@ -10,6 +10,27 @@
 // Add project-specific Less rules goes below.
 // We've generated some sample rules for you. They're used with the index.html file.
 
+.feature-header {
+    display: inline-block;
+    padding-bottom: unit(10px / @base-font-size-px, em);
+    margin-bottom: unit(30px / @base-font-size-px, em);
+    border-bottom: 4px solid @green;
+
+    &_name {
+        display: inline-block;
+        margin: 0;
+        line-height: 1;
+    }
+    &_docs {
+        display: inline-block;
+        vertical-align: top;
+        .webfont-regular();
+    }
+    &_name + &_docs {
+        margin-left: 1em;
+    }
+}
+
 .color-demo {
     .grid_column( 4 );
     height: 30px;
