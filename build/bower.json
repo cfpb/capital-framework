@@ -14,14 +14,14 @@
   },
   "license": "CC0",
   "dependencies": {
-    "cf-core": "*",
-    "cf-buttons": "*",
-    "cf-expandables": "~0.6.2",
-    "cf-forms": "~1.1.1",
-    "cf-grid": "~0.9.1",
-    "cf-icons": "*",
-    "cf-layout": "~0.1.1",
-    "cf-pagination": "~0.4.2"
+    "cf-core": "0.8.1",
+    "cf-buttons": "1.3.1",
+    "cf-expandables": "0.6.2",
+    "cf-forms": "1.1.1",
+    "cf-grid": "0.9.1",
+    "cf-icons": "0.4.1",
+    "cf-layout": "0.2.2",
+    "cf-pagination": "0.4.2"
   },
   "exportsOverride": {
     "cf-*": {
