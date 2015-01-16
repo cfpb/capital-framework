@@ -37,7 +37,9 @@ Here's a quick guide on working with these files:
 
 - Edit files within the `src` directory.
 - Point your terminal to `dist` and run `python -m SimpleHTTPServer`.
-  You can now navigate to `localhost:8000/` and view the demo page.
+  You can now navigate to `localhost:8000` and view the demo page.
+
+#### Editing the Less and JS
 
 The generator has created a starter Less file at `src/static/css/main.less`.
 This file includes all of the necessary `@import`s needed for Capital Framework.
