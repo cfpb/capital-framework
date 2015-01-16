@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+  <!-- <![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>cf-pagination docs</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic">
+    <link rel="stylesheet" type="text/css" href="static/docs/brackets.css">
+    <link rel="stylesheet" type="text/css" href="static/docs/docs.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+  </head>
+  <body>
+    <div class="docs-sidebar-wrapper">
+      <div class="docs-sidebar-wrapper_body">
+        <div class="docs-masthead">
+          <h1 class="docs-title"><span class="docs-icon">&lt;/&gt;</span> cf-pagination docs
+          </h1><a href="https://github.com/cfpb/cf-pagination" class="docs-repo">view the repository</a>
+        </div>
+        <div id="pagination" class="docs-component">
+          <h2 class="docs-component_header"><span>Pagination</span></h2>
+          <div class="docs-component_intro">
+            <ul class="docs-notes">
+              <li>To enable the component to jump directly to the paginated content place place #pagination_content directly above your paginated content.</li>
+            </ul>
+          </div>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Default pagination</h3>
+              <section class="docs-pattern_pattern">
+<div id="pagination_content"></div>
+
+<!-- Paginated content here -->
+
+<nav class="pagination">
+    <a class="btn btn__super pagination_prev" href="#pagination_content">
+        <span class="btn_icon__left cf-icon cf-icon-left"></span>
+        Previous
+    </a>
+    <a class="btn btn__super pagination_next" href="#pagination_content">
+        Next
+        <span class="btn_icon__right cf-icon cf-icon-right"></span>
+    </a>
+    <form class="pagination_form" action="index.html#pagination_content">
+        <label class="pagination_label"
+               for="pagination_current-page">
+            Page
+            <span class="u-visually-hidden">
+                number out of 149 total pages
+            </span>
+        </label>
+        <input
+            class="pagination_current-page"
+            id="pagination_current-page"
+            name="pagination_current-page"
+            type="number" min="1" max="149"
+            value="149">
+        <span class="pagination_label">
+            <span aria-hidden="true">
+                of 149
+            </span>
+        </span>
+        <button class="btn btn__link pagination_submit"
+                id="pagination_submit"
+                type="submit">
+            Go
+        </button>
+    </form>
+</nav>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div id=&quot;pagination_content&quot;&gt;&lt;/div&gt;
+
+&lt;!-- Paginated content here --&gt;
+
+&lt;nav class=&quot;pagination&quot;&gt;
+    &lt;a class=&quot;btn btn__super pagination_prev&quot; href=&quot;#pagination_content&quot;&gt;
+        &lt;span class=&quot;btn_icon__left cf-icon cf-icon-left&quot;&gt;&lt;/span&gt;
+        Previous
+    &lt;/a&gt;
+    &lt;a class=&quot;btn btn__super pagination_next&quot; href=&quot;#pagination_content&quot;&gt;
+        Next
+        &lt;span class=&quot;btn_icon__right cf-icon cf-icon-right&quot;&gt;&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;form class=&quot;pagination_form&quot; action=&quot;index.html#pagination_content&quot;&gt;
+        &lt;label class=&quot;pagination_label&quot;
+               for=&quot;pagination_current-page&quot;&gt;
+            Page
+            &lt;span class=&quot;u-visually-hidden&quot;&gt;
+                number out of 149 total pages
+            &lt;/span&gt;
+        &lt;/label&gt;
+        &lt;input
+            class=&quot;pagination_current-page&quot;
+            id=&quot;pagination_current-page&quot;
+            name=&quot;pagination_current-page&quot;
+            type=&quot;number&quot; min=&quot;1&quot; max=&quot;149&quot;
+            value=&quot;149&quot;&gt;
+        &lt;span class=&quot;pagination_label&quot;&gt;
+            &lt;span aria-hidden=&quot;true&quot;&gt;
+                of 149
+            &lt;/span&gt;
+        &lt;/span&gt;
+        &lt;button class=&quot;btn btn__link pagination_submit&quot;
+                id=&quot;pagination_submit&quot;
+                type=&quot;submit&quot;&gt;
+            Go
+        &lt;/button&gt;
+    &lt;/form&gt;
+&lt;/nav&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-pagination/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div id=\&amp;quot;pagination_content\&amp;quot;&gt;&lt;/div&gt;\n\n&lt;!-- Paginated content here --&gt;\n\n&lt;nav class=\&amp;quot;pagination\&amp;quot;&gt;\n    &lt;a class=\&amp;quot;btn btn__super pagination_prev\&amp;quot; href=\&amp;quot;#pagination_content\&amp;quot;&gt;\n        &lt;span class=\&amp;quot;btn_icon__left cf-icon cf-icon-left\&amp;quot;&gt;&lt;/span&gt;\n        Previous\n    &lt;/a&gt;\n    &lt;a class=\&amp;quot;btn btn__super pagination_next\&amp;quot; href=\&amp;quot;#pagination_content\&amp;quot;&gt;\n        Next\n        &lt;span class=\&amp;quot;btn_icon__right cf-icon cf-icon-right\&amp;quot;&gt;&lt;/span&gt;\n    &lt;/a&gt;\n    &lt;form class=\&amp;quot;pagination_form\&amp;quot; action=\&amp;quot;index.html#pagination_content\&amp;quot;&gt;\n        &lt;label class=\&amp;quot;pagination_label\&amp;quot;\n               for=\&amp;quot;pagination_current-page\&amp;quot;&gt;\n            Page\n            &lt;span class=\&amp;quot;u-visually-hidden\&amp;quot;&gt;\n                number out of 149 total pages\n            &lt;/span&gt;\n        &lt;/label&gt;\n        &lt;input\n            class=\&amp;quot;pagination_current-page\&amp;quot;\n            id=\&amp;quot;pagination_current-page\&amp;quot;\n            name=\&amp;quot;pagination_current-page\&amp;quot;\n            type=\&amp;quot;number\&amp;quot; min=\&amp;quot;1\&amp;quot; max=\&amp;quot;149\&amp;quot;\n            value=\&amp;quot;149\&amp;quot;&gt;\n        &lt;span class=\&amp;quot;pagination_label\&amp;quot;&gt;\n            &lt;span aria-hidden=\&amp;quot;true\&amp;quot;&gt;\n                of 149\n            &lt;/span&gt;\n        &lt;/span&gt;\n        &lt;button class=\&amp;quot;btn btn__link pagination_submit\&amp;quot;\n                id=\&amp;quot;pagination_submit\&amp;quot;\n                type=\&amp;quot;submit\&amp;quot;&gt;\n            Go\n        &lt;/button&gt;\n    &lt;/form&gt;\n&lt;/nav&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.pagination {
+  display: block;
+  position: relative;
+}
+@media only all and (max-width: 19.9375em) {
+  .pagination_prev.btn,
+  .pagination_next.btn {
+    display: block;
+    text-align: center;
+  }
+  .pagination_prev.btn + .pagination_next.btn {
+    margin: 1em 0 0;
+  }
+}
+@media only all and (min-width: 20em) {
+  .pagination_next {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+@media only all and (max-width: 23.0625em) {
+  .pagination_prev.btn,
+  .pagination_next.btn {
+    padding-left: 1.11111111em;
+    padding-right: 1.11111111em;
+  }
+}
+.pagination_form {
+  display: block;
+  padding: 0.3125em;
+  margin: 1em 0 0 0;
+  background: #e3e4e5;
+  color: #75787b;
+  text-align: center;
+}
+.pagination_label {
+  display: inline-block;
+  margin: 0;
+  font-family: &quot;AvenirNextLTW01-Medium&quot;, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+  vertical-align: middle;
+}
+.lt-ie8 .pagination_label {
+  display: inline;
+}
+.lt-ie9 .pagination_label {
+  font-weight: normal !important;
+}
+.pagination_current-page,
+input[type=&quot;number&quot;].pagination_current-page,
+input[type=&quot;text&quot;].pagination_current-page {
+  display: inline-block;
+  width: 2.625em;
+  margin: 0 0.25em;
+  font-size: 1em;
+  font-family: &quot;AvenirNextLTW01-Demi&quot;, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: middle;
+}
+.lt-ie8 .pagination_current-page,
+.lt-ie8 input[type=&quot;number&quot;].pagination_current-page,
+.lt-ie8 input[type=&quot;text&quot;].pagination_current-page {
+  display: inline;
+}
+.lt-ie9 .pagination_current-page,
+.lt-ie9 input[type=&quot;number&quot;].pagination_current-page,
+.lt-ie9 input[type=&quot;text&quot;].pagination_current-page {
+  font-weight: normal !important;
+}
+.lt-ie8 .pagination_current-page,
+.lt-ie8 input[type=&quot;number&quot;].pagination_current-page,
+.lt-ie8 input[type=&quot;text&quot;].pagination_current-page {
+  margin: 0 4px;
+}
+.pagination_submit.btn {
+  display: inline-block;
+  margin: 0 0 0 0.875em;
+  font-size: 1em;
+  vertical-align: middle;
+}
+.lt-ie8 .pagination_submit.btn {
+  display: inline;
+}
+.lt-ie8 .pagination_submit.btn {
+  padding-left: 0.875em;
+  margin: 0;
+  border: none;
+  text-decoration: underline;
+}
+@media only all and (min-width: 40em) {
+  .pagination_form {
+    margin: 0;
+    border-radius: 0.25em;
+  }
+  .pagination_prev {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .pagination_prev,
+  .pagination_prev:link,
+  .pagination_prev:visited {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .pagination_next,
+  .pagination_next:link,
+  .pagination_next:visited {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="docs-sidebar-wrapper_sidebar">
+        <ul class="docs-nav">
+          <li class="docs-nav_item"><a href="/docs/cf-core" class="docs-nav_link">cf-core</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-buttons" class="docs-nav_link">cf-buttons</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-expandables" class="docs-nav_link">cf-expandables</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-forms" class="docs-nav_link">cf-forms</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-grid" class="docs-nav_link">cf-grid</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-icons" class="docs-nav_link">cf-icons</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-layout" class="docs-nav_link">cf-layout</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-pagination" class="docs-nav_link">cf-pagination</a></li>
+        </ul>
+      </div>
+    </div>
+    <script src="static/docs/main.min.js"></script>
+  </body>
+</html>

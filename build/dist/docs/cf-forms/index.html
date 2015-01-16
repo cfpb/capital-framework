@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+  <!-- <![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>cf-forms docs</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic">
+    <link rel="stylesheet" type="text/css" href="static/docs/brackets.css">
+    <link rel="stylesheet" type="text/css" href="static/docs/docs.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+  </head>
+  <body>
+    <div class="docs-sidebar-wrapper">
+      <div class="docs-sidebar-wrapper_body">
+        <div class="docs-masthead">
+          <h1 class="docs-title"><span class="docs-icon">&lt;/&gt;</span> cf-forms docs
+          </h1><a href="https://github.com/cfpb/cf-forms" class="docs-repo">view the repository</a>
+        </div>
+        <div id="form-labels" class="docs-component">
+          <h2 class="docs-component_header"><span>Form labels</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Label header</h3>
+              <section class="docs-pattern_pattern">
+<label class="form-label-header">
+    Form label header
+</label>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;label class=&quot;form-label-header&quot;&gt;
+    Form label header
+&lt;/label&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;label class=\&amp;quot;form-label-header\&amp;quot;&gt;\n    Form label header\n&lt;/label&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.form-label-header {
+  font-family: &quot;AvenirNextLTW01-Demi&quot;, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0.35714286em;
+  font-size: 0.875em;
+  line-height: 1.57142857;
+  margin-bottom: 0.71428571em;
+}
+.lt-ie9 .form-label-header {
+  font-weight: normal !important;
+}</code></pre>
+          </div>
+        </div>
+        <div id="super-input" class="docs-component">
+          <h2 class="docs-component_header"><span>Super input</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.input__super</h3>
+              <section class="docs-pattern_pattern">
+<input class="input__super" type="text" value="Super input"></input>
+<button class="btn btn__super">Super</button>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;input class=&quot;input__super&quot; type=&quot;text&quot; value=&quot;Super input&quot;&gt;&lt;/input&gt;
+&lt;button class=&quot;btn btn__super&quot;&gt;Super&lt;/button&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;input class=\&amp;quot;input__super\&amp;quot; type=\&amp;quot;text\&amp;quot; value=\&amp;quot;Super input\&amp;quot;&gt;&lt;/input&gt;\n&lt;button class=\&amp;quot;btn btn__super\&amp;quot;&gt;Super&lt;/button&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-notes">
+                  <li>An input that matches the height of a super button.</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.input__super[type=&quot;text&quot;],
+.input__super[type=&quot;search&quot;],
+.input__super[type=&quot;email&quot;],
+.input__super[type=&quot;url&quot;],
+.input__super[type=&quot;tel&quot;],
+.input__super[type=&quot;number&quot;] {
+  padding: 0.55555556em;
+  font-size: 1.125em;
+}</code></pre>
+          </div>
+        </div>
+        <div id="input-states" class="docs-component">
+          <h2 class="docs-component_header"><span>Input states</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Error state</h3>
+              <section class="docs-pattern_pattern">
+<input class="error" type="text" value="Invalid input">
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;input class=&quot;error&quot; type=&quot;text&quot; value=&quot;Invalid input&quot;&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;input class=\&amp;quot;error\&amp;quot; type=\&amp;quot;text\&amp;quot; value=\&amp;quot;Invalid input\&amp;quot;&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>.error</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>See the 'Form icons' section below for guidance on adding icons to states.</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Success state</h3>
+              <section class="docs-pattern_pattern">
+<input class="success" type="text" value="Validated input">
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;input class=&quot;success&quot; type=&quot;text&quot; value=&quot;Validated input&quot;&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;input class=\&amp;quot;success\&amp;quot; type=\&amp;quot;text\&amp;quot; value=\&amp;quot;Validated input\&amp;quot;&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>.success</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>See the 'Form icons' section below for guidance on adding icons to states.</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">input[type=&quot;text&quot;].error,
+input[type=&quot;search&quot;].error,
+input[type=&quot;email&quot;].error,
+input[type=&quot;url&quot;].error,
+input[type=&quot;tel&quot;].error,
+input[type=&quot;number&quot;].error,
+select[multiple].error,
+textarea.error {
+  border: 1px solid #d12124;
+  outline: 1px solid #d12124;
+}
+input[type=&quot;text&quot;].success,
+input[type=&quot;search&quot;].success,
+input[type=&quot;email&quot;].success,
+input[type=&quot;url&quot;].success,
+input[type=&quot;tel&quot;].success,
+input[type=&quot;number&quot;].success,
+select[multiple].success,
+textarea.success {
+  border: 1px solid #2cb34a;
+  outline: 1px solid #2cb34a;
+}</code></pre>
+          </div>
+        </div>
+        <div id="form-icons" class="docs-component">
+          <h2 class="docs-component_header"><span>Form icons</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Form input icons</h3>
+              <section class="docs-pattern_pattern">
+<input type="text" value="">
+<span class="cf-form_input-icon cf-icon cf-icon-email"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;input type=&quot;text&quot; value=&quot;&quot;&gt;
+&lt;span class=&quot;cf-form_input-icon cf-icon cf-icon-email&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;input type=\&amp;quot;text\&amp;quot; value=\&amp;quot;\&amp;quot;&gt;\n&lt;span class=\&amp;quot;cf-form_input-icon cf-icon cf-icon-email\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-notes">
+                  <li>Form input icons add small positioning tweaks to Capital Framework icons.</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Form input error icon</h3>
+              <section class="docs-pattern_pattern">
+<input class="error" type="text" value="Invalid input">
+<span class="cf-form_input-icon cf-icon cf-icon-delete-round" role="alert"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;input class=&quot;error&quot; type=&quot;text&quot; value=&quot;Invalid input&quot;&gt;
+&lt;span class=&quot;cf-form_input-icon cf-icon cf-icon-delete-round&quot; role=&quot;alert&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;input class=\&amp;quot;error\&amp;quot; type=\&amp;quot;text\&amp;quot; value=\&amp;quot;Invalid input\&amp;quot;&gt;\n&lt;span class=\&amp;quot;cf-form_input-icon cf-icon cf-icon-delete-round\&amp;quot; role=\&amp;quot;alert\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-notes">
+                  <li>The icon must be placed directly after the form input in the markup and the input must use the 'error' class.</li>
+                  <li>For invalid fields only use the alert role to call attention to fields that need immediate attention: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Form input success icon</h3>
+              <section class="docs-pattern_pattern">
+<input class="success" type="text" value="Validated input">
+<span class="cf-form_input-icon cf-icon cf-icon-approved-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;input class=&quot;success&quot; type=&quot;text&quot; value=&quot;Validated input&quot;&gt;
+&lt;span class=&quot;cf-form_input-icon cf-icon cf-icon-approved-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;input class=\&amp;quot;success\&amp;quot; type=\&amp;quot;text\&amp;quot; value=\&amp;quot;Validated input\&amp;quot;&gt;\n&lt;span class=\&amp;quot;cf-form_input-icon cf-icon cf-icon-approved-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-notes">
+                  <li>The icon must be placed directly after the form input in the markup and the input must use the 'error' class.</li>
+                  <li>For valid inputs only use the alert role to indicate that a previously invalid input is now valid: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.cf-form_input-icon {
+  position: relative;
+  top: 0.3em;
+  margin-left: 0.2em;
+  font-size: 1.25em;
+}
+.error + .cf-form_input-icon {
+  color: #d12124;
+}
+.success + .cf-form_input-icon {
+  color: #2cb34a;
+}</code></pre>
+          </div>
+        </div>
+        <div id="form-group" class="docs-component">
+          <h2 class="docs-component_header"><span>Form group</span></h2>
+          <div class="docs-component_intro">
+            <ul class="docs-codenotes">
+              <li>
+                <pre class="docs-code"><code>Pattern structure
+-----------------
+.form-group
+  .form-group_item</code></pre>
+              </li>
+            </ul>
+            <ul class="docs-notes">
+              <li>A form group is recommended when you need to provide spacing between form elements and between groups of form elements.</li>
+            </ul>
+          </div>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.form-group (block)</h3>
+              <section class="docs-pattern_pattern">
+<div class="form-group">
+    <div class="form-group_item">
+        <input type="text">
+    </div>
+    <div class="form-group_item">
+        <input type="text">
+    </div>
+</div>
+<div class="form-group">
+    <div class="form-group_item">
+        <input type="text">
+    </div>
+    <div class="form-group_item">
+        <input type="text">
+    </div>
+</div>
+<div class="form-group">
+    <div class="form-group_item">
+        <input type="text">
+    </div>
+    <div class="form-group_item">
+        <input type="text">
+    </div>
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;form-group&quot;&gt;
+    &lt;div class=&quot;form-group_item&quot;&gt;
+        &lt;input type=&quot;text&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group_item&quot;&gt;
+        &lt;input type=&quot;text&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;div class=&quot;form-group_item&quot;&gt;
+        &lt;input type=&quot;text&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group_item&quot;&gt;
+        &lt;input type=&quot;text&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;div class=&quot;form-group_item&quot;&gt;
+        &lt;input type=&quot;text&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group_item&quot;&gt;
+        &lt;input type=&quot;text&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;form-group\&amp;quot;&gt;\n    &lt;div class=\&amp;quot;form-group_item\&amp;quot;&gt;\n        &lt;input type=\&amp;quot;text\&amp;quot;&gt;\n    &lt;/div&gt;\n    &lt;div class=\&amp;quot;form-group_item\&amp;quot;&gt;\n        &lt;input type=\&amp;quot;text\&amp;quot;&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&lt;div class=\&amp;quot;form-group\&amp;quot;&gt;\n    &lt;div class=\&amp;quot;form-group_item\&amp;quot;&gt;\n        &lt;input type=\&amp;quot;text\&amp;quot;&gt;\n    &lt;/div&gt;\n    &lt;div class=\&amp;quot;form-group_item\&amp;quot;&gt;\n        &lt;input type=\&amp;quot;text\&amp;quot;&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&lt;div class=\&amp;quot;form-group\&amp;quot;&gt;\n    &lt;div class=\&amp;quot;form-group_item\&amp;quot;&gt;\n        &lt;input type=\&amp;quot;text\&amp;quot;&gt;\n    &lt;/div&gt;\n    &lt;div class=\&amp;quot;form-group_item\&amp;quot;&gt;\n        &lt;input type=\&amp;quot;text\&amp;quot;&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>.form-group</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>Provides sizeable margins between groups of form elements.</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.form-group_item (element)</h3>
+              <section class="docs-pattern_pattern">
+<div class="form-group_item">
+    <input type="text">
+</div>
+<div class="form-group_item">
+    <input type="text">
+</div>
+<div class="form-group_item">
+    <input type="text">
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;form-group_item&quot;&gt;
+    &lt;input type=&quot;text&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form-group_item&quot;&gt;
+    &lt;input type=&quot;text&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form-group_item&quot;&gt;
+    &lt;input type=&quot;text&quot;&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;form-group_item\&amp;quot;&gt;\n    &lt;input type=\&amp;quot;text\&amp;quot;&gt;\n&lt;/div&gt;\n&lt;div class=\&amp;quot;form-group_item\&amp;quot;&gt;\n    &lt;input type=\&amp;quot;text\&amp;quot;&gt;\n&lt;/div&gt;\n&lt;div class=\&amp;quot;form-group_item\&amp;quot;&gt;\n    &lt;input type=\&amp;quot;text\&amp;quot;&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-notes">
+                  <li>Provides subtle margins between form elements within the same group.</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Real world example</h3>
+              <section class="docs-pattern_pattern">
+<div class="form-group">
+    <label class="form-label-header">Form group</label>
+    <div class="form-group_item">
+        <input type="text" value="Form group item">
+    </div>
+    <div class="form-group_item">
+        <input type="text" value="Form group item">
+    </div>
+</div>
+<div class="form-group">
+    <label class="form-label-header">Form group</label>
+    <div class="form-group_item">
+        <input type="text" value="Form group item">
+    </div>
+    <div class="form-group_item">
+        <input type="text" value="Form group item">
+    </div>
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;form-label-header&quot;&gt;Form group&lt;/label&gt;
+    &lt;div class=&quot;form-group_item&quot;&gt;
+        &lt;input type=&quot;text&quot; value=&quot;Form group item&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group_item&quot;&gt;
+        &lt;input type=&quot;text&quot; value=&quot;Form group item&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;form-label-header&quot;&gt;Form group&lt;/label&gt;
+    &lt;div class=&quot;form-group_item&quot;&gt;
+        &lt;input type=&quot;text&quot; value=&quot;Form group item&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group_item&quot;&gt;
+        &lt;input type=&quot;text&quot; value=&quot;Form group item&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;form-group\&amp;quot;&gt;\n    &lt;label class=\&amp;quot;form-label-header\&amp;quot;&gt;Form group&lt;/label&gt;\n    &lt;div class=\&amp;quot;form-group_item\&amp;quot;&gt;\n        &lt;input type=\&amp;quot;text\&amp;quot; value=\&amp;quot;Form group item\&amp;quot;&gt;\n    &lt;/div&gt;\n    &lt;div class=\&amp;quot;form-group_item\&amp;quot;&gt;\n        &lt;input type=\&amp;quot;text\&amp;quot; value=\&amp;quot;Form group item\&amp;quot;&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&lt;div class=\&amp;quot;form-group\&amp;quot;&gt;\n    &lt;label class=\&amp;quot;form-label-header\&amp;quot;&gt;Form group&lt;/label&gt;\n    &lt;div class=\&amp;quot;form-group_item\&amp;quot;&gt;\n        &lt;input type=\&amp;quot;text\&amp;quot; value=\&amp;quot;Form group item\&amp;quot;&gt;\n    &lt;/div&gt;\n    &lt;div class=\&amp;quot;form-group_item\&amp;quot;&gt;\n        &lt;input type=\&amp;quot;text\&amp;quot; value=\&amp;quot;Form group item\&amp;quot;&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.form-group + .form-group {
+  margin-top: 1.875em;
+}
+.form-group_item + .form-group_item {
+  margin-top: 0.9375em;
+}</code></pre>
+          </div>
+        </div>
+        <div id="input-with-button" class="docs-component">
+          <h2 class="docs-component_header"><span>Input with button</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Default input and button</h3>
+              <section class="docs-pattern_pattern">
+<div class="input-with-btn">
+    <div class="input-with-btn_input">
+        <input type="text">
+    </div>
+    <div class="input-with-btn_btn">
+        <button class="btn">Search</button>
+    </div>
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;input-with-btn&quot;&gt;
+    &lt;div class=&quot;input-with-btn_input&quot;&gt;
+        &lt;input type=&quot;text&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;input-with-btn_btn&quot;&gt;
+        &lt;button class=&quot;btn&quot;&gt;Search&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;input-with-btn\&amp;quot;&gt;\n    &lt;div class=\&amp;quot;input-with-btn_input\&amp;quot;&gt;\n        &lt;input type=\&amp;quot;text\&amp;quot;&gt;\n    &lt;/div&gt;\n    &lt;div class=\&amp;quot;input-with-btn_btn\&amp;quot;&gt;\n        &lt;button class=\&amp;quot;btn\&amp;quot;&gt;Search&lt;/button&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Super input and button</h3>
+              <section class="docs-pattern_pattern">
+<div class="input-with-btn">
+    <div class="input-with-btn_input">
+        <input class="input__super" type="text">
+    </div>
+    <div class="input-with-btn_btn">
+        <button class="btn btn__super">Search</button>
+    </div>
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;input-with-btn&quot;&gt;
+    &lt;div class=&quot;input-with-btn_input&quot;&gt;
+        &lt;input class=&quot;input__super&quot; type=&quot;text&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;input-with-btn_btn&quot;&gt;
+        &lt;button class=&quot;btn btn__super&quot;&gt;Search&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;input-with-btn\&amp;quot;&gt;\n    &lt;div class=\&amp;quot;input-with-btn_input\&amp;quot;&gt;\n        &lt;input class=\&amp;quot;input__super\&amp;quot; type=\&amp;quot;text\&amp;quot;&gt;\n    &lt;/div&gt;\n    &lt;div class=\&amp;quot;input-with-btn_btn\&amp;quot;&gt;\n        &lt;button class=\&amp;quot;btn btn__super\&amp;quot;&gt;Search&lt;/button&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">@media only all and (min-width: 30em) {
+  .input-with-btn {
+    display: block;
+    position: relative;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+.input-with-btn_input {
+  margin-bottom: 0.9375em;
+}
+@media only all and (min-width: 30em) {
+  .input-with-btn_input {
+    display: inline-block;
+    box-sizing: border-box;
+    border: solid transparent;
+    border-width: 0 15px;
+    margin-right: -0.25em;
+    vertical-align: top;
+    width: 75%;
+    border-right-width: 0;
+  }
+  .lt-ie8 .input-with-btn_input {
+    display: inline;
+    margin-right: 0;
+    zoom: 1;
+    behavior: url('/cf-grid/custom-demo/static/css/boxsizing.htc');
+  }
+}
+@media only all and (min-width: 60em) {
+  .input-with-btn_input {
+    display: inline-block;
+    box-sizing: border-box;
+    border: solid transparent;
+    border-width: 0 15px;
+    margin-right: -0.25em;
+    vertical-align: top;
+    width: 83.33333333%;
+    border-right-width: 0;
+  }
+  .lt-ie8 .input-with-btn_input {
+    display: inline;
+    margin-right: 0;
+    zoom: 1;
+    behavior: url('/cf-grid/custom-demo/static/css/boxsizing.htc');
+  }
+}
+.input-with-btn_input input {
+  box-sizing: border-box;
+  width: 100%;
+}
+.input-with-btn_btn {
+  margin-bottom: 0.9375em;
+}
+@media only all and (min-width: 30em) {
+  .input-with-btn_btn {
+    display: inline-block;
+    box-sizing: border-box;
+    border: solid transparent;
+    border-width: 0 15px;
+    margin-right: -0.25em;
+    vertical-align: top;
+    width: 25%;
+  }
+  .lt-ie8 .input-with-btn_btn {
+    display: inline;
+    margin-right: 0;
+    zoom: 1;
+    behavior: url('/cf-grid/custom-demo/static/css/boxsizing.htc');
+  }
+}
+@media only all and (min-width: 60em) {
+  .input-with-btn_btn {
+    display: inline-block;
+    box-sizing: border-box;
+    border: solid transparent;
+    border-width: 0 15px;
+    margin-right: -0.25em;
+    vertical-align: top;
+    width: 16.66666667%;
+  }
+  .lt-ie8 .input-with-btn_btn {
+    display: inline;
+    margin-right: 0;
+    zoom: 1;
+    behavior: url('/cf-grid/custom-demo/static/css/boxsizing.htc');
+  }
+}
+.input-with-btn_btn .btn {
+  box-sizing: border-box;
+  width: 100%;
+}
+.input-with-btn_btn .btn__super {
+  padding-left: 0.83333333em;
+  padding-right: 0.83333333em;
+}</code></pre>
+          </div>
+        </div>
+        <div id="button-inside-input" class="docs-component">
+          <h2 class="docs-component_header"><span>Button inside input</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Default button inside of an default input</h3>
+              <section class="docs-pattern_pattern">
+<div class="btn-inside-input">
+    <input type="text"
+           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable.">
+    <button class="btn btn__link btn__secondary">
+        Clear
+        <span class="cf-icon cf-icon-delete"></span>
+    </button>
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;btn-inside-input&quot;&gt;
+    &lt;input type=&quot;text&quot;
+           value=&quot;This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable.&quot;&gt;
+    &lt;button class=&quot;btn btn__link btn__secondary&quot;&gt;
+        Clear
+        &lt;span class=&quot;cf-icon cf-icon-delete&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;btn-inside-input\&amp;quot;&gt;\n    &lt;input type=\&amp;quot;text\&amp;quot;\n           value=\&amp;quot;This is some really long text to make sure that the button doesn&amp;apos;t overlap the content in such a way that this input becomes unusable.\&amp;quot;&gt;\n    &lt;button class=\&amp;quot;btn btn__link btn__secondary\&amp;quot;&gt;\n        Clear\n        &lt;span class=\&amp;quot;cf-icon cf-icon-delete\&amp;quot;&gt;&lt;/span&gt;\n    &lt;/button&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Super button inside of a super input</h3>
+              <section class="docs-pattern_pattern">
+<div class="btn-inside-input">
+    <input class="input__super"
+           type="text"
+           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable.">
+    <button class="btn btn__super btn__link btn__secondary">
+        Clear
+        <span class="cf-icon cf-icon-delete"></span>
+    </button>
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;btn-inside-input&quot;&gt;
+    &lt;input class=&quot;input__super&quot;
+           type=&quot;text&quot;
+           value=&quot;This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable.&quot;&gt;
+    &lt;button class=&quot;btn btn__super btn__link btn__secondary&quot;&gt;
+        Clear
+        &lt;span class=&quot;cf-icon cf-icon-delete&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;btn-inside-input\&amp;quot;&gt;\n    &lt;input class=\&amp;quot;input__super\&amp;quot;\n           type=\&amp;quot;text\&amp;quot;\n           value=\&amp;quot;This is some really long text to make sure that the button doesn&amp;apos;t overlap the content in such a way that this input becomes unusable.\&amp;quot;&gt;\n    &lt;button class=\&amp;quot;btn btn__super btn__link btn__secondary\&amp;quot;&gt;\n        Clear\n        &lt;span class=\&amp;quot;cf-icon cf-icon-delete\&amp;quot;&gt;&lt;/span&gt;\n    &lt;/button&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.btn-inside-input {
+  position: relative;
+}
+.btn-inside-input input[type=&quot;text&quot;],
+.btn-inside-input input[type=&quot;search&quot;],
+.btn-inside-input input[type=&quot;email&quot;],
+.btn-inside-input input[type=&quot;url&quot;],
+.btn-inside-input input[type=&quot;tel&quot;],
+.btn-inside-input input[type=&quot;number&quot;] {
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 4.64285714em;
+}
+.btn-inside-input input[type=&quot;text&quot;].input__super,
+.btn-inside-input input[type=&quot;search&quot;].input__super,
+.btn-inside-input input[type=&quot;email&quot;].input__super,
+.btn-inside-input input[type=&quot;url&quot;].input__super,
+.btn-inside-input input[type=&quot;tel&quot;].input__super,
+.btn-inside-input input[type=&quot;number&quot;].input__super {
+  padding-right: 5em;
+}
+.btn-inside-input .btn {
+  border-bottom-width: 0 !important;
+  position: absolute;
+  right: 1.07142857em;
+  top: 0;
+}
+.btn-inside-input .btn__super {
+  right: 0.83333333em;
+}</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="docs-sidebar-wrapper_sidebar">
+        <ul class="docs-nav">
+          <li class="docs-nav_item"><a href="/docs/cf-core" class="docs-nav_link">cf-core</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-buttons" class="docs-nav_link">cf-buttons</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-expandables" class="docs-nav_link">cf-expandables</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-forms" class="docs-nav_link">cf-forms</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-grid" class="docs-nav_link">cf-grid</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-icons" class="docs-nav_link">cf-icons</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-layout" class="docs-nav_link">cf-layout</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-pagination" class="docs-nav_link">cf-pagination</a></li>
+        </ul>
+      </div>
+    </div>
+    <script src="static/docs/main.min.js"></script>
+  </body>
+</html>

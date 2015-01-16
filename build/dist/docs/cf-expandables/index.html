@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+  <!-- <![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>cf-expandables docs</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic">
+    <link rel="stylesheet" type="text/css" href="static/docs/brackets.css">
+    <link rel="stylesheet" type="text/css" href="static/docs/docs.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+  </head>
+  <body>
+    <div class="docs-sidebar-wrapper">
+      <div class="docs-sidebar-wrapper_body">
+        <div class="docs-masthead">
+          <h1 class="docs-title"><span class="docs-icon">&lt;/&gt;</span> cf-expandables docs
+          </h1><a href="https://github.com/cfpb/cf-expandables" class="docs-repo">view the repository</a>
+        </div>
+        <div id="recommended-expandable-pattern" class="docs-component">
+          <h2 class="docs-component_header"><span>Recommended expandable pattern</span></h2>
+          <div class="docs-component_intro">
+            <ul class="docs-notes">
+              <li>Expandables can be built by combining the basic barebones structure described in the next section along with more specialized expandable elements and modifiers described throughout.</li>
+              <li>The following combination is our recommended go-to expandable pattern.</li>
+            </ul>
+          </div>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Recommended expandable pattern</h3>
+              <section class="docs-pattern_pattern">
+<div class="expandable expandable__padded">
+    <button class="expandable_header expandable_target">
+        <span class="expandable_header-left expandable_label">
+            Expandable Header
+        </span>
+        <span class="expandable_header-right expandable_link">
+            <span class="expandable_cue-open">
+                Show
+                <span class="cf-icon cf-icon-plus-round"></span>
+            </span>
+            <span class="expandable_cue-close">
+                Hide
+                <span class="cf-icon cf-icon-minus-round"></span>
+            </span>
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        </p>
+    </div>
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;expandable expandable__padded&quot;&gt;
+    &lt;button class=&quot;expandable_header expandable_target&quot;&gt;
+        &lt;span class=&quot;expandable_header-left expandable_label&quot;&gt;
+            Expandable Header
+        &lt;/span&gt;
+        &lt;span class=&quot;expandable_header-right expandable_link&quot;&gt;
+            &lt;span class=&quot;expandable_cue-open&quot;&gt;
+                Show
+                &lt;span class=&quot;cf-icon cf-icon-plus-round&quot;&gt;&lt;/span&gt;
+            &lt;/span&gt;
+            &lt;span class=&quot;expandable_cue-close&quot;&gt;
+                Hide
+                &lt;span class=&quot;cf-icon cf-icon-minus-round&quot;&gt;&lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class=&quot;expandable_content&quot;&gt;
+        &lt;p&gt;
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-expandables/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;expandable expandable__padded\&amp;quot;&gt;\n    &lt;button class=\&amp;quot;expandable_header expandable_target\&amp;quot;&gt;\n        &lt;span class=\&amp;quot;expandable_header-left expandable_label\&amp;quot;&gt;\n            Expandable Header\n        &lt;/span&gt;\n        &lt;span class=\&amp;quot;expandable_header-right expandable_link\&amp;quot;&gt;\n            &lt;span class=\&amp;quot;expandable_cue-open\&amp;quot;&gt;\n                Show\n                &lt;span class=\&amp;quot;cf-icon cf-icon-plus-round\&amp;quot;&gt;&lt;/span&gt;\n            &lt;/span&gt;\n            &lt;span class=\&amp;quot;expandable_cue-close\&amp;quot;&gt;\n                Hide\n                &lt;span class=\&amp;quot;cf-icon cf-icon-minus-round\&amp;quot;&gt;&lt;/span&gt;\n            &lt;/span&gt;\n        &lt;/span&gt;\n    &lt;/button&gt;\n    &lt;div class=\&amp;quot;expandable_content\&amp;quot;&gt;\n        &lt;p&gt;\n            Lorem ipsum dolor sit amet, consectetur adipisicing\n            elit. Neque ipsa voluptatibus soluta nobis unde quisquam\n            temporibus magnam debitis quidem. Ducimus ratione\n            corporis nesciunt earum vel est quaerat blanditiis\n            dolore ipsa?\n        &lt;/p&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>Pattern structure
+-----------------
+.expandable.expandable__padded
+  .expandable_header.expandable_target
+    .expandable_header-left.expandable_label
+    .expandable_header-right.expandable_link
+      .expandable_cue-open
+        .cf-icon.cf-icon-plus-round
+      .expandable_cue-close
+        .cf-icon.cf-icon-minus-round
+    .expandable_cue-open
+    .expandable_cue-close
+  .expandable_content</code></pre>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+        </div>
+        <div id="js-functions" class="docs-component">
+          <h2 class="docs-component_header"><span>JS functions</span></h2>
+          <div class="docs-component_intro">
+            <ul class="docs-notes">
+              <li>There are a number of available functions that you can call on .expandable elements.</li>
+            </ul>
+          </div>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.toggle()</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>Toggles the expandable.</code></pre>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.expand( duration )</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>Expands the expandable.</code></pre>
+                  </li>
+                  <li>
+                    <pre class="docs-code"><code>duration
+Type: number
+The animation duration.
+Not required.
+Defaults to `$.fn.expandable.calculateExpandDuration` or
+`$.fn.expandable.calculateCollapseDuration` if excluded.</code></pre>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.collapse( duration )</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>Collapses the expandable.</code></pre>
+                  </li>
+                  <li>
+                    <pre class="docs-code"><code>duration
+Type: number
+The animation duration.
+Not required.
+Defaults to `$.fn.expandable.calculateExpandDuration` or
+`$.fn.expandable.calculateCollapseDuration` if excluded.</code></pre>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Example usage</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>// HTML
+&lt;div class=&quot;expandable&quot; id=&quot;my-expandable&quot;&gt;...&lt;/div&gt;
+
+// JS
+// (use .get(0) to get the HTML element, that's what the functions
+// are bound to)
+$('#my-expandable').get(0).expand(); // Opens the expandable
+$('#my-expandable').get(0).collapse(); // Closes the expandable
+$('#my-expandable').get(0).toggle(); // Toggles the expandable</code></pre>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+        </div>
+        <div id="barebones-expandable" class="docs-component">
+          <h2 class="docs-component_header"><span>Barebones expandable</span></h2>
+          <div class="docs-component_intro">
+            <ul class="docs-notes">
+              <li>This is the barebones structure for expandables that can be used (along with other expanable elements and modifiers) to create custom expandable patterns.</li>
+              <li>In this barebones example there are no visual styles.</li>
+            </ul>
+          </div>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Barebones expandable</h3>
+              <section class="docs-pattern_pattern">
+<div class="expandable">
+    <button class="expandable_target">
+        <span class="expandable_cue-open">
+            Show
+        </span>
+        <span class="expandable_cue-close">
+            Hide
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        </p>
+    </div>
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;expandable&quot;&gt;
+    &lt;button class=&quot;expandable_target&quot;&gt;
+        &lt;span class=&quot;expandable_cue-open&quot;&gt;
+            Show
+        &lt;/span&gt;
+        &lt;span class=&quot;expandable_cue-close&quot;&gt;
+            Hide
+        &lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class=&quot;expandable_content&quot;&gt;
+        &lt;p&gt;
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-expandables/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;expandable\&amp;quot;&gt;\n    &lt;button class=\&amp;quot;expandable_target\&amp;quot;&gt;\n        &lt;span class=\&amp;quot;expandable_cue-open\&amp;quot;&gt;\n            Show\n        &lt;/span&gt;\n        &lt;span class=\&amp;quot;expandable_cue-close\&amp;quot;&gt;\n            Hide\n        &lt;/span&gt;\n    &lt;/button&gt;\n    &lt;div class=\&amp;quot;expandable_content\&amp;quot;&gt;\n        &lt;p&gt;\n            Lorem ipsum dolor sit amet, consectetur adipisicing\n            elit. Neque ipsa voluptatibus soluta nobis unde quisquam\n            temporibus magnam debitis quidem. Ducimus ratione\n            corporis nesciunt earum vel est quaerat blanditiis\n            dolore ipsa?\n        &lt;/p&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>Pattern structure
+-----------------
+.expandable
+  .expandable_target
+    .expandable_cue-open
+    .expandable_cue-close
+  .expandable_content</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>Use the button tag for the .expandable_target element to allow for keyboard access.</li>
+                  <li>The 'Show' and 'Hide' messages can be customized directly in the HTML by editing the contents of .expandable_cue-open and .expandable_cue-close.</li>
+                  <li>The aria-pressed attribute on .expandable_target gets automatically added and updated by JavaScript.</li>
+                  <li>The aria-expanded attribute on .expandable_content gets automatically added and updated by JavaScript.</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.expandable__expanded (modifier)</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>.expandable__expanded</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>Sometimes you may want the expandable to be open by default. This is as easy as adding the .expandable__expanded modifier to the .expandable block.</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.expandable {
+  margin-bottom: 1.875em;
+}
+.expandable_target {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.expandable_target:focus {
+  outline: 1px dotted #101820;
+  outline-offset: 1px;
+}
+.expandable_content:after {
+  content: &quot;&quot;;
+  display: table;
+  clear: both;
+}
+.lt-ie8 .expandable_content {
+  zoom: 1;
+}</code></pre>
+          </div>
+        </div>
+        <div id="expandable-text-elements" class="docs-component">
+          <h2 class="docs-component_header"><span>Expandable text elements</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.expandable_label (element)</h3>
+              <section class="docs-pattern_pattern">
+<span class="expandable_label">
+    Lorem ipsum
+</span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;expandable_label&quot;&gt;
+    Lorem ipsum
+&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-expandables/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;expandable_label\&amp;quot;&gt;\n    Lorem ipsum\n&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>.expandable_label</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>Allows you to add some styled text.</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.expandable_link (element)</h3>
+              <section class="docs-pattern_pattern">
+<span class="expandable_link">
+    Lorem ipsum
+</span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;expandable_link&quot;&gt;
+    Lorem ipsum
+&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-expandables/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;expandable_link\&amp;quot;&gt;\n    Lorem ipsum\n&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>.expandable_link</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>Allows you to add some styled text with a link-like look.</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.expandable_label {
+  color: #101820;
+  font-family: &quot;AvenirNextLTW01-Medium&quot;, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+.lt-ie9 .expandable_label {
+  font-weight: normal !important;
+}
+.expandable_link {
+  color: #0072ce;
+  font-family: &quot;AvenirNextLTW01-Regular&quot;, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.875em;
+  line-height: 1.57142857;
+}
+.expandable_link em,
+.expandable_link i {
+  font-family: &quot;AvenirNextLTW01-Italic&quot;, Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+.lt-ie9 .expandable_link em,
+.lt-ie9 .expandable_link i {
+  font-style: normal !important;
+}
+.expandable_link strong,
+.expandable_link b {
+  font-family: &quot;AvenirNextLTW01-Demi&quot;, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+.lt-ie9 .expandable_link strong,
+.lt-ie9 .expandable_link b {
+  font-weight: normal !important;
+}</code></pre>
+          </div>
+        </div>
+        <div id="animated-cues" class="docs-component">
+          <h2 class="docs-component_header"><span>Animated cues</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.expandable_cue-open/close__animated (modifier)</h3>
+              <section class="docs-pattern_pattern">
+<div class="expandable">
+    <button class="expandable_target">
+        <span class="expandable_cue-open expandable_cue-open__animated">
+            <span class="cf-icon cf-icon-down"></span>
+        </span>
+        <span class="expandable_cue-close expandable_cue-close__animated">
+            <span class="cf-icon cf-icon-up"></span>
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        </p>
+    </div>
+</div>
+<div class="expandable expandable__expanded">
+    <button class="expandable_target">
+        <span class="expandable_cue-open expandable_cue-open__animated">
+            <span class="cf-icon cf-icon-down"></span>
+        </span>
+        <span class="expandable_cue-close expandable_cue-close__animated">
+            <span class="cf-icon cf-icon-up"></span>
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        </p>
+    </div>
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;expandable&quot;&gt;
+    &lt;button class=&quot;expandable_target&quot;&gt;
+        &lt;span class=&quot;expandable_cue-open expandable_cue-open__animated&quot;&gt;
+            &lt;span class=&quot;cf-icon cf-icon-down&quot;&gt;&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class=&quot;expandable_cue-close expandable_cue-close__animated&quot;&gt;
+            &lt;span class=&quot;cf-icon cf-icon-up&quot;&gt;&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class=&quot;expandable_content&quot;&gt;
+        &lt;p&gt;
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;expandable expandable__expanded&quot;&gt;
+    &lt;button class=&quot;expandable_target&quot;&gt;
+        &lt;span class=&quot;expandable_cue-open expandable_cue-open__animated&quot;&gt;
+            &lt;span class=&quot;cf-icon cf-icon-down&quot;&gt;&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class=&quot;expandable_cue-close expandable_cue-close__animated&quot;&gt;
+            &lt;span class=&quot;cf-icon cf-icon-up&quot;&gt;&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class=&quot;expandable_content&quot;&gt;
+        &lt;p&gt;
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-expandables/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;expandable\&amp;quot;&gt;\n    &lt;button class=\&amp;quot;expandable_target\&amp;quot;&gt;\n        &lt;span class=\&amp;quot;expandable_cue-open expandable_cue-open__animated\&amp;quot;&gt;\n            &lt;span class=\&amp;quot;cf-icon cf-icon-down\&amp;quot;&gt;&lt;/span&gt;\n        &lt;/span&gt;\n        &lt;span class=\&amp;quot;expandable_cue-close expandable_cue-close__animated\&amp;quot;&gt;\n            &lt;span class=\&amp;quot;cf-icon cf-icon-up\&amp;quot;&gt;&lt;/span&gt;\n        &lt;/span&gt;\n    &lt;/button&gt;\n    &lt;div class=\&amp;quot;expandable_content\&amp;quot;&gt;\n        &lt;p&gt;\n            Lorem ipsum dolor sit amet, consectetur adipisicing\n            elit. Neque ipsa voluptatibus soluta nobis unde quisquam\n            temporibus magnam debitis quidem. Ducimus ratione\n            corporis nesciunt earum vel est quaerat blanditiis\n            dolore ipsa?\n        &lt;/p&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&lt;div class=\&amp;quot;expandable expandable__expanded\&amp;quot;&gt;\n    &lt;button class=\&amp;quot;expandable_target\&amp;quot;&gt;\n        &lt;span class=\&amp;quot;expandable_cue-open expandable_cue-open__animated\&amp;quot;&gt;\n            &lt;span class=\&amp;quot;cf-icon cf-icon-down\&amp;quot;&gt;&lt;/span&gt;\n        &lt;/span&gt;\n        &lt;span class=\&amp;quot;expandable_cue-close expandable_cue-close__animated\&amp;quot;&gt;\n            &lt;span class=\&amp;quot;cf-icon cf-icon-up\&amp;quot;&gt;&lt;/span&gt;\n        &lt;/span&gt;\n    &lt;/button&gt;\n    &lt;div class=\&amp;quot;expandable_content\&amp;quot;&gt;\n        &lt;p&gt;\n            Lorem ipsum dolor sit amet, consectetur adipisicing\n            elit. Neque ipsa voluptatibus soluta nobis unde quisquam\n            temporibus magnam debitis quidem. Ducimus ratione\n            corporis nesciunt earum vel est quaerat blanditiis\n            dolore ipsa?\n        &lt;/p&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>.expandable_cue-open__animated
+.expandable_cue-close__animated</code></pre>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.expandable_cue-open__animated,
+.expandable_cue-close__animated {
+  -webkit-transition: 0.25s -webkit-transform;
+          transition: 0.25s transform;
+}
+.expandable_cue-close__animated {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.expandable__expanded .expandable_cue-close__animated {
+  -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+          transform: rotate(0);
+}
+.expandable__expanded .expandable_cue-open__animated {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}</code></pre>
+          </div>
+        </div>
+        <div id="expandable-header-elements" class="docs-component">
+          <h2 class="docs-component_header"><span>Expandable header elements</span></h2>
+          <div class="docs-component_intro">
+            <ul class="docs-codenotes">
+              <li>
+                <pre class="docs-code"><code>Pattern structure
+-----------------
+.expandable_header
+  .expandable_header-left
+  .expandable_header-right</code></pre>
+              </li>
+            </ul>
+            <ul class="docs-notes">
+              <li>These additional elements are useful for more complicated expandables that need to convey more information than just 'Show/Hide' before the user expands it.</li>
+            </ul>
+          </div>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.expandable_header (element)</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>.expandable_header</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>Creates a full-width container to house information that is always visible.</li>
+                  <li>Combine .expandable_header with .expandable_target for a full-width trigger.</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.expandable_header__spaced (modifier)</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>.expandable_header__spaced</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>Allows you to add space between .expandable_header and .expandable_content.</li>
+                  <li>Inline style usage is for demoing the space between the header and content and should not be used.</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.expandable_header-left, .expandable_header-right (elements)</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>.expandable_header-left
+.expandable_header-right</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>Allows you to float information left and right.</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.expandable_header {
+  display: block;
+}
+.expandable_header:after {
+  content: &quot;&quot;;
+  display: table;
+  clear: both;
+}
+.lt-ie8 .expandable_header {
+  zoom: 1;
+}
+button.expandable_header {
+  width: 100%;
+  text-align: left;
+}
+.expandable_header__spaced {
+  padding-bottom: 0.9375em;
+}
+.expandable_header-left {
+  float: left;
+}
+.expandable_header-right {
+  float: right;
+}</code></pre>
+          </div>
+        </div>
+        <div id="padded-expandable-modifier" class="docs-component">
+          <h2 class="docs-component_header"><span>Padded expandable modifier</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">.expandable__padded (modifier)</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>.expandable__padded</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>Adds padding and a background color to .expandable_header and .expandable_content.</li>
+                  <li>In addition to using the .expandable__padded modifier you also need to make sure you are using .expandable_header.</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.expandable__padded {
+  margin-bottom: 1.875em;
+  background: #f1f2f2;
+}
+.expandable__padded:hover,
+.expandable__padded.expandable__expanded {
+  background: #e3e4e5;
+}
+.expandable__padded .expandable_header {
+  padding: 0.625em 1em;
+}
+.expandable__padded .expandable_content {
+  margin: 0 1em 1.375em;
+}
+.expandable__padded .expandable_content:before {
+  content: '';
+  display: block;
+  height: 1px;
+  margin-bottom: 1em;
+  background: #babbbd;
+}</code></pre>
+          </div>
+        </div>
+        <div id="expandable-groups" class="docs-component">
+          <h2 class="docs-component_header"><span>Expandable groups</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Standard expandable group</h3>
+              <section class="docs-pattern_pattern">
+<div class="expandable-group">
+    <div class="expandable-group_header">Expandable group header</div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 1
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 2
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 3
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;expandable-group&quot;&gt;
+    &lt;div class=&quot;expandable-group_header&quot;&gt;Expandable group header&lt;/div&gt;
+    &lt;div class=&quot;expandable expandable__padded&quot;&gt;
+        &lt;button class=&quot;expandable_header expandable_target&quot;&gt;
+            &lt;span class=&quot;expandable_header-left expandable_label&quot;&gt;
+                Expandable Header 1
+            &lt;/span&gt;
+            &lt;span class=&quot;expandable_header-right expandable_link&quot;&gt;
+                &lt;span class=&quot;expandable_cue-open&quot;&gt;
+                    Show
+                    &lt;span class=&quot;cf-icon cf-icon-plus-round&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                &lt;span class=&quot;expandable_cue-close&quot;&gt;
+                    Hide
+                    &lt;span class=&quot;cf-icon cf-icon-minus-round&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class=&quot;expandable_content&quot;&gt;
+            &lt;p&gt;
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;expandable expandable__padded&quot;&gt;
+        &lt;button class=&quot;expandable_header expandable_target&quot;&gt;
+            &lt;span class=&quot;expandable_header-left expandable_label&quot;&gt;
+                Expandable Header 2
+            &lt;/span&gt;
+            &lt;span class=&quot;expandable_header-right expandable_link&quot;&gt;
+                &lt;span class=&quot;expandable_cue-open&quot;&gt;
+                    Show
+                    &lt;span class=&quot;cf-icon cf-icon-plus-round&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                &lt;span class=&quot;expandable_cue-close&quot;&gt;
+                    Hide
+                    &lt;span class=&quot;cf-icon cf-icon-minus-round&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class=&quot;expandable_content&quot;&gt;
+            &lt;p&gt;
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;expandable expandable__padded&quot;&gt;
+        &lt;button class=&quot;expandable_header expandable_target&quot;&gt;
+            &lt;span class=&quot;expandable_header-left expandable_label&quot;&gt;
+                Expandable Header 3
+            &lt;/span&gt;
+            &lt;span class=&quot;expandable_header-right expandable_link&quot;&gt;
+                &lt;span class=&quot;expandable_cue-open&quot;&gt;
+                    Show
+                    &lt;span class=&quot;cf-icon cf-icon-plus-round&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                &lt;span class=&quot;expandable_cue-close&quot;&gt;
+                    Hide
+                    &lt;span class=&quot;cf-icon cf-icon-minus-round&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class=&quot;expandable_content&quot;&gt;
+            &lt;p&gt;
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-expandables/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;expandable-group\&amp;quot;&gt;\n    &lt;div class=\&amp;quot;expandable-group_header\&amp;quot;&gt;Expandable group header&lt;/div&gt;\n    &lt;div class=\&amp;quot;expandable expandable__padded\&amp;quot;&gt;\n        &lt;button class=\&amp;quot;expandable_header expandable_target\&amp;quot;&gt;\n            &lt;span class=\&amp;quot;expandable_header-left expandable_label\&amp;quot;&gt;\n                Expandable Header 1\n            &lt;/span&gt;\n            &lt;span class=\&amp;quot;expandable_header-right expandable_link\&amp;quot;&gt;\n                &lt;span class=\&amp;quot;expandable_cue-open\&amp;quot;&gt;\n                    Show\n                    &lt;span class=\&amp;quot;cf-icon cf-icon-plus-round\&amp;quot;&gt;&lt;/span&gt;\n                &lt;/span&gt;\n                &lt;span class=\&amp;quot;expandable_cue-close\&amp;quot;&gt;\n                    Hide\n                    &lt;span class=\&amp;quot;cf-icon cf-icon-minus-round\&amp;quot;&gt;&lt;/span&gt;\n                &lt;/span&gt;\n            &lt;/span&gt;\n        &lt;/button&gt;\n        &lt;div class=\&amp;quot;expandable_content\&amp;quot;&gt;\n            &lt;p&gt;\n                Lorem ipsum dolor sit amet, consectetur adipisicing\n                elit. Neque ipsa voluptatibus soluta nobis unde quisquam\n                temporibus magnam debitis quidem. Ducimus ratione\n                corporis nesciunt earum vel est quaerat blanditiis\n                dolore ipsa?\n            &lt;/p&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=\&amp;quot;expandable expandable__padded\&amp;quot;&gt;\n        &lt;button class=\&amp;quot;expandable_header expandable_target\&amp;quot;&gt;\n            &lt;span class=\&amp;quot;expandable_header-left expandable_label\&amp;quot;&gt;\n                Expandable Header 2\n            &lt;/span&gt;\n            &lt;span class=\&amp;quot;expandable_header-right expandable_link\&amp;quot;&gt;\n                &lt;span class=\&amp;quot;expandable_cue-open\&amp;quot;&gt;\n                    Show\n                    &lt;span class=\&amp;quot;cf-icon cf-icon-plus-round\&amp;quot;&gt;&lt;/span&gt;\n                &lt;/span&gt;\n                &lt;span class=\&amp;quot;expandable_cue-close\&amp;quot;&gt;\n                    Hide\n                    &lt;span class=\&amp;quot;cf-icon cf-icon-minus-round\&amp;quot;&gt;&lt;/span&gt;\n                &lt;/span&gt;\n            &lt;/span&gt;\n        &lt;/button&gt;\n        &lt;div class=\&amp;quot;expandable_content\&amp;quot;&gt;\n            &lt;p&gt;\n                Lorem ipsum dolor sit amet, consectetur adipisicing\n                elit. Neque ipsa voluptatibus soluta nobis unde quisquam\n                temporibus magnam debitis quidem. Ducimus ratione\n                corporis nesciunt earum vel est quaerat blanditiis\n                dolore ipsa?\n            &lt;/p&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=\&amp;quot;expandable expandable__padded\&amp;quot;&gt;\n        &lt;button class=\&amp;quot;expandable_header expandable_target\&amp;quot;&gt;\n            &lt;span class=\&amp;quot;expandable_header-left expandable_label\&amp;quot;&gt;\n                Expandable Header 3\n            &lt;/span&gt;\n            &lt;span class=\&amp;quot;expandable_header-right expandable_link\&amp;quot;&gt;\n                &lt;span class=\&amp;quot;expandable_cue-open\&amp;quot;&gt;\n                    Show\n                    &lt;span class=\&amp;quot;cf-icon cf-icon-plus-round\&amp;quot;&gt;&lt;/span&gt;\n                &lt;/span&gt;\n                &lt;span class=\&amp;quot;expandable_cue-close\&amp;quot;&gt;\n                    Hide\n                    &lt;span class=\&amp;quot;cf-icon cf-icon-minus-round\&amp;quot;&gt;&lt;/span&gt;\n                &lt;/span&gt;\n            &lt;/span&gt;\n        &lt;/button&gt;\n        &lt;div class=\&amp;quot;expandable_content\&amp;quot;&gt;\n            &lt;p&gt;\n                Lorem ipsum dolor sit amet, consectetur adipisicing\n                elit. Neque ipsa voluptatibus soluta nobis unde quisquam\n                temporibus magnam debitis quidem. Ducimus ratione\n                corporis nesciunt earum vel est quaerat blanditiis\n                dolore ipsa?\n            &lt;/p&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>Pattern structure
+-----------------
+.expandable-group
+  .expandable-group_header
+  .expandable.expandable__padded
+    [...]
+  .expandable.expandable__padded
+    [...]
+  .expandable.expandable__padded
+    [...]</code></pre>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Accordion-style group</h3>
+              <section class="docs-pattern_pattern">
+<div class="expandable-group" data-accordion="true">
+    <div class="expandable-group_header">Expandable group header</div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 1
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 2
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 3
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;expandable-group&quot; data-accordion=&quot;true&quot;&gt;
+    &lt;div class=&quot;expandable-group_header&quot;&gt;Expandable group header&lt;/div&gt;
+    &lt;div class=&quot;expandable expandable__padded&quot;&gt;
+        &lt;button class=&quot;expandable_header expandable_target&quot;&gt;
+            &lt;span class=&quot;expandable_header-left expandable_label&quot;&gt;
+                Expandable Header 1
+            &lt;/span&gt;
+            &lt;span class=&quot;expandable_header-right expandable_link&quot;&gt;
+                &lt;span class=&quot;expandable_cue-open&quot;&gt;
+                    Show
+                    &lt;span class=&quot;cf-icon cf-icon-plus-round&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                &lt;span class=&quot;expandable_cue-close&quot;&gt;
+                    Hide
+                    &lt;span class=&quot;cf-icon cf-icon-minus-round&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class=&quot;expandable_content&quot;&gt;
+            &lt;p&gt;
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;expandable expandable__padded&quot;&gt;
+        &lt;button class=&quot;expandable_header expandable_target&quot;&gt;
+            &lt;span class=&quot;expandable_header-left expandable_label&quot;&gt;
+                Expandable Header 2
+            &lt;/span&gt;
+            &lt;span class=&quot;expandable_header-right expandable_link&quot;&gt;
+                &lt;span class=&quot;expandable_cue-open&quot;&gt;
+                    Show
+                    &lt;span class=&quot;cf-icon cf-icon-plus-round&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                &lt;span class=&quot;expandable_cue-close&quot;&gt;
+                    Hide
+                    &lt;span class=&quot;cf-icon cf-icon-minus-round&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class=&quot;expandable_content&quot;&gt;
+            &lt;p&gt;
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;expandable expandable__padded&quot;&gt;
+        &lt;button class=&quot;expandable_header expandable_target&quot;&gt;
+            &lt;span class=&quot;expandable_header-left expandable_label&quot;&gt;
+                Expandable Header 3
+            &lt;/span&gt;
+            &lt;span class=&quot;expandable_header-right expandable_link&quot;&gt;
+                &lt;span class=&quot;expandable_cue-open&quot;&gt;
+                    Show
+                    &lt;span class=&quot;cf-icon cf-icon-plus-round&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                &lt;span class=&quot;expandable_cue-close&quot;&gt;
+                    Hide
+                    &lt;span class=&quot;cf-icon cf-icon-minus-round&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class=&quot;expandable_content&quot;&gt;
+            &lt;p&gt;
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-expandables/dist/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;expandable-group\&amp;quot; data-accordion=\&amp;quot;true\&amp;quot;&gt;\n    &lt;div class=\&amp;quot;expandable-group_header\&amp;quot;&gt;Expandable group header&lt;/div&gt;\n    &lt;div class=\&amp;quot;expandable expandable__padded\&amp;quot;&gt;\n        &lt;button class=\&amp;quot;expandable_header expandable_target\&amp;quot;&gt;\n            &lt;span class=\&amp;quot;expandable_header-left expandable_label\&amp;quot;&gt;\n                Expandable Header 1\n            &lt;/span&gt;\n            &lt;span class=\&amp;quot;expandable_header-right expandable_link\&amp;quot;&gt;\n                &lt;span class=\&amp;quot;expandable_cue-open\&amp;quot;&gt;\n                    Show\n                    &lt;span class=\&amp;quot;cf-icon cf-icon-plus-round\&amp;quot;&gt;&lt;/span&gt;\n                &lt;/span&gt;\n                &lt;span class=\&amp;quot;expandable_cue-close\&amp;quot;&gt;\n                    Hide\n                    &lt;span class=\&amp;quot;cf-icon cf-icon-minus-round\&amp;quot;&gt;&lt;/span&gt;\n                &lt;/span&gt;\n            &lt;/span&gt;\n        &lt;/button&gt;\n        &lt;div class=\&amp;quot;expandable_content\&amp;quot;&gt;\n            &lt;p&gt;\n                Lorem ipsum dolor sit amet, consectetur adipisicing\n                elit. Neque ipsa voluptatibus soluta nobis unde quisquam\n                temporibus magnam debitis quidem. Ducimus ratione\n                corporis nesciunt earum vel est quaerat blanditiis\n                dolore ipsa?\n            &lt;/p&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=\&amp;quot;expandable expandable__padded\&amp;quot;&gt;\n        &lt;button class=\&amp;quot;expandable_header expandable_target\&amp;quot;&gt;\n            &lt;span class=\&amp;quot;expandable_header-left expandable_label\&amp;quot;&gt;\n                Expandable Header 2\n            &lt;/span&gt;\n            &lt;span class=\&amp;quot;expandable_header-right expandable_link\&amp;quot;&gt;\n                &lt;span class=\&amp;quot;expandable_cue-open\&amp;quot;&gt;\n                    Show\n                    &lt;span class=\&amp;quot;cf-icon cf-icon-plus-round\&amp;quot;&gt;&lt;/span&gt;\n                &lt;/span&gt;\n                &lt;span class=\&amp;quot;expandable_cue-close\&amp;quot;&gt;\n                    Hide\n                    &lt;span class=\&amp;quot;cf-icon cf-icon-minus-round\&amp;quot;&gt;&lt;/span&gt;\n                &lt;/span&gt;\n            &lt;/span&gt;\n        &lt;/button&gt;\n        &lt;div class=\&amp;quot;expandable_content\&amp;quot;&gt;\n            &lt;p&gt;\n                Lorem ipsum dolor sit amet, consectetur adipisicing\n                elit. Neque ipsa voluptatibus soluta nobis unde quisquam\n                temporibus magnam debitis quidem. Ducimus ratione\n                corporis nesciunt earum vel est quaerat blanditiis\n                dolore ipsa?\n            &lt;/p&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=\&amp;quot;expandable expandable__padded\&amp;quot;&gt;\n        &lt;button class=\&amp;quot;expandable_header expandable_target\&amp;quot;&gt;\n            &lt;span class=\&amp;quot;expandable_header-left expandable_label\&amp;quot;&gt;\n                Expandable Header 3\n            &lt;/span&gt;\n            &lt;span class=\&amp;quot;expandable_header-right expandable_link\&amp;quot;&gt;\n                &lt;span class=\&amp;quot;expandable_cue-open\&amp;quot;&gt;\n                    Show\n                    &lt;span class=\&amp;quot;cf-icon cf-icon-plus-round\&amp;quot;&gt;&lt;/span&gt;\n                &lt;/span&gt;\n                &lt;span class=\&amp;quot;expandable_cue-close\&amp;quot;&gt;\n                    Hide\n                    &lt;span class=\&amp;quot;cf-icon cf-icon-minus-round\&amp;quot;&gt;&lt;/span&gt;\n                &lt;/span&gt;\n            &lt;/span&gt;\n        &lt;/button&gt;\n        &lt;div class=\&amp;quot;expandable_content\&amp;quot;&gt;\n            &lt;p&gt;\n                Lorem ipsum dolor sit amet, consectetur adipisicing\n                elit. Neque ipsa voluptatibus soluta nobis unde quisquam\n                temporibus magnam debitis quidem. Ducimus ratione\n                corporis nesciunt earum vel est quaerat blanditiis\n                dolore ipsa?\n            &lt;/p&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>&lt;div class=&quot;expandable-group&quot; data-accordion=&quot;true&quot;&gt;</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>Accordions can only show one open expandable at a time.</li>
+                  <li>Add the data-accordion=&quot;true&quot; attribute to the expandable group to activate the accordion mode.</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">.expandable-group {
+  margin-bottom: 1.875em;
+}
+.expandable-group_header {
+  padding: 0.35714286em 1.14285714em;
+  border-bottom: 1px solid #919395;
+  background: #f1f2f2;
+  color: #75787b;
+  font-family: &quot;AvenirNextLTW01-Demi&quot;, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0.35714286em;
+  font-size: 0.875em;
+  line-height: 1.57142857;
+  margin-bottom: 0;
+}
+.lt-ie9 .expandable-group_header {
+  font-weight: normal !important;
+}
+.expandable-group .expandable {
+  border-bottom: 1px solid #919395;
+  margin-bottom: 0;
+  background: #ffffff;
+}
+.expandable-group .expandable_label {
+  margin-top: 0;
+  margin-bottom: 1.16666667em;
+  font-size: 1.125em;
+  font-family: &quot;AvenirNextLTW01-Medium&quot;, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.22222222;
+  margin-bottom: 0;
+}
+.lt-ie9 .expandable-group .expandable_label {
+  font-weight: normal !important;
+}
+.expandable-group .expandable_content {
+  margin-bottom: 0;
+}</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="docs-sidebar-wrapper_sidebar">
+        <ul class="docs-nav">
+          <li class="docs-nav_item"><a href="/docs/cf-core" class="docs-nav_link">cf-core</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-buttons" class="docs-nav_link">cf-buttons</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-expandables" class="docs-nav_link">cf-expandables</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-forms" class="docs-nav_link">cf-forms</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-grid" class="docs-nav_link">cf-grid</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-icons" class="docs-nav_link">cf-icons</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-layout" class="docs-nav_link">cf-layout</a></li>
+          <li class="docs-nav_item"><a href="/docs/cf-pagination" class="docs-nav_link">cf-pagination</a></li>
+        </ul>
+      </div>
+    </div>
+    <script src="static/docs/main.min.js"></script>
+  </body>
+</html>
