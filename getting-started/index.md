@@ -32,6 +32,9 @@ The generator will prompt you to complete information about the project and choo
 
 ### Navigating the project folder
 
+Once thie generator has finished you'll have a folder full of files and folders.
+Here's a quick guide on working with these files:
+
 - Edit files within the `src` directory.
 - Point your terminal to `dist` and run `python -m SimpleHTTPServer`.
   You can now navigate to `localhost:8000/` and view the demo page.
