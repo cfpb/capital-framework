@@ -29,3 +29,17 @@ $ yo cf
 {% endhighlight %}
 
 The generator will prompt you to complete information about the project and choose the Capital Framework modules you would like to use.
+
+### Navigating the project folder
+
+- Edit files within the `src` directory.
+- Point your terminal to `dist` and run `python -m SimpleHTTPServer`.
+  You can now navigate to `localhost:8000/` and view the demo page.
+
+The generator has created a starter Less file at `src/static/css/main.less`.
+This file includes all of the necessary `@import`s needed for Capital Framework.
+There is also a starter JavaScript file at `src/static/js/app.js`.
+Both `main.less` and `app.js` are already wired into `Gruntfile.js`,
+so compiling is as easy as running `grunt build`.
+`grunt build` also copies files from `src` into `dist`, which will update what you see at
+`localhost:8000/`.
