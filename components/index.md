@@ -30,10 +30,10 @@ cf-grid contains a Less-based CSS3 grid system that encourages semantic HTML.
 
 cf-icons contains a custom icon font and useful CSS styles for working with the icons.
 
-## [cf-pagination](https://cfpb.github.io/cf-pagination/docs/)
-
-cf-pagination contains basic pagination styling for working with multipage displays such as search results or blog archives.
-
 ## [cf-layout](https://cfpb.github.io/cf-layout/docs/)
 
 cf-layout contains a set of HTML & CSS layout helpers, such as common layout patterns and dividers. 
+
+## [cf-pagination](https://cfpb.github.io/cf-pagination/docs/)
+
+cf-pagination contains basic pagination styling for working with multipage displays such as search results or blog archives.
