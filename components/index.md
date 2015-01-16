@@ -16,7 +16,7 @@ cf-buttons contains button styles including default, secondary, destructive, dis
 
 ## [cf-expandables](https://cfpb.github.io/cf-expandables/docs/)
 
-cf-expandables contains a felxible show/hide component. 
+cf-expandables contains a flexible show/hide component. 
 
 ## [cf-forms](https://cfpb.github.io/cf-forms/docs/)
 
