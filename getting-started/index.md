@@ -42,9 +42,18 @@ Here's a quick guide on working with these files:
 #### Editing the Less and JS
 
 The generator has created a starter Less file at `src/static/css/main.less`.
-This file includes all of the necessary `@import`s needed for Capital Framework.
+This file includes all of the necessary imports needed for Capital Framework.
 There is also a starter JavaScript file at `src/static/js/app.js`.
 Both `main.less` and `app.js` are already wired into `Gruntfile.js`,
 so compiling is as easy as running `grunt build`.
 `grunt build` also copies files from `src` into `dist`, which will update what you see at
 `localhost:8000/`.
+
+### Theming
+
+You can override component UI colors within `src/static/css/cf-theme-overrides.less`.
+This is already set up for you and gets imported by `main.less`.
+By default it uses colors from `cfpb-palette.less`.
+If you would like to use your own color palette replace `cfpb-palette.less` with your own file,
+update the import statement in `main.less` to point to that new file and override the color variables in
+`cf-theme-overrides.less`.
