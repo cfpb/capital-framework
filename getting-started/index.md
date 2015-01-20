@@ -58,4 +58,4 @@ If you would like to use your own color palette replace `cfpb-palette.less` with
 update the import statement in `main.less` to point to that new file and override the color variables in
 `cf-theme-overrides.less`.
 
-The same applies when you need to add custom styles to your project. You can add any `.less` files to your project that you may need, just remember to import them in `main.less`.
+The same applies when you need to add custom styles to your project. You can add any custom `.less` files to your project that you may need, just remember to import them in `main.less` using the correct path.
