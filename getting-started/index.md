@@ -36,7 +36,10 @@ Once thie generator has finished you'll have a folder full of files and folders.
 Here's a quick guide on working with these files:
 
 - Edit files within the `src` directory.
-- Point your terminal to `dist` and run `python -m SimpleHTTPServer`.
+- Run `grunt build-cf` to create the initial files from `/src` to `/dist`
+- `cd dist`
+- In the `/dist/` directory, run `python -m SimpleHTTPServer`.
+
   You can now navigate to `localhost:8000` and view the demo page.
 
 #### Editing the Less and JS
@@ -49,7 +52,7 @@ so compiling is as easy as running `grunt build`.
 `grunt build` also copies files from `src` into `dist`, which will update what you see at
 `localhost:8000/`.
 
-### Theming
+### Theming / Customizing
 
 You can override component UI colors within `src/static/css/cf-theme-overrides.less`.
 This is already set up for you and gets imported by `main.less`.
@@ -57,3 +60,7 @@ If you would like to use your own color palette simply replace the contents of
 `brand-palette.less` with your own color variables,
 then update `cf-theme-overrides.less` by overriding each UI color variable
 with a color from `brand-palette.less` or any color of your choosing.
+
+The same applies when you need to add custom styles to your project.
+You can add any custom `.less` files to your project that you may need,
+just remember to import them in `main.less` using the correct path.
