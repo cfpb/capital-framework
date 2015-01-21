@@ -56,9 +56,11 @@ so compiling is as easy as running `grunt build`.
 
 You can override component UI colors within `src/static/css/cf-theme-overrides.less`.
 This is already set up for you and gets imported by `main.less`.
-By default it uses colors from `cfpb-palette.less`.
-If you would like to use your own color palette replace `cfpb-palette.less` with your own file,
-update the import statement in `main.less` to point to that new file and override the color variables in
-`cf-theme-overrides.less`.
+If you would like to use your own color palette simply replace the contents of
+`brand-palette.less` with your own color variables,
+then update `cf-theme-overrides.less` by overriding each UI color variable
+with a color from `brand-palette.less` or any color of your choosing.
 
-The same applies when you need to add custom styles to your project. You can add any custom `.less` files to your project that you may need, just remember to import them in `main.less` using the correct path.
+The same applies when you need to add custom styles to your project.
+You can add any custom `.less` files to your project that you may need,
+just remember to import them in `main.less` using the correct path.
