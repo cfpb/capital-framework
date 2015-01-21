@@ -36,8 +36,9 @@ Once thie generator has finished you'll have a folder full of files and folders.
 Here's a quick guide on working with these files:
 
 - Edit files within the `src` directory.
-- Point your terminal to `dist`, run `grunt build` to create your initial files
-- Next run `python -m SimpleHTTPServer`.
+- Run `grunt build-cf` to create the initial files from `/src` to `/dist`
+- `cd dist`
+- In the `/dist/` directory, run `python -m SimpleHTTPServer`.
 
   You can now navigate to `localhost:8000` and view the demo page.
 
