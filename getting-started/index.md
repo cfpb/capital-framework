@@ -32,15 +32,14 @@ The generator will prompt you to complete information about the project and choo
 
 ### Navigating the project folder
 
-Once thie generator has finished you'll have a folder full of files and folders.
+Once the generator has finished you'll have a folder full of files and folders.
 Here's a quick guide on working with these files:
 
-- Edit files within the `src` directory.
-- Run `grunt build-cf` to create the initial files from `/src` to `/dist`
-- `cd dist`
-- In the `/dist/` directory, run `python -m SimpleHTTPServer`.
+- Run `grunt compile-cf` to create the initial build.
+- Edit files within the `src` directory and rebuild with grunt.
+- To view your files, `cd dist`, then in the `/dist/` directory, run `python -m SimpleHTTPServer`.
 
-  You can now navigate to `localhost:8000` and view the demo page.
+You can now navigate to `localhost:8000` and view the demo page.
 
 #### Editing the Less and JS
 
