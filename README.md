@@ -14,29 +14,29 @@
 
 ## Installation
 
-We use [homebrew](http://brew.sh/) to manage installation of software. To install the project dependencies using homebrew, navigate to this project's root directory and enter the following:
+We use [homebrew](http://brew.sh/) on Mac OSX to manage installation of software. To install the project dependencies using homebrew, navigate to this project's root directory and enter the following:
 
 ```shell
-brew install ruby
-brew install node
-gem install jekyll
-npm install
+$ brew install ruby
+$ brew install node
+$ gem install jekyll
+$ npm install
 ```
 
 To launch the site, enter:
 
 ```shell
-jekyll serve
+$ jekyll serve
 ```
 
 The site should now be live at `http://localhost:4000/capital-framework/`.
 
 ## Troubleshooting
 
-If you encounter issues of CSS not compiling, try running:
+**CSS compilation errors.** If you encounter issues of CSS not compiling, try running:
 
 ```shell
-grunt vendor
+$ grunt vendor
 ```
 
 ## Getting help
