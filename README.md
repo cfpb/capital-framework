@@ -39,6 +39,12 @@ The site should now be live at `http://localhost:4000/capital-framework/`.
 $ grunt vendor
 ```
 
+**Deny/Allow connections.** If you encounter the following message:
+
+> Do you want the application "node" to accept incoming network connections
+
+Hit `Deny` if you encounter this dialog box.
+
 ## Getting help
 
 If you encounter issues with the Capital Framework components shown in the documentation site, please post an issue in the Capital Framework [issue tracker](https://github.com/cfpb/capital-framework/issues/).
