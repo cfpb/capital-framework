@@ -39,11 +39,11 @@ The site should now be live at `http://localhost:4000/capital-framework/`.
 $ grunt vendor
 ```
 
-**Deny/Allow connections.** If you are an employee of the CFPB, you may encounter the following message:
+**Deny/Allow connections.** If you encounter the following message:
 
 > Do you want the application "node" to accept incoming network connections
 
-Hit `Deny` if you encounter this dialog.
+Hit `Deny` if you encounter this dialog box.
 
 ## Getting help
 
