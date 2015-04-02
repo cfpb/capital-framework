@@ -3,11 +3,11 @@
 
 **Description**: The static documentation site for the Capital Framework. Includes examples, code snippets, getting started and contribution instructions, etc.
 
-**Technology stack**: 
+**Technology stack**:
 - Ruby - For installing Jekyll.
 - Jekyll - Static site server.
 - Node - For managing front-end dependencies.
- 
+
 **Screenshot**:
 
 ![](https://raw.githubusercontent.com/cfpb/capital-framework/gh-pages/screenshot.png)
@@ -41,9 +41,9 @@ $ grunt vendor
 
 **Deny/Allow connections.** If you encounter the following message:
 
-> Do you want the application "node" to accept incoming network connections
+> Do you want the application “node” to accept incoming network connections?
 
-Hit `Deny` if you encounter this dialog box.
+Hit `Deny` to close the dialog box.
 
 ## Getting help
 
