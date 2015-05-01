@@ -13,7 +13,7 @@
     "url": "https://github.com/cfpb/capital-framework.git"
   },
   "license": "CC0",
-  "main": "capital-framework.less",
+  "main": "src/capital-framework.less",
   "dependencies": {
     "cf-core": "cfpb/cf-core#1.0",
     "cf-buttons": "cfpb/cf-buttons#1.0",
