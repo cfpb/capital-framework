@@ -13,15 +13,17 @@
     "url": "https://github.com/cfpb/capital-framework.git"
   },
   "license": "CC0",
+  "main": "capital-framework.less",
   "dependencies": {
-    "cf-core": "cfpb/cf-core#~0.8.0",
-    "cf-buttons": "cfpb/cf-buttons",
-    "cf-expandables": "cfpb/cf-expandables#~0.6.1",
-    "cf-forms": "cfpb/cf-forms#~1.1.0",
-    "cf-grid": "cfpb/cf-grid#~0.9.0",
-    "cf-icons": "cfpb/cf-icons",
-    "cf-pagination": "cfpb/cf-pagination#~0.4.1",
-    "cf-layout": "cfpb/cf-layout#~0.1.0"
+    "cf-core": "cfpb/cf-core#1.0",
+    "cf-buttons": "cfpb/cf-buttons#1.0",
+    "cf-expandables": "cfpb/cf-expandables#1.0",
+    "cf-forms": "cfpb/cf-forms#1.0",
+    "cf-grid": "cfpb/cf-grid#1.0",
+    "cf-icons": "cfpb/cf-icons#1.0",
+    "cf-pagination": "cfpb/cf-pagination#1.0",
+    "cf-typography": "cfpb/cf-typography#1.0",
+    "cf-layout": "cfpb/cf-layout#1.0"
   },
   "exportsOverride": {
     "cf-*": {
