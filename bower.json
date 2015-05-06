@@ -15,15 +15,15 @@
   "license": "CC0",
   "main": "src/capital-framework.less",
   "dependencies": {
-    "cf-core": "cfpb/cf-core#1.0",
-    "cf-buttons": "cfpb/cf-buttons#1.0",
-    "cf-expandables": "cfpb/cf-expandables#1.0",
-    "cf-forms": "cfpb/cf-forms#1.0",
-    "cf-grid": "cfpb/cf-grid#1.0",
-    "cf-icons": "cfpb/cf-icons#1.0",
-    "cf-pagination": "cfpb/cf-pagination#1.0",
-    "cf-typography": "cfpb/cf-typography#1.0",
-    "cf-layout": "cfpb/cf-layout#1.0"
+    "cf-core": "cfpb/cf-core#dev",
+    "cf-buttons": "cfpb/cf-buttons#dev",
+    "cf-expandables": "cfpb/cf-expandables#dev",
+    "cf-forms": "cfpb/cf-forms#dev",
+    "cf-grid": "cfpb/cf-grid#dev",
+    "cf-icons": "cfpb/cf-icons#dev",
+    "cf-pagination": "cfpb/cf-pagination#dev",
+    "cf-typography": "cfpb/cf-typography#dev",
+    "cf-layout": "cfpb/cf-layout#dev"
   },
   "exportsOverride": {
     "cf-*": {
