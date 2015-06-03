@@ -3,11 +3,17 @@ layout: default
 title:  "Getting started"
 ---
 
-Capital Framework provides a set of modular HTML, CSS, and JavaScript patterns that can be used both collectively and individually. Our recommended workflow is to use the cf-generator Yeoman generator to scaffold out a new Capital Framework project. This allows you to pick and choose your modules as well as providing a solid front end build process.
+Capital Framework provides a set of modular HTML, CSS, and JavaScript patterns that can be used both collectively and individually. There are several ways to integrate Capital Framework into your project:
 
-## Using the Yeoman generator
+1. [Using the generator](#using-the-generator)
+1. [Using Bower](#using-bower)
+1. [Downloading the compiled CSS](#downloading-the-compiled-css)
 
-To use the Yeoman generator, you will need [Node.js](http://nodejs.org/), [Yeoman](http://yeoman.io/), [Grunt](http://gruntjs.com/), and [Bower](http://bower.io/).
+Our recommended workflow is to use the generator to scaffold out a new Capital Framework project. This allows you to pick and choose your modules as well as providing a solid front end build process.
+
+## Using the generator
+
+To use the generator, you will need [Node.js](http://nodejs.org/), [Yeoman](http://yeoman.io/), [Grunt](http://gruntjs.com/), and [Bower](http://bower.io/).
 
 ### Installing dependencies
 
@@ -39,7 +45,6 @@ Here's a quick guide on working with these files:
 - To view your site, go to the dist directory and start a local server: `cd dist && python -m SimpleHTTPServer`. You can now navigate to `localhost:8000` in your web browser.
 - Edit files within the `src` directory and re-run `grunt build` to view changes.
 
-
 #### Editing the Less and JS
 
 The generator has created a starter Less file at `src/static/css/main.less`.
@@ -62,3 +67,21 @@ with a color from `brand-palette.less` or any color of your choosing.
 The same applies when you need to add custom styles to your project.
 You can add any custom `.less` files to your project that you may need,
 just remember to import them in `main.less` using the correct path.
+
+## Using Bower
+
+First install [Bower](http://bower.io/), then run `bower install capital-framework`.
+This will download Capital Framework to your project's `bower_components` directory.
+You can then import the framework into your application's primary Less file:
+
+{% highlight css %}
+@import (less) bower_components/capital-framework/src/capital-framework.less.
+{% endhighlight %}
+
+Not using Less? The compiled CSS file can be found in
+`bower_components/capital-framework/assets/css/main.min.css`.
+
+## Downloading the compiled CSS
+
+Capital Framework's compiled CSS can be [downloaded here](http://cfpb.github.io/capital-framework/assets/cf.zip).
+Download it and integrate it into your project as you please.
