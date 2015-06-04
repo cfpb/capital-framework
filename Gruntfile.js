@@ -14,46 +14,11 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('bower.json'),
 
     /**
-     * Bower: https://github.com/yatskevich/grunt-bower-task
-     *
-     * Install Bower packages and migrate assets.
-     */
-    bower: {
-      install: {
-        options: {
-          targetDir: './vendor/',
-          install: true,
-          verbose: true,
-          cleanBowerDir: true,
-          cleanTargetDir: true,
-          layout: function(type, component) {
-            if (type === 'img') {
-              return path.join('../assets/img');
-            } else if (type === 'fonts') {
-              return path.join('../assets/fonts');
-            } else {
-              return path.join(component);
-            }
-          }
-        }
-      }
-    },
-
-    /**
      * Concat: https://github.com/gruntjs/grunt-contrib-concat
      *
      * Concatenate cf-* Less files prior to compiling them.
      */
     concat: {
-      'cf-less': {
-        src: [
-          'vendor/cf-*/*.less',
-          '!vendor/cf-core/*.less',
-          'vendor/cf-core/cf-core.less',
-          '!vendor/cf-concat/cf.less'
-        ],
-        dest: 'vendor/cf-concat/cf.less',
-      },
       bodyScripts: {
         src: [
           'vendor/jquery/jquery.js',
@@ -252,40 +217,22 @@ module.exports = function(grunt) {
     },
 
     /**
-     * JSHint: https://github.com/gruntjs/grunt-contrib-jshint
-     *
-     * Validate files with JSHint.
-     * Below are options that conform to idiomatic.js standards.
-     * Feel free to add/remove your favorites: http://www.jshint.com/docs/#options
+     * Lint the JavaScript.
      */
-    jshint: {
-      options: {
-        camelcase: false,
-        curly: true,
-        forin: true,
-        immed: true,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        quotmark: true,
-        sub: true,
-        boss: true,
-        strict: true,
-        evil: true,
-        eqnull: true,
-        browser: true,
-        plusplus: false,
-        globals: {
-          jQuery: true,
-          $: true,
-          module: true,
-          require: true,
-          define: true,
-          console: true,
-          EventEmitter: true
-        }
-      },
-      all: ['assets/js/main.js']
+    lintjs: {
+      /**
+       * Validate files with ESLint.
+       * https://www.npmjs.com/package/grunt-contrib-eslint
+       */
+      eslint: {
+        options: {
+          quiet: env.quiet
+        },
+        src: [
+          // 'Gruntfile.js', // Uncomment to lint the Gruntfile.
+          '<%= loc.src %>/static/js/app.js'
+        ]
+      }
     },
 
     /**
@@ -337,6 +284,10 @@ module.exports = function(grunt) {
   grunt.registerTask('vendor', ['bower:install', 'concat:cf-less']);
   grunt.registerTask('cssdev', ['less', 'autoprefixer', 'legacssy', 'cssmin']);
   grunt.registerTask('jsdev', ['concat:bodyScripts', 'uglify']);
+  grunt.registerTask('test', ['lintjs']);
+  grunt.registerMultiTask('lintjs', 'Lint the JavaScript', function(){
+    grunt.config.set(this.target, this.data);
+    grunt.task.run(this.target);
+  });
   grunt.registerTask('default', ['cssdev', 'jsdev', 'copy:vendor', 'compress']);
-  grunt.registerTask('test', ['jshint']);
 };
