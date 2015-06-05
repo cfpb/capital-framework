@@ -53,12 +53,20 @@ module.exports = function(grunt) {
      * Compile Less files to CSS.
      */
     less: {
-      main: {
+      internal: {
         options: {
           paths: grunt.file.expand('vendor/**/'),
         },
         files: {
-          '<%= loc.dist %>/capital-framework.css': ['<%= loc.src %>/css/main.less']
+          '<%= loc.src %>/css/main.css': ['<%= loc.src %>/css/main.less']
+        }
+      },
+      dist: {
+        options: {
+          paths: grunt.file.expand('.'),
+        },
+        files: {
+          '<%= loc.dist %>/capital-framework.css': ['<%= loc.src %>/vendor/capital-framework/src/capital-framework-generated.less']
         }
       }
     },
@@ -208,6 +216,17 @@ module.exports = function(grunt) {
           }
         ]
       },
+      // The easiest way to resolve the @import paths is to just copy the source
+      // file to the vendor folder to emulate the location it will be in when
+      // end-users install the file.
+      source: {
+        files: [
+          {
+            src: 'src/capital-framework-generated.less',
+            dest: '<%= loc.src %>/vendor/capital-framework/src/capital-framework-generated.less'
+          }
+        ]
+      },
       archive: {
         files: [
           {
@@ -284,7 +303,7 @@ module.exports = function(grunt) {
   /**
    * Create custom task aliases and combinations.
    */
-  grunt.registerTask('css', ['less', 'autoprefixer', 'legacssy', 'cssmin']);
+  grunt.registerTask('css', ['copy:source', 'less', 'autoprefixer', 'legacssy', 'cssmin']);
   grunt.registerTask('js', ['concat:js', 'uglify']);
   grunt.registerTask('test', ['lintjs']);
   grunt.registerMultiTask('lintjs', 'Lint the JavaScript', function(){
