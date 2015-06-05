@@ -1,74 +1,27 @@
 # Capital Framework
 
-A Capital Framework demo project. Use grunt to process the source files in `src/` and output them to `dist/`:
+A Capital Framework sample project.
+To preview it, run `python -m SimpleHTTPServer` and open http://localhost:8000 in a web browser.
 
-1. `$ npm install -g grunt-cli bower`
-1. `$ npm install`
-1. `$ grunt build`
-1. `$ cd dist && python -m SimpleHTTPServer`
-1. Open http://localhost:8000 in a web browser to see the demo page.
+Want a more advanced demonstration of how to use Capital Framework?
+Try the [generator](http://cfpb.github.io/capital-framework/getting-started/#using-the-generator):
 
-![Screenshot](screenshot.png)
+```sh
+$ npm install -g yo generator-cf
+$ mkdir my-new-project && cd $_
+$ yo cf
+```
 
-## Dependencies
+## License
 
-Describe any dependencies that must be installed for this software to work.
-This includes programming languages, databases or other storage mechanisms, build tools, frameworks, and so forth.
-If specific versions of other software are required, or known not to work, call that out.
+The project is in the public domain within the United States, and
+copyright and related rights in the work worldwide are waived through
+the [CC0 1.0 Universal public domain dedication](http://creativecommons.org/publicdomain/zero/1.0/).
 
-## Installation
+All contributions to this project will be released under the CC0
+dedication. By submitting a pull request, you are agreeing to comply
+with this waiver of copyright interest.
 
-Detailed instructions on how to install, configure, and get the project running.
-This should be frequently tested to ensure reliability. Alternatively, link to
-a separate [INSTALL](INSTALL.md) document.
+Software source code previously released under an open source license and then modified by CFPB staff is considered a "joint work" (see 17 USC § 101); it is partially copyrighted, partially public domain, and as a whole is protected by the copyrights of the non-government authors and must be released according to the terms of the original open-source license.
 
-## Configuration
-
-If the software is configurable, describe it in detail, either here or in other documentation to which you link.
-
-## Usage
-
-Show users how to use the software.
-Be specific.
-Use appropriate formatting when showing code snippets.
-
-## How to test the software
-
-If the software includes automated tests, detail how to run those tests.
-
-## Known issues
-
-Document any known significant shortcomings with the software.
-
-## Getting help
-
-Instruct users how to get help with this software; this might include links to an issue tracker, wiki, mailing list, etc.
-
-**Example**
-
-If you have questions, concerns, bug reports, etc, please file an issue in this repository's Issue Tracker.
-
-## Getting involved
-
-This section should detail why people should get involved and describe key areas you are
-currently focusing on; e.g., trying to get feedback on features, fixing certain bugs, building
-important pieces, etc.
-
-General instructions on _how_ to contribute should be stated with a link to [CONTRIBUTING](CONTRIBUTING.md).
-
-
-----
-
-## Open source licensing info
-1. [TERMS](TERMS.md)
-2. [LICENSE](LICENSE)
-3. [CFPB Source Code Policy](https://github.com/cfpb/source-code-policy/)
-
-
-----
-
-## Credits and references
-
-1. Projects that inspired you
-2. Related projects
-3. Books, papers, talks, or other sources that have meaniginful impact or influence on this project
+For further details, please see: http://www.consumerfinance.gov/developers/sourcecodepolicy/
