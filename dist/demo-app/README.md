@@ -1,7 +1,7 @@
 # Capital Framework
 
 A Capital Framework sample project.
-To preview it, run `python -m SimpleHTTPServer` and open http://localhost:8000 in a web browser.
+To preview it, open `index.html` in a web browser.
 
 Want a more advanced demonstration of how to use Capital Framework?
 Try the [generator](http://cfpb.github.io/capital-framework/getting-started/#using-the-generator):
