@@ -6,6 +6,15 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
 
   var path = require('path');
+
+  // Allows a `--quiet` flag to be passed to Grunt from the command-line.
+  // If the flag is present the value is true, otherwise it is false.
+  // This flag can be used to, for example, suppress warning output
+  // from linters.
+  var env = {
+    quiet: grunt.option('quiet') ? true : false
+  };
+
   var config = {
 
     /**
@@ -14,19 +23,27 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('bower.json'),
 
     /**
+     * Set some src and dist location variables.
+     */
+    loc: {
+      src: 'static',
+      dist: 'dist'
+    },
+
+    /**
      * Concat: https://github.com/gruntjs/grunt-contrib-concat
      *
      * Concatenate cf-* Less files prior to compiling them.
      */
     concat: {
-      bodyScripts: {
+      js: {
         src: [
-          'vendor/jquery/jquery.js',
-          'vendor/jquery.easing/jquery.easing.js',
-          'vendor/cf-*/*.js',
-          'assets/js/app.js'
+          '<%= loc.src %>/vendor/jquery/dist/jquery.js',
+          '<%= loc.src %>/vendor/jquery.easing/js/jquery.easing.js',
+          '<%= loc.src %>/vendor/cf-*/src/js/*.js',
+          '<%= loc.src %>/js/app.js'
         ],
-        dest: 'assets/js/main.js'
+        dest: '<%= loc.dist %>/capital-framework.js'
       }
     },
 
@@ -41,7 +58,7 @@ module.exports = function(grunt) {
           paths: grunt.file.expand('vendor/**/'),
         },
         files: {
-          'assets/css/main.css': ['assets/css/main.less']
+          '<%= loc.dist %>/capital-framework.css': ['<%= loc.src %>/css/main.less']
         }
       }
     },
@@ -58,9 +75,9 @@ module.exports = function(grunt) {
         map: false
       },
       main: {
-        // Prefix `assets/css/main.css` and overwrite.
+        // Prefix `<%= loc.src %>/css/main.css` and overwrite.
         expand: true,
-        src: ['assets/css/main.css']
+        src: ['<%= loc.src %>/css/main.css']
       },
     },
 
@@ -75,13 +92,9 @@ module.exports = function(grunt) {
       options: {
         preserveComments: 'some'
       },
-      // headScripts: {
-      //   src: 'vendor/html5shiv/html5shiv-printshiv.js',
-      //   dest: 'assets/js/html5shiv-printshiv.js'
-      // },
       bodyScripts: {
-        src: ['assets/js/main.js'],
-        dest: 'assets/js/main.min.js'
+        src: '<%= loc.dist %>/capital-framework.js',
+        dest: '<%= loc.dist %>/capital-framework.min.js'
       }
     },
 
@@ -89,7 +102,7 @@ module.exports = function(grunt) {
      * Banner: https://github.com/mattstyles/grunt-banner
      *
      * Here's a banner with some template variables.
-     * We'll be inserting it at the top of minified assets.
+     * We'll be inserting it at the top of minified <%= loc.src %>.
      */
     banner:
       '/*!\n' +
@@ -118,7 +131,7 @@ module.exports = function(grunt) {
           linebreak: true
         },
         files: {
-          src: ['assets/css/*.min.css']
+          src: ['<%= loc.dist %>/*.css']
         }
       },
       js: {
@@ -128,7 +141,7 @@ module.exports = function(grunt) {
           linebreak: true
         },
         files: {
-          src: ['assets/js/*.min.js']
+          src: '<%= loc.dist %>/*.js'
         }
       }
     },
@@ -144,7 +157,7 @@ module.exports = function(grunt) {
           processImport: false
         },
         files: {
-          'assets/css/main.min.css': ['assets/css/main.css'],
+          '<%= loc.dist %>/capital-framework.min.css': ['<%= loc.dist %>/capital-framework.css'],
         }
       },
       'ie-alternate': {
@@ -152,7 +165,7 @@ module.exports = function(grunt) {
           processImport: false
         },
         files: {
-          'assets/css/main.ie.min.css': ['assets/css/main.ie.css'],
+          '<%= loc.dist %>/capital-framework.ie.min.css': ['<%= loc.dist %>/capital-framework.ie.css'],
         }
       }
     },
@@ -171,7 +184,7 @@ module.exports = function(grunt) {
           legacyWidth: 60
         },
         files: {
-          'assets/css/main.ie.css': 'assets/css/main.css'
+          '<%= loc.dist %>/capital-framework.ie.css': '<%= loc.dist %>/capital-framework.css'
         }
       }
     },
@@ -182,18 +195,24 @@ module.exports = function(grunt) {
      * Copy files and folders.
      */
     copy: {
-      vendor: {
-        files:
-        [
+      fonts: {
+        files: [
           {
             expand: true,
-            cwd: '',
+            flatten: true,
             src: [
-              // Only include vendor files that we use independently
-              'vendor/html5shiv/html5shiv-printshiv.min.js',
-              'vendor/box-sizing-polyfill/boxsizing.htc'
+              // Fonts
+              '<%= loc.src %>/vendor/cf-icons/src/fonts/*'
             ],
-            dest: 'assets'
+            dest: 'fonts/'
+          }
+        ]
+      },
+      archive: {
+        files: [
+          {
+            src: 'releases/capital-framework-<%= pkg.version %>.zip',
+            dest: 'releases/capital-framework-latest.zip'
           }
         ]
       }
@@ -208,10 +227,10 @@ module.exports = function(grunt) {
     compress: {
       main: {
         options: {
-          archive: 'assets/cf.zip'
+          archive: 'releases/capital-framework-<%= pkg.version %>.zip'
         },
         files: [
-          {expand: true, cwd: 'build/dist/', src: ['**'], dest: 'capital-framework/'}
+          {expand: true, cwd: '<%= loc.dist %>', src: ['**']}
         ]
       }
     },
@@ -230,24 +249,8 @@ module.exports = function(grunt) {
         },
         src: [
           // 'Gruntfile.js', // Uncomment to lint the Gruntfile.
-          '<%= loc.src %>/static/js/app.js'
+          '<%= loc.src %>/js/app.js'
         ]
-      }
-    },
-
-    /**
-     * Shell: https://github.com/sindresorhus/grunt-shell
-     *
-     * Run shell commands.
-     * For running and executing Jekyll tasks
-     */
-
-    shell: {
-      jekyllBuild : {
-        command : 'jekyll build'
-      },
-      jekyllServe : {
-        command : 'jekyll serve'
       }
     },
 
@@ -260,9 +263,9 @@ module.exports = function(grunt) {
 
     watch: {
       files: [ 'Gruntfile.js',
-               'assets/css/**/*.less',
-               'assets/js/app.js'],
-      tasks: ['cssdev', 'jsdev'],
+               '<%= loc.src %>/css/**/*.less',
+               '<%= loc.src %>/js/app.js'],
+      tasks: ['css', 'js'],
       options: {
         spawn: false,
         interrupt: true,
@@ -281,13 +284,12 @@ module.exports = function(grunt) {
   /**
    * Create custom task aliases and combinations.
    */
-  grunt.registerTask('vendor', ['bower:install', 'concat:cf-less']);
-  grunt.registerTask('cssdev', ['less', 'autoprefixer', 'legacssy', 'cssmin']);
-  grunt.registerTask('jsdev', ['concat:bodyScripts', 'uglify']);
+  grunt.registerTask('css', ['less', 'autoprefixer', 'legacssy', 'cssmin']);
+  grunt.registerTask('js', ['concat:js', 'uglify']);
   grunt.registerTask('test', ['lintjs']);
   grunt.registerMultiTask('lintjs', 'Lint the JavaScript', function(){
     grunt.config.set(this.target, this.data);
     grunt.task.run(this.target);
   });
-  grunt.registerTask('default', ['cssdev', 'jsdev', 'copy:vendor', 'compress']);
+  grunt.registerTask('default', ['test', 'css', 'js', 'copy:fonts', 'compress', 'copy:archive']);
 };
