@@ -19,6 +19,7 @@ _site/
 *.jar
 *.rar
 *.tar
+*.zip
 
 # Logs and databases #
 ######################
@@ -67,6 +68,7 @@ coverage.xml
 node_modules/
 bower_components/
 .grunt/
-vendor/
-static/vendor/
-fonts/
+src/vendor/
+dist/
+
+src/vendor/

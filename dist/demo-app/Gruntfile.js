@@ -2,8 +2,12 @@ module.exports = function(grunt) {
 
   'use strict';
 
-  require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
+  require('jit-grunt')(grunt, {
+    // Static mappings below; needed because task name does not match package name
+    bower: 'grunt-bower-task',
+    usebanner: 'grunt-banner'
+  });
 
   var path = require('path');
 
@@ -26,7 +30,7 @@ module.exports = function(grunt) {
      * Set some src and dist location variables.
      */
     loc: {
-      src: 'static',
+      src: 'src',
       dist: 'dist'
     },
 
@@ -41,9 +45,9 @@ module.exports = function(grunt) {
           '<%= loc.src %>/vendor/jquery/dist/jquery.js',
           '<%= loc.src %>/vendor/jquery.easing/js/jquery.easing.js',
           '<%= loc.src %>/vendor/cf-*/src/js/*.js',
-          '<%= loc.src %>/js/app.js'
+          '<%= loc.src %>/static/js/app.js'
         ],
-        dest: '<%= loc.dist %>/capital-framework.js'
+        dest: '<%= loc.dist %>/static/js/main.js'
       }
     },
 
@@ -55,10 +59,12 @@ module.exports = function(grunt) {
     less: {
       main: {
         options: {
-          paths: grunt.file.expand('vendor/**/'),
+          // The src/vendor paths are needed to find the CF components' files.
+          // Feel free to add additional paths to the array passed to `concat`.
+          paths: grunt.file.expand('src/vendor/*').concat([])
         },
         files: {
-          '<%= loc.dist %>/capital-framework.css': ['<%= loc.src %>/css/main.less']
+          '<%= loc.dist %>/static/css/main.css': ['<%= loc.src %>/static/css/main.less']
         }
       }
     },
@@ -75,9 +81,9 @@ module.exports = function(grunt) {
         map: false
       },
       main: {
-        // Prefix `<%= loc.src %>/css/main.css` and overwrite.
+        // Prefix `static/css/main.css` and overwrite.
         expand: true,
-        src: ['<%= loc.src %>/css/main.css']
+        src: ['<%= loc.dist %>/static/css/main.css']
       },
     },
 
@@ -90,11 +96,16 @@ module.exports = function(grunt) {
      */
     uglify: {
       options: {
-        preserveComments: 'some'
+        preserveComments: 'some',
+        sourceMap: true
       },
-      bodyScripts: {
-        src: '<%= loc.dist %>/capital-framework.js',
-        dest: '<%= loc.dist %>/capital-framework.min.js'
+      // headScripts: {
+      //   src: 'vendor/html5shiv/html5shiv-printshiv.js',
+      //   dest: 'static/js/html5shiv-printshiv.js'
+      // },
+      js: {
+        src: ['<%= loc.dist %>/static/js/main.js'],
+        dest: '<%= loc.dist %>/static/js/main.min.js'
       }
     },
 
@@ -102,46 +113,34 @@ module.exports = function(grunt) {
      * Banner: https://github.com/mattstyles/grunt-banner
      *
      * Here's a banner with some template variables.
-     * We'll be inserting it at the top of minified <%= loc.src %>.
+     * We'll be inserting it at the top of minified assets.
      */
     banner:
       '/*!\n' +
-      ' *              ad$$             $$\n' +
-      ' *             d$"               $$\n' +
-      ' *             $$                $$\n' +
-      ' *   ,adPYba,  $$$$$ $b,dPYba,   $$,dPYba,\n' +
-      ' *  aP\'    \'$: $$    $$P\'   \'$a  $$P\'   \'$a\n' +
-      ' *  $(         $$    $$(     )$  $$(     )$\n' +
-      ' *  "b,    ,$: $$    $$b,   ,$"  $$b,   ,$"\n' +
-      ' *   `"Ybd$"\'  $$    $$`YbdP"\'   $$`Ybd$"\'\n' +
-      ' *                   $$\n' +
-      ' *                   $$\n' +
-      ' *                   ""\n' +
-      ' *\n' +
-      ' *  <%%= pkg.name %%> - v<%%= pkg.version %%>\n' +
-      ' *  <%%= pkg.homepage %%>' +
-      ' *  A public domain work of the Consumer Financial Protection Bureau\n' +
+      ' *  <%= pkg.name %> - v<%= pkg.version %>\n' +
+      ' *  <%= pkg.homepage %>\n' +
+      ' *  Licensed <%= pkg.license %> by <%= pkg.author.name %> <<%= pkg.author.email %>>\n' +
       ' */',
 
     usebanner: {
       css: {
         options: {
           position: 'top',
-          banner: '<%%= banner %%>',
+          banner: '<%= banner %>',
           linebreak: true
         },
         files: {
-          src: ['<%= loc.dist %>/*.css']
+          src: ['<%= loc.dist %>/static/css/*.min.css']
         }
       },
       js: {
         options: {
           position: 'top',
-          banner: '<%%= banner %%>',
+          banner: '<%= banner %>',
           linebreak: true
         },
         files: {
-          src: '<%= loc.dist %>/*.js'
+          src: ['<%= loc.dist %>/static/js/*.min.js']
         }
       }
     },
@@ -157,7 +156,7 @@ module.exports = function(grunt) {
           processImport: false
         },
         files: {
-          '<%= loc.dist %>/capital-framework.min.css': ['<%= loc.dist %>/capital-framework.css'],
+          '<%= loc.dist %>/static/css/main.min.css': ['<%= loc.dist %>/static/css/main.css'],
         }
       },
       'ie-alternate': {
@@ -165,7 +164,7 @@ module.exports = function(grunt) {
           processImport: false
         },
         files: {
-          '<%= loc.dist %>/capital-framework.ie.min.css': ['<%= loc.dist %>/capital-framework.ie.css'],
+          '<%= loc.dist %>/static/css/main.ie.min.css': ['<%= loc.dist %>/static/css/main.ie.css'],
         }
       }
     },
@@ -184,10 +183,17 @@ module.exports = function(grunt) {
           legacyWidth: 60
         },
         files: {
-          '<%= loc.dist %>/capital-framework.ie.css': '<%= loc.dist %>/capital-framework.css'
+          '<%= loc.dist %>/static/css/main.ie.css': '<%= loc.dist %>/static/css/main.css'
         }
       }
     },
+
+    /**
+     * Clean: https://github.com/gruntjs/grunt-contrib-clean
+     *
+     * Clean files and folders
+     */
+    clean: ['dist'],
 
     /**
      * Copy: https://github.com/gruntjs/grunt-contrib-copy
@@ -195,42 +201,36 @@ module.exports = function(grunt) {
      * Copy files and folders.
      */
     copy: {
-      fonts: {
+      main: {
         files: [
           {
             expand: true,
+            cwd: '<%= loc.src %>',
+            src: [
+              // HTML files
+              '*.html',
+            ],
+            dest: '<%= loc.dist %>'
+          },
+          {
+            expand: true,
             flatten: true,
+            cwd: '<%= loc.src %>',
             src: [
               // Fonts
-              '<%= loc.src %>/vendor/cf-icons/src/fonts/*'
+              'vendor/cf-icons/src/fonts/*'
             ],
-            dest: 'fonts/'
-          }
-        ]
-      },
-      archive: {
-        files: [
+            dest: '<%= loc.dist %>/static/fonts'
+          },
           {
-            src: 'releases/capital-framework-<%= pkg.version %>.zip',
-            dest: 'releases/capital-framework-latest.zip'
+            expand: true,
+            cwd: '<%= loc.src %>',
+            src: [
+              // Vendor files
+              'vendor/box-sizing-polyfill/boxsizing.htc',
+            ],
+            dest: '<%= loc.dist %>/static'
           }
-        ]
-      }
-    },
-
-    /**
-    * Compress: https://github.com/gruntjs/grunt-contrib-compress
-    *
-    * Compress the dist directory so that it can be downloaded as a zip
-    */
-
-    compress: {
-      main: {
-        options: {
-          archive: 'releases/capital-framework-<%= pkg.version %>.zip'
-        },
-        files: [
-          {expand: true, cwd: '<%= loc.dist %>', src: ['**']}
         ]
       }
     },
@@ -249,7 +249,7 @@ module.exports = function(grunt) {
         },
         src: [
           // 'Gruntfile.js', // Uncomment to lint the Gruntfile.
-          '<%= loc.src %>/js/app.js'
+          '<%= loc.src %>/static/js/app.js'
         ]
       }
     },
@@ -260,18 +260,11 @@ module.exports = function(grunt) {
      * Run predefined tasks whenever watched file patterns are added, changed or deleted.
      * Add files to monitor below.
      */
-
     watch: {
-      files: [ 'Gruntfile.js',
-               '<%= loc.src %>/css/**/*.less',
-               '<%= loc.src %>/js/app.js'],
-      tasks: ['css', 'js'],
-      options: {
-        spawn: false,
-        interrupt: true,
-        atBegin : true,
-        livereload : true
-      },
+      default: {
+        files: ['Gruntfile.js', '<%= loc.src %>/static/css/**/*.less', '<%= loc.src %>/static/js/**/*.js'],
+        tasks: ['default']
+      }
     }
 
   };
@@ -284,12 +277,14 @@ module.exports = function(grunt) {
   /**
    * Create custom task aliases and combinations.
    */
-  grunt.registerTask('css', ['less', 'autoprefixer', 'legacssy', 'cssmin']);
-  grunt.registerTask('js', ['concat:js', 'uglify']);
+  grunt.registerTask('css', ['less', 'autoprefixer', 'legacssy', 'cssmin', 'usebanner:css']);
+  grunt.registerTask('js', ['concat:js', 'uglify', 'usebanner:js']);
   grunt.registerTask('test', ['lintjs']);
   grunt.registerMultiTask('lintjs', 'Lint the JavaScript', function(){
     grunt.config.set(this.target, this.data);
     grunt.task.run(this.target);
   });
-  grunt.registerTask('default', ['test', 'css', 'js', 'copy:fonts', 'compress', 'copy:archive']);
+  grunt.registerTask('build', ['test', 'clean', 'css', 'js', 'copy']);
+  grunt.registerTask('default', ['build']);
+
 };
