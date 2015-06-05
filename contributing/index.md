@@ -6,7 +6,7 @@ title:  "Contributing"
 ## Demos and docs
 
 Each component should build out a demo and docs page using
-[grunt-topdoc](https://github.com/topcoat/grunt-topdoc). The demo page is a simple html page with no extra styling which is useful for browser testing the component. The docs page is a generated style guide documenting the component markup and CSS.
+[grunt-topdoc](https://github.com/topcoat/grunt-topdoc). The demo page is a simple HTML page with no extra styling which is useful for browser testing the component. The docs page is a generated style guide documenting the component markup and CSS.
 
 These pages are generated using the grunt-topdoc task which uses templates from cf-component-demo. Components are set up to generate these pages along with the default Grunt tasks.
 
@@ -17,7 +17,7 @@ Components should be cross browser tested. When contributing code please publicl
 
 ## JavaScript testing
 
-JavaScript tests can be run with the `grunt test` command. Before making a pull request please publicly track that all tests have passed
+JavaScript tests can be run with the `npm test` command. Before making a pull request please publicly track that all tests have passed
 using the [testing checklist snippet](testing-snippet.html).
 
 New unit tests should be written using [QUnit](https://qunitjs.com/) for any functionality added.
@@ -27,11 +27,9 @@ New unit tests should be written using [QUnit](https://qunitjs.com/) for any fun
 
 Components should conform to [Section 508](http://www.section508.gov/)
 and [WCAG 2.0 level AA](http://www.w3.org/TR/WCAG20/) guidelines.
-When contributing code please publicly track the tests you have run using the
-[testing checklist snippet](testing-snippet.html).
-
-As each component is different we ask that you update the snippet to track
-the accessibility guidlines you have tested for.
+Travis CI runs [pa11y](http://pa11y.org/) tests to ensure WCAG 2.0 compliancy.
+You can run pa11y locally by starting a local server to serve the component's
+demo page and running `pa11y localhost:8080/demo -s WCAG2AA`.
 
 
 ## Coding style
