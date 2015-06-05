@@ -99,5 +99,5 @@ Not using Less? The compiled CSS file can be found in
 
 ## Downloading the compiled CSS
 
-Capital Framework's compiled CSS can be [downloaded here](http://cfpb.github.io/capital-framework/releases/capital-framework-latest.zip).
+Capital Framework's compiled CSS can be [downloaded here](https://cfpb.github.io/capital-framework/releases/capital-framework-latest.zip).
 Download it and integrate it into your project as you please.

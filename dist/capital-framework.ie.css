@@ -10353,7 +10353,8 @@ nav ul {
 }
 
 .hero_p {
-  margin-bottom: 0;
+  margin-bottom: .2em;
+  font-size: 1.25em;
 }
 
 .jump-link {
@@ -10376,7 +10377,6 @@ nav ul {
 
 .jump-link__download:after {
   content: "\e406";
-  right: -1.5em;
 }
 
 .jump-link__external-link:after {
@@ -10400,6 +10400,11 @@ nav ul {
 }
 
 .hero_code {
+  font-size: 1em;
+}
+
+.hero_p {
+  margin-bottom: 0em;
   font-size: 1em;
 }
 
