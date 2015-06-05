@@ -100,4 +100,18 @@ Not using Less? The compiled CSS file can be found in
 ## Downloading the compiled CSS
 
 Capital Framework's compiled CSS can be [downloaded here](https://cfpb.github.io/capital-framework/releases/capital-framework-latest.zip).
-Download it and integrate it into your project as you please.
+Download it and integrate it into your project using standard `<link>` and `<script>` tags.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Awesome Project</title>
+    <link rel="stylesheet" href="capital-framework.min.css">
+</head>
+<body>
+    <!-- Your project's HTML goes here. -->
+    <script src="capital-framework.min.js"></script>
+</body>
+</html>
+```
