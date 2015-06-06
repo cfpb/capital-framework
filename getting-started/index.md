@@ -6,7 +6,7 @@ title:  "Getting started"
 Capital Framework provides a set of modular HTML, CSS, and JavaScript patterns that can be used both collectively and individually. There are several ways to integrate Capital Framework into your project:
 
 1. [Using the generator](#using-the-generator)
-1. [Using Bower](#using-bower)
+1. [Using Less](#using-less)
 1. [Downloading the compiled CSS](#downloading-the-compiled-css)
 
 Our recommended workflow is to use the generator to scaffold out a new Capital Framework project. This allows you to pick and choose your modules as well as providing a solid front end build process.
@@ -68,14 +68,30 @@ The same applies when you need to add custom styles to your project.
 You can add any custom `.less` files to your project that you may need,
 just remember to import them in `main.less` using the correct path.
 
-## Using Bower
+## Using Less
 
 First install [Bower](http://bower.io/), then run `bower install capital-framework`.
 This will download Capital Framework to your project's `bower_components` directory.
 You can then import the framework into your application's primary Less file:
 
 {% highlight css %}
-@import (less) bower_components/capital-framework/src/capital-framework.less.
+@import (less) "bower_components/capital-framework/src/capital-framework.less";
+
+// the rest of your stylesheet...
+{% endhighlight %}
+
+Just want one or two CF components and not the entire framework?
+Simply install and `@import` only the components you need.
+
+{% highlight sh %}
+$ bower install cf-buttons cf-icons
+{% endhighlight %}
+
+{% highlight css %}
+@import (less) "bower_components/cf-buttons/src/cf-buttons.less";
+@import (less) "bower_components/cf-icons/src/cf-icons.less";
+
+// the rest of your stylesheet...
 {% endhighlight %}
 
 Not using Less? The compiled CSS file can be found in
@@ -84,4 +100,18 @@ Not using Less? The compiled CSS file can be found in
 ## Downloading the compiled CSS
 
 Capital Framework's compiled CSS can be [downloaded here](https://cfpb.github.io/capital-framework/releases/capital-framework-latest.zip).
-Download it and integrate it into your project as you please.
+Download it and integrate it into your project using standard `<link>` and `<script>` tags.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Awesome Project</title>
+    <link rel="stylesheet" href="capital-framework.min.css">
+</head>
+<body>
+    <!-- Your project's HTML goes here. -->
+    <script src="capital-framework.min.js"></script>
+</body>
+</html>
+```
