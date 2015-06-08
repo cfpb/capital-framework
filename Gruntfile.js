@@ -212,7 +212,7 @@ module.exports = function(grunt) {
               // Fonts
               '<%= loc.src %>/vendor/cf-icons/src/fonts/*'
             ],
-            dest: 'fonts/'
+            dest: '<%= loc.src %>/fonts'
           }
         ]
       },
