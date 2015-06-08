@@ -102,7 +102,7 @@ Not using Less? The compiled CSS file can be found in
 Capital Framework's compiled CSS can be [downloaded here](https://cfpb.github.io/capital-framework/releases/capital-framework-latest.zip).
 Download it and integrate it into your project using standard `<link>` and `<script>` tags.
 
-```html
+{% highlight html %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -114,4 +114,4 @@ Download it and integrate it into your project using standard `<link>` and `<scr
     <script src="capital-framework.min.js"></script>
 </body>
 </html>
-```
+{% endhighlight %}
