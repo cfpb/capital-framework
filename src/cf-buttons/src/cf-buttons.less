@@ -1,0 +1,1050 @@
+// Import external dependencies
+
+@import '../../cf-core/src/cf-core.less';
+@import '../../cf-icons/src/cf-icons.less';
+
+/* ==========================================================================
+   Capital Framework
+   Button Styling
+   ========================================================================== */
+
+/* topdoc
+  name: Theme variables
+  family: cf-buttons
+  notes:
+    - "The following color and sizing variables are exposed, allowing you to
+       easily override them before compiling."
+  patterns:
+  - name: Colors
+    codenotes:
+      - |
+        @btn-text
+        @btn-bg
+        @btn-bg-hover
+        @btn-bg-active
+        @btn__secondary-text
+        @btn__secondary-bg
+        @btn__secondary-bg-hover
+        @btn__secondary-bg-active
+        @btn__warning-text
+        @btn__warning-bg
+        @btn__warning-bg-hover
+        @btn__warning-bg-active
+        @btn__disabled-text
+        @btn__disabled-bg
+        @btn__disabled-outline
+  - name: Sizing
+    codenotes:
+      - |
+        @btn-font-size
+        @btn-v-padding
+        @btn-v-padding-modifier-ie
+        @super-btn-font-size
+    notes:
+      - "@btn-v-padding-modifier-ie is used to fix the vertical padding bug in
+         IE for <button>'s and <inputs>'s across various .btn styles.
+         We should revisit this after adding normalize.css to see if this is
+         still needed."
+  tags:
+  - cf-buttons
+  - less
+*/
+
+// Color variables
+
+// .btn
+@btn-text:                      #fff;
+@btn-bg:                        #c7336e;
+@btn-bg-hover:                  darken(@btn-bg, 10%);
+@btn-bg-active:                 darken(@btn-bg, 15%);
+
+// .btn__secondary
+@btn__secondary-text:           #fff;
+@btn__secondary-bg:             #895983;
+@btn__secondary-bg-hover:       darken(@btn__secondary-bg, 10%);
+@btn__secondary-bg-active:      darken(@btn__secondary-bg, 15%);
+
+// .btn__warning
+@btn__warning-text:             #fff;
+@btn__warning-bg:               #ea130b;
+@btn__warning-bg-hover:         darken(@btn__warning-bg, 10%);
+@btn__warning-bg-active:        darken(@btn__warning-bg, 15%);
+
+// .btn__disabled
+@btn__disabled-text:            darken(greyscale(#c7336e), 10%);
+@btn__disabled-bg:              lighten(greyscale(#c7336e), 40%);
+@btn__disabled-outline:         greyscale(#c7336e);
+
+// Sizing variables
+
+// .btn
+@btn-font-size:                 16px;
+@btn-v-padding:                 8px;
+@btn-v-padding-modifier-ie:     .8;
+
+// .btn__super
+@super-btn-font-size:           18px;
+
+
+/* topdoc
+  name: Default button
+  family: cf-buttons
+  notes:
+    - "Note that the .visited, .hover, .focus, .active classes are for
+       demonstration purposes only and should not be used in production."
+  patterns:
+  - name: Default state
+    markup: |
+      <a href="#" class="btn" title="Test button">Anchor Tag</a>
+      <button class="btn" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn">
+  - name: Hovered state
+    markup: |
+      <a href="#" class="btn hover" title="Test button">Anchor Tag</a>
+      <button class="btn hover" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn hover">
+  - name: Focused state
+    markup: |
+      <a href="#" class="btn focus" title="Test button">Anchor Tag</a>
+      <button class="btn focus" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn focus">
+  - name: Active state
+    markup: |
+      <a href="#" class="btn active" title="Test button">Anchor Tag</a>
+      <button class="btn active" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn active">
+  tags:
+  - cf-buttons
+*/
+
+.btn {
+
+    display: inline-block;
+    box-sizing: border-box;
+    padding:
+        unit( @btn-v-padding / @btn-font-size, em )
+        unit( 14px / @btn-font-size, em );
+    border: 0;
+    border-radius: unit( 4px / @btn-font-size, em );
+    margin: 0;
+
+    vertical-align: middle;
+
+    .webfont-medium();
+    font-size: unit( @btn-font-size / @base-font-size-px, em );
+    line-height: normal;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: background-color .1s;
+    -webkit-appearance: none;
+
+    &,
+    &:link,
+    &:visited {
+        background-color: @btn-bg;
+        color: @btn-text;
+    }
+
+    &:hover,
+    &.hover {
+        background-color: @btn-bg-hover;
+    }
+
+    &:focus,
+    &.focus {
+        background-color: @btn-bg-hover;
+        outline: 1px dotted @btn-bg;
+        // outline-offset is not supported everywhere but it adds a nice touch
+        // in browsers where it is.
+        outline-offset: 1px;
+    }
+
+    &:active,
+    &.active {
+        background-color: @btn-bg-active;
+    }
+
+    button&::-moz-focus-inner,
+    input&::-moz-focus-inner {
+        // Fixes inconsistent button.btn height in FireFox
+        // Helps with inconsistent input.btn height in FireFox but not completely
+        border: 0;
+    }
+
+    & + & {
+        margin-left: unit( 6px / @btn-font-size, em);
+    }
+}
+
+.lt-ie8 {
+
+    // Fixes scroll rendering bug
+    // http://snipplr.com/view/518/
+    & {
+        background: url(null) fixed no-repeat;
+    }
+
+    // Fixes button and input sizes in IE7
+    button.btn,
+    input.btn {
+        overflow: visible;
+        padding-top: unit( (@btn-v-padding-modifier-ie * @btn-v-padding) / @btn-font-size, em );
+        padding-bottom: unit( (@btn-v-padding-modifier-ie * @btn-v-padding) / @btn-font-size, em );
+    }
+
+}
+
+
+/* topdoc
+  name: Secondary button
+  family: cf-buttons
+  notes:
+    - "Note that the .visited, .hover, .focus, .active classes are for
+       demonstration purposes only and should not be used in production."
+  patterns:
+  - name: Default state
+    markup: |
+      <a href="#" class="btn btn__secondary">Anchor Tag</a>
+      <button class="btn btn__secondary" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn btn__secondary">
+  - name: Hovered state
+    markup: |
+      <a href="#" class="btn btn__secondary hover">Anchor Tag</a>
+      <button class="btn btn__secondary hover" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn btn__secondary hover">
+  - name: Focused state
+    markup: |
+      <a href="#" class="btn btn__secondary focus">Anchor Tag</a>
+      <button class="btn btn__secondary focus" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn btn__secondary focus">
+  - name: Active state
+    markup: |
+      <a href="#" class="btn btn__secondary active">Anchor Tag</a>
+      <button class="btn btn__secondary active" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn btn__secondary active">
+  tags:
+  - cf-buttons
+*/
+
+.btn__secondary {
+
+    &,
+    &:link,
+    &:visited {
+        background-color: @btn__secondary-bg;
+        color: @btn__secondary-text;
+    }
+
+    &:hover,
+    &.hover {
+        background-color: @btn__secondary-bg-hover;
+    }
+
+    &:focus,
+    &.focus {
+        background-color: @btn__secondary-bg-hover;
+        outline-color: @btn__secondary-bg;
+    }
+
+    &:active,
+    &.active {
+        background-color: @btn__secondary-bg-active;
+    }
+
+}
+
+// /* topdoc
+//  name: Tertiary button
+//  family: cf-buttons
+//  patterns:
+//  - name: Default state
+//    markup: |
+//      <a href="#" class="btn btn__tertiary">Anchor Tag</a>
+//      <button class="btn btn__tertiary" title="Test button">Button Tag</button>
+//      <input type="submit" value="Input Tag" class="btn btn__tertiary">
+//  - name: Hovered state
+//    markup: |
+//      <a href="#" class="btn btn__tertiary hover">Anchor Tag</a>
+//      <button class="btn btn__tertiary hover" title="Test button">Button Tag</button>
+//      <input type="submit" value="Input Tag" class="btn btn__tertiary hover">
+//  - name: Focused state
+//    markup: |
+//      <a href="#" class="btn btn__tertiary focus">Anchor Tag</a>
+//      <button class="btn btn__tertiary focus" title="Test button">Button Tag</button>
+//      <input type="submit" value="Input Tag" class="btn btn__tertiary focus">
+//  - name: Active state
+//    markup: |
+//      <a href="#" class="btn btn__tertiary active">Anchor Tag</a>
+//      <button class="btn btn__tertiary active" title="Test button">Button Tag</button>
+//      <input type="submit" value="Input Tag" class="btn btn__tertiary active">
+//  tags:
+//  - cf-buttons
+// */
+
+// .btn__tertiary {
+
+//     &,
+//     &:link,
+//     &:visited {
+//         background-color: @gray-20;
+//         color: @black;
+//     }
+
+//     &:hover,
+//     &.hover {
+//         background-color: @green-midtone;
+//     }
+
+//     &:focus,
+//     &.focus {
+//         background-color: @green-midtone;
+//         outline-color: @gray-20;
+//     }
+
+//     &:active,
+//     &.active {
+//         background-color: @green;
+//         color: @white;
+//     }
+
+// }
+
+
+/* topdoc
+  name: Destructive action button
+  family: cf-buttons
+  notes:
+    - "Note that the .visited, .hover, .focus, .active classes are for
+       demonstration purposes only and should not be used in production."
+  patterns:
+  - name: Default state
+    markup: |
+      <a href="#" class="btn btn__warning">Anchor Tag</a>
+      <button class="btn btn__warning" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn btn__warning">
+  - name: Hovered state
+    markup: |
+      <a href="#" class="btn btn__warning hover">Anchor Tag</a>
+      <button class="btn btn__warning hover" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn btn__warning hover">
+  - name: Focused state
+    markup: |
+      <a href="#" class="btn btn__warning focus">Anchor Tag</a>
+      <button class="btn btn__warning focus" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn btn__warning focus">
+  - name: Active state
+    markup: |
+      <a href="#" class="btn btn__warning active">Anchor Tag</a>
+      <button class="btn btn__warning active" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn btn__warning active">
+  tags:
+  - cf-buttons
+*/
+
+.btn__warning {
+
+    &,
+    &:link,
+    &:visited {
+        background-color: @btn__warning-bg;
+        color: @btn__warning-text;
+    }
+
+    &:hover,
+    &.hover {
+        background-color: @btn__warning-bg-hover;
+    }
+
+    &:focus,
+    &.focus {
+        background-color: @btn__warning-bg-hover;
+        outline-color: @btn__warning-bg;
+    }
+
+    &:active,
+    &.active {
+        background-color: @btn__warning-bg-active;
+    }
+
+}
+
+
+/* topdoc
+  name: Disabled button
+  family: cf-buttons
+  notes:
+    - "Disabled buttons do not contain separate hover and active states since
+       they should not be interacted with."
+    - "Note that the .focus class is for demonstration purposes only and
+       should not be used in production."
+  patterns:
+  - name: Default/hovered/active state
+    markup: |
+      <a href="#" class="btn btn__disabled">Anchor Tag</a>
+      <button class="btn btn__disabled" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn btn__disabled">
+      <button class="btn" disabled title="Test button">Button Tag w/ disabled attr</button>
+  - name: Focused state
+    markup: |
+      <a href="#" class="btn btn__disabled focus">Anchor Tag</a>
+      <button class="btn btn__disabled focus" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn btn__disabled focus">
+      <button class="btn focus" disabled title="Test button">Button Tag w/ disabled attr</button>
+  tags:
+  - cf-buttons
+*/
+
+.btn__disabled,
+.btn[disabled] {
+
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+        background-color: @btn__disabled-bg;
+        color: @btn__disabled-text;
+        cursor: default; // Fallback for IE/Opera
+        cursor: not-allowed;
+    }
+
+    &:focus,
+    &.focus {
+        outline-color: @btn__disabled-outline;
+    }
+
+}
+
+
+/* topdoc
+  name: Super button
+  family: cf-buttons
+  patterns:
+  - name: Default state
+    markup: |
+      <a href="#" class="btn btn__super">Anchor Tag</a>
+      <button class="btn btn__super" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn btn__super">
+  - name: Hovered state
+    markup: |
+      <a href="#" class="btn btn__super hover">Anchor Tag</a>
+      <button class="btn btn__super hover" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn btn__super hover">
+  - name: Focused state
+    markup: |
+      <a href="#" class="btn btn__super focus">Anchor Tag</a>
+      <button class="btn btn__super focus" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn btn__super focus">
+  - name: Active state
+    markup: |
+      <a href="#" class="btn btn__super active">Anchor Tag</a>
+      <button class="btn btn__super active" title="Test button">Button Tag</button>
+      <input type="submit" value="Input Tag" class="btn btn__super active">
+  tags:
+  - cf-buttons
+*/
+
+.btn__super {
+
+    padding:
+        unit( 11px / @super-btn-font-size, em )
+        unit( 29px / @super-btn-font-size, em );
+    font-size: unit( @super-btn-font-size / @base-font-size-px, em );
+
+    & + & {
+        margin-left: unit( 6px / @super-btn-font-size, em);
+    }
+
+}
+
+.lt-ie8 {
+
+    // Fixes button and input sizes in IE7
+    // Note that the "3" below is a magic number
+    button.btn__super,
+    input.btn__super {
+        padding-top: unit( (@btn-v-padding-modifier-ie * 15px) / @super-btn-font-size, em );
+        padding-bottom: unit( (@btn-v-padding-modifier-ie * 15px) / @super-btn-font-size, em );
+    }
+
+}
+
+
+/* topdoc
+  name: Button with icons
+  family: cf-buttons
+  patterns:
+  - name: Button icon left
+    markup: |
+      <a href="#" class="btn">
+          <span class="btn_icon__left cf-icon cf-icon-left"></span>
+          Anchor Tag
+      </a>
+      <button class="btn" title="Test button">
+          <span class="btn_icon__left cf-icon cf-icon-left"></span>
+          Button Tag
+      </button>
+      <br>
+      <br>
+      <a href="#" class="btn btn__secondary">
+          <span class="btn_icon__left cf-icon cf-icon-left"></span>
+          Anchor Tag
+      </a>
+      <button class="btn btn__secondary" title="Test button">
+          <span class="btn_icon__left cf-icon cf-icon-left"></span>
+          Button Tag
+      </button>
+      <br>
+      <br>
+      <a href="#" class="btn btn__warning">
+          <span class="btn_icon__left cf-icon cf-icon-left"></span>
+          Anchor Tag
+      </a>
+      <button class="btn btn__warning" title="Test button">
+          <span class="btn_icon__left cf-icon cf-icon-left"></span>
+          Button Tag
+      </button>
+      <br>
+      <br>
+      <a href="#" class="btn btn__disabled">
+          <span class="btn_icon__left cf-icon cf-icon-left"></span>
+          Anchor Tag
+      </a>
+      <button class="btn btn__disabled" title="Test button">
+          <span class="btn_icon__left cf-icon cf-icon-left"></span>
+          Button Tag
+      </button>
+      <button class="btn" disabled title="Test button">
+          <span class="btn_icon__left cf-icon cf-icon-left"></span>
+          Button Tag w/ disabled attr
+      </button>
+  - name: Button icon right
+    markup: |
+      <a href="#" class="btn">
+          Anchor Tag
+          <span class="btn_icon__right cf-icon cf-icon-right"></span>
+      </a>
+      <button class="btn" title="Test button">
+          Button Tag
+          <span class="btn_icon__right cf-icon cf-icon-right"></span>
+      </button>
+      <br>
+      <br>
+      <a href="#" class="btn btn__secondary">
+          Anchor Tag
+          <span class="btn_icon__right cf-icon cf-icon-right"></span>
+      </a>
+      <button class="btn btn__secondary" title="Test button">
+          Button Tag
+          <span class="btn_icon__right cf-icon cf-icon-right"></span>
+      </button>
+      <br>
+      <br>
+      <a href="#" class="btn btn__warning">
+          Anchor Tag
+          <span class="btn_icon__right cf-icon cf-icon-right"></span>
+      </a>
+      <button class="btn btn__warning" title="Test button">
+          Button Tag
+          <span class="btn_icon__right cf-icon cf-icon-right"></span>
+      </button>
+      <br>
+      <br>
+      <a href="#" class="btn btn__disabled">
+          Anchor Tag
+          <span class="btn_icon__right cf-icon cf-icon-right"></span>
+      </a>
+      <button class="btn btn__disabled" title="Test button">
+          Button Tag
+          <span class="btn_icon__right cf-icon cf-icon-right"></span>
+      </button>
+      <button class="btn" disabled title="Test button">
+          Button Tag w/ disabled attr
+          <span class="btn_icon__right cf-icon cf-icon-right"></span>
+      </button>
+  - name: Just an icon
+    markup: |
+      <a href="#" class="btn">
+          <span class="u-visually-hidden">Search</span>
+          <span class="cf-icon cf-icon-search"></span>
+      </a>
+      <button class="btn" title="Test button">
+          <span class="u-visually-hidden">Search</span>
+          <span class="cf-icon cf-icon-search"></span>
+      </button>
+    notes:
+      - "For accessibility please use the .u-visually-hidden utility class
+         to add hidden text for screen readers."
+  tags:
+  - cf-buttons
+  - fj-icons
+*/
+
+.btn_icon__left {
+    padding: 0 unit( 10.5px / @btn-font-size, em) 0 0;
+    border-right: 1px solid @btn-text; // Fallback
+    border-right: 1px solid fade(@btn-text, 40%);
+    margin: 0 unit( 7px / @btn-font-size, em) 0 0;
+
+    .btn__secondary & {
+        border-right-color: @btn__secondary-text; // Fallback
+        border-right-color: fade(@btn__secondary-text, 40%);
+    }
+    .btn__warning & {
+        border-right-color: @btn__warning-text; // Fallback
+        border-right-color: fade(@btn__warning-text, 40%);
+    }
+    .btn__disabled &,
+    .btn[disabled] & {
+        border-right-color: @btn__disabled-text; // Fallback
+        border-right-color: fade(@btn__disabled-text, 40%);
+    }
+}
+
+.btn_icon__right {
+    padding: 0 0 0 unit( 10.5px / @btn-font-size, em);
+    border-right: 0;
+    border-left: 1px solid @btn-text; // Fallback
+    border-left: 1px solid fade(@btn-text, 40%);
+    margin: 0 0 0 unit( 7px / @btn-font-size, em);
+
+    .btn__secondary & {
+        border-left-color: @btn__secondary-text; // Fallback
+        border-left-color: fade(@btn__secondary-text, 40%);
+    }
+    .btn__warning & {
+        border-left-color: @btn__warning-text; // Fallback
+        border-left-color: fade(@btn__warning-text, 40%);
+    }
+    .btn__disabled &,
+    .btn[disabled] & {
+        border-left-color: @btn__disabled-text; // Fallback
+        border-left-color: fade(@btn__disabled-text, 40%);
+    }
+}
+
+
+/* topdoc
+  name: Button group modifiers
+  family: cf-buttons
+  patterns:
+  - name: Default buttons in a button group
+    markup: |
+      <a href="#" class="btn btn__grouped-first">Anchor 1</a>
+      <a href="#" class="btn btn__grouped">Anchor 2</a>
+      <a href="#" class="btn btn__grouped-last">Anchor 3</a>
+      <br>
+      <br>
+      <button class="btn btn__grouped-first" title="Test button">Button 1</button>
+      <button class="btn btn__grouped" title="Test button">Button 2</button>
+      <button class="btn btn__grouped-last" title="Test button">Button 3</button>
+      <br>
+      <br>
+      <input type="button" value="Input 1" class="btn btn__grouped-first">
+      <input type="button" value="Input 2" class="btn btn__grouped">
+      <input type="button" value="Input 3" class="btn btn__grouped-last">
+  - name: Super buttons in a button group
+    markup: |
+      <a href="#" class="btn btn__grouped-first btn__super">Anchor 1</a>
+      <a href="#" class="btn btn__grouped btn__super">Anchor 2</a>
+      <a href="#" class="btn btn__grouped-last btn__super">Anchor 3</a>
+      <br>
+      <br>
+      <button class="btn btn__grouped-first btn__super" title="Test button">Button 1</button>
+      <button class="btn btn__grouped btn__super" title="Test button">Button 2</button>
+      <button class="btn btn__grouped-last btn__super" title="Test button">Button 3</button>
+      <br>
+      <br>
+      <input type="button" value="Input 1" class="btn btn__grouped-first btn__super">
+      <input type="button" value="Input 2" class="btn btn__grouped btn__super">
+      <input type="button" value="Input 3" class="btn btn__grouped-last btn__super">
+  tags:
+  - cf-buttons
+*/
+
+.btn__grouped {
+
+    // Borders
+
+    &-first {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    & {
+        border-radius: 0;
+    }
+
+    &-last {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    // Margins
+
+    &-first + &,
+    &-first + &-last,
+    &,
+    & + &,
+    &-last,
+    & + &-last {
+        margin-left: unit( -3px / @btn-font-size, em );
+    }
+
+    &-first.btn__super + &.btn__super,
+    &-first.btn__super + &-last.btn__super,
+    &.btn__super,
+    &-last.btn__super,
+    &.btn__super + &.btn__super,
+    &.btn__super + &-last.btn__super {
+        margin-left: unit( -3px / @super-btn-font-size, em );
+    }
+
+}
+
+
+/* topdoc
+  name: Compound button
+  family: cf-buttons
+  notes:
+    - "This pattern requires combining .btn__grouped modifiers with
+       the .btn__compound-action modifier."
+    - "Note that the .visited, .hover, .focus, .active classes are for
+       demonstration purposes only and should not be used in production."
+  patterns:
+  - name: All button styles
+    markup: |
+      <a href="#" class="btn btn__grouped-first">Anchor</a>
+      <a href="#" class="btn btn__grouped-last btn__compound-action">
+          <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+      </a>
+      <br>
+      <br>
+      <button class="btn btn__grouped-first" title="Test button">Button</button>
+      <button class="btn btn__grouped-last btn__compound-action" title="Test button">
+          <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+      </button>
+      <br>
+      <br>
+      <a href="#" class="btn btn__grouped-first btn__secondary">Anchor</a>
+      <a href="#" class="btn btn__grouped-last btn__secondary btn__compound-action">
+          <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+      </a>
+      <br>
+      <br>
+      <button class="btn btn__grouped-first btn__secondary" title="Test button">Button</button>
+      <button class="btn btn__grouped-last btn__secondary btn__compound-action" title="Test button">
+          <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+      </button>
+      <br>
+      <br>
+      <a href="#" class="btn btn__grouped-first btn__warning">Anchor</a>
+      <a href="#" class="btn btn__grouped-last btn__warning btn__compound-action">
+          <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+      </a>
+      <br>
+      <br>
+      <button class="btn btn__grouped-first btn__warning" title="Test button">Button</button>
+      <button class="btn btn__grouped-last btn__warning btn__compound-action" title="Test button">
+          <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+      </button>
+      <br>
+      <br>
+      <a href="#" class="btn btn__grouped-first btn__disabled">Anchor</a>
+      <a href="#" class="btn btn__grouped-last btn__disabled btn__compound-action">
+          <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+      </a>
+      <br>
+      <br>
+      <button class="btn btn__grouped-first btn__disabled" title="Test button">Button</button>
+      <button class="btn btn__grouped-last btn__disabled btn__compound-action" title="Test button">
+          <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+      </button>
+      <br>
+      <br>
+      <button class="btn btn__grouped-first" disabled title="Test button">Button w/ disabled attr</button>
+      <button class="btn btn__grouped-last btn__compound-action" disabled title="Test button">
+          <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+      </button>
+      <br>
+      <br>
+      <a href="#" class="btn btn__grouped-first btn__super">Anchor</a>
+      <a href="#" class="btn btn__grouped-last btn__super btn__compound-action">
+          <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+      </a>
+      <br>
+      <br>
+      <button class="btn btn__grouped-first btn__super" title="Test button">Button</button>
+      <button class="btn btn__grouped-last btn__super btn__compound-action" title="Test button">
+          <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+      </button>
+  tags:
+  - cf-buttons
+  - fj-icons
+*/
+
+.btn__compound-action {
+
+    &,
+    &:link,
+    &:visited {
+        background-color: @btn-bg-hover;
+    }
+
+    &:hover,
+    &:focus,
+    &.hover {
+        background-color: @btn-bg;
+    }
+
+    &.btn__secondary {
+        background-color: @btn__secondary-bg-hover;
+    }
+
+    &.btn__secondary:hover,
+    &.btn__secondary:focus,
+    &.btn__secondary.hover {
+        background-color: @btn__secondary-bg;
+    }
+
+    &.btn__warning {
+        background-color: @btn__warning-bg-hover;
+    }
+
+    &.btn__warning:hover,
+    &.btn__warning:focus,
+    &.btn__warning.hover {
+        background-color: @btn__warning-bg;
+    }
+
+    &.btn__disabled,
+    &.btn__disabled:hover,
+    &.btn__disabled:focus,
+    &.btn__disabled.hover,
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:focus,
+    &[disabled].hover {
+        background-color: @btn__disabled-bg;
+    }
+
+    &.btn__super {
+        padding-left: unit( 22px / @super-btn-font-size, em );
+        padding-right: unit( 22px / @super-btn-font-size, em );
+    }
+
+}
+
+
+/* topdoc
+  name: Button link
+  family: cf-buttons
+  notes:
+    - "Note that the .visited, .hover, .focus, .active classes are for
+       demonstration purposes only and should not be used in production."
+  patterns:
+  - name: Default state
+    markup: |
+      <a href="#" class="btn btn__link">Anchor Tag</a>
+      <button class="btn btn__link" title="Test button">Button Tag</button>
+      <input type="button" value="Input Tag" class="btn btn__link">
+  - name: Hovered state
+    markup: |
+      <a href="#" class="btn btn__link hover">Anchor Tag</a>
+      <button class="btn btn__link hover" title="Test button">Button Tag</button>
+      <input type="button" value="Input Tag" class="btn btn__link hover">
+  - name: Focused state
+    markup: |
+      <a href="#" class="btn btn__link focus">Anchor Tag</a>
+      <button class="btn btn__link focus" title="Test button">Button Tag</button>
+      <input type="button" value="Input Tag" class="btn btn__link focus">
+  - name: Active state
+    markup: |
+      <a href="#" class="btn btn__link active">Anchor Tag</a>
+      <button class="btn btn__link active" title="Test button">Button Tag</button>
+      <input type="button" value="Input Tag" class="btn btn__link active">
+  tags:
+  - cf-buttons
+*/
+
+.btn__link {
+
+    padding: 0;
+    border-bottom: 1px dotted @link-underline;
+    border-radius: 0;
+    // This margin is necessary to vertically align link buttons with
+    // regular buttons.
+    margin: unit( @btn-v-padding / @btn-font-size, em) 0;
+
+    &,
+    &:link,
+    &:visited {
+        border-bottom-color: @link-underline-visited;
+        background-color: transparent;
+        color: @link-text-visited;
+    }
+
+    &:hover,
+    &.hover {
+        border-bottom: 1px solid @link-underline-hover;
+        background-color: transparent;
+        color: @link-text-hover;
+    }
+
+    &:focus,
+    &.focus {
+        border-bottom-style: solid;
+        background-color: transparent;
+        outline: thin dotted @link-underline;
+    }
+
+    &:active,
+    &.active {
+        border-bottom: 1px solid @link-underline-active;
+        background-color: transparent;
+        color: @link-text-active;
+    }
+
+}
+
+.lt-ie8 {
+
+    button.btn__link,
+    input.btn__link {
+        padding: 0;
+    }
+
+}
+
+
+/* topdoc
+  name: Secondary button link
+  family: cf-buttons
+  notes:
+    - "Note that the .visited, .hover, .focus, .active classes are for
+       demonstration purposes only and should not be used in production."
+  patterns:
+  - name: Default state
+    markup: |
+      <a href="#" class="btn btn__link btn__secondary">Anchor Tag</a>
+      <button class="btn btn__link btn__secondary" title="Test button">Button Tag</button>
+      <input type="button" value="Input Tag" class="btn btn__link btn__secondary">
+  - name: Hovered state
+    markup: |
+      <a href="#" class="btn btn__link btn__secondary hover">Anchor Tag</a>
+      <button class="btn btn__link btn__secondary hover" title="Test button">Button Tag</button>
+      <input type="button" value="Input Tag" class="btn btn__link btn__secondary hover">
+  - name: Focused state
+    markup: |
+      <a href="#" class="btn btn__link btn__secondary focus">Anchor Tag</a>
+      <button class="btn btn__link btn__secondary focus" title="Test button">Button Tag</button>
+      <input type="button" value="Input Tag" class="btn btn__link btn__secondary focus">
+  - name: Active state
+    markup: |
+      <a href="#" class="btn btn__link btn__secondary active">Anchor Tag</a>
+      <button class="btn btn__link btn__secondary active" title="Test button">Button Tag</button>
+      <input type="button" value="Input Tag" class="btn btn__link btn__secondary active">
+  tags:
+  - cf-buttons
+*/
+
+.btn__link.btn__secondary {
+
+    &,
+    &:link,
+    &:visited {
+        border-bottom-color: @btn__secondary-bg;
+        background-color: transparent;
+        color: @btn__secondary-bg;
+    }
+
+    &:hover,
+    &.hover {
+        border-bottom-color: @btn__secondary-bg-hover;
+        color: @btn__secondary-bg-hover;
+    }
+
+    &:focus,
+    &.focus {
+        outline-color: @btn__secondary-bg;
+    }
+
+    &:active,
+    &.active {
+        border-bottom-color: @btn__secondary-bg-active;
+        color: @btn__secondary-bg-active;
+    }
+
+}
+
+
+/* topdoc
+  name: Destructive action button link
+  family: cf-buttons
+  notes:
+    - "Note that the .visited, .hover, .focus, .active classes are for
+       demonstration purposes only and should not be used in production."
+  patterns:
+  - name: Default state
+    markup: |
+      <a href="#" class="btn btn__link btn__warning">Anchor Tag</a>
+      <button class="btn btn__link btn__warning" title="Test button">Button Tag</button>
+      <input type="button" value="Input Tag" class="btn btn__link btn__warning">
+  - name: Hovered state
+    markup: |
+      <a href="#" class="btn btn__link btn__warning hover">Anchor Tag</a>
+      <button class="btn btn__link btn__warning hover" title="Test button">Button Tag</button>
+      <input type="button" value="Input Tag" class="btn btn__link btn__warning hover">
+  - name: Focused state
+    markup: |
+      <a href="#" class="btn btn__link btn__warning focus">Anchor Tag</a>
+      <button class="btn btn__link btn__warning focus" title="Test button">Button Tag</button>
+      <input type="button" value="Input Tag" class="btn btn__link btn__warning focus">
+  - name: Active state
+    markup: |
+      <a href="#" class="btn btn__link btn__warning active">Anchor Tag</a>
+      <button class="btn btn__link btn__warning active" title="Test button">Button Tag</button>
+      <input type="button" value="Input Tag" class="btn btn__link btn__warning active">
+  tags:
+  - cf-buttons
+*/
+
+.btn__link.btn__warning {
+
+    &,
+    &:link,
+    &:visited {
+        border-bottom-color: @btn__warning-bg;
+        background-color: transparent;
+        color: @btn__warning-bg;
+    }
+
+    &:hover,
+    &.hover {
+        border-bottom-color: @btn__warning-bg-hover;
+        color: @btn__warning-bg-hover;
+    }
+
+    &:focus,
+    &.focus {
+        outline-color: @btn__warning-bg;
+    }
+
+    &:active,
+    &.active {
+        border-bottom-color: @btn__warning-bg-active;
+        color: @btn__warning-bg-active;
+    }
+
+}
+
+
+/* topdoc
+  name: EOF
+  eof: true
+*/

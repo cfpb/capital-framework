@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Capital Framework
+   Less variables
+   ========================================================================== */
+
+
+/* topdoc
+  name: Theme variables
+  family: cf-core
+  notes:
+    - "The following color and sizing variables are exposed, allowing you to
+       easily override them before compiling."
+  patterns:
+    - name: Sizing
+      codenotes:
+        - |
+          @base-font-size-px
+          @base-line-height-px
+          @base-line-height
+          @mobile-max
+          @tablet-min
+    - name: Colors
+      codenotes:
+        - |
+          @text
+          @link-text
+          @link-underline
+          @link-text-visited
+          @link-underline-visited
+          @link-text-hover
+          @link-underline-hover
+          @link-text-active
+          @link-underline-active
+          @thead-text
+          @thead-bg
+          @td-bg
+          @td-bg-alt
+          @input-bg
+          @input-border
+          @input-border-focus
+          @input-placeholder
+          @figure__bordered
+  tags:
+    - cf-core
+*/
+
+// Sizing variables 
+
+@base-font-size-px:             16px;
+@base-line-height-px:           22px;
+@base-line-height:              unit(@base-line-height-px / @base-font-size-px);
+@mobile-max:                    599px;
+@tablet-min:                    600px;
+
+// Color variables 
+
+// body
+@text:                          darken(#895983, 15%);
+
+// a
+@link-text:                     #c7336e;
+@link-underline:                #c7336e;
+@link-text-visited:             lighten(@link-text, 5%);
+@link-underline-visited:        lighten(@link-underline, 5%);
+@link-text-hover:               darken(@link-text, 10%);
+@link-underline-hover:          darken(@link-underline, 10%);
+@link-text-active:              darken(@link-text, 15%);
+@link-underline-active:         darken(@link-underline, 15%);
+
+// thead
+@thead-text:                    #fff;
+@thead-bg:                      darken(#895983, 15%);
+@td-bg:                         lighten(#905c8a, 45%);
+@td-bg-alt:                     lighten(@td-bg, 3%);
+
+// input
+@input-bg:                      #fff;
+@input-border:                  darken(#895983, 15%);
+@input-border-focus:            #c7336e;
+@input-placeholder:             grayscale(#c7336e);
+
+// .figure__bordered
+@figure__bordered:              darken(#895983, 15%);
+
+
+/* topdoc
+  name: EOF
+  eof: true
+*/
