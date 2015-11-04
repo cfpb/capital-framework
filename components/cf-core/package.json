@@ -1,0 +1,19 @@
+{
+  "name": "cf-core",
+  "version": "2.0.0",
+  "description": "Capital Framework buttons",
+  "less": "src/cf-core.less",
+  "style": "cf-core.css",
+  "scripts": {
+    "//": "This is a convenience script so that if you run `npm test` from this dir",
+    "//": "npm won't return  a 'no tests' error. Instead it'll check if you're in",
+    "//": "the larger capital-framework dir and execute those tests. It's removed",
+    "//": "before releases are tagged.",
+    "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
+  },
+  "dependencies": {
+    "box-sizing-polyfill": "0.1.0",
+    "normalize-css": "^2.0.0",
+    "normalize-legacy-addon": "0.1.0"
+  }
+}

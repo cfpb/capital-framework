@@ -1,0 +1,240 @@
+// Import external dependencies
+
+@import (less) '../../cf-core/src/cf-core.less';
+@import (less) '../../cf-buttons/src/cf-buttons.less';
+@import (less) '../../cf-icons/src/cf-icons.less';
+
+/* ==========================================================================
+   Capital Framework
+   Pagination Styling
+   ========================================================================== */
+
+/* topdoc
+  name: Theme variables
+  family: cf-pagination
+  notes:
+    - "The following color and sizing variables are exposed, allowing you to
+       easily override them before compiling."
+  patterns:
+  - name: Colors
+    codenotes:
+      - |
+        @pagination-text
+        @pagination-bg
+  - name: Sizing
+    codenotes:
+      - |
+        @pagination-font-size
+        @pagination-bp
+  tags:
+  - cf-pagination
+  - less
+*/
+
+// Color variables
+
+@pagination-text:               darken(#895983, 15%);
+@pagination-bg:                 lighten(#905c8a, 45%);
+
+// Sizing variables
+
+@pagination-font-size:          16px;
+@pagination-bp:                 640px;
+
+
+/* topdoc
+  name: Pagination
+  family: cf-pagination
+  notes:
+    - "To enable the component to jump directly to the paginated content place
+      place #pagination_content directly above your paginated content."
+  patterns:
+  - name: Default pagination
+    markup: |
+      <div id="pagination_content"></div>
+
+      <!-- Paginated content here -->
+
+      <nav class="pagination">
+          <a class="btn btn__super pagination_prev" href="#pagination_content">
+              <span class="btn_icon__left cf-icon cf-icon-left"></span>
+              Previous
+          </a>
+          <a class="btn btn__super pagination_next" href="#pagination_content">
+              Next
+              <span class="btn_icon__right cf-icon cf-icon-right"></span>
+          </a>
+          <form class="pagination_form" action="index.html#pagination_content">
+              <label class="pagination_label"
+                     for="pagination_current-page">
+                  Page
+                  <span class="u-visually-hidden">
+                      number out of 149 total pages
+                  </span>
+              </label>
+              <input
+                  class="pagination_current-page"
+                  id="pagination_current-page"
+                  name="pagination_current-page"
+                  type="number" min="1" max="149"
+                  value="149">
+              <span class="pagination_label">
+                  <span aria-hidden="true">
+                      of 149
+                  </span>
+              </span>
+              <button class="btn btn__link pagination_submit"
+                      id="pagination_submit"
+                      type="submit">
+                  Go
+              </button>
+          </form>
+      </nav>
+  tags:
+  - fj-buttons
+  - fj-forms
+*/
+
+.pagination {
+    display: block;
+    // Positions .pagination_next relative to this container.
+    position: relative;
+}
+
+// On very small screens the buttons need to stack because they can't fit
+// next to each other.
+.respond-to-max( 319px, {
+    .pagination_prev.btn,
+    .pagination_next.btn {
+        display: block;
+        text-align: center;
+    }
+
+    // This selector is needed to override `.btn + .btn`.
+    .pagination_prev.btn + .pagination_next.btn {
+        margin: unit( @base-font-size-px / @pagination-font-size, em ) 0 0;
+    }
+});
+
+// On small screens position .pagination_next to the right edge of .pagination.
+.respond-to-min( 320px, {
+    .pagination_next {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+});
+
+// To retain the icons on typical 320px mobile screens we need to decrease the
+// left/right padding.
+.respond-to-max( 369px, {
+    .pagination_prev.btn,
+    .pagination_next.btn {
+        padding-left: unit( 20px / @super-btn-font-size, em );
+        padding-right: unit( 20px / @super-btn-font-size, em );
+    }
+});
+
+.pagination_form {
+    display: block;
+    padding: unit( 5px / @base-font-size-px, em )
+             unit( 5px / @base-font-size-px, em )
+             unit( 6px / @base-font-size-px, em );
+    margin: unit( 16px / @base-font-size-px, em) 0 0 0;
+    background: @pagination-bg;
+    color: @pagination-text;
+    text-align: center;
+}
+
+.pagination_label {
+    .u-inline-block();
+    margin: 0;
+    .webfont-medium();
+    font-size: unit( @pagination-font-size / @base-font-size-px, em );
+    vertical-align: middle;
+}
+
+.pagination_current-page {
+    &,
+    input[type="number"]&,
+    input[type="text"]& {
+        // Selector must be that specific to override cf-forms input[attr] selector.
+
+        .u-inline-block();
+        // We need enough room for three digits and the number spinners for type="number" inputs.
+        width: unit( 42px / @pagination-font-size, em );
+        margin: 0 unit( 4px / @pagination-font-size, em );
+        font-size: unit( @pagination-font-size / @base-font-size-px, em );
+        .webfont-demi();
+        text-align: right;
+        vertical-align: middle;
+
+        // Not yet needed but I have a feeling we might need it
+        // border-radius: 0;
+
+        // Removes Webkit spinner UI
+        // http://css-tricks.com/snippets/css/turn-off-number-input-spinners/
+        // input&[type=number]::-webkit-inner-spin-button, 
+        // input&[type=number]::-webkit-outer-spin-button { 
+        //     -webkit-appearance: none; 
+        //     margin: 0; 
+        // }
+
+        .lt-ie8 & {
+            margin: 0 4px;
+        }
+    }
+}
+
+.pagination_submit.btn {
+    // .btn is needed on the selector to override .btn styles.
+    .u-inline-block();
+    margin: 0 0 0 unit( 14px / @pagination-font-size, em );
+    font-size: unit( @pagination-font-size / @base-font-size-px, em );
+    vertical-align: middle;
+
+    .lt-ie8 & {
+        // The lines below are necessary to prevent a weird jump that happens when
+        // hovering over the Go button in IE7.
+        padding-left: unit( 14px / @pagination-font-size, em );
+        margin: 0;
+        border: none;
+        text-decoration: underline;
+    }
+}
+
+.respond-to-min(@pagination-bp, {
+
+    .pagination_form {
+        margin: 0;
+        border-radius: unit( 4px / @pagination-font-size, em );
+    }
+
+    .pagination_prev {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &,
+        &:link,
+        &:visited {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+
+    .pagination_next {
+        &,
+        &:link,
+        &:visited {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+});
+
+/* topdoc
+  name: EOF
+  eof: true
+*/

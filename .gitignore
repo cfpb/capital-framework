@@ -35,6 +35,7 @@ _site/
 Icon?
 ehthumbs.db
 Thumbs.db
+*.sublime-*
 
 # Vim swap files #
 ##################
@@ -69,3 +70,5 @@ bower_components/
 .grunt/
 vendor/
 static/vendor/
+src/vendor/
+tmp/

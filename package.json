@@ -2,38 +2,36 @@
   "name": "capital-framework",
   "version": "1.0.0",
   "description": "Project-wide documentation for Capital Framework.",
-  "homepage": "https://cfpb.github.io/capital-framework/",
+  "homepage": "http://capitalframework.com",
   "author": {
     "name": "Consumer Financial Protection Bureau",
     "email": "tech@cfpb.gov",
     "url": "http://consumerfinance.gov"
   },
-  "license": "CC0",
+  "license": "CC0-1.0",
   "keywords": [
     "capital-framework"
   ],
-  "scripts": {
-    "postinstall": "bower install"
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cfpb/capital-framework.git"
   },
-  "postinstall": "grunt vendor",
+  "bugs": {
+    "url": "https://github.com/cfpb/capital-framework/issues"
+  },
+  "scripts": {
+    "postinstall": "node scripts/npm/postinstall",
+    "prepublish": "node scripts/npm/prepublish",
+    "test": "echo 'bleeeeeh'",
+    "build": "lessc --include-path=src/vendor/normalize-css src/capital-framework.less dist/capital-framework.css"
+  },
   "devDependencies": {
-    "grunt": "~0.4.4",
-    "grunt-autoprefixer": "~0.6.5",
-    "grunt-banner": "~0.2.2",
-    "grunt-bower-task": "~0.4.0",
-    "grunt-concurrent": "~1.0.0",
-    "grunt-contrib-compress": "^0.13.0",
-    "grunt-contrib-concat": "~0.4.0",
-    "grunt-contrib-copy": "~0.5.0",
-    "grunt-contrib-cssmin": "~0.9.0",
-    "grunt-contrib-eslint": "0.0.5",
-    "grunt-contrib-less": "~0.11.0",
-    "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-legacssy": "~0.3.1",
-    "grunt-shell": "^1.1.1",
-    "grunt-topdoc": "~0.2.0",
-    "load-grunt-tasks": "~0.6.0",
-    "time-grunt": "~1.0.0"
+    "async": "^1.5.0",
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.3",
+    "gulp-load-plugins": "^1.0.0",
+    "less-plugin-npm-import": "^2.1.0",
+    "npmi": "^1.0.1",
+    "require-dir": "^0.3.0"
   }
 }

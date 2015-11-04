@@ -1,0 +1,25 @@
+{
+  "name": "cf-expandables",
+  "version": "2.0.0",
+  "description": "Capital Framework expandables",
+  "main": "cf-expandables.js",
+  "less": "src/cf-expandables.less",
+  "style": "cf-expandables.css",
+  "scripts": {
+    "//": "This is a convenience script so that if you run `npm test` from this dir",
+    "//": "npm won't return  a 'no tests' error. Instead it'll check if you're in",
+    "//": "the larger capital-framework dir and execute those tests. It's removed",
+    "//": "before releases are tagged.",
+    "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
+  },
+  "dependencies": {
+    "cf-core": "^2.0.0",
+    "cf-icons": "^2.0.0",
+    "jquery": "~1.11.0",
+    "jquery.easing": "~1.3.0"
+  },
+  "keywords": [
+    "expandable",
+    "jquery"
+  ]
+}
