@@ -4,6 +4,7 @@ var gulp = require( 'gulp' );
 
 gulp.task( 'default',
   [
-    'styles:modern'
+    'styles',
+    'scripts'
   ]
 );
