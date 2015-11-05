@@ -44,8 +44,12 @@ the `component.min.js` file.
   1. If the local version is smaller, abort and alert the user that something is awry.
   1. If the local version number is greater, the component is pushed to a needsToBePublished array.
 1. If needsToBePublished.length > 0, continue on. Otherwise, tell the user there's nothing to do.
-1. Create a `tmp` dir in the project root.
-1. For each component in the needsToBePublished array:
+1. Run the gulp `build-components` task. It will:
+  1. Create a `tmp` dir in the project root.
+  1. Create a dir for every component in `tmp`.
+  1. Compile every component's stylesheets to `tmp/cf-component/cf-component.css`.
+  1. Compile every component's JS to `tmp/cf-component/cf-component.js`.
+1. For each component in the needsToBePublished array
   1. Create a directory for it in `tmp`.
   1. Build it into that dir.
 1. `package.json` files in component dirs are merged with capital-framework's 

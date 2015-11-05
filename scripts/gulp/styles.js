@@ -11,6 +11,11 @@ gulp.task( 'styles:cf', function() {
     .pipe($.less({
       plugins: [new importPlugin({prefix: '../node_modules/'})]
     }))
+    .pipe(gulp.dest('./dist'))
+    .pipe($.cssmin())
+    .pipe($.rename({
+      suffix: '.min'
+    }))
     .pipe(gulp.dest('./dist'));
 } );
 
@@ -30,6 +35,11 @@ gulp.task( 'styles:components', function() {
     }))
     .pipe($.rename(function (path) {
       path.dirname = path.dirname.replace('/src','');
+    }))
+    .pipe(gulp.dest('./tmp'))
+    .pipe($.cssmin())
+    .pipe($.rename({
+      suffix: '.min'
     }))
     .pipe($.debug())
     .pipe(gulp.dest('./tmp'));
