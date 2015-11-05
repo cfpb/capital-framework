@@ -49,9 +49,9 @@ the `component.min.js` file.
   1. Create a dir for every component in `tmp`.
   1. Compile every component's stylesheets to `tmp/cf-component/cf-component.css`.
   1. Compile every component's JS to `tmp/cf-component/cf-component.js`.
-1. For each component in the needsToBePublished array
-  1. Create a directory for it in `tmp`.
-  1. Build it into that dir.
+1. For each component in the needsToBePublished array:
+  1. Go to its directory in `tmp`.
+  1. `npm publish`.
 1. `package.json` files in component dirs are merged with capital-framework's 
 `package.json`. so if you want to override a package.json property, add it to 
 the component's package.json. otherwise it will default to whatever is in cf's 

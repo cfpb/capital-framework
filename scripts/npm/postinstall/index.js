@@ -7,7 +7,7 @@ var fs = require('fs'),
     async = require('async'),
     npmi = require('npmi'),
     pkg = JSON.parse(fs.readFileSync('package.json', 'utf8')),
-    componentsDir = './components';
+    componentsDir = path.join(__dirname, '../../../components');
 
 fs.readdir(componentsDir, function(err, components) {
   if (err) return console.log(err);
