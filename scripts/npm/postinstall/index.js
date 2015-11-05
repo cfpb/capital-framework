@@ -6,6 +6,7 @@
 var fs = require('fs'),
     async = require('async'),
     npmi = require('npmi'),
+    path = require('path'),
     pkg = JSON.parse(fs.readFileSync('package.json', 'utf8')),
     componentsDir = path.join(__dirname, '../../../components');
 

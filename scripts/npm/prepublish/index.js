@@ -28,18 +28,13 @@ function handleGitStatus(result) {
     console.log('Git working directory is clean.');
   } else {
     printLn.error('Git working directory is not clean. Commit your work before publishing.');
-    // process.exit(1);
+    process.exit(1);
   }
 }
 
 // Go through all the components dirs and compare the version in package.json
 // with the latest version published to npm.
 function getComponents() {
-  // fs.readdir(componentsDir, function(err, components) {
-  //   if (err) return console.log(err);
-  //   printLn.info('Checking which components need to be published to npm...');
-  //   components.forEach(filterComponents);
-  // });
   return readdir(componentsDir);
 }
 

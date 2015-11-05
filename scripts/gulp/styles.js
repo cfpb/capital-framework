@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 // Compile the master capital-framework.less file.
 gulp.task( 'styles:cf', function() {
   return gulp.src('./capital-framework.less')
-    .pipe($.debug())
+    // .pipe($.debug())
     .pipe($.less({
       plugins: [new importPlugin({prefix: '../node_modules/'})]
     }))
@@ -41,6 +41,6 @@ gulp.task( 'styles:components', function() {
     .pipe($.rename({
       suffix: '.min'
     }))
-    .pipe($.debug())
+    // .pipe($.debug())
     .pipe(gulp.dest('./tmp'));
 } );
