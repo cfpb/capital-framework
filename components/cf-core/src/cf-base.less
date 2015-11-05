@@ -66,7 +66,7 @@
 }
 
 .webfont-medium() {
-    font-family: @webfont-demi, Arial, sans-serif;
+    font-family: @webfont-medium, Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
     .lt-ie9 & {
@@ -75,7 +75,7 @@
 }
 
 .webfont-demi() {
-    font-family: @webfont-medium, Arial, sans-serif;
+    font-family: @webfont-demi, Arial, sans-serif;
     font-style: normal;
     font-weight: bold;
     .lt-ie9 & {
@@ -140,138 +140,138 @@ body {
     line-height: @base-line-height;
 }
 
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3 {
+.heading-1( @fs: 34px, @line-height: 44px ) {
+    @font-size: @fs;
     .webfont-regular();
-}
-
-h1,
-.h1 {
-    @font-size: 34px;
-    @line-height: 44px;
-
-    margin-top: 0;
     // Spacing in the design manual is based off of the baseline so this margin
     // number has been eyeballed to be 30px.
     margin-bottom: unit( 16px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
     line-height: unit( @line-height / @font-size );
-
-    .respond-to-max(@mobile-max, {
-        .h2();
-    });
 }
 
-h2,
-.h2 {
-    @font-size: 26px;
-    @line-height: 33px;
-
-    margin-top: 0;
+.heading-2( @fs: 26px, @line-height: 33px ) {
+    @font-size: @fs;
+    .webfont-regular();
     // Spacing in the design manual is based off of the baseline so this margin
     // number has been eyeballed to be 30px.
     margin-bottom: unit( 19px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
     line-height: unit( @line-height / @font-size );
-
-    .respond-to-max(@mobile-max, {
-        .h3();
-    });
 }
 
-h3,
-.h3 {
-    @font-size: 22px;
-    @line-height: 28px;
-
-    margin-top: 0;
+.heading-3( @fs: 22px, @line-height: 28px )  {
+    @font-size: @fs;
+    .webfont-regular();
     // Spacing in the design manual is based off of the baseline so this margin
     // number has been eyeballed to be 30px.
     margin-bottom: unit( 21px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
     line-height: unit( @line-height / @font-size );
+}
 
-    .respond-to-max(@mobile-max, {
-        .h4();
+.heading-4( @fs: 18px, @line-height: @base-line-height-px )  {
+    @font-size: @fs;
+    .webfont-medium();
+    // Spacing in the design manual is based off of the baseline so this margin
+    // number has been eyeballed to be 30px.
+    margin-bottom: unit( 21px / @font-size, em );
+    font-size: unit( @font-size / @base-font-size-px, em );
+    line-height: unit( @line-height / @font-size );
+}
+
+.heading-5( @fs: 14px, @line-height: @base-line-height-px )  {
+    @font-size: @fs;
+    .webfont-demi();
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    // Spacing in the design manual is based off of the baseline so this margin
+    // number has been eyeballed to be 15px.
+    margin-bottom: unit( 5px / @font-size, em );
+    font-size: unit( @font-size / @base-font-size-px, em );
+    line-height: unit( @line-height / @font-size );
+}
+
+.heading-6( @fs: 12px, @line-height: @base-line-height-px )  {
+    @font-size: @fs;
+    .webfont-demi();
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    // Spacing in the design manual is based off of the baseline so this margin
+    // number has been eyeballed to be 15px.
+    margin-bottom: unit( 5px / @font-size, em );
+    font-size: unit( @font-size / @base-font-size-px, em );
+    line-height: unit( @line-height / @font-size );
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+}
+
+h1,
+.h1 {
+    .heading-1();
+
+    .respond-to-max(@bp-xs-max, {
+        .heading-2();
+    });
+}
+
+h2,
+.h2 {
+    .heading-2();
+
+    .respond-to-max(@bp-xs-max, {
+        .heading-3();
+    });
+}
+
+h3,
+.h3 {
+    .heading-3();
+
+    .respond-to-max(@bp-xs-max, {
+        .heading-4();
     });
 }
 
 h4,
 .h4 {
-    @font-size: 18px;
-
-    margin-top: 0;
-    // Spacing in the design manual is based off of the baseline so this margin
-    // number has been eyeballed to be 30px.
-    margin-bottom: unit( 21px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
-    .webfont-medium();
-    line-height: unit( @base-line-height-px / @font-size );
-}
-
-h5,
-h6,
-.h5,
-.h6 {
-    .webfont-demi();
-
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    .heading-4();
 }
 
 h5,
 .h5 {
-    @font-size: 14px;
-
-    margin-top: 0;
-    // Spacing in the design manual is based off of the baseline so this margin
-    // number has been eyeballed to be 15px.
-    margin-bottom: unit( 5px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
-    line-height: unit( @base-line-height-px / @font-size );
+    .heading-5();
 }
 
 h6,
 .h6 {
-    @font-size: 12px;
-
-    margin-top: 0;
-    // Spacing in the design manual is based off of the baseline so this margin
-    // number has been eyeballed to be 15px.
-    margin-bottom: unit( 5px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
-    line-height: unit( @base-line-height-px / @font-size );
+    .heading-6();
 }
 
 .subheader {
-    // For longer subheaders that we don't want to be too large or heavier than
-    // the regular weight.
-    @font-size: 18px;
-
-    margin-top: 0;
-    // Spacing in the design manual is based off of the baseline so this margin
-    // number has been eyeballed to be 30px.
-    margin-bottom: unit( 21px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
+    .heading-4();
     .webfont-regular();
-    line-height: unit( @base-line-height-px / @font-size );
 }
 
 .superheader {
     // For when you want a heading that's bigger than a normal H1
-
     @font-size: 48px;
     @line-height: 60px;
 
+    .webfont-demi();
     // Spacing in the design manual is based off of the baseline so this margin
     // number has been eyeballed to be 30px.
     margin-bottom: unit( 9px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
-    .webfont-demi();
     line-height: unit( @line-height / @font-size );
 }
 
@@ -480,52 +480,22 @@ ul {
             </thead>
             <tbody>
                 <tr>
-                    <th>Row 1 header</th>
+                    <td>Row 1, column 1</td>
                     <td>Row 1, column 2</td>
                     <td>Row 1, column 3</td>
                 </tr>
                 <tr>
-                    <th>Row 2 header</th>
+                    <td>Row 2, column 1</td>
                     <td>Row 2, column 2</td>
                     <td>Row 2, column 3</td>
                 </tr>
                 <tr>
-                    <th>Row 3 header</th>
+                    <td>Row 3, column 1</td>
                     <td>Row 3, column 2</td>
                     <td>Row 3, column 3</td>
                 </tr>
             </tbody>
         </table>
-    - name: Compact table
-      markup: |
-        <table class="compact-table">
-            <thead>
-                <tr>
-                    <th>Column 1 header</th>
-                    <th>Column 2 header</th>
-                    <th>Column 3 header</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>Row 1 header</th>
-                    <td>Row 1, column 2</td>
-                    <td>Row 1, column 3</td>
-                </tr>
-                <tr>
-                    <th>Row 2 header</th>
-                    <td>Row 2, column 2</td>
-                    <td>Row 2, column 3</td>
-                </tr>
-                <tr>
-                    <th>Row 3 header</th>
-                    <td>Row 3, column 2</td>
-                    <td>Row 3, column 3</td>
-                </tr>
-            </tbody>
-        </table>
-      notes:
-        - Reduces cell padding to 10px.
   tags:
     - cf-core
 */
@@ -536,21 +506,18 @@ table {
 
 th,
 td {
-    padding: unit(12px / @base-font-size-px, em) unit(15px / @base-font-size-px, em);
-    background: @td-bg;
+    padding: unit(10px / @base-font-size-px, em);
 
     thead & {
         color: @thead-text;
         background: @thead-bg;
+        .h5();
     }
+}
 
-    tbody > tr:nth-child(odd) > & {
-        background: @td-bg-alt;
-    }
-
-    .compact-table & {
-        padding: unit(7px / @base-font-size-px, em) unit(10px / @base-font-size-px, em);
-    }
+thead,
+tbody tr {
+    border-bottom: 1px solid @table-border;
 }
 
 th {
@@ -558,6 +525,9 @@ th {
     text-align: left;
 }
 
+tbody th {
+    .webfont-regular();
+}
 
 /* topdoc
   name: Block quote
@@ -589,10 +559,10 @@ blockquote {
     // Vertical spacing has been eyeballed to be 30px from the baseline.
     margin: unit(20px / @base-font-size-px, em);
 
-    @media only all and (min-width: (unit(600px / @base-font-size-px, em))) {
+    .respond-to-min(@bp-sm-min, {
         margin: unit(28px / @base-font-size-px, em)
                 unit(40px / @base-font-size-px, em);
-    }
+    });
 }
 
 

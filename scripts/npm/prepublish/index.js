@@ -1,38 +1,45 @@
-var fs = require('fs'),
-    async = require('async'),
-    pkg = JSON.parse(fs.readFileSync('package.json', 'utf8')),
-    componentsDir = './components';
+// var path = require('path'),
+//     fs = require('fs'),
+//     async = require('async'),
+//     gitStatus = require('./lib/gitStatus'),
+//     componentsDir = path.join(__dirname, '../../../components');
+
+// fs.readdir(componentsDir, function(err, components) {
+//   if (err) return console.log(err);
+
+//   components.forEach(function(component) {
+//     var componentDir = componentsDir + '/' + component;
+//     if (component.indexOf('cf-') !== 0 && !fs.lstatSync(componentDir).isDirectory()) return;
+//     console.log(componentDir);
+
+//     gitStatus(componentDir).then(function(result) {
+//       if (!result.stdout && !result.stderr) {
+//         console.log(component + ' has not been updated.');
+//       } else {
+//         console.log(component + ' has been updated and needs to be published!');
+//       }
+//     });
+
+//   });
+
+// });
+
+var gulp = require('gulp'),
+    $ = require('gulp-load-plugins')(),
+    importPlugin = require('less-plugin-npm-import'),
+    path = require('path'),
+    fs = require('fs'),
+    componentsDir = path.join(__dirname, '../../../components');
 
 fs.readdir(componentsDir, function(err, components) {
   if (err) return console.log(err);
-  var tasks = [];
-  components.forEach(function(component){
-    tasks.push(function(cb) {
-      getInfo(component, cb);
-    });
-  });
-  async.parallel(tasks, function(err, results) {
-    var deps = {};
-    results.forEach(function(component) {
-      if (!component) return;
-      deps[component.name] = component.version;
-    });
-    pkg.dependencies = deps;
-    console.log(pkg);
+
+  components.forEach(function(component) {
+    var componentSrcDir = componentsDir + '/' + component + '/src/';
+    gulp.src(componentSrcDir + component + '.less')
+        .pipe($.less({
+          plugins: [new importPlugin({prefix: '../node_modules/'})]
+        }))
+        .pipe(gulp.dest('./tmp/' + component));
   });
 });
-
-function getInfo(component, cb) {
-  if (component.indexOf('cf-') === 0) {
-    var manifest = componentsDir + '/' + component + '/package.json';
-    if (fs.existsSync(manifest)) {
-      return fs.readFile(manifest, function(err, data) {
-        if (err) return console.log(err);
-        var json = JSON.parse(data);
-        cb(null, json);
-      });
-    }
-  } else {
-    cb(null, null);
-  }
-}

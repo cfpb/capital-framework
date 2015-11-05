@@ -17,8 +17,14 @@
           @base-font-size-px
           @base-line-height-px
           @base-line-height
-          @mobile-max
-          @tablet-min
+          @bp-xs-max
+          @bp-sm-min
+          @bp-sm-max
+          @bp-med-min
+          @bp-med-max
+          @bp-lg-min
+          @bp-lg-max
+          @bp-xl-min
     - name: Colors
       codenotes:
         - |
@@ -31,6 +37,7 @@
           @link-underline-hover
           @link-text-active
           @link-underline-active
+          @table-border
           @thead-text
           @thead-bg
           @td-bg
@@ -44,43 +51,56 @@
     - cf-core
 */
 
-// Sizing variables 
+// Sizing variables
 
 @base-font-size-px:             16px;
 @base-line-height-px:           22px;
 @base-line-height:              unit(@base-line-height-px / @base-font-size-px);
-@mobile-max:                    599px;
-@tablet-min:                    600px;
+@bp-xs-max:                     600px;
+@bp-sm-min:                     @bp-xs-max + 1px;
+@bp-sm-max:                     900px;
+@bp-med-min:                    @bp-sm-max + 1px;
+@bp-med-max:                    1020px;
+@bp-lg-min:                     @bp-med-max + 1px;
+@bp-lg-max:                     1230px;
+@bp-xl-min:                     @bp-lg-max + 1px;
 
-// Color variables 
+// To be deprecated
+@mobile-max:                    @bp-xs-max;
+@tablet-min:                    @bp-sm-min;
+
+// Color variables
+// $color- variables are from 18F's US Web Design Standards
+// https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss
 
 // body
-@text:                          darken(#895983, 15%);
+@text:                          #212121; // $color-base
 
 // a
-@link-text:                     #c7336e;
-@link-underline:                #c7336e;
-@link-text-visited:             lighten(@link-text, 5%);
-@link-underline-visited:        lighten(@link-underline, 5%);
-@link-text-hover:               darken(@link-text, 10%);
-@link-underline-hover:          darken(@link-underline, 10%);
-@link-text-active:              darken(@link-text, 15%);
-@link-underline-active:         darken(@link-underline, 15%);
+@link-text:                     #0071bc; // $color-primary
+@link-underline:                #0071bc; // $color-primary
+@link-text-visited:             #4c2c92; // $color-visited
+@link-underline-visited:        #4c2c92; // $color-visited
+@link-text-hover:               #205493; // $color-primary-darker
+@link-underline-hover:          #205493; // $color-primary-darker
+@link-text-active:              #046b99; // $color-primary-darkest
+@link-underline-active:         #046b99; // $color-primary-darkest
+
+// table
+@table-border:                  #5b616b; // $color-gray
 
 // thead
-@thead-text:                    #fff;
-@thead-bg:                      darken(#895983, 15%);
-@td-bg:                         lighten(#905c8a, 45%);
-@td-bg-alt:                     lighten(@td-bg, 3%);
+@thead-text:                    @text;
+@thead-bg:                      #f1f1f1; // $color-gray-lightest
 
 // input
 @input-bg:                      #fff;
-@input-border:                  darken(#895983, 15%);
-@input-border-focus:            #c7336e;
+@input-border:                  #5b616b; // $color-gray
+@input-border-focus:            #3e94cf; // $color-focus
 @input-placeholder:             grayscale(#c7336e);
 
 // .figure__bordered
-@figure__bordered:              darken(#895983, 15%);
+@figure__bordered:              #d6d7d9; // $color-gray-lighter
 
 
 /* topdoc
