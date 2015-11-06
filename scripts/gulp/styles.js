@@ -2,12 +2,12 @@
 
 var gulp = require('gulp'),
     $ = require('gulp-load-plugins')(),
-    importPlugin = require('less-plugin-npm-import');
+    importPlugin = require('less-plugin-npm-import'),
+    component = require('./parseComponentName');
 
 // Compile the master capital-framework.less file.
 gulp.task( 'styles:cf', function() {
   return gulp.src('./capital-framework.less')
-    // .pipe($.debug())
     .pipe($.less({
       plugins: [new importPlugin({prefix: '../node_modules/'})]
     }))
@@ -22,7 +22,7 @@ gulp.task( 'styles:cf', function() {
 // Compile all the individual component files so that users can `npm install`
 // a single component if they desire.
 gulp.task( 'styles:components', function() {
-  return gulp.src('./components/**/src/*.less')
+  return gulp.src('./components/' + (component || '*') + '/src/*.less')
     .pipe($.ignore.exclude(function(vf) {
       // Exclude Less files that don't share the same name as the directory
       // they're in. This filters out things like cf-vars.less but still
@@ -34,6 +34,7 @@ gulp.task( 'styles:components', function() {
       plugins: [new importPlugin({prefix: '../node_modules/'})]
     }))
     .pipe($.rename(function (path) {
+      path.dirname = component || path.dirname;
       path.dirname = path.dirname.replace('/src','');
     }))
     .pipe(gulp.dest('./tmp'))
@@ -41,6 +42,5 @@ gulp.task( 'styles:components', function() {
     .pipe($.rename({
       suffix: '.min'
     }))
-    // .pipe($.debug())
     .pipe(gulp.dest('./tmp'));
 } );

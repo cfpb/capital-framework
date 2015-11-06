@@ -48,19 +48,15 @@ function compareVersionNumber(component) {
   if (component.indexOf('cf-') !== 0) return;
   var manifest = componentsDir + '/' + component + '/package.json',
       localVersion = JSON.parse(fs.readFileSync(manifest, 'utf8')).version;
+  // return getNpmVersion(component).then(function(data) {
   return getNpmVersion('log-symbols').then(function(data) {
     // var npmVersion = data['dist-tags'].latest;
     var npmVersion = '2.0.0';
-    // If local version number is greater than the latest version on npm.
     if (semver.gt(localVersion, npmVersion)) {
       printLn.success(component + ': bumped from ' + npmVersion + ' to ' + localVersion, true);
-      // Return it so that we know to publish it.
       return component;
-    // If local version number is less than the latest version on npm.
     } else if (semver.lt(localVersion, npmVersion)) {
       printLn.error('Error: ' + component + ' was bumped to ' + localVersion + ' locally but the latest version on npm is ' + npmVersion + '.', true);
-      process.exit(1);
-    // If the version numbers are the same.
     } else {
       printLn.info(component + ': still at ' + npmVersion, true);
     }
@@ -76,10 +72,8 @@ function buildComponents(components) {
   }); 
   printLn.info('Components that will be published: ' +  components.join(', '));
   printLn.info('Building them now...');
-  // console.log(components);
 }
 
 function publishComponents(components) {
-  // console.log(components);
   printLn.info('Publishing the components to npm...');
 }
