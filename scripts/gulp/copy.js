@@ -8,10 +8,11 @@ var merge = require('deepmerge');
 var baseManifest = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 gulp.task( 'copy:components:boilerplate', function() {
-  return gulp.src('./tmp/' + (component || 'cf-*'))
+  return gulp.src('./components/' + (component || '*'))
     .pipe($.foreach(function(stream, file) {
+      var component = file.path.split('/').pop();
       gulp.src( './scripts/templates/component-boilerplate/*' )
-          .pipe( gulp.dest(file.path) );
+          .pipe( gulp.dest('./tmp/' + component) );
       return stream;
     }))
 } );
@@ -34,13 +35,6 @@ gulp.task( 'copy:components:source', function() {
     }))
 } );
 
-function combineManifests(manifest) {
-  var result = merge(baseManifest, manifest);
-  delete result.scripts;
-  delete result.devDependencies;
-  console.log(result);
-}
-
 gulp.task( 'copy:components:manifest', function() {
   return gulp.src('./components/' + (component || '*') + '/package.json')
     .pipe($.data(function(file) {
@@ -53,5 +47,5 @@ gulp.task( 'copy:components:manifest', function() {
       path.dirname = component || path.dirname;
     }))
     .pipe($.jsonFormat(2))
-    .pipe(gulp.dest('./tmp')).pipe($.debug())
+    .pipe(gulp.dest('./tmp'));
 } );
