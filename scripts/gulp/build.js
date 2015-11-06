@@ -7,7 +7,7 @@ gulp.task('build', function(callback) {
   runSequence(
     'clean:tmp',
     ['template:readmes', 'copy:components:boilerplate'],
-    ['copy:components:source', 'template:usage'],
+    ['copy:components:source', 'template:usage', 'copy:components:manifest'],
     ['styles:components', 'scripts:components']
   );
 });

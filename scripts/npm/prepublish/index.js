@@ -32,8 +32,6 @@ function handleGitStatus(result) {
   }
 }
 
-// Go through all the components dirs and compare the version in package.json
-// with the latest version published to npm.
 function getComponents() {
   return readdir(componentsDir);
 }
