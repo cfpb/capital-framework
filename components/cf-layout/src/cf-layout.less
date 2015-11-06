@@ -19,7 +19,10 @@
     codenotes:
       - |
         @block__border-top
+        @block__border-right
         @block__border-bottom
+        @block__border-left
+        @block__border
         @block__bg
         @content_main-border
         @content_sidebar-bg
@@ -37,7 +40,10 @@
 
 // .block
 @block__border-top:             #3a8899;
+@block__border-right:           #3a8899;
 @block__border-bottom:          #3a8899;
+@block__border-left:            #3a8899;
+@block__border:                 #3a8899;
 @block__bg:                     lighten(#3a8899, 55%);
 
 // .content_main
@@ -75,8 +81,6 @@
                     Full-width column (spans 12 columns)
                 </div>
             </div>
-        </div>
-        <div class="content-l">
             <div class="content-l_col content-l_col-1-2">
                 <div style="background: #F1F2F2;
                             text-align: center;
@@ -93,8 +97,6 @@
                     Half-width column (spans 6/12 columns)
                 </div>
             </div>
-        </div>
-        <div class="content-l">
             <div class="content-l_col content-l_col-1-3">
                 <div style="background: #F1F2F2;
                             text-align: center;
@@ -119,13 +121,34 @@
                     Third-width column (spans 4/12 columns)
                 </div>
             </div>
-        </div>
-        <div class="content-l">
             <div class="content-l_col content-l_col-2-3">
                 <div style="background: #F1F2F2;
                             text-align: center;
-                            padding: 8px;">
+                            padding: 8px;
+                            margin-bottom: 4px;">
                     Two thirds-width column (spans 8/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Quarter width column (spans 3/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-3-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Three-quarter width column (spans 9/12 columns)
                 </div>
             </div>
         </div>
@@ -137,9 +160,9 @@
             .content-l_col
       notes:
         - "Simplifies use of grid structure inside content containers (like .content-main)."
-        - "Since .content-l_col's are nested within .content_main extra margins will occur. 
+        - "Since .content-l_col's are nested within .content_main extra margins will occur.
            The .content-l container uses the grid_nested-col-group mixin to counter this."
-        - ".content-l_col-RATIO classes default to stacking on mobile and displaying as columns 
+        - ".content-l_col-RATIO classes default to stacking on mobile and displaying as columns
            above mobile-max width (600px). This may not be the desired breakpoint for
            all use cases, so mixins are provided to simplify changing column display to
            stacked."
@@ -150,221 +173,272 @@
     - name: .content-l__full modifier
       markup: |
         <div class="content-l content-l__full">
-           <div class="content-l_col content-l_col-1">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Full-width column (spans 12 columns)
-               </div>
-           </div>
-        </div>
-        <div class="content-l content-l__full">
-           <div class="content-l_col content-l_col-1-2">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Half-width column (spans 6/12 columns)
-               </div>
-           </div>
-           <div class="content-l_col content-l_col-1-2">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Half-width column (spans 6/12 columns)
-               </div>
-           </div>
-        </div>
-        <div class="content-l content-l__full">
-           <div class="content-l_col content-l_col-1-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Third-width column (spans 4/12 columns)
-               </div>
-           </div>
-           <div class="content-l_col content-l_col-1-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Third-width column (spans 4/12 columns)
-               </div>
-           </div>
-           <div class="content-l_col content-l_col-1-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Third-width column (spans 4/12 columns)
-               </div>
-           </div>
-        </div>
-        <div class="content-l content-l__full">
-           <div class="content-l_col content-l_col-2-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;">
-                   Two thirds-width column (spans 8/12 columns)
-               </div>
-           </div>
+            <div class="content-l_col content-l_col-1">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Full-width column (spans 12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-2">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Half-width column (spans 6/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-2">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Half-width column (spans 6/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-2-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Two thirds-width column (spans 8/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Quarter width column (spans 3/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-3-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Three-quarter width column (spans 9/12 columns)
+                </div>
+            </div>
         </div>
       codenotes:
         - .content-l.content-l__full
       notes:
         - "Designed for use within .content_full containers."
         - "Displays .content-l_col-1-2 as columns at tablet sizes & above (600px+)"
-        - "Displays other common .content-l_col modifiers (.content-l_col-1-3, 
-           .content-l_col-2-3, .content-l_col-3-8, .content-l_col-5-8) 
+        - "Displays other common .content-l_col modifiers (.content-l_col-1-3,
+           .content-l_col-2-3, .content-l_col-3-8, .content-l_col-5-8)
            as columns above 767px."
     - name: .content-l__main modifier
       markup: |
         <div class="content-l content-l__main">
-             <div class="content-l_col content-l_col-1">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;
-                             margin-bottom: 4px;">
-                     Full-width column (spans 12 columns)
-                 </div>
-             </div>
-         </div>
-         <div class="content-l content-l__main">
-             <div class="content-l_col content-l_col-1-2">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;
-                             margin-bottom: 4px;">
-                     Half-width column (spans 6/12 columns)
-                 </div>
-             </div>
-             <div class="content-l_col content-l_col-1-2">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;
-                             margin-bottom: 4px;">
-                     Half-width column (spans 6/12 columns)
-                 </div>
-             </div>
-         </div>
-         <div class="content-l content-l__main">
-             <div class="content-l_col content-l_col-1-3">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;
-                             margin-bottom: 4px;">
-                     Third-width column (spans 4/12 columns)
-                 </div>
-             </div>
-             <div class="content-l_col content-l_col-1-3">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;
-                             margin-bottom: 4px;">
-                     Third-width column (spans 4/12 columns)
-                 </div>
-             </div>
-             <div class="content-l_col content-l_col-1-3">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;
-                             margin-bottom: 4px;">
-                     Third-width column (spans 4/12 columns)
-                 </div>
-             </div>
-         </div>
-         <div class="content-l content-l__main">
-             <div class="content-l_col content-l_col-2-3">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;">
-                     Two thirds-width column (spans 8/12 columns)
-                 </div>
-             </div>
-         </div>
+            <div class="content-l_col content-l_col-1">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Full-width column (spans 12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-2">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Half-width column (spans 6/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-2">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Half-width column (spans 6/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-2-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Two thirds-width column (spans 8/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Quarter width column (spans 3/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-3-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Three-quarter width column (spans 9/12 columns)
+                </div>
+            </div>
+        </div>
       codenotes:
         - .content-l.content-l__main
       notes:
-        - "Designed for use in .content_main containers, which have reduced (75%) width 
+        - "Designed for use in .content_main containers, which have reduced (75%) width
            above tablet sizes to accommodate adjacent sidebar column."
         - "Displays .content-l_col-1-2 as columns in the tablet range, 600-800px;
            stacked from 800-899, the start of sidebar range; and as columns again at 900px+"
-        - "Displays other common .content-l_col modifiers (.content-l_col-1-3, .content-l_col-2-3,    
+        - "Displays other common .content-l_col modifiers (.content-l_col-1-3, .content-l_col-2-3,
            .content-l_col-3-8, .content-l_col-5-8) as columns above 900px."
     - name: .content-l__sidebar modifier
       markup: |
         <div class="content-l content-l__sidebar">
-             <div class="content-l_col content-l_col-1">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;
-                             margin-bottom: 4px;">
-                     Full-width column (spans 12 columns)
-                 </div>
-             </div>
-        </div>
-        <div class="content-l content-l__sidebar">
-           <div class="content-l_col content-l_col-1-2">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Half-width column (spans 6/12 columns)
-               </div>
-           </div>
-           <div class="content-l_col content-l_col-1-2">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Half-width column (spans 6/12 columns)
-               </div>
-           </div>
-        </div>
-        <div class="content-l content-l__sidebar">
-           <div class="content-l_col content-l_col-1-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Third-width column (spans 4/12 columns)
-               </div>
-           </div>
-           <div class="content-l_col content-l_col-1-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Third-width column (spans 4/12 columns)
-               </div>
-           </div>
-           <div class="content-l_col content-l_col-1-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Third-width column (spans 4/12 columns)
-               </div>
-           </div>
-        </div>
-        <div class="content-l content-l__sidebar">
-           <div class="content-l_col content-l_col-2-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;">
-                   Two thirds-width column (spans 8/12 columns)
-               </div>
-           </div>
+            <div class="content-l_col content-l_col-1">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Full-width column (spans 12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-2">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Half-width column (spans 6/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-2">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Half-width column (spans 6/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-2-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Two thirds-width column (spans 8/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Quarter width column (spans 3/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-3-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Three-quarter width column (spans 9/12 columns)
+                </div>
+            </div>
         </div>
       codenotes:
         - .content-l.content-l__sidebar
       notes:
-        - "For use in sidebar containers, which are full width only 
+        - "For use in sidebar containers, which are full width only
            on tablet widths (600-800px)."
-        - "Displays .content-l_col-1-2 as columns in the tablet range, 
+        - "Displays .content-l_col-1-2 as columns in the tablet range,
            600-800px, and stacked at all other widths."
     - name: Large gutters modifier
       markup: |
@@ -413,14 +487,15 @@
     .respond-to-min(@tablet-min, {
         .grid_nested-col-group();
     });
-    
+
     &__full {
         .respond-to-range(@tablet-min, 767px, {
             .stack-col-thirds();
-            .stack-col-eighths(); 
+            .stack-col-eighths();
+            .stack-col-quarters();
         });
     }
-    
+
     &__main {
         .respond-to-range(801px, 899px, {
             .stack-col(content-l_col-1-2);
@@ -428,13 +503,15 @@
 
         .respond-to-range(@tablet-min, 899px, {
             .stack-col-thirds();
-            .stack-col-eighths();        
+            .stack-col-eighths();
+            .stack-col-quarters();
         });
     }
-    
+
     &__sidebar {
         .stack-col-thirds();
-        .stack-col-eighths();        
+        .stack-col-eighths();
+        .stack-col-quarters();
 
         .respond-to-min(801px, {
             .stack-col(content-l_col-1-2);
@@ -455,55 +532,47 @@
 }
 
 .content-l_col {
-    & + & {
-        margin-top: unit(@grid_gutter-width / @base-font-size-px, em);
-    }
-    .respond-to-min(@tablet-min, {
-        &.content-l_col-1-2 + &.content-l_col-1-2,
-        &.content-l_col-1-3 + &.content-l_col-1-3,
-        &.content-l_col-3-8 + &.content-l_col-3-8,
-        &.content-l_col-3-8 + &.content-l_col-5-8,
-        &.content-l_col-5-8 + &.content-l_col-3-8 {
-            margin-top: 0;
+    .respond-to-max(@mobile-max, {
+        & + & {
+            margin-top: unit(@grid_gutter-width / @base-font-size-px, em);
         }
     });
 }
 
-.content-l_col-1 {
-    .respond-to-min(@tablet-min, {
+.respond-to-min(@tablet-min, {
+    .content-l_col-1 {
         .grid_column(12);
-    });
-}
+    }
 
-.content-l_col-1-2 {
-    .respond-to-min(@tablet-min, {
+    .content-l_col-1-2 {
         .grid_column(6);
-    });
-}
+    }
 
-.content-l_col-1-3 {
-    .respond-to-min(@tablet-min, {
+    .content-l_col-1-3 {
         .grid_column(4);
-    });
-}
+    }
 
-.content-l_col-2-3 {
-    .respond-to-min(@tablet-min, {
+    .content-l_col-2-3 {
         .grid_column(8);
-    });
-}
+    }
 
-.content-l_col-3-8 {
-    .respond-to-min(@tablet-min, {
+    .content-l_col-3-8 {
         .grid_column(3, 8);
-    });
-}
+    }
 
-.content-l_col-5-8 {
-    .respond-to-min(@tablet-min, {
+    .content-l_col-5-8 {
         .grid_column(5, 8);
-    });
-}
+    }
+
+    .content-l_col-1-4 {
+        .grid_column(3);
+    }
+
+    .content-l_col-3-4 {
+        .grid_column(9);
+    }
+});
+
 
 
 /* topdoc
@@ -583,41 +652,36 @@
     .content-l_col.@{col} {
         display: block;
         width: 100%;
-        
+
         &.content-l_col__before-divider {
             .grid_column__top-divider();
         }
     }
-    
+
     &.content-l__large-gutters {
         .content-l_col.@{col}.content-l_col__before-divider {
             border-left-width: @grid_gutter-width;
         }
     }
-    
-    .content-l_col.@{col} + .content-l_col.@{col} {
+
+    .content-l_col + .@{col} {
         margin-top: unit(@grid_gutter-width / @base-font-size-px, em);
     }
 }
 
 .stack-col-thirds() {
-  .stack-col(content-l_col-1-3);
-  .stack-col(content-l_col-2-3);
-  
-  .content-l_col.content-l_col-1-3 + .content-l_col.content-l_col-2-3,
-  .content-l_col.content-l_col-2-3 + .content-l_col.content-l_col-1-3 {
-     margin-top: unit(@grid_gutter-width / @base-font-size-px, em);
-  }
+    .stack-col(content-l_col-1-3);
+    .stack-col(content-l_col-2-3);
 }
 
 .stack-col-eighths() {
-  .stack-col(content-l_col-3-8);
-  .stack-col(content-l_col-5-8);
+    .stack-col(content-l_col-3-8);
+    .stack-col(content-l_col-5-8);
+}
 
-  .content-l_col.content-l_col-3-8 + .content-l_col.content-l_col-5-8,
-  .content-l_col.content-l_col-5-8 + .content-l_col.content-l_col-3-8 {
-     margin-top: unit(@grid_gutter-width / @base-font-size-px, em);
-  }
+.stack-col-quarters() {
+    .stack-col(content-l_col-1-4);
+    .stack-col(content-l_col-3-4);
 }
 
 /* topdoc
@@ -1003,6 +1067,56 @@
       notes:
         - "The standard .block class by itself simply adds a margin of twice the
            gutter width to the top and bottom."
+    - name: Border-top modifier
+      markup: |
+        Main content...
+        <div class="block block__border-top">
+            Content block with top border.
+        </div>
+      codenotes:
+        - .block.block__border-top
+      notes:
+        - "Adds top border to .block."
+    - name: Border-right modifier
+      markup: |
+        Main content...
+        <div class="block block__border-right">
+            Content block with right border.
+        </div>
+      codenotes:
+        - .block.block__border-right
+      notes:
+        - "Adds right border to .block."
+    - name: Border-bottom modifier
+      markup: |
+        Main content...
+        <div class="block block__border-bottom">
+            Content block with bottom border.
+        </div>
+      codenotes:
+        - .block.block__border-bottom
+      notes:
+        - "Adds bottom border to .block."
+    - name: Border-left modifier
+      markup: |
+        Main content...
+        <div class="block block__border-left">
+            Content block with left border.
+        </div>
+      codenotes:
+        - .block.block__border-left
+      notes:
+        - "Adds left border to .block."
+    - name: Border modifier
+      markup: |
+        Main content...
+        <div class="block block__border">
+            Content block with borders on all sides.
+        </div>
+      codenotes:
+        - .block.block__border
+      notes:
+        - "Adds border on all sides to .block."
     - name: Flush-top modifier
       markup: |
         Main content...
@@ -1050,26 +1164,56 @@
         - "Removes the side margin from .block."
         - "Typically used in conjuction with .block__bg to create a 'well' whose
            background extends into the left and right gutters. (See below.)"
-    - name: Border-top modifier
+    - name: Flush modifier
+      markup: |
+        <main class="content content__1-3" role="main">
+            <div class="content_wrapper">
+                <aside class="content_sidebar">
+                    Section navigation
+                </aside>
+                <section class="content_main">
+                    Main content...
+                    <aside class="block block__flush">
+                        Content block with no margins.
+                    </aside>
+                </section>
+            </div>
+        </main>
+      codenotes:
+        - .block.block__flush
+      notes:
+        - "Removes the side, top, and bottom margin from .block."
+    - name: Background modifier
       markup: |
         Main content...
-        <div class="block block__border-top">
-            Content block with top border.
+        <div class="block block__bg">
+            Content block with a background
         </div>
       codenotes:
-        - .block.block__border-top
+        - .block.block__bg
       notes:
-        - "Adds top border to .block."
-    - name: Border-bottom modifier
+        - "Adds a background color and padding to .block."
+        - "Setup for (ems-equivalent) 30px padding on top and 60px on bottom."
+    - name: Background and flush-sides modifier combo example
       markup: |
-        Main content...
-        <div class="block block__border-bottom">
-            Content block with bottom border.
-        </div>
+        <main class="content content__1-3" role="main">
+            <div class="content_wrapper">
+                <aside class="content_sidebar">
+                    Section navigation
+                </aside>
+                <section class="content_main content__flush-bottom">
+                    Main content...
+                    <div class="block block__flush-sides block__bg">
+                        Content block with a background and flush sides
+                    </div>
+                </section>
+            </div>
+        </main>
       codenotes:
-        - .block.block__border-bottom
+        - .block.block__flush-sides.block__bg
       notes:
-        - "Adds bottom border to .block."
+        - "This is an example of combining modifiers to get a flush padded bg
+           with a .block."
     - name: Padded-top modifier
       markup: |
         Main content...
@@ -1094,36 +1238,6 @@
       notes:
         - "Breaks bottom margin into margin & padding. Useful in combination with
            block__border-bottom to add padding between block contents & border."
-    - name: Background modifier
-      markup: |
-        Main content...
-        <div class="block block__bg">
-            Content block with a background
-        </div>
-      codenotes:
-        - .block.block__bg
-      notes:
-        - "Adds a background color and padding to .block."
-    - name: Background and flush-sides modifier combo example
-      markup: |
-        <main class="content content__1-3" role="main">
-            <div class="content_wrapper">
-                <aside class="content_sidebar">
-                    Section navigation
-                </aside>
-                <section class="content_main content__flush-bottom">
-                    Main content...
-                    <div class="block block__flush-sides block__bg">
-                        Content block with a background and flush sides
-                    </div>
-                </section>
-            </div>
-        </main>
-      codenotes:
-        - .block.block__flush-sides.block__bg
-      notes:
-        - "This is an example of combining modifiers to get a flush padded bg
-           with a .block."
     - name: Sub blocks
       markup: |
         <div class="block block__sub">
@@ -1181,13 +1295,25 @@
 .block {
     margin-top: unit((@grid_gutter-width * 2) / @base-font-size-px, em);
     margin-bottom: unit((@grid_gutter-width * 2) / @base-font-size-px, em);
-    
+
     &__border-top {
         border-top: 1px solid @block__border-top;
     }
-    
+
+    &__border-right {
+        border-right: 1px solid @block__border-right;
+    }
+
     &__border-bottom {
         border-bottom: 1px solid @block__border-bottom;
+    }
+
+    &__border-left {
+        border-left: 1px solid @block__border-left;
+    }
+
+    &__border {
+        border: 1px solid @block__border;
     }
 
     &__flush-top {
@@ -1201,6 +1327,19 @@
     &__flush-sides {
         margin-right: -(@grid_gutter-width / 2);
         margin-left: -(@grid_gutter-width / 2);
+
+        .respond-to-min(600px, {
+            margin-right: -@grid_gutter-width;
+            margin-left: -@grid_gutter-width;
+        });
+    }
+
+    &__flush {
+        margin-top: 0 !important;
+        margin-right: -(@grid_gutter-width / 2);
+        margin-bottom: 0 !important;
+        margin-left: -(@grid_gutter-width / 2);
+
         .respond-to-min(600px, {
             margin-right: -@grid_gutter-width;
             margin-left: -@grid_gutter-width;
@@ -1210,13 +1349,15 @@
     &__bg {
         padding: unit(@grid_gutter-width / @base-font-size-px, em)
                  unit((@grid_gutter-width / 2) / @base-font-size-px, em);
+        padding-bottom: unit((@grid_gutter-width * 2) / @base-font-size-px, em);
         background: @block__bg;
+
         .respond-to-min(600px, {
             padding: unit(45 / @base-font-size-px, em)
                      unit(@grid_gutter-width / @base-font-size-px, em);
         });
     }
-    
+
     &__padded-top {
         padding-top: unit(30px / @base-font-size-px, em);
         margin-top: unit(30px / @base-font-size-px, em);
@@ -1309,20 +1450,24 @@
             }
         }
 
-        .content_wrapper:after {
-            // Create faux sidebar background.
-            content: '';
-            display: block;
-            width: 9999px;
-            border-left: 1px solid @content_sidebar-border;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            z-index: 0;
-            // The three in the below calculation is a magic number.
-            // Not entirely sure what to do about it right now.
-            margin-left: (@grid_gutter-width / 3);
-            background: @content_sidebar-bg;
+        .content_wrapper {
+            position: relative;
+
+            &:after {
+                // Create faux sidebar background.
+                content: '';
+                display: block;
+                width: 9999px;
+                border-left: 1px solid @content_sidebar-border;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                z-index: 0;
+                // The three in the below calculation is a magic number.
+                // Not entirely sure what to do about it right now.
+                margin-left: (@grid_gutter-width / 3);
+                background: @content_sidebar-bg;
+            }
         }
 
         &.content__2-1 .content_wrapper:after {
@@ -1432,7 +1577,7 @@
 .grid_column__top-divider {
     margin-top: unit((@grid_gutter-width * 2) / @base-font-size-px, em);
     border-left-width: @grid_gutter-width / 2;
-    
+
     &:before {
         content: "";
         display: block;
@@ -1460,6 +1605,133 @@
     }
 }
 
+
+/* topdoc
+  name: Hero
+  family: cf-layout
+  patterns:
+    - name: .hero
+      markup: |
+        <section class="content_hero hero">
+            <div class="hero_wrapper wrapper">
+                <div class="hero_text">
+                    <h1 class="hero_heading">Hero title</h1>
+                    <p class="hero_subhead">
+                        Hero text goes here
+                    </p>
+                    <p class="hero_cta">
+                        <a>Call to action</a>
+                    </p>
+                </div>
+                <div class="hero_image" style="background-image: url('http://placekitten.com/g/400/195')"></div>
+            </div>
+        </section>
+      notes:
+        - "Hero consists of a headline, a small amount of additional text, an optional call to
+           action, and an illustration. Its background color is flush with
+           the sides of the screen, and the content is centered with wrapper classes."
+        - "The illustration can be customized by setting the background-image property
+           on the .hero_image element."
+        - "On small screens (or where media queries are not supported), the text spans the
+           full width of the .hero_wrapper and the illustration is displayed underneath."
+        - "For larger screen sizes, media queries are used to position the illustration
+           to the right of the text."
+        - "On desktop, the hero should not exceed 285px in height. The image should be 195px in
+           height to conform to this standard."
+      codenotes:
+        - .hero
+  tags:
+    - cf-layout
+*/
+
+@hero-desktop-height: 285px;
+@hero-image-height: 195px;
+@desktop-min: 801px;
+
+.hero {
+    background-color: @block__bg;
+
+    &_wrapper {
+        box-sizing: border-box;
+        padding: unit(@grid_gutter-width / @base-font-size-px, em)
+                 unit(15px / @base-font-size-px, em);
+        width: 100%;
+    
+        .respond-to-min(@tablet-min, {
+            display: table;
+        });
+
+        .respond-to-min(@desktop-min, {
+            padding-top: unit(45px / @base-font-size-px, em);
+            padding-bottom: unit(45px / @base-font-size-px, em);
+            min-height: unit(@hero-desktop-height / @base-font-size-px, em);
+        });
+    
+        .respond-to-min(1230px, {
+            padding-right: 0;
+            padding-left: 0;
+        });
+
+        .lt-ie9 & {
+            // Reduce min-height because IE8 apparently isn't honoring the border-box property,
+            // perhaps due to bug seen here: http://grab.by/JutE
+            min-height: initial;
+        }
+    }
+
+    &_text {
+        .respond-to-min(@tablet-min, {
+            .grid_column(7,12);
+            display: table-cell;
+            vertical-align: middle;
+        });
+    }
+
+    &_heading {
+        .heading-1();
+
+        .respond-to-max(800px, {
+            .heading-2();
+        });
+    }
+
+    &_subhead {
+        .heading-3();
+
+        margin-bottom: unit(@grid_gutter-width / 22px, em);
+
+        .respond-to-max(800px, {
+            .heading-4();
+        });
+
+        &:last-child {
+            margin-bottom: initial;
+        }
+    }
+
+    &_cta {
+        .webfont-regular();
+
+        margin-bottom: initial;
+    }
+
+    &_image {
+        min-height: unit(@hero-image-height / @base-font-size-px, em);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        .respond-to-min(@tablet-min, {
+            .grid_column(5,12);
+            display: table-cell;
+            vertical-align: middle;
+        });
+
+        .respond-to-max(@mobile-max, {
+            margin-top: unit(@grid_gutter-width / @base-font-size-px, em);
+        });
+    }
+}
 
 /* topdoc
   name: EOF

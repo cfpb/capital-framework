@@ -742,13 +742,13 @@ input[type="radio"] {
 */
 .u-visually-hidden {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  border: 0;
-  margin: -1px;
-  padding: 0;
   overflow: hidden;
   clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
 }
 /* topdoc
   name: Inline block
@@ -4876,7 +4876,6 @@ input.btn::-moz-focus-inner {
         @input-error
         @input-warning
         @input-success
-        @input-disabled
   - name: Sizing
     codenotes:
       - |
@@ -4961,11 +4960,6 @@ input.btn::-moz-focus-inner {
            states."
       markup: |
         <input class="success" type="text" value="Validated input" title="Test input">
-    - name: Disabled state
-      codenotes:
-        - .disabled
-      markup: |
-        <input class="disabled" disabled="true" autocomplete="off" type="text" value="Validated input" title="Test input">
     tags:
     - cf-forms
 */
@@ -5001,16 +4995,6 @@ select[multiple].success,
 textarea.success {
   border: 1px solid #009d38;
   outline: 1px solid #009d38;
-}
-input[type="text"].disabled,
-input[type="search"].disabled,
-input[type="email"].disabled,
-input[type="url"].disabled,
-input[type="tel"].disabled,
-input[type="number"].disabled,
-select[multiple].disabled,
-textarea.disabled {
-  background-color: #cdb5cd;
 }
 /* topdoc
     name: Form icons
@@ -5554,7 +5538,10 @@ textarea.disabled {
     codenotes:
       - |
         @block__border-top
+        @block__border-right
         @block__border-bottom
+        @block__border-left
+        @block__border
         @block__bg
         @content_main-border
         @content_sidebar-bg
@@ -5582,8 +5569,6 @@ textarea.disabled {
                     Full-width column (spans 12 columns)
                 </div>
             </div>
-        </div>
-        <div class="content-l">
             <div class="content-l_col content-l_col-1-2">
                 <div style="background: #F1F2F2;
                             text-align: center;
@@ -5600,8 +5585,6 @@ textarea.disabled {
                     Half-width column (spans 6/12 columns)
                 </div>
             </div>
-        </div>
-        <div class="content-l">
             <div class="content-l_col content-l_col-1-3">
                 <div style="background: #F1F2F2;
                             text-align: center;
@@ -5626,13 +5609,34 @@ textarea.disabled {
                     Third-width column (spans 4/12 columns)
                 </div>
             </div>
-        </div>
-        <div class="content-l">
             <div class="content-l_col content-l_col-2-3">
                 <div style="background: #F1F2F2;
                             text-align: center;
-                            padding: 8px;">
+                            padding: 8px;
+                            margin-bottom: 4px;">
                     Two thirds-width column (spans 8/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Quarter width column (spans 3/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-3-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Three-quarter width column (spans 9/12 columns)
                 </div>
             </div>
         </div>
@@ -5644,9 +5648,9 @@ textarea.disabled {
             .content-l_col
       notes:
         - "Simplifies use of grid structure inside content containers (like .content-main)."
-        - "Since .content-l_col's are nested within .content_main extra margins will occur. 
+        - "Since .content-l_col's are nested within .content_main extra margins will occur.
            The .content-l container uses the grid_nested-col-group mixin to counter this."
-        - ".content-l_col-RATIO classes default to stacking on mobile and displaying as columns 
+        - ".content-l_col-RATIO classes default to stacking on mobile and displaying as columns
            above mobile-max width (600px). This may not be the desired breakpoint for
            all use cases, so mixins are provided to simplify changing column display to
            stacked."
@@ -5657,221 +5661,272 @@ textarea.disabled {
     - name: .content-l__full modifier
       markup: |
         <div class="content-l content-l__full">
-           <div class="content-l_col content-l_col-1">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Full-width column (spans 12 columns)
-               </div>
-           </div>
-        </div>
-        <div class="content-l content-l__full">
-           <div class="content-l_col content-l_col-1-2">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Half-width column (spans 6/12 columns)
-               </div>
-           </div>
-           <div class="content-l_col content-l_col-1-2">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Half-width column (spans 6/12 columns)
-               </div>
-           </div>
-        </div>
-        <div class="content-l content-l__full">
-           <div class="content-l_col content-l_col-1-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Third-width column (spans 4/12 columns)
-               </div>
-           </div>
-           <div class="content-l_col content-l_col-1-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Third-width column (spans 4/12 columns)
-               </div>
-           </div>
-           <div class="content-l_col content-l_col-1-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Third-width column (spans 4/12 columns)
-               </div>
-           </div>
-        </div>
-        <div class="content-l content-l__full">
-           <div class="content-l_col content-l_col-2-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;">
-                   Two thirds-width column (spans 8/12 columns)
-               </div>
-           </div>
+            <div class="content-l_col content-l_col-1">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Full-width column (spans 12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-2">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Half-width column (spans 6/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-2">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Half-width column (spans 6/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-2-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Two thirds-width column (spans 8/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Quarter width column (spans 3/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-3-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Three-quarter width column (spans 9/12 columns)
+                </div>
+            </div>
         </div>
       codenotes:
         - .content-l.content-l__full
       notes:
         - "Designed for use within .content_full containers."
         - "Displays .content-l_col-1-2 as columns at tablet sizes & above (600px+)"
-        - "Displays other common .content-l_col modifiers (.content-l_col-1-3, 
-           .content-l_col-2-3, .content-l_col-3-8, .content-l_col-5-8) 
+        - "Displays other common .content-l_col modifiers (.content-l_col-1-3,
+           .content-l_col-2-3, .content-l_col-3-8, .content-l_col-5-8)
            as columns above 767px."
     - name: .content-l__main modifier
       markup: |
         <div class="content-l content-l__main">
-             <div class="content-l_col content-l_col-1">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;
-                             margin-bottom: 4px;">
-                     Full-width column (spans 12 columns)
-                 </div>
-             </div>
-         </div>
-         <div class="content-l content-l__main">
-             <div class="content-l_col content-l_col-1-2">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;
-                             margin-bottom: 4px;">
-                     Half-width column (spans 6/12 columns)
-                 </div>
-             </div>
-             <div class="content-l_col content-l_col-1-2">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;
-                             margin-bottom: 4px;">
-                     Half-width column (spans 6/12 columns)
-                 </div>
-             </div>
-         </div>
-         <div class="content-l content-l__main">
-             <div class="content-l_col content-l_col-1-3">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;
-                             margin-bottom: 4px;">
-                     Third-width column (spans 4/12 columns)
-                 </div>
-             </div>
-             <div class="content-l_col content-l_col-1-3">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;
-                             margin-bottom: 4px;">
-                     Third-width column (spans 4/12 columns)
-                 </div>
-             </div>
-             <div class="content-l_col content-l_col-1-3">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;
-                             margin-bottom: 4px;">
-                     Third-width column (spans 4/12 columns)
-                 </div>
-             </div>
-         </div>
-         <div class="content-l content-l__main">
-             <div class="content-l_col content-l_col-2-3">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;">
-                     Two thirds-width column (spans 8/12 columns)
-                 </div>
-             </div>
-         </div>
+            <div class="content-l_col content-l_col-1">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Full-width column (spans 12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-2">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Half-width column (spans 6/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-2">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Half-width column (spans 6/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-2-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Two thirds-width column (spans 8/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Quarter width column (spans 3/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-3-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Three-quarter width column (spans 9/12 columns)
+                </div>
+            </div>
+        </div>
       codenotes:
         - .content-l.content-l__main
       notes:
-        - "Designed for use in .content_main containers, which have reduced (75%) width 
+        - "Designed for use in .content_main containers, which have reduced (75%) width
            above tablet sizes to accommodate adjacent sidebar column."
         - "Displays .content-l_col-1-2 as columns in the tablet range, 600-800px;
            stacked from 800-899, the start of sidebar range; and as columns again at 900px+"
-        - "Displays other common .content-l_col modifiers (.content-l_col-1-3, .content-l_col-2-3,    
+        - "Displays other common .content-l_col modifiers (.content-l_col-1-3, .content-l_col-2-3,
            .content-l_col-3-8, .content-l_col-5-8) as columns above 900px."
     - name: .content-l__sidebar modifier
       markup: |
         <div class="content-l content-l__sidebar">
-             <div class="content-l_col content-l_col-1">
-                 <div style="background: #F1F2F2;
-                             text-align: center;
-                             padding: 8px;
-                             margin-bottom: 4px;">
-                     Full-width column (spans 12 columns)
-                 </div>
-             </div>
-        </div>
-        <div class="content-l content-l__sidebar">
-           <div class="content-l_col content-l_col-1-2">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Half-width column (spans 6/12 columns)
-               </div>
-           </div>
-           <div class="content-l_col content-l_col-1-2">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Half-width column (spans 6/12 columns)
-               </div>
-           </div>
-        </div>
-        <div class="content-l content-l__sidebar">
-           <div class="content-l_col content-l_col-1-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Third-width column (spans 4/12 columns)
-               </div>
-           </div>
-           <div class="content-l_col content-l_col-1-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Third-width column (spans 4/12 columns)
-               </div>
-           </div>
-           <div class="content-l_col content-l_col-1-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;
-                           margin-bottom: 4px;">
-                   Third-width column (spans 4/12 columns)
-               </div>
-           </div>
-        </div>
-        <div class="content-l content-l__sidebar">
-           <div class="content-l_col content-l_col-2-3">
-               <div style="background: #F1F2F2;
-                           text-align: center;
-                           padding: 8px;">
-                   Two thirds-width column (spans 8/12 columns)
-               </div>
-           </div>
+            <div class="content-l_col content-l_col-1">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Full-width column (spans 12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-2">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Half-width column (spans 6/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-2">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Half-width column (spans 6/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-2-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Two thirds-width column (spans 8/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-3">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;
+                            margin-bottom: 4px;">
+                    Third-width column (spans 4/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-1-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Quarter width column (spans 3/12 columns)
+                </div>
+            </div>
+            <div class="content-l_col content-l_col-3-4">
+                <div style="background: #F1F2F2;
+                            text-align: center;
+                            padding: 8px;">
+                    Three-quarter width column (spans 9/12 columns)
+                </div>
+            </div>
         </div>
       codenotes:
         - .content-l.content-l__sidebar
       notes:
-        - "For use in sidebar containers, which are full width only 
+        - "For use in sidebar containers, which are full width only
            on tablet widths (600-800px)."
-        - "Displays .content-l_col-1-2 as columns in the tablet range, 
+        - "Displays .content-l_col-1-2 as columns in the tablet range,
            600-800px, and stacked at all other widths."
     - name: Large gutters modifier
       markup: |
@@ -5944,7 +5999,7 @@ textarea.disabled {
   .content-l__full.content-l__large-gutters .content-l_col.content-l_col-1-3.content-l_col__before-divider {
     border-left-width: 30px;
   }
-  .content-l__full .content-l_col.content-l_col-1-3 + .content-l_col.content-l_col-1-3 {
+  .content-l__full .content-l_col + .content-l_col-1-3 {
     margin-top: 1.875em;
   }
   .content-l__full .content-l_col.content-l_col-2-3 {
@@ -5968,11 +6023,7 @@ textarea.disabled {
   .content-l__full.content-l__large-gutters .content-l_col.content-l_col-2-3.content-l_col__before-divider {
     border-left-width: 30px;
   }
-  .content-l__full .content-l_col.content-l_col-2-3 + .content-l_col.content-l_col-2-3 {
-    margin-top: 1.875em;
-  }
-  .content-l__full .content-l_col.content-l_col-1-3 + .content-l_col.content-l_col-2-3,
-  .content-l__full .content-l_col.content-l_col-2-3 + .content-l_col.content-l_col-1-3 {
+  .content-l__full .content-l_col + .content-l_col-2-3 {
     margin-top: 1.875em;
   }
   .content-l__full .content-l_col.content-l_col-3-8 {
@@ -5996,7 +6047,7 @@ textarea.disabled {
   .content-l__full.content-l__large-gutters .content-l_col.content-l_col-3-8.content-l_col__before-divider {
     border-left-width: 30px;
   }
-  .content-l__full .content-l_col.content-l_col-3-8 + .content-l_col.content-l_col-3-8 {
+  .content-l__full .content-l_col + .content-l_col-3-8 {
     margin-top: 1.875em;
   }
   .content-l__full .content-l_col.content-l_col-5-8 {
@@ -6020,11 +6071,55 @@ textarea.disabled {
   .content-l__full.content-l__large-gutters .content-l_col.content-l_col-5-8.content-l_col__before-divider {
     border-left-width: 30px;
   }
-  .content-l__full .content-l_col.content-l_col-5-8 + .content-l_col.content-l_col-5-8 {
+  .content-l__full .content-l_col + .content-l_col-5-8 {
     margin-top: 1.875em;
   }
-  .content-l__full .content-l_col.content-l_col-3-8 + .content-l_col.content-l_col-5-8,
-  .content-l__full .content-l_col.content-l_col-5-8 + .content-l_col.content-l_col-3-8 {
+  .content-l__full .content-l_col.content-l_col-1-4 {
+    display: block;
+    width: 100%;
+  }
+  .content-l__full .content-l_col.content-l_col-1-4.content-l_col__before-divider {
+    margin-top: 3.75em;
+    border-left-width: 15px;
+  }
+  .content-l__full .content-l_col.content-l_col-1-4.content-l_col__before-divider:before {
+    content: "";
+    display: block;
+    height: 1px;
+    margin-bottom: 1.875em;
+    background-color: #3a8899;
+    position: static;
+    width: 100%;
+    margin-left: auto !important;
+  }
+  .content-l__full.content-l__large-gutters .content-l_col.content-l_col-1-4.content-l_col__before-divider {
+    border-left-width: 30px;
+  }
+  .content-l__full .content-l_col + .content-l_col-1-4 {
+    margin-top: 1.875em;
+  }
+  .content-l__full .content-l_col.content-l_col-3-4 {
+    display: block;
+    width: 100%;
+  }
+  .content-l__full .content-l_col.content-l_col-3-4.content-l_col__before-divider {
+    margin-top: 3.75em;
+    border-left-width: 15px;
+  }
+  .content-l__full .content-l_col.content-l_col-3-4.content-l_col__before-divider:before {
+    content: "";
+    display: block;
+    height: 1px;
+    margin-bottom: 1.875em;
+    background-color: #3a8899;
+    position: static;
+    width: 100%;
+    margin-left: auto !important;
+  }
+  .content-l__full.content-l__large-gutters .content-l_col.content-l_col-3-4.content-l_col__before-divider {
+    border-left-width: 30px;
+  }
+  .content-l__full .content-l_col + .content-l_col-3-4 {
     margin-top: 1.875em;
   }
 }
@@ -6050,7 +6145,7 @@ textarea.disabled {
   .content-l__main.content-l__large-gutters .content-l_col.content-l_col-1-2.content-l_col__before-divider {
     border-left-width: 30px;
   }
-  .content-l__main .content-l_col.content-l_col-1-2 + .content-l_col.content-l_col-1-2 {
+  .content-l__main .content-l_col + .content-l_col-1-2 {
     margin-top: 1.875em;
   }
 }
@@ -6076,7 +6171,7 @@ textarea.disabled {
   .content-l__main.content-l__large-gutters .content-l_col.content-l_col-1-3.content-l_col__before-divider {
     border-left-width: 30px;
   }
-  .content-l__main .content-l_col.content-l_col-1-3 + .content-l_col.content-l_col-1-3 {
+  .content-l__main .content-l_col + .content-l_col-1-3 {
     margin-top: 1.875em;
   }
   .content-l__main .content-l_col.content-l_col-2-3 {
@@ -6100,11 +6195,7 @@ textarea.disabled {
   .content-l__main.content-l__large-gutters .content-l_col.content-l_col-2-3.content-l_col__before-divider {
     border-left-width: 30px;
   }
-  .content-l__main .content-l_col.content-l_col-2-3 + .content-l_col.content-l_col-2-3 {
-    margin-top: 1.875em;
-  }
-  .content-l__main .content-l_col.content-l_col-1-3 + .content-l_col.content-l_col-2-3,
-  .content-l__main .content-l_col.content-l_col-2-3 + .content-l_col.content-l_col-1-3 {
+  .content-l__main .content-l_col + .content-l_col-2-3 {
     margin-top: 1.875em;
   }
   .content-l__main .content-l_col.content-l_col-3-8 {
@@ -6128,7 +6219,7 @@ textarea.disabled {
   .content-l__main.content-l__large-gutters .content-l_col.content-l_col-3-8.content-l_col__before-divider {
     border-left-width: 30px;
   }
-  .content-l__main .content-l_col.content-l_col-3-8 + .content-l_col.content-l_col-3-8 {
+  .content-l__main .content-l_col + .content-l_col-3-8 {
     margin-top: 1.875em;
   }
   .content-l__main .content-l_col.content-l_col-5-8 {
@@ -6152,11 +6243,55 @@ textarea.disabled {
   .content-l__main.content-l__large-gutters .content-l_col.content-l_col-5-8.content-l_col__before-divider {
     border-left-width: 30px;
   }
-  .content-l__main .content-l_col.content-l_col-5-8 + .content-l_col.content-l_col-5-8 {
+  .content-l__main .content-l_col + .content-l_col-5-8 {
     margin-top: 1.875em;
   }
-  .content-l__main .content-l_col.content-l_col-3-8 + .content-l_col.content-l_col-5-8,
-  .content-l__main .content-l_col.content-l_col-5-8 + .content-l_col.content-l_col-3-8 {
+  .content-l__main .content-l_col.content-l_col-1-4 {
+    display: block;
+    width: 100%;
+  }
+  .content-l__main .content-l_col.content-l_col-1-4.content-l_col__before-divider {
+    margin-top: 3.75em;
+    border-left-width: 15px;
+  }
+  .content-l__main .content-l_col.content-l_col-1-4.content-l_col__before-divider:before {
+    content: "";
+    display: block;
+    height: 1px;
+    margin-bottom: 1.875em;
+    background-color: #3a8899;
+    position: static;
+    width: 100%;
+    margin-left: auto !important;
+  }
+  .content-l__main.content-l__large-gutters .content-l_col.content-l_col-1-4.content-l_col__before-divider {
+    border-left-width: 30px;
+  }
+  .content-l__main .content-l_col + .content-l_col-1-4 {
+    margin-top: 1.875em;
+  }
+  .content-l__main .content-l_col.content-l_col-3-4 {
+    display: block;
+    width: 100%;
+  }
+  .content-l__main .content-l_col.content-l_col-3-4.content-l_col__before-divider {
+    margin-top: 3.75em;
+    border-left-width: 15px;
+  }
+  .content-l__main .content-l_col.content-l_col-3-4.content-l_col__before-divider:before {
+    content: "";
+    display: block;
+    height: 1px;
+    margin-bottom: 1.875em;
+    background-color: #3a8899;
+    position: static;
+    width: 100%;
+    margin-left: auto !important;
+  }
+  .content-l__main.content-l__large-gutters .content-l_col.content-l_col-3-4.content-l_col__before-divider {
+    border-left-width: 30px;
+  }
+  .content-l__main .content-l_col + .content-l_col-3-4 {
     margin-top: 1.875em;
   }
 }
@@ -6181,7 +6316,7 @@ textarea.disabled {
 .content-l__sidebar.content-l__large-gutters .content-l_col.content-l_col-1-3.content-l_col__before-divider {
   border-left-width: 30px;
 }
-.content-l__sidebar .content-l_col.content-l_col-1-3 + .content-l_col.content-l_col-1-3 {
+.content-l__sidebar .content-l_col + .content-l_col-1-3 {
   margin-top: 1.875em;
 }
 .content-l__sidebar .content-l_col.content-l_col-2-3 {
@@ -6205,11 +6340,7 @@ textarea.disabled {
 .content-l__sidebar.content-l__large-gutters .content-l_col.content-l_col-2-3.content-l_col__before-divider {
   border-left-width: 30px;
 }
-.content-l__sidebar .content-l_col.content-l_col-2-3 + .content-l_col.content-l_col-2-3 {
-  margin-top: 1.875em;
-}
-.content-l__sidebar .content-l_col.content-l_col-1-3 + .content-l_col.content-l_col-2-3,
-.content-l__sidebar .content-l_col.content-l_col-2-3 + .content-l_col.content-l_col-1-3 {
+.content-l__sidebar .content-l_col + .content-l_col-2-3 {
   margin-top: 1.875em;
 }
 .content-l__sidebar .content-l_col.content-l_col-3-8 {
@@ -6233,7 +6364,7 @@ textarea.disabled {
 .content-l__sidebar.content-l__large-gutters .content-l_col.content-l_col-3-8.content-l_col__before-divider {
   border-left-width: 30px;
 }
-.content-l__sidebar .content-l_col.content-l_col-3-8 + .content-l_col.content-l_col-3-8 {
+.content-l__sidebar .content-l_col + .content-l_col-3-8 {
   margin-top: 1.875em;
 }
 .content-l__sidebar .content-l_col.content-l_col-5-8 {
@@ -6257,11 +6388,55 @@ textarea.disabled {
 .content-l__sidebar.content-l__large-gutters .content-l_col.content-l_col-5-8.content-l_col__before-divider {
   border-left-width: 30px;
 }
-.content-l__sidebar .content-l_col.content-l_col-5-8 + .content-l_col.content-l_col-5-8 {
+.content-l__sidebar .content-l_col + .content-l_col-5-8 {
   margin-top: 1.875em;
 }
-.content-l__sidebar .content-l_col.content-l_col-3-8 + .content-l_col.content-l_col-5-8,
-.content-l__sidebar .content-l_col.content-l_col-5-8 + .content-l_col.content-l_col-3-8 {
+.content-l__sidebar .content-l_col.content-l_col-1-4 {
+  display: block;
+  width: 100%;
+}
+.content-l__sidebar .content-l_col.content-l_col-1-4.content-l_col__before-divider {
+  margin-top: 3.75em;
+  border-left-width: 15px;
+}
+.content-l__sidebar .content-l_col.content-l_col-1-4.content-l_col__before-divider:before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-bottom: 1.875em;
+  background-color: #3a8899;
+  position: static;
+  width: 100%;
+  margin-left: auto !important;
+}
+.content-l__sidebar.content-l__large-gutters .content-l_col.content-l_col-1-4.content-l_col__before-divider {
+  border-left-width: 30px;
+}
+.content-l__sidebar .content-l_col + .content-l_col-1-4 {
+  margin-top: 1.875em;
+}
+.content-l__sidebar .content-l_col.content-l_col-3-4 {
+  display: block;
+  width: 100%;
+}
+.content-l__sidebar .content-l_col.content-l_col-3-4.content-l_col__before-divider {
+  margin-top: 3.75em;
+  border-left-width: 15px;
+}
+.content-l__sidebar .content-l_col.content-l_col-3-4.content-l_col__before-divider:before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-bottom: 1.875em;
+  background-color: #3a8899;
+  position: static;
+  width: 100%;
+  margin-left: auto !important;
+}
+.content-l__sidebar.content-l__large-gutters .content-l_col.content-l_col-3-4.content-l_col__before-divider {
+  border-left-width: 30px;
+}
+.content-l__sidebar .content-l_col + .content-l_col-3-4 {
   margin-top: 1.875em;
 }
 @media only all and (min-width: 50.0625em) {
@@ -6286,7 +6461,7 @@ textarea.disabled {
   .content-l__sidebar.content-l__large-gutters .content-l_col.content-l_col-1-2.content-l_col__before-divider {
     border-left-width: 30px;
   }
-  .content-l__sidebar .content-l_col.content-l_col-1-2 + .content-l_col.content-l_col-1-2 {
+  .content-l__sidebar .content-l_col + .content-l_col-1-2 {
     margin-top: 1.875em;
   }
 }
@@ -6300,16 +6475,9 @@ textarea.disabled {
     border-right-width: 30px;
   }
 }
-.content-l_col + .content-l_col {
-  margin-top: 1.875em;
-}
-@media only all and (min-width: 37.5625em) {
-  .content-l_col.content-l_col-1-2 + .content-l_col.content-l_col-1-2,
-  .content-l_col.content-l_col-1-3 + .content-l_col.content-l_col-1-3,
-  .content-l_col.content-l_col-3-8 + .content-l_col.content-l_col-3-8,
-  .content-l_col.content-l_col-3-8 + .content-l_col.content-l_col-5-8,
-  .content-l_col.content-l_col-5-8 + .content-l_col.content-l_col-3-8 {
-    margin-top: 0;
+@media only all and (max-width: 37.5em) {
+  .content-l_col + .content-l_col {
+    margin-top: 1.875em;
   }
 }
 @media only all and (min-width: 37.5625em) {
@@ -6330,8 +6498,6 @@ textarea.disabled {
     zoom: 1;
     behavior: url('../../box-sizing-polyfill/boxsizing.htc');
   }
-}
-@media only all and (min-width: 37.5625em) {
   .content-l_col-1-2 {
     display: inline-block;
     -webkit-box-sizing: border-box;
@@ -6349,8 +6515,6 @@ textarea.disabled {
     zoom: 1;
     behavior: url('../../box-sizing-polyfill/boxsizing.htc');
   }
-}
-@media only all and (min-width: 37.5625em) {
   .content-l_col-1-3 {
     display: inline-block;
     -webkit-box-sizing: border-box;
@@ -6368,8 +6532,6 @@ textarea.disabled {
     zoom: 1;
     behavior: url('../../box-sizing-polyfill/boxsizing.htc');
   }
-}
-@media only all and (min-width: 37.5625em) {
   .content-l_col-2-3 {
     display: inline-block;
     -webkit-box-sizing: border-box;
@@ -6387,8 +6549,6 @@ textarea.disabled {
     zoom: 1;
     behavior: url('../../box-sizing-polyfill/boxsizing.htc');
   }
-}
-@media only all and (min-width: 37.5625em) {
   .content-l_col-3-8 {
     display: inline-block;
     -webkit-box-sizing: border-box;
@@ -6406,8 +6566,6 @@ textarea.disabled {
     zoom: 1;
     behavior: url('../../box-sizing-polyfill/boxsizing.htc');
   }
-}
-@media only all and (min-width: 37.5625em) {
   .content-l_col-5-8 {
     display: inline-block;
     -webkit-box-sizing: border-box;
@@ -6420,6 +6578,40 @@ textarea.disabled {
     width: 62.5%;
   }
   .lt-ie8 .content-l_col-5-8 {
+    display: inline;
+    margin-right: 0;
+    zoom: 1;
+    behavior: url('../../box-sizing-polyfill/boxsizing.htc');
+  }
+  .content-l_col-1-4 {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: solid transparent;
+    border-width: 0 15px;
+    margin-right: -0.25em;
+    vertical-align: top;
+    width: 25%;
+  }
+  .lt-ie8 .content-l_col-1-4 {
+    display: inline;
+    margin-right: 0;
+    zoom: 1;
+    behavior: url('../../box-sizing-polyfill/boxsizing.htc');
+  }
+  .content-l_col-3-4 {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: solid transparent;
+    border-width: 0 15px;
+    margin-right: -0.25em;
+    vertical-align: top;
+    width: 75%;
+  }
+  .lt-ie8 .content-l_col-3-4 {
     display: inline;
     margin-right: 0;
     zoom: 1;
@@ -6996,6 +7188,56 @@ textarea.disabled {
       notes:
         - "The standard .block class by itself simply adds a margin of twice the
            gutter width to the top and bottom."
+    - name: Border-top modifier
+      markup: |
+        Main content...
+        <div class="block block__border-top">
+            Content block with top border.
+        </div>
+      codenotes:
+        - .block.block__border-top
+      notes:
+        - "Adds top border to .block."
+    - name: Border-right modifier
+      markup: |
+        Main content...
+        <div class="block block__border-right">
+            Content block with right border.
+        </div>
+      codenotes:
+        - .block.block__border-right
+      notes:
+        - "Adds right border to .block."
+    - name: Border-bottom modifier
+      markup: |
+        Main content...
+        <div class="block block__border-bottom">
+            Content block with bottom border.
+        </div>
+      codenotes:
+        - .block.block__border-bottom
+      notes:
+        - "Adds bottom border to .block."
+    - name: Border-left modifier
+      markup: |
+        Main content...
+        <div class="block block__border-left">
+            Content block with left border.
+        </div>
+      codenotes:
+        - .block.block__border-left
+      notes:
+        - "Adds left border to .block."
+    - name: Border modifier
+      markup: |
+        Main content...
+        <div class="block block__border">
+            Content block with borders on all sides.
+        </div>
+      codenotes:
+        - .block.block__border
+      notes:
+        - "Adds border on all sides to .block."
     - name: Flush-top modifier
       markup: |
         Main content...
@@ -7043,26 +7285,56 @@ textarea.disabled {
         - "Removes the side margin from .block."
         - "Typically used in conjuction with .block__bg to create a 'well' whose
            background extends into the left and right gutters. (See below.)"
-    - name: Border-top modifier
+    - name: Flush modifier
+      markup: |
+        <main class="content content__1-3" role="main">
+            <div class="content_wrapper">
+                <aside class="content_sidebar">
+                    Section navigation
+                </aside>
+                <section class="content_main">
+                    Main content...
+                    <aside class="block block__flush">
+                        Content block with no margins.
+                    </aside>
+                </section>
+            </div>
+        </main>
+      codenotes:
+        - .block.block__flush
+      notes:
+        - "Removes the side, top, and bottom margin from .block."
+    - name: Background modifier
       markup: |
         Main content...
-        <div class="block block__border-top">
-            Content block with top border.
+        <div class="block block__bg">
+            Content block with a background
         </div>
       codenotes:
-        - .block.block__border-top
+        - .block.block__bg
       notes:
-        - "Adds top border to .block."
-    - name: Border-bottom modifier
+        - "Adds a background color and padding to .block."
+        - "Setup for (ems-equivalent) 30px padding on top and 60px on bottom."
+    - name: Background and flush-sides modifier combo example
       markup: |
-        Main content...
-        <div class="block block__border-bottom">
-            Content block with bottom border.
-        </div>
+        <main class="content content__1-3" role="main">
+            <div class="content_wrapper">
+                <aside class="content_sidebar">
+                    Section navigation
+                </aside>
+                <section class="content_main content__flush-bottom">
+                    Main content...
+                    <div class="block block__flush-sides block__bg">
+                        Content block with a background and flush sides
+                    </div>
+                </section>
+            </div>
+        </main>
       codenotes:
-        - .block.block__border-bottom
+        - .block.block__flush-sides.block__bg
       notes:
-        - "Adds bottom border to .block."
+        - "This is an example of combining modifiers to get a flush padded bg
+           with a .block."
     - name: Padded-top modifier
       markup: |
         Main content...
@@ -7087,36 +7359,6 @@ textarea.disabled {
       notes:
         - "Breaks bottom margin into margin & padding. Useful in combination with
            block__border-bottom to add padding between block contents & border."
-    - name: Background modifier
-      markup: |
-        Main content...
-        <div class="block block__bg">
-            Content block with a background
-        </div>
-      codenotes:
-        - .block.block__bg
-      notes:
-        - "Adds a background color and padding to .block."
-    - name: Background and flush-sides modifier combo example
-      markup: |
-        <main class="content content__1-3" role="main">
-            <div class="content_wrapper">
-                <aside class="content_sidebar">
-                    Section navigation
-                </aside>
-                <section class="content_main content__flush-bottom">
-                    Main content...
-                    <div class="block block__flush-sides block__bg">
-                        Content block with a background and flush sides
-                    </div>
-                </section>
-            </div>
-        </main>
-      codenotes:
-        - .block.block__flush-sides.block__bg
-      notes:
-        - "This is an example of combining modifiers to get a flush padded bg
-           with a .block."
     - name: Sub blocks
       markup: |
         <div class="block block__sub">
@@ -7177,8 +7419,17 @@ textarea.disabled {
 .block__border-top {
   border-top: 1px solid #3a8899;
 }
+.block__border-right {
+  border-right: 1px solid #3a8899;
+}
 .block__border-bottom {
   border-bottom: 1px solid #3a8899;
+}
+.block__border-left {
+  border-left: 1px solid #3a8899;
+}
+.block__border {
+  border: 1px solid #3a8899;
 }
 .block__flush-top {
   margin-top: 0 !important;
@@ -7196,8 +7447,21 @@ textarea.disabled {
     margin-left: -30px;
   }
 }
+.block__flush {
+  margin-top: 0 !important;
+  margin-right: -15px;
+  margin-bottom: 0 !important;
+  margin-left: -15px;
+}
+@media only all and (min-width: 37.5em) {
+  .block__flush {
+    margin-right: -30px;
+    margin-left: -30px;
+  }
+}
 .block__bg {
   padding: 1.875em 0.9375em;
+  padding-bottom: 3.75em;
   background: #f2f8fa;
 }
 @media only all and (min-width: 37.5em) {
@@ -7274,6 +7538,9 @@ textarea.disabled {
   .lt-ie8 .content__bleedbar .content_sidebar {
     padding-right: 30px;
     background: #f2f8fa;
+  }
+  .content__bleedbar .content_wrapper {
+    position: relative;
   }
   .content__bleedbar .content_wrapper:after {
     content: '';
@@ -7363,9 +7630,9 @@ textarea.disabled {
   .wrapper,
   .content_wrapper {
     max-width: 1170px;
-    padding: 0 15px;
+    padding-right: 15px;
+    padding-left: 15px;
     margin: 0 auto;
-    position: relative;
     clear: both;
   }
 }
@@ -7415,6 +7682,254 @@ textarea.disabled {
   display: block;
   background-color: #3a8899;
   margin-left: -30px;
+}
+/* topdoc
+  name: Hero
+  family: cf-layout
+  patterns:
+    - name: .hero
+      markup: |
+        <section class="content_hero hero">
+            <div class="hero_wrapper wrapper">
+                <div class="hero_text">
+                    <h1 class="hero_heading">Hero title</h1>
+                    <p class="hero_subhead">
+                        Hero text goes here
+                    </p>
+                    <p class="hero_cta">
+                        <a>Call to action</a>
+                    </p>
+                </div>
+                <div class="hero_image" style="background-image: url('http://placekitten.com/g/400/195')"></div>
+            </div>
+        </section>
+      notes:
+        - "Hero consists of a headline, a small amount of additional text, an optional call to
+           action, and an illustration. Its background color is flush with
+           the sides of the screen, and the content is centered with wrapper classes."
+        - "The illustration can be customized by setting the background-image property
+           on the .hero_image element."
+        - "On small screens (or where media queries are not supported), the text spans the
+           full width of the .hero_wrapper and the illustration is displayed underneath."
+        - "For larger screen sizes, media queries are used to position the illustration
+           to the right of the text."
+        - "On desktop, the hero should not exceed 285px in height. The image should be 195px in
+           height to conform to this standard."
+      codenotes:
+        - .hero
+  tags:
+    - cf-layout
+*/
+.hero {
+  background-color: #f2f8fa;
+}
+.hero_wrapper {
+  box-sizing: border-box;
+  padding: 1.875em 0.9375em;
+  width: 100%;
+}
+@media only all and (min-width: 37.5625em) {
+  .hero_wrapper {
+    display: table;
+  }
+}
+@media only all and (min-width: 50.0625em) {
+  .hero_wrapper {
+    padding-top: 2.8125em;
+    padding-bottom: 2.8125em;
+    min-height: 17.8125em;
+  }
+}
+@media only all and (min-width: 76.875em) {
+  .hero_wrapper {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.lt-ie9 .hero_wrapper {
+  min-height: initial;
+}
+@media only all and (min-width: 37.5625em) {
+  .hero_text {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: solid transparent;
+    border-width: 0 15px;
+    margin-right: -0.25em;
+    vertical-align: top;
+    width: 58.33333333%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .lt-ie8 .hero_text {
+    display: inline;
+    margin-right: 0;
+    zoom: 1;
+    behavior: url('../../box-sizing-polyfill/boxsizing.htc');
+  }
+}
+.hero_heading {
+  font-family: Arial, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 0.47058824em;
+  font-size: 2.125em;
+  line-height: 1.29411765;
+}
+.hero_heading em,
+.hero_heading i {
+  font-family: Arial, Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+.lt-ie9 .hero_heading em,
+.lt-ie9 .hero_heading i {
+  font-style: normal !important;
+}
+.hero_heading strong,
+.hero_heading b {
+  font-family: Arial, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+.lt-ie9 .hero_heading strong,
+.lt-ie9 .hero_heading b {
+  font-weight: normal !important;
+}
+@media only all and (max-width: 50em) {
+  .hero_heading {
+    font-family: Arial, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    margin-bottom: 0.73076923em;
+    font-size: 1.625em;
+    line-height: 1.26923077;
+  }
+  .hero_heading em,
+  .hero_heading i {
+    font-family: Arial, Arial, sans-serif;
+    font-style: italic;
+    font-weight: normal;
+  }
+  .lt-ie9 .hero_heading em,
+  .lt-ie9 .hero_heading i {
+    font-style: normal !important;
+  }
+  .hero_heading strong,
+  .hero_heading b {
+    font-family: Arial, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+  }
+  .lt-ie9 .hero_heading strong,
+  .lt-ie9 .hero_heading b {
+    font-weight: normal !important;
+  }
+}
+.hero_subhead {
+  font-family: Arial, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 0.95454545em;
+  font-size: 1.375em;
+  line-height: 1.27272727;
+  margin-bottom: 1.36363636em;
+}
+.hero_subhead em,
+.hero_subhead i {
+  font-family: Arial, Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+.lt-ie9 .hero_subhead em,
+.lt-ie9 .hero_subhead i {
+  font-style: normal !important;
+}
+.hero_subhead strong,
+.hero_subhead b {
+  font-family: Arial, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+.lt-ie9 .hero_subhead strong,
+.lt-ie9 .hero_subhead b {
+  font-weight: normal !important;
+}
+@media only all and (max-width: 50em) {
+  .hero_subhead {
+    font-family: Arial, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 1.16666667em;
+    font-size: 1.125em;
+    line-height: 1.22222222;
+  }
+  .lt-ie9 .hero_subhead {
+    font-weight: normal !important;
+  }
+}
+.hero_subhead:last-child {
+  margin-bottom: initial;
+}
+.hero_cta {
+  font-family: Arial, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: initial;
+}
+.hero_cta em,
+.hero_cta i {
+  font-family: Arial, Arial, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+.lt-ie9 .hero_cta em,
+.lt-ie9 .hero_cta i {
+  font-style: normal !important;
+}
+.hero_cta strong,
+.hero_cta b {
+  font-family: Arial, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+.lt-ie9 .hero_cta strong,
+.lt-ie9 .hero_cta b {
+  font-weight: normal !important;
+}
+.hero_image {
+  min-height: 12.1875em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media only all and (min-width: 37.5625em) {
+  .hero_image {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: solid transparent;
+    border-width: 0 15px;
+    margin-right: -0.25em;
+    vertical-align: top;
+    width: 41.66666667%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .lt-ie8 .hero_image {
+    display: inline;
+    margin-right: 0;
+    zoom: 1;
+    behavior: url('../../box-sizing-polyfill/boxsizing.htc');
+  }
+}
+@media only all and (max-width: 37.5em) {
+  .hero_image {
+    margin-top: 1.875em;
+  }
 }
 /* topdoc
   name: EOF
@@ -7509,7 +8024,7 @@ textarea.disabled {
   font-size: 1.375em;
   line-height: 1.27272727;
   margin-bottom: 0.54545455em;
-  color: #895983;
+  color: #494440;
 }
 .pull-quote_body em,
 .pull-quote_body i {
@@ -7553,7 +8068,7 @@ textarea.disabled {
   margin-bottom: 0.35714286em;
   font-size: 0.875em;
   line-height: 1.57142857;
-  color: #ad81a8;
+  color: #205493;
 }
 .lt-ie9 .pull-quote_citation {
   font-weight: normal !important;
@@ -7639,7 +8154,7 @@ textarea.disabled {
     - cf-typography
 */
 .micro-copy {
-  color: #ad81a8;
+  color: #112e51;
   font-size: 0.875em;
   font-family: Arial, Arial, sans-serif;
   font-style: normal;
@@ -7734,7 +8249,7 @@ textarea.disabled {
   margin-bottom: 0.35714286em;
   font-size: 0.875em;
   line-height: 1.57142857;
-  color: #ad81a8;
+  color: #112e51;
   white-space: nowrap;
 }
 .lt-ie9 .date {
@@ -7773,34 +8288,34 @@ textarea.disabled {
   line-height: 1.22222222;
   display: inline-block;
   margin-bottom: 0.44444444em;
-  color: #5b3b57;
+  color: #112e51;
 }
 .lt-ie9 .category-slug {
   font-weight: normal !important;
 }
 a.category-slug {
-  color: #5b3b57;
-  border-color: #5b3b57;
+  color: #112e51;
+  border-color: #112e51;
 }
 a.category-slug:visited,
 a.category-slug.visited {
-  border-color: #5b3b57;
-  color: #5b3b57;
+  border-color: #112e51;
+  color: #112e51;
 }
 a.category-slug:hover,
 a.category-slug.hover {
-  border-color: #c7336e;
-  color: #c7336e;
+  border-color: #205493;
+  color: #205493;
 }
 a.category-slug:focus,
 a.category-slug.focus {
-  border-color: #c7336e;
-  color: #c7336e;
+  border-color: #205493;
+  color: #205493;
 }
 a.category-slug:active,
 a.category-slug.active {
-  border-color: #5b3b57;
-  color: #5b3b57;
+  border-color: #112e51;
+  color: #112e51;
 }
 .category-slug_icon {
   margin-right: 0.11111111em;
@@ -7835,7 +8350,7 @@ a.category-slug.active {
   font-size: 0.875em;
   line-height: 1.57142857;
   margin-bottom: 1.21428571em;
-  border-top: 1px solid #c7336e;
+  border-top: 1px solid #323a45;
 }
 .lt-ie9 .header-slug {
   font-weight: normal !important;
@@ -7844,7 +8359,7 @@ a.category-slug.active {
   display: inline-block;
   padding-top: 0.28571429em;
   margin-top: -3px;
-  border-top: 5px solid #3a8899;
+  border-top: 5px solid #02bfe7;
 }
 /* topdoc
   name: Padded header
@@ -7871,9 +8386,9 @@ a.category-slug.active {
   line-height: 1.57142857;
   padding: 0.57142857em 0.71428571em;
   margin-bottom: 0;
-  border-bottom: 1px solid #5b3b57;
-  background: #eee4ed;
-  color: #5b3b57;
+  border-bottom: 1px solid #046b99;
+  background: #dce4ef;
+  color: #046b99;
 }
 .lt-ie9 .padded-header {
   font-weight: normal !important;
@@ -7916,7 +8431,7 @@ a.category-slug.active {
   padding: 0 1.21428571em;
   margin-top: 1.14285714em;
   margin-bottom: 0.57142857em;
-  border-top: 1px solid #905c8a;
+  border-top: 1px solid #046b99;
   line-height: 1;
   text-align: center;
 }
@@ -7928,8 +8443,8 @@ a.category-slug.active {
   position: relative;
   top: -1.14285714em;
   padding: 0.57142857em 1.42857143em;
-  border: 1px solid #905c8a;
-  background: #eee4ed;
+  border: 1px solid #046b99;
+  background: #dce4ef;
 }
 .fancy-slug_ribbon-left,
 .fancy-slug_ribbon-right {
@@ -7938,8 +8453,8 @@ a.category-slug.active {
   top: -1px;
   width: 1.21428571em;
   height: 100%;
-  border-top: 1px solid #905c8a;
-  border-bottom: 1px solid #905c8a;
+  border-top: 1px solid #046b99;
+  border-bottom: 1px solid #046b99;
 }
 .lt-ie9 .fancy-slug_ribbon-left,
 .lt-ie9 .fancy-slug_ribbon-right {
@@ -7955,8 +8470,8 @@ a.category-slug.active {
   z-index: 3;
   width: 1.21428571em;
   height: 50%;
-  background: #eee4ed;
-  border: 0 solid #905c8a;
+  background: #dce4ef;
+  border: 0 solid #046b99;
 }
 .fancy-slug_ribbon-left {
   left: -1.21428571em;
@@ -8045,7 +8560,7 @@ a.category-slug.active {
 .meta-header {
   padding-bottom: 0.5em;
   margin-bottom: 0.625em;
-  border-bottom: 1px solid #905c8a;
+  border-bottom: 1px solid #323a45;
 }
 .meta-header_left {
   margin-bottom: 0;
@@ -8334,7 +8849,7 @@ a.category-slug.active {
 .jump-link__large {
   font-size: 1.125em;
 }
-@media only all and (max-width: 37.4375em) {
+@media only all and (max-width: 37.5em) {
   .jump-link {
     box-sizing: border-box;
     display: block;
@@ -8365,8 +8880,8 @@ a.category-slug.active {
     border-bottom-width: 0;
   }
   .jump-link__bg {
-    background: #eee4ed;
-    border: solid #905c8a;
+    background: #f1f1f1;
+    border: solid #323a45;
     border-width: 1px 0;
     padding: 0.625em 1.25em 0.625em 1em;
   }
@@ -8732,7 +9247,7 @@ a.category-slug.active {
   content: "\25AA";
   font-family: inherit;
   font-size: 1.375em;
-  color: #3a8899;
+  color: #02bfe7;
   line-height: 1;
   position: absolute;
   left: -0.86363636em;

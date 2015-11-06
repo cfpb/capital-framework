@@ -46,44 +46,46 @@
 */
 
 // Color variables
+// $color- variables are from 18F's US Web Design Standards
+// https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss
 
 // .pull-quote
-@pull-quote_body:               #895983;
-@pull-quote_citation:           lighten(#895983, 15%);
+@pull-quote_body:               #494440; // $color-gray-warm-dark
+@pull-quote_citation:           #205493; // $color-cool-blue
 
 // .micro-copy
-@micro-copy-text:               lighten(#895983, 15%);
+@micro-copy-text:               #112e51; // $color-primary-darkest
 
 // .date
-@date-text:                     lighten(#895983, 15%);
+@date-text:                     #112e51; // $color-primary-darkest
 
 // .category-slug
-@category-slug-text:            darken(#895983, 15%);
-@category-slug-hover:           #c7336e;
+@category-slug-text:            #112e51; // $color-primary-darkest
+@category-slug-hover:           #205493; // $color-primary-darker
 
 // .header-slug
-@header-slug-thin-border:       #c7336e;
-@header-slug-thick-border:      #3a8899;
+@header-slug-thin-border:       #323a45; // $color-gray-dark
+@header-slug-thick-border:      #02bfe7; // $color-primary-alt
 
 // .padded-header
-@padded-header-text:            darken(#895983, 15%);
-@padded-header-bg:              lighten(#905c8a, 45%);
-@padded-header-border:          darken(#895983, 15%);
+@padded-header-text:            #046b99; // $color-primary-alt-darkest
+@padded-header-bg:              #dce4ef; // color-gray-cool-light
+@padded-header-border:          #046b99; // $color-primary-alt-darkest
 
 // .fancy-slug
-@fancy-slug-text:               #905c8a;
-@fancy-slug-bg:                 lighten(#905c8a, 45%);
-@fancy-slug-border:             #905c8a;
+@fancy-slug-text:               #046b99; // $color-primary-alt-darkest
+@fancy-slug-bg:                 #dce4ef; // color-gray-cool-light
+@fancy-slug-border:             #046b99; // $color-primary-alt-darkest
 
 // .meta-header
-@meta-header-border:            #905c8a;
+@meta-header-border:            #323a45; // $color-gray-dark
 
 // .jump-link
-@jump-link__bg:                 lighten(#905c8a, 45%);
-@jump-link__bg-border:          #905c8a;
+@jump-link__bg:                 #f1f1f1; // $color-gray-lightest
+@jump-link__bg-border:          #323a45; // $color-gray-dark
 
 // .list__branded
-@list__branded-bullet:          #3a8899;
+@list__branded-bullet:          #02bfe7; // $color-primary-alt
 
 
 /* topdoc
@@ -178,12 +180,14 @@
 */
 
 .micro-copy {
+    @font-size: 14px;
     color: @micro-copy-text;
-    font-size: unit(14px / @base-font-size-px, em);
+    font-size: unit(@font-size / @base-font-size-px, em);
     .webfont-regular();
 
     &__large {
-        font-size: unit(16px / @base-font-size-px, em);
+        @font-size: 16px;
+        font-size: unit(@font-size / @base-font-size-px, em);
     }
 }
 
@@ -210,7 +214,8 @@
     .webfont-regular();
 
     &__large {
-        font-size: unit(18px / @base-font-size-px, em);
+        @font-size: 18px;
+        font-size: unit(@font-size / @base-font-size-px, em);
     }
 }
 
@@ -385,7 +390,7 @@
     &_text {
         display: inline-block;
         position: relative;
-        // Pull the text up up by half of its height so that it is vertically
+        // Pull the text up by half of its height so that it is vertically
         // centered with .fancy-slugs top border. "Height" means half the
         // font-size plus half the total padding and half the borders.
         top: unit(((@font-size / 2) + @v-padding + 1) * -1 / @font-size, em);
@@ -757,15 +762,19 @@
 
 .jump-link {
     .webfont-medium();
-    font-size: unit(16px / @base-font-size-px, em);
+    @font-size: 16px;
+
+    font-size: unit(@font-size / @base-font-size-px, em);
 
     .icon-link();
 
     &__large {
-        font-size: unit(18px / @base-font-size-px, em);
+        @font-size: 18px;
+
+        font-size: unit(@font-size / @base-font-size-px, em);
     }
 
-    .respond-to-max(599px, {
+    .respond-to-max(@mobile-max, {
         .block-link();
 
         &:after {
