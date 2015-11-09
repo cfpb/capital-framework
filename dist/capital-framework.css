@@ -2188,6 +2188,9 @@ figure img {
   name: EOF
   eof: true
 */
+body {
+  background-color: tan !important;
+}
 /* ==========================================================================
    Capital Framework
    Icons
