@@ -22,6 +22,8 @@ getGitStatus('./')
   .then(confirmBuild)
   // Build those components.
   .then(buildComponents)
+  // Confirm that the user wants to publish them.
+  .then(confirmPublish)
   // Publish those components.
   .then(publishComponents)
   // Report any errors that happen along the way.
@@ -73,28 +75,35 @@ function compareVersionNumber(component) {
   });
 }
 
-function confirmComponents(components) {
+function confirmBuild(components) {
   components = components.filter(function(c) {
     return c !== undefined;
   }); 
-  printLn.info('Components that will be published: ' +  components.join(', '));
+  printLn.success('Components that will be built and published: ' +  components.join(', '));
   return confirm({
-    prompt: '\n    Look good? Are you ready to have gulp build them?',
+    prompt: '    Look good? Are you ready to have gulp build them?',
     yes: 'Building them now...',
-    no: 'Aborting. See ya!'
+    no: 'Aborting. See ya!',
+    data: components
   });
 }
 
 function buildComponents(components) {
-  return Promise.all(components.map(function() {
+  return Promise.all(components.map(function(component) {
     return build(component);
   }));
 }
 
-function publishComponents(components) {
+function confirmPublish(components) {
+  printLn.success('Components successfully built to tmp/.');
   return confirm({
-    prompt: '\n    Are you sure you want to continue? ',
+    prompt: '    Would you like to publish them to npm?',
     yes: 'Publishing the components to npm...',
     no: 'Aborting. See ya!'
   });
+}
+
+function publishComponents(components) {
+  // To do.
+  process.exit(1);
 }

@@ -4,16 +4,18 @@ var Promise = require('bluebird'),
 
 function confirm(opts) {
   opts = opts || {};
+  var prompt = opts.prompt + ' [Y/n] ';
   return new Promise(function (resolve, reject) {
     var rl = readline.createInterface({
       input: process.stdin,
       output: process.stdout
     });
-    rl.question(opts.prompt, function(answer) {
-      if (answer && /^y$|^yes$/.test(answer.trim().toLowerCase())) {
-        resolve(printLn.info(opts.yes));
+    rl.question(prompt, function(answer) {
+      if (!answer || /^y$|^yes$/.test(answer.trim().toLowerCase())) {
+        printLn.info(opts.yes);
+        resolve(opts.data);
       } else {
-        reject(printLn.info(opts.no));
+        reject(opts.no);
       }
       rl.close();
     });
