@@ -15,6 +15,7 @@
   "license": "CC0",
   "main": [
     "src/capital-framework.less",
-    "dist/capital-framework.less"
+    "dist/capital-framework.css",
+    "dist/capital-framework.js"
   ]
 }

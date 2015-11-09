@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 
 // Compile the master capital-framework.less file.
 gulp.task( 'styles:cf', function() {
-  return gulp.src('./capital-framework.less')
+  return gulp.src('./src/capital-framework.less')
     .pipe($.less({
       plugins: [new importPlugin({prefix: '../node_modules/'})]
     }))
