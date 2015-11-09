@@ -4,9 +4,11 @@ var path = require('path'),
     Promise = require('bluebird');
     semver = require('semver'),
     printLn = require('./lib/print'),
+    confirm = require('./lib/confirm'),
     getGitStatus = require('./lib/gitStatus'),
+    build = require('./lib/build'),
     getNpmVersion = require('./lib/getNpmVersion'),
-    componentsDir = path.join(__dirname, '../../../components');
+    componentsDir = path.join(__dirname, '..', '..', '..', 'components');
 
 // Check git's status.
 getGitStatus('./')
@@ -16,19 +18,26 @@ getGitStatus('./')
   .then(getComponents)
   // Filter the components that have been updated and need to be published.
   .then(filterComponents)
+  // Confirm that the user wants to build them.
+  .then(confirmBuild)
   // Build those components.
   .then(buildComponents)
   // Publish those components.
   .then(publishComponents)
   // Report any errors that happen along the way.
-  .catch(printLn.error);
+  .catch(handleError);
+
+function handleError(msg) {
+  printLn.error(msg);
+  process.exit(1);
+}
 
 function handleGitStatus(result) {
   if (!result.stdout && !result.stderr) {
-    console.log('Git working directory is clean.');
+    printLn.success('Git working directory is clean.');
   } else {
     printLn.error('Git working directory is not clean. Commit your work before publishing.');
-    process.exit(1);
+    // process.exit(1);
   }
 }
 
@@ -64,14 +73,28 @@ function compareVersionNumber(component) {
   });
 }
 
-function buildComponents(components) {
+function confirmComponents(components) {
   components = components.filter(function(c) {
     return c !== undefined;
   }); 
   printLn.info('Components that will be published: ' +  components.join(', '));
-  printLn.info('Building them now...');
+  return confirm({
+    prompt: '\n    Look good? Are you ready to have gulp build them?',
+    yes: 'Building them now...',
+    no: 'Aborting. See ya!'
+  });
+}
+
+function buildComponents(components) {
+  return Promise.all(components.map(function() {
+    return build(component);
+  }));
 }
 
 function publishComponents(components) {
-  printLn.info('Publishing the components to npm...');
+  return confirm({
+    prompt: '\n    Are you sure you want to continue? ',
+    yes: 'Publishing the components to npm...',
+    no: 'Aborting. See ya!'
+  });
 }

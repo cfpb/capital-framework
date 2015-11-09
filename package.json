@@ -27,7 +27,6 @@
     "test": "echo 'bleeeeeh'"
   },
   "devDependencies": {
-    "async": "^1.5.0",
     "bluebird": "^3.0.5",
     "chalk": "^1.1.1",
     "child-process-promise": "^1.1.0",
@@ -57,7 +56,6 @@
     "log-symbols": "^1.0.2",
     "marked": "^0.3.5",
     "minimist": "^1.2.0",
-    "nodegit": "^0.5.0",
     "npm-registry-client": "^7.0.7",
     "npmi": "^1.0.1",
     "promisify-node": "^0.2.1",
