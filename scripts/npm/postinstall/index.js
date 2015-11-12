@@ -8,7 +8,7 @@ var fs = require('fs'),
     npmi = require('npmi'),
     path = require('path'),
     pkg = JSON.parse(fs.readFileSync('package.json', 'utf8')),
-    componentsDir = path.join(__dirname, '../../../components');
+    componentsDir = path.join(__dirname, '..', '..', '..', 'src');
 
 fs.readdir(componentsDir, function(err, components) {
   if (err) return console.log(err);
