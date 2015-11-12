@@ -1,6 +1,6 @@
 {
   "name": "cf-forms",
-  "version": "2.0.0",
+  "version": "0.0.4",
   "description": "Capital Framework form fields",
   "main": "cf-forms.js",
   "less": "src/cf-forms.less",

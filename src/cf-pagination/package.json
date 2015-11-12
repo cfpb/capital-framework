@@ -1,6 +1,6 @@
 {
   "name": "cf-pagination",
-  "version": "2.0.0",
+  "version": "0.0.4",
   "description": "Capital Framework pagination",
   "less": "src/cf-pagination.less",
   "style": "cf-pagination.css",

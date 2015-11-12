@@ -1,6 +1,6 @@
 {
   "name": "cf-icons",
-  "version": "2.0.0",
+  "version": "0.0.4",
   "description": "Capital Framework icons",
   "less": "src/cf-icons.less",
   "style": "cf-icons.css",
