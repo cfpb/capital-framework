@@ -3,8 +3,10 @@ var path = require('path'),
     readdir = require('fs-readdir-promise'),
     Promise = require('bluebird');
     semver = require('semver'),
+    logSymbols = require('log-symbols'),
     util = require('./lib'),
-    componentsDir = path.join(__dirname, '..', '..', '..', 'src');
+    componentsDir = path.join(__dirname, '..', '..', '..', 'src'),
+    componentsToPublish = [];
 
 // Check git's status.
 util.getGitStatus('./')
@@ -14,8 +16,6 @@ util.getGitStatus('./')
   .then(getComponents)
   // Filter the components that have been updated and need to be published.
   .then(filterComponents)
-  // Confirm that the user wants to build them.
-  .then(confirmBuild)
   // Build those components.
   .then(buildComponents)
   // Confirm that the user wants to publish them.
@@ -59,7 +59,11 @@ function compareVersionNumber(component) {
     // var npmVersion = '2.0.0';
     if (semver.gt(localVersion, npmVersion)) {
       util.printLn.success(component + ': bumped from ' + npmVersion + ' to ' + localVersion, true);
-      return component;
+      return {
+        name: component,
+        newVersion: localVersion,
+        oldVersion: npmVersion
+      };
     } else if (semver.lt(localVersion, npmVersion)) {
       util.printLn.error('Error: ' + component + ' was bumped to ' + localVersion + ' locally but the latest version on npm is ' + npmVersion + '.', true);
     } else {
@@ -71,35 +75,42 @@ function compareVersionNumber(component) {
   });
 }
 
-function confirmBuild(components) {
-  components = components.filter(function(c) {
-    return c !== undefined;
-  }); 
-  util.printLn.success('Components that will be built and published: ' +  components.join(', '));
-  return util.confirm({
-    prompt: '    Look good? Are you ready to have gulp build them?',
-    yes: 'Building them now...',
-    no: 'Aborting. See ya!',
-    data: components
-  });
-}
-
 function buildComponents(components) {
-  return Promise.all(components.map(function(component) {
-    return util.build(component);
-  }));
+  var names = [],
+      weShouldBumpCF = false,
+      newVersion;
+  componentsToPublish = components.filter(function(c) {
+    if (c && c.name !== undefined) {
+      // According to [these rules](https://github.com/cfpb/capital-framework/issues/179)
+      // we only bump the CF version when a component undergoes a major bump.
+      // With this new single-repo format, we may need to revisit our SemVer strategy.
+      weShouldBumpCF = semver.diff(c.oldVersion, c.newVersion) === 'major';
+      return names.push(c.name);
+    }
+  });
+  if (weShouldBumpCF) {
+    newVersion = semver.inc(util.pkg.version, 'major');
+    util.printLn.success('capital-framework\'s version number will be increased to: ' + newVersion + '. See https://goo.gl/cZvnnL.');
+  } else {
+    util.printLn.info('capital-framework\'s version will not change. See https://goo.gl/cZvnnL.');
+  }
+  util.printLn.info('Building components now...');
+  return Promise.all(componentsToPublish.map(util.build));
 }
 
-function confirmPublish(components) {
+function confirmPublish() {
   util.printLn.success('Components successfully built to tmp/.');
   return util.confirm({
-    prompt: '    Would you like to publish them to npm?',
+    prompt: '    Does everything above look good? Are you ready to publish the above components marked with a ' + logSymbols.success + ' ?',
     yes: 'Publishing the components to npm...',
     no: 'Aborting. See ya!'
   });
 }
 
-function publishComponents(components) {
-  // To do.
+function publishComponents() {
+  var components = componentsToPublish.map(function(c) {
+    return c.name;
+  });
+  util.printLn.success('The following components were successfully published to npm: ' + components.join(', '));
   process.exit(1);
 }
