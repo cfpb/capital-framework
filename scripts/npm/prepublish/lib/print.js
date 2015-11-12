@@ -1,20 +1,18 @@
 var logSymbols = require('log-symbols'),
     chalk = require('chalk'),
     indentString = require('indent-string');
+    options = require('./getArgs');
 
-var printLn = {
-  success: function(msg, indent) {
-    return console.log(indentString(logSymbols.success + ' ' + msg, ' ', indent ? 4 : 2));
-  },
-  info: function(msg, indent) {
-    return console.log(indentString(logSymbols.info + ' ' + msg, ' ', indent ? 4 : 2));
-  },
-  warning: function(msg, indent) {
-    return console.log(indentString(logSymbols.warning + ' ' + msg, ' ', indent ? 4 : 2));
-  },
-  error: function(msg, indent) {
-    return console.log(indentString(logSymbols.error + ' ' + msg, ' ', indent ? 4 : 2));
-  }
+function printMsg(type, msg, indent) {
+  return console.log(indentString(logSymbols[type] + ' ' + msg, ' ', indent ? 4 : 2));
 }
+
+var printLn = {};
+
+['success', 'warning', 'error', 'info'].forEach(function(type) {
+  printLn[type] = function(msg, indent) {
+    options.silent ? function(){} : printMsg(type, msg, indent);
+  }
+});
 
 module.exports = printLn;

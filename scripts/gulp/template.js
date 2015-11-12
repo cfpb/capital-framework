@@ -5,7 +5,7 @@ var $ = require( 'gulp-load-plugins' )();
 var component = require('./parseComponentName');
 
 gulp.task('template:readmes', function() {
-  var pkgs = './components/' + (component || '*') + '/package.json';
+  var pkgs = './src/' + (component || '*') + '/package.json';
   return gulp.src(pkgs)
     .pipe($.data(function(file) {
       var content = String(file.contents);
@@ -28,7 +28,7 @@ gulp.task('template:readmes', function() {
 });
 
 gulp.task('template:usage', function () {
-  return gulp.src('./components/' + (component || '*') + '/usage.md')
+  return gulp.src('./src/' + (component || '*') + '/usage.md')
     .pipe($.markdown())
     .pipe($.data(function(file) {
       var content = String(file.contents),

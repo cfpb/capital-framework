@@ -32,6 +32,7 @@ to js. strip comments but don't minify for the `component.js` file. minify for
 the `component.min.js` file.
 - remove all `package.json` properties with a `//` key.
 - alphabetize properties by key.
+- https://chrisdown.name/2015/09/27/auto-merging-successful-builds-from-travis-ci.html
 
 #### what should happen when you run `npm publish` from this dir
 

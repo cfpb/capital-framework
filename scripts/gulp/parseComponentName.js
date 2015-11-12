@@ -1,5 +1,4 @@
-var minimist = require('minimist'),
-    args = minimist(process.argv.slice(2)),
-    component = args.component || args.c;
+var argv = require('minimist')(process.argv.slice(2)),
+    component = argv.component || argv.c;
 
 module.exports = component;

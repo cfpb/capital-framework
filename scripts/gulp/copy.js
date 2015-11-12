@@ -8,7 +8,7 @@ var merge = require('deepmerge');
 var baseManifest = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 gulp.task( 'copy:components:boilerplate', function() {
-  return gulp.src('./components/' + (component || '*'))
+  return gulp.src('./src/' + (component || '*'))
     .pipe($.foreach(function(stream, file) {
       var component = file.path.split('/').pop();
       gulp.src( './scripts/templates/component-boilerplate/*' )
@@ -18,7 +18,7 @@ gulp.task( 'copy:components:boilerplate', function() {
 } );
 
 gulp.task( 'copy:components:source', function() {
-  return gulp.src('./components/' + (component || '*'))
+  return gulp.src('./src/' + (component || '*'))
     .pipe($.foreach(function(stream, file) {
       var component = file.path.split('/').pop(),
           src = [
@@ -36,7 +36,7 @@ gulp.task( 'copy:components:source', function() {
 } );
 
 gulp.task( 'copy:components:manifest', function() {
-  return gulp.src('./components/' + (component || '*') + '/package.json')
+  return gulp.src('./src/' + (component || '*') + '/package.json')
     .pipe($.data(function(file) {
       var manifest = merge(baseManifest, JSON.parse(String(file.contents)));
       delete manifest.scripts;

@@ -54,6 +54,6 @@ function getInfo(component, cb) {
 function installDep(name, version) {
   npmi({name: name, version: version}, function (err, result) {
     if (err) return console.log(err);
-    console.log(name+'@'+version+' installed successfully');
+    console.log(name + '@' + version + ' installed successfully');
   });
 }
