@@ -36,12 +36,12 @@ After this prepublish script finishes, `npm publish` continues as normal and the
 
 - Tests. I haven't ported over any accessibility or JS tests from the original CF repos.
   - JS tests: I copied over the [cf-expandables](https://github.com/contolini/capital-framework/tree/voltrazord/test) test file but nothing is done with it. Going forward, all JS tests will live in the root `test/` directory and not component directories.
-  - Accessibility tests: We compile all the `usage.md` docs into a huge HTML file and have node-wcag or pa11y scan it for accessibility concerns.
+  - Accessibility tests: Maybe we compile all the `usage.md` docs into a huge HTML file and have node-wcag or pa11y scan it for accessibility concerns?
   - Visual regression tests? @ans has [thoughts](https://github.com/cfpb/capital-framework/issues/191#issuecomment-153049029) on this.
 - Docs. I haven't ported over component docs to individual `usage.md` files. I just copied cf-buttons' docs into every `usage.md` file.
+- Add the new CF components (i.e. tables) to this repo. It should be painless -- just create a new directory in `src/`.
 - Travis integration. Travis will need to run `npm publish` when a commit is pushed to master. This will trigger the `scripts/npm/prepublish` script because it's listed as a "prepublish" action in `package.json`. What's the best way to have Travis do this? [This](https://gist.github.com/domenic/ec8b0fc8ab45f39403dd) might be relevant.
 - The `scripts/npm/prepublish` script successfully builds and publishes individual components. It doesn't currently build and publish the master component, `capital-framework`. I don't think any building needs to happen. The primary `package.json` version number just needs to be incremented.
-
 
 ## To experience Voltrazord:
 
@@ -60,6 +60,9 @@ To test component changes while you're hacking on them, use `npm link`. Assuming
 1. Run `gulp build` from the `capital-framework` dir. This will create a `tmp/` directory with a built and good-to-go copy of every component inside it.
 1. `cd tmp/cf-buttons` and run `npm link`.
 1. From your `owning-a-home` directory, run `npm link cf-buttons`.
+1. After you're done testing your cf-buttons tweaks, run `npm unlink cf-buttons` so that owning-a-home will go back to using the copy of cf-buttons in the local `node_modules/` directory.
+
+:warning: Don't forget to run `npm unlink` when you're done testing new CF components or you'll continue pulling potentially unstable features into your project.
 
 ----
 
