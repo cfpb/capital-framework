@@ -12,8 +12,8 @@
     "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
   },
   "dependencies": {
-    "cf-core": "^1.0.0",
-    "cf-icons": "^1.0.0"
+    "cf-core": "*",
+    "cf-icons": "*"
   },
   "keywords": [
     "buttons"

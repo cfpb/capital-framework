@@ -4042,6 +4042,9 @@ body {
    Capital Framework
    Button Styling
    ========================================================================== */
+body {
+  background-color: red;
+}
 /* topdoc
   name: Theme variables
   family: cf-buttons

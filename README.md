@@ -53,6 +53,14 @@ npm install
 gulp build
 ```
 
+## Contributing to CF components
+
+To test component changes while you're hacking on them, use `npm link`. Assuming you're working on `cf-buttons` and you want to test your changes against `owning-a-home`:
+
+1. Run `gulp build` from the `capital-framework` dir. This will create a `tmp/` directory with a built and good-to-go copy of every component inside it.
+1. `cd tmp/cf-buttons` and run `npm link`.
+1. From your `owning-a-home` directory, run `npm link cf-buttons`.
+
 ----
 
 ## Open source licensing info
