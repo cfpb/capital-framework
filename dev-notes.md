@@ -24,8 +24,8 @@ A `prepublish` script will:
 
 #### to-do
 
-- the `postinstall` script should only happen for contributors? not consumers
-who are `npm install capital-framework`ing?
+- ~~the `postinstall` script should only happen for contributors? not consumers
+who are `npm install capital-framework`ing?~~ don't think this really matters
 - when preparing npm modules, auto-add the `less` and `style` properties
 - less gets compiled from `src` to components' root dirs, the same should happen
 to js. strip comments but don't minify for the `component.js` file. minify for 
