@@ -1,6 +1,6 @@
 {
   "name": "cf-core",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "Capital Framework buttons",
   "less": "src/cf-core.less",
   "style": "cf-core.css",
