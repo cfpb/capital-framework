@@ -8,7 +8,7 @@ var merge = require('deepmerge');
 var baseManifest = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 gulp.task( 'copy:components:boilerplate', function() {
-  return gulp.src('./src/' + (component || '*'))
+  return gulp.src(['./src/' + (component || '*'), '!./src/*.js', '!./src/*.less'])
     .pipe($.foreach(function(stream, file) {
       var component = file.path.split('/').pop();
       gulp.src( './scripts/templates/component-boilerplate/*' )
@@ -18,7 +18,7 @@ gulp.task( 'copy:components:boilerplate', function() {
 } );
 
 gulp.task( 'copy:components:source', function() {
-  return gulp.src('./src/' + (component || '*'))
+  return gulp.src(['./src/' + (component || '*'), '!./src/*.js', '!./src/*.less'])
     .pipe($.foreach(function(stream, file) {
       var component = file.path.split('/').pop(),
           src = [

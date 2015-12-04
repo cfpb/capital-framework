@@ -5,6 +5,9 @@
  * A public domain work of the Consumer Financial Protection Bureau
  */
 
+global.jQuery = require('jquery');
+require('jquery.easing');
+
 (function( $ ) {
 
   $.fn.expandable = function( userSettings ) {

@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - 4
+before_script:
+  - npm install -g gulp
+after_success:
+  - git config user.name "CFPBot"
+  - git config user.email "CFPBot@users.noreply.github.com"
+  - if [[ $TRAVIS_PULL_REQUEST == "false" && $TRAVIS_BRANCH == "master" ]]; then npm publish; fi
+env:
+  global:
+  - GH_REF: github.com/cfpb/capital-framework.git
+  - secure: oeBKNPSETw3THKoY/RtG0gXxGiSGT3GF+v9RtftZ7tsMS0DPdR8/ebKxKjAFzruY72U7lcds2r/OXjtV05PS70g7Ck4fzh7pixHIuaHY1+jF6Ol+EHv3UudX4BaFwoClKHZOYmfnX6GCRlWV8at7bI8KPIunjphyUKBJ6wwLLfo=

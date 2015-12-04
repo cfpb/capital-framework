@@ -1,12 +1,13 @@
 var path = require('path'),
     fs = require('fs'),
     readdir = require('fs-readdir-promise'),
-    Promise = require('bluebird');
+    Promise = require('bluebird'),
     semver = require('semver'),
     logSymbols = require('log-symbols'),
     util = require('./lib'),
     componentsDir = path.join(__dirname, '..', '..', '..', 'src'),
-    componentsToPublish = [];
+    componentsToPublish = [],
+    bumpCF = false;
 
 // Check git's status.
 util.getGitStatus('./')
@@ -22,6 +23,10 @@ util.getGitStatus('./')
   .then(confirmPublish)
   // Publish those components.
   .then(publishComponents)
+  // Bump CF's version if necessary.
+  .then(updateCF)
+  // Publish CF if version was bumped.
+  .then(publishCF)
   // All done.
   .then(finish)
   // Report any errors that happen along the way.
@@ -78,20 +83,20 @@ function compareVersionNumber(component) {
 }
 
 function buildComponents(components) {
-  var weShouldBumpCF = false,
-      newVersion;
+  var newVersion;
   componentsToPublish = components.filter(function(component) {
     if (component) {
       // According to [these rules](https://github.com/cfpb/capital-framework/issues/179)
       // we only bump the CF version when a component undergoes a major bump.
       // With this new single-repo format, we may need to revisit our SemVer strategy.
-      weShouldBumpCF = semver.diff(component.oldVersion, component.newVersion) === 'major';
+      bumpCF = semver.diff(component.oldVersion, component.newVersion) === 'major';
       return component.name !== undefined;
     }
   });
-  if (weShouldBumpCF) {
+  if (bumpCF) {
     newVersion = semver.inc(util.pkg.version, 'major');
     util.printLn.success('capital-framework will also be published: ' + util.pkg.version + ' -> ' + newVersion + '. See https://goo.gl/cZvnnL.');
+    util.pkg.version = newVersion;
   } else {
     util.printLn.info('capital-framework\'s version will not change. See https://goo.gl/cZvnnL.');
   }
@@ -114,7 +119,26 @@ function publishComponents() {
   });
   // This is a temporarily overwrite for testing purposes.
   components = ['cf-buttons'];
+  fs.writeFileSync(file, JSON.stringify(util.pkg.version))
   return Promise.all(components.map(util.publish));
+}
+
+function updateCF() {
+  return new Promise(function(resolve) {
+    if (!bumpCF) {
+      return resolve();
+    }
+    return commitAndPush(util.pkg.version);
+  });
+}
+
+function publishCF() {
+  return new Promise(function(resolve) {
+    if (!bumpCF) {
+      return resolve();
+    }
+    return util.publish();
+  });
 }
 
 function finish(stdout) {
