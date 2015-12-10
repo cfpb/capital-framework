@@ -22,9 +22,9 @@
   },
   "scripts": {
     "postinstall": "node scripts/npm/postinstall",
-    "prepublish": "in-publish && node scripts/npm/prepublish || not-in-publish",
+    "prepublish": "node scripts/npm/prepublish",
     "build": "gulp build",
-    "test": "echo 'bleeeeeh'"
+    "test": "gulp test"
   },
   "devDependencies": {
     "bluebird": "^3.0.5",

@@ -3,11 +3,18 @@ var path = require('path'),
     readdir = require('fs-readdir-promise'),
     Promise = require('bluebird'),
     semver = require('semver'),
+    inPublish = require('in-publish').inPublish,
     logSymbols = require('log-symbols'),
     util = require('./lib'),
     componentsDir = path.join(__dirname, '..', '..', '..', 'src'),
-    componentsToPublish = [],
-    bumpCF = false;
+    componentsToPublish = [];
+
+// Npm `prepublish` scripts are run after `install`. We want this script to only
+// run if the user explicity ran `npm publish` so abort if that's not the case.
+// See: https://github.com/npm/npm/issues/3059
+if (!inPublish()) {
+  return process.exit(0);
+}
 
 // Check git's status.
 util.getGitStatus('./')
@@ -25,8 +32,6 @@ util.getGitStatus('./')
   .then(publishComponents)
   // Bump CF's version if necessary.
   .then(updateCF)
-  // Publish CF if version was bumped.
-  .then(publishCF)
   // All done.
   .then(finish)
   // Report any errors that happen along the way.
@@ -51,7 +56,6 @@ function getComponents() {
 }
 
 function filterComponents(components) {
-  // if (err) return console.log(err);
   util.printLn.info('Checking which components need to be published to npm...');
   return Promise.all(components.map(compareVersionNumber));
 }
@@ -83,29 +87,36 @@ function compareVersionNumber(component) {
 }
 
 function buildComponents(components) {
-  var newVersion;
+  var newVersion,
+      bumps = [];
+
+  // TODO: Fix bug that results in some entries in the components array to be
+  // blank. For now, filter them out.
   componentsToPublish = components.filter(function(component) {
     if (component) {
-      // According to [these rules](https://github.com/cfpb/capital-framework/issues/179)
-      // we only bump the CF version when a component undergoes a major bump.
-      // With this new single-repo format, we may need to revisit our SemVer strategy.
-      bumpCF = semver.diff(component.oldVersion, component.newVersion) === 'major';
+      // While we're iterating, keep track of each component's semver diff
+      bumps.push(semver.diff(component.oldVersion, component.newVersion));
       return component.name !== undefined;
     }
   });
-  if (bumpCF) {
-    newVersion = semver.inc(util.pkg.version, 'major');
-    util.printLn.success('capital-framework will also be published: ' + util.pkg.version + ' -> ' + newVersion + '. See https://goo.gl/cZvnnL.');
-    util.pkg.version = newVersion;
-  } else {
-    util.printLn.info('capital-framework\'s version will not change. See https://goo.gl/cZvnnL.');
+
+  // If there's nothing to publish. Abort everything.
+  if (!componentsToPublish.length) {
+    util.printLn.error('No components\' versions were updated so nothing will be published. Aborting.');
+    process.exit(0);
   }
+
+  // Sort the diffs and increment CF by whatever the first (largest) increment is
+  newVersion = semver.inc(util.pkg.version, bumps.sort().shift());
+  util.printLn.success('capital-framework will also be published: ' + util.pkg.version + ' -> ' + newVersion + '. See https://goo.gl/cZvnnL.');
+  util.pkg.version = newVersion;
+  fs.writeFileSync('package.json', JSON.stringify(util.pkg))
   util.printLn.info('Building components now...');
-  return Promise.all(componentsToPublish.map(util.build));
+  return util.build();
 }
 
 function confirmPublish() {
-  util.printLn.info('Components successfully built to tmp/.');
+  util.printLn.info('Components have been built to tmp/.');
   return util.confirm({
     prompt: '    Publish the above components marked with a ' + logSymbols.success + ' ?',
     yes: 'Publishing the components to npm...',
@@ -117,35 +128,24 @@ function publishComponents() {
   var components = componentsToPublish.map(function(component) {
     return component.name;
   });
-  // This is a temporarily overwrite for testing purposes.
-  components = ['cf-buttons'];
-  fs.writeFileSync(file, JSON.stringify(util.pkg.version))
   return Promise.all(components.map(util.publish));
 }
 
 function updateCF() {
-  return new Promise(function(resolve) {
-    if (!bumpCF) {
-      return resolve();
-    }
+  // return new Promise(function(resolve) {
+  //   if (!bumpCF) {
+  //     return resolve();
+  //   }
     return commitAndPush(util.pkg.version);
-  });
+  // });
 }
 
-function publishCF() {
-  return new Promise(function(resolve) {
-    if (!bumpCF) {
-      return resolve();
-    }
-    return util.publish();
-  });
-}
-
-function finish(stdout) {
-  stdout.forEach(function(component) {
-    component = component.stdout.slice(2).replace('\n', '');
-    util.printLn.success(component, true);
-  });
+function finish(result) {
+  console.log(result);
+  // stdout.forEach(function(component) {
+  //   component = component.stdout.slice(2).replace('\n', '');
+  //   util.printLn.success(component, true);
+  // });
   util.printLn.success('Hooray! All done!');
   process.exit(0);
 }
