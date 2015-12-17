@@ -28,8 +28,10 @@ util.getGitStatus('./')
   .then(confirmPublish)
   // Write the new version to the master component's manifest.
   .then(updateManifest)
-  // Bump CF's version number in package.json and commit the change.
+  // Commit the change.
   .then(commit)
+  // Tag the new version.
+  .then(tag)
   // Push the change to GitHub.
   .then(push)
   // Publish the components.
@@ -184,6 +186,13 @@ function commit() {
   if (!componentsToPublish.length) return;
   util.printLn.info('Committing change to manifest...');
   return util.git.commit(util.pkg.version);
+}
+
+function tag(result) {
+  if (!componentsToPublish.length) return;
+  if (result && result.stdout) util.printLn.console(result.stdout);
+  util.printLn.info('Tagging version ' + util.pkg.version + '...');
+  return util.git.tag(util.pkg.version);
 }
 
 function push(result) {

@@ -11,6 +11,9 @@ var git = {
     var msg = version || 'Auto-incrementing version';
     return exec('git commit -am "' + msg + '"');
   },
+  tag: function(version) {
+    return exec('git tag -a ' + version + ' -m "' + version + '"');
+  },
   push: function(remote) {
     if (process.env.GH_TOKEN) {
       remote = remote.match(/github\.com.+/)[0];
