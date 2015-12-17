@@ -21,6 +21,7 @@
         @input-error
         @input-warning
         @input-success
+        @input-disabled
   - name: Sizing
     codenotes:
       - |
@@ -40,6 +41,9 @@
 
 // .success
 @input-success:                 #009d38;
+
+// .disabled
+@input-disabled:                #cdb5cd;
 
 // Sizing variables
 
@@ -61,7 +65,7 @@
 */
 
 .form-label-header {
-    .h5();
+    .heading-5();
     margin-bottom: unit(10px / @font-size, em);
 }
 
@@ -121,6 +125,11 @@
            states."
       markup: |
         <input class="success" type="text" value="Validated input" title="Test input">
+    - name: Disabled state
+      codenotes:
+        - .disabled
+      markup: |
+        <input class="disabled" disabled="true" autocomplete="off" type="text" value="Validated input" title="Test input">
     tags:
     - cf-forms
 */
@@ -144,6 +153,9 @@ textarea {
     &.success {
         border: 1px solid @input-success;
         outline: 1px solid @input-success;
+    }    
+    &.disabled {
+        background-color: @input-disabled;
     }
 }
 

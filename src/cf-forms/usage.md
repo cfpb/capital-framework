@@ -1,229 +1,291 @@
-## Default button
+## Form labels
 
-### Default state
+### Label header
 
-  <a href="#" class="btn" title="Test button">Anchor Tag</a>
-  <button class="btn" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn">
-
-````
-<a href="#" class="btn" title="Test button">Anchor Tag</a>
-<button class="btn" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn">
-````
-
-### Hovered state
-
-  <a href="#" class="btn hover" title="Test button">Anchor Tag</a>
-  <button class="btn hover" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn hover">
+  <label class="form-label-header">
+      Form label header
+  </label>
 
 ````
-<a href="#" class="btn hover" title="Test button">Anchor Tag</a>
-<button class="btn hover" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn hover">
+<label class="form-label-header">
+    Form label header
+</label>
 ````
 
-### Focused state
+### Super input
 
-  <a href="#" class="btn focus" title="Test button">Anchor Tag</a>
-  <button class="btn focus" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn focus">
-
-````
-<a href="#" class="btn focus" title="Test button">Anchor Tag</a>
-<button class="btn focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn focus">
-````
-
-### Active state
-
-  <a href="#" class="btn active" title="Test button">Anchor Tag</a>
-  <button class="btn active" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn active">
+  <input class="input__super" type="text" value="Super input" title="Test input"></input>
+  <button class="btn btn__super">Super</button>
 
 ````
-<a href="#" class="btn active" title="Test button">Anchor Tag</a>
-<button class="btn active" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn active">
+<input class="input__super" type="text" value="Super input" title="Test input"></input>
+<button class="btn btn__super">Super</button>
 ````
 
-## Secondary button
+## Input states
 
-### Default state
+### Error state
 
-  <a href="#" class="btn btn__secondary">Anchor Tag</a>
-  <button class="btn btn__secondary" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__secondary">
+  <input class="error" type="text" value="Invalid input" title="Test input">
 
 ````
-<a href="#" class="btn btn__secondary">Anchor Tag</a>
-<button class="btn btn__secondary" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__secondary">
+<input class="error" type="text" value="Invalid input" title="Test input">
 ````
 
-### Hovered state
+### Warning state
 
-  <a href="#" class="btn btn__secondary hover">Anchor Tag</a>
-  <button class="btn btn__secondary hover" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__secondary hover">
+  <input class="warning" type="text" value="Invalid input" title="Test input">
 
 ````
-<a href="#" class="btn btn__secondary hover">Anchor Tag</a>
-<button class="btn btn__secondary hover" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__secondary hover">
+<input class="warning" type="text" value="Invalid input" title="Test input">
 ````
 
-### Focused state
+### Success state
 
-  <a href="#" class="btn btn__secondary focus">Anchor Tag</a>
-  <button class="btn btn__secondary focus" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__secondary focus">
+  <input class="success" type="text" value="Validated input" title="Test input">
 
 ````
-<a href="#" class="btn btn__secondary focus">Anchor Tag</a>
-<button class="btn btn__secondary focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__secondary focus">
+<input class="success" type="text" value="Validated input" title="Test input">
 ````
 
-### Active state
+### Disabled state
 
-  <a href="#" class="btn btn__secondary active">Anchor Tag</a>
-  <button class="btn btn__secondary active" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__secondary active">
+  <input class="disabled" disabled="true" autocomplete="off" type="text" value="Validated input" title="Test input">
 
 ````
-<a href="#" class="btn btn__secondary active">Anchor Tag</a>
-<button class="btn btn__secondary active" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__secondary active">
+<input class="disabled" disabled="true" autocomplete="off" type="text" value="Validated input" title="Test input">
 ````
 
-## Destructive action button
+## Form icons
 
-### Default state
+### Form input icons
 
-  <a href="#" class="btn btn__warning">Anchor Tag</a>
-  <button class="btn btn__warning" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__warning">
-
-````
-<a href="#" class="btn btn__warning">Anchor Tag</a>
-<button class="btn btn__warning" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__warning">
-````
-
-### Hovered state
-
-  <a href="#" class="btn btn__warning hover">Anchor Tag</a>
-  <button class="btn btn__warning hover" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__warning hover">
+  <input type="text" value="" title="Test input">
+  <span class="cf-form_input-icon cf-icon cf-icon-email"></span>
 
 ````
-<a href="#" class="btn btn__warning hover">Anchor Tag</a>
-<button class="btn btn__warning hover" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__warning hover">
+<input type="text" value="" title="Test input">
+<span class="cf-form_input-icon cf-icon cf-icon-email"></span>
 ````
 
-### Focused state
+### Form input error icon
 
-  <a href="#" class="btn btn__warning focus">Anchor Tag</a>
-  <button class="btn btn__warning focus" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__warning focus">
-
-````
-<a href="#" class="btn btn__warning focus">Anchor Tag</a>
-<button class="btn btn__warning focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__warning focus">
-````
-
-### Active state
-
-  <a href="#" class="btn btn__warning active">Anchor Tag</a>
-  <button class="btn btn__warning active" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__warning active">
+  <input class="error" type="text" value="Invalid input" title="Test input">
+  <span class="cf-form_input-icon cf-icon cf-icon-delete-round" role="alert"></span>
 
 ````
-<a href="#" class="btn btn__warning active">Anchor Tag</a>
-<button class="btn btn__warning active" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__warning active">
+<input class="error" type="text" value="Invalid input" title="Test input">
+<span class="cf-form_input-icon cf-icon cf-icon-delete-round" role="alert"></span>
 ````
 
-## Disabled button
+### Form input warning icon
 
-### Default/hovered/active state
-
-  <a href="#" class="btn btn__disabled">Anchor Tag</a>
-  <button class="btn btn__disabled" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__disabled">
-  <button class="btn" disabled title="Test button">Button Tag w/ disabled attr</button>
+  <input class="warning" type="text" value="Invalid input" title="Test input">
+  <span class="cf-form_input-icon cf-icon cf-icon-error-round" role="alert"></span>
 
 ````
-<a href="#" class="btn btn__disabled">Anchor Tag</a>
-<button class="btn btn__disabled" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__disabled">
-<button class="btn" disabled title="Test button">Button Tag w/ disabled attr</button>
+<input class="warning" type="text" value="Invalid input" title="Test input">
+<span class="cf-form_input-icon cf-icon cf-icon-error-round" role="alert"></span>
 ````
 
-### Focused state
+### Form input success icon
 
-  <a href="#" class="btn btn__disabled focus">Anchor Tag</a>
-  <button class="btn btn__disabled focus" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__disabled focus">
-  <button class="btn focus" disabled title="Test button">Button Tag w/ disabled attr</button>
+  <input class="success" type="text" value="Validated input" title="Test input">
+  <span class="cf-form_input-icon cf-icon cf-icon-approved-round"></span>
 
 ````
-<a href="#" class="btn btn__disabled focus">Anchor Tag</a>
-<button class="btn btn__disabled focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__disabled focus">
-<button class="btn focus" disabled title="Test button">Button Tag w/ disabled attr</button>
+<input class="success" type="text" value="Validated input" title="Test input">
+<span class="cf-form_input-icon cf-icon cf-icon-approved-round"></span>
 ````
 
-## Super button
+## Form group
 
-### Default state
+### Form group block
 
-  <a href="#" class="btn btn__super">Anchor Tag</a>
-  <button class="btn btn__super" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__super">
-
-````
-<a href="#" class="btn btn__super">Anchor Tag</a>
-<button class="btn btn__super" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__super">
-````
-
-### Hovered state
-
-  <a href="#" class="btn btn__super hover">Anchor Tag</a>
-  <button class="btn btn__super hover" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__super hover">
-
-````
-<a href="#" class="btn btn__super hover">Anchor Tag</a>
-<button class="btn btn__super hover" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__super hover">
-````
-
-### Focused state
-
-  <a href="#" class="btn btn__super focus">Anchor Tag</a>
-  <button class="btn btn__super focus" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__super focus">
+  <div class="form-group">
+      <div class="form-group_item">
+          <input type="text" title="Test input">
+      </div>
+      <div class="form-group_item">
+          <input type="text" title="Test input">
+      </div>
+  </div>
+  <div class="form-group">
+      <div class="form-group_item">
+          <input type="text" title="Test input">
+      </div>
+      <div class="form-group_item">
+          <input type="text" title="Test input">
+      </div>
+  </div>
+  <div class="form-group">
+      <div class="form-group_item">
+          <input type="text" title="Test input">
+      </div>
+      <div class="form-group_item">
+          <input type="text" title="Test input">
+      </div>
+  </div>
 
 ````
-<a href="#" class="btn btn__super focus">Anchor Tag</a>
-<button class="btn btn__super focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__super focus">
+<div class="form-group">
+    <div class="form-group_item">
+        <input type="text" title="Test input">
+    </div>
+    <div class="form-group_item">
+        <input type="text" title="Test input">
+    </div>
+</div>
+<div class="form-group">
+    <div class="form-group_item">
+        <input type="text" title="Test input">
+    </div>
+    <div class="form-group_item">
+        <input type="text" title="Test input">
+    </div>
+</div>
+<div class="form-group">
+    <div class="form-group_item">
+        <input type="text" title="Test input">
+    </div>
+    <div class="form-group_item">
+        <input type="text" title="Test input">
+    </div>
+</div>
 ````
 
-### Active state
+### Real world example
 
-  <a href="#" class="btn btn__super active">Anchor Tag</a>
-  <button class="btn btn__super active" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__super active">
+  <div class="form-group">
+      <label class="form-label-header">Form group</label>
+      <div class="form-group_item">
+          <input type="text" value="Form group item" title="Test input">
+      </div>
+      <div class="form-group_item">
+          <input type="text" value="Form group item" title="Test input">
+      </div>
+  </div>
+  <div class="form-group">
+      <label class="form-label-header">Form group</label>
+      <div class="form-group_item">
+          <input type="text" value="Form group item" title="Test input">
+      </div>
+      <div class="form-group_item">
+          <input type="text" value="Form group item" title="Test input">
+      </div>
+  </div>
 
 ````
-<a href="#" class="btn btn__super active">Anchor Tag</a>
-<button class="btn btn__super active" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__super active">
+<div class="form-group">
+    <label class="form-label-header">Form group</label>
+    <div class="form-group_item">
+        <input type="text" value="Form group item" title="Test input">
+    </div>
+    <div class="form-group_item">
+        <input type="text" value="Form group item" title="Test input">
+    </div>
+</div>
+<div class="form-group">
+    <label class="form-label-header">Form group</label>
+    <div class="form-group_item">
+        <input type="text" value="Form group item" title="Test input">
+    </div>
+    <div class="form-group_item">
+        <input type="text" value="Form group item" title="Test input">
+    </div>
+</div>
+````
+
+## Input with button
+
+### Default input and button
+
+  <div class="input-with-btn">
+      <div class="input-with-btn_input">
+          <input type="text" title="Test input">
+      </div>
+      <div class="input-with-btn_btn">
+          <button class="btn">Search</button>
+      </div>
+  </div>
+
+````
+<div class="input-with-btn">
+    <div class="input-with-btn_input">
+        <input type="text" title="Test input">
+    </div>
+    <div class="input-with-btn_btn">
+        <button class="btn">Search</button>
+    </div>
+</div>
+````
+
+### Super input and button
+
+  <div class="input-with-btn">
+      <div class="input-with-btn_input">
+          <input class="input__super" type="text" title="Test input">
+      </div>
+      <div class="input-with-btn_btn">
+          <button class="btn btn__super">Search</button>
+      </div>
+  </div>
+
+````
+<div class="input-with-btn">
+    <div class="input-with-btn_input">
+        <input class="input__super" type="text" title="Test input">
+    </div>
+    <div class="input-with-btn_btn">
+        <button class="btn btn__super">Search</button>
+    </div>
+</div>
+````
+
+## Button inside input
+
+### Default button inside of an default input
+
+  <div class="btn-inside-input">
+      <input type="text"
+             value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
+      <button class="btn btn__link btn__secondary">
+          Clear
+          <span class="cf-icon cf-icon-delete"></span>
+      </button>
+  </div>
+
+````
+<div class="btn-inside-input">
+    <input type="text"
+           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
+    <button class="btn btn__link btn__secondary">
+        Clear
+        <span class="cf-icon cf-icon-delete"></span>
+    </button>
+</div>
+````
+
+### Super button inside of a super input
+
+  <div class="btn-inside-input">
+      <input class="input__super"
+             type="text"
+             value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
+      <button class="btn btn__super btn__link btn__secondary">
+          Clear
+          <span class="cf-icon cf-icon-delete"></span>
+      </button>
+  </div>
+
+````
+<div class="btn-inside-input">
+    <input class="input__super"
+           type="text"
+           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
+    <button class="btn btn__super btn__link btn__secondary">
+        Clear
+        <span class="cf-icon cf-icon-delete"></span>
+    </button>
+</div>
 ````

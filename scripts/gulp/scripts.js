@@ -42,7 +42,7 @@ gulp.task( 'scripts:components', function() {
     }))
     .pipe($.rename(function (path) {
       path.dirname = tmp[path.basename].dirname.replace('/src', '');
-    }))  
+    }))
     .pipe(gulp.dest('./tmp'))
     .pipe($.uglify())
     .pipe($.rename({

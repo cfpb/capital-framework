@@ -37,27 +37,29 @@
   - less
 */
 
-// Color variables 
+// Color variables
+// $color- variables are from 18F's US Web Design Standards
+// https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss
 
 // .expandable
-@expandable-focus:              darken(#895983, 15%);
+@expandable-focus:              #046b99; // $color-primary-alt-darkest
 
 // .expandable_label
-@expandable_label-text:         darken(#895983, 15%);
+@expandable_label-text:         #046b99; // $color-primary-alt-darkest
 
 // .expandable_link
-@expandable_link-text:          darken(#895983, 15%);
+@expandable_link-text:          #046b99; // $color-primary-alt-darkest
 
 // .expandable__padded
-@expandable__padded-bg:         lighten(#905c8a, 45%);
+@expandable__padded-bg:         #e1f3f8; // $color-primary-alt-lightest
 @expandable__padded-bg-hover:   lighten(@expandable__padded-bg, 3%);
 @expandable__padded-divider:    darken(@expandable__padded-bg, 5%);
 
 // .expandable-group
-@expandable-group_header-text:  darken(#895983, 15%);
-@expandable-group_header-bg:    lighten(#905c8a, 45%);
+@expandable-group_header-text:  @text;
+@expandable-group_header-bg:    #d6d7d9; // $color-gray-lighter:
 @expandable-group-bg:           #fff;
-@expandable-group-divider:      darken(#895983, 15%);
+@expandable-group-divider:      #046b99; // $color-primary-alt-darkest
 
 // Sizing variables
 
@@ -684,7 +686,7 @@
     border-bottom: 1px solid @expandable-group-divider;
     background: @expandable-group_header-bg;
     color: @expandable-group_header-text;
-    .h5();
+    .heading-5();
     margin-bottom: 0;
 }
 
@@ -695,7 +697,7 @@
 }
 
 .expandable-group .expandable_label {
-    .h4();
+    .heading-4();
     margin-bottom: 0;
 }
 

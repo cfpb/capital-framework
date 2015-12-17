@@ -72,3 +72,5 @@ vendor/
 static/vendor/
 src/vendor/
 tmp/
+util.js
+dist/

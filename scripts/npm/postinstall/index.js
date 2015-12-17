@@ -24,11 +24,11 @@ fs.readdir(componentsDir, function(err, components) {
     results.forEach(function(component) {
       if (!component || !component.dependencies) return;
       var componentDeps = component.dependencies;
-      for (dep in componentDeps) {
+      Object.keys(componentDeps).forEach(function(dep) {
         // Ignore CF components.
         if (dep.indexOf('cf-') === 0) return;
         deps[dep] = componentDeps[dep];
-      }
+      });
     });
     for (dep in deps) {
       installDep(dep, deps[dep]);

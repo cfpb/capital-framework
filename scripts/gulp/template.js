@@ -3,6 +3,7 @@
 var gulp = require( 'gulp' );
 var $ = require( 'gulp-load-plugins' )();
 var component = require('./parseComponentName');
+var fs = require('fs');
 
 gulp.task('template:readmes', function() {
   var pkgs = './src/' + (component || '*') + '/package.json';
@@ -32,10 +33,12 @@ gulp.task('template:usage', function () {
     .pipe($.markdown())
     .pipe($.data(function(file) {
       var content = String(file.contents),
-          component = file.path.split('/');
+          component = file.path.split('/'),
+          component = component[component.length - 2];
       return {
-        name: component[component.length - 2],
-        body: content
+        name: component,
+        body: content,
+        hasJS: fs.existsSync('./src/' + component + '/src/' + component + '.js')
       };
     }))
     .pipe($.applyTemplate({

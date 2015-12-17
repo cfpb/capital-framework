@@ -15,4 +15,8 @@ var printLn = {};
   }
 });
 
+printLn.console = function(msg) {
+  options.silent ? function(){} : console.log(chalk.dim(indentString(msg, ' ', 8)));
+}
+
 module.exports = printLn;

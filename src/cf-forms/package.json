@@ -1,8 +1,7 @@
 {
   "name": "cf-forms",
-  "version": "0.0.4",
+  "version": "3.0.0",
   "description": "Capital Framework form fields",
-  "main": "cf-forms.js",
   "less": "src/cf-forms.less",
   "style": "cf-forms.css",
   "scripts": {
@@ -10,13 +9,13 @@
     "//": "npm won't return  a 'no tests' error. Instead it'll check if you're in",
     "//": "the larger capital-framework dir and execute those tests. It's removed",
     "//": "before releases are tagged.",
-    "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
+    "test": "case $(pwd) in */cf/src/*) cd ../.. && npm test;; esac"
   },
   "dependencies": {
-    "cf-core": "^2.0.0",
-    "cf-buttons": "^2.0.0",
-    "cf-grid": "^2.0.0",
-    "cf-icons": "^2.0.0"
+    "cf-core": "^3.0.0",
+    "cf-buttons": "^3.0.0",
+    "cf-grid": "^3.0.0",
+    "cf-icons": "^3.0.0"
   },
   "keywords": [
     "forms"

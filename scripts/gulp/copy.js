@@ -38,7 +38,11 @@ gulp.task( 'copy:components:source', function() {
 gulp.task( 'copy:components:manifest', function() {
   return gulp.src('./src/' + (component || '*') + '/package.json')
     .pipe($.data(function(file) {
+      // Remove any dependencies from CF's package.json, we don't want components
+      // to have them.
+      delete baseManifest.dependencies;
       var manifest = merge(baseManifest, JSON.parse(String(file.contents)));
+      // After the merge, remove any scripts and dev deps.
       delete manifest.scripts;
       delete manifest.devDependencies;
       file.contents = new Buffer(JSON.stringify(manifest));

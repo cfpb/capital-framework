@@ -1,13 +1,11 @@
 {
   "name": "capital-framework",
-  "version": "1.0.0",
-  "description": "Project-wide documentation for Capital Framework.",
-  "homepage": "http://capitalframework.com",
-  "private": "true",
+  "version": "3.0.0",
+  "description": "CFPB's UI framework",
   "author": {
     "name": "Consumer Financial Protection Bureau",
     "email": "tech@cfpb.gov",
-    "url": "http://consumerfinance.gov"
+    "url": "https://consumerfinance.gov"
   },
   "license": "CC0-1.0",
   "keywords": [
@@ -22,7 +20,7 @@
   },
   "scripts": {
     "postinstall": "node scripts/npm/postinstall",
-    "prepublish": "node scripts/npm/prepublish",
+    "release": "GH_BRANCH=canary && node scripts/npm/prepublish && npm publish",
     "build": "gulp build",
     "test": "gulp test"
   },
@@ -54,23 +52,24 @@
     "in-publish": "^2.0.0",
     "indent-string": "^2.1.0",
     "inquirer": "^0.11.0",
+    "is-travis": "^1.0.0",
     "less-plugin-npm-import": "^2.1.0",
     "lodash": "^3.10.1",
     "log-symbols": "^1.0.2",
     "marked": "^0.3.5",
     "minimist": "^1.2.0",
     "npm-registry-client": "^7.0.7",
-    "npmi": "^1.0.1",
     "promisify-node": "^0.2.1",
     "qunit": "^0.7.7",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.4",
     "semver": "^5.0.3",
     "silent-npm-registry-client": "^1.0.0",
-    "versiony": "^1.3.0"
+    "versiony": "^1.3.0",
+    "vinyl-named": "^1.1.0"
   },
   "dependencies": {
     "async": "^1.5.0",
-    "vinyl-named": "^1.1.0"
+    "npmi": "^1.0.1"
   }
 }

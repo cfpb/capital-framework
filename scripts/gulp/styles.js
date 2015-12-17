@@ -25,10 +25,11 @@ gulp.task( 'styles:components', function() {
   return gulp.src('./src/' + (component || '*') + '/src/*.less')
     .pipe($.ignore.exclude(function(vf) {
       // Exclude Less files that don't share the same name as the directory
-      // they're in. This filters out things like cf-vars.less but still
-      // includes cf-core.less.
+      // they're in. This filters out things like capital-framework-vars.less but still
+      // includes capital-framework-core.less.
       var matches = vf.path.match(/\/([\w-]*)\/src\/([\w-]*)\.less/);
-      return matches[1] !== matches[2];
+      // We also exclude cf-grid. It needs its own special task. See below.
+      return matches[2] === 'cf-grid' || matches[1] !== matches[2];
     }))
     .pipe($.less({
       plugins: [new importPlugin({prefix: '../node_modules/'})]
@@ -43,4 +44,21 @@ gulp.task( 'styles:components', function() {
       suffix: '.min'
     }))
     .pipe(gulp.dest('./tmp'));
+} );
+
+// cf-grid needs to compile cf-grid-generated.less
+gulp.task( 'styles:grid', function() {
+  return gulp.src('./src/cf-grid/src-generated/*.less')
+    .pipe($.less({
+      plugins: [new importPlugin({prefix: '../node_modules/'})]
+    }))
+    .pipe($.rename({
+      basename: 'cf-grid'
+    }))
+    .pipe(gulp.dest('./tmp/cf-grid'))
+    .pipe($.cssmin())
+    .pipe($.rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('./tmp/cf-grid'));
 } );

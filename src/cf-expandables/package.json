@@ -1,8 +1,8 @@
 {
   "name": "cf-expandables",
-  "version": "0.0.4",
+  "version": "3.0.0",
   "description": "Capital Framework expandables",
-  "main": "cf-expandables.js",
+  "main": "src/cf-expandables.js",
   "less": "src/cf-expandables.less",
   "style": "cf-expandables.css",
   "scripts": {
@@ -13,8 +13,8 @@
     "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
   },
   "dependencies": {
-    "cf-core": "^2.0.0",
-    "cf-icons": "^2.0.0",
+    "cf-core": "^3.0.0",
+    "cf-icons": "^3.0.0",
     "jquery": "~1.11.0",
     "jquery.easing": "~1.3.0"
   },

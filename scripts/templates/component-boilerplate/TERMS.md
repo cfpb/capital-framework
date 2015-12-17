@@ -38,7 +38,7 @@ all uses of the work, to the fullest extent permitted by applicable law.
 When using or citing the work, you should not imply endorsement by the
 author or the affirmer.
 
-[policy]: http://github.com/cfpb/source-code-policy/
+[policy]: http://github.com/capital-framework/source-code-policy/
 [CC0]: http://creativecommons.org/publicdomain/zero/1.0/legalcode
 
 ## This project makes use of:

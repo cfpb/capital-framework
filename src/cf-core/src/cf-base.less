@@ -96,19 +96,19 @@
         <h1>Example heading element</h1>
         <p class="h1">A non-heading element</p>
       notes:
-        - Responsive header. At mobile sizes, displays as h2.
+        - Responsive heading. At small screen sizes, displays as h2.
     - name: Heading level 2
       markup: |
         <h2>Example heading element</h2>
         <p class="h2">A non-heading element</p>
       notes:
-        - Responsive header. At mobile sizes, displays as h3.
+        - Responsive heading. At small screen sizes, displays as h3.
     - name: Heading level 3
       markup: |
         <h3>Example heading element</h3>
         <p class="h3">A non-heading element</p>
       notes:
-        - Responsive header. At mobile sizes, displays as h4.
+        - Responsive heading. At small screen sizes, displays as h4.
     - name: Heading level 4
       markup: |
         <h4>Example heading element</h4>
@@ -121,14 +121,14 @@
       markup: |
         <h6>Example heading element</h6>
         <p class="h6">A non-heading element</p>
-    - name: Subheader
+    - name: Lead paragraph
       markup: |
-        <h1 class="subheader">Example subheader that's kinda long</h1>
-        <p class="subheader">Example subheader that's kinda long</p>
-    - name: Super header
+        <p class="lead-paragraph">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      notes:
+        - Responsive. Displays as an h3 on large screens; displays at h4 size (but still Regular weight) on small screens.
+    - name: Display heading (aka "superheading")
       markup: |
-        <h1 class="superheader">Example super header</h1>
-        <p class="superheader">Example super header</p>
+        <h1 class="superheading">Example display heading</h1>
   tags:
     - cf-core
 */
@@ -140,72 +140,65 @@ body {
     line-height: @base-line-height;
 }
 
-.heading-1( @fs: 34px, @line-height: 44px ) {
+.heading-1( @fs: 34px ) {
     @font-size: @fs;
     .webfont-regular();
-    // Spacing in the design manual is based off of the baseline so this margin
-    // number has been eyeballed to be 30px.
-    margin-bottom: unit( 16px / @font-size, em );
+
+    margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
-    line-height: unit( @line-height / @font-size );
+    line-height: 1.25;
 }
 
-.heading-2( @fs: 26px, @line-height: 33px ) {
+.heading-2( @fs: 26px ) {
     @font-size: @fs;
     .webfont-regular();
-    // Spacing in the design manual is based off of the baseline so this margin
-    // number has been eyeballed to be 30px.
-    margin-bottom: unit( 19px / @font-size, em );
+
+    margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
-    line-height: unit( @line-height / @font-size );
+    line-height: 1.25;
 }
 
-.heading-3( @fs: 22px, @line-height: 28px )  {
+.heading-3( @fs: 22px )  {
     @font-size: @fs;
     .webfont-regular();
-    // Spacing in the design manual is based off of the baseline so this margin
-    // number has been eyeballed to be 30px.
-    margin-bottom: unit( 21px / @font-size, em );
+
+    margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
-    line-height: unit( @line-height / @font-size );
+    line-height: 1.25;
 }
 
-.heading-4( @fs: 18px, @line-height: @base-line-height-px )  {
+.heading-4( @fs: 18px )  {
     @font-size: @fs;
     .webfont-medium();
-    // Spacing in the design manual is based off of the baseline so this margin
-    // number has been eyeballed to be 30px.
-    margin-bottom: unit( 21px / @font-size, em );
+
+    margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
-    line-height: unit( @line-height / @font-size );
+    line-height: 1.25;
 }
 
-.heading-5( @fs: 14px, @line-height: @base-line-height-px )  {
+.heading-5( @fs: 14px )  {
     @font-size: @fs;
     .webfont-demi();
 
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    // Spacing in the design manual is based off of the baseline so this margin
-    // number has been eyeballed to be 15px.
-    margin-bottom: unit( 5px / @font-size, em );
+    margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
-    line-height: unit( @line-height / @font-size );
+    letter-spacing: 1px;
+    line-height: 1.25;
+    text-transform: uppercase;
 }
 
-.heading-6( @fs: 12px, @line-height: @base-line-height-px )  {
+.heading-6( @fs: 12px )  {
     @font-size: @fs;
     .webfont-demi();
 
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    // Spacing in the design manual is based off of the baseline so this margin
-    // number has been eyeballed to be 15px.
-    margin-bottom: unit( 5px / @font-size, em );
+    margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
-    line-height: unit( @line-height / @font-size );
+    letter-spacing: 1px;
+    line-height: 1.25;
+    text-transform: uppercase;
 }
 
+// Resetting default browser styling for margin-top on headings
 h1,
 h2,
 h3,
@@ -219,8 +212,43 @@ h1,
 .h1 {
     .heading-1();
 
+    p + &,
+    ul + &,
+    ol + &,
+    dl + &,
+    figure + &,
+    img + &,
+    table + &,
+    blockquote + & {
+        margin-top: unit( 60px / @font-size, em );
+    }
+
     .respond-to-max(@bp-xs-max, {
         .heading-2();
+
+        p + &,
+        ul + &,
+        ol + &,
+        dl + &,
+        figure + &,
+        img + &,
+        table + &,
+        blockquote + & {
+            margin-top: unit( 45px / @font-size, em );
+        }
+
+        h2 + &,
+        .h2 + &,
+        h3 + &,
+        .h3 + &,
+        h4 + &,
+        .h4 + &,
+        h5 + &,
+        .h5 + &,
+        h6 + &,
+        .h6 + & {
+            margin-top: unit( 30px / @font-size, em );
+        }
     });
 }
 
@@ -228,14 +256,70 @@ h2,
 .h2 {
     .heading-2();
 
+    p + &,
+    ul + &,
+    ol + &,
+    dl + &,
+    figure + &,
+    img + &,
+    table + &,
+    blockquote + & {
+        margin-top: unit( 45px / @font-size, em );
+    }
+
+    h1 + &,
+    .h1 + &,
+    h3 + &,
+    .h3 + &,
+    h4 + &,
+    .h4 + &,
+    h5 + &,
+    .h5 + &,
+    h6 + &,
+    .h6 + & {
+        margin-top: unit( 30px / @font-size, em );
+    }
+
     .respond-to-max(@bp-xs-max, {
         .heading-3();
+
+        p + &,
+        ul + &,
+        ol + &,
+        dl + &,
+        figure + &,
+        img + &,
+        table + &,
+        blockquote + & {
+            margin-top: unit( 30px / @font-size, em );
+        }
     });
 }
 
 h3,
 .h3 {
     .heading-3();
+
+    p + &,
+    ul + &,
+    ol + &,
+    dl + &,
+    figure + &,
+    img + &,
+    table + &,
+    blockquote + &,
+    h1 + &,
+    .h1 + &,
+    h2 + &,
+    .h2 + &,
+    h4 + &,
+    .h4 + &,
+    h5 + &,
+    .h5 + &,
+    h6 + &,
+    .h6 + & {
+        margin-top: unit( 30px / @font-size, em );
+    }
 
     .respond-to-max(@bp-xs-max, {
         .heading-4();
@@ -245,46 +329,134 @@ h3,
 h4,
 .h4 {
     .heading-4();
+
+    p + &,
+    ul + &,
+    ol + &,
+    dl + &,
+    figure + &,
+    img + &,
+    table + &,
+    blockquote + &,
+    h1 + &,
+    .h1 + &,
+    h2 + &,
+    .h2 + &,
+    h3 + &,
+    .h3 + &,
+    h5 + &,
+    .h5 + &,
+    h6 + &,
+    .h6 + & {
+        margin-top: unit( 30px / @font-size, em );
+    }
 }
 
 h5,
 .h5 {
     .heading-5();
+
+    p + &,
+    ul + &,
+    ol + &,
+    dl + &,
+    figure + &,
+    img + &,
+    table + &,
+    blockquote + &,
+    h1 + &,
+    .h1 + &,
+    h2 + &,
+    .h2 + &,
+    h3 + &,
+    .h3 + &,
+    h4 + &,
+    .h4 + &,
+    h6 + &,
+    .h6 + & {
+        margin-top: unit( 30px / @font-size, em );
+    }
 }
 
 h6,
 .h6 {
     .heading-6();
+
+    p + &,
+    ul + &,
+    ol + &,
+    dl + &,
+    figure + &,
+    img + &,
+    table + &,
+    blockquote + &,
+    h1 + &,
+    .h1 + &,
+    h2 + &,
+    .h2 + &,
+    h3 + &,
+    .h3 + &,
+    h4 + &,
+    .h4 + &,
+    h5 + &,
+    .h5 + & {
+        margin-top: unit( 30px / @font-size, em );
+    }
 }
 
+.lead-paragraph {
+    .heading-3();
+
+    margin-top: unit( 30px / @font-size, em );
+    margin-bottom: unit( 15px / 18px, em );
+
+    .respond-to-max(@bp-xs-max, {
+        // Use the same regular weight but reduce the sizes to h4 size
+        margin-top: unit( 30px / 18px, em );
+        font-size: unit( 18px / @base-font-size-px, em );
+    });
+}
+
+// To be deprecated at the 2.0 release:
 .subheader {
-    .heading-4();
-    .webfont-regular();
+    &:extend(.lead-paragraph);
 }
 
-.superheader {
+.superheading {
     // For when you want a heading that's bigger than a normal H1
     @font-size: 48px;
-    @line-height: 60px;
 
-    .webfont-demi();
-    // Spacing in the design manual is based off of the baseline so this margin
-    // number has been eyeballed to be 30px.
-    margin-bottom: unit( 9px / @font-size, em );
+    .webfont-regular();
+
+    margin-bottom: unit( 20px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
-    line-height: unit( @line-height / @font-size );
+    line-height: 1.25;
+}
+
+// To be deprecated at the 2.0 release:
+.superheader {
+    &:extend(.superheading);
 }
 
 
 /* topdoc
-  name: Margins
+  name: Body copy element vertical margins
   family: cf-core
   patterns:
     - name: Consistent vertical margins
       notes:
-        - "Assumes that the font size of each of these items remains the default."
+        - Applies 15px bottom margin to all p, ul, ol, dl, figure, table, and blockquote elements.
+        - Applies -5px top margin to lists following paragraphs to reduce margin between them to 10px.
+        - Applies 8px bottom margin to list items that are not within a nav element.
+        - Assumes that the font size of each of these items remains the default.
       markup: |
         <p>Paragraph margin example</p>
+        <p>Paragraph margin example</p>
+        <ul>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+        </ul>
         <p>Paragraph margin example</p>
   tags:
     - cf-core
@@ -294,11 +466,25 @@ p,
 ul,
 ol,
 dl,
+figure,
 table,
-figure {
+blockquote {
     margin-top: 0;
-    // Spacing has been eyeballed to be 30px from the baseline.
-    margin-bottom: unit(20px / @base-font-size-px, em);
+    margin-bottom: unit(15px / @base-font-size-px, em);
+}
+
+p + ul,
+p + ol {
+    margin-top: unit(-5px / @base-font-size-px, em);
+}
+
+:not(nav) li {
+    margin-bottom: unit(8px / @base-font-size-px, em);
+}
+
+// Override for IE8 and under, which doesn't suppor the :not selector.
+.lt-ie9 nav li {
+    margin-bottom: 0;
 }
 
 
@@ -450,17 +636,38 @@ nav a {
   patterns:
     - name: Unordered list
       markup: |
+        <p>Paragraph example for visual reference</p>
         <ul>
-            <li>List item</li>
-            <li>List item</li>
-            <li>List item</li>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
         </ul>
+    - name: Ordered list
+      markup: |
+        <p>Paragraph example for visual reference</p>
+        <ol>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+        </ol>
   tags:
     - cf-core
 */
 
 ul {
+    // 32px provides exactly 15px between left margin
+    // and bullet character in most browsers
+    padding-left: unit(32px / @base-font-size-px, em);
     list-style: square;
+}
+
+// Use the same overall number as ULs, but pull the number 1px to the left
+ol {
+    padding-left: unit(31px / @base-font-size-px, em);
+
+    > li {
+        padding-left: unit(1px / @base-font-size-px, em);
+    }
 }
 
 
@@ -556,12 +763,12 @@ tbody th {
 */
 
 blockquote {
-    // Vertical spacing has been eyeballed to be 30px from the baseline.
-    margin: unit(20px / @base-font-size-px, em);
+    margin-right: unit(15px / @base-font-size-px, em);
+    margin-left: unit(15px / @base-font-size-px, em);
 
     .respond-to-min(@bp-sm-min, {
-        margin: unit(28px / @base-font-size-px, em)
-                unit(40px / @base-font-size-px, em);
+        margin-right: unit(30px / @base-font-size-px, em);
+        margin-left: unit(30px / @base-font-size-px, em);
     });
 }
 

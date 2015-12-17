@@ -1,6 +1,6 @@
 {
   "name": "cf-typography",
-  "version": "0.0.4",
+  "version": "3.0.0",
   "description": "Capital Framework typography",
   "less": "src/cf-typography.less",
   "style": "cf-typography.css",
@@ -12,8 +12,8 @@
     "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
   },
   "dependencies": {
-    "cf-core": "^2.0.0",
-    "cf-icons": "^2.0.0"
+    "cf-core": "^3.0.0",
+    "cf-icons": "^3.0.0"
   },
   "keywords": [
     "typography"

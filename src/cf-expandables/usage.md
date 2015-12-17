@@ -1,229 +1,521 @@
-## Default button
+## Recommended expandable pattern
 
 ### Default state
 
-  <a href="#" class="btn" title="Test button">Anchor Tag</a>
-  <button class="btn" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn">
+  <div class="expandable expandable__padded">
+      <button class="expandable_header expandable_target" title="Expand content">
+          <span class="expandable_header-left expandable_label">
+              Expandable Header
+          </span>
+          <span class="expandable_header-right expandable_link">
+              <span class="expandable_cue-open">
+                  Show
+                  <span class="cf-icon cf-icon-plus-round"></span>
+              </span>
+              <span class="expandable_cue-close">
+                  Hide
+                  <span class="cf-icon cf-icon-minus-round"></span>
+              </span>
+          </span>
+      </button>
+      <div class="expandable_content">
+          <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+              temporibus magnam debitis quidem. Ducimus ratione
+              corporis nesciunt earum vel est quaerat blanditiis
+              dolore ipsa?
+          </p>
+      </div>
+  </div>
 
 ````
-<a href="#" class="btn" title="Test button">Anchor Tag</a>
-<button class="btn" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn">
+<div class="expandable expandable__padded">
+    <button class="expandable_header expandable_target" title="Expand content">
+        <span class="expandable_header-left expandable_label">
+            Expandable Header
+        </span>
+        <span class="expandable_header-right expandable_link">
+            <span class="expandable_cue-open">
+                Show
+                <span class="cf-icon cf-icon-plus-round"></span>
+            </span>
+            <span class="expandable_cue-close">
+                Hide
+                <span class="cf-icon cf-icon-minus-round"></span>
+            </span>
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        </p>
+    </div>
+</div>
 ````
 
-### Hovered state
+### Barebones expandable
 
-  <a href="#" class="btn hover" title="Test button">Anchor Tag</a>
-  <button class="btn hover" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn hover">
-
-````
-<a href="#" class="btn hover" title="Test button">Anchor Tag</a>
-<button class="btn hover" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn hover">
-````
-
-### Focused state
-
-  <a href="#" class="btn focus" title="Test button">Anchor Tag</a>
-  <button class="btn focus" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn focus">
-
-````
-<a href="#" class="btn focus" title="Test button">Anchor Tag</a>
-<button class="btn focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn focus">
-````
-
-### Active state
-
-  <a href="#" class="btn active" title="Test button">Anchor Tag</a>
-  <button class="btn active" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn active">
+  <div class="expandable">
+      <button class="expandable_target" title="Expand content">
+          <span class="expandable_cue-open">
+              Show
+          </span>
+          <span class="expandable_cue-close">
+              Hide
+          </span>
+      </button>
+      <div class="expandable_content">
+          <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+              temporibus magnam debitis quidem. Ducimus ratione
+              corporis nesciunt earum vel est quaerat blanditiis
+              dolore ipsa?
+          </p>
+      </div>
+  </div>
 
 ````
-<a href="#" class="btn active" title="Test button">Anchor Tag</a>
-<button class="btn active" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn active">
+<div class="expandable">
+    <button class="expandable_target" title="Expand content">
+        <span class="expandable_cue-open">
+            Show
+        </span>
+        <span class="expandable_cue-close">
+            Hide
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        </p>
+    </div>
+</div>
 ````
 
-## Secondary button
+### Animated cues
 
-### Default state
-
-  <a href="#" class="btn btn__secondary">Anchor Tag</a>
-  <button class="btn btn__secondary" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__secondary">
-
-````
-<a href="#" class="btn btn__secondary">Anchor Tag</a>
-<button class="btn btn__secondary" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__secondary">
-````
-
-### Hovered state
-
-  <a href="#" class="btn btn__secondary hover">Anchor Tag</a>
-  <button class="btn btn__secondary hover" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__secondary hover">
-
-````
-<a href="#" class="btn btn__secondary hover">Anchor Tag</a>
-<button class="btn btn__secondary hover" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__secondary hover">
-````
-
-### Focused state
-
-  <a href="#" class="btn btn__secondary focus">Anchor Tag</a>
-  <button class="btn btn__secondary focus" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__secondary focus">
-
-````
-<a href="#" class="btn btn__secondary focus">Anchor Tag</a>
-<button class="btn btn__secondary focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__secondary focus">
-````
-
-### Active state
-
-  <a href="#" class="btn btn__secondary active">Anchor Tag</a>
-  <button class="btn btn__secondary active" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__secondary active">
+  <div class="expandable">
+      <button class="expandable_target" title="Expand content">
+          <span class="expandable_cue-open expandable_cue-open__animated">
+              <span class="cf-icon cf-icon-down"></span>
+          </span>
+          <span class="expandable_cue-close expandable_cue-close__animated">
+              <span class="cf-icon cf-icon-up"></span>
+          </span>
+      </button>
+      <div class="expandable_content">
+          <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+              temporibus magnam debitis quidem. Ducimus ratione
+              corporis nesciunt earum vel est quaerat blanditiis
+              dolore ipsa?
+          </p>
+      </div>
+  </div>
+  <div class="expandable expandable__expanded">
+      <button class="expandable_target" title="Expand content">
+          <span class="expandable_cue-open expandable_cue-open__animated">
+              <span class="cf-icon cf-icon-down"></span>
+          </span>
+          <span class="expandable_cue-close expandable_cue-close__animated">
+              <span class="cf-icon cf-icon-up"></span>
+          </span>
+      </button>
+      <div class="expandable_content">
+          <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+              temporibus magnam debitis quidem. Ducimus ratione
+              corporis nesciunt earum vel est quaerat blanditiis
+              dolore ipsa?
+          </p>
+      </div>
+  </div>
 
 ````
-<a href="#" class="btn btn__secondary active">Anchor Tag</a>
-<button class="btn btn__secondary active" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__secondary active">
+<div class="expandable">
+    <button class="expandable_target" title="Expand content">
+        <span class="expandable_cue-open expandable_cue-open__animated">
+            <span class="cf-icon cf-icon-down"></span>
+        </span>
+        <span class="expandable_cue-close expandable_cue-close__animated">
+            <span class="cf-icon cf-icon-up"></span>
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        </p>
+    </div>
+</div>
+<div class="expandable expandable__expanded">
+    <button class="expandable_target" title="Expand content">
+        <span class="expandable_cue-open expandable_cue-open__animated">
+            <span class="cf-icon cf-icon-down"></span>
+        </span>
+        <span class="expandable_cue-close expandable_cue-close__animated">
+            <span class="cf-icon cf-icon-up"></span>
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        </p>
+    </div>
+</div>
 ````
 
-## Destructive action button
+### Expandable groups
 
-### Default state
-
-  <a href="#" class="btn btn__warning">Anchor Tag</a>
-  <button class="btn btn__warning" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__warning">
-
-````
-<a href="#" class="btn btn__warning">Anchor Tag</a>
-<button class="btn btn__warning" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__warning">
-````
-
-### Hovered state
-
-  <a href="#" class="btn btn__warning hover">Anchor Tag</a>
-  <button class="btn btn__warning hover" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__warning hover">
-
-````
-<a href="#" class="btn btn__warning hover">Anchor Tag</a>
-<button class="btn btn__warning hover" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__warning hover">
-````
-
-### Focused state
-
-  <a href="#" class="btn btn__warning focus">Anchor Tag</a>
-  <button class="btn btn__warning focus" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__warning focus">
-
-````
-<a href="#" class="btn btn__warning focus">Anchor Tag</a>
-<button class="btn btn__warning focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__warning focus">
-````
-
-### Active state
-
-  <a href="#" class="btn btn__warning active">Anchor Tag</a>
-  <button class="btn btn__warning active" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__warning active">
-
-````
-<a href="#" class="btn btn__warning active">Anchor Tag</a>
-<button class="btn btn__warning active" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__warning active">
-````
-
-## Disabled button
-
-### Default/hovered/active state
-
-  <a href="#" class="btn btn__disabled">Anchor Tag</a>
-  <button class="btn btn__disabled" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__disabled">
-  <button class="btn" disabled title="Test button">Button Tag w/ disabled attr</button>
-
-````
-<a href="#" class="btn btn__disabled">Anchor Tag</a>
-<button class="btn btn__disabled" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__disabled">
-<button class="btn" disabled title="Test button">Button Tag w/ disabled attr</button>
-````
-
-### Focused state
-
-  <a href="#" class="btn btn__disabled focus">Anchor Tag</a>
-  <button class="btn btn__disabled focus" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__disabled focus">
-  <button class="btn focus" disabled title="Test button">Button Tag w/ disabled attr</button>
-
-````
-<a href="#" class="btn btn__disabled focus">Anchor Tag</a>
-<button class="btn btn__disabled focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__disabled focus">
-<button class="btn focus" disabled title="Test button">Button Tag w/ disabled attr</button>
-````
-
-## Super button
-
-### Default state
-
-  <a href="#" class="btn btn__super">Anchor Tag</a>
-  <button class="btn btn__super" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__super">
+  <div class="expandable-group">
+      <div class="expandable-group_header">Expandable group header</div>
+      <div class="expandable expandable__padded">
+          <button class="expandable_header expandable_target" title="Expand content">
+              <span class="expandable_header-left expandable_label">
+                  Expandable Header 1
+              </span>
+              <span class="expandable_header-right expandable_link">
+                  <span class="expandable_cue-open">
+                      Show
+                      <span class="cf-icon cf-icon-plus-round"></span>
+                  </span>
+                  <span class="expandable_cue-close">
+                      Hide
+                      <span class="cf-icon cf-icon-minus-round"></span>
+                  </span>
+              </span>
+          </button>
+          <div class="expandable_content">
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                  temporibus magnam debitis quidem. Ducimus ratione
+                  corporis nesciunt earum vel est quaerat blanditiis
+                  dolore ipsa?
+              </p>
+          </div>
+      </div>
+      <div class="expandable expandable__padded">
+          <button class="expandable_header expandable_target" title="Expand content">
+              <span class="expandable_header-left expandable_label">
+                  Expandable Header 2
+              </span>
+              <span class="expandable_header-right expandable_link">
+                  <span class="expandable_cue-open">
+                      Show
+                      <span class="cf-icon cf-icon-plus-round"></span>
+                  </span>
+                  <span class="expandable_cue-close">
+                      Hide
+                      <span class="cf-icon cf-icon-minus-round"></span>
+                  </span>
+              </span>
+          </button>
+          <div class="expandable_content">
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                  temporibus magnam debitis quidem. Ducimus ratione
+                  corporis nesciunt earum vel est quaerat blanditiis
+                  dolore ipsa?
+              </p>
+          </div>
+      </div>
+      <div class="expandable expandable__padded">
+          <button class="expandable_header expandable_target" title="Expand content">
+              <span class="expandable_header-left expandable_label">
+                  Expandable Header 3
+              </span>
+              <span class="expandable_header-right expandable_link">
+                  <span class="expandable_cue-open">
+                      Show
+                      <span class="cf-icon cf-icon-plus-round"></span>
+                  </span>
+                  <span class="expandable_cue-close">
+                      Hide
+                      <span class="cf-icon cf-icon-minus-round"></span>
+                  </span>
+              </span>
+          </button>
+          <div class="expandable_content">
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                  temporibus magnam debitis quidem. Ducimus ratione
+                  corporis nesciunt earum vel est quaerat blanditiis
+                  dolore ipsa?
+              </p>
+          </div>
+      </div>
+  </div>
 
 ````
-<a href="#" class="btn btn__super">Anchor Tag</a>
-<button class="btn btn__super" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__super">
+<div class="expandable-group">
+    <div class="expandable-group_header">Expandable group header</div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target" title="Expand content">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 1
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target" title="Expand content">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 2
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target" title="Expand content">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 3
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+</div>
 ````
 
-### Hovered state
+### Accordion-style group
 
-  <a href="#" class="btn btn__super hover">Anchor Tag</a>
-  <button class="btn btn__super hover" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__super hover">
+  <div class="expandable-group" data-accordion="true">
+      <div class="expandable-group_header">Expandable group header</div>
+      <div class="expandable expandable__padded">
+          <button class="expandable_header expandable_target" title="Expand content">
+              <span class="expandable_header-left expandable_label">
+                  Expandable Header 1
+              </span>
+              <span class="expandable_header-right expandable_link">
+                  <span class="expandable_cue-open">
+                      Show
+                      <span class="cf-icon cf-icon-plus-round"></span>
+                  </span>
+                  <span class="expandable_cue-close">
+                      Hide
+                      <span class="cf-icon cf-icon-minus-round"></span>
+                  </span>
+              </span>
+          </button>
+          <div class="expandable_content">
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                  temporibus magnam debitis quidem. Ducimus ratione
+                  corporis nesciunt earum vel est quaerat blanditiis
+                  dolore ipsa?
+              </p>
+          </div>
+      </div>
+      <div class="expandable expandable__padded">
+          <button class="expandable_header expandable_target" title="Expand content">
+              <span class="expandable_header-left expandable_label">
+                  Expandable Header 2
+              </span>
+              <span class="expandable_header-right expandable_link">
+                  <span class="expandable_cue-open">
+                      Show
+                      <span class="cf-icon cf-icon-plus-round"></span>
+                  </span>
+                  <span class="expandable_cue-close">
+                      Hide
+                      <span class="cf-icon cf-icon-minus-round"></span>
+                  </span>
+              </span>
+          </button>
+          <div class="expandable_content">
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                  temporibus magnam debitis quidem. Ducimus ratione
+                  corporis nesciunt earum vel est quaerat blanditiis
+                  dolore ipsa?
+              </p>
+          </div>
+      </div>
+      <div class="expandable expandable__padded">
+          <button class="expandable_header expandable_target" title="Expand content">
+              <span class="expandable_header-left expandable_label">
+                  Expandable Header 3
+              </span>
+              <span class="expandable_header-right expandable_link">
+                  <span class="expandable_cue-open">
+                      Show
+                      <span class="cf-icon cf-icon-plus-round"></span>
+                  </span>
+                  <span class="expandable_cue-close">
+                      Hide
+                      <span class="cf-icon cf-icon-minus-round"></span>
+                  </span>
+              </span>
+          </button>
+          <div class="expandable_content">
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                  temporibus magnam debitis quidem. Ducimus ratione
+                  corporis nesciunt earum vel est quaerat blanditiis
+                  dolore ipsa?
+              </p>
+          </div>
+      </div>
+  </div>
 
 ````
-<a href="#" class="btn btn__super hover">Anchor Tag</a>
-<button class="btn btn__super hover" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__super hover">
-````
-
-### Focused state
-
-  <a href="#" class="btn btn__super focus">Anchor Tag</a>
-  <button class="btn btn__super focus" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__super focus">
-
-````
-<a href="#" class="btn btn__super focus">Anchor Tag</a>
-<button class="btn btn__super focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__super focus">
-````
-
-### Active state
-
-  <a href="#" class="btn btn__super active">Anchor Tag</a>
-  <button class="btn btn__super active" title="Test button">Button Tag</button>
-  <input type="submit" value="Input Tag" class="btn btn__super active">
-
-````
-<a href="#" class="btn btn__super active">Anchor Tag</a>
-<button class="btn btn__super active" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__super active">
+<div class="expandable-group" data-accordion="true">
+    <div class="expandable-group_header">Expandable group header</div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target" title="Expand content">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 1
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target" title="Expand content">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 2
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target" title="Expand content">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 3
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+</div>
 ````

@@ -1,7 +1,7 @@
 {
   "name": "cf-pagination",
-  "version": "0.0.4",
-  "description": "Capital Framework pagination",
+  "version": "3.0.0",
+  "description": "Voltrazord pagination",
   "less": "src/cf-pagination.less",
   "style": "cf-pagination.css",
   "scripts": {
@@ -12,9 +12,9 @@
     "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
   },
   "dependencies": {
-    "cf-core": "^2.0.0",
-    "cf-buttons": "^2.0.0",
-    "cf-icons": "^2.0.0"
+    "cf-core": "^3.0.0",
+    "cf-buttons": "^3.0.0",
+    "cf-icons": "^3.0.0"
   },
   "keywords": [
     "pagination"

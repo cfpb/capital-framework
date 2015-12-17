@@ -1,6 +1,6 @@
 {
   "name": "cf-layout",
-  "version": "0.0.4",
+  "version": "3.0.0",
   "description": "Capital Framework layouts",
   "less": "src/cf-layout.less",
   "style": "cf-layout.css",
@@ -12,8 +12,8 @@
     "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
   },
   "dependencies": {
-    "cf-core": "^2.0.0",
-    "cf-grid": "^2.0.0"
+    "cf-core": "^3.0.0",
+    "cf-grid": "^3.0.0"
   },
   "keywords": [
     "layout"

@@ -130,32 +130,35 @@
    - cf-typography
 */
 
+/* TODO: Re-organize orders to follow FEWD guidelines */
+/* TODO: Standardize line breaks and spacing throughout */
+
 .pull-quote {
 
-   &_body {
-       .h3();
-       // Spacing is based off of the baseline so this margin number has been
-       // eyeballed to be ~24px.
-       margin-bottom: unit(12px / @font-size, em);
-       color: @pull-quote_body;
-   }
+    &_body {
+        .heading-3();
 
-   &_citation {
-       .h5();
-       color: @pull-quote_citation;
-   }
+        color: @pull-quote_body;
+
+        .respond-to-max(@bp-xs-max, {
+            .heading-4();
+        });
+    }
+
+    &_citation {
+        .heading-5();
+
+        color: @pull-quote_citation;
+    }
+
+    &__large .pull-qote_body {
+        .heading-2();
+
+        .respond-to-max(@bp-xs-max, {
+            .heading-3();
+        });
+    }
 }
-
-.pull-quote__large {
-
-   .pull-quote_body {
-       .h2();
-       // Spacing is based off of the baseline so this margin number has been
-       // eyeballed to be ~30px.
-       margin-bottom: unit(18px / @font-size, em);
-   }
-}
-
 
 /* topdoc
   name: Micro copy
@@ -234,7 +237,8 @@
 */
 
 .date {
-    .h5();
+    .heading-5();
+
     color: @date-text;
     white-space: nowrap;
 }
@@ -266,10 +270,10 @@
 */
 
 .category-slug {
-    .h4();
+    .heading-4();
+
     display: inline-block;
-    // Eyeballed to 20px over h2.
-    margin-bottom: unit(8px / @font-size, em);
+
     color: @category-slug-text;
 
     a& {
@@ -304,7 +308,8 @@
 */
 
 .header-slug {
-    .h5();
+    .heading-5();
+
     margin-bottom: unit(17px / @font-size, em);
     border-top: 1px solid @header-slug-thin-border;
 
@@ -333,7 +338,7 @@
 */
 
 .padded-header {
-    .h5();
+    .heading-5();
     // 8px top padding to account for line-height.
     padding: unit(8px / @font-size, em)
              unit(10px / @font-size, em);
@@ -373,7 +378,7 @@
     @ribbon-width: 17px;
     @ribbon-angle: 33deg;
 
-    .h5();
+    .heading-5();
     position: relative;
     // Cut the height in half since we will be adding it back with margin.
     height: unit(((@font-size / 2) + @v-padding + 1) / @font-size, em);
@@ -416,14 +421,14 @@
 
         &:before,
         &:after {
-                display: block;
-                content: "";
-                position: absolute;
-                z-index: 3;
-                width: unit(@ribbon-width / @font-size, em);
-                height: 50%;
-                background: @fancy-slug-bg;
-                border: 0 solid @fancy-slug-border;
+            display: block;
+            content: "";
+            position: absolute;
+            z-index: 3;
+            width: unit(@ribbon-width / @font-size, em);
+            height: 50%;
+            background: @fancy-slug-bg;
+            border: 0 solid @fancy-slug-border;
         }
     }
 
@@ -701,6 +706,7 @@
 */
 
 .styled-link {
+    /* TODO: Why set this? It's the base size */
     @font-size: 16px;
 
     border-bottom-width: 1px;
@@ -762,6 +768,7 @@
 
 .jump-link {
     .webfont-medium();
+    /* TODO: Why set this one it's the default size */
     @font-size: 16px;
 
     font-size: unit(@font-size / @base-font-size-px, em);
@@ -1139,47 +1146,25 @@
     list-style-type: none;
     position: relative;
 
-	&:before {
-		content: @text;
-		font-family: @font;
-		font-size: @size;
-		color: @color;
-		line-height: 1;
-		position: absolute;
- 		left: -@offset;
-	}
+  &:before {
+    content: @text;
+    font-family: @font;
+    font-size: @size;
+    color: @color;
+    line-height: 1;
+    position: absolute;
+    left: -@offset;
+  }
 }
 
 
 /* topdoc
- name: Branded list modifier
- family: cf-typography
- patterns:
-   - name: Branded list
-     markup: |
-       <ul class="list__branded">
-           <li>First item</li>
-           <li>Second item</li>
-           <li>Third item</li>
-       </ul>
-     codenotes:
-       - ".list__branded"
-     notes:
-       - "Uses .custom-bullet mixin to generate custom main-brand-color square bullets."
- tags:
-   - cf-typography
-*/
+ notes: .list__branded has been deprecated after the Design Manual team decided
+        to remove it. We should remove this selector in the next full version
+        release.
 
-.list__branded {
-    li,
-    .list_item {
-        @font-size: 22px;
-        @offset: unit(19px / @font-size, em);
-        @size: unit(22px / @base-font-size-px, em);
-        .webfont-regular();
-        .custom-bullet(@text:"\25AA", @color: @list__branded-bullet, @offset: @offset, @size: @size);
-    }
-}
+*/
+.list__branded { }
 
 
 /* topdoc
