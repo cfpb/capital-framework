@@ -4,13 +4,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
-
-### Changed
-- 
-
-### Removed
-- 
+- Initial WCAG accessibility tests.
 
 ## 3.0.5 - 2015-12-18
 
