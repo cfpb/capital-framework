@@ -12,6 +12,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Removed
 - 
 
+## 3.0.5 - 2015-12-18
+
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
 ## 3.0.3 - 2015-12-18
 
 ### Added
