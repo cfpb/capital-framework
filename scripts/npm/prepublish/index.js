@@ -28,6 +28,8 @@ util.getGitStatus('./')
   .then(confirmPublish)
   // Write the new version to the master component's manifest.
   .then(updateManifest)
+  // Write the new version to the changelog.
+  .then(updateChangelog)
   // Commit the change.
   .then(commit)
   // Tag the new version.
@@ -139,7 +141,7 @@ function buildComponents(components) {
   // TODO: Fix bug that results in some entries in the components array to be
   // blank. For now, filter them out.
   componentsToPublish = components.filter(function(component) {
-    var bump;
+    var diff;
     if (component) {
       // While we're iterating, keep track of each component's semver diff.
       // If there's no old version it means it's a new component and CF should
@@ -182,21 +184,22 @@ function updateManifest() {
   fs.writeFileSync('package.json', JSON.stringify(util.pkg, null, 2));
 }
 
+function updateChangelog() {
+  return util.changelog(util.pkg.version);
+}
+
 function commit() {
-  if (!componentsToPublish.length) return;
   util.printLn.info('Committing change to manifest...');
   return util.git.commit(util.pkg.version);
 }
 
 function tag(result) {
-  if (!componentsToPublish.length) return;
   if (result && result.stdout) util.printLn.console(result.stdout);
   util.printLn.info('Tagging version ' + util.pkg.version + '...');
   return util.git.tag(util.pkg.version);
 }
 
 function push(result) {
-  if (!componentsToPublish.length) return;
   if (result && result.stdout) util.printLn.console(result.stdout);
   util.printLn.info('Pushing commit to GitHub...');
   return util.git.push(util.pkg.repository.url);
@@ -212,7 +215,6 @@ function publishComponents(result) {
 }
 
 function finish(result) {
-  if (!componentsToPublish.length) return;
   if (result && result.stdout) util.printLn.console(result.stdout);
   util.printLn.success('Hooray! All done!');
   process.exit(0);

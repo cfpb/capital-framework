@@ -1,6 +1,6 @@
 {
   "name": "capital-framework",
-  "version": "3.0.1",
+  "version": "3.0.3",
   "description": "CFPB's UI framework",
   "author": {
     "name": "Consumer Financial Protection Bureau",
@@ -20,7 +20,7 @@
   },
   "scripts": {
     "postinstall": "node scripts/npm/postinstall",
-    "release": "GH_BRANCH=canary && node scripts/npm/prepublish && npm publish",
+    "release": "GH_BRANCH=canary && ./scripts/travis/release.sh",
     "build": "gulp build",
     "test": "gulp test"
   },

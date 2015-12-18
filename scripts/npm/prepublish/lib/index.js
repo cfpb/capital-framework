@@ -7,6 +7,7 @@ module.exports = {
   build: require('./build'),
   publish: require('./publish'),
   git: require('./git'),
+  changelog: require('./changelog'),
   getNpmVersion: require('./getNpmVersion'),
   checkNpmAuth: require('./checkNpmAuth'),
   pkg: JSON.parse(fs.readFileSync('package.json', 'utf8')),

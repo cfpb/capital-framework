@@ -17,9 +17,15 @@ var git = {
   push: function(remote) {
     if (process.env.GH_TOKEN) {
       remote = remote.match(/github\.com.+/)[0];
-      return exec('git push "https://' + process.env.GH_TOKEN + '@' + remote + '" ' + process.env.GH_BRANCH);
+      return Promise.all([
+        exec('git push "https://' + process.env.GH_TOKEN + '@' + remote + '" ' + process.env.GH_BRANCH),
+        exec('git push "https://' + process.env.GH_TOKEN + '@' + remote + '" --tags')
+      ]);
     }
-    return exec('git push ' + remote + ' ' + process.env.GH_BRANCH);
+    return Promise.all([
+      exec('git push ' + remote + ' ' + process.env.GH_BRANCH),
+      exec('git push ' + remote + ' --tags')
+    ]);
   }
 }
 
