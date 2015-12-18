@@ -1,7 +1,7 @@
 {
   "name": "cf-pagination",
-  "version": "3.0.0",
-  "description": "Voltrazord pagination",
+  "version": "3.0.1",
+  "description": "Capital Framework pagination",
   "less": "src/cf-pagination.less",
   "style": "cf-pagination.css",
   "scripts": {
