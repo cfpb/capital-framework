@@ -1,6 +1,6 @@
 {
   "name": "capital-framework",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Project-wide documentation for Capital Framework.",
   "homepage": "http://cfpb.github.io/capital-framework/",
   "author": {
@@ -23,7 +23,7 @@
     "cf-icons": "^1.0.0",
     "cf-pagination": "^1.0.0",
     "cf-typography": "^1.0.0",
-    "cf-layout": "^1.0.0"
+    "cf-layout": "^2.0.0"
   },
   "exportsOverride": {
     "cf-*": {
