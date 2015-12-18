@@ -2,6 +2,9 @@
   "name": "capital-framework",
   "version": "3.0.3",
   "description": "CFPB's UI framework",
+  "main": "src/capital-framework.js",
+  "less": "src/capital-framework.less",
+  "style": "dist/capital-framework.css",
   "author": {
     "name": "Consumer Financial Protection Bureau",
     "email": "tech@cfpb.gov",
