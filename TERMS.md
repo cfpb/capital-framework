@@ -1,13 +1,16 @@
-As a work of the United States Government, this package is in the
-public domain within the United States. Additionally, we waive
-copyright and related rights in the work worldwide through the CC0 1.0
-Universal public domain dedication.
+As a work of the United States Government, this package (excluding any
+exceptions listed below) is in the public domain within the United States.
+Additionally, we waive copyright and related rights in the work worldwide
+through the [CC0 1.0 Universal public domain dedication][CC0].
 
 Software source code previously released under an open source license and then
-modified by CFPB staff is considered a "joint work" (see 17 USC § 101); it is
-partially copyrighted, partially public domain, and as a whole is protected by
-the copyrights of the non-government authors and must be released according to
-the terms of the original open-source license.
+modified by CFPB staff or its contractors is considered a "joint work"
+(see 17 USC § 101); it is partially copyrighted, partially public domain,
+and as a whole is protected by the copyrights of the non-government authors and
+must be released according to the terms of the original open-source license.
+Segments written by CFPB staff, and by contractors who are developing software
+on behalf of CFPB are also in the public domain, and copyright and related
+rights for that work are waived through the CC0 1.0 Universal dedication.
 
 For further details, please see the CFPB [Source Code Policy][policy].
 
@@ -38,11 +41,16 @@ all uses of the work, to the fullest extent permitted by applicable law.
 When using or citing the work, you should not imply endorsement by the
 author or the affirmer.
 
-[policy]: http://github.com/cfpb/source-code-policy/
+[policy]: https://github.com/cfpb/source-code-policy/
 [CC0]: http://creativecommons.org/publicdomain/zero/1.0/legalcode
 
-## This project makes use of:
 
-* [Respond.js](https://github.com/scottjehl/Respond) by Scott Jehl, licensed under the MIT license.
-* [The HTML5 Shiv](https://github.com/aFarkas/html5shiv), dual licensed under the MIT or GPL Version 2 licenses.
-* 
+## Exceptions
+
+- [The HTML5 Shiv](https://github.com/aFarkas/html5shiv) by Alexander Farkas,
+  et al., is licensed under MIT/GPL2.
+- [Rainbow](https://github.com/ccampbell/rainbow) by Craig Campbell is licensed
+  under Apache 2.0.
+- The Brackets Theme by Garth Braithwaite is licensed under Apache 2.0.
+- [Normalize](https://necolas.github.io/normalize.css/) by Nicolas Gallagher,
+  co-created with Jonathan Neal, is licensed under MIT.

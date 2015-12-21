@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "4.2"
+before_script:
+  - npm config set spin false --global
+  - npm install -g gulp
+  - gulp build
+after_success:
+  - ./scripts/travis/release.sh
+env:
+  global:
+  - GH_BRANCH=canary
+  - NPM_USERNAME=cfpbot
+  - secure: d+i41c7frpGoSpo6WFwuDz5xgIHz2f5F40SArZUWdZw1+SUtWA+xQm474FY2Fm6QyJxtzRfrDytFap428WptZJryjDkfzuWMqNqw/BR0abeP0htxJ9SOFWqsdwt4d0vWB8JWUVFOSTkOg83cXdnZQt+Lzwgp2uMGc7bCC5/7zu4=
+  - secure: jw+5ztv+7RgK+PxFrLfNBG6ZmM6iTbLlMHlNaBTHCNLfB9HOVHUIjzEZKB+rjiu1y/UQo0zM4N2qNKJNOZNRNrnqWXTTDbbtjx9WNK46d/yu78oNuBwMt/a1rydZop4Z6whPaZgSyYyA+YrCE4+r/Gvw0B8BTA1YHHpens4sfac=
+  - secure: OXCVx+umyxvsBBAdDnliKggeeDI6+MJnH01DRz3MSwcG2WMUxtzxKtPL4t03t+wfTmCoGmEMFa8OO1UgwfOoAMNwrEQHPG/AfEnV5A67FKoKY56vUD3rkNcWV5V/IfmQzrYzQSjyjgs19RY+1sD7CKK75bQWYuAQOoNrIpb84gc=
+  - secure: P+1ezjcewjb0m6eOJDS018CF2z6wcXeWb8yWKrQvEb/qknOYaa62YSvfoWkb+cfinApLBtPQYQ3Jrf00xQc+K3a93QmCMyGFy/PYx+IhYh56/jvVsEqs4NnTeK3Eov0Q/cgZWA69tCeR8rNRnB1aMLfNsluj1GvkfLO2vth6sxY=

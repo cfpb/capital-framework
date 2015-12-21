@@ -1,0 +1,467 @@
+@import (less) '../../cf-grid/src/cf-grid.less';
+@import (less) '../../cf-core/src/cf-core.less';
+@import (less) '../../cf-buttons/src/cf-buttons.less';
+@import (less) '../../cf-icons/src/cf-icons.less';
+
+/* ==========================================================================
+   Capital Framework
+   Form Element Styling
+   ========================================================================== */
+
+/* topdoc
+  name: Theme variables
+  family: cf-forms
+  notes:
+    - "The following color and sizing variables are exposed, allowing you to
+       easily override them before compiling."
+  patterns:
+  - name: Colors
+    codenotes:
+      - |
+        @input-error
+        @input-warning
+        @input-success
+        @input-disabled
+  - name: Sizing
+    codenotes:
+      - |
+        @input__super-font-size
+  tags:
+  - cf-forms
+  - less
+*/
+
+// Color variables
+
+// .error
+@input-error:                   #ea130b;
+
+// warning
+@input-warning:                 #ffb108;
+
+// .success
+@input-success:                 #009d38;
+
+// .disabled
+@input-disabled:                #cdb5cd;
+
+// Sizing variables
+
+// .input__super
+@input__super-font-size:        18px;
+
+
+/* topdoc
+  name: Form labels
+  family: cf-forms
+  patterns:
+    - name: Label header
+      markup: |
+        <label class="form-label-header">
+            Form label header
+        </label>
+  tags:
+    - cf-forms
+*/
+
+.form-label-header {
+    .heading-5();
+    margin-bottom: unit(10px / @font-size, em);
+}
+
+
+/* topdoc
+  name: Super input
+  family: cf-forms
+  patterns:
+    - name: .input__super
+      markup: |
+        <input class="input__super" type="text" value="Super input" title="Test input"></input>
+        <button class="btn btn__super">Super</button>
+      notes:
+        - "An input that matches the height of a super button."
+  tags:
+    - cf-forms
+*/
+
+.input__super {
+    &[type="text"],
+    &[type="search"],
+    &[type="email"],
+    &[type="url"],
+    &[type="tel"],
+    &[type="number"] {
+        padding: unit( 10px / @input__super-font-size, em );
+        font-size: unit( @input__super-font-size / @base-font-size-px, em );
+    }
+}
+
+
+/* topdoc
+    name: Input states
+    family: cf-forms
+    patterns:
+    - name: Error state
+      codenotes:
+        - .error
+      notes:
+        - "See the 'Form icons' section below for guidance on adding icons to
+           states."
+      markup: |
+        <input class="error" type="text" value="Invalid input" title="Test input">
+    - name: Warning state
+      codenotes:
+        - .warning
+      notes:
+        - "See the 'Form icons' section below for guidance on adding icons to
+           states."
+      markup: |
+        <input class="warning" type="text" value="Invalid input" title="Test input">
+    - name: Success state
+      codenotes:
+        - .success
+      notes:
+        - "See the 'Form icons' section below for guidance on adding icons to
+           states."
+      markup: |
+        <input class="success" type="text" value="Validated input" title="Test input">
+    - name: Disabled state
+      codenotes:
+        - .disabled
+      markup: |
+        <input class="disabled" disabled="true" autocomplete="off" type="text" value="Validated input" title="Test input">
+    tags:
+    - cf-forms
+*/
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+select[multiple],
+textarea {
+    &.error {
+        border: 1px solid @input-error;
+        outline: 1px solid @input-error;
+    }
+    &.warning {
+        border: 1px solid @input-warning;
+        outline: 1px solid @input-warning;
+    }
+    &.success {
+        border: 1px solid @input-success;
+        outline: 1px solid @input-success;
+    }    
+    &.disabled {
+        background-color: @input-disabled;
+    }
+}
+
+
+/* topdoc
+    name: Form icons
+    family: cf-forms
+    patterns:
+    - name: Form input icons
+      notes:
+        - "Form input icons add small positioning tweaks to Capital Framework
+          icons."
+      markup: |
+        <input type="text" value="" title="Test input">
+        <span class="cf-form_input-icon cf-icon cf-icon-email"></span>
+    - name: Form input error icon
+      notes:
+        - "The icon must be placed directly after the form input in the markup
+          and the input must use the 'error' class."
+        - "For invalid fields only use the alert role to call attention to
+           fields that need immediate attention:
+           https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role"
+      markup: |
+        <input class="error" type="text" value="Invalid input" title="Test input">
+        <span class="cf-form_input-icon cf-icon cf-icon-delete-round" role="alert"></span>
+    - name: Form input warning icon
+      notes:
+        - "The icon must be placed directly after the form input in the markup
+          and the input must use the 'warning' class."
+        - "For invalid fields only use the alert role to call attention to
+           fields that need immediate attention:
+           https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role"
+      markup: |
+        <input class="warning" type="text" value="Invalid input" title="Test input">
+        <span class="cf-form_input-icon cf-icon cf-icon-error-round" role="alert"></span>
+    - name: Form input success icon
+      notes:
+        - "The icon must be placed directly after the form input in the markup
+          and the input must use the 'error' class."
+        - "For valid inputs only use the alert role to indicate that a
+           previously invalid input is now valid:
+           https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role"
+      markup: |
+        <input class="success" type="text" value="Validated input" title="Test input">
+        <span class="cf-form_input-icon cf-icon cf-icon-approved-round"></span>
+    tags:
+    - cf-forms
+*/
+
+@cf-forms_input-icon-class: cf-form_input-icon;
+
+.@{cf-forms_input-icon-class} {
+    @font-size: 20px;
+
+    position: relative;
+    top: unit(6px / @font-size, em);
+    margin-left: unit(4px / @font-size, em);
+    font-size: unit(@font-size / @base-font-size-px, em);
+}
+
+.error + .@{cf-forms_input-icon-class} {
+    color: @input-error;
+}
+
+.warning + .@{cf-forms_input-icon-class} {
+    color: @input-warning;
+}
+
+.success + .@{cf-forms_input-icon-class} {
+    color: @input-success;
+}
+
+
+/* topdoc
+  name: Form group
+  family: cf-forms
+  notes:
+    - "A form group is recommended when you need to provide spacing between form
+       elements and between groups of form elements."
+  codenotes:
+    - |
+      Pattern structure
+      -----------------
+      .form-group
+        .form-group_item
+  patterns:
+    - name: .form-group (block)
+      markup: |
+        <div class="form-group">
+            <div class="form-group_item">
+                <input type="text" title="Test input">
+            </div>
+            <div class="form-group_item">
+                <input type="text" title="Test input">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-group_item">
+                <input type="text" title="Test input">
+            </div>
+            <div class="form-group_item">
+                <input type="text" title="Test input">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-group_item">
+                <input type="text" title="Test input">
+            </div>
+            <div class="form-group_item">
+                <input type="text" title="Test input">
+            </div>
+        </div>
+      codenotes:
+        - |
+          .form-group
+      notes:
+        - "Provides sizeable margins between groups of form elements."
+    - name: .form-group_item (element)
+      markup: |
+        <div class="form-group_item">
+            <input type="text" title="Test input">
+        </div>
+        <div class="form-group_item">
+            <input type="text" title="Test input">
+        </div>
+        <div class="form-group_item">
+            <input type="text" title="Test input">
+        </div>
+      notes:
+        - "Provides subtle margins between form elements within the same group."
+    - name: Real world example
+      markup: |
+        <div class="form-group">
+            <label class="form-label-header">Form group</label>
+            <div class="form-group_item">
+                <input type="text" value="Form group item" title="Test input">
+            </div>
+            <div class="form-group_item">
+                <input type="text" value="Form group item" title="Test input">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label-header">Form group</label>
+            <div class="form-group_item">
+                <input type="text" value="Form group item" title="Test input">
+            </div>
+            <div class="form-group_item">
+                <input type="text" value="Form group item" title="Test input">
+            </div>
+        </div>
+  tags:
+    - cf-forms
+*/
+
+.form-group + .form-group {
+    margin-top: unit(30px / @base-font-size-px, em);
+}
+
+.form-group_item + .form-group_item {
+    margin-top: unit(15px / @base-font-size-px, em);
+}
+
+
+/* topdoc
+  name: Input with button
+  family: cf-forms
+  patterns:
+    - name: Default input and button
+      markup: |
+        <div class="input-with-btn">
+            <div class="input-with-btn_input">
+                <input type="text" title="Test input">
+            </div>
+            <div class="input-with-btn_btn">
+                <button class="btn">Search</button>
+            </div>
+        </div>
+    - name: Super input and button
+      markup: |
+        <div class="input-with-btn">
+            <div class="input-with-btn_input">
+                <input class="input__super" type="text" title="Test input">
+            </div>
+            <div class="input-with-btn_btn">
+                <button class="btn btn__super">Search</button>
+            </div>
+        </div>
+  tags:
+    - cf-forms
+*/
+
+.input-with-btn {
+
+    .respond-to-min(480px, {
+        .grid_nested-col-group();
+    });
+
+    &_input {
+        margin-bottom: unit(15px / @base-font-size-px, em);
+        .respond-to-min(480px, {
+            .grid_column(9);
+            border-right-width: 0;
+        });
+        .respond-to-min(960px, {
+            .grid_column(10);
+            border-right-width: 0;
+        });
+
+        input {
+            box-sizing: border-box;
+            width: 100%;
+        }
+    }
+
+    &_btn {
+        margin-bottom: unit(15px / @base-font-size-px, em);
+
+        .respond-to-min(480px, {
+            .grid_column(3);
+        });
+        .respond-to-min(960px, {
+            .grid_column(2);
+        });
+
+        .btn {
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .btn__super {
+            padding-left: unit(15px / @super-btn-font-size, em);
+            padding-right: unit(15px / @super-btn-font-size, em);
+        }
+    }
+
+}
+
+
+/* topdoc
+  name: Button inside input
+  family: cf-forms
+  patterns:
+    - name: Default button inside of an default input
+      markup: |
+        <div class="btn-inside-input">
+            <input type="text"
+                   value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
+            <button class="btn btn__link btn__secondary">
+                Clear
+                <span class="cf-icon cf-icon-delete"></span>
+            </button>
+        </div>
+    - name: Super button inside of a super input
+      markup: |
+        <div class="btn-inside-input">
+            <input class="input__super"
+                   type="text"
+                   value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
+            <button class="btn btn__super btn__link btn__secondary">
+                Clear
+                <span class="cf-icon cf-icon-delete"></span>
+            </button>
+        </div>
+  tags:
+    - cf-forms
+*/
+
+.btn-inside-input {
+
+    position: relative;
+
+    input[type="text"],
+    input[type="search"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"] {
+        box-sizing: border-box;
+        width: 100%;
+        padding-right: unit(65px / @btn-font-size, em);
+
+        &.input__super {
+            padding-right: unit(90px / @super-btn-font-size, em);
+        }
+    }
+
+    .btn {
+        .u-link__no-border();
+        position: absolute;
+        right: unit(15px / @btn-font-size, em);
+        top: 0;
+
+        &__super {
+            right: unit(15px / @super-btn-font-size, em);
+        }
+
+        /* pa11y fails unless the background color is explicitly set */
+        &__link.btn__secondary {
+            background-color: #fff;
+        }
+    }
+
+}
+
+
+/* topdoc
+  name: EOF
+  eof: true
+*/

@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Capital Framework
+   Less variables
+   ========================================================================== */
+
+
+/* topdoc
+  name: Theme variables
+  family: cf-core
+  notes:
+    - "The following color and sizing variables are exposed, allowing you to
+       easily override them before compiling."
+  patterns:
+    - name: Sizing
+      codenotes:
+        - |
+          @base-font-size-px
+          @base-line-height-px
+          @base-line-height
+          @bp-xs-max
+          @bp-sm-min
+          @bp-sm-max
+          @bp-med-min
+          @bp-med-max
+          @bp-lg-min
+          @bp-lg-max
+          @bp-xl-min
+    - name: Colors
+      codenotes:
+        - |
+          @text
+          @link-text
+          @link-underline
+          @link-text-visited
+          @link-underline-visited
+          @link-text-hover
+          @link-underline-hover
+          @link-text-active
+          @link-underline-active
+          @table-border
+          @thead-text
+          @thead-bg
+          @td-bg
+          @td-bg-alt
+          @input-bg
+          @input-border
+          @input-border-focus
+          @input-placeholder
+          @figure__bordered
+  tags:
+    - cf-core
+*/
+
+// Sizing variables
+
+@base-font-size-px:             16px;
+@base-line-height-px:           22px;
+@base-line-height:              unit(@base-line-height-px / @base-font-size-px);
+@bp-xs-max:                     600px;
+@bp-sm-min:                     @bp-xs-max + 1px;
+@bp-sm-max:                     900px;
+@bp-med-min:                    @bp-sm-max + 1px;
+@bp-med-max:                    1020px;
+@bp-lg-min:                     @bp-med-max + 1px;
+@bp-lg-max:                     1230px;
+@bp-xl-min:                     @bp-lg-max + 1px;
+
+// To be deprecated
+@mobile-max:                    @bp-xs-max;
+@tablet-min:                    @bp-sm-min;
+
+// Color variables
+// $color- variables are from 18F's US Web Design Standards
+// https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss
+
+// body
+@text:                          #212121; // $color-base
+
+// a
+@link-text:                     #0071bc; // $color-primary
+@link-underline:                #0071bc; // $color-primary
+@link-text-visited:             #4c2c92; // $color-visited
+@link-underline-visited:        #4c2c92; // $color-visited
+@link-text-hover:               #205493; // $color-primary-darker
+@link-underline-hover:          #205493; // $color-primary-darker
+@link-text-active:              #046b99; // $color-primary-darkest
+@link-underline-active:         #046b99; // $color-primary-darkest
+
+// table
+@table-border:                  #5b616b; // $color-gray
+
+// thead
+@thead-text:                    @text;
+@thead-bg:                      #f1f1f1; // $color-gray-lightest
+
+// input
+@input-bg:                      #fff;
+@input-border:                  #5b616b; // $color-gray
+@input-border-focus:            #3e94cf; // $color-focus
+@input-placeholder:             grayscale(#c7336e);
+
+// .figure__bordered
+@figure__bordered:              #d6d7d9; // $color-gray-lighter
+
+
+/* topdoc
+  name: EOF
+  eof: true
+*/

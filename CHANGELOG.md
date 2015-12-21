@@ -1,13 +1,33 @@
 All notable changes to this project will be documented in this file.
 We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
-## 2.0.0 - 2015-12-18
+## Unreleased
+
+### Added
+- 
 
 ### Changed
+- 
 
-- Updated the cf-layout dependency to `2.0.0`
+### Removed
+- 
 
-## 1..0.0 - 2015-06-08
+## 3.0.6 - 2015-12-18
+
+### Added
+- Initial WCAG accessibility tests.
+
+## 3.0.5 - 2015-12-18
 
 ### Changed
-- Build process now uses `@import` statements instead of Grunt concatenation.
+- Individual components' readme template.
+
+## 3.0.3 - 2015-12-18
+
+### Added
+- Add automatic changelog updating to Travis CI release script. 
+
+## 3.0.0 - 2015-12-17
+
+### Changed
+- Voltrazord refactor. All components now live in this repo.

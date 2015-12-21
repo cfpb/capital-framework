@@ -1,0 +1,996 @@
+/* ==========================================================================
+   Capital Framework
+   Base styles
+   ========================================================================== */
+
+
+/* topdoc
+  name: Webfonts
+  family: cf-core
+  patterns:
+    - name: Webfont mixins and variables
+      codenotes:
+        - ".webfont-regular()"
+        - ".webfont-italic()"
+        - ".webfont-medium()"
+        - ".webfont-demi()"
+      notes:
+        - "Use these mixins to easily add the your preferred font family to your
+          elements."
+        - "To use your own fonts in the webfont mixins, set your own font with the
+          @webfont-regular/italic/medium/demi variables."
+        - "To avoid faux bold and italics,
+          you must use the font family name for that particular style.
+          For example, when defining an italic in Helvetica
+          you need to use the Helvetica Italic font family.
+          Use the mixins when setting bold or italic text as they also
+          set the appropriate font-weight and font-style."
+        - "These mixins also add the appropriate .lt-ie9 overrides.
+          .lt-ie9 overrides are necessary to override font-style and font-weight
+          each time the webfont is used. These overrides are built into the webfont
+          mixins so you get them automatically. Note that this requires you to
+          use conditional classes on the <html> element:
+          https://github.com/h5bp/html5-boilerplate/blob/v4.3.0/doc/html.md#conditional-html-classes."
+  tags:
+    - cf-core
+*/
+
+@webfont-regular: Arial;
+@webfont-italic: Arial;
+@webfont-medium: Arial;
+@webfont-demi: Arial;
+
+.webfont-regular() {
+    font-family: @webfont-regular, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+
+    & em,
+    & i {
+        .webfont-italic();
+    }
+
+    & strong,
+    & b {
+        .webfont-demi();
+    }
+}
+
+.webfont-italic() {
+    font-family: @webfont-italic, Arial, sans-serif;
+    font-style: italic;
+    font-weight: normal;
+    .lt-ie9 & {
+        font-style: normal !important;
+    }
+}
+
+.webfont-medium() {
+    font-family: @webfont-medium, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    .lt-ie9 & {
+        font-weight: normal !important;
+    }
+}
+
+.webfont-demi() {
+    font-family: @webfont-demi, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    .lt-ie9 & {
+        font-weight: normal !important;
+    }
+}
+
+
+/* topdoc
+  name: Type hierarchy
+  family: cf-core
+  patterns:
+    - name: Default body type
+      markup: |
+        <p>Lorem ipsum dolor sit amet, <em>consectetur adipisicing elit</em>, sed do eiusmod <strong>tempor incididunt</strong> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    - name: Heading level 1
+      markup: |
+        <h1>Example heading element</h1>
+        <p class="h1">A non-heading element</p>
+      notes:
+        - Responsive heading. At small screen sizes, displays as h2.
+    - name: Heading level 2
+      markup: |
+        <h2>Example heading element</h2>
+        <p class="h2">A non-heading element</p>
+      notes:
+        - Responsive heading. At small screen sizes, displays as h3.
+    - name: Heading level 3
+      markup: |
+        <h3>Example heading element</h3>
+        <p class="h3">A non-heading element</p>
+      notes:
+        - Responsive heading. At small screen sizes, displays as h4.
+    - name: Heading level 4
+      markup: |
+        <h4>Example heading element</h4>
+        <p class="h4">A non-heading element</p>
+    - name: Heading level 5
+      markup: |
+        <h5>Example heading element</h5>
+        <p class="h5">A non-heading element</p>
+    - name: Heading level 6
+      markup: |
+        <h6>Example heading element</h6>
+        <p class="h6">A non-heading element</p>
+    - name: Lead paragraph
+      markup: |
+        <p class="lead-paragraph">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      notes:
+        - Responsive. Displays as an h3 on large screens; displays at h4 size (but still Regular weight) on small screens.
+    - name: Display heading (aka "superheading")
+      markup: |
+        <h1 class="superheading">Example display heading</h1>
+  tags:
+    - cf-core
+*/
+
+body {
+    color: @text;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: unit(@base-font-size-px / 16 * 100, %);
+    line-height: @base-line-height;
+}
+
+.heading-1( @fs: 34px ) {
+    @font-size: @fs;
+    .webfont-regular();
+
+    margin-bottom: unit( 15px / @font-size, em );
+    font-size: unit( @font-size / @base-font-size-px, em );
+    line-height: 1.25;
+}
+
+.heading-2( @fs: 26px ) {
+    @font-size: @fs;
+    .webfont-regular();
+
+    margin-bottom: unit( 15px / @font-size, em );
+    font-size: unit( @font-size / @base-font-size-px, em );
+    line-height: 1.25;
+}
+
+.heading-3( @fs: 22px )  {
+    @font-size: @fs;
+    .webfont-regular();
+
+    margin-bottom: unit( 15px / @font-size, em );
+    font-size: unit( @font-size / @base-font-size-px, em );
+    line-height: 1.25;
+}
+
+.heading-4( @fs: 18px )  {
+    @font-size: @fs;
+    .webfont-medium();
+
+    margin-bottom: unit( 15px / @font-size, em );
+    font-size: unit( @font-size / @base-font-size-px, em );
+    line-height: 1.25;
+}
+
+.heading-5( @fs: 14px )  {
+    @font-size: @fs;
+    .webfont-demi();
+
+    margin-bottom: unit( 15px / @font-size, em );
+    font-size: unit( @font-size / @base-font-size-px, em );
+    letter-spacing: 1px;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+.heading-6( @fs: 12px )  {
+    @font-size: @fs;
+    .webfont-demi();
+
+    margin-bottom: unit( 15px / @font-size, em );
+    font-size: unit( @font-size / @base-font-size-px, em );
+    letter-spacing: 1px;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+// Resetting default browser styling for margin-top on headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+}
+
+h1,
+.h1 {
+    .heading-1();
+
+    p + &,
+    ul + &,
+    ol + &,
+    dl + &,
+    figure + &,
+    img + &,
+    table + &,
+    blockquote + & {
+        margin-top: unit( 60px / @font-size, em );
+    }
+
+    .respond-to-max(@bp-xs-max, {
+        .heading-2();
+
+        p + &,
+        ul + &,
+        ol + &,
+        dl + &,
+        figure + &,
+        img + &,
+        table + &,
+        blockquote + & {
+            margin-top: unit( 45px / @font-size, em );
+        }
+
+        h2 + &,
+        .h2 + &,
+        h3 + &,
+        .h3 + &,
+        h4 + &,
+        .h4 + &,
+        h5 + &,
+        .h5 + &,
+        h6 + &,
+        .h6 + & {
+            margin-top: unit( 30px / @font-size, em );
+        }
+    });
+}
+
+h2,
+.h2 {
+    .heading-2();
+
+    p + &,
+    ul + &,
+    ol + &,
+    dl + &,
+    figure + &,
+    img + &,
+    table + &,
+    blockquote + & {
+        margin-top: unit( 45px / @font-size, em );
+    }
+
+    h1 + &,
+    .h1 + &,
+    h3 + &,
+    .h3 + &,
+    h4 + &,
+    .h4 + &,
+    h5 + &,
+    .h5 + &,
+    h6 + &,
+    .h6 + & {
+        margin-top: unit( 30px / @font-size, em );
+    }
+
+    .respond-to-max(@bp-xs-max, {
+        .heading-3();
+
+        p + &,
+        ul + &,
+        ol + &,
+        dl + &,
+        figure + &,
+        img + &,
+        table + &,
+        blockquote + & {
+            margin-top: unit( 30px / @font-size, em );
+        }
+    });
+}
+
+h3,
+.h3 {
+    .heading-3();
+
+    p + &,
+    ul + &,
+    ol + &,
+    dl + &,
+    figure + &,
+    img + &,
+    table + &,
+    blockquote + &,
+    h1 + &,
+    .h1 + &,
+    h2 + &,
+    .h2 + &,
+    h4 + &,
+    .h4 + &,
+    h5 + &,
+    .h5 + &,
+    h6 + &,
+    .h6 + & {
+        margin-top: unit( 30px / @font-size, em );
+    }
+
+    .respond-to-max(@bp-xs-max, {
+        .heading-4();
+    });
+}
+
+h4,
+.h4 {
+    .heading-4();
+
+    p + &,
+    ul + &,
+    ol + &,
+    dl + &,
+    figure + &,
+    img + &,
+    table + &,
+    blockquote + &,
+    h1 + &,
+    .h1 + &,
+    h2 + &,
+    .h2 + &,
+    h3 + &,
+    .h3 + &,
+    h5 + &,
+    .h5 + &,
+    h6 + &,
+    .h6 + & {
+        margin-top: unit( 30px / @font-size, em );
+    }
+}
+
+h5,
+.h5 {
+    .heading-5();
+
+    p + &,
+    ul + &,
+    ol + &,
+    dl + &,
+    figure + &,
+    img + &,
+    table + &,
+    blockquote + &,
+    h1 + &,
+    .h1 + &,
+    h2 + &,
+    .h2 + &,
+    h3 + &,
+    .h3 + &,
+    h4 + &,
+    .h4 + &,
+    h6 + &,
+    .h6 + & {
+        margin-top: unit( 30px / @font-size, em );
+    }
+}
+
+h6,
+.h6 {
+    .heading-6();
+
+    p + &,
+    ul + &,
+    ol + &,
+    dl + &,
+    figure + &,
+    img + &,
+    table + &,
+    blockquote + &,
+    h1 + &,
+    .h1 + &,
+    h2 + &,
+    .h2 + &,
+    h3 + &,
+    .h3 + &,
+    h4 + &,
+    .h4 + &,
+    h5 + &,
+    .h5 + & {
+        margin-top: unit( 30px / @font-size, em );
+    }
+}
+
+.lead-paragraph {
+    .heading-3();
+
+    margin-top: unit( 30px / @font-size, em );
+    margin-bottom: unit( 15px / 18px, em );
+
+    .respond-to-max(@bp-xs-max, {
+        // Use the same regular weight but reduce the sizes to h4 size
+        margin-top: unit( 30px / 18px, em );
+        font-size: unit( 18px / @base-font-size-px, em );
+    });
+}
+
+// To be deprecated at the 2.0 release:
+.subheader {
+    &:extend(.lead-paragraph);
+}
+
+.superheading {
+    // For when you want a heading that's bigger than a normal H1
+    @font-size: 48px;
+
+    .webfont-regular();
+
+    margin-bottom: unit( 20px / @font-size, em );
+    font-size: unit( @font-size / @base-font-size-px, em );
+    line-height: 1.25;
+}
+
+// To be deprecated at the 2.0 release:
+.superheader {
+    &:extend(.superheading);
+}
+
+
+/* topdoc
+  name: Body copy element vertical margins
+  family: cf-core
+  patterns:
+    - name: Consistent vertical margins
+      notes:
+        - Applies 15px bottom margin to all p, ul, ol, dl, figure, table, and blockquote elements.
+        - Applies -5px top margin to lists following paragraphs to reduce margin between them to 10px.
+        - Applies 8px bottom margin to list items that are not within a nav element.
+        - Assumes that the font size of each of these items remains the default.
+      markup: |
+        <p>Paragraph margin example</p>
+        <p>Paragraph margin example</p>
+        <ul>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+        </ul>
+        <p>Paragraph margin example</p>
+  tags:
+    - cf-core
+*/
+
+p,
+ul,
+ol,
+dl,
+figure,
+table,
+blockquote {
+    margin-top: 0;
+    margin-bottom: unit(15px / @base-font-size-px, em);
+}
+
+p + ul,
+p + ol {
+    margin-top: unit(-5px / @base-font-size-px, em);
+}
+
+:not(nav) li {
+    margin-bottom: unit(8px / @base-font-size-px, em);
+}
+
+// Override for IE8 and under, which doesn't suppor the :not selector.
+.lt-ie9 nav li {
+    margin-bottom: 0;
+}
+
+
+/* topdoc
+  name: Default link
+  notes:
+    - "Note that the .visited, .hover, .focus, .active classes are for demonstration purposes only and should not
+      be used in production."
+  family: cf-core
+  patterns:
+    - name: Default state
+      markup: |
+        <a href="#">Default link style</a>
+    - name: Visited state
+      markup: |
+        <a href="#" class="visited">Visited link style</a>
+    - name: Hovered state
+      markup: |
+        <a href="#" class="hover">Hovered link style</a>
+    - name: Focused state
+      markup: |
+        <a href="#" class="focus">Focused link style</a>
+    - name: Active state
+      markup: |
+        <a href="#" class="active">Active link style</a>
+  tags:
+    - cf-core
+*/
+
+a {
+    border-width: 0;
+    border-style: dotted;
+    border-color: @link-underline;
+    color: @link-text;
+    text-decoration: none;
+
+    &:visited,
+    &.visited {
+        border-color: @link-underline-visited;
+        color: @link-text-visited;
+    }
+
+    &:hover,
+    &.hover {
+        border-style: solid;
+        border-color: @link-underline-hover;
+        color: @link-text-hover;
+    }
+
+    &:focus,
+    &.focus {
+        border-style: solid;
+        outline: thin dotted;
+    }
+
+    &:active,
+    &.active {
+        border-style: solid;
+        border-color: @link-underline-active;
+        color: @link-text-active;
+    }
+}
+
+
+/* topdoc
+  name: Underlined links
+  family: cf-core
+  patterns:
+    - name: States
+      notes:
+        - "Note that the .visited, .hover, .focus, .active classes are for demonstration purposes only and should not
+          be used in production."
+        - "The underline style properties are mostly set above in the a tag.
+          To enable the underline simply set a bottom-border-width as done here."
+      markup: |
+        <p>
+            <a href="#">Default</a>,
+            <a href="#" class="visited">Visited</a>,
+            <a href="#" class="hover">Hovered</a>,
+            <a href="#" class="focus">Focused</a>,
+            <a href="#" class="active">Active</a>
+        </p>
+    - name: Underline conditions
+      notes:
+        - "We're restricting link borders to links within p, li, and dd so that
+          we don't have to override them every time we want a plain link."
+      markup: |
+        <p>
+            <a href="#">A child of a paragraph</a>
+        </p>
+        <ul>
+            <li>
+                <a href="#">A child of a list item</a>
+            </li>
+        </ul>
+        <dl>
+            <dt>
+                Definition list term
+            </dt>
+            <dd>
+                <a href="#">A child of a definition list description</a>
+            </dd>
+        </dl>
+    - name: Exceptions for underlined links
+      notes:
+        - "Inline text links inside of a nav element are not underlined."
+      markup: |
+        <nav>
+            <p>
+                <a href="#">A child of a paragraph</a>
+            </p>
+            <ul>
+                <li>
+                    <a href="#">A child of a list item</a>
+                </li>
+            </ul>
+            <dl>
+                <dt>
+                    Definition list term
+                </dt>
+                <dd>
+                    <a href="#">A child of a definition list description</a>
+                </dd>
+            </dl>
+        </nav>
+  tags:
+    - cf-core
+*/
+
+p,
+li,
+dd {
+    // Restrict bottom borders to inline text links ...
+
+    a {
+        border-bottom-width: 1px;
+    }
+}
+
+nav a {
+    // ... unless they're part of a nav list
+    border-bottom-width: 0;
+}
+
+
+/* topdoc
+  name: Lists
+  family: cf-core
+  patterns:
+    - name: Unordered list
+      markup: |
+        <p>Paragraph example for visual reference</p>
+        <ul>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+        </ul>
+    - name: Ordered list
+      markup: |
+        <p>Paragraph example for visual reference</p>
+        <ol>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+        </ol>
+  tags:
+    - cf-core
+*/
+
+ul {
+    // 32px provides exactly 15px between left margin
+    // and bullet character in most browsers
+    padding-left: unit(32px / @base-font-size-px, em);
+    list-style: square;
+}
+
+// Use the same overall number as ULs, but pull the number 1px to the left
+ol {
+    padding-left: unit(31px / @base-font-size-px, em);
+
+    > li {
+        padding-left: unit(1px / @base-font-size-px, em);
+    }
+}
+
+
+/* topdoc
+  name: Tables
+  family: cf-core
+  patterns:
+    - name: Standard table
+      markup: |
+        <table>
+            <thead>
+                <tr>
+                    <th>Column 1 header</th>
+                    <th>Column 2 header</th>
+                    <th>Column 3 header</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Row 1, column 1</td>
+                    <td>Row 1, column 2</td>
+                    <td>Row 1, column 3</td>
+                </tr>
+                <tr>
+                    <td>Row 2, column 1</td>
+                    <td>Row 2, column 2</td>
+                    <td>Row 2, column 3</td>
+                </tr>
+                <tr>
+                    <td>Row 3, column 1</td>
+                    <td>Row 3, column 2</td>
+                    <td>Row 3, column 3</td>
+                </tr>
+            </tbody>
+        </table>
+  tags:
+    - cf-core
+*/
+
+table {
+    .webfont-regular();
+}
+
+th,
+td {
+    padding: unit(10px / @base-font-size-px, em);
+
+    thead & {
+        color: @thead-text;
+        background: @thead-bg;
+        .h5();
+    }
+}
+
+thead,
+tbody tr {
+    border-bottom: 1px solid @table-border;
+}
+
+th {
+    .webfont-demi();
+    text-align: left;
+}
+
+tbody th {
+    .webfont-regular();
+}
+
+/* topdoc
+  name: Block quote
+  family: cf-core
+  patterns:
+    - name: Default block quote
+      markup: |
+        <blockquote cite="link-to-source">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
+            similique fugit hic eligendi praesentium officiis illum optio iusto
+            commodi eum tempore nisi ad in perferendis enim quo dolores.
+            Reprehenderit similique earum quibusdam possimus vitae esse
+            nesciunt mollitia sed beatae aliquid dolores iure a impedit quam
+            minus eum modi illum ducimus eligendi eveniet labore non sequi
+            voluptate et totam praesentium animi itaque asperiores dolorum
+            sunt laudantium repellat nam commodi. Perspiciatis natus aliquam
+            veniam officiis ducimus voluptatum ut necessitatibus non!
+        </blockquote>
+      notes:
+        - "Use a block quote to quote from an external work. See .pull-quote if
+          you need to highlight an excerpt from the current work."
+        - "It is best practice to document the URL of a quoted work using the
+          cite attribute."
+  tags:
+    - cf-core
+*/
+
+blockquote {
+    margin-right: unit(15px / @base-font-size-px, em);
+    margin-left: unit(15px / @base-font-size-px, em);
+
+    .respond-to-min(@bp-sm-min, {
+        margin-right: unit(30px / @base-font-size-px, em);
+        margin-left: unit(30px / @base-font-size-px, em);
+    });
+}
+
+
+/* topdoc
+    name: Form labels
+    family: cf-core
+    notes:
+      - "Visit https://github.com/cfpb/cf-forms for advanced form label patterns."
+    patterns:
+    - name: Default label
+      markup: |
+        <label>Form label</label>
+    - name: Label wrapping a radio or checkbox
+      markup: |
+        <label>
+            <input type="radio">
+            Radio label
+        </label>
+        <label>
+            <input type="checkbox">
+            Checkbox label
+        </label>
+    tags:
+    - cf-core
+*/
+
+label {
+    display: block;
+    // 5px is eyeballed to 10px when considering line height.
+    margin-bottom: unit(5px / @base-font-size-px, em);
+    .webfont-regular();
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-right: unit(6px / @base-font-size-px, em);
+    }
+}
+
+
+/* topdoc
+    name: Form elements
+    family: cf-core
+    notes:
+      - "The .focus class is only included for documentation demos and should
+         not be used in production."
+      - "Visit https://github.com/cfpb/cf-forms for advanced form field patterns."
+    patterns:
+    - name: type="text"
+      markup: |
+        <input type="text" value="Lorem ipsum">
+        <input class="focus" type="text" value="Lorem ipsum">
+        <br><br>
+        <input placeholder="Lorem ipsum" type="text" value="">
+    - name: type="search"
+      markup: |
+        <input type="search" value="Lorem ipsum">
+        <input class="focus" type="search" value="Lorem ipsum">
+        <br><br>
+        <input placeholder="Lorem ipsum" type="search" value="">
+    - name: type="email"
+      markup: |
+        <input type="email" value="Lorem ipsum">
+        <input class="focus" type="email" value="Lorem ipsum">
+        <br><br>
+        <input placeholder="Lorem ipsum" type="email" value="">
+    - name: type="url"
+      markup: |
+        <input type="url" value="Lorem ipsum">
+        <input class="focus" type="url" value="Lorem ipsum">
+        <br><br>
+        <input placeholder="Lorem ipsum" type="url" value="">
+    - name: type="tel"
+      markup: |
+        <input type="tel" value="Lorem ipsum">
+        <input class="focus" type="tel" value="Lorem ipsum">
+        <br><br>
+        <input placeholder="Lorem ipsum" type="tel" value="">
+    - name: type="number"
+      markup: |
+        <input type="number" value="1000">
+        <input class="focus" type="number" value="1000">
+        <br><br>
+        <input placeholder="Lorem ipsum" type="number" value="">
+    - name: textarea
+      markup: |
+        <textarea>Lorem ipsum</textarea>
+        <textarea class="focus">Lorem ipsum</textarea>
+    - name: multi-select
+      markup: |
+        <select multiple>
+            <option value="option1">Lorem</option>
+            <option value="option2">Ipsum</option>
+            <option value="option3">Dolor</option>
+            <option value="option4">Sit</option>
+        </select>
+        <select class="focus" multiple>
+            <option value="option1">Lorem</option>
+            <option value="option2">Ipsum</option>
+            <option value="option3">Dolor</option>
+            <option value="option4">Sit</option>
+        </select>
+    tags:
+    - cf-core
+*/
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select[multiple] {
+    @font-size: 16px;
+
+    display: inline-block;
+    margin: 0;
+    padding: unit(6 / @base-font-size-px, em);
+    font-family: Arial, sans-serif;
+    font-size: unit(@font-size / @base-font-size-px, em);
+    background: @input-bg;
+    border: 1px solid @input-border;
+    border-radius: 0;
+    vertical-align: top;
+    -webkit-appearance: none;
+    -webkit-user-modify: read-write-plaintext-only;
+}
+
+// Overrides extra left padding.
+// http://stackoverflow.com/questions/11127891/how-can-i-get-rid-of-horizontal-padding-or-indent-in-html5-search-inputs-in-webk
+::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+// The .focus class is only included for documentation demos and should not
+// be used in production.
+input[type="text"]:focus,
+input[type="text"].focus,
+input[type="search"]:focus,
+input[type="search"].focus,
+input[type="email"]:focus,
+input[type="email"].focus,
+input[type="url"]:focus,
+input[type="url"].focus,
+input[type="tel"]:focus,
+input[type="tel"].focus,
+input[type="number"]:focus,
+input[type="number"].focus,
+textarea:focus,
+textarea.focus,
+select[multiple]:focus,
+select[multiple].focus {
+    border: 1px solid @input-border-focus;
+    outline: 1px solid @input-border-focus;
+    outline-offset: 0;
+    box-shadow: none;
+}
+
+::-webkit-input-placeholder {
+   color: @input-placeholder;
+}
+::-moz-placeholder {
+   color: @input-placeholder;
+}
+:-ms-input-placeholder {
+   color: @input-placeholder;
+}
+
+
+/* topdoc
+  name: Images
+  family: cf-core
+  patterns:
+    - name: max-width
+      markup: |
+            <img src="http://placekitten.com/800/40" alt="">
+      notes:
+        - "Gives all images a default max-width of 100% of their container."
+  tags:
+    - cf-core
+*/
+
+img {
+    max-width: 100%;
+}
+
+
+/* topdoc
+  name: Figure
+  family: cf-core
+  patterns:
+    - name: figure
+      markup: |
+        <figure>
+            <img src="http://placekitten.com/340/320">
+        </figure>
+    - name: figure.figure__bordered
+      markup: |
+        <figure class="figure__bordered">
+            <img src="http://placekitten.com/340/320">
+        </figure>
+  tags:
+    - cf-core
+*/
+
+figure {
+    margin-left: 0;
+    margin-right: 0;
+
+    img {
+        // Removes weird vertical spacing below images.
+        vertical-align: middle;
+    }
+}
+
+.figure__bordered img {
+    border: 1px solid @figure__bordered;
+}
+
+
+/* topdoc
+  name: EOF
+  eof: true
+*/

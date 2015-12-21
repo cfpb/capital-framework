@@ -1,0 +1,21 @@
+{
+  "name": "cf-buttons",
+  "version": "3.0.1",
+  "description": "Capital Framework buttons",
+  "less": "src/cf-buttons.less",
+  "style": "cf-buttons.css",
+  "scripts": {
+    "//": "This is a convenience script so that if you run `npm test` from this dir",
+    "//": "npm won't return  a 'no tests' error. Instead it'll check if you're in",
+    "//": "the larger Capital Framework dir and execute those tests. It's removed",
+    "//": "before releases are tagged.",
+    "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
+  },
+  "dependencies": {
+    "cf-core": "^3.0.0",
+    "cf-icons": "^3.0.0"
+  },
+  "keywords": [
+    "buttons"
+  ]
+}

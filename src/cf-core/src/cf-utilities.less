@@ -1,0 +1,703 @@
+/* ==========================================================================
+   Capital Framework
+   Utilities
+   ========================================================================== */
+
+
+/* topdoc
+  name: JS-only
+  family: cf-core
+  patterns:
+    - name: Setup
+      codenotes:
+        - <html class="no-js">
+        - |
+            <script>
+                // Confirm availability of JS and remove no-js class from html
+                var docElement = document.documentElement;
+                docElement.className = docElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2');
+            </script>
+      notes:
+        - "First add the .no-js class to the HTML element."
+        - "Then add the script to your HEAD which removes the .no-js class when
+           JS is available."
+    - name: Utility class
+      codenotes:
+        - .u-js-only;
+      notes:
+        - "Hide stuff when JavaScript isn't available. Depends on having a small
+           script in the HEAD of your HTML document that removes a .no-js class."
+  tags:
+    - cf-core
+*/
+
+.u-js-only {
+    .no-js & {
+        display: none !important;
+    }
+}
+
+
+/* topdoc
+  name: Clearfix
+  family: cf-core
+  patterns:
+    - name: Utility class
+      markup: |
+        <div class="u-clearfix">
+            <div style="float:left; width:100%; height:60px; background:black;"></div>
+        </div>
+      codenotes:
+        - .u-clearfix;
+      notes:
+        - "Use this class to clear floats. For example, without .u-clearfix the
+           black box would spill into the markup section."
+        - "More information: http://css-tricks.com/snippets/css/clear-fix/"
+  tags:
+    - cf-core
+*/
+
+.u-clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .lt-ie8 & {
+        zoom: 1; // For IE 6/7 (triggers hasLayout)
+    }
+}
+
+
+/* topdoc
+  name: Visually hidden
+  family: cf-core
+  patterns:
+    - name: Utility class
+      markup: |
+        <h1>
+            <a href="#">
+                <span class="cf-icon cf-icon-twitter-square"></span>
+                <span class="u-visually-hidden">Share on Twitter</span>
+            </a>
+        </h1>
+      codenotes:
+        - .u-visually-hidden;
+      notes:
+        - "Use this class to hide something from view while keeping it
+          accessible to screen readers."
+  tags:
+    - cf-core
+*/
+
+.u-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+
+/* topdoc
+  name: Inline block
+  family: cf-core
+  patterns:
+    - name: Utility class
+      codenotes:
+        - .u-inline-block;
+      notes:
+        - "Also adds a .lt-ie8 class to hack inline-block for IE 7 and below."
+  tags:
+    - cf-core
+*/
+
+.u-inline-block {
+    display: inline-block;
+    .lt-ie8 & {
+        // Hack inline-block into submission
+        display: inline;
+    }
+}
+
+
+/* topdoc
+  name: Floating right
+  family: cf-core
+  patterns:
+    - name: Utility class
+      codenotes:
+        - .u-right;
+      notes:
+        - "IE7 float: right drop bug fixes:"
+        - "1. If the float: right follows an element in the html structure that
+          should be to its left (and not above it), then that preceding
+          element(s) must be float: left.
+          http://stackoverflow.com/questions/10981767/clean-css-fix-of-ie7s-float-right-drop-bug#answer-11437688"
+        - "2. Simply change the markup order so that the element floating right
+          comes before the element to its left."
+  tags:
+    - cf-core
+*/
+
+.u-right {
+    float: right;
+}
+
+
+/* topdoc
+  name: Break word
+  family: cf-core
+  patterns:
+    - name: Utility class
+      markup: |
+        <div style="width: 100px;">
+            This link should break:
+            <br>
+            <a class="u-break-word" href="#">
+                something@something.com
+            </a>
+            <br>
+            <br>
+            This link should not:
+            <br>
+            <a href="#">
+                something@something.com
+            </a>
+        </div>
+      codenotes:
+        - .u-break-word
+      notes:
+        - "Use this on elements where you need the words to break when confined
+           to small containers."
+        - "This only works in IE8 when the element with the .u-break-word class
+           has layout. See <http://stackoverflow.com/questions/3997223/word-wrapbreak-word-not-working-in-ie8>
+           for more information."
+  tags:
+    - cf-core
+*/
+
+.u-break-word {
+    word-break: break-all;
+}
+
+
+/* topdoc
+  name: Align with button
+  family: cf-core
+  patterns:
+    - name: Utility class
+      codenotes:
+        - ".u-align-with-btn(@font-size: @base-font-size-px);"
+      notes:
+        - "Adds top padding (among other things) to help alignment with buttons."
+        - "If you pass no arguments then the padding will be calculated using
+          @base-font-size-px."
+        - "Pass one argument to use a custom font size to calculate the top
+          padding."
+  tags:
+    - cf-core
+*/
+
+.u-align-with-btn(@font-size: @base-font-size-px) {
+    display: inline-block;
+    padding-top: unit(9px / @font-size, em);
+    line-height: normal;
+}
+
+
+/* topdoc
+  name: Flexible proportional containers
+  family: cf-core
+  notes:
+    - "Utilizes intrinsic ratios to create a flexible container that retains its
+      aspect ratio. When image tags scale they retain their aspect ratio, but if
+      you need a flexible video you will need to use this mixin."
+    - "You can read more about intrinsic rations here:
+      http://alistapart.com/article/creating-intrinsic-ratios-for-video"
+  patterns:
+    - name: Default example
+      markup: |
+        <div class="u-flexible-container">
+            <video
+              class="u-flexible-container_inner"
+              style="background:#75787B;"
+              controls>
+            </video>
+        </div>
+      notes:
+        - "Defaults to a 16:19 ratio."
+        - "Original mixin credit: https://gist.github.com/craigmdennis/6655047"
+        - "Note that inline style usage is being used for demo purposes only.
+          Please do not use inline styles."
+      codenotes:
+        - |
+          Structural sheat sheet:
+          -----------------------
+          .u-flexible-container
+            .u-flexible-container_inner
+    - name: Background image examples
+      markup: |
+        <div class="u-flexible-container"
+             style="
+               background-image:url(http://placekitten.com/700/394);
+               background-position: center center;
+             ">
+        </div>
+        <div class="u-flexible-container"
+             style="
+               background-image:url(http://placekitten.com/700/394);
+               background-position: center center;
+               background-size: cover;
+             ">
+        </div>
+      codenotes:
+        - |
+          Structural sheat sheet:
+          -----------------------
+          .u-flexible-container
+      notes:
+        - "If you're not using the video or object elements and all you need is
+          a proportionally cropped or scaling background image with a fluid
+          container then you can leave out u-flexible-container_inner."
+        - "Note that inline style usage is being used for demo purposes only.
+          Please do not use inline styles."
+    - name: 4-3 modifier
+      markup: |
+        <div class="u-flexible-container u-flexible-container__4-3">
+            <video
+              class="u-flexible-container_inner"
+              style="background:#75787B;"
+              controls>
+            </video>
+        </div>
+      codenotes:
+        - |
+          Structural sheat sheet:
+          -----------------------
+          .u-flexible-container.u-flexible-container__4-3
+            .u-flexible-container_inner
+      notes:
+        - "Create your own aspect ratios by using this modifier as an example."
+        - "Note that inline style usage is being used for demo purposes only.
+          Please do not use inline styles."
+  tags:
+    - cf-core
+*/
+
+.u-flexible-container-mixin(@width: 16, @height: 9) {
+    @ratio: (@height / @width) * 100;
+
+    position: relative;
+    padding-bottom: ~"@{ratio}%";
+    height: 0;
+}
+
+.u-flexible-container {
+    .u-flexible-container-mixin();
+}
+
+.u-flexible-container_inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.u-flexible-container__4-3 {
+    .u-flexible-container-mixin(4,3);
+}
+
+
+/* topdoc
+  name: Link mixins
+  family: cf-core
+  patterns:
+    - codenotes:
+        - .u-link__colors();
+      notes:
+        - "Pass this mixin no arguments to color your link states with the
+          following defaults: :link (default state) pacific, :hover pacific-50,
+          :focus: pacific, :visited teal, :active navy."
+    - codenotes:
+        - .u-link__colors(@c);
+      notes:
+        - "Pass this mixin one color to be used on all of the following
+          states of your link; :link (default state), :visited, :hover, :focus,
+          :active."
+    - codenotes:
+        - .u-link__colors(@c, @h);
+      notes:
+        - "Pass this mixin two colors to use the first color for the :link,
+          :visited, and :active states, and the second color for the :hover and
+          :focus states."
+    - codenotes:
+        - .u-link__colors(@c, @v, @h, @f, @a);
+      notes:
+        - "Pass this mixin five colors in 'love/hate' mnemonic order to color
+          :link, :visited, :hover, :focus, and :active states respectively."
+        - "Even though this mixin is basically the same as
+          .u-link__colors-base(@c, @v, @h, @f, @a); we encourage you to use
+          .u-link__colors(@c, @v, @h, @f, @a) to promote consistency."
+    - codenotes:
+        - .u-link__colors(@c, @v, @h, @f, @a, @bc, @bv, @bh, @bf, @ba);
+      notes:
+        - "Allows you to color text and the borders separately."
+        - "The first five colors in 'love/hate' mnemonic order will color text
+          for the :link, :visited, :hover, :focus, and :active states
+          respectively. The last five colors in 'love/hate' mnemonic order will
+          color the borders for the :link, :visited, :hover, :focus, and :active
+          states respectively."
+        - "Even though this mixin is basically the same as
+          .u-link__colors-base(@c, @v, @h, @f, @a, @bc, @bv, @bh, @bf, @ba); we
+          encourage you to use .u-link__colors(@c, @v, @h, @f, @a, @bc, @bv, @bh, @bf, @ba)
+          to promote consistency."
+    - codenotes:
+        - .u-link__colors-base(@c, @v, @h, @f, @a);
+      notes:
+        - "This is the base mixin that all .u-link__colors() mixins use. Please
+          refrain from using this mixin directly in order to promote a
+          consistent use of mixin names for coloring links throughout this
+          project. Remember that if you need to set colors for all states of a
+          link you should use .u-link__colors(@c, @v, @h, @f, @a)."
+    - codenotes:
+        - .u-link__border();
+      notes:
+        - "Forces the default bottom border on the :link and :hover states."
+    - codenotes:
+        - .u-link__no-border();
+      notes:
+        - "Turn off the default bottom border on the :link and :hover states."
+    - codenotes:
+        - .u-link__hover-border();
+      notes:
+        - "Turn off the default bottom border on the :link state and force a
+          bottom border on the :hover state."
+    - codenotes:
+        - .u-link-child__hover();
+      notes:
+        - "When a link has child elements you may want only certain children to
+          change color when the parent link is hovered.
+          Pass no arguments to this mixin to color the child element pacific
+          when the parent link is hovered."
+    - codenotes:
+        - .u-link-child__hover(@c);
+      notes:
+        - "Pass this mixin one color to color the child element when the parent
+          link is hovered."
+  tags:
+    - cf-core
+*/
+
+.u-link__colors() {
+    .u-link__colors-base();
+}
+
+.u-link__colors(@c) {
+    .u-link__colors-base(@c, @c, @c, @c, @c,
+                         @c, @c, @c, @c, @c);
+}
+
+.u-link__colors(@c, @h) {
+    .u-link__colors-base(@c, @c, @h, @h, @c,
+                         @c, @c, @h, @h, @c);
+}
+
+.u-link__colors(@c, @v, @h, @f, @a) {
+    .u-link__colors-base(@c, @v, @h, @f, @a,
+                         @c, @v, @h, @f, @a);
+}
+
+.u-link__colors(@c, @v, @h, @f, @a,
+                @bc, @bv, @bh, @bf, @ba) {
+    .u-link__colors-base(@c, @v, @h, @f, @a,
+                         @bc, @bv, @bh, @bf, @ba);
+}
+
+.u-link__colors-base(@c:  @link-text,
+                     @v:  @link-text-visited,
+                     @h:  @link-text-hover,
+                     @f:  @link-text,
+                     @a:  @link-text-active,
+                     @bc: @link-underline,
+                     @bv: @link-underline-visited,
+                     @bh: @link-underline-hover,
+                     @bf: @link-underline,
+                     @ba: @link-underline-active) {
+    color: @c;
+    border-color: @bc;
+
+    &:visited,
+    &.visited {
+        border-color: @bv;
+        color: @v;
+    }
+
+    &:hover,
+    &.hover {
+        border-color: @bh;
+        color: @h;
+    }
+
+    &:focus,
+    &.focus {
+        border-color: @bf;
+        color: @f;
+    }
+
+    &:active,
+    &.active {
+        border-color: @ba;
+        color: @a;
+    }
+}
+
+.u-link-child__hover(@c: @link-text-hover) {
+    a:hover &,
+    a.hover &,
+    a:focus &,
+    a.focus & {
+        color: @c;
+    }
+}
+
+.u-link__border() {
+    border-bottom-width: 1px;
+
+    &:hover,
+    &.hover {
+        border-bottom-width: 1px;
+    }
+}
+
+.u-link__no-border() {
+    border-bottom-width: 0 !important;
+}
+
+.u-link__hover-border() {
+    border-bottom-width: 0 !important;
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+        border-bottom-width: 1px !important;
+    }
+}
+
+
+/* topdoc
+  name: Margin utilities
+  family: cf-core
+  patterns:
+    - name: Utility classes
+      codenotes:
+        - .u-m<p><#>;
+      notes:
+        - "Replace <p> with the first letter of the position ('t' for top or 'b'
+           for bottom) and <#> with the pixel value of the margin you want."
+        - "Available values: 0, 5, 10, 15, 20, 30, 45, 60."
+  tags:
+    - cf-core
+*/
+
+.u-mt0  { margin-top:    0 !important; }
+.u-mb0  { margin-bottom: 0 !important; }
+.u-mt5  { margin-top:    5px !important; }
+.u-mb5  { margin-bottom: 5px !important; }
+.u-mt10 { margin-top:    10px !important; }
+.u-mb10 { margin-bottom: 10px !important; }
+.u-mt15 { margin-top:    15px !important; }
+.u-mb15 { margin-bottom: 15px !important; }
+.u-mt20 { margin-top:    20px !important; }
+.u-mb20 { margin-bottom: 20px !important; }
+.u-mt30 { margin-top:    30px !important; }
+.u-mb30 { margin-bottom: 30px !important; }
+.u-mt45 { margin-top:    45px !important; }
+.u-mb45 { margin-bottom: 45px !important; }
+.u-mt60 { margin-top:    60px !important; }
+.u-mb60 { margin-bottom: 60px !important; }
+
+
+/* topdoc
+  name: Width utilities
+  family: cf-core
+  patterns:
+    - name: Percent-based
+      markup: |
+        <div class="u-w100pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w100pct</code>
+        </div>
+        <div class="u-w90pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w90pct</code>
+        </div>
+        <div class="u-w80pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w80pct</code>
+        </div>
+        <div class="u-w70pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w70pct</code>
+        </div>
+        <div class="u-w60pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w60pct</code>
+        </div>
+        <div class="u-w50pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w50pct</code>
+        </div>
+        <div class="u-w40pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w40pct</code>
+        </div>
+        <div class="u-w30pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w30pct</code>
+        </div>
+        <div class="u-w20pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w20pct</code>
+        </div>
+        <div class="u-w10pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w10pct</code>
+        </div>
+        <div class="u-w75pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w75pct</code>
+        </div>
+        <div class="u-w25pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w25pct</code>
+        </div>
+        <div class="u-w66pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w66pct</code>
+        </div>
+        <div class="u-w33pct" style="background: #f4edf3; margin-bottom: 1px;">
+            <code>.u-w33pct</code>
+        </div>
+      notes:
+        - "Inline styles are for demonstration purposes only, please don't use
+           them."
+  tags:
+    - cf-core
+*/
+
+.u-w100pct { width: 100%; }
+.u-w90pct  { width: 90%; }
+.u-w80pct  { width: 80%; }
+.u-w70pct  { width: 70%; }
+.u-w60pct  { width: 60%; }
+.u-w50pct  { width: 50%; }
+.u-w40pct  { width: 40%; }
+.u-w30pct  { width: 30%; }
+.u-w20pct  { width: 20%; }
+.u-w10pct  { width: 10%; }
+.u-w75pct  { width: 75%; }
+.u-w25pct  { width: 25%; }
+.u-w66pct  { width: unit((2 / 3) * 100, %); }
+.u-w33pct  { width: unit((1 / 3) * 100, %); }
+
+
+/* topdoc
+  name: Width-specific display
+  family: cf-core
+  patterns:
+    - name: Show on mobile
+      markup: |
+        <section>
+            <p>The the text in the box below is visible only at widths less than 600px</p>
+            <div style="border: 1px solid black; height: 22px; padding: 5px;">
+                <p class="u-show-on-mobile">Visible on mobile</p>
+            </div>
+        </section>
+      codenotes:
+        - ".u-show-on-mobile"
+        - "Uses 'display:block' to toggle display. Would need to be extended
+          for inline use cases."
+      notes:
+        - "Displays an element only at mobile widths."
+    - name: Hide on mobile
+      markup: |
+        <section>
+            <p>The text in the box below is hidden at widths less than 600px</p>
+            <div style="border: 1px solid black; height: 22px; padding: 5px;">
+                <p class="u-hide-on-mobile">Hidden on mobile</p>
+            </div>
+        </section>
+      codenotes:
+        - ".u-hide-on-mobile"
+      notes:
+        - "Hides an element at mobile widths"
+  tags:
+    - cf-core
+*/
+
+.u-hide-on-mobile {
+    .respond-to-max(@bp-xs-max {
+        display: none;
+    });
+}
+
+.u-show-on-mobile {
+    display: none;
+    .respond-to-max(@bp-xs-max {
+        display: block;
+    });
+}
+
+
+/* topdoc
+  name: Small text utility
+  family: cf-core
+  patterns:
+    - name: .u-small-text (utility class)
+      markup: |
+        Lorem ipsum<br>
+        <span class="u-small-text">dolor sit amet</span>
+      codenotes:
+        - ".u-small-text"
+      notes:
+        - "14px text."
+        - "The utility class should only be used when the default text size is
+           16px. For example you wouldn't want to use the class inside of an
+           `h1` because the `font-size` in the `h1` will make `.u-small-text`
+           bigger than it should be. See the docs for the `.u-small-text()`
+           mixin."
+    - name: .u-small-text() (Less mixin)
+      codenotes:
+        - ".u-small-text(@context)"
+        - |
+          // Mixin usage:
+          .example {
+            font-size: unit(20px / @base-font-size-px, em);
+            small {
+              .u-small-text(20px);
+            }
+          }
+          // Compiles to:
+          .example {
+            font-size: 1.25em;
+          }
+          .example small {
+            font-size: 0.7em;
+          }
+      notes:
+        - "This mixin enables you to easily create consistent small text by
+           passing the context `font-size`."
+  tags:
+    - cf-core
+*/
+
+.u-small-text(@context: @base-font-size-px) {
+  font-size: unit(14px / @context, em);
+}
+
+.u-small-text {
+  .u-small-text();
+}
+
+small {
+  .u-small-text();
+}
+
+
+/* topdoc
+    name: EOF
+    eof: true
+*/

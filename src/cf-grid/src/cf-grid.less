@@ -1,0 +1,352 @@
+@import (less) "../node_modules/normalize-css/normalize.css";
+@import (less) "../node_modules/normalize-legacy-addon/normalize-legacy-addon.css";
+
+/* ==========================================================================
+   Capital Framework
+   Grid mixins
+   ========================================================================== */
+
+/* topdoc
+  name: Less variables
+  notes:
+    - "The following variables are exposed,
+       allowing you to easily override them before compiling.
+       Most mixins allows you to further override these values by passing them
+       arguments."
+  family: cf-grid
+  patterns:
+    - codenotes:
+        - "@grid_box-sizing-polyfill-path: '../../box-sizing-polyfill;"
+      notes:
+        - "The path where boxsizing.htc is located."
+        - "This path MUST be overridden in your project and set to a root relative url."
+    - codenotes:
+        - "@grid_wrapper-width: 1200px;"
+      notes:
+        - "The grid's maximum width in px."
+    - codenotes:
+        - "@grid_gutter-width: 30px;"
+      notes:
+        - "The fixed width between columns."
+    - codenotes:
+        - "@grid_total-columns: 12;"
+      notes:
+        - "The total number of columns used in calculating column widths."
+    - codenotes:
+        - "@grid_debug"
+      notes:
+        - "Gives column blocks a background color if set to true."
+  tags:
+    - cf-grid
+*/
+
+@grid_box-sizing-polyfill-path: '../../box-sizing-polyfill';
+@grid_wrapper-width:            1200px;
+@grid_gutter-width:             30px;
+@grid_total-columns:            12;
+@grid_debug:                    false;
+
+
+/* topdoc
+  name: Wrapper
+  notes:
+    - "Wrappers are centered containers with a max-width and fixed gutters
+       that match the gutter widths of columns."
+    - "To support IE 6/7, ensure that the path to boxsizing.htc is set using
+       the @grid_box-sizing-polyfill-path Less variable.
+       Read more: https://github.com/Schepp/box-sizing-polyfill."
+  family: cf-grid
+  patterns:
+    - name: Less mixin
+      codenotes:
+        - ".grid_wrapper( @grid_wrapper-width: @grid_wrapper-width )"
+      notes:
+        - "You can create wrappers with different max-widths by passing a pixel
+           value into the mixin."
+    - name: Usage
+      codenotes:
+        - |
+          .main-wrapper {
+            .grid_wrapper();
+          }
+          .wide-wrapper {
+            .grid_wrapper( 1900px );
+          }
+        - |
+          <div class="main-wrapper">
+              This container now has left and right padding and a centered max width.
+          </div>
+          <div class="wide-wrapper">
+              This container is the same except it has a wider max-width.
+          </div>
+  tags:
+    - cf-grid
+*/
+
+.grid_wrapper( @grid_wrapper-width: @grid_wrapper-width ) {
+  max-width: ( @grid_wrapper-width - @grid_gutter-width );
+  padding-right: ( @grid_gutter-width / 2 );
+  padding-left: ( @grid_gutter-width / 2 );
+  margin: 0 auto;
+  clear: both;
+}
+
+
+/* topdoc
+  name: Columns
+  family: cf-grid
+  patterns:
+    - name: Less mixin
+      codenotes:
+        - ".grid_column( @columns: 1; @total: @grid_total-columns; @prefix: 0; @suffix: 0 )"
+      notes:
+        - "Computes column widths and prefix/suffix padding."
+        - "CSS borders are used for fixed gutters."
+    - name: Usage
+      codenotes:
+        - |
+          .main-wrapper {
+            .grid_wrapper();
+          }
+          .half {
+            .grid_column(1, 2);
+          }
+        - |
+          <div class="main-wrapper">
+              <div class="half">I am half of my parent.</div>
+              <div class="half">I am half of my parent.</div>
+          </div>
+    - name: This is a placeholder for documenting prefix and suffix
+      codenotes:
+        - "..."
+  tags:
+    - cf-grid
+*/
+
+.grid_column( @columns: 1; @total: @grid_total-columns; @prefix: 0; @suffix: 0 ) {
+
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+  // To calculate the percentage width of the base element, we take the number of
+  // columns it'll span and divide by the total number of columns. As columns are
+  // specified as inline-block elements, standard columns require no further math.
+  //
+  //                      num cols used
+  //  column width in % = -------------
+  //                       total cols
+
+  @width: percentage( @columns / @total );
+
+  border: solid transparent;
+  border-width: 0 (@grid_gutter-width / 2);
+
+  // Remove whitespace caused by setting display to inline-block
+  margin-right: -0.25em;
+
+  vertical-align: top;
+
+  .lt-ie8 & {
+    // Hack inline-block into submission
+    display: inline;
+    // Mixing negative margins and the box-sizing hack can be dangerous.
+    // This is a temporary fix for: https://github.com/cfpb/cf-grid/issues/17
+    margin-right: 0;
+
+    // Clearfix hack for IE 6/7 only
+    zoom: 1;
+    // Box-sizing polyfill
+    behavior: url('@{grid_box-sizing-polyfill-path}/boxsizing.htc');
+  }
+
+  // Modifying standard width and padding for prefixed/suffixed columns, if necessary:
+  // LESS will now run through four possible child mixins, only one of which will
+  // actually be activated, depending on which one's guard conditions are met.
+  // At some point, consider how to modularize the prefix-suffix functionality and
+  // keep it optional.
+
+  .nonPrefixSuffix( @prefix, @suffix );
+  .prefix( @prefix, @suffix );
+  .suffix( @suffix, @prefix );
+  .prefixSuffix( @prefix, @suffix );
+
+  // Child mixins
+
+  // Run this when neither prefix nor suffix are specified
+  .nonPrefixSuffix( @prefix: 0; @suffix: 0 ) when ( @prefix = 0 ) and ( @suffix = 0 ) {
+    width: @width;
+  }
+
+  // Run this when only prefix is specified
+  .prefix( @prefix: 0; @suffix: 0 ) when ( @prefix > 0 ) and ( @suffix = 0 ) {
+    @offset: percentage( @prefix / @total );
+    width: @width + @offset;
+    padding-left: @offset;
+    .lt-ie8 & {
+      padding-left: 0;
+    }
+  }
+
+  // Run this when only suffix is specified
+  .suffix( @suffix: 0; @prefix: 0 ) when ( @suffix > 0 ) and ( @prefix = 0 ) {
+    @offset: percentage( @suffix / @total );
+    width: @width + @offset;
+    padding-right: @offset;
+    .lt-ie8 & {
+      padding-right: 0;
+    }
+  }
+
+  // Run this when both prefix and suffix are specified
+  .prefixSuffix( @prefix: 0; @suffix: 0 ) when ( @prefix > 0 ) and ( @suffix > 0 ) {
+    @left: percentage( @prefix / @total );
+    @right: percentage( @suffix / @total );
+    width: @width + @left + @right;
+    padding-right: @right;
+    padding-left: @left;
+    .lt-ie8 & {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+}
+
+.grid_column( @columns; @total: @grid_total-columns; @prefix: 0; @suffix: 0; ) when ( @grid_debug ) {
+
+  border-left-color: #FFB149;
+  border-left-color: fade(#FF9E1B, 25%);
+  border-right-color: #FFB149;
+  border-right-color: fade(#FF9E1B, 25%);
+  background-color: #F6D9D3;
+  background-color: fade(#D12124, 20%);
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: @grid_gutter-width * 0.25;
+    background-color: #DA6750;
+    background-color: fade(#DA6750, 75%);
+  }
+
+  &:before {
+    margin-bottom: @grid_gutter-width * 0.25;
+  }
+
+  &:after {
+    margin-top: @grid_gutter-width * 0.25;
+  }
+
+}
+
+
+/* topdoc
+  name: Push and Pull mixins for source ordering
+  family: cf-grid
+  patterns:
+    - codenotes:
+        - ".push( @offset: 1, @grid_total-columns: @grid_total-columns )"
+        - ".pull( @offset: 1, @grid_total-columns: @grid_total-columns )"
+    - name: Usage
+      codenotes:
+        - |
+          .first {
+            .grid_column(1, 2);
+            .grid_pull(1);
+          }
+          .second {
+            .grid_column(1, 2);
+            .grid_push(1);
+          }
+        - |
+          <div>
+              <div class="second">I am first in the markup but appear after .first.</div>
+              <div class="first">I am second in the markup but appear before .second.</div>
+          </div>
+  tags:
+    - cf-grid
+*/
+
+.grid_push( @offset: 1, @grid_total-columns: @grid_total-columns ) {
+  @push: percentage( @offset / @grid_total-columns );
+  position: relative;
+  left: @push;
+}
+
+.grid_pull( @offset: 1, @grid_total-columns: @grid_total-columns ) {
+  @pull: percentage( @offset / @grid_total-columns );
+  position: relative;
+  right: @pull;
+}
+
+
+/* topdoc
+  name: Nested columns
+  notes:
+    - "Since all cf-grid columns have left and right gutters you will notice
+      undesireable offsetting when nesting columns.
+      Normally this is removed with complex selectors or by adding classes
+      to the first and last column per 'row'.
+      In cf-grid the way to get around this is by wrapping your columns in a
+      container that utilizes the .grid_nested-col-group() mixin.
+      This mixin uses negative left and right margins to pull the columns back
+      into alignment with parent columns."
+    - "NOTE: Working this way allows you to easily create responsive grids.
+      You are free to control the number of columns per 'row' without having
+      to deal with the first and last columns of each row."
+    - "NOTE: cf-grids does not use 'rows' and there is no row container.
+      To clarify, if you have a 12 column grid and place 24 columns inside
+      of a wrapper cf-grid columns will automaitcally stack into 2 'rows'
+      of 12."
+  family: cf-grid
+  patterns:
+    - name: Less mixin
+      codenotes:
+        - ".grid_nested-col-group()"
+    - name: Usage
+      codenotes:
+        - |
+          .main-wrapper {
+            .grid_wrapper();
+          }
+          .cols {
+            .grid_nested-col-group();
+          }
+          .half {
+            .grid_column(1, 2);
+          }
+        - |
+          <div class="main-wrapper">
+              <div class="half">
+                  <div class="cols">
+                      <div class="half"></div>
+                      <div class="half"></div>
+                  </div>
+              </div>
+              <div class="half">
+                  <div class="cols">
+                      <div class="half"></div>
+                      <div class="half"></div>
+                  </div>
+              </div>
+          </div>
+  tags:
+    - cf-grid
+*/
+
+.grid_nested-col-group() {
+  display: block;
+  position: relative;
+  margin-left: ( @grid_gutter-width / 2 ) * -1;
+  margin-right: ( @grid_gutter-width / 2 ) * -1;
+}
+
+
+/* topdoc
+  name: EOF
+  eof: true
+*/
