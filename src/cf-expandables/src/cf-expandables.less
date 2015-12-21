@@ -1,41 +1,16 @@
-// Import external dependencies
-
-@import (less) '../../cf-core/src/cf-core.less';
-@import (less) '../../cf-icons/src/cf-icons.less';
-
 /* ==========================================================================
    Capital Framework
    Expandable Styling
    ========================================================================== */
 
-/* topdoc
-  name: Theme variables
-  family: cf-expandables
-  notes:
-    - "The following color and sizing variables are exposed, allowing you to
-       easily override them before compiling."
-  patterns:
-  - name: Colors
-    codenotes:
-      - |
-        @expandable-focus
-        @expandable_label-text
-        @expandable_link-text
-        @expandable__padded-bg
-        @expandable__padded-bg-hover
-        @expandable__padded-divider
-        @expandable-group_header-text
-        @expandable-group_header-bg
-        @expandable-group-bg
-        @expandable-group-divider
-  - name: Sizing
-    codenotes:
-      - |
-        @expandable_link-font-size
-  tags:
-  - cf-expandables
-  - less
-*/
+// Import external dependencies
+
+@import (less) '../../cf-core/src/cf-core.less';
+@import (less) '../../cf-icons/src/cf-icons.less';
+
+//
+// Theme variables
+//
 
 // Color variables
 // $color- variables are from 18F's US Web Design Standards
@@ -66,171 +41,9 @@
 // .expandable_link
 @expandable_link-font-size:     14px;
 
-
-/* topdoc
-  name: Recommended expandable pattern
-  family: cf-expandables
-  notes:
-    - "Expandables can be built by combining the basic barebones structure
-       described in the next section along with more specialized expandable
-       elements and modifiers described throughout."
-    - "The following combination is our recommended go-to expandable pattern."
-  patterns:
-  - name: Recommended expandable pattern
-    markup: |
-      <div class="expandable expandable__padded">
-          <button class="expandable_header expandable_target" title="Expand content">
-              <span class="expandable_header-left expandable_label">
-                  Expandable Header
-              </span>
-              <span class="expandable_header-right expandable_link">
-                  <span class="expandable_cue-open">
-                      Show
-                      <span class="cf-icon cf-icon-plus-round"></span>
-                  </span>
-                  <span class="expandable_cue-close">
-                      Hide
-                      <span class="cf-icon cf-icon-minus-round"></span>
-                  </span>
-              </span>
-          </button>
-          <div class="expandable_content">
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                  temporibus magnam debitis quidem. Ducimus ratione
-                  corporis nesciunt earum vel est quaerat blanditiis
-                  dolore ipsa?
-              </p>
-          </div>
-      </div>
-    codenotes:
-      - |
-        Pattern structure
-        -----------------
-        .expandable.expandable__padded
-          .expandable_header.expandable_target
-            .expandable_header-left.expandable_label
-            .expandable_header-right.expandable_link
-              .expandable_cue-open
-                .cf-icon.cf-icon-plus-round
-              .expandable_cue-close
-                .cf-icon.cf-icon-minus-round
-            .expandable_cue-open
-            .expandable_cue-close
-          .expandable_content
-  tags:
-  - cf-expandables
-*/
-
-
-/* topdoc
-  name: JS functions
-  family: cf-expandables
-  notes:
-    - "There are a number of available functions that you can call on
-       .expandable elements."
-  patterns:
-  - name: .toggle()
-    codenotes:
-      - "Toggles the expandable."
-  - name: .expand( duration )
-    codenotes:
-      - "Expands the expandable."
-      - |
-        duration
-        Type: number
-        The animation duration.
-        Not required.
-        Defaults to `$.fn.expandable.calculateExpandDuration` or
-        `$.fn.expandable.calculateCollapseDuration` if excluded.
-  - name: .collapse( duration )
-    codenotes:
-      - "Collapses the expandable."
-      - |
-        duration
-        Type: number
-        The animation duration.
-        Not required.
-        Defaults to `$.fn.expandable.calculateExpandDuration` or
-        `$.fn.expandable.calculateCollapseDuration` if excluded.
-  - name: Example usage
-    codenotes:
-      - |
-        // HTML
-        <div class="expandable" id="my-expandable">...</div>
-
-        // JS
-        // (use .get(0) to get the HTML element, that's what the functions
-        // are bound to)
-        $('#my-expandable').get(0).expand(); // Opens the expandable
-        $('#my-expandable').get(0).collapse(); // Closes the expandable
-        $('#my-expandable').get(0).toggle(); // Toggles the expandable
-  tags:
-  - cf-expandables
-*/
-
-
-/* topdoc
-  name: Barebones expandable
-  family: cf-expandables
-  notes:
-    - "This is the barebones structure for expandables that can be used (along
-       with other expanable elements and modifiers) to create custom
-       expandable patterns."
-    - "In this barebones example there are no visual styles."
-  patterns:
-  - name: Barebones expandable
-    markup: |
-      <div class="expandable">
-          <button class="expandable_target" title="Expand content">
-              <span class="expandable_cue-open">
-                  Show
-              </span>
-              <span class="expandable_cue-close">
-                  Hide
-              </span>
-          </button>
-          <div class="expandable_content">
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                  temporibus magnam debitis quidem. Ducimus ratione
-                  corporis nesciunt earum vel est quaerat blanditiis
-                  dolore ipsa?
-              </p>
-          </div>
-      </div>
-    codenotes:
-      - |
-        Pattern structure
-        -----------------
-        .expandable
-          .expandable_target
-            .expandable_cue-open
-            .expandable_cue-close
-          .expandable_content
-    notes:
-      - "Use the button tag for the .expandable_target element to allow for
-         keyboard access."
-      - "The 'Show' and 'Hide' messages can be customized directly in the HTML
-         by editing the contents of .expandable_cue-open and
-         .expandable_cue-close."
-      - "The aria-pressed attribute on .expandable_target gets automatically
-         added and updated by JavaScript."
-      - "The aria-expanded attribute on .expandable_content gets automatically
-         added and updated by JavaScript."
-  - name: .expandable__expanded (modifier)
-    codenotes:
-      - |
-        .expandable__expanded
-    notes:
-      - "Sometimes you may want the expandable to be open by default. This
-         is as easy as adding the .expandable__expanded modifier to the
-         .expandable block."
-  tags:
-  - cf-expandables
-*/
+//
+// Recommended expandable pattern
+//
 
 .expandable {
     margin-bottom: unit(30px / @base-font-size-px, em);
@@ -254,34 +67,9 @@
     .u-clearfix();
 }
 
-
-/* topdoc
-  name: Expandable text elements
-  family: cf-expandables
-  patterns:
-  - name: .expandable_label (element)
-    codenotes:
-      - |
-        .expandable_label
-    markup: |
-      <span class="expandable_label">
-          Lorem ipsum
-      </span>
-    notes:
-      - "Allows you to add some styled text."
-  - name: .expandable_link (element)
-    markup: |
-      <span class="expandable_link">
-          Lorem ipsum
-      </span>
-    codenotes:
-      - |
-        .expandable_link
-    notes:
-      - "Allows you to add some styled text with a link-like look."
-  tags:
-  - cf-expandables
-*/
+//
+// Expandable text elements
+//
 
 .expandable_label {
     color: @expandable_label-text;
@@ -295,58 +83,9 @@
     line-height: unit(@base-line-height-px / @expandable_link-font-size);
 }
 
-
-/* topdoc
-  name: Animated cues
-  family: cf-expandables
-  patterns:
-  - name: .expandable_cue-open/close__animated (modifier)
-    codenotes:
-      - |
-        .expandable_cue-open__animated
-        .expandable_cue-close__animated
-    markup: |
-      <div class="expandable">
-          <button class="expandable_target" title="Expand content">
-              <span class="expandable_cue-open expandable_cue-open__animated">
-                  <span class="cf-icon cf-icon-down"></span>
-              </span>
-              <span class="expandable_cue-close expandable_cue-close__animated">
-                  <span class="cf-icon cf-icon-up"></span>
-              </span>
-          </button>
-          <div class="expandable_content">
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                  temporibus magnam debitis quidem. Ducimus ratione
-                  corporis nesciunt earum vel est quaerat blanditiis
-                  dolore ipsa?
-              </p>
-          </div>
-      </div>
-      <div class="expandable expandable__expanded">
-          <button class="expandable_target" title="Expand content">
-              <span class="expandable_cue-open expandable_cue-open__animated">
-                  <span class="cf-icon cf-icon-down"></span>
-              </span>
-              <span class="expandable_cue-close expandable_cue-close__animated">
-                  <span class="cf-icon cf-icon-up"></span>
-              </span>
-          </button>
-          <div class="expandable_content">
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                  temporibus magnam debitis quidem. Ducimus ratione
-                  corporis nesciunt earum vel est quaerat blanditiis
-                  dolore ipsa?
-              </p>
-          </div>
-      </div>
-  tags:
-  - cf-expandables
-*/
+//
+// Animated cues
+//
 
 .expandable_cue-open__animated,
 .expandable_cue-close__animated {
@@ -365,49 +104,9 @@
     transform: rotate(-180deg);
 }
 
-
-/* topdoc
-  name: Expandable header elements
-  family: cf-expandables
-  codenotes:
-    - |
-      Pattern structure
-      -----------------
-      .expandable_header
-        .expandable_header-left
-        .expandable_header-right
-  notes:
-    - "These additional elements are useful for more complicated expandables
-       that need to convey more information than just 'Show/Hide' before the
-       user expands it."
-  patterns:
-  - name: .expandable_header (element)
-    codenotes:
-      - |
-        .expandable_header
-    notes:
-      - "Creates a full-width container to house information that is always
-         visible."
-      - "Combine .expandable_header with .expandable_target for a full-width
-         trigger."
-  - name: .expandable_header__spaced (modifier)
-    codenotes:
-      - |
-        .expandable_header__spaced
-    notes:
-      - "Allows you to add space between .expandable_header and .expandable_content."
-      - "Inline style usage is for demoing the space between the header and
-         content and should not be used."
-  - name: .expandable_header-left, .expandable_header-right (elements)
-    codenotes:
-      - |
-        .expandable_header-left
-        .expandable_header-right
-    notes:
-      - "Allows you to float information left and right."
-  tags:
-  - cf-expandables
-*/
+//
+// Expandable header elements
+//
 
 .expandable_header {
     display: block;
@@ -433,23 +132,9 @@
     float: right;
 }
 
-
-/* topdoc
-  name: Padded expandable modifier
-  family: cf-expandables
-  patterns:
-  - name: .expandable__padded (modifier)
-    codenotes:
-      - |
-        .expandable__padded
-    notes:
-      - "Adds padding and a background color to .expandable_header and
-         .expandable_content."
-      - "In addition to using the .expandable__padded modifier you also need
-         to make sure you are using .expandable_header."
-  tags:
-  - cf-expandables
-*/
+//
+// Padded expandable modifier
+//
 
 .expandable__padded {
     margin-bottom: unit(30px / @base-font-size-px, em);
@@ -482,199 +167,9 @@
     }
 }
 
-
-/* topdoc
-  name: Expandable groups
-  family: cf-expandables
-  patterns:
-  - name: Standard expandable group
-    markup: |
-      <div class="expandable-group">
-          <div class="expandable-group_header">Expandable group header</div>
-          <div class="expandable expandable__padded">
-              <button class="expandable_header expandable_target" title="Expand content">
-                  <span class="expandable_header-left expandable_label">
-                      Expandable Header 1
-                  </span>
-                  <span class="expandable_header-right expandable_link">
-                      <span class="expandable_cue-open">
-                          Show
-                          <span class="cf-icon cf-icon-plus-round"></span>
-                      </span>
-                      <span class="expandable_cue-close">
-                          Hide
-                          <span class="cf-icon cf-icon-minus-round"></span>
-                      </span>
-                  </span>
-              </button>
-              <div class="expandable_content">
-                  <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                      temporibus magnam debitis quidem. Ducimus ratione
-                      corporis nesciunt earum vel est quaerat blanditiis
-                      dolore ipsa?
-                  </p>
-              </div>
-          </div>
-          <div class="expandable expandable__padded">
-              <button class="expandable_header expandable_target" title="Expand content">
-                  <span class="expandable_header-left expandable_label">
-                      Expandable Header 2
-                  </span>
-                  <span class="expandable_header-right expandable_link">
-                      <span class="expandable_cue-open">
-                          Show
-                          <span class="cf-icon cf-icon-plus-round"></span>
-                      </span>
-                      <span class="expandable_cue-close">
-                          Hide
-                          <span class="cf-icon cf-icon-minus-round"></span>
-                      </span>
-                  </span>
-              </button>
-              <div class="expandable_content">
-                  <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                      temporibus magnam debitis quidem. Ducimus ratione
-                      corporis nesciunt earum vel est quaerat blanditiis
-                      dolore ipsa?
-                  </p>
-              </div>
-          </div>
-          <div class="expandable expandable__padded">
-              <button class="expandable_header expandable_target" title="Expand content">
-                  <span class="expandable_header-left expandable_label">
-                      Expandable Header 3
-                  </span>
-                  <span class="expandable_header-right expandable_link">
-                      <span class="expandable_cue-open">
-                          Show
-                          <span class="cf-icon cf-icon-plus-round"></span>
-                      </span>
-                      <span class="expandable_cue-close">
-                          Hide
-                          <span class="cf-icon cf-icon-minus-round"></span>
-                      </span>
-                  </span>
-              </button>
-              <div class="expandable_content">
-                  <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                      temporibus magnam debitis quidem. Ducimus ratione
-                      corporis nesciunt earum vel est quaerat blanditiis
-                      dolore ipsa?
-                  </p>
-              </div>
-          </div>
-      </div>
-    codenotes:
-      - |
-        Pattern structure
-        -----------------
-        .expandable-group
-          .expandable-group_header
-          .expandable.expandable__padded
-            [...]
-          .expandable.expandable__padded
-            [...]
-          .expandable.expandable__padded
-            [...]
-  - name: Accordion-style group
-    markup: |
-      <div class="expandable-group" data-accordion="true">
-          <div class="expandable-group_header">Expandable group header</div>
-          <div class="expandable expandable__padded">
-              <button class="expandable_header expandable_target" title="Expand content">
-                  <span class="expandable_header-left expandable_label">
-                      Expandable Header 1
-                  </span>
-                  <span class="expandable_header-right expandable_link">
-                      <span class="expandable_cue-open">
-                          Show
-                          <span class="cf-icon cf-icon-plus-round"></span>
-                      </span>
-                      <span class="expandable_cue-close">
-                          Hide
-                          <span class="cf-icon cf-icon-minus-round"></span>
-                      </span>
-                  </span>
-              </button>
-              <div class="expandable_content">
-                  <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                      temporibus magnam debitis quidem. Ducimus ratione
-                      corporis nesciunt earum vel est quaerat blanditiis
-                      dolore ipsa?
-                  </p>
-              </div>
-          </div>
-          <div class="expandable expandable__padded">
-              <button class="expandable_header expandable_target" title="Expand content">
-                  <span class="expandable_header-left expandable_label">
-                      Expandable Header 2
-                  </span>
-                  <span class="expandable_header-right expandable_link">
-                      <span class="expandable_cue-open">
-                          Show
-                          <span class="cf-icon cf-icon-plus-round"></span>
-                      </span>
-                      <span class="expandable_cue-close">
-                          Hide
-                          <span class="cf-icon cf-icon-minus-round"></span>
-                      </span>
-                  </span>
-              </button>
-              <div class="expandable_content">
-                  <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                      temporibus magnam debitis quidem. Ducimus ratione
-                      corporis nesciunt earum vel est quaerat blanditiis
-                      dolore ipsa?
-                  </p>
-              </div>
-          </div>
-          <div class="expandable expandable__padded">
-              <button class="expandable_header expandable_target" title="Expand content">
-                  <span class="expandable_header-left expandable_label">
-                      Expandable Header 3
-                  </span>
-                  <span class="expandable_header-right expandable_link">
-                      <span class="expandable_cue-open">
-                          Show
-                          <span class="cf-icon cf-icon-plus-round"></span>
-                      </span>
-                      <span class="expandable_cue-close">
-                          Hide
-                          <span class="cf-icon cf-icon-minus-round"></span>
-                      </span>
-                  </span>
-              </button>
-              <div class="expandable_content">
-                  <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                      temporibus magnam debitis quidem. Ducimus ratione
-                      corporis nesciunt earum vel est quaerat blanditiis
-                      dolore ipsa?
-                  </p>
-              </div>
-          </div>
-      </div>
-    codenotes:
-      - |
-        <div class="expandable-group" data-accordion="true">
-    notes:
-      - "Accordions can only show one open expandable at a time."
-      - "Add the data-accordion=\"true\" attribute to the expandable group to
-         activate the accordion mode."
-  tags:
-  - cf-expandables
-*/
+//
+// Expandable groups
+//
 
 .expandable-group {
     margin-bottom: unit(30px / @base-font-size-px, em);
@@ -704,9 +199,3 @@
 .expandable-group .expandable_content {
     margin-bottom: 0;
 }
-
-
-/* topdoc
-  name: EOF
-  eof: true
-*/

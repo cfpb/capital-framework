@@ -1,75 +1,31 @@
-@import '../../cf-core/src/cf-core.less';
-
 /* ==========================================================================
    Capital Framework
    Icons
    ========================================================================== */
 
-/* topdoc
-  name: Less variables
-  family: cf-icons
-  notes:
-    - "These variables can be overriden in your project's Less file."
-  patterns:
-    - name: CSS prefix
-      codenotes:
-        - "@cf-icon-prefix: cf-icon;"
-    - name: Path to icon font files
-      codenotes:
-        - "@cf-icon-path: '../fonts';"
-    - name: Toggle IE7 support
-      codenotes:
-        - "@cf-icon-ie7-support: true;"
-      notes:
-        - "More on IE7 support can be found in the 'IE7 Support' section."
-    - name: Icon border color
-      codenotes:
-        - "@cf-border-color: #eee;"
-      notes:
-        - "Used in .cf-icon__border"
-  tags:
-    - cf-icons
-*/
+// Import external dependencies
+
+@import '../../cf-core/src/cf-core.less';
+
+//
+// Less variables
+//
 
 @cf-icon-prefix:                cf-icon;
 @cf-icon-path:                  'fonts';
 @cf-icon-ie7-support:           true;
 @cf-icon-border-color:          #eee;
-
-/* topdoc
-  name: IE7 Support
-  family: cf-icons
-  notes:
-    - "IE7 support is added by using dynamic properties (CSS expressions)."
-    - "To turn off IE7 support simply set @cf-icon-ie7-support to false."
-  tags:
-    - cf-icons
-*/
+//
+// IE7 Support
+//
 
 .cf-icon-ie7(@inner) when (@cf-icon-ie7-support) {
     *zoom: ~"expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '@{inner}')";
 }
 
-
-/* topdoc
-  name: The basics
-  family: cf-icons
-  patterns:
-    - name: "@font-face declaration"
-    - name: Base icon class
-      notes:
-        - "The cf-icon-prefix class applies all shared icon styles including the
-          font family."
-        - "All icons must use two classes, one for this base class and another
-          to set the font character. For example:
-          <span class='cf-icon cf-icon-left'></span>."
-        - "Please use the span element instead of the i element. This avoids
-          font family cascading conflicts when using an italic webfont on i
-          elements and then another font for the icons. Note that this issue
-          only pops up in older versions of Internet Explorer."
-  tags:
-    - cf-icons
-*/
+//
+// The basics
+//
 
 @font-face {
   font-family: 'CFPB Minicons';
@@ -105,24 +61,9 @@
   -webkit-font-smoothing: antialiased;
 }
 
-
-/* topdoc
-  name: Icon character variables
-  family: cf-icons
-  patterns:
-    - name: Less variables for icons
-      codenotes:
-        - "@cf-icon-left:                       '\e000';"
-        - "@cf-icon-left-round:                 '\e001';"
-      notes:
-        - "These variables for fonts are used for adding icons in
-          Less files."
-        - "See the less file for the full list."
-  tags:
-    - cf-icons
-  notes:
-       - "Inspired by Font Awesome"
-*/
+//
+// Icon character variables
+//
 
 // Navigation icons
 
@@ -337,29 +278,9 @@
 @cf-icon-servicemembers:             "\e726";
 @cf-icon-servicemembers-round:       "\e727";
 
-
-/* topdoc
-    name: Helper classes for icon sizes
-    family: cf-icons
-    patterns:
-        - name: Large icon size
-          markup: |
-            <span class="cf-icon cf-icon-money cf-icon__lg"></span>
-        - name: 2x icon size
-          markup: |
-            <span class="cf-icon cf-icon-money cf-icon__2x"></span>
-        - name: 3x icon size
-          markup: |
-            <span class="cf-icon cf-icon-money cf-icon__3x"></span>
-        - name: 4x icon size
-          markup: |
-            <span class="cf-icon cf-icon-money cf-icon__4x"></span>
-        - name: 5x icon size
-          markup: |
-            <span class="cf-icon cf-icon-money cf-icon__5x"></span>
-    notes:
-       - "MIT Licensed by Font Awesome"
-*/
+//
+// Helper classes for icon sizes
+//
 
 // makes the font 33% larger relative to the icon container
 .@{cf-icon-prefix}__lg {
@@ -373,28 +294,9 @@
 .@{cf-icon-prefix}__4x { font-size: 4em; }
 .@{cf-icon-prefix}__5x { font-size: 5em; }
 
-
-/* topdoc
-    name: Mixin classes
-    family: cf-icons
-    patterns:
-        - name: Icon rotation mixin
-          codenotes:
-            - ".@{cf-icon-prefix}__rotate-90  { .cf-icon__rotate(90deg, 1);  }"
-          notes:
-            - "First parameter is @degrees."
-            - "Second parameter is @rotation"
-        - name: Icon flip mixin
-          codenotes:
-            - ".@{cf-icon-prefix}__flip-horizontal { .cf-icon__flip(-1, 1, 0); }"
-            - ".@{cf-icon-prefix}__flip-vertical   { .cf-icon__flip(1, -1, 2); }"
-          notes:
-            - "First parameter is for number of horizontal flips"
-            - "Second parameter is for number of vertical flips"
-            - "Third parameter is for rotation"
-    notes:
-       - "MIT Licensed by Font Awesome"
-*/
+//
+// Mixin classes
+//
 
 .cf-icon__rotate(@degrees, @rotation) {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=@rotation);
@@ -409,28 +311,9 @@
       -ms-transform: scale(@horiz, @vert);
           transform: scale(@horiz, @vert);
 }
-
-/* topdoc
-    name: Helper classes for modified icons
-    family: cf-icons
-    patterns:
-        - name: Bordered icons
-          markup: |
-            <span class="cf-icon cf-icon-update cf-icon__border"></span>
-          notes:
-            - "Border color set by @cf-icon-border-color"
-        - name: Rotated icons
-          markup: |
-            <span class="cf-icon cf-icon-update cf-icon__rotate-90"></span>
-            <span class="cf-icon cf-icon-update cf-icon__rotate-180"></span>
-            <span class="cf-icon cf-icon-update cf-icon__rotate-270"></span>
-        - name: Flipped icons
-          markup: |
-            <span class="cf-icon cf-icon-update cf-icon__flip-horizontal"></span>
-            <span class="cf-icon cf-icon-update cf-icon__flip-vertical"></span>
-    notes:
-       - "MIT Licensed by Font Awesome"
-*/
+//
+// Helper classes for modified icons
+//
 
 .@{cf-icon-prefix}__border {
   padding: .2em .25em .15em;
@@ -453,24 +336,9 @@
   filter: none;
 }
 
-
-/* topdoc
-    name: Helper classes for animated icons
-    family: cf-icons
-    patterns:
-        - name: Spinning icons
-          markup: |
-            <span class="cf-icon cf-icon-update cf-icon__spin"></span>
-        - name: Pulsing icons
-          markup: |
-            <span class="cf-icon cf-icon-update cf-icon__pulse"></span>
-        - name: Flipped icons
-          markup: |
-            <span class="cf-icon cf-icon-phone cf-icon__flip-horizontal"></span>
-            <span class="cf-icon cf-icon-phone cf-icon__flip-vertical"></span>
-    notes:
-       - "MIT Licensed by Font Awesome"
-*/
+//
+// Helper classes for animated icons
+//
 
 .@{cf-icon-prefix}__spin {
   -webkit-animation: cf-spin 2s infinite linear;
@@ -504,46 +372,9 @@
   }
 }
 
-
-/* topdoc
-    name: Navigation icons
-    family: cf-icons
-    patterns:
-      - name: left
-        markup: |
-          <span class="cf-icon cf-icon-left"></span>
-          <span class="cf-icon cf-icon-left-round"></span>
-      - name: right
-        markup: |
-          <span class="cf-icon cf-icon-right"></span>
-          <span class="cf-icon cf-icon-right-round"></span>
-      - name: up
-        markup: |
-          <span class="cf-icon cf-icon-up"></span>
-          <span class="cf-icon cf-icon-up-round"></span>
-      - name: down
-        markup: |
-          <span class="cf-icon cf-icon-down"></span>
-          <span class="cf-icon cf-icon-down-round"></span>
-      - name: arrow-left
-        markup: |
-          <span class="cf-icon cf-icon-arrow-left"></span>
-          <span class="cf-icon cf-icon-arrow-left-round"></span>
-      - name: arrow-right
-        markup: |
-          <span class="cf-icon cf-icon-arrow-right"></span>
-          <span class="cf-icon cf-icon-arrow-right-round"></span>
-      - name: arrow-up
-        markup: |
-          <span class="cf-icon cf-icon-arrow-up"></span>
-          <span class="cf-icon cf-icon-arrow-up-round"></span>
-      - name: arrow-down
-        markup: |
-          <span class="cf-icon cf-icon-arrow-down"></span>
-          <span class="cf-icon cf-icon-arrow-down-round"></span>
-    tags:
-      - cf-icons
-*/
+//
+// Navigation icons
+//
 
 .@{cf-icon-prefix}-left {
     &:before  {     content: "\e000"; }
@@ -625,42 +456,9 @@
     .lt-ie8 & { .cf-icon-ie7("\e015"); }
 }
 
-
-/* topdoc
-    name: Status icons
-    family: cf-icons
-    patterns:
-      - name: approved
-        markup: |
-          <span class="cf-icon cf-icon-approved"></span>
-          <span class="cf-icon cf-icon-approved-round"></span>
-      - name: error
-        markup: |
-          <span class="cf-icon cf-icon-error"></span>
-          <span class="cf-icon cf-icon-error-round"></span>
-      - name: help
-        markup: |
-          <span class="cf-icon cf-icon-help"></span>
-          <span class="cf-icon cf-icon-help-round"></span>
-      - name: delete
-        markup: |
-          <span class="cf-icon cf-icon-delete"></span>
-          <span class="cf-icon cf-icon-delete-round"></span>
-      - name: plus
-        markup: |
-          <span class="cf-icon cf-icon-plus"></span>
-          <span class="cf-icon cf-icon-plus-round"></span>
-      - name: minus
-        markup: |
-          <span class="cf-icon cf-icon-minus"></span>
-          <span class="cf-icon cf-icon-minus-round"></span>
-      - name: update
-        markup: |
-          <span class="cf-icon cf-icon-update"></span>
-          <span class="cf-icon cf-icon-update-round"></span>
-    tags:
-      - cf-icons
-*/
+//
+// Status icons
+//
 
 .@{cf-icon-prefix}-approved {
     &:before  {     content: "\e100"; }
@@ -732,42 +530,9 @@
     .lt-ie8 & { .cf-icon-ie7("\e113"); }
 }
 
-
-/* topdoc
-    name: Social icons
-    family: cf-icons
-    patterns:
-      - name: youtube
-        markup: |
-          <span class="cf-icon cf-icon-youtube"></span>
-          <span class="cf-icon cf-icon-youtube-square"></span>
-      - name: linkedin
-        markup: |
-          <span class="cf-icon cf-icon-linkedin"></span>
-          <span class="cf-icon cf-icon-linkedin-square"></span>
-      - name: facebook
-        markup: |
-          <span class="cf-icon cf-icon-facebook"></span>
-          <span class="cf-icon cf-icon-facebook-square"></span>
-      - name: flickr
-        markup: |
-          <span class="cf-icon cf-icon-flickr"></span>
-          <span class="cf-icon cf-icon-flickr-square"></span>
-      - name: plus
-        markup: |
-          <span class="cf-icon cf-icon-twitter"></span>
-          <span class="cf-icon cf-icon-twitter-square"></span>
-      - name: github
-        markup: |
-          <span class="cf-icon cf-icon-github"></span>
-          <span class="cf-icon cf-icon-github-square"></span>
-      - name: email-social
-        markup: |
-          <span class="cf-icon cf-icon-email-social"></span>
-          <span class="cf-icon cf-icon-email-social-square"></span>
-    tags:
-      - cf-icons
-*/
+//
+// Social icons
+//
 
 .@{cf-icon-prefix}-youtube {
     &:before  {     content: "\e200"; }
@@ -839,38 +604,9 @@
     .lt-ie8 & { .cf-icon-ie7("\e213"); }
 }
 
-
-/* topdoc
-    name: Communication icons
-    family: cf-icons
-    patterns:
-      - name: web
-        markup: |
-          <span class="cf-icon cf-icon-web"></span>
-          <span class="cf-icon cf-icon-web-round"></span>
-      - name: email
-        markup: |
-          <span class="cf-icon cf-icon-email"></span>
-          <span class="cf-icon cf-icon-email-round"></span>
-      - name: mail
-        markup: |
-          <span class="cf-icon cf-icon-mail"></span>
-          <span class="cf-icon cf-icon-mail-round"></span>
-      - name: phone
-        markup: |
-          <span class="cf-icon cf-icon-phone"></span>
-          <span class="cf-icon cf-icon-phone-round"></span>
-      - name: technology
-        markup: |
-          <span class="cf-icon cf-icon-technology"></span>
-          <span class="cf-icon cf-icon-technology-round"></span>
-      - name: fax
-        markup: |
-          <span class="cf-icon cf-icon-fax"></span>
-          <span class="cf-icon cf-icon-fax-round"></span>
-    tags:
-      - cf-icons
-*/
+//
+// Communication icons
+//
 
 .@{cf-icon-prefix}-web {
     &:before  {     content: "\e300"; }
@@ -932,62 +668,9 @@
     .lt-ie8 & { .cf-icon-ie7("\e311"); }
 }
 
-
-/* topdoc
-    name: Document icons
-    family: cf-icons
-    patterns:
-      - name: document
-        markup: |
-          <span class="cf-icon cf-icon-document"></span>
-          <span class="cf-icon cf-icon-document-round"></span>
-      - name: pdf
-        markup: |
-          <span class="cf-icon cf-icon-pdf"></span>
-          <span class="cf-icon cf-icon-pdf-round"></span>
-      - name: upload
-        markup: |
-          <span class="cf-icon cf-icon-upload"></span>
-          <span class="cf-icon cf-icon-upload-round"></span>
-      - name: download
-        markup: |
-          <span class="cf-icon cf-icon-download"></span>
-          <span class="cf-icon cf-icon-download-round"></span>
-      - name: copy
-        markup: |
-          <span class="cf-icon cf-icon-copy"></span>
-          <span class="cf-icon cf-icon-copy-round"></span>
-      - name: edit
-        markup: |
-          <span class="cf-icon cf-icon-edit"></span>
-          <span class="cf-icon cf-icon-edit-round"></span>
-      - name: attach
-        markup: |
-          <span class="cf-icon cf-icon-attach"></span>
-          <span class="cf-icon cf-icon-attach-round"></span>
-      - name: print
-        markup: |
-          <span class="cf-icon cf-icon-print"></span>
-          <span class="cf-icon cf-icon-print-round"></span>
-      - name: save
-        markup: |
-          <span class="cf-icon cf-icon-save"></span>
-          <span class="cf-icon cf-icon-save-round"></span>
-      - name: appendix
-        markup: |
-          <span class="cf-icon cf-icon-appendix"></span>
-          <span class="cf-icon cf-icon-appendix-round"></span>
-      - name: supplement
-        markup: |
-          <span class="cf-icon cf-icon-supplement"></span>
-          <span class="cf-icon cf-icon-supplement-round"></span>
-      - name: rss
-        markup: |
-          <span class="cf-icon cf-icon-rss"></span>
-          <span class="cf-icon cf-icon-rss-round"></span>
-    tags:
-      - cf-icons
-*/
+//
+// Document icons
+//
 
 .@{cf-icon-prefix}-document {
     &:before  {     content: "\e400"; }
@@ -1109,94 +792,9 @@
     .lt-ie8 & { .cf-icon-ie7("\e423"); }
 }
 
-
-/* topdoc
-    name: Financial product icons
-    family: cf-icons
-    patterns:
-      - name: bank-account
-        markup: |
-          <span class="cf-icon cf-icon-bank-account"></span>
-          <span class="cf-icon cf-icon-bank-account-round"></span>
-      - name: credit-card
-        markup: |
-          <span class="cf-icon cf-icon-credit-card"></span>
-          <span class="cf-icon cf-icon-credit-card-round"></span>
-      - name: loan
-        markup: |
-          <span class="cf-icon cf-icon-loan"></span>
-          <span class="cf-icon cf-icon-loan-round"></span>
-      - name: money-transfer
-        markup: |
-          <span class="cf-icon cf-icon-money-transfer"></span>
-          <span class="cf-icon cf-icon-money-transfer-round"></span>
-      - name: mortgage
-        markup: |
-          <span class="cf-icon cf-icon-mortgage"></span>
-          <span class="cf-icon cf-icon-mortgage-round"></span>
-      - name: debt-collection
-        markup: |
-          <span class="cf-icon cf-icon-debt-collection"></span>
-          <span class="cf-icon cf-icon-debt-collection-round"></span>
-      - name: credit-report
-        markup: |
-          <span class="cf-icon cf-icon-credit-report"></span>
-          <span class="cf-icon cf-icon-credit-report-round"></span>
-      - name: money
-        markup: |
-          <span class="cf-icon cf-icon-money"></span>
-          <span class="cf-icon cf-icon-money-round"></span>
-      - name: quick-cash
-        markup: |
-          <span class="cf-icon cf-icon-quick-cash"></span>
-          <span class="cf-icon cf-icon-quick-cash-round"></span>
-      - name: contract
-        markup: |
-          <span class="cf-icon cf-icon-contract"></span>
-          <span class="cf-icon cf-icon-contract-round"></span>
-      - name: complaint
-        markup: |
-          <span class="cf-icon cf-icon-complaint"></span>
-          <span class="cf-icon cf-icon-complaint-round"></span>
-      - name: getting-credit-card
-        markup: |
-          <span class="cf-icon cf-icon-getting-credit-card"></span>
-          <span class="cf-icon cf-icon-getting-credit-card-round"></span>
-      - name: buying-car
-        markup: |
-          <span class="cf-icon cf-icon-buying-car"></span>
-          <span class="cf-icon cf-icon-buying-car-round"></span>
-      - name: paying-college
-        markup: |
-          <span class="cf-icon cf-icon-paying-college"></span>
-          <span class="cf-icon cf-icon-paying-college-round"></span>
-      - name: owning-home
-        markup: |
-          <span class="cf-icon cf-icon-owning-home"></span>
-          <span class="cf-icon cf-icon-owning-home-round"></span>
-      - name: debt
-        markup: |
-          <span class="cf-icon cf-icon-debt"></span>
-          <span class="cf-icon cf-icon-debt-round"></span>
-      - name: building-credit
-        markup: |
-          <span class="cf-icon cf-icon-building-credit"></span>
-          <span class="cf-icon cf-icon-building-credit-round"></span>
-      - name: prepaid-cards
-        markup: |
-          <span class="cf-icon cf-icon-prepaid-cards"></span>
-          <span class="cf-icon cf-icon-prepaid-cards-round"></span>
-      - name: payday-loan
-        markup: |
-          <span class="cf-icon cf-icon-payday-loan"></span>
-          <span class="cf-icon cf-icon-payday-loan-round"></span>
-      - name: retirement
-        markup: |
-          <span class="cf-icon cf-icon-retirement"></span>
-          <span class="cf-icon cf-icon-retirement-round"></span>
-    tags:
-      - cf-icons
-*/
+//
+// Financial product icons
+//
 
 .@{cf-icon-prefix}-bank-account {
     &:before  {     content: "\e500"; }
@@ -1398,158 +996,9 @@
     .lt-ie8 & { .cf-icon-ie7("\e539"); }
 }
 
-
-/* topdoc
-    name: Web icons
-    family: cf-icons
-    patterns:
-      - name: user
-        markup: |
-          <span class="cf-icon cf-icon-user"></span>
-          <span class="cf-icon cf-icon-user-round"></span>
-      - name: wifi
-        markup: |
-          <span class="cf-icon cf-icon-wifi"></span>
-          <span class="cf-icon cf-icon-wifi-round"></span>
-      - name: search
-        markup: |
-          <span class="cf-icon cf-icon-search"></span>
-          <span class="cf-icon cf-icon-search-round"></span>
-      - name: share
-        markup: |
-          <span class="cf-icon cf-icon-share"></span>
-          <span class="cf-icon cf-icon-share-round"></span>
-      - name: link
-        markup: |
-          <span class="cf-icon cf-icon-link"></span>
-          <span class="cf-icon cf-icon-link-round"></span>
-      - name: external-link
-        markup: |
-          <span class="cf-icon cf-icon-external-link"></span>
-          <span class="cf-icon cf-icon-external-link-round"></span>
-      - name: audio-mute
-        markup: |
-          <span class="cf-icon cf-icon-audio-mute"></span>
-          <span class="cf-icon cf-icon-audio-mute-round"></span>
-      - name: audio-low
-        markup: |
-          <span class="cf-icon cf-icon-audio-low"></span>
-          <span class="cf-icon cf-icon-audio-low-round"></span>
-      - name: audio-medium
-        markup: |
-          <span class="cf-icon cf-icon-audio-medium"></span>
-          <span class="cf-icon cf-icon-audio-medium-round"></span>
-      - name: audio-max
-        markup: |
-          <span class="cf-icon cf-icon-audio-max"></span>
-          <span class="cf-icon cf-icon-audio-max-round"></span>
-      - name: favorite
-        markup: |
-          <span class="cf-icon cf-icon-favorite"></span>
-          <span class="cf-icon cf-icon-favorite-round"></span>
-      - name: unfavorite
-        markup: |
-          <span class="cf-icon cf-icon-unfavorite"></span>
-          <span class="cf-icon cf-icon-unfavorite-round"></span>
-      - name: bookmark
-        markup: |
-          <span class="cf-icon cf-icon-bookmark"></span>
-          <span class="cf-icon cf-icon-bookmark-round"></span>
-      - name: unbookmark
-        markup: |
-          <span class="cf-icon cf-icon-unbookmark"></span>
-          <span class="cf-icon cf-icon-unbookmark-round"></span>
-      - name: settings
-        markup: |
-          <span class="cf-icon cf-icon-settings"></span>
-          <span class="cf-icon cf-icon-settings-round"></span>
-      - name: menu
-        markup: |
-          <span class="cf-icon cf-icon-menu"></span>
-          <span class="cf-icon cf-icon-menu-round"></span>
-      - name: lock
-        markup: |
-          <span class="cf-icon cf-icon-lock"></span>
-          <span class="cf-icon cf-icon-lock-round"></span>
-      - name: unlock
-        markup: |
-          <span class="cf-icon cf-icon-unlock"></span>
-          <span class="cf-icon cf-icon-unlock-round"></span>
-      - name: clock
-        markup: |
-          <span class="cf-icon cf-icon-clock"></span>
-          <span class="cf-icon cf-icon-clock-round"></span>
-      - name: chart
-        markup: |
-          <span class="cf-icon cf-icon-chart"></span>
-          <span class="cf-icon cf-icon-chart-round"></span>
-      - name: play
-        markup: |
-          <span class="cf-icon cf-icon-play"></span>
-          <span class="cf-icon cf-icon-play-round"></span>
-      - name: history
-        markup: |
-          <span class="cf-icon cf-icon-history"></span>
-          <span class="cf-icon cf-icon-history-round"></span>
-      - name: table of contents
-        markup: |
-          <span class="cf-icon cf-icon-table-of-contents"></span>
-          <span class="cf-icon cf-icon-table-of-contents-round"></span>
-      - name: newspaper
-        markup: |
-          <span class="cf-icon cf-icon-newspaper"></span>
-          <span class="cf-icon cf-icon-newspaper-round"></span>
-      - name: microphone
-        markup: |
-          <span class="cf-icon cf-icon-microphone"></span>
-          <span class="cf-icon cf-icon-microphone-round"></span>
-      - name: bullhorn
-        markup: |
-          <span class="cf-icon cf-icon-bullhorn"></span>
-          <span class="cf-icon cf-icon-bullhorn-round"></span>
-      - name: double-quote
-        markup: |
-          <span class="cf-icon cf-icon-double-quote"></span>
-          <span class="cf-icon cf-icon-double-quote-round"></span>
-      - name: speech-bubble
-        markup: |
-          <span class="cf-icon cf-icon-speech-bubble"></span>
-          <span class="cf-icon cf-icon-speech-bubble-round"></span>
-      - name: information
-        markup: |
-          <span class="cf-icon cf-icon-information"></span>
-          <span class="cf-icon cf-icon-information-round"></span>
-      - name: lightbulb
-        markup: |
-          <span class="cf-icon cf-icon-lightbulb"></span>
-          <span class="cf-icon cf-icon-lightbulb-round"></span>
-      - name: dialogue
-        markup: |
-          <span class="cf-icon cf-icon-dialogue"></span>
-          <span class="cf-icon cf-icon-dialogue-round"></span>
-      - name: date
-        markup: |
-          <span class="cf-icon cf-icon-date"></span>
-          <span class="cf-icon cf-icon-date-round"></span>
-      - name: closing-quote
-        markup: |
-          <span class="cf-icon cf-icon-closing-quote"></span>
-          <span class="cf-icon cf-icon-closing-quote-round"></span>
-      - name: livestream
-        markup: |
-          <span class="cf-icon cf-icon-livestream"></span>
-          <span class="cf-icon cf-icon-livestream-round"></span>
-      - name: parents
-        markup: |
-          <span class="cf-icon cf-icon-parents"></span>
-          <span class="cf-icon cf-icon-parents-round"></span>
-      - name: servicemembers
-        markup: |
-          <span class="cf-icon cf-icon-servicemembers"></span>
-          <span class="cf-icon cf-icon-servicemembers-round"></span>
-    tags:
-      - cf-icons
-*/
+//
+// Web icons
+//
 
 .@{cf-icon-prefix}-user {
     &:before  {     content: "\e600"; }
@@ -1910,8 +1359,3 @@
     &:before  {     content: "\e727"; }
     .lt-ie8 & { .cf-icon-ie7("\e727"); }
 }
-
-/* topdoc
-  name: EOF
-  eof: true
-*/

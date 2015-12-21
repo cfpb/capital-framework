@@ -1,49 +1,16 @@
-// Import external dependencies
-
-@import (less) '../../cf-core/src/cf-core.less';
-@import (less) '../../cf-icons/src/cf-icons.less';
-
 /* ==========================================================================
    Capital Framework
    Advanced Typography
    ========================================================================== */
 
-/* topdoc
-  name: Theme variables
-  family: cf-typography
-  notes:
-    - "The following color and sizing variables are exposed, allowing you to
-       easily override them before compiling."
-  patterns:
-  - name: Colors
-    codenotes:
-      - |
-        @pull-quote_body
-        @pull-quote_citation
-        @micro-copy-text
-        @date-text
-        @category-slug-text
-        @category-slug-hover
-        @header-slug-thin-border
-        @header-slug-thick-border
-        @padded-header-text
-        @padded-header-bg
-        @padded-header-border
-        @fancy-slug-text
-        @fancy-slug-bg
-        @fancy-slug-border
-        @meta-header-border
-        @jump-link__bg
-        @jump-link__bg-border
-        @list__branded-bullet
-  - name: Sizing
-    codenotes:
-      - |
-        @...
-  tags:
-  - cf-typography
-  - less
-*/
+// Import external dependencies
+
+@import (less) '../../cf-core/src/cf-core.less';
+@import (less) '../../cf-icons/src/cf-icons.less';
+
+//
+// Theme variables
+//
 
 // Color variables
 // $color- variables are from 18F's US Web Design Standards
@@ -87,48 +54,9 @@
 // .list__branded
 @list__branded-bullet:          #02bfe7; // $color-primary-alt
 
-
-/* topdoc
- name: Pull quote
- family: cf-typography
- patterns:
-   - name: Default pull quote
-     markup: |
-       <aside class="pull-quote">
-           <div class="pull-quote_body">
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-               Cum corrupti tempora nam nihil qui mollitia consectetur
-               corporis nemo culpa dolorum!
-           </div>
-           <footer>
-               <cite class="pull-quote_citation">
-                   - Author Name
-               </cite>
-           <footer>
-       </aside>
-     notes:
-       - "Use a pull quote to highlight excerpts from the current work.
-         This is not to be confused with blockquote which quotes from an
-         external work."
-       - "Since a pull quote is an excerpt and repeats content from the
-         article it's contained within you should use the aside element."
-   - name: Large pull quote
-     markup: |
-       <aside class="pull-quote pull-quote__large">
-           <div class="pull-quote_body">
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-               Cum corrupti tempora nam nihil qui mollitia consectetur
-               corporis nemo culpa dolorum!
-           </div>
-           <footer>
-               <cite class="pull-quote_citation">
-                   - Author Name
-               </cite>
-           <footer>
-       </aside>
- tags:
-   - cf-typography
-*/
+//
+// Pull quote
+//
 
 /* TODO: Re-organize orders to follow FEWD guidelines */
 /* TODO: Standardize line breaks and spacing throughout */
@@ -159,28 +87,9 @@
         });
     }
 }
-
-/* topdoc
-  name: Micro copy
-  family: cf-typography
-  patterns:
-    - name: Standard micro copy
-      markup: |
-        <p class="micro-copy">
-            Lorem ipsum dolor sit amet
-        </p>
-      codenotes:
-        - .micro-copy
-    - name: Large micro copy
-      markup: |
-        <p class="micro-copy micro-copy__large">
-            Lorem ipsum dolor sit amet
-        </p>
-      codenotes:
-        - .micro-copy
-  tags:
-    - cf-typography
-*/
+//
+// Micro copy
+//
 
 .micro-copy {
     @font-size: 14px;
@@ -194,24 +103,9 @@
     }
 }
 
-
-/* topdoc
-  name: Short description
-  family: cf-typography
-  patterns:
-    - name: .short-desc
-      markup: |
-        <p class="short-desc">I am short description.</p>
-      codenotes:
-        - .short-desc
-    - name: .short-desc__large (modifier)
-      markup: |
-        <p class="short-desc short-desc__large">I am large short description.</p>
-      codenotes:
-        - .short-desc__large
-  tags:
-    - cf-typography
-*/
+//
+// Short description
+//
 
 .short-desc {
     .webfont-regular();
@@ -222,19 +116,9 @@
     }
 }
 
-
-/* topdoc
-  name: Date
-  family: cf-typography
-  patterns:
-    - name: Default date
-      markup: |
-        <span class="date">
-            Nov 4, 2013
-        </span>
-  tags:
-    - cf-typography
-*/
+//
+// Date
+//
 
 .date {
     .heading-5();
@@ -243,31 +127,9 @@
     white-space: nowrap;
 }
 
-
-/* topdoc
-  name: Category slug
-  family: cf-typography
-  patterns:
-    - name: Default category slug
-      markup: |
-        <a href="#" class="category-slug">
-            <span class="category-slug_icon cf-icon cf-icon-dialogue"></span>
-            <span class="u-visually-hidden">Category:</span>
-            Consumer finance
-        </a>
-      codenotes:
-        - |
-          Structural cheat sheet:
-          -----------------------
-          .category-slug
-            .category-slug_icon
-            .u-visually-hidden
-      notes:
-        - "We suggest using a .u-visually-hidden element to add more context for
-          screen readers."
-  tags:
-    - cf-typography
-*/
+//
+// Category slug
+//
 
 .category-slug {
     .heading-4();
@@ -285,27 +147,9 @@
     }
 }
 
-
-/* topdoc
-  name: Header slug
-  family: cf-typography
-  patterns:
-    - name: Default header slug
-      markup: |
-        <h2 class="header-slug">
-            <span class="header-slug_inner">
-                Blog summary
-            </span>
-        </h2>
-      codenotes:
-        - |
-          Structural cheat sheet:
-          -----------------------
-          .header-slug
-            .header-slug_inner
-  tags:
-    - cf-typography
-*/
+//
+// Header slug
+//
 
 .header-slug {
     .heading-5();
@@ -321,21 +165,9 @@
     }
 }
 
-
-/* topdoc
-  name: Padded header
-  family: cf-typography
-  patterns:
-    - name: Default padded header
-      markup: |
-        <h2 class="padded-header">
-            Header
-        </h2>
-      codenotes:
-        - .padded-header
-  tags:
-    - cf-typography
-*/
+//
+// Padded header
+//
 
 .padded-header {
     .heading-5();
@@ -347,31 +179,9 @@
     background: @padded-header-bg;
     color: @padded-header-text;
 }
-
-/* topdoc
-  name: Fancy slug
-  family: cf-typography
-  patterns:
-    - name: Default fancy slug
-      markup: |
-        <h2 class="fancy-slug">
-            <span class="fancy-slug_text">
-                <span class="fancy-slug_ribbon-left"></span>
-                Watchroom
-                <span class="fancy-slug_ribbon-right"></span>
-            </span>
-        </h2>
-      codenotes:
-        - |
-          Structural cheat sheet:
-          -----------------------
-          .fancy-slug
-            .fancy-slug_text
-                .fancy-slug_ribbon-left
-                .fancy-slug_ribbon-right
-  tags:
-    - cf-typography
-*/
+//
+// Fancy slug
+//
 
 .fancy-slug {
     @v-padding: 8px;
@@ -466,59 +276,9 @@
         }
     }
 }
-
-/* topdoc
-  name: Meta header
-  family: cf-typography
-  patterns:
-    - name: Default meta header
-      markup: |
-        <div class="meta-header">
-            <span class="meta-header_right date">
-                Nov 4, 2013
-            </span>
-            <a href="#" class="meta-header_left category-slug">
-                <span class="cf-icon cf-icon-credit-card"></span>
-                Consumer finance
-            </a>
-        </div>
-      codenotes:
-        - |
-          Structural cheat sheet:
-          -----------------------
-          .meta-header
-            .meta-header_right
-            .meta-header_left
-      notes:
-        - ".meta-header_right should come first in the markup so that when it
-          floats to the right it will appear on the same line as .meta-header_left."
-        - "Note that the example shows .meta-header_left using the
-          .category-slug pattern and .meta-header_right using the .date pattern
-          but you could use other patterns in place of them. Or you can even
-          swap them so that date is attached to .meta-header_left and
-          .category-slug is attacked to .meta-header_right."
-    - name: Alternate meta header arrangements
-      markup: |
-        <div class="meta-header">
-            <a href="#" class="meta-header_right category-slug">
-                <span class="cf-icon cf-icon-credit-card"></span>
-            </a>
-            <span class="meta-header_left date">
-                Nov 4, 2013
-            </span>
-        </div>
-        <br>
-        <div class="meta-header">
-            <a href="#" class="meta-header_left category-slug">
-                <span class="cf-icon cf-icon-credit-card"></span>
-                Consumer finance
-            </a>
-        </div>
-      notes:
-        - "Just some random variations to show off what you could do."
-  tags:
-    - cf-typography
-*/
+//
+// Meta header
+//
 
 .meta-header {
     padding-bottom: unit(8px / @base-font-size-px, em);
@@ -539,67 +299,9 @@
     });
 }
 
-
-/* topdoc
-  name: Links with icons
-  family: cf-typography
-  notes:
-    - "Styles to enable adding an icon to a link and preventing the link's
-       underline from extending under the icon."
-    - "For the underlined icon prevention to work, you must wrap the link text
-       with a `span.icon-link_text`. There can be no whitespace between the text
-       and the opening and closing span tags."
-  patterns:
-    - name: Default link with icon
-      markup: |
-        <p>
-            For more information, email
-            <a class="icon-link icon-link__mail" href="#">
-                <span class="icon-link_text">john.smith@cfpb.gov</span>
-            </a>.
-            Alternatively, you can
-            <a class="icon-link icon-link__download" href="#">
-                <span class="icon-link_text">download the info sheet</span>
-            </a>.
-            Oh, you might also want to visit this
-            <a class="icon-link icon-link__external-link" href="#">
-                <span class="icon-link_text">other organization's website</span>
-            </a> for further details.
-        </p>
-        <a class="icon-link icon-link__right" href="#">
-            Visit another section of our site
-        </a>
-      notes:
-        - "The modifier names match the cf-icon names of commonly-used icons."
-        - "Icons appear to the right of a link, by default."
-    - name: Links with icons on the left (modifier)
-      markup: |
-        <a class="icon-link icon-link__mail icon-link__before" href="#">
-            <span class="icon-link_text">john.smith@cfpb.gov</span>
-        </a><br>
-        <a class="icon-link icon-link__phone icon-link__before" href="#">
-            (123) 456-7890
-        </a>
-      notes:
-        - "Simply add the `.icon-link__before` modifier to place the icon before
-           the link text."
-        - "You can omit the `span.icon-link_text` wrapper if you do not need
-           an underline on a particular link."
-    - name: Non-wrapping icon links
-      markup: |
-        <p>
-            For more information, email
-            <a class="icon-link icon-link__mail icon-link__no-wrap" href="#">
-                <span class="icon-link_text">john.smith@cfpb.gov</span>
-            </a>.
-        </p>
-      notes:
-        - "Warning: Icons added to inline links can sometimes break onto the
-           next line. If you want to prevent this, you can add the `__no-wrap`
-           modifier to `.icon-link`."
-  tags:
-    - cf-typography
-*/
+//
+// Links with icons
+//
 
 .icon-link {
     border-bottom-width: 0;
@@ -689,21 +391,9 @@
         white-space: nowrap;
     }
 }
-
-/* topdoc
-  name: Styled link
-  family: cf-typography
-  patterns:
-    - name: .styled-link
-      markup: |
-        <a class="styled-link" href="#">
-            Default styled link
-        </a>
-      codenotes:
-        - .styled-link
-  tags:
-    - cf-typography
-*/
+//
+// Styled link
+//
 
 .styled-link {
     /* TODO: Why set this? It's the base size */
@@ -714,57 +404,9 @@
     font-size: unit(@font-size / @base-font-size-px, em);
 }
 
-
-/* topdoc
-  name: Jump link
-  family: cf-typography
-  patterns:
-    - name: .jump-link
-      markup: |
-        <a class="jump-link" href="#">
-            <span class="jump-link_text">Default jump link</span>
-        </a>
-      codenotes:
-        - .jump-link
-    - name: .jump-link__large (modifier)
-      markup: |
-        <a class="jump-link jump-link__large" href="#">
-            <span class="jump-link_text">Large jump link</span>
-        </a>
-      codenotes:
-        - .jump-link__large
-      notes:
-        - "18px font-size, compared to the default of 16px"
-    - name: .jump-link__<icon> (modifier)
-      markup: |
-        <a class="jump-link jump-link__right" href="#">
-            <span class="jump-link_text">Jump link using the right icon from cf-icons</span>
-        </a>
-      codenotes:
-        - .jump-link__<icon>
-      notes:
-        - ".jump-link extends .icon-link, so all that is needed to add an icon
-           to a jump link is to add a modifier with the icon's name."
-    - name: .jump-link__before (modifier)
-      markup: |
-        <a class="jump-link jump-link__left jump-link__before" href="#">
-            <span class="jump-link_text">Jump link with icon on left</span>
-        </a>
-      codenotes:
-        - .jump-link__<icon>.jump-link__before
-      notes:
-        - "Jump links can also have icons before the text, like icon links."
-    - name: .jump-link__bg (modifier)
-      markup: |
-        <a class="jump-link jump-link__bg" href="#">
-            <span class="jump-link_text">Jump link with grey background and
-                solid borders on small screens</span>
-        </a>
-      codenotes:
-        - .jump-link__bg
-  tags:
-    - cf-typography
-*/
+//
+// Jump link
+//
 
 .jump-link {
     .webfont-medium();
@@ -822,26 +464,9 @@
     });
 }
 
-
-/* topdoc
-  name: Block link
-  family: cf-typography
-  patterns:
-    - name: .block-link
-      markup: |
-        <a class="block-link" href="#">
-            Default block link
-        </a>
-      codenotes:
-        - .block-link
-      notes:
-        - "Convert a standard inline link to a block-level element with padding,
-           background, and borders."
-        - "Primarily used within a max-width 599px media query (see .jump-link
-           and .list__links)."
-  tags:
-    - cf-typography
-*/
+//
+// Block link
+//
 
 .block-link {
     box-sizing: border-box;
@@ -855,29 +480,9 @@
     text-align: left;
 }
 
-
-/* topdoc
-  name: Unstyled list modifier
-  family: cf-typography
-  patterns:
-    - name: Default example
-      markup: |
-        <ul class="list list__unstyled">
-            <li class="list_item">
-                <a class="list_link">List item 1</a>
-            </li>
-            <li class="list_item">
-                <a class="list_link">List item 2</a>
-            </li>
-            <li class="list_item">
-                <a class="list_link">List item 3</a>
-            </li>
-        </ul>
-      codenotes:
-        - .list.list__unstyled
-  tags:
-    - cf-typography
-*/
+//
+// Unstyled list modifier
+//
 
 .list__unstyled {
     padding-left: 0;
@@ -889,29 +494,9 @@
     }
 }
 
-
-/* topdoc
-  name: Spaced list modifier
-  family: cf-typography
-  patterns:
-    - name: Default example
-      markup: |
-        <ul class="list list__spaced">
-            <li class="list_item">
-                <a class="list_link">List item 1</a>
-            </li>
-            <li class="list_item">
-                <a class="list_link">List item 2</a>
-            </li>
-            <li class="list_item">
-                <a class="list_link">List item 3</a>
-            </li>
-        </ul>
-      codenotes:
-        - .list.list__spaced
-  tags:
-    - cf-typography
-*/
+//
+// Spaced list modifier
+//
 
 .list__spaced {
     .list_item + .list_item {
@@ -919,56 +504,17 @@
     }
 }
 
-
-/* topdoc
-  name: Spaced list item modifier
-  family: cf-typography
-  patterns:
-    - name: Default example
-      markup: |
-        <ul class="list">
-            <li class="list_item">
-                <a class="list_link">List item 1</a>
-            </li>
-            <li class="list_item">
-                <a class="list_link">List item 2</a>
-            </li>
-            <li class="list_item list_item__spaced">
-                <a class="list_link">List item 3</a>
-            </li>
-            <li class="list_item">
-                <a class="list_link">List item 4</a>
-            </li>
-        </ul>
-  tags:
-    - cf-typography
-*/
+//
+// Spaced list item modifier
+//
 
 .list_item__spaced {
     margin-top: unit(24px / @base-font-size-px, em);
 }
 
-
-/* topdoc
-  name: Horizontal list modifier
-  family: cf-typography
-  patterns:
-    - name: Default example
-      markup: |
-        <ul class="list list__horizontal">
-            <li class="list_item">
-                <a class="list_link">List item 1</a>
-            </li>
-            <li class="list_item">
-                <a class="list_link">List item 2</a>
-            </li>
-            <li class="list_item">
-                <a class="list_link">List item 3</a>
-            </li>
-        </ul>
-  tags:
-    - cf-typography
-*/
+//
+// Horizontal list modifier
+//
 
 .list__horizontal {
     padding-left: 0;
@@ -985,33 +531,9 @@
     }
 }
 
-
-/* topdoc
-  name: Icon list modifier
-  family: cf-typography
-  notes:
-    - "Set up a list with icons on the left, in place of bullets."
-    - "Will need some more work to allow lines to wrap."
-  patterns:
-    - name: Default example
-      markup: |
-        <ul class="list list__icons">
-            <li class="list_item">
-                <span class="cf-icon cf-icon-email list_icon"></span>
-                List item 1
-            </li>
-            <li class="list_item">
-                <span class="cf-icon cf-icon-phone list_icon"></span>
-                List item 1
-            </li>
-            <li class="list_item">
-                <span class="cf-icon cf-icon-fax list_icon"></span>
-                List item 1
-            </li>
-        </ul>
-  tags:
-    - cf-typography
-*/
+//
+// Icon list modifier
+//
 
 .list__icons {
     .list__unstyled();
@@ -1022,53 +544,9 @@
     }
 }
 
-
-/* topdoc
-  name: Link list modifier
-  family: cf-typography
-  notes:
-    - "The link list modifier is intended to be used for lists where each item
-      is a link. It converts to a finger-friendly link with a large tap area
-      on smaller screens."
-  patterns:
-    - name: Default example
-      markup: |
-        <ul class="list list__links">
-            <li class="list_item">
-                <a class="list_link" href="#">List item 1</a>
-            </li>
-            <li class="list_item">
-                <a class="list_link" href="#">List item 2</a>
-            </li>
-            <li class="list_item">
-                <a class="list_link" href="#">List item 3</a>
-            </li>
-        </ul>
-    - name: Link list with icons
-      markup: |
-        <ul class="list list__links list__icons">
-            <li class="list_item">
-                <a class="list_link icon-link icon-link__before icon-link__email"
-                   href="#">
-                    <span class="icon-link_text">List item 1</span>
-                </a>
-            </li>
-            <li class="list_item">
-                <a class="list_link icon-link icon-link__before icon-link__phone"
-                   href="#">
-                    <span class="icon-link_text">List item 2</span>
-                </a>
-            </li>
-            <li class="list_item">
-                <a class="list_link icon-link icon-link__before icon-link__fax"
-                   href="#">
-                    <span class="icon-link_text">List item 3</span>
-                </a>
-            </li>
-        </ul>
-  tags:
-    - cf-typography
-*/
+//
+// Link list modifier
+//
 
 .list__links {
     .list__unstyled();
@@ -1118,29 +596,9 @@
     }
 }
 
-
-/* topdoc
- name: Custom bullet mixin
- family: cf-typography
- patterns:
-   - name: Custom bullet
-     codenotes:
-       - ".custom-bullet(@text, @color, @offset, @size, @font, @type)"
-     notes:
-       - "Displays custom bullets to the left of specified elements as :before pseudo elements."
-       - "To use, pass this mixin values for the bullet to be displayed: text, color, font size,
-          and offset (distance away from the parent element the bullet should appear).
-          Font family parameter is optional and defaults to inherited."
-       - "Bullets are absolutely positioned outside of their parent's flow,
-          so they will not receive certain properties applied to the parent
-          (borders, text-decoration, etc)."
-       - "By default, custom bullets hang outside of their parent's content box
-          (in the margin or padding if there is any). If you want the bullets to align
-          with the left boundary of the parent's content box, give the parent a
-          left margin value equal to the offset."
- tags:
-   - cf-typography
-*/
+//
+// Custom bullet mixin
+//
 
 .custom-bullet(@text, @color, @offset, @size, @font:inherit) {
     list-style-type: none;
@@ -1156,18 +614,3 @@
     left: -@offset;
   }
 }
-
-
-/* topdoc
- notes: .list__branded has been deprecated after the Design Manual team decided
-        to remove it. We should remove this selector in the next full version
-        release.
-
-*/
-.list__branded { }
-
-
-/* topdoc
-  name: EOF
-  eof: true
-*/
