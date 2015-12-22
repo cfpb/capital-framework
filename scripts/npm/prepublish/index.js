@@ -67,12 +67,16 @@ function checkCredentials(result) {
 function checkoutMaster() {
   // Travis operates in a detached head state so checkout the master branch.
   if (isTravis) {
-    util.printLn.info('Checking out ' + process.env.GH_BRANCH + ' branch...');
+    util.printLn.info('Checking out ' + process.env.GH_PROD_BRANCH + ' branch...');
     return util.git.checkoutMaster();
   } else {
     return util.git.checkBranch().then(function(result) {
-      if (result.stdout.trim() !== process.env.GH_BRANCH) {
-        util.printLn.error('You\'re not on the ' + process.env.GH_BRANCH + ' branch. Merge your changes into ' + process.env.GH_BRANCH + ' before publishing.');
+      if (!process.env.GH_PROD_BRANCH || !process.env.GH_DEV_BRANCH) {
+        util.printLn.error('Publishing to npm from you local machine isn\'t recommended but if you\'d like to do it anyway, define GH_PROD_BRANCH and GH_DEV_BRANCH env variables.');
+        process.exit(1);
+      }
+      if (result.stdout.trim() !== process.env.GH_PROD_BRANCH) {
+        util.printLn.error('You\'re not on the ' + process.env.GH_PROD_BRANCH + ' branch. Merge your changes into ' + process.env.GH_PROD_BRANCH + ' before publishing.');
         process.exit(1);
       }
     });
