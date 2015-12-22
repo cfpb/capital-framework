@@ -1,6 +1,6 @@
 {
   "name": "capital-framework",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "CFPB's UI framework",
   "main": "src/capital-framework.js",
   "less": "src/capital-framework.less",
@@ -23,7 +23,7 @@
   },
   "scripts": {
     "postinstall": "node scripts/npm/postinstall",
-    "release": "GH_BRANCH=master && ./scripts/travis/release.sh",
+    "release": "./scripts/travis/release.sh",
     "build": "gulp build",
     "test": "gulp test && node test/accessibility/wcag.js"
   },
