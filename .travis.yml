@@ -9,7 +9,7 @@ after_success:
   - ./scripts/travis/release.sh
 env:
   global:
-  - GH_BRANCH=canary
+  - GH_BRANCH=master
   - NPM_USERNAME=cfpbot
   - secure: d+i41c7frpGoSpo6WFwuDz5xgIHz2f5F40SArZUWdZw1+SUtWA+xQm474FY2Fm6QyJxtzRfrDytFap428WptZJryjDkfzuWMqNqw/BR0abeP0htxJ9SOFWqsdwt4d0vWB8JWUVFOSTkOg83cXdnZQt+Lzwgp2uMGc7bCC5/7zu4=
   - secure: jw+5ztv+7RgK+PxFrLfNBG6ZmM6iTbLlMHlNaBTHCNLfB9HOVHUIjzEZKB+rjiu1y/UQo0zM4N2qNKJNOZNRNrnqWXTTDbbtjx9WNK46d/yu78oNuBwMt/a1rydZop4Z6whPaZgSyYyA+YrCE4+r/Gvw0B8BTA1YHHpens4sfac=
