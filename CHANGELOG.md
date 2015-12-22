@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 3.0.8 - 2015-12-22
+
+### Added
 - Ability to publish CF from local machine (instead of only Travis).
 
 ## 3.0.7 - 2015-12-22
