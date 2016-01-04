@@ -3,14 +3,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
-- 
-
 ### Changed
-- 
-
-### Removed
-- 
+- Gulp styles task to use Less' paths option instead of npm import plugin.
+- Normalize.css @import paths in cf-core and cf-grid to play nicer with Less paths option.
 
 ## 3.0.8 - 2015-12-22
 
