@@ -371,12 +371,14 @@
             margin-left: -@grid_gutter-width;
         });
 
-        &.block__border,
-        &.block__border-right,
-        &.block__border-left {
-            border-right: none;
-            border-left: none;
-        }
+        respond-to-max(@bp-xs-max, {
+            &.block__border,
+            &.block__border-right,
+            &.block__border-left {
+                border-right: none;
+                border-left: none;
+            }
+        });
     }
 
     &__flush {
