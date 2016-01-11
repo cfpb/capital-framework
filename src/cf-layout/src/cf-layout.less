@@ -15,12 +15,12 @@
 // Color variables
 
 // .block
+@block__bg:                     lighten(#3a8899, 55%);
 @block__border-top:             #3a8899;
 @block__border-right:           #3a8899;
 @block__border-bottom:          #3a8899;
 @block__border-left:            #3a8899;
 @block__border:                 #3a8899;
-@block__bg:                     lighten(#3a8899, 55%);
 
 // .content_main
 @content_main-border:           #3a8899;
@@ -346,10 +346,20 @@
 
     &__flush-top {
         margin-top: 0 !important;
+
+        &.block__border,
+        &.block__border-top {
+            border-top: none;
+        }
     }
 
     &__flush-bottom {
         margin-bottom: 0 !important;
+
+        &.block__border,
+        &.block__border-bottom {
+            border-bottom: none;
+        }
     }
 
     &__flush-sides {
@@ -360,6 +370,13 @@
             margin-right: -@grid_gutter-width;
             margin-left: -@grid_gutter-width;
         });
+
+        &.block__border,
+        &.block__border-right,
+        &.block__border-left {
+            border-right: none;
+            border-left: none;
+        }
     }
 
     &__flush {
@@ -367,6 +384,14 @@
         margin-right: -(@grid_gutter-width / 2);
         margin-bottom: 0 !important;
         margin-left: -(@grid_gutter-width / 2);
+
+        &.block__border,
+        &.block__border-top,
+        &.block__border-right,
+        &.block__border-bottom,
+        &.block__border-left {
+            border: none;
+        }
 
         .respond-to-min(@bp-sm-min, {
             margin-right: -@grid_gutter-width;
