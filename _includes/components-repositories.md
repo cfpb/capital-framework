@@ -4,28 +4,21 @@ Current set of components:
 _Information on new components can be found on our [project roadmap]({{ site.baseurl }}/roadmap/)._  
 
 **cf-buttons:**
-[repo](https://github.com/cfpb/cf-buttons) /
-[style guide](http://cfpb.github.io/cf-buttons/docs/)  
+[repo](https://www.npmjs.com/package/cf-buttons)
 **cf-colors:**
-[repo](https://github.com/cfpb/cf-colors)  
+[repo](https://www.npmjs.com/package/cf-colors)  
 **cf-expandables:**
-[repo](https://github.com/cfpb/cf-expandables) /
-[style guide](http://cfpb.github.io/cf-expandables/docs/)  
+[repo](https://www.npmjs.com/package/cf-expandables)
 **cf-forms:**
-[repo](https://github.com/cfpb/cf-forms) /
-[style guide](http://cfpb.github.io/cf-forms/docs/)  
+[repo](https://www.npmjs.com/package/cf-forms) 
 **cf-grid:**
-[repo](https://github.com/cfpb/cf-grid)  
+[repo](https://www.npmjs.com/package/cf-grid)  
 **cf-icons:**
-[repo](https://github.com/cfpb/cf-icons) /
-[style guide](http://cfpb.github.io/cf-icons/docs/)  
+[repo](https://www.npmjs.com/package/cf-icons) 
 **cf-pagination:**
-[repo](https://github.com/cfpb/cf-pagination) /
-[style guide](http://cfpb.github.io/cf-pagination/docs/)  
+[repo](https://www.npmjs.com/package/cf-pagination) 
 **cf-typography:**
-[repo](https://github.com/cfpb/cf-typography) /
-[style guide](http://cfpb.github.io/cf-typography/docs/)
+[repo](https://www.npmjs.com/package/cf-typography)
 
 Early-phase component discussions:  
 [cf-tabs proposal](https://github.com/cfpb/cf-tabs/pulls)  
-[cf-tables](https://github.com/cfpb/cf-tables) _empty repository_

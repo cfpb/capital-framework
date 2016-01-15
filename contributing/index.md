@@ -3,33 +3,69 @@ layout: default
 title:  "Contributing"
 ---
 
-## Demos and docs
+## Building components locally
 
-Each component should build out a demo and docs page using
-[grunt-topdoc](https://github.com/topcoat/grunt-topdoc). The demo page is a simple HTML page with no extra styling which is useful for browser testing the component. The docs page is a generated style guide documenting the component markup and CSS.
+{% highlight sh %}
+git clone git@github.com:cfpb/capital-framework.git
+cd capital-framework
+npm install
+npm run build
+{% endhighlight %}
 
-These pages are generated using the grunt-topdoc task which uses templates from cf-component-demo. Components are set up to generate these pages along with the default Grunt tasks.
+This will build every component (compiling Less, bundling JS, processing markdown docs) to `tmp/` in the project's root.
 
-## Browser testing
+
+## Testing components locally
+
+If you're hacking on a component and want to test it in a local project, use `npm link`. 
+For example:
+
+{% highlight sh %}
+cd ~/Projects/capital-framework/ # wherever you cloned this repo
+npm run build
+cd tmp/cf-buttons
+npm link
+cd ~/Projects/owning-a-home # whatever project you want to test the component in
+npm link cf-buttons
+{% endhighlight %}
+
+Now `~/Projects/owning-a-home/node_modules/cf-buttons` will be a symlink pointing 
+to the `~/Projects/capital-framework/tmp/cf-buttons` directory.
+Whenever you rebuild (`npm run build`, see above) the CF components, your local 
+owning-a-home project will reference your local `tmp/` version of cf-buttons.
+
+
+### Browser testing
 
 Components should be cross browser tested. When contributing code please publicly track the tests you have run using the
 [testing checklist snippet](testing-snippet.html).
 
-## JavaScript testing
 
-JavaScript tests can be run with the `npm test` command. Before making a pull request please publicly track that all tests have passed
-using the [testing checklist snippet](testing-snippet.html).
+### JavaScript testing
+
+JavaScript tests can be run with the `npm test` command. Before making a pull 
+request please publicly track that all tests have passed using the [testing checklist snippet](testing-snippet.html).
 
 New unit tests should be written using [QUnit](https://qunitjs.com/) for any functionality added.
 
 
-## Accessibility testing
+### Accessibility testing
 
 Components should conform to [Section 508](http://www.section508.gov/)
-and [WCAG 2.0 level AA](http://www.w3.org/TR/WCAG20/) guidelines.
-Travis CI runs [pa11y](http://pa11y.org/) tests to ensure WCAG 2.0 compliancy.
-You can run pa11y locally by starting a local server to serve the component's
-demo page and running `pa11y localhost:8080/demo -s WCAG2AA`.
+and [WCAG 2.0 level AA](http://www.w3.org/TR/WCAG20/) guidelines. Accessibility
+tests are run as part of `npm test`.
+
+
+## Publishing your changes
+
+After you've edited components' code in `src/` and you're ready to open a PR with your changes:
+
+1. Create a new branch with your changes.
+1. Increment the version number(s) of whatever components you changed.
+1. Describe your changes in the "Unreleased" section of `CHANGELOG.md`.
+1. Go to https://github.com/cfpb/capital-framework and open a pull request to merge your branch into canary.
+
+Check out [example workflows](https://github.com/cfpb/capital-framework/issues/248) of the above process.
 
 
 ## Coding style
@@ -65,7 +101,8 @@ Avoid this in favor of using a descendant, like this: `.list__spaced .list_item`
 ### Shoot for mobile first declarations
 
 In most cases styles should be declared mobile first,
-then enhanced with `min-width` media queries. By doing this we create a base experience that all devices can use and one that does not require media query support.
+then enhanced with `min-width` media queries. By doing this we create a base 
+experience that all devices can use and one that does not require media query support.
 
 
 ### Automatically create an alternate stylesheet for older IE
@@ -93,16 +130,6 @@ legacssy: {
 }
 {% endhighlight %}
 
-
-## Contributing to existing components
-
-If you'd like to contribute to an existing Capital Framework component, please use the [fork and pull model](https://help.github.com/articles/using-pull-requests/).
-
-## Creating new Components
-
-We hope to soon offer a Yeoman generator for creating new components quickly. In the meantime our current recommendation is to clone and edit an existing component.
-
-Please read our [Anatomy of a Component](anatomy.html) page for more information on the different aspects of a component.
 
 ## Licensing
 
