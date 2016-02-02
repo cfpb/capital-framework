@@ -9,6 +9,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - [PATCH] **cf-layout** - Fixed a bug where columns nested 2 levels deep in a
   large-gutter modifier gain the extra wide gutters.
 - [PATCH] **cf-layout:** Remove `block` borders when `__flush` modifiers are also applied.
+- [PATCH] **capital-framework:** Added `CONTRIBUTING.md` with contribution docs.
 
 ### Changed
 - [PATCH] **cf-layout:** Hero updates:
