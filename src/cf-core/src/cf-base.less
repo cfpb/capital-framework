@@ -386,11 +386,11 @@ p + ol {
 
 li {
     margin-bottom: unit(8px / @base-font-size-px, em);
-}
 
-li:last-child,
-nav li {
-    margin-bottom: 0;
+    &:last-child,
+    nav & {
+        margin-bottom: 0;
+    }
 }
 
 //
