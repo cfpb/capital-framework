@@ -7,6 +7,10 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-core:** Fix improper usage of `:not` to target non-nav `li` elements.
 - **cf-core:** Remove `margin-bottom` from last-child `li` elements.
 
+### Changed
+- [PATCH] **cf-layout:** Update Hero to use new breakpoints and to not use the
+  medium weight for the paragraph on smaller screen sizes.
+
 
 ## 3.1.1 - 2016-01-04
 
