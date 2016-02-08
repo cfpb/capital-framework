@@ -8,8 +8,11 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-core:** Remove `margin-bottom` from last-child `li` elements.
 
 ### Changed
-- [PATCH] **cf-layout:** Update Hero to use new breakpoints and to not use the
-  medium weight for the paragraph on smaller screen sizes.
+- [PATCH] **cf-layout:** Hero fixes:
+  - Use new breakpoint variables
+  - Subheading should be medium on smaller screens
+  - CTA links should match size and weight of subheading
+  - Margin between subheading and CTA is 30px
 
 
 ## 3.1.1 - 2016-01-04

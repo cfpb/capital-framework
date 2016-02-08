@@ -670,15 +670,17 @@
         });
     }
 
-    &_subhead {
+    &_subhead,
+    &_cta {
         .heading-3();
 
-        margin-bottom: unit(@grid_gutter-width / 22px, em);
+        margin-bottom: unit(@grid_gutter-width / @font-size, em);
 
         .respond-to-max(@bp-sm-max, {
             // Use the same regular weight but reduce the sizes to h4 size
             // Can't use .into-paragraph because it has a different breakpoint
-            font-size: unit( 18px / @base-font-size-px, em );
+            font-size: unit(18px / @base-font-size-px, em);
+            margin-bottom: unit(@grid_gutter-width / 18px, em);
         });
 
         &:last-child {
@@ -687,8 +689,6 @@
     }
 
     &_cta {
-        .webfont-regular();
-
         margin-bottom: initial;
     }
 
