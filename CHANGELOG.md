@@ -4,21 +4,14 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Fixed
-- **cf-core:** Fix improper usage of `:not` to target non-nav `li` elements.
-- **cf-core:** Remove `margin-bottom` from last-child `li` elements.
-- **cf-layout** - Fixed a bug where columns nested 2 levels deep in a large-gutter modifier gain the extra wide gutters.
-
-### Added
--
-
-### Changed
--
-
-### Removed
--
+- [PATCH] **cf-core:** Fix improper usage of `:not` to target non-nav `li` elements.
+- [PATCH] **cf-core:** Remove `margin-bottom` from last-child `li` elements.
+- [PATCH] **cf-layout** - Fixed a bug where columns nested 2 levels deep in a
+  large-gutter modifier gain the extra wide gutters.
+- [PATCH] **cf-layout:** Remove `block` borders when `__flush` modifiers are also applied.
 
 ### Changed
-- [PATCH] **cf-layout:** Hero fixes:
+- [PATCH] **cf-layout:** Hero updates:
   - Use new breakpoint variables
   - Subheading should not be medium on smaller screens
   - CTA links should match size and weight of subheading
@@ -35,8 +28,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Changed
 - **capital-framework:** Edit Gulp styles task to use Less' `paths` option instead of npm import plugin.
-- **cf-core:** Update `normalize.css` `@import` paths to play nicer with Less paths option.
-- **cf-grid:** Update `normalize.css` `@import` paths to play nicer with Less paths option.
+- **cf-core:** Update `normalize.css` `@import` paths to play nicer with Less `paths` option.
+- **cf-grid:** Update `normalize.css` `@import` paths to play nicer with Less `paths` option.
 - **cf-icons:** Replace icon fonts to fix "Failed to decode downloaded font" error.
 
 
@@ -68,10 +61,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Added
 - Add automatic changelog updating to Travis CI release script.
-<<<<<<< 8dc552a02b842ced693f36bba7559c9785aa5406
 
-=======
->>>>>>> Fixed a bug where columns nested 2 levels deep in a large-gutter modifier gain the extra wide gutters.
 
 ## 3.0.0 - 2015-12-17
 

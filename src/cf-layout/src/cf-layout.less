@@ -15,12 +15,12 @@
 // Color variables
 
 // .block
-@block__border-top:             #3a8899;
-@block__border-right:           #3a8899;
-@block__border-bottom:          #3a8899;
-@block__border-left:            #3a8899;
-@block__border:                 #3a8899;
 @block__bg:                     lighten(#3a8899, 55%);
+@block__border:                 #3a8899;
+@block__border-top:             @block__border;
+@block__border-right:           @block__border;
+@block__border-bottom:          @block__border;
+@block__border-left:            @block__border;
 
 // .content_main
 @content_main-border:           #3a8899;
@@ -312,7 +312,7 @@
 .content__flush-all-on-small {
     .respond-to-max(@bp-sm-max, {
         padding: 0;
-        border-width: 0;
+        border: none;
     });
 }
 
@@ -346,15 +346,34 @@
 
     &__flush-top {
         margin-top: 0 !important;
+
+        &.block__border,
+        &.block__border-top {
+            border-top: none;
+        }
     }
 
     &__flush-bottom {
         margin-bottom: 0 !important;
+
+        &.block__border,
+        &.block__border-bottom {
+            border-bottom: none;
+        }
     }
 
     &__flush-sides {
         margin-right: -(@grid_gutter-width / 2);
         margin-left: -(@grid_gutter-width / 2);
+
+        .respond-to-max(@bp-xs-max, {
+            &.block__border,
+            &.block__border-right,
+            &.block__border-left {
+              border-right: none;
+              border-left: none;
+            }
+        });
 
         .respond-to-min(@bp-sm-min, {
             margin-right: -@grid_gutter-width;
@@ -367,6 +386,22 @@
         margin-right: -(@grid_gutter-width / 2);
         margin-bottom: 0 !important;
         margin-left: -(@grid_gutter-width / 2);
+
+        &.block__border,
+        &.block__border-top,
+        &.block__border-bottom {
+            border-top: none;
+            border-bottom: none;
+        }
+
+        .respond-to-max(@bp-xs-max, {
+            &.block__border,
+            &.block__border-right,
+            &.block__border-left {
+                border-right: none;
+                border-left: none;
+            }
+        });
 
         .respond-to-min(@bp-sm-min, {
             margin-right: -@grid_gutter-width;
