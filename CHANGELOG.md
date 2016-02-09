@@ -6,6 +6,16 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Fixed
 - **cf-core:** Fix improper usage of `:not` to target non-nav `li` elements.
 - **cf-core:** Remove `margin-bottom` from last-child `li` elements.
+- **cf-layout** - Fixed a bug where columns nested 2 levels deep in a large-gutter modifier gain the extra wide gutters.
+
+### Added
+-
+
+### Changed
+-
+
+### Removed
+-
 
 
 ## 3.1.1 - 2016-01-04
@@ -51,7 +61,10 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Added
 - Add automatic changelog updating to Travis CI release script.
+<<<<<<< 8dc552a02b842ced693f36bba7559c9785aa5406
 
+=======
+>>>>>>> Fixed a bug where columns nested 2 levels deep in a large-gutter modifier gain the extra wide gutters.
 
 ## 3.0.0 - 2015-12-17
 
