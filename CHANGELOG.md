@@ -10,7 +10,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Changed
 - [PATCH] **cf-layout:** Hero fixes:
   - Use new breakpoint variables
-  - Subheading should be medium on smaller screens
+  - Subheading should not be medium on smaller screens
   - CTA links should match size and weight of subheading
   - Margin between subheading and CTA is 30px
 
