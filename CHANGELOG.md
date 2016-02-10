@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 3.1.2 - 2016-02-10
+
 ### Fixed
 - [PATCH] **cf-core:** Fix improper usage of `:not` to target non-nav `li` elements.
 - [PATCH] **cf-core:** Remove `margin-bottom` from last-child `li` elements.
