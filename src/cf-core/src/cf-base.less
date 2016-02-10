@@ -384,13 +384,13 @@ p + ol {
     margin-top: unit(-5px / @base-font-size-px, em);
 }
 
-:not(nav) li {
+li {
     margin-bottom: unit(8px / @base-font-size-px, em);
-}
 
-// Override for IE8 and under, which doesn't suppor the :not selector.
-.lt-ie9 nav li {
-    margin-bottom: 0;
+    &:last-child,
+    nav & {
+        margin-bottom: 0;
+    }
 }
 
 //

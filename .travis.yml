@@ -16,3 +16,4 @@ env:
   - secure: NcthmXnpuSzj1nBqjTbraX9l0S/+1Wsj2Y737FI43vFthoqIFfrY4pgmIC2HT46r365e631lW3TRwPQp6QpqSK8e/1lH0nSkPWmyXIAL+y3S6OTPLthtLYNv9MBQVOqjPQu5z44i161yJRaPleAokQkiJxFkwuhzZVa/1idq7EA=
   - secure: OXCVx+umyxvsBBAdDnliKggeeDI6+MJnH01DRz3MSwcG2WMUxtzxKtPL4t03t+wfTmCoGmEMFa8OO1UgwfOoAMNwrEQHPG/AfEnV5A67FKoKY56vUD3rkNcWV5V/IfmQzrYzQSjyjgs19RY+1sD7CKK75bQWYuAQOoNrIpb84gc=
   - secure: P+1ezjcewjb0m6eOJDS018CF2z6wcXeWb8yWKrQvEb/qknOYaa62YSvfoWkb+cfinApLBtPQYQ3Jrf00xQc+K3a93QmCMyGFy/PYx+IhYh56/jvVsEqs4NnTeK3Eov0Q/cgZWA69tCeR8rNRnB1aMLfNsluj1GvkfLO2vth6sxY=
+sudo: false
