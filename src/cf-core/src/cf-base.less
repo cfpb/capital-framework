@@ -66,7 +66,7 @@ body {
     line-height: @base-line-height;
 }
 
-.heading-1( @fs: 34px ) {
+.heading-1( @fs: @size-alpha ) {
     @font-size: @fs;
     .webfont-regular();
 
@@ -75,7 +75,7 @@ body {
     line-height: 1.25;
 }
 
-.heading-2( @fs: 26px ) {
+.heading-2( @fs: @size-beta ) {
     @font-size: @fs;
     .webfont-regular();
 
@@ -84,7 +84,7 @@ body {
     line-height: 1.25;
 }
 
-.heading-3( @fs: 22px )  {
+.heading-3( @fs: @size-gamma )  {
     @font-size: @fs;
     .webfont-regular();
 
@@ -93,7 +93,7 @@ body {
     line-height: 1.25;
 }
 
-.heading-4( @fs: 18px )  {
+.heading-4( @fs: @size-delta )  {
     @font-size: @fs;
     .webfont-medium();
 
@@ -102,7 +102,7 @@ body {
     line-height: 1.25;
 }
 
-.heading-5( @fs: 14px )  {
+.heading-5( @fs: @size-epsilon )  {
     @font-size: @fs;
     .webfont-demi();
 
@@ -113,7 +113,7 @@ body {
     text-transform: uppercase;
 }
 
-.heading-6( @fs: 12px )  {
+.heading-6( @fs: @size-zeta )  {
     @font-size: @fs;
     .webfont-demi();
 
@@ -350,7 +350,7 @@ h6,
 
 .superheading {
     // For when you want a heading that's bigger than a normal H1
-    @font-size: 48px;
+    @font-size: @size-kilo;
 
     .webfont-regular();
 

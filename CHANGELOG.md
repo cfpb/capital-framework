@@ -4,13 +4,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+- [MINOR] **cf-core** Added font-size vars
 
 ### Changed
-- 
+-
 
 ### Removed
-- 
+-
 
 ## 3.1.2 - 2016-02-10
 
