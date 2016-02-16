@@ -24,6 +24,8 @@ author:
 exclude:
   - node_modules
   - src
+  - gulp
+  - gulpfile.js
   - package.json
   - npm-debug.log
   - README.md
