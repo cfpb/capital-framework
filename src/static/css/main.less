@@ -1,0 +1,58 @@
+/* ==========================================================================
+   cf-docs-temp
+   ========================================================================== */
+
+// This is your project's main Less file.
+// Project-specific Less rules go after the imports.
+
+// Import Capital Framework.
+@import (less) "cf-icons.less";
+@import (less) "cf-forms.less";
+@import (less) "cf-pagination.less";
+@import (less) "cf-typography.less";
+@import (less) "cf-expandables.less";
+@import (less) "cf-buttons.less";
+@import (less) "cf-layout.less";
+@import (less) "cf-core.less";
+@import (less) "cf-core.less";
+@import (less) "cf-grid.less";
+
+// Import the brand color palette.
+@import (less) "brand-palette.less";
+
+// Uncomment to import Avenir font on CFPB projects.
+// If this project is on a non-CFPB domain,
+// use this file as a template for adding web fonts.
+@import (less) 'licensed-fonts.css';
+
+// Override the Capital Framework theme variables with colors from the brand color palette.
+@import (less) "cf-theme-overrides.less";
+
+// Import the Capital Framework enhancements
+@import (less) "cf-enhancements.less";
+
+// Documentation specific stlyes
+html, body {
+  height: 100%;
+}
+
+/* for sticky footer */
+.body-wrapper {
+    display: table;
+    height: 100%;
+    width: 100%
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+// custom modules
+@import (less) "header.less";
+@import (less) "hero.less";
+@import (less) "main-content.less";
+@import (less) "footer.less";
+@import (less) "secondary-nav.less";
+@import (less) "code.less";

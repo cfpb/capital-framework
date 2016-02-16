@@ -23,6 +23,7 @@ author:
 # ignores
 exclude:
   - node_modules
+  - src
   - package.json
   - npm-debug.log
   - README.md
