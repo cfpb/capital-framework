@@ -14,30 +14,34 @@
 
 ## Installation
 
-We use [homebrew](http://brew.sh/) on Mac OSX to manage installation of software. To install the project dependencies using homebrew, navigate to this project's root directory and enter the following:
+This site is powered by Jekyll a Ruby based static site generator. For front-end tooling and asset management we use Node and Gulp. Before running the site locally you will need these dependencies. We use [homebrew](http://brew.sh/) on Mac OSX to manage installation of software. To install the project dependencies using homebrew enter the following:
 
 ```shell
 $ brew install ruby
 $ brew install node
 $ gem install jekyll
+$ npm install --global gulp-cli
+```
+
+
+To install the site's dependencies, navigate to the project directory and run:
+
+```shell
+$ bundle install
 $ npm install
 ```
 
 To launch the site, enter:
 
 ```shell
-$ jekyll serve
+$ npm start
 ```
 
-The site should now be live at `http://localhost:4000/capital-framework/`.
+This will start the Jekyll server and the Gulp watch task. BrowserSync should launch a new browser window displaying the site at http://localhost:3000.
+
+If you'd prefer to see the site without BrowserSync's live reload, you can access it at http://localhost:4000.
 
 ## Troubleshooting
-
-**CSS compilation errors.** If you encounter issues of CSS not compiling, try running:
-
-```shell
-$ grunt vendor
-```
 
 **Deny/Allow connections.** If you encounter the following message:
 

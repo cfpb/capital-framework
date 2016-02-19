@@ -8,6 +8,9 @@
     "email": "tech@cfpb.gov",
     "url": "http://consumerfinance.gov"
   },
+  "scripts": {
+    "start": "parallelshell 'bundle exec jekyll serve --watch --baseurl ''' 'gulp watch'"
+  },
   "license": "CC0",
   "keywords": [
     "capital-framework"
@@ -21,7 +24,6 @@
     "cf-buttons": "^3.0.2",
     "cf-layout": "^3.0.5",
     "cf-core": "^3.1.2",
-    "cf-core": "^3.1.2",
     "cf-grid": "^3.1.0",
     "html5shiv": "latest"
   },
@@ -33,7 +35,6 @@
     "gulp-autoprefixer": "^2.3.1",
     "gulp-changed": "^1.2.1",
     "gulp-concat": "^2.6.0",
-    "gulp-webpack": "^1.5.0",
     "gulp-cssmin": "^0.1.7",
     "gulp-eslint": "^1.0.0",
     "gulp-header": "^1.2.2",
@@ -47,7 +48,9 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.4.1",
     "gulp-util": "^3.0.6",
+    "gulp-webpack": "^1.5.0",
     "jquery": "^1.11.3",
+    "parallelshell": "^2.0.0",
     "pretty-hrtime": "^1.0.0",
     "require-dir": "^0.3.0"
   }
