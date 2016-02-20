@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+    background: @green-20;
+}
+
+.hero_heading {
+    .webfont-demi();
+    font-size: 3.5em;
+    margin: 0;
+}
+
+.hero_code {
+    background: @dark-gray;
+    color: @gray-10;
+    font-size: 1.5em;
+    padding: .5em .5em;
+    margin: 1.5em 0;
+}
+
+@media (min-width: 1100px) {
+    .hero_code {
+        width: 60%;
+    }
+}
+
+.hero_p {
+    margin-bottom: .2em;
+    font-size: 1.25em;
+}
+
+.jump-link {
+    position: relative;
+    // Right margin gives the absolutely positioned icon somewhere to go without
+    // inheriting the bottom border.
+    margin-right: 1.5em;
+    border-bottom-width: 1px;
+    .webfont-medium();
+    &:after {
+        // Inserts the cf-icon-right (arrow) glyph.
+        content: "\e002";
+        right: -1.25em;
+    }
+    &__download {
+        &:after {
+            // Inserts the cf-icon-download glyph.
+            content: "\e406";
+        }
+    }
+
+    &__external-link {
+        &:after {
+            // Inserts the cf-icon-external-link glyph.
+            content: "\e610";
+        }
+    }
+
+    &:after {
+        .cf-icon();
+        position: absolute;
+        bottom: 0;
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 770px) {
+
+    .hero_heading {
+        font-size: 2em;
+    }
+
+    .hero_code {
+        font-size: 1em;
+    }
+
+    .hero_p {
+        margin-bottom: 0em;
+        font-size: 1em;
+    }
+
+}

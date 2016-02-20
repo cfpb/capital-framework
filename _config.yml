@@ -2,7 +2,7 @@
 permalink: /:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 
 # Title
 name: Capital Framework
@@ -19,3 +19,15 @@ baseurl: '/capital-framework'
 author:
   name: The CFPB
   url: http://cfpb.github.io/
+
+# ignores
+exclude:
+  - node_modules
+  - src
+  - gulp
+  - gulpfile.js
+  - package.json
+  - npm-debug.log
+  - README.md
+  - LICENSE
+  - CONTRIBUTING.md
