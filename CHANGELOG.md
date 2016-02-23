@@ -7,7 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
--
+- Include `usage.md` in built components
 
 ### Removed
 
@@ -15,7 +15,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Changed
 
-- Include `usage.md` in built components
+- Updated build process to include `usage.md` with built components
 
 ## 3.1.2 - 2016-02-10
 
