@@ -4,6 +4,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- **cf-tables:** Add new component.
 - [MINOR] **cf-core** Added font-size vars
 
 ### Changed
@@ -12,18 +13,29 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Removed
 -
 
+## 3.1.4 - 2016-02-23
+
+### Changed
+- Include `usage.md` in built components
+
+## 3.1.3 - 2016-02-23
+
+### Changed
+
+- Updated build process to include `usage.md` with built components
+
 ## 3.1.2 - 2016-02-10
 
 ### Fixed
-- [PATCH] **cf-core:** Fix improper usage of `:not` to target non-nav `li` elements.
-- [PATCH] **cf-core:** Remove `margin-bottom` from last-child `li` elements.
-- [PATCH] **cf-layout** - Fixed a bug where columns nested 2 levels deep in a
+- **cf-core:** Fix improper usage of `:not` to target non-nav `li` elements.
+- **cf-core:** Remove `margin-bottom` from last-child `li` elements.
+- **cf-layout** - Fixed a bug where columns nested 2 levels deep in a
   large-gutter modifier gain the extra wide gutters.
-- [PATCH] **cf-layout:** Remove `block` borders when `__flush` modifiers are also applied.
-- [PATCH] **capital-framework:** Added `CONTRIBUTING.md` with contribution docs.
+- **cf-layout:** Remove `block` borders when `__flush` modifiers are also applied.
+- **capital-framework:** Added `CONTRIBUTING.md` with contribution docs.
 
 ### Changed
-- [PATCH] **cf-layout:** Hero updates:
+- **cf-layout:** Hero updates:
   - Use new breakpoint variables
   - Subheading should not be medium on smaller screens
   - CTA links should match size and weight of subheading

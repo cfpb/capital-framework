@@ -1,9 +1,10 @@
 {
-  "name": "cf-typography",
-  "version": "3.0.4",
-  "description": "Capital Framework typography",
-  "less": "src/cf-typography.less",
-  "style": "cf-typography.css",
+  "name": "cf-tables",
+  "version": "1.0.0",
+  "description": "Capital Framework tables",
+  "main": "src/cf-tables.js",
+  "less": "src/cf-tables.less",
+  "style": "cf-tables.css",
   "scripts": {
     "//": "This is a convenience script so that if you run `npm test` from this dir",
     "//": "npm won't return  a 'no tests' error. Instead it'll check if you're in",
@@ -13,9 +14,10 @@
   },
   "dependencies": {
     "cf-core": "^3.0.0",
-    "cf-icons": "^3.0.0"
+    "jquery": "~1.11.0"
   },
   "keywords": [
-    "typography"
+    "tables",
+    "jquery"
   ]
 }
