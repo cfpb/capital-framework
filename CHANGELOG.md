@@ -5,13 +5,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Added
 - **cf-tables:** Add new component.
-- [MINOR] **cf-core** Added font-size vars
-
-### Changed
--
-
-### Removed
--
+- **cf-core** Add font-size vars
 
 ## 3.1.4 - 2016-02-23
 
