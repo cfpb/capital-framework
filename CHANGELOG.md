@@ -3,13 +3,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
 - Include `usage.md` in built components
-
-### Removed
 
 ## 3.1.3 - 2016-02-23
 
