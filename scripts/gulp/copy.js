@@ -23,7 +23,6 @@ gulp.task( 'copy:components:source', function() {
       var component = file.path.split('/').pop(),
           src = [
                   file.path + '/**',
-                  '!' + file.path + '/usage.md',
                   '!' + file.path + '/package.json',
                   '!' + file.path + '/node_modules',
                   '!' + file.path + '/node_modules/**',
