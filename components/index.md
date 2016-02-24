@@ -30,7 +30,7 @@ cf-icons contains a custom icon font and useful CSS styles for working with the 
 
 cf-layout contains a set of HTML & CSS layout helpers, such as common layout patterns and dividers.
 
-## [cf-pagination](/components/cf-pagination/) [![npm](https://img.shields.io/npm/v/cf-pagination.svg?style=flat-square)](https://www.npmjs.com/package/cf-pagination)
+## [cf-pagination]({{ site.baseurl }}/components/cf-pagination/) [![npm](https://img.shields.io/npm/v/cf-pagination.svg?style=flat-square)](https://www.npmjs.com/package/cf-pagination)
 
 cf-pagination contains basic pagination styling for working with multipage displays such as search results or blog archives.
 
