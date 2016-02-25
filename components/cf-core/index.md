@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "cf-buttons"
+title:  "cf-core"
 parent: "Components"
 ---
 
