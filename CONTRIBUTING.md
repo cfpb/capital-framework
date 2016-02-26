@@ -72,6 +72,7 @@ that's been modified, open its `/src/COMPONENT/package.json` and increment its
 version. Follow [SemVer](http://semver.org/) and increment either its major, minor,
 or patch version dependent upon the changes that were made to the component.
 1. Don't touch CF's primary `/package.json`. Travis will automatically increment its version.
+1. Delete any empty sections ("Added", "Changed", "Removed") from the changelog.
 1. `git commit -am "Preparing release"`
 1. `git push upstream canary`
 1. Go to https://github.com/cfpb/capital-framework and open a pull request to merge `canary` into `master`.
