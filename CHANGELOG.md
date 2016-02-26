@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 3.2.0 - 2016-02-26
+
+### Added
 - **cf-tables:** Add new component.
 - **cf-core** Add font-size vars
 
