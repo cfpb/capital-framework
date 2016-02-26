@@ -1,0 +1,410 @@
+<h2 id="cf-grid">CF Grid</h2>
+<h3 id="less-variables">Less variables</h3>
+<p>The following variables are exposed, allowing you to easily override them before compiling. Most mixins allows you to further override these values by passing them arguments.</p>
+<pre><code>@grid_box-sizing-polyfill-path: &#39;../../box-sizing-polyfill;
+</code></pre><blockquote>
+<p>The path where boxsizing.htc is located.</p>
+<p>This path MUST be overridden in your project and set to a root relative url.</p>
+</blockquote>
+<pre><code>@grid_wrapper-width: 1200px;
+</code></pre><blockquote>
+<p>The grid&#39;s maximum width in px.</p>
+</blockquote>
+<pre><code>@grid_gutter-width: 30px;
+</code></pre><blockquote>
+<p>The fixed width between columns.</p>
+</blockquote>
+<pre><code>@grid_total-columns: 12;
+</code></pre><blockquote>
+<p>The total number of columns used in calculating column widths.</p>
+</blockquote>
+<pre><code>@grid_debug
+</code></pre><blockquote>
+<p>Gives column blocks a background color if set to true.</p>
+</blockquote>
+<h2 id="wrapper">Wrapper</h2>
+<blockquote>
+<p>Wrappers are centered containers with a max-width and fixed gutters that match the gutter widths of columns.</p>
+<p>To support IE 6/7, ensure that the path to boxsizing.htc is set using the @grid_box-sizing-polyfill-path Less variable. Read more: <a href="https://github.com/Schepp/box-sizing-polyfill">https://github.com/Schepp/box-sizing-polyfill</a>.</p>
+</blockquote>
+<h3 id="less-mixin">Less mixin</h3>
+<pre><code>.grid_wrapper( @grid_wrapper-width: @grid_wrapper-width )
+</code></pre><blockquote>
+<p>You can create wrappers with different max-widths by passing a pixel value into the mixin.</p>
+</blockquote>
+<h3 id="usage">Usage</h3>
+<pre><code>.main-wrapper {
+  .grid_wrapper();
+}
+.wide-wrapper {
+  .grid_wrapper( 1900px );
+}
+</code></pre><pre><code>&lt;div class=&quot;main-wrapper&quot;&gt;
+    This container now has left and right padding and a centered max width.
+&lt;/div&gt;
+&lt;div class=&quot;wide-wrapper&quot;&gt;
+    This container is the same except it has a wider max-width.
+&lt;/div&gt;
+</code></pre><h3 id="columns">Columns</h3>
+<h3 id="less-mixin">Less mixin</h3>
+<pre><code>.grid_column( @columns: 1; @total: @grid_total-columns; @prefix: 0; @suffix: 0 )
+</code></pre><blockquote>
+<p>Computes column widths and prefix/suffix padding.</p>
+<p>CSS borders are used for fixed gutters.</p>
+</blockquote>
+<h3 id="usage">Usage</h3>
+<pre><code>.main-wrapper {
+  .grid_wrapper();
+}
+.half {
+  .grid_column(1, 2);
+}
+</code></pre><pre><code>&lt;div class=&quot;main-wrapper&quot;&gt;
+    &lt;div class=&quot;half&quot;&gt;I am half of my parent.&lt;/div&gt;
+    &lt;div class=&quot;half&quot;&gt;I am half of my parent.&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h2 id="push-and-pull-mixins-for-source-ordering">Push and Pull mixins for source ordering</h2>
+<h3 id="less-mixin">Less mixin</h3>
+<pre><code>.push( @offset: 1, @grid_total-columns: @grid_total-columns )
+</code></pre><pre><code>.pull( @offset: 1, @grid_total-columns: @grid_total-columns )
+</code></pre><h3 id="usage">Usage</h3>
+<pre><code>.first {
+  .grid_column(1, 2);
+  .grid_pull(1);
+}
+.second {
+  .grid_column(1, 2);
+  .grid_push(1);
+}
+</code></pre><pre><code>&lt;div&gt;
+    &lt;div class=&quot;second&quot;&gt;I am first in the markup but appear after .first.&lt;/div&gt;
+    &lt;div class=&quot;first&quot;&gt;I am second in the markup but appear before .second.&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h2 id="nested-columns">Nested columns</h2>
+<blockquote>
+<p>Since all cf-grid columns have left and right gutters you will notice undesireable offsetting when nesting columns. Normally this is removed with complex selectors or by adding classes to the first and last column per &#39;row&#39;. In cf-grid the way to get around this is by wrapping your columns in a container that utilizes the .grid_nested-col-group() mixin. This mixin uses negative left and right margins to pull the columns back into alignment with parent columns.</p>
+<p>NOTE: Working this way allows you to easily create responsive grids. You are free to control the number of columns per &#39;row&#39; without having to deal with the first and last columns of each row.</p>
+<p>NOTE: cf-grids does not use &#39;rows&#39; and there is no row container. To clarify, if you have a 12 column grid and place 24 columns inside of a wrapper cf-grid columns will automaitcally stack into 2 &#39;rows&#39; of 12.</p>
+</blockquote>
+<h3 id="less-mixin">Less mixin</h3>
+<pre><code>.grid_nested-col-group()
+</code></pre><h3 id="usage">Usage</h3>
+<pre><code>.main-wrapper {
+  .grid_wrapper();
+}
+.cols {
+  .grid_nested-col-group();
+}
+.half {
+  .grid_column(1, 2);
+}
+</code></pre><pre><code>&lt;div class=&quot;main-wrapper&quot;&gt;
+    &lt;div class=&quot;half&quot;&gt;
+        &lt;div class=&quot;cols&quot;&gt;
+            &lt;div class=&quot;half&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;half&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;half&quot;&gt;
+        &lt;div class=&quot;cols&quot;&gt;
+            &lt;div class=&quot;half&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;half&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h2 id="example-grid-layouts">Example grid layouts</h2>
+<h3 id="12-columns-w-1200px-max-width">12 columns w/ 1200px max width</h3>
+  <div class="cols-12">
+
+      <section>
+          <div class="col col-1"><p>one</p></div>
+          <div class="col col-1"><p>one</p></div>
+          <div class="col col-1"><p>one</p></div>
+          <div class="col col-1"><p>one</p></div>
+          <div class="col col-1"><p>one</p></div>
+          <div class="col col-1"><p>one</p></div>
+          <div class="col col-1"><p>one</p></div>
+          <div class="col col-1"><p>one</p></div>
+          <div class="col col-1"><p>one</p></div>
+          <div class="col col-1"><p>one</p></div>
+          <div class="col col-1"><p>one</p></div>
+          <div class="col col-1"><p>one</p></div>
+      </section>
+
+      <section>
+          <div class="col col-2"><p>two</p></div>
+          <div class="col col-2"><p>two</p></div>
+          <div class="col col-2"><p>two</p></div>
+          <div class="col col-2"><p>two</p></div>
+          <div class="col col-2"><p>two</p></div>
+          <div class="col col-2"><p>two</p></div>
+      </section>
+
+      <section>
+          <div class="col col-2"><p>two</p></div>
+          <div class="col col-3"><p>three</p></div>
+          <div class="col col-2"><p>two</p></div>
+          <div class="col col-3"><p>three</p></div>
+          <div class="col col-2"><p>two</p></div>
+      </section>
+
+      <section>
+          <div class="col col-3"><p>three</p></div>
+          <div class="col col-3"><p>three</p></div>
+          <div class="col col-3"><p>three</p></div>
+          <div class="col col-3"><p>three</p></div>
+      </section>
+
+      <section>
+          <div class="col col-4"><p>four</p></div>
+          <div class="col col-4"><p>four</p></div>
+          <div class="col col-4"><p>four</p></div>
+      </section>
+
+      <section>
+          <div class="col col-6"><p>six</p></div>
+          <div class="col col-6"><p>six</p></div>
+      </section>
+
+      <section>
+          <div class="col col-12"><p>twelve</p></div>
+      </section>
+
+  </div>
+
+<pre><code>&lt;div class=&quot;cols-12&quot;&gt;
+
+    &lt;section&gt;
+        &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+        &lt;div class=&quot;col col-2&quot;&gt;&lt;p&gt;two&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-2&quot;&gt;&lt;p&gt;two&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-2&quot;&gt;&lt;p&gt;two&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-2&quot;&gt;&lt;p&gt;two&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-2&quot;&gt;&lt;p&gt;two&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-2&quot;&gt;&lt;p&gt;two&lt;/p&gt;&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+        &lt;div class=&quot;col col-2&quot;&gt;&lt;p&gt;two&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-2&quot;&gt;&lt;p&gt;two&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-2&quot;&gt;&lt;p&gt;two&lt;/p&gt;&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+        &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+        &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+        &lt;div class=&quot;col col-6&quot;&gt;&lt;p&gt;six&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-6&quot;&gt;&lt;p&gt;six&lt;/p&gt;&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+        &lt;div class=&quot;col col-12&quot;&gt;&lt;p&gt;twelve&lt;/p&gt;&lt;/div&gt;
+    &lt;/section&gt;
+
+&lt;/div&gt;
+```
+
+### Prefixing/Suffixing
+
+  &lt;div class=&quot;cols-12&quot;&gt;
+
+      &lt;section&gt;
+          &lt;div class=&quot;col col-1 suffix-11&quot;&gt;&lt;p&gt;prefix 0, suffix 11&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;col col-1 prefix-1 suffix-10&quot;&gt;&lt;p&gt;prefix 1, suffix 10&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;col col-1 prefix-2 suffix-9&quot;&gt;&lt;p&gt;prefix 2, suffix 9&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;col col-1 prefix-3 suffix-8&quot;&gt;&lt;p&gt;prefix 3, suffix 8&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;col col-1 prefix-4 suffix-7&quot;&gt;&lt;p&gt;prefix 4, suffix 7&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;col col-1 prefix-5 suffix-6&quot;&gt;&lt;p&gt;prefix 5, suffix 6&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;col col-1 prefix-6 suffix-5&quot;&gt;&lt;p&gt;prefix 6, suffix 5&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;col col-1 prefix-7 suffix-4&quot;&gt;&lt;p&gt;prefix 7, suffix 4&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;col col-1 prefix-8 suffix-3&quot;&gt;&lt;p&gt;prefix 8, suffix 3&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;col col-1 prefix-9 suffix-2&quot;&gt;&lt;p&gt;prefix 9, suffix 2&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;col col-1 prefix-10 suffix-1&quot;&gt;&lt;p&gt;prefix 10, suffix 1&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;col col-1 prefix-11&quot;&gt;&lt;p&gt;prefix 11, suffix 0&lt;/p&gt;&lt;/div&gt;
+      &lt;/section&gt;
+
+  &lt;/div&gt;
+
+```
+&lt;div class=&quot;cols-12&quot;&gt;
+
+    &lt;section&gt;
+        &lt;div class=&quot;col col-1 suffix-11&quot;&gt;&lt;p&gt;prefix 0, suffix 11&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1 prefix-1 suffix-10&quot;&gt;&lt;p&gt;prefix 1, suffix 10&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1 prefix-2 suffix-9&quot;&gt;&lt;p&gt;prefix 2, suffix 9&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1 prefix-3 suffix-8&quot;&gt;&lt;p&gt;prefix 3, suffix 8&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1 prefix-4 suffix-7&quot;&gt;&lt;p&gt;prefix 4, suffix 7&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1 prefix-5 suffix-6&quot;&gt;&lt;p&gt;prefix 5, suffix 6&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1 prefix-6 suffix-5&quot;&gt;&lt;p&gt;prefix 6, suffix 5&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1 prefix-7 suffix-4&quot;&gt;&lt;p&gt;prefix 7, suffix 4&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1 prefix-8 suffix-3&quot;&gt;&lt;p&gt;prefix 8, suffix 3&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1 prefix-9 suffix-2&quot;&gt;&lt;p&gt;prefix 9, suffix 2&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1 prefix-10 suffix-1&quot;&gt;&lt;p&gt;prefix 10, suffix 1&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-1 prefix-11&quot;&gt;&lt;p&gt;prefix 11, suffix 0&lt;/p&gt;&lt;/div&gt;
+    &lt;/section&gt;
+
+&lt;/div&gt;
+```
+
+### Push/Pull
+
+  &lt;div class=&quot;cols-12&quot;&gt;
+
+    &lt;section&gt;
+        &lt;div class=&quot;col col-4 push-8&quot;&gt;&lt;p&gt;four, push eight&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-8 pull-4&quot;&gt;&lt;p&gt;eight, pull four&lt;/p&gt;&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+        &lt;div class=&quot;col col-9 push-3&quot;&gt;&lt;p&gt;nine, push three&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;col col-3 pull-9&quot;&gt;&lt;p&gt;three, pull nine&lt;/p&gt;&lt;/div&gt;
+    &lt;/section&gt;
+
+  &lt;/div&gt;
+
+```
+&lt;div class=&quot;cols-12&quot;&gt;
+
+  &lt;section&gt;
+      &lt;div class=&quot;col col-4 push-8&quot;&gt;&lt;p&gt;four, push eight&lt;/p&gt;&lt;/div&gt;
+      &lt;div class=&quot;col col-8 pull-4&quot;&gt;&lt;p&gt;eight, pull four&lt;/p&gt;&lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+      &lt;div class=&quot;col col-9 push-3&quot;&gt;&lt;p&gt;nine, push three&lt;/p&gt;&lt;/div&gt;
+      &lt;div class=&quot;col col-3 pull-9&quot;&gt;&lt;p&gt;three, pull nine&lt;/p&gt;&lt;/div&gt;
+  &lt;/section&gt;
+
+&lt;/div&gt;
+```
+
+### Nesting
+
+  &lt;div class=&quot;cols-12&quot;&gt;
+
+      &lt;section&gt;
+          &lt;div class=&quot;col col-6&quot;&gt;
+              &lt;p&gt;six&lt;/p&gt;
+              &lt;section&gt;
+                  &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+                  &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+                  &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+              &lt;/section&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;col col-6&quot;&gt;
+              &lt;p&gt;six&lt;/p&gt;
+              &lt;section&gt;
+                  &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+                  &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+                  &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+              &lt;/section&gt;
+          &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;section&gt;
+          &lt;div class=&quot;col col-3&quot;&gt;
+              &lt;p&gt;three&lt;/p&gt;
+              &lt;section&gt;
+                  &lt;div class=&quot;col col-6&quot;&gt;&lt;p&gt;six&lt;/p&gt;&lt;/div&gt;
+                  &lt;div class=&quot;col col-6&quot;&gt;&lt;p&gt;six&lt;/p&gt;&lt;/div&gt;
+              &lt;/section&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;col col-6&quot;&gt;
+              &lt;p&gt;six&lt;/p&gt;
+              &lt;section&gt;
+                  &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+                  &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+                  &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+              &lt;/section&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;col col-3&quot;&gt;
+              &lt;p&gt;three&lt;/p&gt;
+              &lt;section&gt;
+                  &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+                  &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+                  &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+                  &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+              &lt;/section&gt;
+          &lt;/div&gt;
+      &lt;/section&gt;
+
+  &lt;/div&gt;
+
+```
+&lt;div class=&quot;cols-12&quot;&gt;
+
+    &lt;section&gt;
+        &lt;div class=&quot;col col-6&quot;&gt;
+            &lt;p&gt;six&lt;/p&gt;
+            &lt;section&gt;
+                &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+                &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+                &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col col-6&quot;&gt;
+            &lt;p&gt;six&lt;/p&gt;
+            &lt;section&gt;
+                &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+                &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+                &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+        &lt;div class=&quot;col col-3&quot;&gt;
+            &lt;p&gt;three&lt;/p&gt;
+            &lt;section&gt;
+                &lt;div class=&quot;col col-6&quot;&gt;&lt;p&gt;six&lt;/p&gt;&lt;/div&gt;
+                &lt;div class=&quot;col col-6&quot;&gt;&lt;p&gt;six&lt;/p&gt;&lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col col-6&quot;&gt;
+            &lt;p&gt;six&lt;/p&gt;
+            &lt;section&gt;
+                &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+                &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+                &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col col-3&quot;&gt;
+            &lt;p&gt;three&lt;/p&gt;
+            &lt;section&gt;
+                &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+                &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+                &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+                &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+&lt;/div&gt;
+</code></pre>
