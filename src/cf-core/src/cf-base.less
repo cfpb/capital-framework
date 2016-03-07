@@ -6,14 +6,8 @@
 //
 // Webfonts
 //
-
-@webfont-regular: Arial;
-@webfont-italic: Arial;
-@webfont-medium: Arial;
-@webfont-demi: Arial;
-
 .webfont-regular() {
-    font-family: @webfont-regular, Arial, sans-serif;
+    font-family: @webfont-regular;
     font-style: normal;
     font-weight: normal;
 
@@ -29,7 +23,7 @@
 }
 
 .webfont-italic() {
-    font-family: @webfont-italic, Arial, sans-serif;
+    font-family: @webfont-italic;
     font-style: italic;
     font-weight: normal;
     .lt-ie9 & {
@@ -38,7 +32,7 @@
 }
 
 .webfont-medium() {
-    font-family: @webfont-medium, Arial, sans-serif;
+    font-family: @webfont-medium;
     font-style: normal;
     font-weight: 500;
     .lt-ie9 & {
@@ -47,7 +41,7 @@
 }
 
 .webfont-demi() {
-    font-family: @webfont-demi, Arial, sans-serif;
+    font-family: @webfont-demi;
     font-style: normal;
     font-weight: bold;
     .lt-ie9 & {
@@ -61,7 +55,7 @@
 
 body {
     color: @text;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: @font-serif;
     font-size: unit(@base-font-size-px / 16 * 100, %);
     line-height: @base-line-height;
 }
@@ -549,7 +543,7 @@ select[multiple] {
     display: inline-block;
     margin: 0;
     padding: unit(6 / @base-font-size-px, em);
-    font-family: Arial, sans-serif;
+    font-family: @font-input;
     font-size: unit(@font-size / @base-font-size-px, em);
     background: @input-bg;
     border: 1px solid @input-border;
