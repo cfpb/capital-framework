@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 3.2.1 - 2016-03-10
+
 ### Changed
 - [PATCH] **All components:** Normalize markdown formatting across usage.md files.
 
