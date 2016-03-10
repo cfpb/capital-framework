@@ -8,39 +8,39 @@ The following variables are exposed, allowing you to easily override them before
 @grid_box-sizing-polyfill-path: '../../box-sizing-polyfill;
 ```
 
-> The path where boxsizing.htc is located.
+The path where boxsizing.htc is located.
 
-> This path MUST be overridden in your project and set to a root relative url.
+This path MUST be overridden in your project and set to a root relative url.
 
 ```
 @grid_wrapper-width: 1200px;
 ```
 
-> The grid's maximum width in px.
+The grid's maximum width in px.
 
 ```
 @grid_gutter-width: 30px;
 ```
 
-> The fixed width between columns.
+The fixed width between columns.
 
 ```
 @grid_total-columns: 12;
 ```
 
-> The total number of columns used in calculating column widths.
+The total number of columns used in calculating column widths.
 
 ```
 @grid_debug
 ```
 
-> Gives column blocks a background color if set to true.
+Gives column blocks a background color if set to true.
 
 ## Wrapper
 
-> Wrappers are centered containers with a max-width and fixed gutters that match the gutter widths of columns.
+Wrappers are centered containers with a max-width and fixed gutters that match the gutter widths of columns.
 
-> To support IE 6/7, ensure that the path to boxsizing.htc is set using the @grid_box-sizing-polyfill-path Less variable. Read more: https://github.com/Schepp/box-sizing-polyfill.
+To support IE 6/7, ensure that the path to boxsizing.htc is set using the `@grid_box-sizing-polyfill-path` Less variable. Read more: https://github.com/Schepp/box-sizing-polyfill.
 
 ### Less mixin
 
@@ -48,7 +48,7 @@ The following variables are exposed, allowing you to easily override them before
 .grid_wrapper( @grid_wrapper-width: @grid_wrapper-width )
 ```
 
-> You can create wrappers with different max-widths by passing a pixel value into the mixin.
+You can create wrappers with different max-widths by passing a pixel value into the mixin.
 
 ### Usage
 
@@ -78,9 +78,9 @@ The following variables are exposed, allowing you to easily override them before
 .grid_column( @columns: 1; @total: @grid_total-columns; @prefix: 0; @suffix: 0 )
 ```
 
-> Computes column widths and prefix/suffix padding.
+Computes column widths and prefix/suffix padding.
 
-> CSS borders are used for fixed gutters.
+CSS borders are used for fixed gutters.
 
 ### Usage
 
@@ -134,11 +134,11 @@ The following variables are exposed, allowing you to easily override them before
 
 ## Nested columns
 
-> Since all cf-grid columns have left and right gutters you will notice undesireable offsetting when nesting columns. Normally this is removed with complex selectors or by adding classes to the first and last column per 'row'. In cf-grid the way to get around this is by wrapping your columns in a container that utilizes the .grid_nested-col-group() mixin. This mixin uses negative left and right margins to pull the columns back into alignment with parent columns.
+Since all cf-grid columns have left and right gutters you will notice undesirable offsetting when nesting columns. Normally this is removed with complex selectors or by adding classes to the first and last column per 'row'. In cf-grid the way to get around this is by wrapping your columns in a container that utilizes the .grid_nested-col-group() mixin. This mixin uses negative left and right margins to pull the columns back into alignment with parent columns.
 
-> NOTE: Working this way allows you to easily create responsive grids. You are free to control the number of columns per 'row' without having to deal with the first and last columns of each row.
+**NOTE:** Working this way allows you to easily create responsive grids. You are free to control the number of columns per 'row' without having to deal with the first and last columns of each row.
 
-> NOTE: cf-grids does not use 'rows' and there is no row container. To clarify, if you have a 12 column grid and place 24 columns inside of a wrapper cf-grid columns will automaitcally stack into 2 'rows' of 12.
+**NOTE:** cf-grids does not use 'rows' and there is no row container. To clarify, if you have a 12 column grid and place 24 columns inside of a wrapper cf-grid columns will automatically stack into 2 'rows' of 12.
 
 ### Less mixin
 
@@ -182,65 +182,65 @@ The following variables are exposed, allowing you to easily override them before
 
 ### 12 columns w/ 1200px max width
 
-  <div class="cols-12">
+<div class="cols-12">
 
-      <section>
-          <div class="col col-1"><p>one</p></div>
-          <div class="col col-1"><p>one</p></div>
-          <div class="col col-1"><p>one</p></div>
-          <div class="col col-1"><p>one</p></div>
-          <div class="col col-1"><p>one</p></div>
-          <div class="col col-1"><p>one</p></div>
-          <div class="col col-1"><p>one</p></div>
-          <div class="col col-1"><p>one</p></div>
-          <div class="col col-1"><p>one</p></div>
-          <div class="col col-1"><p>one</p></div>
-          <div class="col col-1"><p>one</p></div>
-          <div class="col col-1"><p>one</p></div>
-      </section>
+    <section>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+    </section>
 
-      <section>
-          <div class="col col-2"><p>two</p></div>
-          <div class="col col-2"><p>two</p></div>
-          <div class="col col-2"><p>two</p></div>
-          <div class="col col-2"><p>two</p></div>
-          <div class="col col-2"><p>two</p></div>
-          <div class="col col-2"><p>two</p></div>
-      </section>
+    <section>
+        <div class="col col-2"><p>two</p></div>
+        <div class="col col-2"><p>two</p></div>
+        <div class="col col-2"><p>two</p></div>
+        <div class="col col-2"><p>two</p></div>
+        <div class="col col-2"><p>two</p></div>
+        <div class="col col-2"><p>two</p></div>
+    </section>
 
-      <section>
-          <div class="col col-2"><p>two</p></div>
-          <div class="col col-3"><p>three</p></div>
-          <div class="col col-2"><p>two</p></div>
-          <div class="col col-3"><p>three</p></div>
-          <div class="col col-2"><p>two</p></div>
-      </section>
+    <section>
+        <div class="col col-2"><p>two</p></div>
+        <div class="col col-3"><p>three</p></div>
+        <div class="col col-2"><p>two</p></div>
+        <div class="col col-3"><p>three</p></div>
+        <div class="col col-2"><p>two</p></div>
+    </section>
 
-      <section>
-          <div class="col col-3"><p>three</p></div>
-          <div class="col col-3"><p>three</p></div>
-          <div class="col col-3"><p>three</p></div>
-          <div class="col col-3"><p>three</p></div>
-      </section>
+    <section>
+        <div class="col col-3"><p>three</p></div>
+        <div class="col col-3"><p>three</p></div>
+        <div class="col col-3"><p>three</p></div>
+        <div class="col col-3"><p>three</p></div>
+    </section>
 
-      <section>
-          <div class="col col-4"><p>four</p></div>
-          <div class="col col-4"><p>four</p></div>
-          <div class="col col-4"><p>four</p></div>
-      </section>
+    <section>
+        <div class="col col-4"><p>four</p></div>
+        <div class="col col-4"><p>four</p></div>
+        <div class="col col-4"><p>four</p></div>
+    </section>
 
-      <section>
-          <div class="col col-6"><p>six</p></div>
-          <div class="col col-6"><p>six</p></div>
-      </section>
+    <section>
+        <div class="col col-6"><p>six</p></div>
+        <div class="col col-6"><p>six</p></div>
+    </section>
 
-      <section>
-          <div class="col col-12"><p>twelve</p></div>
-      </section>
+    <section>
+        <div class="col col-12"><p>twelve</p></div>
+    </section>
 
-  </div>
+</div>
 
-````
+```
 <div class="cols-12">
 
     <section>
@@ -476,4 +476,4 @@ The following variables are exposed, allowing you to easily override them before
     </section>
 
 </div>
-````
+```
