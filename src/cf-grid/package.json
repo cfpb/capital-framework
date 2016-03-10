@@ -1,6 +1,6 @@
 {
   "name": "cf-grid",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "Capital Framework grid",
   "less": "src/cf-grid.less",
   "style": "cf-grid.css",
