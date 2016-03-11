@@ -27,6 +27,8 @@
       subhref: "/components/cf-pagination/"
     - subtitle: "cf-tables"
       subhref: "/components/cf-tables/"
+    - subtitle: "cf-typography"
+      subhref: "/components/cf-typography/"
 
 
 - title: "Contributing"
