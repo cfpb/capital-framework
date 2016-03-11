@@ -21,10 +21,13 @@
       subhref: "/components/cf-grid/"
     - subtitle: "cf-icons"
       subhref: "/components/cf-icons/"
-    - subtitle: "cf-pagination"
-      subhref: "/components/cf-pagination/"
     - subtitle: "cf-layout"
       subhref: "/components/cf-layout/"
+    - subtitle: "cf-pagination"
+      subhref: "/components/cf-pagination/"
+    - subtitle: "cf-tables"
+      subhref: "/components/cf-tables/"
+
 
 - title: "Contributing"
   href: "/contributing/"

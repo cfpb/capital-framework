@@ -95,6 +95,7 @@ module.exports = {
         loc.lib + '/cf-layout/usage.md',
         loc.lib + '/cf-pagination/usage.md',
         loc.lib + '/cf-typography/usage.md',
+        loc.lib + '/cf-tables/usage.md'
       ],
       dest: './_includes/usage/'
     }
