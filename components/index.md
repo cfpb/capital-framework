@@ -41,3 +41,7 @@ cf-pagination contains basic pagination styling for working with multipage displ
 ## [cf-tables]({{ site.baseurl }}/components/cf-tables/) [![npm](https://img.shields.io/npm/v/cf-core.svg?style=flat-square)](https://www.npmjs.com/package/cf-tables)
 
 cf-tables contains styles and helpers for working with tables.
+
+## [cf-typography]({{ site.baseurl }}/components/cf-typography/) [![npm](https://img.shields.io/npm/v/cf-core.svg?style=flat-square)](https://www.npmjs.com/package/cf-typography)
+
+cf-typography contains advanced typographic patterns, including lists, links, and headers.
