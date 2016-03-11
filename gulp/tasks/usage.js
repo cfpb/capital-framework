@@ -4,39 +4,38 @@ var gulp = require( 'gulp' );
 var $ = require( 'gulp-load-plugins' )();
 var config = require( '../config' ).usage;
 var handleErrors = require( '../utils/handleErrors' );
-var pygmentize = require('pygmentize-bundled');
+var markdownIt = require( 'markdown-it' );
+var illuminate = require( 'illuminate-js' );
 var path = require( 'path' );
 var fileName;
 
-/**
- * RegEx to replace GitHub Flavored Markdown backticks
- * with Pygments syntax
- */
-var codeStart = new RegExp(/([\`]{3})\n+(\<)/g);
-var codeEnd = new RegExp(/(\>)\n+([\`]{3})/g);
-var startReplace = '{% highlight html %}\n<'
-var endReplace = '>\n{% endhighlight %}'
-
-var markdownOptions = {
-  gfm: true,
-  highlight: function (code, lang, callback) {
-    pygmentize({ lang: 'html', format: 'html', options: { } }, code, function (err, result) {
-      if (err) return callback(err);
-      callback(null, result.toString());
-    });
+// settings for markdown-it
+var md = new markdownIt( {
+  html: true,
+  highlight: function (str, lang) {
+    lang = lang || 'html';
+    if ( lang && illuminate.getLanguage( lang ) ) {
+      return illuminate.highlight( str, lang );
+    }
+    return '';
   }
-};
+} );
+
+// transform  markdown to html
+function markdownToHtml( file ) {
+  var out = md.render( file.contents.toString() );
+  file.contents = new Buffer( out );
+  return;
+}
 
 /*
 * take the usage.md files from the cf-components directory
-* and convert from markdown to html with syntax highlighting
+* rename them and transform them to markdown
 */
 gulp.task( 'usage', function() {
   return gulp.src( config.files.src )
     .on( 'error', handleErrors )
-    .pipe( $.replace( codeStart, startReplace ) )
-    .pipe( $.replace( codeEnd, endReplace ) )
-    .pipe( $.markdown( markdownOptions ) )
+    .pipe( $.tap( markdownToHtml ) )
     .pipe( $.tap( function ( file, t ) {
       fileName = path.dirname( file.path )
         .split( path.sep )
@@ -44,6 +43,7 @@ gulp.task( 'usage', function() {
     }))
     .pipe($.rename(function (path) {
       path.basename = fileName;
+      path.extname = '.html'
     }))
     .pipe( gulp.dest( config.files.dest ) )
 } );

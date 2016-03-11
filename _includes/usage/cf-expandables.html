@@ -1,512 +1,501 @@
-<h2 id="recommended-expandable-pattern">Recommended expandable pattern</h2>
-<h3 id="default-state">Default state</h3>
-  <div class="expandable expandable__padded">
-      <button class="expandable_header expandable_target" title="Expand content">
-          <span class="expandable_header-left expandable_label">
-              Expandable Header
-          </span>
-          <span class="expandable_header-right expandable_link">
-              <span class="expandable_cue-open">
-                  Show
-                  <span class="cf-icon cf-icon-plus-round"></span>
-              </span>
-              <span class="expandable_cue-close">
-                  Hide
-                  <span class="cf-icon cf-icon-minus-round"></span>
-              </span>
-          </span>
-      </button>
-      <div class="expandable_content">
-          <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-              temporibus magnam debitis quidem. Ducimus ratione
-              corporis nesciunt earum vel est quaerat blanditiis
-              dolore ipsa?
-          </p>
-      </div>
-  </div>
-
-<pre><code><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable expandable__padded&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;expandable_header expandable_target&quot;</span> <span class="na">title=</span><span class="s">&quot;Expand content&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_header-left expandable_label&quot;</span><span class="nt">&gt;</span>
+<h2>Recommended expandable pattern</h2>
+<h3>Default state</h3>
+<div class="expandable expandable__padded">
+    <button class="expandable_header expandable_target" title="Expand content">
+        <span class="expandable_header-left expandable_label">
             Expandable Header
-        <span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_header-right expandable_link&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-open&quot;</span><span class="nt">&gt;</span>
+        </span>
+        <span class="expandable_header-right expandable_link">
+            <span class="expandable_cue-open">
                 Show
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-plus-round&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-            <span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-close&quot;</span><span class="nt">&gt;</span>
+                <span class="cf-icon cf-icon-plus-round"></span>
+            </span>
+            <span class="expandable_cue-close">
                 Hide
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-minus-round&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-            <span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/span&gt;</span>
-    <span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable_content&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;p&gt;</span>
+                <span class="cf-icon cf-icon-minus-round"></span>
+            </span>
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing
             elit. Neque ipsa voluptatibus soluta nobis unde quisquam
             temporibus magnam debitis quidem. Ducimus ratione
             corporis nesciunt earum vel est quaerat blanditiis
             dolore ipsa?
-        <span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div>
-
-</code></pre><h3 id="barebones-expandable">Barebones expandable</h3>
-  <div class="expandable">
-      <button class="expandable_target" title="Expand content">
-          <span class="expandable_cue-open">
-              Show
-          </span>
-          <span class="expandable_cue-close">
-              Hide
-          </span>
-      </button>
-      <div class="expandable_content">
-          <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-              temporibus magnam debitis quidem. Ducimus ratione
-              corporis nesciunt earum vel est quaerat blanditiis
-              dolore ipsa?
-          </p>
-      </div>
-  </div>
-
-<pre><code><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;expandable_target&quot;</span> <span class="na">title=</span><span class="s">&quot;Expand content&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-open&quot;</span><span class="nt">&gt;</span>
+        </p>
+    </div>
+</div>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable expandable__padded<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header expandable_target<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Expand content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header-left expandable_label<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Expandable Header
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header-right expandable_link<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-open<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                Show
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-plus-round<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-close<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                Hide
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-minus-round<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Barebones expandable</h3>
+<div class="expandable">
+    <button class="expandable_target" title="Expand content">
+        <span class="expandable_cue-open">
             Show
-        <span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-close&quot;</span><span class="nt">&gt;</span>
+        </span>
+        <span class="expandable_cue-close">
             Hide
-        <span class="nt">&lt;/span&gt;</span>
-    <span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable_content&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;p&gt;</span>
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing
             elit. Neque ipsa voluptatibus soluta nobis unde quisquam
             temporibus magnam debitis quidem. Ducimus ratione
             corporis nesciunt earum vel est quaerat blanditiis
             dolore ipsa?
-        <span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div>
-
-</code></pre><h3 id="animated-cues">Animated cues</h3>
-  <div class="expandable">
-      <button class="expandable_target" title="Expand content">
-          <span class="expandable_cue-open expandable_cue-open__animated">
-              <span class="cf-icon cf-icon-down"></span>
-          </span>
-          <span class="expandable_cue-close expandable_cue-close__animated">
-              <span class="cf-icon cf-icon-up"></span>
-          </span>
-      </button>
-      <div class="expandable_content">
-          <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-              temporibus magnam debitis quidem. Ducimus ratione
-              corporis nesciunt earum vel est quaerat blanditiis
-              dolore ipsa?
-          </p>
-      </div>
-  </div>
-  <div class="expandable expandable__expanded">
-      <button class="expandable_target" title="Expand content">
-          <span class="expandable_cue-open expandable_cue-open__animated">
-              <span class="cf-icon cf-icon-down"></span>
-          </span>
-          <span class="expandable_cue-close expandable_cue-close__animated">
-              <span class="cf-icon cf-icon-up"></span>
-          </span>
-      </button>
-      <div class="expandable_content">
-          <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-              temporibus magnam debitis quidem. Ducimus ratione
-              corporis nesciunt earum vel est quaerat blanditiis
-              dolore ipsa?
-          </p>
-      </div>
-  </div>
-
-<pre><code><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;expandable_target&quot;</span> <span class="na">title=</span><span class="s">&quot;Expand content&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-open expandable_cue-open__animated&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-down&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-        <span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-close expandable_cue-close__animated&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-up&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-        <span class="nt">&lt;/span&gt;</span>
-    <span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable_content&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;p&gt;</span>
+        </p>
+    </div>
+</div>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_target<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Expand content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-open<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Show
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-close<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Hide
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>
             Lorem ipsum dolor sit amet, consectetur adipisicing
             elit. Neque ipsa voluptatibus soluta nobis unde quisquam
             temporibus magnam debitis quidem. Ducimus ratione
             corporis nesciunt earum vel est quaerat blanditiis
             dolore ipsa?
-        <span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable expandable__expanded&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;expandable_target&quot;</span> <span class="na">title=</span><span class="s">&quot;Expand content&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-open expandable_cue-open__animated&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-down&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-        <span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-close expandable_cue-close__animated&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-up&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-        <span class="nt">&lt;/span&gt;</span>
-    <span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable_content&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;p&gt;</span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Animated cues</h3>
+<div class="expandable">
+    <button class="expandable_target" title="Expand content">
+        <span class="expandable_cue-open expandable_cue-open__animated">
+            <span class="cf-icon cf-icon-down"></span>
+        </span>
+        <span class="expandable_cue-close expandable_cue-close__animated">
+            <span class="cf-icon cf-icon-up"></span>
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing
             elit. Neque ipsa voluptatibus soluta nobis unde quisquam
             temporibus magnam debitis quidem. Ducimus ratione
             corporis nesciunt earum vel est quaerat blanditiis
             dolore ipsa?
-        <span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div>
-
-</code></pre><h3 id="expandable-groups">Expandable groups</h3>
-  <div class="expandable-group">
-      <div class="expandable-group_header">Expandable group header</div>
-      <div class="expandable expandable__padded">
-          <button class="expandable_header expandable_target" title="Expand content">
-              <span class="expandable_header-left expandable_label">
-                  Expandable Header 1
-              </span>
-              <span class="expandable_header-right expandable_link">
-                  <span class="expandable_cue-open">
-                      Show
-                      <span class="cf-icon cf-icon-plus-round"></span>
-                  </span>
-                  <span class="expandable_cue-close">
-                      Hide
-                      <span class="cf-icon cf-icon-minus-round"></span>
-                  </span>
-              </span>
-          </button>
-          <div class="expandable_content">
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                  temporibus magnam debitis quidem. Ducimus ratione
-                  corporis nesciunt earum vel est quaerat blanditiis
-                  dolore ipsa?
-              </p>
-          </div>
-      </div>
-      <div class="expandable expandable__padded">
-          <button class="expandable_header expandable_target" title="Expand content">
-              <span class="expandable_header-left expandable_label">
-                  Expandable Header 2
-              </span>
-              <span class="expandable_header-right expandable_link">
-                  <span class="expandable_cue-open">
-                      Show
-                      <span class="cf-icon cf-icon-plus-round"></span>
-                  </span>
-                  <span class="expandable_cue-close">
-                      Hide
-                      <span class="cf-icon cf-icon-minus-round"></span>
-                  </span>
-              </span>
-          </button>
-          <div class="expandable_content">
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                  temporibus magnam debitis quidem. Ducimus ratione
-                  corporis nesciunt earum vel est quaerat blanditiis
-                  dolore ipsa?
-              </p>
-          </div>
-      </div>
-      <div class="expandable expandable__padded">
-          <button class="expandable_header expandable_target" title="Expand content">
-              <span class="expandable_header-left expandable_label">
-                  Expandable Header 3
-              </span>
-              <span class="expandable_header-right expandable_link">
-                  <span class="expandable_cue-open">
-                      Show
-                      <span class="cf-icon cf-icon-plus-round"></span>
-                  </span>
-                  <span class="expandable_cue-close">
-                      Hide
-                      <span class="cf-icon cf-icon-minus-round"></span>
-                  </span>
-              </span>
-          </button>
-          <div class="expandable_content">
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                  temporibus magnam debitis quidem. Ducimus ratione
-                  corporis nesciunt earum vel est quaerat blanditiis
-                  dolore ipsa?
-              </p>
-          </div>
-      </div>
-  </div>
-
-<pre><code><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable-group&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable-group_header&quot;</span><span class="nt">&gt;</span>Expandable group header<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable expandable__padded&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;expandable_header expandable_target&quot;</span> <span class="na">title=</span><span class="s">&quot;Expand content&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_header-left expandable_label&quot;</span><span class="nt">&gt;</span>
+        </p>
+    </div>
+</div>
+<div class="expandable expandable__expanded">
+    <button class="expandable_target" title="Expand content">
+        <span class="expandable_cue-open expandable_cue-open__animated">
+            <span class="cf-icon cf-icon-down"></span>
+        </span>
+        <span class="expandable_cue-close expandable_cue-close__animated">
+            <span class="cf-icon cf-icon-up"></span>
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        </p>
+    </div>
+</div>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_target<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Expand content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-open expandable_cue-open__animated<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-down<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-close expandable_cue-close__animated<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-up<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable expandable__expanded<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_target<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Expand content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-open expandable_cue-open__animated<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-down<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-close expandable_cue-close__animated<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-up<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Expandable groups</h3>
+<div class="expandable-group">
+    <div class="expandable-group_header">Expandable group header</div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target" title="Expand content">
+            <span class="expandable_header-left expandable_label">
                 Expandable Header 1
-            <span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_header-right expandable_link&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-open&quot;</span><span class="nt">&gt;</span>
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
                     Show
-                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-plus-round&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-                <span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-close&quot;</span><span class="nt">&gt;</span>
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
                     Hide
-                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-minus-round&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-                <span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/button&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable_content&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;p&gt;</span>
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing
                 elit. Neque ipsa voluptatibus soluta nobis unde quisquam
                 temporibus magnam debitis quidem. Ducimus ratione
                 corporis nesciunt earum vel est quaerat blanditiis
                 dolore ipsa?
-            <span class="nt">&lt;/p&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable expandable__padded&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;expandable_header expandable_target&quot;</span> <span class="na">title=</span><span class="s">&quot;Expand content&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_header-left expandable_label&quot;</span><span class="nt">&gt;</span>
+            </p>
+        </div>
+    </div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target" title="Expand content">
+            <span class="expandable_header-left expandable_label">
                 Expandable Header 2
-            <span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_header-right expandable_link&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-open&quot;</span><span class="nt">&gt;</span>
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
                     Show
-                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-plus-round&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-                <span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-close&quot;</span><span class="nt">&gt;</span>
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
                     Hide
-                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-minus-round&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-                <span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/button&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable_content&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;p&gt;</span>
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing
                 elit. Neque ipsa voluptatibus soluta nobis unde quisquam
                 temporibus magnam debitis quidem. Ducimus ratione
                 corporis nesciunt earum vel est quaerat blanditiis
                 dolore ipsa?
-            <span class="nt">&lt;/p&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable expandable__padded&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;expandable_header expandable_target&quot;</span> <span class="na">title=</span><span class="s">&quot;Expand content&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_header-left expandable_label&quot;</span><span class="nt">&gt;</span>
+            </p>
+        </div>
+    </div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target" title="Expand content">
+            <span class="expandable_header-left expandable_label">
                 Expandable Header 3
-            <span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_header-right expandable_link&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-open&quot;</span><span class="nt">&gt;</span>
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
                     Show
-                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-plus-round&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-                <span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-close&quot;</span><span class="nt">&gt;</span>
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
                     Hide
-                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-minus-round&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-                <span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/button&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable_content&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;p&gt;</span>
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing
                 elit. Neque ipsa voluptatibus soluta nobis unde quisquam
                 temporibus magnam debitis quidem. Ducimus ratione
                 corporis nesciunt earum vel est quaerat blanditiis
                 dolore ipsa?
-            <span class="nt">&lt;/p&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div>
-
-</code></pre><h3 id="accordion-style-group">Accordion-style group</h3>
-  <div class="expandable-group" data-accordion="true">
-      <div class="expandable-group_header">Expandable group header</div>
-      <div class="expandable expandable__padded">
-          <button class="expandable_header expandable_target" title="Expand content">
-              <span class="expandable_header-left expandable_label">
-                  Expandable Header 1
-              </span>
-              <span class="expandable_header-right expandable_link">
-                  <span class="expandable_cue-open">
-                      Show
-                      <span class="cf-icon cf-icon-plus-round"></span>
-                  </span>
-                  <span class="expandable_cue-close">
-                      Hide
-                      <span class="cf-icon cf-icon-minus-round"></span>
-                  </span>
-              </span>
-          </button>
-          <div class="expandable_content">
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                  temporibus magnam debitis quidem. Ducimus ratione
-                  corporis nesciunt earum vel est quaerat blanditiis
-                  dolore ipsa?
-              </p>
-          </div>
-      </div>
-      <div class="expandable expandable__padded">
-          <button class="expandable_header expandable_target" title="Expand content">
-              <span class="expandable_header-left expandable_label">
-                  Expandable Header 2
-              </span>
-              <span class="expandable_header-right expandable_link">
-                  <span class="expandable_cue-open">
-                      Show
-                      <span class="cf-icon cf-icon-plus-round"></span>
-                  </span>
-                  <span class="expandable_cue-close">
-                      Hide
-                      <span class="cf-icon cf-icon-minus-round"></span>
-                  </span>
-              </span>
-          </button>
-          <div class="expandable_content">
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                  temporibus magnam debitis quidem. Ducimus ratione
-                  corporis nesciunt earum vel est quaerat blanditiis
-                  dolore ipsa?
-              </p>
-          </div>
-      </div>
-      <div class="expandable expandable__padded">
-          <button class="expandable_header expandable_target" title="Expand content">
-              <span class="expandable_header-left expandable_label">
-                  Expandable Header 3
-              </span>
-              <span class="expandable_header-right expandable_link">
-                  <span class="expandable_cue-open">
-                      Show
-                      <span class="cf-icon cf-icon-plus-round"></span>
-                  </span>
-                  <span class="expandable_cue-close">
-                      Hide
-                      <span class="cf-icon cf-icon-minus-round"></span>
-                  </span>
-              </span>
-          </button>
-          <div class="expandable_content">
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-                  temporibus magnam debitis quidem. Ducimus ratione
-                  corporis nesciunt earum vel est quaerat blanditiis
-                  dolore ipsa?
-              </p>
-          </div>
-      </div>
-  </div>
-
-<pre><code><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable-group&quot;</span> <span class="na">data-accordion=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable-group_header&quot;</span><span class="nt">&gt;</span>Expandable group header<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable expandable__padded&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;expandable_header expandable_target&quot;</span> <span class="na">title=</span><span class="s">&quot;Expand content&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_header-left expandable_label&quot;</span><span class="nt">&gt;</span>
+            </p>
+        </div>
+    </div>
+</div>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable-group<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable-group_header<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Expandable group header<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable expandable__padded<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header expandable_target<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Expand content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header-left expandable_label<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
                 Expandable Header 1
-            <span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_header-right expandable_link&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-open&quot;</span><span class="nt">&gt;</span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header-right expandable_link<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-open<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
                     Show
-                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-plus-round&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-                <span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-close&quot;</span><span class="nt">&gt;</span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-plus-round<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-close<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
                     Hide
-                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-minus-round&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-                <span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/button&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable_content&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;p&gt;</span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-minus-round<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>
                 Lorem ipsum dolor sit amet, consectetur adipisicing
                 elit. Neque ipsa voluptatibus soluta nobis unde quisquam
                 temporibus magnam debitis quidem. Ducimus ratione
                 corporis nesciunt earum vel est quaerat blanditiis
                 dolore ipsa?
-            <span class="nt">&lt;/p&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable expandable__padded&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;expandable_header expandable_target&quot;</span> <span class="na">title=</span><span class="s">&quot;Expand content&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_header-left expandable_label&quot;</span><span class="nt">&gt;</span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable expandable__padded<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header expandable_target<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Expand content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header-left expandable_label<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
                 Expandable Header 2
-            <span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_header-right expandable_link&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-open&quot;</span><span class="nt">&gt;</span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header-right expandable_link<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-open<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
                     Show
-                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-plus-round&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-                <span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-close&quot;</span><span class="nt">&gt;</span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-plus-round<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-close<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
                     Hide
-                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-minus-round&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-                <span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/button&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable_content&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;p&gt;</span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-minus-round<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>
                 Lorem ipsum dolor sit amet, consectetur adipisicing
                 elit. Neque ipsa voluptatibus soluta nobis unde quisquam
                 temporibus magnam debitis quidem. Ducimus ratione
                 corporis nesciunt earum vel est quaerat blanditiis
                 dolore ipsa?
-            <span class="nt">&lt;/p&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable expandable__padded&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;expandable_header expandable_target&quot;</span> <span class="na">title=</span><span class="s">&quot;Expand content&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_header-left expandable_label&quot;</span><span class="nt">&gt;</span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable expandable__padded<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header expandable_target<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Expand content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header-left expandable_label<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
                 Expandable Header 3
-            <span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_header-right expandable_link&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-open&quot;</span><span class="nt">&gt;</span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header-right expandable_link<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-open<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
                     Show
-                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-plus-round&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-                <span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;expandable_cue-close&quot;</span><span class="nt">&gt;</span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-plus-round<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-close<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
                     Hide
-                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;cf-icon cf-icon-minus-round&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-                <span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/button&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;expandable_content&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;p&gt;</span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-minus-round<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>
                 Lorem ipsum dolor sit amet, consectetur adipisicing
                 elit. Neque ipsa voluptatibus soluta nobis unde quisquam
                 temporibus magnam debitis quidem. Ducimus ratione
                 corporis nesciunt earum vel est quaerat blanditiis
                 dolore ipsa?
-            <span class="nt">&lt;/p&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div>
-
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Accordion-style group</h3>
+<div class="expandable-group" data-accordion="true">
+    <div class="expandable-group_header">Expandable group header</div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target" title="Expand content">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 1
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target" title="Expand content">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 2
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+    <div class="expandable expandable__padded">
+        <button class="expandable_header expandable_target" title="Expand content">
+            <span class="expandable_header-left expandable_label">
+                Expandable Header 3
+            </span>
+            <span class="expandable_header-right expandable_link">
+                <span class="expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+</div>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable-group<span class="token punctuation" >"</span></span> <span class="token attr-name" >data-accordion</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>true<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable-group_header<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Expandable group header<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable expandable__padded<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header expandable_target<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Expand content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header-left expandable_label<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                Expandable Header 1
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header-right expandable_link<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-open<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                    Show
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-plus-round<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-close<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                    Hide
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-minus-round<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable expandable__padded<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header expandable_target<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Expand content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header-left expandable_label<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                Expandable Header 2
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header-right expandable_link<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-open<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                    Show
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-plus-round<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-close<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                    Hide
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-minus-round<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable expandable__padded<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header expandable_target<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Expand content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header-left expandable_label<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                Expandable Header 3
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_header-right expandable_link<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-open<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                    Show
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-plus-round<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_cue-close<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                    Hide
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cf-icon cf-icon-minus-round<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>expandable_content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
