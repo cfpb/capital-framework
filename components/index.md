@@ -6,6 +6,10 @@ title:  "Components"
 Capital Framework is divided into a series of components. These components can be used individually, but are designed to work together.
 For information on how to get started using Capital Framework, please read the [Getting Started](../getting-started/) page.
 
+## [cf-core]({{ site.baseurl }}/components/cf-core/) [![npm](https://img.shields.io/npm/v/cf-core.svg?style=flat-square)](https://www.npmjs.com/package/cf-core)
+
+cf-core contains core styles for starting a Capital Framework project. It includes Normalize.css, variables, media query and utility mixins, class utilities, typography, and standard base styling.
+
 ## [cf-buttons]({{ site.baseurl }}/components/cf-buttons/) [![npm](https://img.shields.io/npm/v/cf-buttons.svg?style=flat-square)](https://www.npmjs.com/package/cf-buttons)
 
 cf-buttons contains button styles including default, secondary, destructive, disabled, super, and compound buttons, button links, buttons with icons, and button groups.
@@ -33,10 +37,6 @@ cf-layout contains a set of HTML & CSS layout helpers, such as common layout pat
 ## [cf-pagination]({{ site.baseurl }}/components/cf-pagination/) [![npm](https://img.shields.io/npm/v/cf-pagination.svg?style=flat-square)](https://www.npmjs.com/package/cf-pagination)
 
 cf-pagination contains basic pagination styling for working with multipage displays such as search results or blog archives.
-
-## [cf-core]({{ site.baseurl }}/components/cf-core/) [![npm](https://img.shields.io/npm/v/cf-core.svg?style=flat-square)](https://www.npmjs.com/package/cf-core)
-
-cf-core contains core styles for starting a Capital Framework project. It includes Normalize.css, variables, media query and utility mixins, class utilities, typography, and standard base styling.
 
 ## [cf-tables]({{ site.baseurl }}/components/cf-tables/) [![npm](https://img.shields.io/npm/v/cf-core.svg?style=flat-square)](https://www.npmjs.com/package/cf-tables)
 
