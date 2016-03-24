@@ -16,6 +16,15 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 
+- Added `overlay` and `white-text` modifiers to the hero
+
+### Changed
+- Updated the Hero styles to properly match the content layout and
+  simplified the rules
+
+### Removed
+-
+
 ## 3.2.1 - 2016-03-10
 
 ### Changed
