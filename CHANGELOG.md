@@ -7,7 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - 
 
 ### Changed
-- 
+- [PATCH] **capital-framework:** Move Travis CI from Node v4 to v5.
 
 ### Removed
 - 
@@ -15,7 +15,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## 3.2.1 - 2016-03-10
 
 ### Changed
-- [PATCH] **All components:** Normalize markdown formatting across usage.md files.
+- **All components:** Normalize markdown formatting across usage.md files.
 
 ## 3.2.0 - 2016-02-26
 
