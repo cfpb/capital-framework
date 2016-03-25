@@ -4,42 +4,50 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- [PATCH] **capital-framework:** Move Travis CI from Node v4 to v5.
+- [PATCH] **cf-core:** Fix padding in `<th>`s to be 10px
+- [PATCH] **cf-tables:** Match sortable `<th>` styles to non-sortable `<th>` styles
+- [PATCH] **cf-tables:** Harmonize variables with those found in cf-core.
 
 ### Removed
-- 
+-
+
 
 ## 3.2.1 - 2016-03-10
 
 ### Changed
-- [PATCH] **All components:** Normalize markdown formatting across usage.md files.
+- **All components:** Normalize markdown formatting across usage.md files.
+
 
 ## 3.2.0 - 2016-02-26
 
 ### Added
 - **cf-tables:** Add new component.
-- **cf-core** Add font-size vars
+- **cf-core:** Add font-size vars.
+
 
 ## 3.1.4 - 2016-02-23
 
 ### Changed
-- Include `usage.md` in built components
+- Include `usage.md` in built components.
+
 
 ## 3.1.3 - 2016-02-23
 
 ### Changed
 
-- Updated build process to include `usage.md` with built components
+- Update build process to include `usage.md` with built components.
+
 
 ## 3.1.2 - 2016-02-10
 
 ### Fixed
 - **cf-core:** Fix improper usage of `:not` to target non-nav `li` elements.
 - **cf-core:** Remove `margin-bottom` from last-child `li` elements.
-- **cf-layout** - Fixed a bug where columns nested 2 levels deep in a
+- **cf-layout:** Fix a bug where columns nested 2 levels deep in a
   large-gutter modifier gain the extra wide gutters.
 - **cf-layout:** Remove `block` borders when `__flush` modifiers are also applied.
 - **capital-framework:** Added `CONTRIBUTING.md` with contribution docs.
@@ -55,7 +63,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## 3.1.1 - 2016-01-04
 
 ### Changed
-- **capital-framework:** Improved contributing docs in readme.
+- **capital-framework:** Improve contributing docs in readme.
 
 
 ## 3.1.0 - 2016-01-04
