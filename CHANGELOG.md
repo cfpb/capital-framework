@@ -4,13 +4,14 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- [PATCH] **cf-core:** Fix padding in `<th>`s to be 10px
+- [PATCH] **cf-tables:** Match sortable `<th>` styles to non-sortable `<th>` styles
 
 ### Removed
-- 
+-
 
 ## 3.2.1 - 2016-03-10
 
