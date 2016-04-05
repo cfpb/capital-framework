@@ -4,26 +4,14 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-layout:** Add `overlay` and `white-text` modifiers to the hero
 
 ### Changed
-- [PATCH] **capital-framework:** Move Travis CI from Node v4 to v5.
-- [PATCH] **cf-core:** Fix padding in `<th>`s to be 10px
-- [PATCH] **cf-tables:** Match sortable `<th>` styles to non-sortable `<th>` styles
-- [PATCH] **cf-tables:** Harmonize variables with those found in cf-core.
-
-### Removed
--
-
-
-- Added `overlay` and `white-text` modifiers to the hero
-
-### Changed
-- Updated the Hero styles to properly match the content layout and
-  simplified the rules
-
-### Removed
--
+- **capital-framework:** Move Travis CI from Node v4 to v5.
+- **cf-core:** Fix padding in `<th>`s to be 10px.
+- **cf-tables:** Match sortable `<th>` styles to non-sortable `<th>` styles.
+- **cf-tables:** Harmonize variables with those found in cf-core.
+- **cf-layout:** Updated the Hero styles to properly match the content layout and simplified the rules.
 
 ## 3.2.1 - 2016-03-10
 
