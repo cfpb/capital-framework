@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 3.3.0 - 2016-04-06
+
+### Added
 - **cf-layout:** Add `overlay` and `white-text` modifiers to the hero
 
 ### Changed
