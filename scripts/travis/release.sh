@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-# Abort if this is a pull request OR if we're not on master OR if it's not node v4
+# Abort if this is a pull request OR if we're not on master
 if [[ -n "$TRAVIS" ]] &&
-   [[ "$TRAVIS_PULL_REQUEST" != "false" || "$TRAVIS_BRANCH" != "$GH_PROD_BRANCH" || "$TRAVIS_NODE_VERSION" != "4.2" ]]; then
+   [[ "$TRAVIS_PULL_REQUEST" != "false" || "$TRAVIS_BRANCH" != "$GH_PROD_BRANCH" ]]; then
   echo "TRAVIS: ${TRAVIS}"
   echo "TRAVIS_PULL_REQUEST: ${TRAVIS_PULL_REQUEST}"
   echo "TRAVIS_BRANCH: ${TRAVIS_BRANCH}"
