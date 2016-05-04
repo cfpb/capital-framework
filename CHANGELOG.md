@@ -4,13 +4,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- [MINOR] **cf-layout** Updated main content spacing
 
 ### Removed
-- 
+-
 
 ## 3.3.0 - 2016-04-06
 
