@@ -45,9 +45,185 @@ add `@expandable_link-font-size: 17px;` to your project.
 @expandable-group-divider:     #046b99; // $color-primary-alt-darkest
 ```
 
+## Modifiers
+
+### Expanded
+
+Sometimes you may want the expandable to be open by default.
+This is as easy as adding the `.expandable__expanded` modifier to the `.expandable` block.
+
+```
+.expandable__expanded
+```
+
+### Padded
+
+Adds padding and a background color to `.expandable_header` and `.expandable_content`.
+
+In addition to using the `.expandable__padded` modifier you also
+need to make sure you are using `.expandable_header`.
+
+```
+.expandable__padded
+```
+
+### Spaced header
+
+Allows you to add space between .expandable_header and .expandable_content.
+
+```
+.expandable_header__spaced
+```
+
+### Animated cues
+
+Sometimes you may want the cues to animate open and closed.
+
+<div class="expandable">
+    <button class="expandable_target" title="Expand content">
+        <span class="expandable_cue-open expandable_cue-open__animated">
+            <span class="cf-icon cf-icon-down"></span>
+        </span>
+        <span class="expandable_cue-close expandable_cue-close__animated">
+            <span class="cf-icon cf-icon-up"></span>
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        </p>
+    </div>
+</div>
+<div class="expandable expandable__expanded">
+    <button class="expandable_target" title="Expand content">
+        <span class="expandable_cue-open expandable_cue-open__animated">
+            <span class="cf-icon cf-icon-down"></span>
+        </span>
+        <span class="expandable_cue-close expandable_cue-close__animated">
+            <span class="cf-icon cf-icon-up"></span>
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        </p>
+    </div>
+</div>
+
+```
+<div class="expandable">
+    <button class="expandable_target" title="Expand content">
+        <span class="expandable_cue-open expandable_cue-open__animated">
+            <span class="cf-icon cf-icon-down"></span>
+        </span>
+        <span class="expandable_cue-close expandable_cue-close__animated">
+            <span class="cf-icon cf-icon-up"></span>
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        </p>
+    </div>
+</div>
+<div class="expandable expandable__expanded">
+    <button class="expandable_target" title="Expand content">
+        <span class="expandable_cue-open expandable_cue-open__animated">
+            <span class="cf-icon cf-icon-down"></span>
+        </span>
+        <span class="expandable_cue-close expandable_cue-close__animated">
+            <span class="cf-icon cf-icon-up"></span>
+        </span>
+    </button>
+    <div class="expandable_content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+            temporibus magnam debitis quidem. Ducimus ratione
+            corporis nesciunt earum vel est quaerat blanditiis
+            dolore ipsa?
+        </p>
+    </div>
+</div>
+```
+
+## Elements
+
+### text elements
+
+#### Label
+
+Allows you to add some styled text.
+
+<span class="expandable_label">
+    Lorem ipsum
+</span>
+
+```
+<span class="expandable_label">
+    Lorem ipsum
+</span>
+```
+
+#### Link
+
+Allows you to add some styled text with a link-like look.
+
+<span class="expandable_link">
+    Lorem ipsum
+</span>
+
+```
+<span class="expandable_link">
+    Lorem ipsum
+</span>
+```
+
+### header elements
+
+These additional elements are useful for more complicated expandables
+that need to convey more information than just 'Show/Hide' before the user expands it.
+
+#### Header
+
+Creates a full-width container to house information that is always visible.
+
+Combine `.expandable_header` with `.expandable_target` for a full-width trigger.
+
+```
+.expandable_header
+```
+
+#### Header left/right
+
+Allows you to float information left and right.
+
+```
+.expandable_header-left
+.expandable_header-right
+```
+
 ## Recommended expandable pattern
 
+Expandables can be built by combining the basic barebones structure described
+in the next section along with more specialized expandable elements
+and modifiers described throughout.
+
 ### Default state
+
+The following combination is our recommended go-to expandable pattern.
 
 <div class="expandable expandable__padded">
     <button class="expandable_header expandable_target" title="Expand content">
@@ -107,6 +283,11 @@ add `@expandable_link-font-size: 17px;` to your project.
 
 ### Barebones expandable
 
+This is the barebones structure for expandables that can be used
+(along with other expanable elements and modifiers) to create custom expandable patterns.
+
+In this barebones example there are no visual styles.
+
 <div class="expandable">
     <button class="expandable_target" title="Expand content">
         <span class="expandable_cue-open">
@@ -149,89 +330,7 @@ add `@expandable_link-font-size: 17px;` to your project.
 </div>
 ```
 
-### Animated cues
-
-<div class="expandable">
-    <button class="expandable_target" title="Expand content">
-        <span class="expandable_cue-open expandable_cue-open__animated">
-            <span class="cf-icon cf-icon-down"></span>
-        </span>
-        <span class="expandable_cue-close expandable_cue-close__animated">
-            <span class="cf-icon cf-icon-up"></span>
-        </span>
-    </button>
-    <div class="expandable_content">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-            temporibus magnam debitis quidem. Ducimus ratione
-            corporis nesciunt earum vel est quaerat blanditiis
-            dolore ipsa?
-        </p>
-    </div>
-</div>
-<div class="expandable expandable__expanded">
-    <button class="expandable_target" title="Expand content">
-        <span class="expandable_cue-open expandable_cue-open__animated">
-            <span class="cf-icon cf-icon-down"></span>
-        </span>
-        <span class="expandable_cue-close expandable_cue-close__animated">
-            <span class="cf-icon cf-icon-up"></span>
-        </span>
-    </button>
-    <div class="expandable_content">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-            temporibus magnam debitis quidem. Ducimus ratione
-            corporis nesciunt earum vel est quaerat blanditiis
-            dolore ipsa?
-        </p>
-    </div>
-</div>
-
-```
-<div class="expandable">
-    <button class="expandable_target" title="Expand content">
-        <span class="expandable_cue-open expandable_cue-open__animated">
-            <span class="cf-icon cf-icon-down"></span>
-        </span>
-        <span class="expandable_cue-close expandable_cue-close__animated">
-            <span class="cf-icon cf-icon-up"></span>
-        </span>
-    </button>
-    <div class="expandable_content">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-            temporibus magnam debitis quidem. Ducimus ratione
-            corporis nesciunt earum vel est quaerat blanditiis
-            dolore ipsa?
-        </p>
-    </div>
-</div>
-<div class="expandable expandable__expanded">
-    <button class="expandable_target" title="Expand content">
-        <span class="expandable_cue-open expandable_cue-open__animated">
-            <span class="cf-icon cf-icon-down"></span>
-        </span>
-        <span class="expandable_cue-close expandable_cue-close__animated">
-            <span class="cf-icon cf-icon-up"></span>
-        </span>
-    </button>
-    <div class="expandable_content">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Neque ipsa voluptatibus soluta nobis unde quisquam
-            temporibus magnam debitis quidem. Ducimus ratione
-            corporis nesciunt earum vel est quaerat blanditiis
-            dolore ipsa?
-        </p>
-    </div>
-</div>
-```
-
-### Expandable groups
+## Expandable groups
 
 <div class="expandable-group">
     <div class="expandable-group_header">Expandable group header</div>
@@ -400,6 +499,9 @@ add `@expandable_link-font-size: 17px;` to your project.
 ```
 
 ### Accordion-style group
+
+Accordions can only show one open expandable at a time.
+Add the `data-accordion="true"` attribute to the expandable group to activate the accordion mode.
 
 <div class="expandable-group" data-accordion="true">
     <div class="expandable-group_header">Expandable group header</div>
