@@ -4,13 +4,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **capital-framework:** [PATCH] Update contributing documentation.
 
 ### Removed
-- 
+-
 
 ## 3.4.0 - 2016-05-09
 
