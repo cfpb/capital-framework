@@ -1,14 +1,32 @@
-## CF Tables
+# CF-Tables
+
+CF-Tables formats tables, and provides an easy way to make tables sortable.
+
+## Vars
+
+Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable @key: value.
+
+Ex. to set your table cell's background color, add `@table-cell-bg: #fefefe;` to your project.
+
+```
+@table-cell-bg:              #ffffff; // $color-white
+@table-cell-bg_alt:          #f1f1f1; // $color-gray-lightest
+@table-scrolling-border:     #e4e2e0; // $color-gray-warm-light
+```
+
+## Responsive table styles for Small Screens
+
+__Important notes:__
+- Tables are not responsive without adding one of the small screen classes below.
+- The `data-label` attribute is used to label each entry in a table for small screen responsive views. Always include the `data-label` attribute for each cell.
 
 ### Table base style, with small screen base style "stacked"
 
-- Uses `.table__stack-on-small` class to add small screen styles
-- Note: Tables are not responsive without adding one of the small
-  screen classes
-- The use of the `.table__right-align` class on a TD aligns the text
-    right - see the third column above
-- The `data-label` attribute is used to label each entry. Always
-  include the `data-label` attribute for each cell.
+The `.table__stack-on-small` class adds the "stacked" table style for small
+screens. Please note that tables are not responsive without adding one of the
+small screen classes. Also note that the `data-label` attribute is used to
+label each entry in a table for small screen responsive views. Always include
+the `data-label` attribute for each cell.
 
 <table class="table__stack-on-small">
   <thead>
@@ -78,13 +96,12 @@
 
 ### Table with small screen variation - "stacked with entry header"
 
-- "Uses `.table__entry-header-on-small` class in addition to
-  `.table__stack-on-small` class to style the first column as an
-  entry header. Note that this requires both classes be added."
-- Note: Tables are not responsive without adding one of the small
-  screen classes
-- "The `data-label` attribute is used to label each entry. Always
-  include the `data-label` attribute for each cell
+The `.table__entry-header-on-small` class in addition to `.table__stack-on-
+small` class changes the first column to be styled as an   entry header. This
+style requires both classes be added. Note that tables are not responsive
+without adding one of the small   screen classes. Also note that the `data-
+label` attribute is used to label each entry. Always include the `data-label`
+attribute for each cell.
 
 <table class="table__stack-on-small table__entry-header-on-small">
   <thead>
@@ -154,12 +171,11 @@
 
 ### Table with small screen variation - "Comparative with horizontal scroll"
 
-- Must be wrapped in an element (`<div>`, in most cases) with the
-  `table-wrapper__scrolling` class
-- The `<table>` element does not need additional markup in this case
-- "Comparative with horizontal scroll" also adds striped rows to
-  the table contained within, and remains striped on small screens
-  (unlike the `table__striped `class, below).
+The `.table-wrapper__scrolling` class must be added to the parent element of
+the table (by adding a wrapping `<div>`, in most cases). The `<table>` element
+does not need additional markup in this case. The "Comparative with horizontal
+scroll" style also adds striped rows to the table contained within, and
+remains striped on small screens (unlike the `table__striped `class, below).
 
 <div class="table-wrapper__scrolling">
   <table>
@@ -279,12 +295,66 @@
     </tbody>
   </table>
 </div>
+```
+
+## Additional table styles
+
+
+### Right-aligned cells.
+
+The use of the `.table__right-align` class on a TD aligns the text right - see
+the third column above.
+
+<table class="table__stack-on-small">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Column 1">Row A</td>
+      <td data-label="Column 2">Cell A2</td>
+      <td data-label="Column 3" class="table__right-align">Cell A3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row B</td>
+      <td data-label="Column 2">Cell B2</td>
+      <td data-label="Column 3" class="table__right-align">Cell B3</td>
+    </tr>
+  </tbody>
+</table>
+
+```
+<table class="table__stack-on-small">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Column 1">Row A</td>
+      <td data-label="Column 2">Cell A2</td>
+      <td data-label="Column 3" class="table__right-align">Cell A3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row B</td>
+      <td data-label="Column 2">Cell B2</td>
+      <td data-label="Column 3" class="table__right-align">Cell B3</td>
+    </tr>
+  </tbody>
+</table>
 ```
 
 ### Standard table, with stripes
 
-- Uses `.table__striped` class
-- Striping is not visible by default on small screens
+The `.table__striped` class adds stripes to the table rows. This striping is
+not visible on small screens.
 
 <table class="table__striped">
   <thead>
@@ -352,263 +422,274 @@
 </table>
 ```
 
-### Sortable Table
+## Sortable Tables
 
-- Uses `.table__sortable` class to invoke sorting functions on the table
-- Columns which should be sortable have that column's THEAD TH content wrapped
-  with a BUTTON, and the BUTTON has the `.sortable `class. (The use of a BUTTON
-  tag here addresses certain accessibility concerns.)
-- Note: The class `.sorted-up` refers to a sort from smallest to greatest
+CF-Tables also includes a sortable table utility.
+
+### Making a table sortable
+
+By adding the `.table__sortable` class to a table, the table becomes sortable.
+To allow the table to be sorted by a column, add a button to the `TH` of the
+column like so:
+
+```
+<button class="sortable">
+  Column Name
+</button>
+```
+
+The use of a button helps address certain accessibility concerns.
+
+### Sorting type
+
+To sort properly, the type of the data can be specified. By default, the
+column's values will be sorted as string values. However, the column can be
+specifically sorted by number values (in which case, the cell's contents are
+stripped of non-numeric characters, then sorted by the resulting number). To
+see an example, the sample table later in this document sorts the "Distance"
+column by number value.
+
+To sort by number value, add the `data-sort_type="number"` attribute to the
+sorting button:
+
+```
+<table class="table__sortable">
+  ...
+    <th>
+      <button class="sortable" data-sort_type="number">Column Name</button>
+    </th>
+  ...
+</table>
+```
+
+### Sorting table on page load
+
+To sort the table on page load, use the `.sortable__start-up` and
+`.sortable__start-down` classes:
+
+```
+<table class="table__sortable">
+  ...
+    <th>
+      <button class="sortable sortable__start-up">Column Name</button>
+    </th>
+  ...
+</table>
+```
+
+- `.sortable__start-up` starts with the column sorted smallest to largest (or
+lowest to highest)
+
+- `.sortable__start-down` starts with the column sorted largest to smallest (or
+highest to lowest)
+
+### Sample Sortable Table
+
+<table class="table__sortable">
+  <thead>
+      <tr>
+          <th>
+              Agency
+          </th>
+          <th>
+            <button class="sortable">
+              Languages
+            </button>
+          </th>
+          <th>
+            <button class="sortable sortable__start-up" data-sort_type="number">
+              Distance
+            </button>
+          </th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>
+              Alpha
+          </td>
+          <td data-label="Languages">
+              English
+          </td>
+          <td data-label="Distance">
+              2.6 mi
+          </td>
+      </tr>
+      <tr>
+          <td>
+              Beta
+          </td>
+          <td data-label="Languages">
+              English, Spanish
+          </td>
+          <td data-label="Distance">
+              1.4 mi
+          </td>
+      </tr>
+      <tr>
+          <td>
+              Gamma
+          </td>
+          <td data-label="Languages">
+              English, French, Spanish
+          </td>
+          <td data-label="Distance">
+              1.4 mi
+          </td>
+      </tr>
+      <tr>
+          <td>
+              Delta
+          </td>
+          <td data-label="Languages">
+              English, Spanish
+          </td>
+          <td data-label="Distance">
+              3.2 mi
+          </td>
+      </tr>
+      <tr>
+          <td>
+              Epsilon
+          </td>
+          <td data-label="Languages">
+              English
+          </td>
+          <td data-label="Distance">
+              1.6 mi
+          </td>
+      </tr>
+      <tr>
+          <td>
+            Zeta
+          </td>
+          <td data-label="Languages">
+            English, Spanish
+          </td>
+          <td data-label="Distance">
+            1.2 mi
+          </td>
+      </tr>
+      <tr>
+          <td>
+              Eta
+          </td>
+          <td data-label="Languages">
+              English
+          </td>
+          <td data-label="Distance">
+              11.1 mi
+          </td>
+      </tr>
+  </tbody>
+</table>
+
+```
+<table class="table__sortable">
+  <thead>
+      <tr>
+          <th>
+              Agency
+          </th>
+          <th>
+            <button class="sortable">
+              Languages
+            </button>
+          </th>
+          <th>
+            <button class="sortable sortable__start-up" data-sort_type="number">
+              Distance
+            </button>
+          </th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>
+              Alpha
+          </td>
+          <td data-label="Languages">
+              English
+          </td>
+          <td data-label="Distance">
+              2.6 mi
+          </td>
+      </tr>
+      <tr>
+          <td>
+              Beta
+          </td>
+          <td data-label="Languages">
+              English, Spanish
+          </td>
+          <td data-label="Distance">
+              1.4 mi
+          </td>
+      </tr>
+      <tr>
+          <td>
+              Gamma
+          </td>
+          <td data-label="Languages">
+              English, French, Spanish
+          </td>
+          <td data-label="Distance">
+              1.4 mi
+          </td>
+      </tr>
+      <tr>
+          <td>
+              Delta
+          </td>
+          <td data-label="Languages">
+              English, Spanish
+          </td>
+          <td data-label="Distance">
+              3.2 mi
+          </td>
+      </tr>
+      <tr>
+          <td>
+              Epsilon
+          </td>
+          <td data-label="Languages">
+              English
+          </td>
+          <td data-label="Distance">
+              1.6 mi
+          </td>
+      </tr>
+      <tr>
+          <td>
+            Zeta
+          </td>
+          <td data-label="Languages">
+            English, Spanish
+          </td>
+          <td data-label="Distance">
+            1.2 mi
+          </td>
+      </tr>
+      <tr>
+          <td>
+              Eta
+          </td>
+          <td data-label="Languages">
+              English
+          </td>
+          <td data-label="Distance">
+              11.1 mi
+          </td>
+      </tr>
+  </tbody>
+</table>
+```
+
+### Important Notes about sortable tables
+
+- The class `.sorted-up` refers to a sort from smallest to greatest
   (first to last), and `.sorted-down` refers to a sort from greatest to smallest
-  (last to first).
+  (last to first). These classes are added to the TH when sorting occurs.
 - Please note the importance of defining a THEAD and TBODY to preserve
-  the table's header through sorting operations
-- Any BUTTON with the `.sortable` class can also be given the `data-sort_type`
-  attribute
-- In the table example above, Distance is sorted by Number value. See below for
-  the `data-sort_type` modifier.
-- In the table example above, Distance is sorted low-to-high on page load by using
-  the `sortable__start-up` class in the BUTTON. See the `sortable__start-up` and
-  `sortable__start-down` modifiers below.
+  the table's header through sorting operations.
 
-<table class="table__sortable">
-  <thead>
-      <tr>
-          <th>
-              Agency
-          </th>
-          <th>
-            <button class="sortable">
-              Languages
-            </button>
-          </th>
-          <th>
-            <button class="sortable sortable__start-up" data-sort_type="number">
-              Distance
-            </button>
-          </th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>
-              Alpha
-          </td>
-          <td data-label="Languages">
-              English
-          </td>
-          <td data-label="Distance">
-              2.6 mi
-          </td>
-      </tr>
-      <tr>
-          <td>
-              Beta
-          </td>
-          <td data-label="Languages">
-              English, Spanish
-          </td>
-          <td data-label="Distance">
-              1.4 mi
-          </td>
-      </tr>
-      <tr>
-          <td>
-              Gamma
-          </td>
-          <td data-label="Languages">
-              English, French, Spanish
-          </td>
-          <td data-label="Distance">
-              1.4 mi
-          </td>
-      </tr>
-      <tr>
-          <td>
-              Delta
-          </td>
-          <td data-label="Languages">
-              English, Spanish
-          </td>
-          <td data-label="Distance">
-              3.2 mi
-          </td>
-      </tr>
-      <tr>
-          <td>
-              Epsilon
-          </td>
-          <td data-label="Languages">
-              English
-          </td>
-          <td data-label="Distance">
-              1.6 mi
-          </td>
-      </tr>
-      <tr>
-          <td>
-            Zeta
-          </td>
-          <td data-label="Languages">
-            English, Spanish
-          </td>
-          <td data-label="Distance">
-            1.2 mi
-          </td>
-      </tr>
-      <tr>
-          <td>
-              Eta
-          </td>
-          <td data-label="Languages">
-              English
-          </td>
-          <td data-label="Distance">
-              11.1 mi
-          </td>
-      </tr>
-  </tbody>
-</table>
-
-```
-<table class="table__sortable">
-  <thead>
-      <tr>
-          <th>
-              Agency
-          </th>
-          <th>
-            <button class="sortable">
-              Languages
-            </button>
-          </th>
-          <th>
-            <button class="sortable sortable__start-up" data-sort_type="number">
-              Distance
-            </button>
-          </th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>
-              Alpha
-          </td>
-          <td data-label="Languages">
-              English
-          </td>
-          <td data-label="Distance">
-              2.6 mi
-          </td>
-      </tr>
-      <tr>
-          <td>
-              Beta
-          </td>
-          <td data-label="Languages">
-              English, Spanish
-          </td>
-          <td data-label="Distance">
-              1.4 mi
-          </td>
-      </tr>
-      <tr>
-          <td>
-              Gamma
-          </td>
-          <td data-label="Languages">
-              English, French, Spanish
-          </td>
-          <td data-label="Distance">
-              1.4 mi
-          </td>
-      </tr>
-      <tr>
-          <td>
-              Delta
-          </td>
-          <td data-label="Languages">
-              English, Spanish
-          </td>
-          <td data-label="Distance">
-              3.2 mi
-          </td>
-      </tr>
-      <tr>
-          <td>
-              Epsilon
-          </td>
-          <td data-label="Languages">
-              English
-          </td>
-          <td data-label="Distance">
-              1.6 mi
-          </td>
-      </tr>
-      <tr>
-          <td>
-            Zeta
-          </td>
-          <td data-label="Languages">
-            English, Spanish
-          </td>
-          <td data-label="Distance">
-            1.2 mi
-          </td>
-      </tr>
-      <tr>
-          <td>
-              Eta
-          </td>
-          <td data-label="Languages">
-              English
-          </td>
-          <td data-label="Distance">
-              11.1 mi
-          </td>
-      </tr>
-  </tbody>
-</table>
-```
-
-### data-sort_type (modifier)
-
-- By setting the `data-sort_type` attribute to 'number', the column is sorted by
-  Number value
-- By default, columns will be sorted as strings.
-
-<table class="table__sortable">
-    <th>
-      <button class="sortable" data-sort_type="number">Column Name</button>
-    </th>
-</table>
-
-```
-<table class="table__sortable">
-  ...
-    <th>
-      <button class="sortable" data-sort_type="number">Column Name</button>
-    </th>
-  ...
-</table>
-```
-
-### .sortable__start-up, .sortable__start-down (modifiers)
-
-To sort the table on page load, use the `.sortable__start-u`p and `.sortable__start-down` classes.
-
-<table class="table__sortable">
-    <th>
-      <button class="sortable sortable__start-up">Column Name</button>
-    </th>
-</table>
-
-```
-<table class="table__sortable">
-  ...
-    <th>
-      <button class="sortable sortable__start-up">Column Name</button>
-    </th>
-  ...
-</table>
-```
