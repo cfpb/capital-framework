@@ -1,7 +1,50 @@
-## Pagination
+# Pagination
+Responsive approach to page navigation.
+
+## Dependencies
+- cf-core
+- cf-buttons
+- cf-icons
+
+## Vars 
+
+Theme variables for setting the color and sizes. Overwrite them in your own project by duplicating the variable `@key: value`.
+
+### Sizing variables
+
+```
+@pagination-font-size:          16px;
+```
+The font size of pagination text.
+
+```
+@pagination-bp:                 640px;
+```
+Screen width at which pagination styling changes to target larger screens.
+
+
+### Color variables
+
+```
+@pagination-text:               darken(#895983, 15%);
+```
+Pagination text color.
+
+
+```
+@pagination-bg:                 lighten(#905c8a, 45%);
+```
+Pagination form background color.
+
 
 ### Default pagination
 
+Default pagination consists of `previous` and `next` links, styled as buttons, and an inline form (input, submit button) that allows users to navigate to specific pages by number. 
+
+To enable the component to jump directly to the paginated content, place #pagination_content directly above your paginated content.
+
+
+#### Example
 <div id="pagination_content"></div>
 
 <!-- Paginated content here -->
@@ -41,6 +84,8 @@
         </button>
     </form>
 </nav>
+
+#### Markup
 
 ```
 <div id="pagination_content"></div>
@@ -83,3 +128,9 @@
     </form>
 </nav>
 ```
+
+## Responsive behavior
+
+- Less than 320px: On very small screens, the previous link, next link, and page number form stack vertically. 
+- 320px - @pagination-bp: On small screens, the pagination links display next to each other, stacked on top of the form. 
+- @pagination-bp+ : On larger screens, all pagination components display on a single line, with the form between the previous and next links.
