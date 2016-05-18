@@ -31,3 +31,59 @@
 ```
 <a href="#">Default link style</a>
 ```
+
+## Media queries
+
+### Respond to dpi mixin
+
+This mixin allows us to easily write styles
+that target high-resolution screens,
+such as Apple retina screens
+
+```less
+// The following LESS...
+.example {
+    background: url(regular-resolution-image.png);
+    .respond-to-dpi(2, {
+        background-image: url(retina-image.png);
+    });
+}
+
+// ...Exports to
+.example {
+    background: url(regular-resolution-image.png);
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .example {
+        background-image: url(retina-image.png);
+    }
+}
+```
+
+### Respond to print mixin
+
+This mixin allows us to easily write styles that target both
+`@media print` and `.print`.
+
+```less
+// The following LESS...
+.example {
+    color: @gray;
+    .respond-to-print({
+        color: @black;
+    });
+}
+
+// ...Exports to
+.example {
+    color: #75787B;
+}
+@media print {
+    .example {
+        color: #101820;
+    }
+}
+.print .example {
+    color: #101820;
+}
+```
