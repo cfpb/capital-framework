@@ -13,24 +13,26 @@
 //
 
 // Color variables
+// $color- variables are from 18F's US Web Design Standards
+// https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss
 
 // .btn
-@btn-text:                      #fff;
-@btn-bg:                        #c7336e;
-@btn-bg-hover:                  darken(@btn-bg, 10%);
-@btn-bg-active:                 darken(@btn-bg, 15%);
+@btn-text:                      #ffffff; // $color-white
+@btn-bg:                        #0071bc; // $color-primary
+@btn-bg-hover:                  #205493; // $color-primary-dark
+@btn-bg-active:                 #112e51; // $color-primary-darkest
 
 // .btn__secondary
-@btn__secondary-text:           #fff;
-@btn__secondary-bg:             #895983;
-@btn__secondary-bg-hover:       darken(@btn__secondary-bg, 10%);
-@btn__secondary-bg-active:      darken(@btn__secondary-bg, 15%);
+@btn__secondary-text:           #212121; // $color-base
+@btn__secondary-bg:             #9bdaf1; // $color-primary-alt-light
+@btn__secondary-bg-hover:       #02bfe7; // $color-primary-alt
+@btn__secondary-bg-active:      #00a6d2; // $color-primary-alt-dark
 
 // .btn__warning
-@btn__warning-text:             #fff;
-@btn__warning-bg:               #ea130b;
-@btn__warning-bg-hover:         darken(@btn__warning-bg, 10%);
-@btn__warning-bg-active:        darken(@btn__warning-bg, 15%);
+@btn__warning-text:             #ffffff; // $color-white
+@btn__warning-bg:               #e31c3d; // $color-secondary
+@btn__warning-bg-hover:         #cd2026; // $color-secondary-dark
+@btn__warning-bg-active:        #981b1e; // $color-secondary-darkest
 
 // .btn__disabled
 @btn__disabled-text:            darken(greyscale(#c7336e), 10%);
