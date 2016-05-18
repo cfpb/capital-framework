@@ -1,6 +1,6 @@
 {
   "name": "cf-tables",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "description": "Capital Framework tables",
   "main": "src/cf-tables.js",
   "less": "src/cf-tables.less",
