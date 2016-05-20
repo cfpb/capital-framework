@@ -1,16 +1,15 @@
-# Icons
-
-cf-icons is the custom icon font for Capital Framework.
+The cf-icon component provides the custom icon font for Capital Framework.
 This component can be used by itself, but is designed to work with Capital Framework.
 
-## Vars
+
+## Variables
 
 Theme variables for setting the color of sizes throughout the projects.
 Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Settings
 
-```less
+```
 @cf-icon-prefix:                cf-icon;
 @cf-icon-path:                  'fonts';
 @cf-icon-ie7-support:           true;
@@ -89,7 +88,7 @@ MIT Licensed by Font Awesome
 
 ### Icon rotation mixin
 
-```less
+```
 .@{cf-icon-prefix}__rotate-90  { .cf-icon__rotate(90deg, 1);  }
 ```
 
@@ -1082,12 +1081,13 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-servicemembers-round"></span>
 ```
 
-## Icon Character Variables
+
+## Icon character variables
 
 Inspired by Font Awesome, we've added LESS variables for adding icons in
 LESS files.
 
-```less
+```
 .download-icon:after {
      .cf-icon();
      display: inline-block;

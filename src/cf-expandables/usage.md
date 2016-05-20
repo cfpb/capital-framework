@@ -1,15 +1,15 @@
-# Expandables
-
-CF-Expandables are components that have additional content that can be
+Expandables are components that have additional content that can be
 opened (expanded) and closed (collapsed). They can appear on their own
 or can appear in groups.
 
+
 ## Dependencies
 
-- CF-Core
-- CF-Icons
+- cf-core
+- cf-icons
 
-## Vars
+
+## Variables
 
 Theme variables for setting the color and sizes.
 Overwrite them in your own project by duplicating the variable `@key: value`.
@@ -44,6 +44,7 @@ add `@expandable_link-font-size: 17px;` to your project.
 @expandable-group-bg:          #fff;
 @expandable-group-divider:     #046b99; // $color-primary-alt-darkest
 ```
+
 
 ## Modifiers
 
@@ -159,9 +160,10 @@ Sometimes you may want the cues to animate open and closed.
 </div>
 ```
 
+
 ## Elements
 
-### text elements
+### Text elements
 
 #### Label
 
@@ -191,7 +193,7 @@ Allows you to add some styled text with a link-like look.
 </span>
 ```
 
-### header elements
+### Header elements
 
 These additional elements are useful for more complicated expandables
 that need to convey more information than just 'Show/Hide' before the user expands it.
@@ -214,6 +216,7 @@ Allows you to float information left and right.
 .expandable_header-left
 .expandable_header-right
 ```
+
 
 ## Recommended expandable pattern
 
@@ -329,6 +332,7 @@ In this barebones example there are no visual styles.
     </div>
 </div>
 ```
+
 
 ## Expandable groups
 
@@ -674,7 +678,7 @@ Add the `data-accordion="true"` attribute to the expandable group to activate th
 
 There are a number of available functions that you can call on .expandable elements.
 
-### Expands the expandable.
+### Expands the expandable
 ```
 .expand( duration )
 ```
@@ -689,7 +693,7 @@ Defaults to `$.fn.expandable.calculateExpandDuration` or
 `$.fn.expandable.calculateCollapseDuration` if excluded.
 ```
 
-### Collapses the expandable.
+### Collapses the expandable
 ```
 .collapse( duration )
 ```
@@ -704,16 +708,17 @@ Defaults to `$.fn.expandable.calculateExpandDuration` or
 `$.fn.expandable.calculateCollapseDuration` if excluded.
 ```
 
-### Toggles the expandable.
+### Toggles the expandable
 ```
 .toggle()
 ```
 
 ### Example usage
 ```
-// HTML
+<!-- HTML -->
 <div class="expandable" id="my-expandable">...</div>
 ```
+
 ```js
 // JS
 // (use .get(0) to get the HTML element, that's what the functions

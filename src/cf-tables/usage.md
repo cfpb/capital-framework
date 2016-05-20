@@ -1,10 +1,8 @@
-# CF-Tables
-
-CF-Tables formats tables, and provides an easy way to make tables sortable.
+The cf-tables component formats tables, and provides an easy way to make tables sortable.
 
 ## Vars
 
-Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable @key: value.
+Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key:` value.
 
 Ex. to set your table cell's background color, add `@table-cell-bg: #fefefe;` to your project.
 
@@ -14,9 +12,10 @@ Ex. to set your table cell's background color, add `@table-cell-bg: #fefefe;` to
 @table-scrolling-border:     #e4e2e0; // $color-gray-warm-light
 ```
 
+
 ## Responsive table styles for Small Screens
 
-__Important notes:__
+**Important notes:**
 - Tables are not responsive without adding one of the small screen classes below.
 - The `data-label` attribute is used to label each entry in a table for small screen responsive views. Always include the `data-label` attribute for each cell.
 
@@ -422,6 +421,7 @@ not visible on small screens.
 </table>
 ```
 
+
 ## Sortable Tables
 
 CF-Tables also includes a sortable table utility.
@@ -692,4 +692,3 @@ highest to lowest)
   (last to first). These classes are added to the TH when sorting occurs.
 - Please note the importance of defining a THEAD and TBODY to preserve
   the table's header through sorting operations.
-
