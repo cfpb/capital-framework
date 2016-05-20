@@ -1,12 +1,13 @@
-# Pagination
-Responsive approach to page navigation.
+The cf-pagination component provides a responsive approach to multipage page navigation.
+
 
 ## Dependencies
 - cf-core
 - cf-buttons
 - cf-icons
 
-## Vars 
+
+## Variables
 
 Theme variables for setting the color and sizes. Overwrite them in your own project by duplicating the variable `@key: value`.
 
@@ -37,14 +38,13 @@ Pagination text color.
 Pagination form background color.
 
 
-### Default pagination
+## Default pagination
 
-Default pagination consists of `previous` and `next` links, styled as buttons, and an inline form (input, submit button) that allows users to navigate to specific pages by number. 
+Default pagination consists of "Previous" and "Next" links, styled as buttons, and an inline form (input, submit button) that allows users to navigate to specific pages by number.
 
-To enable the component to jump directly to the paginated content, place #pagination_content directly above your paginated content.
+To enable the component to jump directly to the paginated content, place `#pagination_content` directly above your paginated content.
 
-
-#### Example
+### Example
 <div id="pagination_content"></div>
 
 <!-- Paginated content here -->
@@ -85,7 +85,7 @@ To enable the component to jump directly to the paginated content, place #pagina
     </form>
 </nav>
 
-#### Markup
+### Markup
 
 ```
 <div id="pagination_content"></div>
@@ -131,6 +131,6 @@ To enable the component to jump directly to the paginated content, place #pagina
 
 ## Responsive behavior
 
-- Less than 320px: On very small screens, the previous link, next link, and page number form stack vertically. 
-- 320px - @pagination-bp: On small screens, the pagination links display next to each other, stacked on top of the form. 
-- @pagination-bp+ : On larger screens, all pagination components display on a single line, with the form between the previous and next links.
+- Less than 320px: On very small screens, the previous link, next link, and page number form stack vertically.
+- 320px – `@pagination-bp`: On small screens, the pagination links display next to each other, stacked on top of the form.
+- `@pagination-bp` and up: On larger screens, all pagination components display on a single line, with the form between the previous and next links.

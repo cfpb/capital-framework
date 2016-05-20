@@ -1,6 +1,5 @@
-# Core
+The cf-core component acts as the backbone for Capital Framework. It's made up of four child components `cf-vars`, `cf-media-queries`, `cf-utilities`, and `cf-base`.
 
-CF-Core acts as the backbone for Capital Framework. It's made up of four child components `cf-vars`, `cf-media-queries`, `cf-utilities`, and `cf-base`.
 
 ## Vars
 
@@ -58,6 +57,7 @@ Ex. to set your base font size, add `@base-font-size-px: 17px;` to your project.
 // .figure__bordered
 @figure__bordered:       #d6d7d9; // $color-gray-lighter
 ```
+
 
 ## Media Queries
 
@@ -156,7 +156,7 @@ For example, to float an element to the left, but prevent the following text fro
 <em>This text would normally flow up into the black box if the box above</em>
 ```
 
-_More information see: http://css-tricks.com/snippets/css/clear-fix/_
+_More information see: <http://css-tricks.com/snippets/css/clear-fix>_
 
 #### Visually hidden
 
@@ -175,7 +175,7 @@ For example, to create a link with a social network icon, but allow non-sighted 
 
 #### Inline block
 
-Add a .lt-ie8 class to hack inline-block for IE 7 and below.
+Adds a `.lt-ie8` fallback to hack inline block for IE 7 and below.
 
 ```
 <div class="u-inline-block"></div>
@@ -225,7 +225,7 @@ Force word breaks within an element. Useful for small containers where text may 
 
 _This only works in IE8 when the element with the .u-break-word class has layout. See <http://stackoverflow.com/questions/3997223/word-wrapbreak-word-not-working-in-ie8> for more information._
 
-#### Margin Utilites
+#### Margin utilities
 
 Force a margin top or bottom on an element in pixels.
 
@@ -237,11 +237,11 @@ Force a margin top or bottom on an element in pixels.
 
 _`[p]` is the position, use `t` for top or `b` for bottom. `[#]` is the pixel value, available options are 0, 5, 10, 15, 20, 30, 45, 60_
 
-#### Width Utilities
+#### Width utilities
 
 Set the width of an element in percentages.
 
-__NOTE: Inline style properties for demonstration only__
+**NOTE: Inline style properties for demonstration only.**
 
 <div class="u-w100pct" style="background: #f4edf3; margin-bottom: 1px;">
     <code>.u-w100pct</code>
@@ -378,11 +378,11 @@ Align an element vertically with the text within a button that may be to either 
 
 _Pass font-size as the argument for calculating spacing, default value is `@base-font-size-px`._
 
-#### Felxible proportional containers
+#### Flexible proportional containers
 
 Utilize intrinsic ratios to create a flexible container that retains an aspect ratio. When image tags scale they retain their aspect ratio, but if you need a flexible video you will need to use this mixin.
 
-_Read more about intrinsic rations: http://alistapart.com/article/creating-intrinsic-ratios-for-video_
+_Read more about intrinsic rations: <http://alistapart.com/article/creating-intrinsic-ratios-for-video>_
 
 ```
 .u-flexible-container-mixin(@width: 16, @height: 9);
@@ -444,7 +444,7 @@ To create a 4:3 flexible video player, add the `__4_3` modifier to the container
 
 _When using the mixin, pass the width as the first argument, and the height as the second argument, default values are `16, 9`._
 
-_Original mixin credit: https://gist.github.com/craigmdennis/6655047_
+_Original mixin credit: <https://gist.github.com/craigmdennis/6655047>_
 
 #### Link Modifiers
 
@@ -506,7 +506,7 @@ Sets the element to 14px (in ems).
 
 `.u-small-text`
 
-_To be used on default 16px text only. To use on text set to another size, use the mixin below_
+_To be used on default 16px text only. To use on text set to another size, use the mixin below._
 
 ##### Mixin
 
@@ -534,6 +534,7 @@ Sets the element to 14px (in ems) based on the text size passed as `@context`.
 }
 ```
 
+
 ## Base Typography
 
 ### Webfonts
@@ -549,7 +550,7 @@ Sets the font-stack, weight, and style of an element.
 
 To use your own fonts in the webfont mixins, set your own font with the `@webfont-regular/italic/medium/demi` variables in your `theme-overrides.less` file.
 
-_These mixins also add the appropriate .lt-ie9 overrides. .lt-ie9 overrides are necessary to override font-style and font-weight each time the webfont is used. These overrides are built into the webfont mixins so you get them automatically. Note that this requires you to use conditional classes on the <html> element: https://github.com/h5bp/html5-boilerplate/blob/v4.3.0/doc/html.md#conditional-html-classes._
+_These mixins also add the appropriate .lt-ie9 overrides. .lt-ie9 overrides are necessary to override font-style and font-weight each time the webfont is used. These overrides are built into the webfont mixins so you get them automatically. Note that this requires you to use conditional classes on the <html> element: <https://github.com/h5bp/html5-boilerplate/blob/v4.3.0/doc/html.md#conditional-html-classes.>_
 
 ### Type hierarchy
 
@@ -571,7 +572,7 @@ _These mixins also add the appropriate .lt-ie9 overrides. .lt-ie9 overrides are 
 <p class="h1">A non-heading element</p>
 ```
 
-_Responsive heading. At small screen sizes, displays as h2._
+_Responsive heading. At small screen sizes, displays as Heading 2._
 
 #### Heading level 2
 
@@ -583,7 +584,7 @@ _Responsive heading. At small screen sizes, displays as h2._
 <p class="h2">A non-heading element</p>
 ```
 
-_Responsive heading. At small screen sizes, displays as h3._
+_Responsive heading. At small screen sizes, displays as Heading 3._
 
 #### Heading level 3
 
@@ -595,7 +596,7 @@ _Responsive heading. At small screen sizes, displays as h3._
 <p class="h3">A non-heading element</p>
 ```
 
-_Responsive heading. At small screen sizes, displays as h4._
+_Responsive heading. At small screen sizes, displays as Heading 4._
 
 #### Heading level 4
 
@@ -641,7 +642,7 @@ _Not a responsive heading._
 <p class="lead-paragraph">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 ```
 
-_Responsive text. Displays as an h3 on large screens; displays at h4 size (but still Regular weight) on small screens._
+_Responsive text. Displays as a Heading 3 on large screens; displays at Heading 4 size (but still Regular weight) on small screens._
 
 #### Display heading (aka "superheading")
 
@@ -673,7 +674,7 @@ _Responsive text. Displays as an h3 on large screens; displays at h4 size (but s
 <p>Paragraph margin example</p>
 ```
 
-- _Applies 15px bottom margin to all p, ul, ol, dl, figure, table, and blockquote elements._
+- _Applies 15px bottom margin to all `p`, `ul`, `ol`, `dl`, `figure`, `table`, and `blockquote` elements._
 - _Applies -5px top margin to lists following paragraphs to reduce margin between them to 10px._
 - _Applies 8px bottom margin to list items that are not within a nav element._
 - _Assumes that the font size of each of these items remains the default._
@@ -832,7 +833,7 @@ Links within a nav element are not underlined.
 
 ### Lists
 
-#### Unordered List
+#### Unordered list
 
 <p> Paragraph example for visual reference</p>
 <ul>
@@ -850,7 +851,7 @@ Links within a nav element are not underlined.
 </ul>
 ```
 
-#### Ordered List
+#### Ordered list
 
 <p>Paragraph example for visual reference</p>
 <ul>
@@ -870,7 +871,7 @@ Links within a nav element are not underlined.
 
 ### Tables
 
-#### Standard Table
+#### Standard lable
 
 <table>
     <thead>
@@ -956,17 +957,17 @@ Links within a nav element are not underlined.
 </blockquote>
 ```
 
-_Note that the use of a block quote is to quote an external work. See .pull-quote if you need to highlight an excerpt from the current work._
+_Note that the use of a block quote is to quote an external work. See `.pull-quote` if you need to highlight an excerpt from the current work._
 _Note that it is best practice to document the URL of a quoted work using the cite attribute._
 
 
-## Base Forms
+## Base forms
 
 _Visit https://github.com/cfpb/cf-forms for advanced form field patterns._
 
-### Form Labels
+### Form labels
 
-#### Default Label
+#### Default label
 
 <label>Form label</label>
 
@@ -990,9 +991,9 @@ _Visit https://github.com/cfpb/cf-forms for advanced form field patterns._
 
 ### Form Elements
 
-_Note that the .focus class is for documentation purposes only and should not be used in production._
+_Note that the `.focus` class is for documentation purposes only and should not be used in production._
 
-#### type="text"
+#### `type="text"`
 
 <input type="text" value="Lorem ipsum">
 <input class="focus" type="text" value="Lorem ipsum">
@@ -1006,7 +1007,7 @@ _Note that the .focus class is for documentation purposes only and should not be
 <input placeholder="Lorem ipsum" type="text" value="">
 ```
 
-#### type="search"
+#### `type="search"`
 
 <input type="search" value="Lorem ipsum">
 <input class="focus" type="search" value="Lorem ipsum">
@@ -1020,7 +1021,7 @@ _Note that the .focus class is for documentation purposes only and should not be
 <input placeholder="Lorem ipsum" type="search" value="">
 ```
 
-#### type="email"
+#### `type="email"`
 
 <input type="email" value="Lorem ipsum">
 <input class="focus" type="email" value="Lorem ipsum">
@@ -1034,7 +1035,7 @@ _Note that the .focus class is for documentation purposes only and should not be
 <input placeholder="Lorem ipsum" type="email" value="">
 ```
 
-#### type="url"
+#### `type="url"`
 
 <input type="url" value="Lorem ipsum">
 <input class="focus" type="url" value="Lorem ipsum">
@@ -1048,7 +1049,7 @@ _Note that the .focus class is for documentation purposes only and should not be
 <input placeholder="Lorem ipsum" type="url" value="">
 ```
 
-#### type="tel"
+#### `type="tel"`
 
 <input type="tel" value="Lorem ipsum">
 <input class="focus" type="tel" value="Lorem ipsum">
@@ -1062,7 +1063,7 @@ _Note that the .focus class is for documentation purposes only and should not be
 <input placeholder="Lorem ipsum" type="tel" value="">
 ```
 
-#### type="number"
+#### `type="number"`
 
 <input type="number" value="1000">
 <input class="focus" type="number" value="1000">
@@ -1076,7 +1077,7 @@ _Note that the .focus class is for documentation purposes only and should not be
 <input placeholder="Lorem ipsum" type="number" value="">
 ```
 
-#### textarea
+#### `textarea`
 
 <textarea>Lorem ipsum</textarea>
 <textarea class="focus">Lorem ipsum</textarea>
@@ -1086,7 +1087,7 @@ _Note that the .focus class is for documentation purposes only and should not be
 <textarea class="focus">Lorem ipsum</textarea>
 ```
 
-#### multiselect
+#### Multiselect
 
 <select multiple>
     <option value="option1">Lorem</option>
@@ -1116,9 +1117,10 @@ _Note that the .focus class is for documentation purposes only and should not be
 </select>
 ```
 
-### Base Images
 
-#### Full-width Images
+## Base images
+
+### Full-width images
 
 Gives all images a default max-width of 100% of their container.
 
@@ -1128,7 +1130,7 @@ Gives all images a default max-width of 100% of their container.
 <img src="http://placekitten.com/800/40" alt="">
 ```
 
-#### Figure
+### Figure
 
 <figure>
     <img src="http://placekitten.com/340/320">
@@ -1140,7 +1142,7 @@ Gives all images a default max-width of 100% of their container.
 </figure>
 ```
 
-#### Bordered Figure
+### Bordered figure
 
 <figure class="figure__bordered">
     <img src="http://placekitten.com/340/320">
