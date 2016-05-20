@@ -1,4 +1,11 @@
-## Default button
+- [Default button](#default)
+- [Secondary button](#secondary)
+- [Destructive action button](#destructive)
+- [Disabled button](#disabled)
+- [Super button](#super)
+
+
+## <a name="default"></a>Default button
 
 ### Default state
 
@@ -48,7 +55,7 @@
 <input type="submit" value="Input Tag" class="btn active">
 ```
 
-## Secondary button
+## <a name="secondary"></a>Secondary button
 
 ### Default state
 
@@ -98,7 +105,7 @@
 <input type="submit" value="Input Tag" class="btn btn__secondary active">
 ```
 
-## Destructive action button
+## <a name="destructive"></a>Destructive action button
 
 ### Default state
 
@@ -148,7 +155,7 @@
 <input type="submit" value="Input Tag" class="btn btn__warning active">
 ```
 
-## Disabled button
+## <a name="disabled"></a>Disabled button
 
 ### Default/hovered/active state
 
@@ -178,7 +185,7 @@
 <button class="btn focus" disabled title="Test button">Button Tag w/ disabled attr</button>
 ```
 
-## Super button
+## <a name="super"></a>Super button
 
 ### Default state
 
