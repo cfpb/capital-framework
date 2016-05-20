@@ -41,6 +41,7 @@ Use the format: `- **cf-component-name:** [MAJOR|MINOR|PATCH] Description of cha
 [Here's an example](https://github.com/cfpb/capital-framework/pull/291/files#diff-4ac32a78649ca5bdd8e0ba38b7006a1eR12).
   - If the change affects *all* components, put `**all components:**` as the name.
   - If the change affects CF and not any components (e.g. if you're just updating [README.md](README.md)), put `**capital-framework**`.
+  - **Note:** Don't bump components' versions in their `package.json` files. CFPBot will take care of that.
 1. `git commit -am "Fix button border radius"`
 1. `git push origin button-fix`
 1. Go to https://github.com/cfpb/capital-framework and open a pull request to merge `button-fix` into `canary`.
