@@ -4,13 +4,21 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-buttons:** [MINOR] Update default colors to 18F colors in Web Design Standards
+- **cf-core:** [MINOR] Update default colors to 18F colors in Web Design Standards
+- **cf-expandables:** [MINOR] Update default colors to 18F colors in Web Design Standards
+- **cf-forms:** [MINOR] Update default colors to 18F colors in Web Design Standards
+- **cf-icons:** [MINOR] Update default colors to 18F colors in Web Design Standards
+- **cf-pagination** [MINOR] Update default colors to 18F colors in Web Design Standards
+- **cf-tables:** [PATCH] Update link to 18F Web Design Standards
+- **cf-typography:** [PATCH] Update link to 18F Web Design Standards
+
 
 ### Removed
-- 
+-
 
 ## 3.4.1 - 2016-05-13
 

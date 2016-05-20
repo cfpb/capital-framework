@@ -291,7 +291,7 @@ Provides sizeable margins between groups of form elements.
 <div class="btn-inside-input">
     <input type="text"
            value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
-    <button class="btn btn__link btn__secondary">
+    <button class="btn btn__link">
         Clear
         <span class="cf-icon cf-icon-delete"></span>
     </button>
@@ -301,7 +301,7 @@ Provides sizeable margins between groups of form elements.
 <div class="btn-inside-input">
     <input type="text"
            value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
-    <button class="btn btn__link btn__secondary">
+    <button class="btn btn__link">
         Clear
         <span class="cf-icon cf-icon-delete"></span>
     </button>
