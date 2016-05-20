@@ -4,22 +4,20 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- **cf-core:** [MINOR] Add respond-to-dpi mixin and respond-to-print mixin
+- **cf-core:** Add respond-to-dpi mixin and respond-to-print mixin
 
 ### Changed
-- **cf-buttons:** [MINOR] Update default colors to 18F colors in Web Design Standards
-- **cf-core:** [MINOR] Update default colors to 18F colors in Web Design Standards
-- **cf-expandables:** [MINOR] Update default colors to 18F colors in Web Design Standards
-- **cf-forms:** [MINOR] Update default colors to 18F colors in Web Design Standards
-- **cf-icons:** [MINOR] Update default colors to 18F colors in Web Design Standards
-- **cf-pagination** [MINOR] Update default colors to 18F colors in Web Design Standards
-- **cf-tables:** [PATCH] Update link to 18F Web Design Standards
-- **cf-typography:** [PATCH] Update link to 18F Web Design Standards
-- **all components:** [PATCH] Improve components' usage documentation
-- **capital-framework:** [PATCH] Add note about bumping versions in contribution documentation
+- **all components:** Improve components' usage documentation
+- **capital-framework:** Add note about bumping versions in contribution documentation
+- **cf-buttons:** Update default colors to 18F colors in Web Design Standards
+- **cf-core:** Update default colors to 18F colors in Web Design Standards
+- **cf-expandables:** Update default colors to 18F colors in Web Design Standards
+- **cf-forms:** Update default colors to 18F colors in Web Design Standards
+- **cf-icons:** Update default colors to 18F colors in Web Design Standards
+- **cf-pagination:** Update default colors to 18F colors in Web Design Standards
+- **cf-tables:** Update link to 18F Web Design Standards
+- **cf-typography:** Update link to 18F Web Design Standards
 
-### Removed
--
 
 ## 3.4.1 - 2016-05-13
 
