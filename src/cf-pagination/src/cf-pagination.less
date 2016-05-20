@@ -14,9 +14,11 @@
 //
 
 // Color variables
+// $color- variables are from 18F's US Web Design Standards
+// https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss
 
-@pagination-text:               darken(#895983, 15%);
-@pagination-bg:                 lighten(#905c8a, 45%);
+@pagination-text:               #212121; // $color-base
+@pagination-bg:                 #dce4ef; // $cool-blue-lightest
 
 // Sizing variables
 
@@ -106,10 +108,10 @@
 
         // Removes Webkit spinner UI
         // http://css-tricks.com/snippets/css/turn-off-number-input-spinners/
-        // input&[type=number]::-webkit-inner-spin-button, 
-        // input&[type=number]::-webkit-outer-spin-button { 
-        //     -webkit-appearance: none; 
-        //     margin: 0; 
+        // input&[type=number]::-webkit-inner-spin-button,
+        // input&[type=number]::-webkit-outer-spin-button {
+        //     -webkit-appearance: none;
+        //     margin: 0;
         // }
 
         .lt-ie8 & {
