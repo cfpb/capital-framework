@@ -1,6 +1,6 @@
-## Theme variables
+## Variables
 
-### Colors
+### Color variables
 
 ```
 @pull-quote_body
