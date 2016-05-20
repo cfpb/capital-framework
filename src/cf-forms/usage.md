@@ -1,3 +1,32 @@
+# Forms
+
+## Vars
+
+Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
+
+### Color variables
+
+```
+// .error
+@input-error:                   #ea130b;
+
+// warning
+@input-warning:                 #ffb108;
+
+// .success
+@input-success:                 #009d38;
+
+// .disabled
+@input-disabled:                #cdb5cd;
+```
+
+### Sizing variables
+
+```
+// .input__super
+@input__super-font-size:        18px;
+```
+
 ## Form labels
 
 ### Label header
@@ -12,7 +41,9 @@
 </label>
 ```
 
-### Super input
+## Super input
+
+An input that matches the height of a super button.
 
 <input class="input__super" type="text" value="Super input" title="Test input"></input>
 <button class="btn btn__super">Super</button>
@@ -23,6 +54,8 @@
 ```
 
 ## Input states
+
+See the 'Form icons' section below for guidance on adding icons to states.
 
 ### Error state
 
@@ -58,6 +91,8 @@
 
 ## Form icons
 
+Form input icons add small positioning tweaks to Capital Framework icons.
+
 ### Form input icons
 
 <input type="text" value="" title="Test input">
@@ -69,6 +104,9 @@
 ```
 
 ### Form input error icon
+
+- The icon must be placed directly after the form input in the markup and the input must use the 'error' class.
+- For invalid fields only use the alert role to call attention to fields that need immediate attention: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role
 
 <input class="error" type="text" value="Invalid input" title="Test input">
 <span class="cf-form_input-icon cf-icon cf-icon-delete-round" role="alert"></span>
@@ -100,7 +138,11 @@
 
 ## Form group
 
+A form group is recommended when you need to provide spacing between form elements and between groups of form elements.
+
 ### Form group block
+
+Provides sizeable margins between groups of form elements.
 
 <div class="form-group">
     <div class="form-group_item">
