@@ -4,6 +4,37 @@
 - [Disabled button](#disabled)
 - [Super button](#super)
 
+## Variables
+
+### Color variables
+
+```
+@btn-text
+@btn-bg
+@btn-bg-hover
+@btn-bg-active
+@btn__secondary-text
+@btn__secondary-bg
+@btn__secondary-bg-hover
+@btn__secondary-bg-active
+@btn__warning-text
+@btn__warning-bg
+@btn__warning-bg-hover
+@btn__warning-bg-active
+@btn__disabled-text
+@btn__disabled-bg
+@btn__disabled-outline
+```
+
+### Sizing variables
+
+```
+@btn-font-size
+@btn-v-padding
+@btn-v-padding-modifier-ie
+@super-btn-font-size
+```
+
 
 ## <a name="default"></a>Default button
 
