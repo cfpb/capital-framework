@@ -15,18 +15,20 @@
 //
 
 // Color variables
+// $color- variables are from 18F's US Web Design Standards
+// https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss
 
 // .error
-@input-error:                   #ea130b;
+@input-error:                   #e31c3d; // $color-secondary
 
 // warning
-@input-warning:                 #ffb108;
+@input-warning:                 #fdb81e; // $color-gold
 
 // .success
-@input-success:                 #009d38;
+@input-success:                 #2e8540; // $color-green
 
 // .disabled
-@input-disabled:                #cdb5cd;
+@input-disabled:                #aeb0b5; // $color-gray-light
 
 // Sizing variables
 
@@ -81,7 +83,7 @@ textarea {
     &.success {
         border: 1px solid @input-success;
         outline: 1px solid @input-success;
-    }    
+    }
     &.disabled {
         background-color: @input-disabled;
     }

@@ -4,24 +4,26 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+- **cf-core:** Add respond-to-dpi mixin and respond-to-print mixin
 
 ### Changed
-- 
+- **all components:** Improve components' usage documentation
+- **capital-framework:** Add note about bumping versions in contribution documentation
+- **cf-buttons:** Update default colors to 18F colors in Web Design Standards
+- **cf-core:** Update default colors to 18F colors in Web Design Standards
+- **cf-expandables:** Update default colors to 18F colors in Web Design Standards
+- **cf-forms:** Update default colors to 18F colors in Web Design Standards
+- **cf-icons:** Update default colors to 18F colors in Web Design Standards
+- **cf-pagination:** Update default colors to 18F colors in Web Design Standards
+- **cf-tables:** Update link to 18F Web Design Standards
+- **cf-typography:** Update link to 18F Web Design Standards
 
-### Removed
-- 
 
 ## 3.4.1 - 2016-05-13
 
-### Added
--
-
 ### Changed
-- **capital-framework:** [PATCH] Update contributing documentation.
+- **capital-framework:** Update contributing documentation.
 
-### Removed
--
 
 ## 3.4.0 - 2016-05-09
 

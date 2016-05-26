@@ -1,6 +1,614 @@
-## Type hierarchy
+The cf-core component acts as the backbone for Capital Framework. It's made up of four child components `cf-vars`, `cf-media-queries`, `cf-utilities`, and `cf-base`.
 
-### Default body type
+
+## Vars
+
+Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
+
+Ex. to set your base font size, add `@base-font-size-px: 17px;` to your project.
+
+### Sizing variables
+
+```
+@base-font-size-px:   16px;
+@base-line-height-px: 22px;
+@base-line-height:    unit(@base-line-height-px / @base-font-size-px);
+@bp-xs-max:           600px;
+@bp-sm-min:           @bp-xs-max + 1px;
+@bp-sm-max:           900px;
+@bp-med-min:          @bp-sm-max + 1px;
+@bp-med-max:          1020px;
+@bp-lg-min:           @bp-med-max + 1px;
+@bp-lg-max:           1230px;
+@bp-xl-min:           @bp-lg-max + 1px;
+```
+
+### Color variables
+
+`$color-` variables are from 18F's [US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+
+```
+// body
+@text:                   #212121; // $color-base
+
+// a
+@link-text:              #0071bc; // $color-primary
+@link-underline:         #0071bc; // $color-primary
+@link-text-visited:      #4c2c92; // $color-visited
+@link-underline-visited: #4c2c92; // $color-visited
+@link-text-hover:        #205493; // $color-primary-darker
+@link-underline-hover:   #205493; // $color-primary-darker
+@link-text-active:       #046b99; // $color-primary-darkest
+@link-underline-active:  #046b99; // $color-primary-darkest
+
+// table
+@table-border:           #5b616b; // $color-gray
+
+// thead
+@thead-text:             @text;
+@thead-bg:               #f1f1f1; // $color-gray-lightest
+
+// input
+@input-bg:               #fff;
+@input-border:           #5b616b; // $color-gray
+@input-border-focus:     #3e94cf; // $color-focus
+@input-placeholder:      grayscale(#c7336e);
+
+// .figure__bordered
+@figure__bordered:       #d6d7d9; // $color-gray-lighter
+```
+
+
+## Media Queries
+
+Mixins for consistent media queries that take `px` values and convert them to `em`s.
+
+### Min and max width media queries
+
+These mixins take a `px` value breakpoint and set of style rules and converts them to the corresponding min or max width media query.
+
+```
+.respond-to-min(@bp, @rules);
+
+.respond-to-max(@bp, @rules);
+```
+
+Ex.
+```
+.respond-to-min( @bp-sm-min, {
+    .title {
+        font-size: 2em;
+    }
+} );
+
+// Compiles to
+
+@media only all and (min-width: 37.5625em) {
+    .title {
+        font-size: 2em;
+    }
+}
+```
+
+### Range media queries
+
+This mixin takes both min and max `px` values and a set of style rules and converts them to the corresponding min and max media query.
+
+```
+.respond-to-range(@bp1, @bp2, @rules);
+```
+
+Ex.
+```
+.respond-to-range( @bp-sm-min, @bp-sm-max, {
+    .title {
+        font-size: 2em;
+    }
+} );
+
+// Compiles to
+
+@media only all and (min-width: 37.5625em) and (max-width: 56.25em) {
+    .title {
+        font-size: 2em;
+    }
+}
+```
+
+### Respond to dpi mixin
+
+This mixin allows us to easily write styles
+that target high-resolution screens,
+such as Apple retina screens
+
+```less
+// The following LESS...
+.example {
+    background: url(regular-resolution-image.png);
+    .respond-to-dpi(2, {
+        background-image: url(retina-image.png);
+    });
+}
+
+// ...Exports to
+.example {
+    background: url(regular-resolution-image.png);
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .example {
+        background-image: url(retina-image.png);
+    }
+}
+```
+
+### Respond to print mixin
+
+This mixin allows us to easily write styles that target both
+`@media print` and `.print`.
+
+```less
+// The following LESS...
+.example {
+    color: @gray;
+    .respond-to-print({
+        color: @black;
+    });
+}
+
+// ...Exports to
+.example {
+    color: #75787B;
+}
+@media print {
+    .example {
+        color: #101820;
+    }
+}
+.print .example {
+    color: #101820;
+}
+```
+
+
+## Utilities
+
+### Helper classes
+
+#### JS only
+
+Hide an element when JavaScript isn't available. Requires a small script in the HEAD of your HTML document that removes a `.no-js` class.
+
+1. Add a `no-js` class added to the `html`
+  ```
+  <html class="no-js">
+  ```
+
+2. Add a script to remove the `no-js` class after confirming JS is available
+  ```
+  <script>
+      // Confirm availability of JS and remove no-js class from html
+      var docElement = document.documentElement;
+      docElement.className = docElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2');
+  </script>
+  ```
+
+3. Add the utility class to the element you want to hide
+  ```
+  <div class="u-js-only"></div>
+  ```
+
+#### Clearfix
+
+Clear floated elements to avoid following elements from flowing into the previous one.
+
+For example, to float an element to the left, but prevent the following text from flowing into it.
+
+```
+<div class="u-clearfix">
+    <div style="float:left; width:100%; height:60px; background:black;"></div>
+</div>
+<em>This text would normally flow up into the black box if the box above</em>
+```
+
+_More information see: <http://css-tricks.com/snippets/css/clear-fix>_
+
+#### Visually hidden
+
+Hide an element from view while keeping it accessible to screen readers.
+
+For example, to create a link with a social network icon, but allow non-sighted users to understand the context, add descriptive text with the `u-visually-hidden` class.
+
+```
+<h1>
+    <a href="#">
+        <span class="cf-icon cf-icon-twitter-square"></span>
+        <span class="u-visually-hidden">Share on Twitter</span>
+    </a>
+</h1>
+```
+
+#### Inline block
+
+Adds a `.lt-ie8` fallback to hack inline block for IE 7 and below.
+
+```
+<div class="u-inline-block"></div>
+```
+
+#### Float right
+
+```
+<div class="u-right"></div>
+```
+
+#### Break word
+
+Force word breaks within an element. Useful for small containers where text may over-run the width of the container.
+
+<div style="width: 100px;">
+    This link should break:
+    <br>
+    <a class="u-break-word" href="#">
+        something@something.com
+    </a>
+    <br>
+    <br>
+    This link should not:
+    <br>
+    <a href="#">
+        something@something.com
+    </a>
+</div>
+
+```
+<div style="width: 100px;">
+    This link should break:
+    <br>
+    <a class="u-break-word" href="#">
+        something@something.com
+    </a>
+    <br>
+    <br>
+    This link should not:
+    <br>
+    <a href="#">
+        something@something.com
+    </a>
+</div>
+```
+
+_This only works in IE8 when the element with the .u-break-word class has layout. See <http://stackoverflow.com/questions/3997223/word-wrapbreak-word-not-working-in-ie8> for more information._
+
+#### Margin utilities
+
+Force a margin top or bottom on an element in pixels.
+
+`.u-m[p][#]`
+
+```
+<h1 class="u-mb0">Heading with zero bottom margin</h1>
+```
+
+_`[p]` is the position, use `t` for top or `b` for bottom. `[#]` is the pixel value, available options are 0, 5, 10, 15, 20, 30, 45, 60_
+
+#### Width utilities
+
+Set the width of an element in percentages.
+
+**NOTE: Inline style properties for demonstration only.**
+
+<div class="u-w100pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w100pct</code>
+</div>
+<div class="u-w90pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w90pct</code>
+</div>
+<div class="u-w80pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w80pct</code>
+</div>
+<div class="u-w70pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w70pct</code>
+</div>
+<div class="u-w60pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w60pct</code>
+</div>
+<div class="u-w50pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w50pct</code>
+</div>
+<div class="u-w40pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w40pct</code>
+</div>
+<div class="u-w30pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w30pct</code>
+</div>
+<div class="u-w20pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w20pct</code>
+</div>
+<div class="u-w10pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w10pct</code>
+</div>
+<div class="u-w75pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w75pct</code>
+</div>
+<div class="u-w25pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w25pct</code>
+</div>
+<div class="u-w66pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w66pct</code>
+</div>
+<div class="u-w33pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w33pct</code>
+</div>
+
+```
+<div class="u-w100pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w100pct</code>
+</div>
+<div class="u-w90pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w90pct</code>
+</div>
+<div class="u-w80pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w80pct</code>
+</div>
+<div class="u-w70pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w70pct</code>
+</div>
+<div class="u-w60pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w60pct</code>
+</div>
+<div class="u-w50pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w50pct</code>
+</div>
+<div class="u-w40pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w40pct</code>
+</div>
+<div class="u-w30pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w30pct</code>
+</div>
+<div class="u-w20pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w20pct</code>
+</div>
+<div class="u-w10pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w10pct</code>
+</div>
+<div class="u-w75pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w75pct</code>
+</div>
+<div class="u-w25pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w25pct</code>
+</div>
+<div class="u-w66pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w66pct</code>
+</div>
+<div class="u-w33pct" style="background: #f4edf3; margin-bottom: 1px;">
+    <code>.u-w33pct</code>
+</div>
+```
+
+#### Width-specific display
+
+Show or hide content based on the current display size.
+
+__NOTE: Inline style properties for demonstration only__
+
+##### Show on mobile
+
+Displays content on screen widths under 601px.
+
+<div style="border: 1px solid black; height: 22px; padding: 5px;">
+    <p class="u-show-on-mobile">Visible on mobile</p>
+</div>
+
+```
+<div style="border: 1px solid black; height: 22px; padding: 5px;">
+    <p class="u-show-on-mobile">Visible on mobile</p>
+</div>
+```
+
+##### Hide on mobile
+
+Hides content on screens widths under 601px.
+
+<div style="border: 1px solid black; height: 22px; padding: 5px;">
+    <p class="u-hide-on-mobile">Hidden on mobile</p>
+</div>
+
+```
+<div style="border: 1px solid black; height: 22px; padding: 5px;">
+    <p class="u-hide-on-mobile">Hidden on mobile</p>
+</div>
+```
+
+
+### Mixins
+
+#### Align with button
+
+Align an element vertically with the text within a button that may be to either side.
+
+```
+.u-align-with-btn(@font-size: @base-font-size-px);
+```
+
+_Pass font-size as the argument for calculating spacing, default value is `@base-font-size-px`._
+
+#### Flexible proportional containers
+
+Utilize intrinsic ratios to create a flexible container that retains an aspect ratio. When image tags scale they retain their aspect ratio, but if you need a flexible video you will need to use this mixin.
+
+_Read more about intrinsic rations: <http://alistapart.com/article/creating-intrinsic-ratios-for-video>_
+
+```
+.u-flexible-container-mixin(@width: 16, @height: 9);
+```
+
+In addition to the mixin, there are two default classes available for building 16:9 and 4:3 containers.
+
+__NOTE: Inline style properties for demonstration only__
+
+To create a 16:9 flexible video player, wrap the video element in an element with `u-flexible-container` and add the `u-flexible-container_inner` to the video element.
+
+<div class="u-flexible-container">
+    <video class="u-flexible-container_inner"
+           style="background:#75787B;"
+           controls>
+    </video>
+</div>
+
+```
+<div class="u-flexible-container">
+    <video class="u-flexible-container_inner"
+           style="background:#75787B;"
+           controls>
+    </video>
+</div>
+```
+
+To create a flexible container with only a background (no inner video or object element), ommit the inner container.
+
+<div class="u-flexible-container"
+     style="background-image: url(http://placekitten.com/700/394);
+            background-position: center center;
+            background-repeat: no-repeat;"></div>
+
+```
+<div class="u-flexible-container"
+     style="background-image: url(http://placekitten.com/700/394);
+            background-position: center center;
+            background-repeat: no-repeat;"></div>
+```
+
+To create a 4:3 flexible video player, add the `__4_3` modifier to the container
+
+<div class="u-flexible-container u-flexible-container__4-3">
+    <video class="u-flexible-container_inner"
+           style="background:#75787B;"
+           controls>
+    </video>
+</div>
+
+```
+<div class="u-flexible-container u-flexible-container__4-3">
+    <video class="u-flexible-container_inner"
+           style="background:#75787B;"
+           controls>
+    </video>
+</div>
+```
+
+_When using the mixin, pass the width as the first argument, and the height as the second argument, default values are `16, 9`._
+
+_Original mixin credit: <https://gist.github.com/craigmdennis/6655047>_
+
+#### Link Modifiers
+
+Modify link properties using the following mixins.
+
+##### Link Colors
+
+Calling the mixin without arguments will set the following states - default(pacific), :hover(pacific-50), :focus:(pacific), :visited teal, :active navy.
+
+`u-link__colors()`
+
+Passing a single argument into the mixin will set the color for the default, :visited, :hover, :focus, :active states.
+
+`u-link__colors(@c)`
+
+Passing two arguments into the mixin will set the color for the default, :visited, and :active states as the first argument, and :hover and :focus as the second argument.
+
+`u-link__colors(@c, @h)`
+
+Passing five arguments will set the color for the default, :visited, :hover, :focus, and :active states respectively.
+
+`u-link__colors(@c, @v, @h, @f, @a)`
+
+Passing ten arguments will set the text (default, :visited, :hover, :focus, and :active states in the first five arguments) and border colors (default, :visited, :hover, :focus, and :active states in the following five arguments) separately.
+
+`u-link__colors(@c, @v, @h, @f, @a, @bc, @bv, @bh, @bf, @ba)`
+
+__A base mixin of `u-link__colors-base()` exists, but please refrain from using this mixin directly in order to promote consistent naming throughout this project. If you need to set colors for all states of a link, use `.u-link__colors(@c, @v, @h, @f, @a)`.__
+
+##### Link borders
+
+Force the default bottom border on the default and :hover states.
+
+`.u-link__border()`
+
+Turn off the default bottom border on the default and :hover states.
+
+`.u-link__no-border()`
+
+Turn off the default bottom border on the default state but force a bottom border on the :hover state.
+
+`.u-link__hover-border()`
+
+##### Link children
+
+Calling this mixin without arguments will set the default color for the hover state of a child within a link, without affecting the link itself.
+
+`.u-link__hover-child()`
+
+Passing a single argument into the mixin will set a custom color for the hover state of a child within a link, without affecting the link itself.
+
+`.u-link__hover-child(@c)`
+
+#### Small Text Utility
+
+##### Class
+
+Sets the element to 14px (in ems).
+
+`.u-small-text`
+
+_To be used on default 16px text only. To use on text set to another size, use the mixin below._
+
+##### Mixin
+
+Sets the element to 14px (in ems) based on the text size passed as `@context`.
+
+`.u-small-text(@context)`
+
+```
+// Ex.
+.example {
+  font-size: unit(20px / @base-font-size-px, em);
+
+  small {
+    .u-small-text(20px);
+  }
+}
+
+// Compiles to
+.example {
+  font-size: 1.25em;
+}
+
+.example small {
+  font-size: 0.7em;
+}
+```
+
+
+## Base Typography
+
+### Webfonts
+
+Sets the font-stack, weight, and style of an element.
+
+```
+.webfont-regular();
+.webfont-italic();
+.webfont-medium();
+.webfont-demi();
+```
+
+To use your own fonts in the webfont mixins, set your own font with the `@webfont-regular/italic/medium/demi` variables in your `theme-overrides.less` file.
+
+_These mixins also add the appropriate .lt-ie9 overrides. .lt-ie9 overrides are necessary to override font-style and font-weight each time the webfont is used. These overrides are built into the webfont mixins so you get them automatically. Note that this requires you to use conditional classes on the <html> element: <https://github.com/h5bp/html5-boilerplate/blob/v4.3.0/doc/html.md#conditional-html-classes.>_
+
+### Type hierarchy
+
+#### Default body type
 
 <p>Lorem ipsum dolor sit amet, <em>consectetur adipisicing elit</em>, sed do eiusmod <strong>tempor incididunt</strong> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
@@ -8,26 +616,594 @@
 <p>Lorem ipsum dolor sit amet, <em>consectetur adipisicing elit</em>, sed do eiusmod <strong>tempor incididunt</strong> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 ```
 
+#### Heading level 1
 
-## Margins
+<h1>Example heading element</h1>
+<p class="h1">A non-heading element</p>
 
-### Consistent vertical margins
+```
+<h1>Example heading element</h1>
+<p class="h1">A non-heading element</p>
+```
+
+_Responsive heading. At small screen sizes, displays as Heading 2._
+
+#### Heading level 2
+
+<h2>Example heading element</h2>
+<p class="h2">A non-heading element</p>
+
+```
+<h2>Example heading element</h2>
+<p class="h2">A non-heading element</p>
+```
+
+_Responsive heading. At small screen sizes, displays as Heading 3._
+
+#### Heading level 3
+
+<h3>Example heading element</h3>
+<p class="h3">A non-heading element</p>
+
+```
+<h3>Example heading element</h3>
+<p class="h3">A non-heading element</p>
+```
+
+_Responsive heading. At small screen sizes, displays as Heading 4._
+
+#### Heading level 4
+
+<h4>Example heading element</h4>
+<p class="h4">A non-heading element</p>
+
+```
+<h4>Example heading element</h4>
+<p class="h4">A non-heading element</p>
+```
+
+_Not a responsive heading._
+
+#### Heading level 5
+
+<h5>Example heading element</h5>
+<p class="h5">A non-heading element</p>
+
+```
+<h5>Example heading element</h5>
+<p class="h5">A non-heading element</p>
+```
+
+_Not a responsive heading._
+
+#### Heading level 6
+
+<h6>Example heading element</h6>
+<p class="h6">A non-heading element</p>
+
+```
+<h6>Example heading element</h6>
+<p class="h6">A non-heading element</p>
+```
+
+_Not a responsive heading._
+
+#### Lead paragraph
+
+<p class="lead-paragraph">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+```
+<p class="lead-paragraph">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+```
+
+_Responsive text. Displays as a Heading 3 on large screens; displays at Heading 4 size (but still Regular weight) on small screens._
+
+#### Display heading (aka "superheading")
+
+<h1 class="superheading">Example display heading</h1>
+
+```
+<h1 class="superheading">Example display heading</h1>
+```
+
+### Body copy element vertical margins
 
 <p>Paragraph margin example</p>
+<p>Paragraph margin example</p>
+<ul>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+</ul>
 <p>Paragraph margin example</p>
 
 ```
 <p>Paragraph margin example</p>
 <p>Paragraph margin example</p>
+<ul>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+</ul>
+<p>Paragraph margin example</p>
 ```
 
+- _Applies 15px bottom margin to all `p`, `ul`, `ol`, `dl`, `figure`, `table`, and `blockquote` elements._
+- _Applies -5px top margin to lists following paragraphs to reduce margin between them to 10px._
+- _Applies 8px bottom margin to list items that are not within a nav element._
+- _Assumes that the font size of each of these items remains the default._
 
-## Default link
+### Default links
 
-### Default state
+#### Default state
 
 <a href="#">Default link style</a>
 
 ```
 <a href="#">Default link style</a>
+```
+
+#### Visited state
+
+<a href="#" class="visited">Visited link style</a>
+
+```
+<a href="#" class="visited">Visited link style</a>
+```
+
+#### Hovered state
+
+<a href="#" class="hover">Visited link style</a>
+
+```
+<a href="#" class="hover">Visited link style</a>
+```
+
+#### Focused state
+
+<a href="#" class="focus">Visited link style</a>
+
+```
+<a href="#" class="focus">Visited link style</a>
+```
+
+#### Active state
+
+<a href="#" class="active">Visited link style</a>
+
+```
+<a href="#" class="active">Visited link style</a>
+```
+
+_Note that the .visited, .hover, .focus, .active classes are for demonstration purposes only and should not be used in production._
+
+### Underlined links
+
+Links are automatically underlined when they are a child of a `p`, `li`, or `dd`. To enable them elsewhere, simply add a bottom-border-width to the link.
+
+#### States
+
+<p>
+    <a href="#">Default</a>,
+    <a href="#" class="visited">Visited</a>,
+    <a href="#" class="hover">Hovered</a>,
+    <a href="#" class="focus">Focused</a>,
+    <a href="#" class="active">Active</a>
+</p>
+
+```
+<p>
+    <a href="#">Default</a>,
+    <a href="#" class="visited">Visited</a>,
+    <a href="#" class="hover">Hovered</a>,
+    <a href="#" class="focus">Focused</a>,
+    <a href="#" class="active">Active</a>
+</p>
+```
+
+_Note that the .visited, .hover, .focus, .active classes are for demonstration purposes only and should not be used in production._
+
+#### Underline conditions
+
+<p>
+    <a href="#">A child of a paragraph</a>
+</p>
+<ul>
+    <li>
+        <a href="#">A child of a list item</a>
+    </li>
+</ul>
+<dl>
+    <dt>
+        Definition list term
+    </dt>
+    <dd>
+        <a href="#">A child of a definition list description</a>
+    </dd>
+</dl>
+
+```
+<p>
+    <a href="#">A child of a paragraph</a>
+</p>
+<ul>
+    <li>
+        <a href="#">A child of a list item</a>
+    </li>
+</ul>
+<dl>
+    <dt>
+        Definition list term
+    </dt>
+    <dd>
+        <a href="#">A child of a definition list description</a>
+    </dd>
+</dl>
+```
+
+#### Exceptions for underlined links
+
+Links within a nav element are not underlined.
+
+<nav>
+    <p>
+        <a href="#">A child of a paragraph</a>
+    </p>
+    <ul>
+        <li>
+            <a href="#">A child of a list item</a>
+        </li>
+    </ul>
+    <dl>
+        <dt>
+            Definition list term
+        </dt>
+        <dd>
+            <a href="#">A child of a definition list description</a>
+        </dd>
+    </dl>
+</nav>
+
+```
+<nav>
+    <p>
+        <a href="#">A child of a paragraph</a>
+    </p>
+    <ul>
+        <li>
+            <a href="#">A child of a list item</a>
+        </li>
+    </ul>
+    <dl>
+        <dt>
+            Definition list term
+        </dt>
+        <dd>
+            <a href="#">A child of a definition list description</a>
+        </dd>
+    </dl>
+</nav>
+```
+
+### Lists
+
+#### Unordered list
+
+<p> Paragraph example for visual reference</p>
+<ul>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+</ul>
+
+```
+<p> Paragraph example for visual reference</p>
+<ul>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+</ul>
+```
+
+#### Ordered list
+
+<p>Paragraph example for visual reference</p>
+<ul>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+</ul>
+
+```
+<p>Paragraph example for visual reference</p>
+<ul>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+</ul>
+```
+
+### Tables
+
+#### Standard lable
+
+<table>
+    <thead>
+        <tr>
+            <th>Column 1 header</th>
+            <th>Column 2 header</th>
+            <th>Column 3 header</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1, column 1</td>
+            <td>Row 1, column 2</td>
+            <td>Row 1, column 3</td>
+        </tr>
+        <tr>
+            <td>Row 2, column 1</td>
+            <td>Row 2, column 2</td>
+            <td>Row 2, column 3</td>
+        </tr>
+        <tr>
+            <td>Row 3, column 1</td>
+            <td>Row 3, column 2</td>
+            <td>Row 3, column 3</td>
+        </tr>
+    </tbody>
+</table>
+
+```
+<table>
+    <thead>
+        <tr>
+            <th>Column 1 header</th>
+            <th>Column 2 header</th>
+            <th>Column 3 header</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1, column 1</td>
+            <td>Row 1, column 2</td>
+            <td>Row 1, column 3</td>
+        </tr>
+        <tr>
+            <td>Row 2, column 1</td>
+            <td>Row 2, column 2</td>
+            <td>Row 2, column 3</td>
+        </tr>
+        <tr>
+            <td>Row 3, column 1</td>
+            <td>Row 3, column 2</td>
+            <td>Row 3, column 3</td>
+        </tr>
+    </tbody>
+</table>
+```
+
+### Block quote
+
+<blockquote cite="link-to-source">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
+    similique fugit hic eligendi praesentium officiis illum optio iusto
+    commodi eum tempore nisi ad in perferendis enim quo dolores.
+    Reprehenderit similique earum quibusdam possimus vitae esse
+    nesciunt mollitia sed beatae aliquid dolores iure a impedit quam
+    minus eum modi illum ducimus eligendi eveniet labore non sequi
+    voluptate et totam praesentium animi itaque asperiores dolorum
+    sunt laudantium repellat nam commodi. Perspiciatis natus aliquam
+    veniam officiis ducimus voluptatum ut necessitatibus non!
+</blockquote>
+
+```
+<blockquote cite="link-to-source">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
+    similique fugit hic eligendi praesentium officiis illum optio iusto
+    commodi eum tempore nisi ad in perferendis enim quo dolores.
+    Reprehenderit similique earum quibusdam possimus vitae esse
+    nesciunt mollitia sed beatae aliquid dolores iure a impedit quam
+    minus eum modi illum ducimus eligendi eveniet labore non sequi
+    voluptate et totam praesentium animi itaque asperiores dolorum
+    sunt laudantium repellat nam commodi. Perspiciatis natus aliquam
+    veniam officiis ducimus voluptatum ut necessitatibus non!
+</blockquote>
+```
+
+_Note that the use of a block quote is to quote an external work. See `.pull-quote` if you need to highlight an excerpt from the current work._
+_Note that it is best practice to document the URL of a quoted work using the cite attribute._
+
+
+## Base forms
+
+_Visit https://github.com/cfpb/cf-forms for advanced form field patterns._
+
+### Form labels
+
+#### Default label
+
+<label>Form label</label>
+
+```
+<label>Form label</label>
+```
+
+#### Label for a radio or checkbox
+
+<input type="radio" id="radio-input">
+<label for="radio-input">Radio label</label>
+<input type="checkbox" id="checkbox-input">
+<label for="checkbox-input">Checkbox label</label>
+
+```
+<input type="radio" id="radio-input">
+<label for="radio-input">Radio label</label>
+<input type="checkbox" id="checkbox-input">
+<label for="checkbox-input">Checkbox label</label>
+```
+
+### Form Elements
+
+_Note that the `.focus` class is for documentation purposes only and should not be used in production._
+
+#### `type="text"`
+
+<input type="text" value="Lorem ipsum">
+<input class="focus" type="text" value="Lorem ipsum">
+<br><br>
+<input placeholder="Lorem ipsum" type="text" value="">
+
+```
+<input type="text" value="Lorem ipsum">
+<input class="focus" type="text" value="Lorem ipsum">
+<br><br>
+<input placeholder="Lorem ipsum" type="text" value="">
+```
+
+#### `type="search"`
+
+<input type="search" value="Lorem ipsum">
+<input class="focus" type="search" value="Lorem ipsum">
+<br><br>
+<input placeholder="Lorem ipsum" type="search" value="">
+
+```
+<input type="search" value="Lorem ipsum">
+<input class="focus" type="search" value="Lorem ipsum">
+<br><br>
+<input placeholder="Lorem ipsum" type="search" value="">
+```
+
+#### `type="email"`
+
+<input type="email" value="Lorem ipsum">
+<input class="focus" type="email" value="Lorem ipsum">
+<br><br>
+<input placeholder="Lorem ipsum" type="email" value="">
+
+```
+<input type="email" value="Lorem ipsum">
+<input class="focus" type="email" value="Lorem ipsum">
+<br><br>
+<input placeholder="Lorem ipsum" type="email" value="">
+```
+
+#### `type="url"`
+
+<input type="url" value="Lorem ipsum">
+<input class="focus" type="url" value="Lorem ipsum">
+<br><br>
+<input placeholder="Lorem ipsum" type="url" value="">
+
+```
+<input type="url" value="Lorem ipsum">
+<input class="focus" type="url" value="Lorem ipsum">
+<br><br>
+<input placeholder="Lorem ipsum" type="url" value="">
+```
+
+#### `type="tel"`
+
+<input type="tel" value="Lorem ipsum">
+<input class="focus" type="tel" value="Lorem ipsum">
+<br><br>
+<input placeholder="Lorem ipsum" type="tel" value="">
+
+```
+<input type="tel" value="Lorem ipsum">
+<input class="focus" type="tel" value="Lorem ipsum">
+<br><br>
+<input placeholder="Lorem ipsum" type="tel" value="">
+```
+
+#### `type="number"`
+
+<input type="number" value="1000">
+<input class="focus" type="number" value="1000">
+<br><br>
+<input placeholder="Lorem ipsum" type="number" value="">
+
+```
+<input type="number" value="1000">
+<input class="focus" type="number" value="1000">
+<br><br>
+<input placeholder="Lorem ipsum" type="number" value="">
+```
+
+#### `textarea`
+
+<textarea>Lorem ipsum</textarea>
+<textarea class="focus">Lorem ipsum</textarea>
+
+```
+<textarea>Lorem ipsum</textarea>
+<textarea class="focus">Lorem ipsum</textarea>
+```
+
+#### Multiselect
+
+<select multiple>
+    <option value="option1">Lorem</option>
+    <option value="option2">Ipsum</option>
+    <option value="option3">Dolor</option>
+    <option value="option4">Sit</option>
+</select>
+<select class="focus" multiple>
+    <option value="option1">Lorem</option>
+    <option value="option2">Ipsum</option>
+    <option value="option3">Dolor</option>
+    <option value="option4">Sit</option>
+</select>
+
+```
+<select multiple>
+    <option value="option1">Lorem</option>
+    <option value="option2">Ipsum</option>
+    <option value="option3">Dolor</option>
+    <option value="option4">Sit</option>
+</select>
+<select class="focus" multiple>
+    <option value="option1">Lorem</option>
+    <option value="option2">Ipsum</option>
+    <option value="option3">Dolor</option>
+    <option value="option4">Sit</option>
+</select>
+```
+
+
+## Base images
+
+### Full-width images
+
+Gives all images a default max-width of 100% of their container.
+
+<img src="http://placekitten.com/800/40" alt="">
+
+```
+<img src="http://placekitten.com/800/40" alt="">
+```
+
+### Figure
+
+<figure>
+    <img src="http://placekitten.com/340/320">
+</figure>
+
+```
+<figure>
+    <img src="http://placekitten.com/340/320">
+</figure>
+```
+
+### Bordered figure
+
+<figure class="figure__bordered">
+    <img src="http://placekitten.com/340/320">
+</figure>
+
+```
+<figure class="figure__bordered">
+    <img src="http://placekitten.com/340/320">
+</figure>
 ```
