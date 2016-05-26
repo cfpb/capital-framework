@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 3.5.0 - 2016-05-26
+
+### Added
 - **cf-core:** Add respond-to-dpi mixin and respond-to-print mixin
 
 ### Changed
