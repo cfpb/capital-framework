@@ -4,7 +4,8 @@
     - subtitle: "generator-cf"
       subhref: "https://github.com/cfpb/generator-cf"
     - subtitle: "Compiled source"
-      subhref: "http://registry.npmjs.org/capital-framework/-/capital-framework-3.1.1.tgz"
+      subhref: "https://npmcdn.com/capital-framework/dist/"
+      class: "cf-download"
 
 - title: "Components"
   href: "/components/"

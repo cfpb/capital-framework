@@ -1,3 +1,42 @@
+<p>A set of HTML and CSS layout helpers.</p>
+<h2>Dependencies</h2>
+<ul>
+<li>cf-core</li>
+<li>cf-grid</li>
+</ul>
+<h2>Variables</h2>
+<p>Theme variables for setting the color and sizes.
+Overwrite them in your own project by duplicating the variable <code>@key: value</code>.</p>
+<p>Ex. to change the color of your main content border
+add <code>@content_main-border: #cc0000;</code> to your project.</p>
+<h3>Color variables</h3>
+<pre><code>// .block
+@block__bg:                     lighten(#3a8899, 55%);
+@block__border:                 #3a8899;
+@block__border-top:             @block__border;
+@block__border-right:           @block__border;
+@block__border-bottom:          @block__border;
+@block__border-left:            @block__border;
+
+// .content_main
+@content_main-border:           #3a8899;
+
+// .content_sidebar
+@content_sidebar-bg:            lighten(#3a8899, 55%);
+@content_sidebar-border:        #3a8899;
+
+// .content_bar
+@content_bar:                   #3a8899;
+
+// .content_line
+@content_line:                  #3a8899;
+
+// .grid_column__top-divider
+@grid_column__top-divider:      #3a8899;
+
+// .grid_column__top-divider
+@grid_column__left-divider:     #3a8899;
+</code></pre>
 <h2>Content layouts</h2>
 <h3>Standard content columns</h3>
 <div class="content-l">
@@ -219,139 +258,845 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>Focused state</h3>
-<p><a href="#" class="btn focus" title="Test button">Anchor Tag</a>
-<button class="btn focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn focus"></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn focus<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn focus<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn focus<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<h2>Content layout column dividers</h2>
+<p>Adds dividers between specified <code>.content-l_col-X-X</code> classes.</p>
+<p>Layout dividers work in conjunction with <code>.content-l_col-X-X</code> elements and have
+specific needs depending on which column element variant they are attached to.
+For example <code>.content-l_col-1-2</code> has different divider needs than <code>.content-l_col-1-3</code>
+because they may break to single columns at different breakpoints.</p>
+<p>Dividers use absolute positioning relative to the .content-l element and depend
+on <code>.content-l</code> using <code>position: relative;</code>.
+This allows vertical dividers to span the height of the tallest column.
+Just be aware that if you have more than one row of columns,
+and each row has columns of different widths, the borders will cause unwanted
+overlapping since they will span the height of the entire .content-l element.</p>
+<div class="content-l content-l__large-gutters">
+    <div class="content-l_col content-l_col-1-2">
+        <img src="http://placekitten.com/600/320" alt="Placeholder image">
+        <br>
+        Half-width column (spans 6/12 columns)
+    </div>
+    <div class="content-l_col content-l_col-1-2 content-l_col__before-divider">
+        <img src="http://placekitten.com/600/320" alt="Placeholder image">
+        <br>
+        Half-width column (spans 6/12 columns)
+    </div>
+</div>
+<br>
+<div class="content-l content-l__large-gutters">
+    <div class="content-l_col content-l_col-1-3">
+        Third-width column (spans 4/12 columns)
+    </div>
+    <div class="content-l_col content-l_col-1-3 content-l_col__before-divider">
+        Third-width column (spans 4/12 columns)
+    </div>
+    <div class="content-l_col content-l_col-1-3 content-l_col__before-divider">
+        Third-width column (spans 4/12 columns)
+    </div>
+</div>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content-l content-l__large-gutters<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content-l_col content-l_col-1-2<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>img</span> <span class="token attr-name" >src</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>http://placekitten.com/600/320<span class="token punctuation" >"</span></span> <span class="token attr-name" >alt</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Placeholder image<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>br</span><span class="token punctuation" >&gt;</span></span>
+        Half-width column (spans 6/12 columns)
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content-l_col content-l_col-1-2 content-l_col__before-divider<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>img</span> <span class="token attr-name" >src</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>http://placekitten.com/600/320<span class="token punctuation" >"</span></span> <span class="token attr-name" >alt</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Placeholder image<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>br</span><span class="token punctuation" >&gt;</span></span>
+        Half-width column (spans 6/12 columns)
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>br</span><span class="token punctuation" >&gt;</span></span>
+<span class="token comment" spellcheck="true" >&lt;!-- Starting a new .content-l so that the dividers from
+     .content-l_col.content-l_col-1-2.content-l_col__before-divider
+     won't overlap the .content-l_col-1-3 columns. --&gt;</span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content-l content-l__large-gutters<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content-l_col content-l_col-1-3<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        Third-width column (spans 4/12 columns)
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content-l_col content-l_col-1-3 content-l_col__before-divider<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        Third-width column (spans 4/12 columns)
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content-l_col content-l_col-1-3 content-l_col__before-divider<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        Third-width column (spans 4/12 columns)
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>Active state</h3>
-<p><a href="#" class="btn active" title="Test button">Anchor Tag</a>
-<button class="btn active" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn active"></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn active<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn active<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn active<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<h2>Content bar</h2>
+<p>A 10 pixel bar that divides the header or hero from the main content.
+This is necessary because we don't have a predictable place to put a full-width border.
+It needs to be under the hero on pages with heroes, but under the header if there is no hero.
+<code>.content_bar` must come after</code>.content_hero<code>but before ``.content_wrapper</code>.</p>
+<div class="content_bar"></div>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_bar<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Secondary button</h2>
-<h3>Default state</h3>
-<p><a href="#" class="btn btn__secondary">Anchor Tag</a>
-<button class="btn btn__secondary" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__secondary"></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__secondary<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__secondary<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__secondary<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<h2>Content line</h2>
+<p>A 1 pixel edge to edge bar that can divide content.</p>
+<div class="content_line"></div>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_line<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>Hovered state</h3>
-<p><a href="#" class="btn btn__secondary hover">Anchor Tag</a>
-<button class="btn btn__secondary hover" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__secondary hover"></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__secondary hover<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__secondary hover<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__secondary hover<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<h2>Main content and sidebar</h2>
+<p>Standard layout for the main content area and sidebar.</p>
+<p>By default <code>.content_main</code> and <code>.content_sidebar</code> stack vertically.
+When using the modifiers described below to create columns,
+the columns will remain stacked for smaller screens and then convert to to columns at 801px.</p>
+<p><code>.content_bar</code> must come after <code>.content_hero</code> (if it exists) but before <code>.content_wrapper</code>.
+Inline styling is for demonstration purposes only; do not include it in your markup.</p>
+<main class="content" role="main">
+    <section class="content_hero" style="background: #E3E4E5">
+        Content hero
+    </section>
+    <div class="content_bar"></div>
+    <div class="content_wrapper">
+        <section class="content_main">
+            Main content area
+        </section>
+        <aside class="content_sidebar" style="background: #F1F2F2">
+            Sidebar
+        </aside>
+    </div>
+</main>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>main</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_hero<span class="token punctuation" >"</span></span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span> <span class="token hexcode" >#E3E4E5</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        Content hero
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_bar<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Main content area
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>aside</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_sidebar<span class="token punctuation" >"</span></span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span> <span class="token hexcode" >#F1F2F2</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Sidebar
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>aside</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>main</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>Focused state</h3>
-<p><a href="#" class="btn btn__secondary focus">Anchor Tag</a>
-<button class="btn btn__secondary focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__secondary focus"></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__secondary focus<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__secondary focus<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__secondary focus<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<h2>Left-hand navigation layout</h2>
+<p>Add a class of <code>.content__L-R</code> to <code>main.content</code> to determine the width ratio of <code>.content_main</code> and <code>.content_sidebar</code>,
+where 'L' is the left-hand item and 'R' is the right-hand item.
+The two common configurations are 1-3 (sidebar on the left, content on the right, in a ratio of 1:3)
+and 2-1 (content on the left, sidebar on the right, in a ratio of 2:1).</p>
+<p>It is assumed that the content is wider than the sidebar.</p>
+<main class="content content__1-3" role="main">
+    <div class="content_bar"></div>
+    <div class="content_wrapper">
+        <aside class="content_sidebar">
+            Section navigation
+        </aside>
+        <section class="content_main">
+            <h2>Main content area</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cum corrupti tempora nam nihil qui mollitia consectetur
+                corporis nemo culpa dolorum! Laborum at eos deleniti
+                consequatur itaque officiis debitis quisquam! Provident!
+            </p>
+        </section>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>main</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content content__1-3<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_bar<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>aside</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_sidebar<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Section navigation
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>aside</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>h2</span><span class="token punctuation" >&gt;</span></span>Main content area<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>h2</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cum corrupti tempora nam nihil qui mollitia consectetur
+                corporis nemo culpa dolorum! Laborum at eos deleniti
+                consequatur itaque officiis debitis quisquam! Provident!
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>main</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>footer</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>footer<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>contentinfo<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        Footer
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>footer</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>Active state</h3>
-<p><a href="#" class="btn btn__secondary active">Anchor Tag</a>
-<button class="btn btn__secondary active" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__secondary active"></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__secondary active<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__secondary active<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__secondary active<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<h2>Right-hand sidebar layout</h2>
+<p>Add a class of <code>.content__L-R</code> to <code>main.content</code> to determine the width ratio of <code>.content_main</code> and <code>.content_sidebar</code>,
+where 'L' is the left-hand item and 'R' is the right-hand item.
+The two common configurations are 1-3 (sidebar on the left, content on the right, in a ratio of 1:3)
+and 2-1 (content on the left, sidebar on the right, in a ratio of 2:1).
+It is assumed that the content is wider than the sidebar.</p>
+<p>Inline styling is for demonstration purposes only; do not include it in your markup.</p>
+<main class="content content__2-1" role="main">
+    <div class="content_bar"></div>
+    <div class="content_wrapper">
+        <section class="content_main">
+            <h2>Main content area</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cum corrupti tempora nam nihil qui mollitia consectetur
+                corporis nemo culpa dolorum! Laborum at eos deleniti
+                consequatur itaque officiis debitis quisquam! Provident!
+            </p>
+        </section>
+        <aside class="content_sidebar" style="background: #F1F2F2">
+            Sidebar
+        </aside>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>main</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content content__2-1<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_bar<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>h2</span><span class="token punctuation" >&gt;</span></span>Main content area<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>h2</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cum corrupti tempora nam nihil qui mollitia consectetur
+                corporis nemo culpa dolorum! Laborum at eos deleniti
+                consequatur itaque officiis debitis quisquam! Provident!
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>aside</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_sidebar<span class="token punctuation" >"</span></span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span> <span class="token hexcode" >#F1F2F2</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Sidebar
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>aside</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>main</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>footer</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>footer<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>contentinfo<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        Footer
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>footer</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Destructive action button</h2>
-<h3>Default state</h3>
-<p><a href="#" class="btn btn__warning">Anchor Tag</a>
-<button class="btn btn__warning" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__warning"></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__warning<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__warning<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__warning<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<h2>Narrow content column option</h2>
+<p>Add a class of <code>.content_main__narrow</code> to <code>.content_main</code> to get a one-column
+(in a 12-column grid) gutter on the right side.</p>
+<p>Inline styling is for demonstration purposes only; do not include it in your markup.</p>
+<main class="content content__2-1" role="main">
+    <div class="content_bar"></div>
+    <div class="content_wrapper">
+        <section class="content_main content_main__narrow">
+            <h2>Main content area</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cum corrupti tempora nam nihil qui mollitia consectetur
+                corporis nemo culpa dolorum! Laborum at eos deleniti
+                consequatur itaque officiis debitis quisquam! Provident!
+            </p>
+        </section>
+        <aside class="content_sidebar" style="background: #F1F2F2">
+            Sidebar
+        </aside>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>main</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content content__2-1<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_bar<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_main content_main__narrow<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>h2</span><span class="token punctuation" >&gt;</span></span>Main content area<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>h2</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cum corrupti tempora nam nihil qui mollitia consectetur
+                corporis nemo culpa dolorum! Laborum at eos deleniti
+                consequatur itaque officiis debitis quisquam! Provident!
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>aside</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_sidebar<span class="token punctuation" >"</span></span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span> <span class="token hexcode" >#F1F2F2</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Sidebar
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>aside</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>main</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>footer</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>footer<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>contentinfo<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        Footer
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>footer</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>Hovered state</h3>
-<p><a href="#" class="btn btn__warning hover">Anchor Tag</a>
-<button class="btn btn__warning hover" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__warning hover"></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__warning hover<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__warning hover<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__warning hover<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<h2>Flush bottom modifier</h2>
+<p>Add a class of <code>.content__flush-bottom</code> to <code>.content_main</code> or content_sidebar to remove bottom padding.</p>
+<main class="content content__1-3" role="main">
+    <div class="content_bar"></div>
+    <div class="content_wrapper">
+        <aside class="content_sidebar content__flush-bottom">
+            Side with no bottom padding...
+        </aside>
+        <section class="content_main content__flush-bottom">
+            Main content with no bottom padding...
+            <div class="block
+                        block__flush-bottom
+                        block__flush-sides
+                        block__bg">
+                .content__flush-bottom is very useful when you have a
+                content block inside of .content_main with a background
+                and flush sides.
+            </div>
+        </section>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>main</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content content__1-3<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_bar<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>aside</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_sidebar content__flush-bottom<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Side with no bottom padding...
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>aside</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_main content__flush-bottom<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Main content with no bottom padding...
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block
+                        block__flush-bottom
+                        block__flush-sides
+                        block__bg<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                .content__flush-bottom is very useful when you have a
+                content block inside of .content_main with a background
+                and flush sides.
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>main</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>footer</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>footer<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>contentinfo<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        Footer
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>footer</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>Focused state</h3>
-<p><a href="#" class="btn btn__warning focus">Anchor Tag</a>
-<button class="btn btn__warning focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__warning focus"></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__warning focus<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__warning focus<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__warning focus<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<h2>Flush top modifier (only on small screens)</h2>
+<p>Add a class of <code>.content__flush-top-on-small</code> to <code>.content_main</code> or <code>.content_sidebar</code>
+to remove top padding on small screens only.
+'Small' screens in this case refers to the breakpoint where <code>.content_main</code> and
+<code>.content_sidebar</code> single column layout.</p>
+<main class="content content__1-3" role="main">
+    <div class="content_bar"></div>
+    <div class="content_wrapper">
+        <aside class="content_sidebar content__flush-top-on-small">
+            Side with no top padding on small screens...
+        </aside>
+        <section class="content_main">
+            Main content
+        </section>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>main</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content content__1-3<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_bar<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>aside</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_sidebar content__flush-top-on-small<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Side with no top padding on small screens...
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>aside</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Main content
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>main</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>footer</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>footer<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>contentinfo<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        Footer
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>footer</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>Active state</h3>
-<p><a href="#" class="btn btn__warning active">Anchor Tag</a>
-<button class="btn btn__warning active" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__warning active"></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__warning active<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__warning active<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__warning active<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<h2>Flush all modifier (only on small screens)</h2>
+<p>Add a class of <code>.content__flush-all-on-small</code> to <code>.content_main</code> or <code>.content_sidebar</code>
+to remove all padding and border-based gutters on small screens only.
+'Small' screens in this case refers to the breakpoint where <code>.content_main</code> and <code>.content_sidebar</code> single column layout.</p>
+<main class="content content__1-3" role="main">
+    <div class="content_bar"></div>
+    <div class="content_wrapper">
+        <aside class="content_sidebar content__flush-all-on-small">
+            Side with no padding or border-based gutters on small screens...
+        </aside>
+        <section class="content_main">
+            Main content
+        </section>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>main</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content content__1-3<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_bar<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>aside</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_sidebar content__flush-all-on-small<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Side with no padding or border-based gutters on small screens...
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>aside</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Main content
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>main</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>footer</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>footer<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>contentinfo<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        Footer
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>footer</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Disabled button</h2>
-<h3>Default/hovered/active state</h3>
-<p><a href="#" class="btn btn__disabled">Anchor Tag</a>
-<button class="btn btn__disabled" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__disabled">
-<button class="btn" disabled title="Test button">Button Tag w/ disabled attr</button></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__disabled<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__disabled<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__disabled<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn<span class="token punctuation" >"</span></span> <span class="token attr-name" >disabled</span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag w/ disabled attr<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+<h2>Block</h2>
+<p><code>.block</code> is a base class with several modifiers that help you separate chunks of
+content via margins, padding, borders, and backgrounds.</p>
+<h3>Standard block example</h3>
+<p>The standard <code>.block</code> class by itself simply adds a margin of twice the gutter width to the top and bottom.</p>
+<p>Main content...</p>
+<div class="block">
+    Content block
+</div>
+<div class="block">
+    Content block
+</div>
+<div class="block">
+    Content block
+</div>
+<pre><code>Main content...
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>Focused state</h3>
-<p><a href="#" class="btn btn__disabled focus">Anchor Tag</a>
-<button class="btn btn__disabled focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__disabled focus">
-<button class="btn focus" disabled title="Test button">Button Tag w/ disabled attr</button></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__disabled focus<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__disabled focus<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__disabled focus<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn focus<span class="token punctuation" >"</span></span> <span class="token attr-name" >disabled</span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag w/ disabled attr<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+<h3>Border-top modifier</h3>
+<p>Adds top border to <code>.block</code>.</p>
+<p>Main content...</p>
+<div class="block block__border-top">
+    Content block with top border.
+</div>
+<pre><code>Main content...
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__border-top<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block with top border.
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Super button</h2>
-<h3>Default state</h3>
-<p><a href="#" class="btn btn__super">Anchor Tag</a>
-<button class="btn btn__super" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__super"></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__super<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__super<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__super<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<h3>Border-right modifier</h3>
+<p>Adds right border to <code>.block</code>.</p>
+<p>Main content...</p>
+<div class="block block__border-right">
+    Content block with right border.
+</div>
+<pre><code>Main content...
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__border-right<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block with right border.
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>Hovered state</h3>
-<p><a href="#" class="btn btn__super hover">Anchor Tag</a>
-<button class="btn btn__super hover" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__super hover"></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__super hover<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__super hover<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__super hover<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<h3>Border-bottom modifier</h3>
+<p>Adds bottom border to <code>.block</code>.</p>
+<p>Main content...</p>
+<div class="block block__border-bottom">
+    Content block with bottom border.
+</div>
+<pre><code>Main content...
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__border-bottom<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block with bottom border.
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>Focused state</h3>
-<p><a href="#" class="btn btn__super focus">Anchor Tag</a>
-<button class="btn btn__super focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__super focus"></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__super focus<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__super focus<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__super focus<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<h3>Border-left modifier</h3>
+<p>Adds left border to <code>.block</code>.</p>
+<p>Main content...</p>
+<div class="block block__border-left">
+    Content block with left border.
+</div>
+<pre><code>Main content...
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__border-left<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block with left border.
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>Active state</h3>
-<p><a href="#" class="btn btn__super active">Anchor Tag</a>
-<button class="btn btn__super active" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="btn btn__super active"></p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__super active<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__super active<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__super active<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<h3>Border modifier</h3>
+<p>Adds border on all sides to <code>.block</code>.</p>
+<p>Main content...</p>
+<div class="block block__border">
+    Content block with borders on all sides.
+</div>
+<pre><code>Main content...
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__border<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block with borders on all sides.
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Flush-top modifier</h3>
+<p>Removes the top margin from <code>.block</code>.</p>
+<p>Main content...</p>
+<div class="block block__flush-top">
+    Content block with no top margin.
+</div>
+<div class="block">
+    Content block
+</div>
+<pre><code>Main content...
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__flush-top<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block with no top margin.
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Flush-bottom modifier</h3>
+<p>Removes the bottom margin from <code>.block</code>.</p>
+<p>Main content...</p>
+<div class="block block__flush-bottom">
+    Content block with no bottom margin.
+</div>
+<div class="block">
+    Content block
+</div>
+<pre><code>Main content...
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__flush-bottom<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block with no bottom margin.
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Flush-sides modifier</h3>
+<p>Removes the side margin from <code>.block</code>.
+Typically used in conjunction with <code>.block__bg</code> to create a 'well' whose
+background extends into the left and right gutters. (See below.)</p>
+<main class="content content__1-3" role="main">
+    <div class="content_wrapper">
+        <aside class="content_sidebar">
+            Section navigation
+        </aside>
+        <section class="content_main">
+            Main content...
+            <aside class="block block__flush-sides">
+                Content block with no side margins.
+            </aside>
+        </section>
+    </div>
+</main>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>main</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content content__1-3<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>aside</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_sidebar<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Section navigation
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>aside</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Main content...
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>aside</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__flush-sides<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                Content block with no side margins.
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>aside</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>main</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Flush modifier</h3>
+<p>Removes the side, top, and bottom margin from <code>.block</code>.</p>
+<main class="content content__1-3" role="main">
+    <div class="content_wrapper">
+        <aside class="content_sidebar">
+            Section navigation
+        </aside>
+        <section class="content_main">
+            Main content...
+            <aside class="block block__flush">
+                Content block with no margins.
+            </aside>
+        </section>
+    </div>
+</main>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>main</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content content__1-3<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>aside</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_sidebar<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Section navigation
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>aside</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Main content...
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>aside</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__flush<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                Content block with no margins.
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>aside</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>main</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Background modifier</h3>
+<p>Adds a background color and padding to <code>.block</code>.
+Setup for (ems-equivalent) 30px padding on top and 60px on bottom.</p>
+<p>Main content...</p>
+<div class="block block__bg">
+    Content block with a background
+</div>
+<pre><code>Main content...
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__bg<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block with a background
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Background and flush-sides modifier combo example</h3>
+<p>This is an example of combining modifiers to get a flush padded bg with a <code>.block</code>.</p>
+<main class="content content__1-3" role="main">
+    <div class="content_wrapper">
+        <aside class="content_sidebar">
+            Section navigation
+        </aside>
+        <section class="content_main content__flush-bottom">
+            Main content...
+            <div class="block block__flush-sides block__bg">
+                Content block with a background and flush sides
+            </div>
+        </section>
+    </div>
+</main>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>main</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content content__1-3<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>aside</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_sidebar<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Section navigation
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>aside</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_main content__flush-bottom<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Main content...
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__flush-sides block__bg<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                Content block with a background and flush sides
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>main</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Padded-top modifier</h3>
+<p>Breaks top margin into margin &amp; padding. Useful in combination with
+<code>block__border-top</code> to add padding between block contents &amp; border.</p>
+<p>Main content...</p>
+<div class="block block__padded-top block__border-top">
+    Content block with reduced top margin & added top padding
+    and border.
+</div>
+<pre><code>Main content...
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__padded-top block__border-top<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block with reduced top margin &amp; added top padding
+    and border.
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Padded-bottom modifier</h3>
+<p>Breaks bottom margin into margin &amp; padding. Useful in combination with
+<code>block__border-bottom</code> to add padding between block contents &amp; border.</p>
+<p>Main content...</p>
+<div class="block block__padded-bottom block__border-bottom">
+    Content block with reduced bottom margin & added bottom padding
+    and border.
+</div>
+<pre><code>Main content...
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__padded-bottom block__border-bottom<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Content block with reduced bottom margin &amp; added bottom padding
+    and border.
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Sub blocks</h3>
+<p>Useful for when you need some consistent margins between blocks that are nested within other blocks.
+Note that the divs with inline styles are for demonstration purposes only and should not be used in production.</p>
+<div class="block block__sub">
+    <div style="background: #F1F2F2; padding: 8px;">
+        Sub content block
+    </div>
+</div>
+<div class="block block__sub">
+    <div style="background: #F1F2F2; padding: 8px;">
+        Sub content block
+    </div>
+</div>
+<div class="block block__sub">
+    <div style="background: #F1F2F2; padding: 8px;">
+        Sub content block
+    </div>
+</div>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__sub<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span> <span class="token hexcode" >#F1F2F2</span><span class="token punctuation" >;</span> <span class="token property" >padding</span><span class="token punctuation" >:</span> <span class="token number" >8</span>px<span class="token punctuation" >;</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        Sub content block
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__sub<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span> <span class="token hexcode" >#F1F2F2</span><span class="token punctuation" >;</span> <span class="token property" >padding</span><span class="token punctuation" >:</span> <span class="token number" >8</span>px<span class="token punctuation" >;</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        Sub content block
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__sub<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span> <span class="token hexcode" >#F1F2F2</span><span class="token punctuation" >;</span> <span class="token property" >padding</span><span class="token punctuation" >:</span> <span class="token number" >8</span>px<span class="token punctuation" >;</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        Sub content block
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Mixing content blocks with content layouts</h3>
+<p>You can safely combine <code>.block</code> with <code>.content-l_col</code> to achieve a column-based
+layout at larger screens with no top margins and a vertical layout at smaller screens that do have margins.
+Note that the divs with inline styles are for demonstration purposes only and should not be used in production.</p>
+<div class="content-l">
+    <div class="block content-l_col content-l_col-1-2">
+        <div style="background: #F1F2F2; padding: 8px;">
+            Content block that is also a content column.
+            Notice how my top margins only exist on smaller screens when
+            I need to stack vertically.
+        </div>
+    </div>
+    <div class="block content-l_col content-l_col-1-2">
+        <div style="background: #F1F2F2; padding: 8px;">
+            Content block that is also a content column.
+            Notice how my top margins only exist on smaller screens when
+            I need to stack vertically.
+        </div>
+    </div>
+</div>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content-l<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block content-l_col content-l_col-1-2<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span> <span class="token hexcode" >#F1F2F2</span><span class="token punctuation" >;</span> <span class="token property" >padding</span><span class="token punctuation" >:</span> <span class="token number" >8</span>px<span class="token punctuation" >;</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Content block that is also a content column.
+            Notice how my top margins only exist on smaller screens when
+            I need to stack vertically.
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block content-l_col content-l_col-1-2<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span> <span class="token hexcode" >#F1F2F2</span><span class="token punctuation" >;</span> <span class="token property" >padding</span><span class="token punctuation" >:</span> <span class="token number" >8</span>px<span class="token punctuation" >;</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Content block that is also a content column.
+            Notice how my top margins only exist on smaller screens when
+            I need to stack vertically.
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h2>Bleedbar sidebar styling</h2>
+<p>Simply add class <code>.content__bleedbar</code> to <code>main.content</code>.
+Only supports sidebars on the right, for now.
+Inline styling is for demonstration purposes only; do not include it in your markup.</p>
+<main class="content content__2-1 content__bleedbar" role="main">
+    <section class="content_hero" style="background: #E3E4E5">
+        Content hero
+    </section>
+    <div class="content_bar"></div>
+    <div class="content_wrapper">
+        <section class="content_main">
+            Main content area
+        </section>
+        <aside class="content_sidebar">
+            Bleeding sidebar
+        </aside>
+    </div>
+</main>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>main</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content content__2-1 content__bleedbar<span class="token punctuation" >"</span></span> <span class="token attr-name" >role</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_hero<span class="token punctuation" >"</span></span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span> <span class="token hexcode" >#E3E4E5</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        Content hero
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_bar<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_main<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Main content area
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>aside</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_sidebar<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            Bleeding sidebar
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>aside</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>main</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h2>cf-grid helpers</h2>
+<h3>.wrapper (base)</h3>
+<p>Turns an element into a cf-grid wrapper at 801px and above.
+Includes some explicit declarations for IE8 due to the fact that it doesn't support media queries.</p>
+<div class="wrapper">
+    Wrapper
+</div>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    Wrapper
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Column divider modifiers</h3>
+<p>cf-grid columns use left and right borders for fixed margins which means it's
+not possible to set visual left and right borders directly on them.
+Instead we can use the :before pseudo element and position it absolutely.
+The added benefit of doing it this way is that the border spans the entire
+height of the next parent using <code>position: relative;</code>.
+This means that the border will always match the height of the tallest column in the row.</p>
+<pre><code class="language-less"><span class="token selector" >.my-column-1-2</span> <span class="token punctuation brackets-braces" >{</span>
+
+    <span class="token comment" spellcheck="true" >// Creates a column that spans 6 out of 12 columns.</span>
+    <span class="token number" >.</span>grid_<span class="token function" >column</span><span class="token punctuation brackets-parentheses" >(</span><span class="token number" >6</span><span class="token punctuation" >,</span> <span class="token number" >12</span><span class="token punctuation brackets-parentheses" >)</span><span class="token punctuation" >;</span>
+
+    <span class="token comment" spellcheck="true" >// Add a top divider only at screen 599px and smaller.</span>
+    <span class="token selector" >.respond-to-max(599px</span> <span class="token punctuation brackets-braces" >{</span>
+        <span class="token mixin-usage function" >.grid_column__top-divider</span><span class="token punctuation brackets-parentheses" >(</span><span class="token punctuation brackets-parentheses" >)</span><span class="token punctuation" >;</span>
+    <span class="token punctuation brackets-braces" >}</span><span class="token punctuation brackets-parentheses" >)</span><span class="token punctuation" >;</span>
+
+    <span class="token comment" spellcheck="true" >// Add a left divider only at screen 600px and larger.</span>
+    <span class="token selector" >.respond-to-min(600px,</span> <span class="token punctuation brackets-braces" >{</span>
+        <span class="token mixin-usage function" >.grid_column__left-divider</span><span class="token punctuation brackets-parentheses" >(</span><span class="token punctuation brackets-parentheses" >)</span><span class="token punctuation" >;</span>
+    <span class="token punctuation brackets-braces" >}</span><span class="token punctuation brackets-parentheses" >)</span><span class="token punctuation" >;</span>
+
+<span class="token punctuation brackets-braces" >}</span>
+</code></pre>
+<h2>Featured content module</h2>
+<p>Featured content module, like a hero, consists of headline/text/optional call to action along with a visual. It is intended to be used in a main content column next to a sidebar.</p>
+<p>Text is full width &amp; displayed above the visual in the default/mobile view.
+At larger screen sizes, the text occupies a fixed portion of the screen (equal to the width of 5 of 12 columns at 701px &amp; 3 of 12 columns at 901px for desktop).
+The visual occupies the remaining space.
+The visual should be 640x360 (16x9 ratio) and resize to fit the height of the FCM with a static width and is center-cropped when it becomes too wide for the available space.</p>
+<section class="block block__border block__flush featured-content-module">
+    <div class="featured-content-module_text">
+        <p class=h4>
+            <span class="featured-content-module_icon cf-icon cf-icon-speech-bubble">
+</span> Featured </p>
+        <h2>Feature title</h2>
+        <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
+        <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
+    </div>
+    <div class="featured-content-module_visual"> <img class="featured-content-module_img" src="http://placekitten.com/g/540/270"> </div>
+</section>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>block block__border block__flush featured-content-module<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>featured-content-module_text<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span>h4</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>featured-content-module_icon cf-icon cf-icon-speech-bubble<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span> Featured <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>h2</span><span class="token punctuation" >&gt;</span></span>Feature title<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>h2</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>jump-link jump-link__underline<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span> <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>jump-link_text<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Read more about the feature<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span> <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>featured-content-module_visual<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span> <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>img</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>featured-content-module_img<span class="token punctuation" >"</span></span> <span class="token attr-name" >src</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>http://placekitten.com/g/540/270<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span> <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h2>Hero</h2>
+<p>Hero consists of a headline, a small amount of additional text,
+an optional call to action, and an illustration.
+Its background color is flush with the sides of the screen, and the content is centered with wrapper classes.</p>
+<p>The illustration can be customized by setting the background-image property on the .hero_image element.</p>
+<p>On small screens (or where media queries are not supported),
+the text spans the full width of the .hero_wrapper and the illustration is displayed underneath.</p>
+<p>For larger screen sizes, media queries are used to position the illustration to the right of the text.</p>
+<p>On desktop, the hero should not exceed 285px in height.
+The image should be 195px in height to conform to this standard.</p>
+<section class="content_hero hero">
+    <div class="hero_wrapper wrapper">
+        <div class="hero_text">
+            <h1 class="hero_heading">Hero title</h1>
+            <p class="hero_subhead">
+                Hero text goes here
+            </p>
+            <p class="hero_cta">
+                <a>Call to action</a>
+            </p>
+        </div>
+        <div class="hero_image" style="background-image: url('http://placekitten.com/g/400/195')"></div>
+    </div>
+</section>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>content_hero hero<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hero_wrapper wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hero_text<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>h1</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hero_heading<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Hero title<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>h1</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hero_subhead<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                Hero text goes here
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hero_cta<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span><span class="token punctuation" >&gt;</span></span>Call to action<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hero_image<span class="token punctuation" >"</span></span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background-image</span><span class="token punctuation" >:</span> <span class="token url" >url('http://placekitten.com/g/400/195')</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>

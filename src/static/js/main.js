@@ -19,3 +19,11 @@ $( '.feature-list' ).append(
   'cf-components.</p>' +
   '</section>'
 );
+
+if ( $('.cf-download').length ) {
+  $.get('https://npmcdn.com/capital-framework/package.json', function( data ) {
+    var v = data.version;
+    if ( !/\d+\.\d+\.\d+/.test(v) ) return;
+    $( '.cf-download' ).attr( 'href', 'http://registry.npmjs.org/capital-framework/-/capital-framework-' + v + '.tgz' );
+  });
+}
