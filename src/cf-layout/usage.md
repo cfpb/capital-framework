@@ -1229,9 +1229,9 @@ The visual should be 640x360 (16x9 ratio) and resize to fit the height of the FC
 
 <section class="block block__border block__flush featured-content-module">
     <div class="featured-content-module_text">
-        <p class=h4>
+        <div class="category-slug">
             <span class="featured-content-module_icon cf-icon cf-icon-speech-bubble">
-</span> Featured </p>
+</span> Featured </div>
         <h2>Feature title</h2>
         <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
         <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
@@ -1242,9 +1242,9 @@ The visual should be 640x360 (16x9 ratio) and resize to fit the height of the FC
 ```
 <section class="block block__border block__flush featured-content-module">
     <div class="featured-content-module_text">
-        <p class=h4>
+        <div class="category-slug">
             <span class="featured-content-module_icon cf-icon cf-icon-speech-bubble">
-</span> Featured </p>
+</span> Featured </div>
         <h2>Feature title</h2>
         <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
         <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
