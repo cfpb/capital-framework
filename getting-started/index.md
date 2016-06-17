@@ -3,14 +3,14 @@ layout: default
 title:  "Getting started"
 ---
 
-Capital Framework provides a set of modular HTML, CSS, and JavaScript patterns that can be used both collectively and individually. 
+Capital Framework provides a set of modular HTML, CSS, and JavaScript patterns that can be used both collectively and individually.
 There are several ways to integrate Capital Framework into your project:
 
 1. [Using the generator](#using-the-generator)
 1. [Using Less](#using-less)
 1. [Downloading the compiled CSS](#downloading-the-compiled-css)
 
-Our recommended workflow is to use the generator to scaffold out a new Capital Framework project. 
+Our recommended workflow is to use the generator to scaffold out a new Capital Framework project.
 This allows you to pick and choose your modules as well as providing a solid front end build process.
 
 ## Using the generator
@@ -53,7 +53,7 @@ The generator has created a starter Less file at `src/static/css/main.less`.
 This file includes all of the necessary imports needed for Capital Framework.
 There is also a starter JavaScript file at `src/static/js/main.js`.
 Both `main.less` and `main.js` are already wired into `Gruntfile.js` (or `gulp/tasks/`
-if you selected gulp) so compiling is as easy as running `npm run build`. It also 
+if you selected gulp) so compiling is as easy as running `npm run build`. It also
 copies files from `src` into `dist`, which will update what you see at `localhost:8000/`.
 
 ### Theming / Customizing
@@ -74,8 +74,8 @@ just remember to import them in `main.less` using the correct path.
 If you don't want to use the generator, you can just download the source files and
 import them into your project.
 
-Run `npm install capital-framework`. This will download Capital Framework to your 
-project's `node_modules` directory. You can then import the framework into 
+Run `npm install capital-framework`. This will download Capital Framework to your
+project's `node_modules` directory. You can then import the framework into
 your application's primary Less file:
 
 {% highlight css %}
@@ -100,7 +100,7 @@ $ npm install cf-buttons cf-icons
 
 ## Downloading the compiled CSS
 
-Capital Framework's compiled CSS can be [downloaded here](http://registry.npmjs.org/capital-framework/-/capital-framework-3.1.1.tgz).
+Capital Framework's compiled CSS can be <a class="cf-download" href="https://npmcdn.com/capital-framework/dist/">downloaded here</a>.
 Download it and copy the files found in the `dist/` directory to your project.
 Use standard `<link>` and `<script>` tags.
 

@@ -1,5 +1,30 @@
-<h2>Pagination</h2>
-<h3>Default pagination</h3>
+<p>The cf-pagination component provides a responsive approach to multipage page navigation.</p>
+<h2>Dependencies</h2>
+<ul>
+<li>cf-core</li>
+<li>cf-buttons</li>
+<li>cf-icons</li>
+</ul>
+<h2>Variables</h2>
+<p>Theme variables for setting the color and sizes. Overwrite them in your own project by duplicating the variable <code>@key: value</code>.</p>
+<h3>Sizing variables</h3>
+<pre><code>@pagination-font-size:          16px;
+</code></pre>
+<p>The font size of pagination text.</p>
+<pre><code>@pagination-bp:                 640px;
+</code></pre>
+<p>Screen width at which pagination styling changes to target larger screens.</p>
+<h3>Color variables</h3>
+<pre><code>@pagination-text:               darken(#895983, 15%);
+</code></pre>
+<p>Pagination text color.</p>
+<pre><code>@pagination-bg:                 lighten(#905c8a, 45%);
+</code></pre>
+<p>Pagination form background color.</p>
+<h2>Default pagination</h2>
+<p>Default pagination consists of &quot;Previous&quot; and &quot;Next&quot; links, styled as buttons, and an inline form (input, submit button) that allows users to navigate to specific pages by number.</p>
+<p>To enable the component to jump directly to the paginated content, place <code>#pagination_content</code> directly above your paginated content.</p>
+<h3>Example</h3>
 <div id="pagination_content"></div>
 <!-- Paginated content here -->
 <nav class="pagination">
@@ -37,6 +62,7 @@
         </button>
     </form>
 </nav>
+<h3>Markup</h3>
 <pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >id</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pagination_content<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 
 <span class="token comment" spellcheck="true" >&lt;!-- Paginated content here --&gt;</span>
@@ -77,3 +103,9 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>form</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>nav</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
+<h2>Responsive behavior</h2>
+<ul>
+<li>Less than 320px: On very small screens, the previous link, next link, and page number form stack vertically.</li>
+<li>320px – <code>@pagination-bp</code>: On small screens, the pagination links display next to each other, stacked on top of the form.</li>
+<li><code>@pagination-bp</code> and up: On larger screens, all pagination components display on a single line, with the form between the previous and next links.</li>
+</ul>

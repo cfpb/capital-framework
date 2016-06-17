@@ -1,14 +1,23 @@
-<h2>CF Tables</h2>
-<h3>Table base style, with small screen base style &quot;stacked&quot;</h3>
+<p>The cf-tables component formats tables, and provides an easy way to make tables sortable.</p>
+<h2>Vars</h2>
+<p>Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable <code>@key:</code> value.</p>
+<p>Ex. to set your table cell's background color, add <code>@table-cell-bg: #fefefe;</code> to your project.</p>
+<pre><code>@table-cell-bg:              #ffffff; // $color-white
+@table-cell-bg_alt:          #f1f1f1; // $color-gray-lightest
+@table-scrolling-border:     #e4e2e0; // $color-gray-warm-light
+</code></pre>
+<h2>Responsive table styles for Small Screens</h2>
+<p><strong>Important notes:</strong></p>
 <ul>
-<li>Uses <code>.table__stack-on-small</code> class to add small screen styles</li>
-<li>Note: Tables are not responsive without adding one of the small
-screen classes</li>
-<li>The use of the <code>.table__right-align</code> class on a TD aligns the text
-right - see the third column above</li>
-<li>The <code>data-label</code> attribute is used to label each entry. Always
-include the <code>data-label</code> attribute for each cell.</li>
+<li>Tables are not responsive without adding one of the small screen classes below.</li>
+<li>The <code>data-label</code> attribute is used to label each entry in a table for small screen responsive views. Always include the <code>data-label</code> attribute for each cell.</li>
 </ul>
+<h3>Table base style, with small screen base style &quot;stacked&quot;</h3>
+<p>The <code>.table__stack-on-small</code> class adds the &quot;stacked&quot; table style for small
+screens. Please note that tables are not responsive without adding one of the
+small screen classes. Also note that the <code>data-label</code> attribute is used to
+label each entry in a table for small screen responsive views. Always include
+the <code>data-label</code> attribute for each cell.</p>
 <table class="table__stack-on-small">
   <thead>
     <tr>
@@ -73,15 +82,10 @@ include the <code>data-label</code> attribute for each cell.</li>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>table</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
 <h3>Table with small screen variation - &quot;stacked with entry header&quot;</h3>
-<ul>
-<li>&quot;Uses <code>.table__entry-header-on-small</code> class in addition to
-<code>.table__stack-on-small</code> class to style the first column as an
-entry header. Note that this requires both classes be added.&quot;</li>
-<li>Note: Tables are not responsive without adding one of the small
-screen classes</li>
-<li>&quot;The <code>data-label</code> attribute is used to label each entry. Always
-include the <code>data-label</code> attribute for each cell</li>
-</ul>
+<p>The <code>.table__entry-header-on-small</code> class in addition to <code>.table__stack-on- small</code> class changes the first column to be styled as an   entry header. This
+style requires both classes be added. Note that tables are not responsive
+without adding one of the small   screen classes. Also note that the <code>data- label</code> attribute is used to label each entry. Always include the <code>data-label</code>
+attribute for each cell.</p>
 <table class="table__stack-on-small table__entry-header-on-small">
   <thead>
     <tr>
@@ -146,14 +150,11 @@ include the <code>data-label</code> attribute for each cell</li>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>table</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
 <h3>Table with small screen variation - &quot;Comparative with horizontal scroll&quot;</h3>
-<ul>
-<li>Must be wrapped in an element (<code>&lt;div&gt;</code>, in most cases) with the
-<code>table-wrapper__scrolling</code> class</li>
-<li>The <code>&lt;table&gt;</code> element does not need additional markup in this case</li>
-<li>&quot;Comparative with horizontal scroll&quot; also adds striped rows to
-the table contained within, and remains striped on small screens
-(unlike the <code>table__striped</code>class, below).</li>
-</ul>
+<p>The <code>.table-wrapper__scrolling</code> class must be added to the parent element of
+the table (by adding a wrapping <code>&lt;div&gt;</code>, in most cases). The <code>&lt;table&gt;</code> element
+does not need additional markup in this case. The &quot;Comparative with horizontal
+scroll&quot; style also adds striped rows to the table contained within, and
+remains striped on small screens (unlike the <code>table__striped</code>class, below).</p>
 <div class="table-wrapper__scrolling">
   <table>
     <thead>
@@ -271,11 +272,56 @@ the table contained within, and remains striped on small screens
   <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>table</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
+<h2>Additional table styles</h2>
+<h3>Right-aligned cells.</h3>
+<p>The use of the <code>.table__right-align</code> class on a TD aligns the text right - see
+the third column above.</p>
+<table class="table__stack-on-small">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Column 1">Row A</td>
+      <td data-label="Column 2">Cell A2</td>
+      <td data-label="Column 3" class="table__right-align">Cell A3</td>
+    </tr>
+    <tr>
+      <td data-label="Column 1">Row B</td>
+      <td data-label="Column 2">Cell B2</td>
+      <td data-label="Column 3" class="table__right-align">Cell B3</td>
+    </tr>
+  </tbody>
+</table>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>table</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>table__stack-on-small<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>thead</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>tr</span><span class="token punctuation" >&gt;</span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>th</span><span class="token punctuation" >&gt;</span></span>Column 1<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>th</span><span class="token punctuation" >&gt;</span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>th</span><span class="token punctuation" >&gt;</span></span>Column 2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>th</span><span class="token punctuation" >&gt;</span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>th</span><span class="token punctuation" >&gt;</span></span>Column 3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>th</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>tr</span><span class="token punctuation" >&gt;</span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>thead</span><span class="token punctuation" >&gt;</span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>tbody</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>tr</span><span class="token punctuation" >&gt;</span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span> <span class="token attr-name" >data-label</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Column 1<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Row A<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >&gt;</span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span> <span class="token attr-name" >data-label</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Column 2<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Cell A2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >&gt;</span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span> <span class="token attr-name" >data-label</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Column 3<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>table__right-align<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Cell A3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>tr</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>tr</span><span class="token punctuation" >&gt;</span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span> <span class="token attr-name" >data-label</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Column 1<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Row B<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >&gt;</span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span> <span class="token attr-name" >data-label</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Column 2<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Cell B2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >&gt;</span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>td</span> <span class="token attr-name" >data-label</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Column 3<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>table__right-align<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Cell B3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>td</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>tr</span><span class="token punctuation" >&gt;</span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>tbody</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>table</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
 <h3>Standard table, with stripes</h3>
-<ul>
-<li>Uses <code>.table__striped</code> class</li>
-<li>Striping is not visible by default on small screens</li>
-</ul>
+<p>The <code>.table__striped</code> class adds stripes to the table rows. This striping is
+not visible on small screens.</p>
 <table class="table__striped">
   <thead>
     <tr>
@@ -339,25 +385,56 @@ the table contained within, and remains striped on small screens
   <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>tbody</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>table</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>Sortable Table</h3>
+<h2>Sortable Tables</h2>
+<p>CF-Tables also includes a sortable table utility.</p>
+<h3>Making a table sortable</h3>
+<p>By adding the <code>.table__sortable</code> class to a table, the table becomes sortable.
+To allow the table to be sorted by a column, add a button to the <code>TH</code> of the
+column like so:</p>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>sortable<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+  Column Name
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<p>The use of a button helps address certain accessibility concerns.</p>
+<h3>Sorting type</h3>
+<p>To sort properly, the type of the data can be specified. By default, the
+column's values will be sorted as string values. However, the column can be
+specifically sorted by number values (in which case, the cell's contents are
+stripped of non-numeric characters, then sorted by the resulting number). To
+see an example, the sample table later in this document sorts the &quot;Distance&quot;
+column by number value.</p>
+<p>To sort by number value, add the <code>data-sort_type=&quot;number&quot;</code> attribute to the
+sorting button:</p>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>table</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>table__sortable<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+  ...
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>th</span><span class="token punctuation" >&gt;</span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>sortable<span class="token punctuation" >"</span></span> <span class="token attr-name" >data-sort_type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>number<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Column Name<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>th</span><span class="token punctuation" >&gt;</span></span>
+  ...
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>table</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h3>Sorting table on page load</h3>
+<p>To sort the table on page load, use the <code>.sortable__start-up</code> and
+<code>.sortable__start-down</code> classes:</p>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>table</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>table__sortable<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+  ...
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>th</span><span class="token punctuation" >&gt;</span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>sortable sortable__start-up<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Column Name<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>th</span><span class="token punctuation" >&gt;</span></span>
+  ...
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>table</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
 <ul>
-<li>Uses <code>.table__sortable</code> class to invoke sorting functions on the table</li>
-<li>Columns which should be sortable have that column's THEAD TH content wrapped
-with a BUTTON, and the BUTTON has the <code>.sortable</code>class. (The use of a BUTTON
-tag here addresses certain accessibility concerns.)</li>
-<li>Note: The class <code>.sorted-up</code> refers to a sort from smallest to greatest
-(first to last), and <code>.sorted-down</code> refers to a sort from greatest to smallest
-(last to first).</li>
-<li>Please note the importance of defining a THEAD and TBODY to preserve
-the table's header through sorting operations</li>
-<li>Any BUTTON with the <code>.sortable</code> class can also be given the <code>data-sort_type</code>
-attribute</li>
-<li>In the table example above, Distance is sorted by Number value. See below for
-the <code>data-sort_type</code> modifier.</li>
-<li>In the table example above, Distance is sorted low-to-high on page load by using
-the <code>sortable__start-up</code> class in the BUTTON. See the <code>sortable__start-up</code> and
-<code>sortable__start-down</code> modifiers below.</li>
+<li>
+<p><code>.sortable__start-up</code> starts with the column sorted smallest to largest (or
+lowest to highest)</p>
+</li>
+<li>
+<p><code>.sortable__start-down</code> starts with the column sorted largest to smallest (or
+highest to lowest)</p>
+</li>
 </ul>
+<h3>Sample Sortable Table</h3>
 <table class="table__sortable">
   <thead>
       <tr>
@@ -555,37 +632,11 @@ the <code>sortable__start-up</code> class in the BUTTON. See the <code>sortable_
   <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>tbody</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>table</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>data-sort_type (modifier)</h3>
+<h3>Important Notes about sortable tables</h3>
 <ul>
-<li>By setting the <code>data-sort_type</code> attribute to 'number', the column is sorted by
-Number value</li>
-<li>By default, columns will be sorted as strings.</li>
+<li>The class <code>.sorted-up</code> refers to a sort from smallest to greatest
+(first to last), and <code>.sorted-down</code> refers to a sort from greatest to smallest
+(last to first). These classes are added to the TH when sorting occurs.</li>
+<li>Please note the importance of defining a THEAD and TBODY to preserve
+the table's header through sorting operations.</li>
 </ul>
-<table class="table__sortable">
-    <th>
-      <button class="sortable" data-sort_type="number">Column Name</button>
-    </th>
-</table>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>table</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>table__sortable<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-  ...
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>th</span><span class="token punctuation" >&gt;</span></span>
-      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>sortable<span class="token punctuation" >"</span></span> <span class="token attr-name" >data-sort_type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>number<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Column Name<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>th</span><span class="token punctuation" >&gt;</span></span>
-  ...
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>table</span><span class="token punctuation" >&gt;</span></span>
-</code></pre>
-<h3>.sortable__start-up, .sortable__start-down (modifiers)</h3>
-<p>To sort the table on page load, use the <code>.sortable__start-u</code>p and <code>.sortable__start-down</code> classes.</p>
-<table class="table__sortable">
-    <th>
-      <button class="sortable sortable__start-up">Column Name</button>
-    </th>
-</table>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>table</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>table__sortable<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-  ...
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>th</span><span class="token punctuation" >&gt;</span></span>
-      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>sortable sortable__start-up<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Column Name<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>th</span><span class="token punctuation" >&gt;</span></span>
-  ...
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>table</span><span class="token punctuation" >&gt;</span></span>
-</code></pre>

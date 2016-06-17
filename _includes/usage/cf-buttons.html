@@ -1,9 +1,40 @@
-<h2>Default button</h2>
+<ul>
+<li><a href="#default">Default button</a></li>
+<li><a href="#secondary">Secondary button</a></li>
+<li><a href="#destructive">Destructive action button</a></li>
+<li><a href="#disabled">Disabled button</a></li>
+<li><a href="#super">Super button</a></li>
+</ul>
+<h2>Variables</h2>
+<h3>Color variables</h3>
+<pre><code>@btn-text
+@btn-bg
+@btn-bg-hover
+@btn-bg-active
+@btn__secondary-text
+@btn__secondary-bg
+@btn__secondary-bg-hover
+@btn__secondary-bg-active
+@btn__warning-text
+@btn__warning-bg
+@btn__warning-bg-hover
+@btn__warning-bg-active
+@btn__disabled-text
+@btn__disabled-bg
+@btn__disabled-outline
+</code></pre>
+<h3>Sizing variables</h3>
+<pre><code>@btn-font-size
+@btn-v-padding
+@btn-v-padding-modifier-ie
+@super-btn-font-size
+</code></pre>
+<h2><a name="default"></a>Default button</h2>
 <h3>Default state</h3>
 <p><a href="#" class="btn" title="Test button">Anchor Tag</a>
 <button class="btn" title="Test button">Button Tag</button>
 <input type="submit" value="Input Tag" class="btn"></p>
-<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Anchor Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
@@ -31,7 +62,7 @@
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn active<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn active<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Secondary button</h2>
+<h2><a name="secondary"></a>Secondary button</h2>
 <h3>Default state</h3>
 <p><a href="#" class="btn btn__secondary">Anchor Tag</a>
 <button class="btn btn__secondary" title="Test button">Button Tag</button>
@@ -64,7 +95,7 @@
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__secondary active<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__secondary active<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Destructive action button</h2>
+<h2><a name="destructive"></a>Destructive action button</h2>
 <h3>Default state</h3>
 <p><a href="#" class="btn btn__warning">Anchor Tag</a>
 <button class="btn btn__warning" title="Test button">Button Tag</button>
@@ -97,7 +128,7 @@
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__warning active<span class="token punctuation" >"</span></span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__warning active<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Disabled button</h2>
+<h2><a name="disabled"></a>Disabled button</h2>
 <h3>Default/hovered/active state</h3>
 <p><a href="#" class="btn btn__disabled">Anchor Tag</a>
 <button class="btn btn__disabled" title="Test button">Button Tag</button>
@@ -118,7 +149,7 @@
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>input</span> <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>submit<span class="token punctuation" >"</span></span> <span class="token attr-name" >value</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Input Tag<span class="token punctuation" >"</span></span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn btn__disabled focus<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>btn focus<span class="token punctuation" >"</span></span> <span class="token attr-name" >disabled</span> <span class="token attr-name" >title</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>Test button<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Button Tag w/ disabled attr<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Super button</h2>
+<h2><a name="super"></a>Super button</h2>
 <h3>Default state</h3>
 <p><a href="#" class="btn btn__super">Anchor Tag</a>
 <button class="btn btn__super" title="Test button">Button Tag</button>
