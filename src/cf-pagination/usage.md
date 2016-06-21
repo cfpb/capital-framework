@@ -9,33 +9,28 @@ The cf-pagination component provides a responsive approach to multipage page nav
 
 ## Variables
 
-Theme variables for setting the color and sizes. Overwrite them in your own project by duplicating the variable `@key: value`.
-
-### Sizing variables
-
-```
-@pagination-font-size:          16px;
-```
-The font size of pagination text.
-
-```
-@pagination-bp:                 640px;
-```
-Screen width at which pagination styling changes to target larger screens.
+Theme variables for setting the color and sizes. Color variables are from 18F's [US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss). Overwrite them in your own project by duplicating the variable `@key: value`.
 
 
 ### Color variables
 
-```
-@pagination-text:               darken(#895983, 15%);
-```
 Pagination text color.
-
-
 ```
-@pagination-bg:                 lighten(#905c8a, 45%);
+@pagination-text-color: #757575; // $color-gray-medium
 ```
+
 Pagination form background color.
+```
+@pagination-bg-color: #f1f1f1; // $color-gray-lightest
+```
+
+
+### Sizing variables
+
+The font size of pagination text.
+```
+@pagination-font-size__px:          16px;
+```
 
 
 ## Default pagination
@@ -49,39 +44,43 @@ To enable the component to jump directly to the paginated content, place `#pagin
 
 <!-- Paginated content here -->
 
-<nav class="pagination">
-    <a class="btn btn__super pagination_prev" href="#pagination_content">
-        <span class="btn_icon__left cf-icon cf-icon-left"></span>
-        Previous
+<nav class="m-pagination" role="navigation" aria-label="Pagination">
+    <a class="btn
+              m-pagination_btn-prev"
+       href="?page=1#pagination_content">
+        <span class="cf-icon cf-icon-left btn_icon__left "></span>
+        Newer
     </a>
-    <a class="btn btn__super pagination_next" href="#pagination_content">
-        Next
-        <span class="btn_icon__right cf-icon cf-icon-right"></span>
+    <a class="btn
+             m-pagination_btn-next"
+       href="?page=3#pagination_content">
+        Older
+        <span class="cf-icon cf-icon-right btn_icon__right"></span>
     </a>
-    <form class="pagination_form" action="index.html#pagination_content">
-        <label class="pagination_label"
-               for="pagination_current-page">
+    <form class="m-pagination_form"
+            action="#pagination_content">
+        <label class="m-pagination_label"
+                 for="m-pagination_current-page">
             Page
             <span class="u-visually-hidden">
-                number out of 149 total pages
+                number 2 out
             </span>
+            <input class="m-pagination_current-page"
+                     id="m-pagination_current-page"
+                     name="page"
+                     type="number"
+                     min="1"
+                     max="149"
+                     pattern="[0-9]*"
+                     inputmode="numeric"
+                     value="2">
+            of 149
         </label>
-        <input
-            class="pagination_current-page"
-            id="pagination_current-page"
-            name="pagination_current-page"
-            type="number" min="1" max="149"
-            value="149">
-        <span class="pagination_label">
-            <span aria-hidden="true">
-                of 149
-            </span>
-        </span>
-        <button class="btn btn__link pagination_submit"
-                id="pagination_submit"
-                type="submit">
-            Go
-        </button>
+        <button class="btn
+                         btn__link
+                         m-pagination_submit-btn"
+                  id="m-pagination_submit-btn"
+                  type="submit">Go</button>
     </form>
 </nav>
 
@@ -92,45 +91,47 @@ To enable the component to jump directly to the paginated content, place `#pagin
 
 <!-- Paginated content here -->
 
-<nav class="pagination">
-    <a class="btn btn__super pagination_prev" href="#pagination_content">
-        <span class="btn_icon__left cf-icon cf-icon-left"></span>
-        Previous
+<nav class="m-pagination" role="navigation" aria-label="Pagination">
+    <a class="btn
+              m-pagination_btn-prev"
+       href="?page=1#pagination_content">
+        <span class="cf-icon cf-icon-left btn_icon__left "></span>
+        Newer
     </a>
-    <a class="btn btn__super pagination_next" href="#pagination_content">
-        Next
-        <span class="btn_icon__right cf-icon cf-icon-right"></span>
+    <a class="btn
+             m-pagination_btn-next"
+       href="?page=3#pagination_content">
+        Older
+        <span class="cf-icon cf-icon-right btn_icon__right"></span>
     </a>
-    <form class="pagination_form" action="index.html#pagination_content">
-        <label class="pagination_label"
-               for="pagination_current-page">
+    <form class="m-pagination_form"
+            action="#pagination_content">
+        <label class="m-pagination_label"
+                 for="m-pagination_current-page">
             Page
             <span class="u-visually-hidden">
-                number out of 149 total pages
+                number 2 out
             </span>
+            <input class="m-pagination_current-page"
+                     id="m-pagination_current-page"
+                     name="page"
+                     type="number"
+                     min="1"
+                     max="149"
+                     pattern="[0-9]*"
+                     inputmode="numeric"
+                     value="2">
+            of 149
         </label>
-        <input
-            class="pagination_current-page"
-            id="pagination_current-page"
-            name="pagination_current-page"
-            type="number" min="1" max="149"
-            value="149">
-        <span class="pagination_label">
-            <span aria-hidden="true">
-                of 149
-            </span>
-        </span>
-        <button class="btn btn__link pagination_submit"
-                id="pagination_submit"
-                type="submit">
-            Go
-        </button>
+        <button class="btn
+                       btn__link
+                       m-pagination_submit-btn"
+                  id="m-pagination_submit-btn"
+                  type="submit">Go</button>
     </form>
 </nav>
 ```
 
 ## Responsive behavior
 
-- Less than 320px: On very small screens, the previous link, next link, and page number form stack vertically.
-- 320px – `@pagination-bp`: On small screens, the pagination links display next to each other, stacked on top of the form.
-- `@pagination-bp` and up: On larger screens, all pagination components display on a single line, with the form between the previous and next links.
+- `@bp-xs-max`: On small screens, the pagination links display next to each other, stacked on top of the form.
