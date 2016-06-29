@@ -3,14 +3,11 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
-- 
-
 ### Changed
-- 
+- **cf-layout:** Add negative side margin to FCMs so they don't double
+  up the border when against a sidebar.
+- **cf-layout:** Update recommended FCM markup to use `category-slug`.
 
-### Removed
-- 
 
 ## 3.5.0 - 2016-05-26
 
