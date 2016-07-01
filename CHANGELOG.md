@@ -11,6 +11,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   up the border when against a sidebar.
 - **cf-layout:** [PATCH] Update recommended FCM markup to use `category-slug`.
 - **cf-forms:** [PATCH] Fix markup in documentation.
+- **cf-typography:** [PATCH] Fix markup in documentation.
 
 ### Removed
 -
