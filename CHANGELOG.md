@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 3.5.1 - 2016-07-05
+
 ### Changed
 - **cf-layout:** Add negative side margin to FCMs so they don't double
   up the border when against a sidebar.
