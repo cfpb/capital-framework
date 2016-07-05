@@ -45,7 +45,7 @@ Theme variables for setting the color and sizes throughout the project. Overwrit
 
 An input that matches the height of a super button.
 
-<input class="input__super" type="text" value="Super input" title="Test input"></input>
+<input class="input__super" type="text" value="Super input" title="Test input">
 <button class="btn btn__super">Super</button>
 
 ```

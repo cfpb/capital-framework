@@ -37,7 +37,7 @@
         <cite class="pull-quote_citation">
             - Author Name
         </cite>
-    <footer>
+    </footer>
 </aside>
 
 ```
@@ -51,7 +51,7 @@
         <cite class="pull-quote_citation">
             - Author Name
         </cite>
-    <footer>
+    </footer>
 </aside>
 ```
 
@@ -419,7 +419,7 @@
 
 - 18px font-size, compared to the default of 16px
 
-## .jump-link__<icon> (modifier)
+## .jump-link__{icon} (modifier)
 
 <a class="jump-link jump-link__right" href="#">
     <span class="jump-link_text">Jump link using the right icon from cf-icons</span>
