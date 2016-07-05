@@ -9,7 +9,8 @@
     "url": "http://consumerfinance.gov"
   },
   "scripts": {
-    "start": "parallelshell 'bundle exec jekyll serve --watch --baseurl ''' 'gulp watch'"
+    "start": "parallelshell 'bundle exec jekyll serve --watch --baseurl ''' 'gulp watch'",
+    "build": "gulp build"
   },
   "license": "CC0",
   "keywords": [
