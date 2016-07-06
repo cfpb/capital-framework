@@ -3,7 +3,7 @@
 > All contributions to this project will be released under the CC0 public domain
 > dedication. By submitting a pull request or filing a bug, issue, or
 > feature request, you are agreeing to comply with this waiver of copyright interest.
-> Details can be found in our [TERMS](TERMS.md) and [LICENCE](LICENSE).
+> Details can be found in our [TERMS](TERMS.md) and [LICENSE](LICENSE).
 
 
 There are two primary ways to help:
@@ -68,7 +68,8 @@ Now `~/Projects/owning-a-home/node_modules/cf-buttons` will be a symlink pointin
 
 Documentation is maintained in each component's folder's `usage.md` file.
 Changes to documentation are made on the `canary` branch using the workflow above
-and pulled in the `gh-pages` branch using a manual process.
+and pulled in the `gh-pages` branch using a manual process detailed below.
+The `usage.md` files are then rendered as separated pages on Capital Framework's website [(See this example from cf-core)](https://cfpb.github.io/capital-framework/components/cf-core/).
 
 After a release with documentation changes, you can checkout the `gh-pages` branch,
 and `npm install` any new dependencies in Capital Framework.
