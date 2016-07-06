@@ -47,7 +47,7 @@ Use the format: `- **cf-component-name:** [MAJOR|MINOR|PATCH] Description of cha
 1. Go to https://github.com/cfpb/capital-framework and open a pull request to merge `button-fix` into `canary`.
 
 If you are not a current contributor to Capital Framework, continue using forks
-by first clikcing the fork button on top of the repository and cloning your fork in step 1. You may have to compare changes against forks to file a pull request.
+by first clikcing the fork button on top of the repository and cloning your fork in step 1. In the final step, go to https://github.com/cfpb/capital-framework and file a pull request by clicking the link to compare changes across forks.
 
 ### Testing components locally
 
