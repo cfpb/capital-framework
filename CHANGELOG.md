@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 3.5.2 - 2016-07-06
+
 ### Changed
 - **capital-framework:** Improve contributing docs in readme for outside contributors and documentation fixes.
 
