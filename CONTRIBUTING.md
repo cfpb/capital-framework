@@ -3,7 +3,7 @@
 > All contributions to this project will be released under the CC0 public domain
 > dedication. By submitting a pull request or filing a bug, issue, or
 > feature request, you are agreeing to comply with this waiver of copyright interest.
-> Details can be found in our [TERMS](TERMS.md) and [LICENCE](LICENSE).
+> Details can be found in our [TERMS](TERMS.md) and [LICENSE](LICENSE).
 
 
 There are two primary ways to help:
@@ -15,7 +15,7 @@ There are two primary ways to help:
 
 Use the issue tracker to suggest feature requests, report bugs, and ask questions.
 This is also a great way to connect with the developers of the project as well
-as others who are interested in this solution.  
+as others who are interested in this solution.
 
 Use the issue tracker to find ways to contribute. Find a bug or a feature, mention in
 the issue that you will take on that effort, then follow the _Changing the codebase_
@@ -46,6 +46,8 @@ Use the format: `- **cf-component-name:** [MAJOR|MINOR|PATCH] Description of cha
 1. `git push origin button-fix`
 1. Go to https://github.com/cfpb/capital-framework and open a pull request to merge `button-fix` into `canary`.
 
+If you are not a current contributor to Capital Framework, continue using forks
+by first clicking the fork button on top of the repository and cloning your fork in step 1. In the final step, go to https://github.com/cfpb/capital-framework and file a pull request by clicking the link to compare changes across forks.
 
 ### Testing components locally
 
@@ -61,6 +63,30 @@ npm link cf-buttons
 ```
 
 Now `~/Projects/owning-a-home/node_modules/cf-buttons` will be a symlink pointing to the `~/Projects/capital-framework/tmp/cf-buttons` directory. Whenever you rebuild (`npm run build`, see above) the CF components, your local owning-a-home project will reference your local `tmp/` version of cf-buttons.
+
+### Updating Documentation
+
+Documentation is maintained in each component's folder's `usage.md` file.
+Changes to documentation are made on the `canary` branch using the workflow above
+and pulled in the `gh-pages` branch using a manual process detailed below.
+The `usage.md` files are then rendered as separated pages on Capital Framework's website [(See this example from cf-core)](https://cfpb.github.io/capital-framework/components/cf-core/).
+
+After a release with documentation changes, you can checkout the `gh-pages` branch,
+and `npm install` any new dependencies in Capital Framework.
+After installing your new dependencies run `npm run build` to build the documentation site.
+
+Run `npm start` to check your work and push it up to a new branch to merge into `gh-pages`.
+
+```sh
+git checkout gh-pages
+git pull
+npm install
+npm run build
+git checkout -b gh-pages-updates
+git push origin gh-pages-updates
+```
+
+Once you've completed these steps, file a pull request against `gh-pages`.
 
 
 ## Release management
