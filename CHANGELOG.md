@@ -7,7 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
-- **capital-framework:** Improve contributing docs in readme for outside contributors and documentation fixes.
+- **capital-framework:** [PATCH] Improve contributing docs in readme for outside contributors and documentation fixes.
 
 ### Removed
 -
