@@ -11,6 +11,8 @@
             {% for subpage in link.subcategories %}
               {% if subpage.subtitle == page.title %}
                 <li><a class="nav-secondary_link nav-secondary_link__current" href="{{ site.baseurl }}{{ subpage.subhref }}">{{ subpage.subtitle }}</a></li>
+              {% else if subpage.subhref | slice: 0,4 == "http" %}
+                <li><a class="nav-secondary_link{% if subpage.class %} {{ subpage.class }}{% endif %}" href="{{ subpage.subhref }}">{{ subpage.subtitle }}</a></li>
               {% else %}
                 <li><a class="nav-secondary_link{% if subpage.class %} {{ subpage.class }}{% endif %}" href="{{ site.baseurl }}{{ subpage.subhref }}">{{ subpage.subtitle }}</a></li>
               {% endif %}
