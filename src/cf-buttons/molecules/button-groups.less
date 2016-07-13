@@ -1,0 +1,27 @@
+@import '../atoms/buttons.less';
+
+//
+// Button group
+//
+
+.m-btn-group {
+
+    .a-btn {
+        border-radius: 0;
+        margin-left: unit( -3px / @btn-font-size, em );
+    }
+
+    .a-btn:first-child {
+        border-top-left-radius: unit( 4px / @btn-font-size, em );
+        border-bottom-left-radius: unit( 4px / @btn-font-size, em );
+    }
+
+    .a-btn:last-child {
+        border-top-right-radius: unit( 4px / @btn-font-size, em );
+        border-bottom-right-radius: unit( 4px / @btn-font-size, em );
+    }
+
+    .a-btn__super {
+        margin-left: unit( -3px / @super-btn-font-size, em );
+    }
+}
