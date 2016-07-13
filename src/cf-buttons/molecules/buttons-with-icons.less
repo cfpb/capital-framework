@@ -1,0 +1,48 @@
+@import '../atoms/buttons.less';
+
+//
+// Button icons
+//
+
+.a-btn_icon__left {
+    padding: 0 unit( 10.5px / @btn-font-size, em) 0 0;
+    border-right: 1px solid @btn-text; // Fallback
+    border-right: 1px solid fade(@btn-text, 40%);
+    margin: 0 unit( 7px / @btn-font-size, em) 0 0;
+
+    .a-btn__secondary & {
+        border-right-color: @btn__secondary-text; // Fallback
+        border-right-color: fade(@btn__secondary-text, 40%);
+    }
+    .a-btn__warning & {
+        border-right-color: @btn__warning-text; // Fallback
+        border-right-color: fade(@btn__warning-text, 40%);
+    }
+    .a-btn__disabled &,
+    .a-btn[disabled] & {
+        border-right-color: @btn__disabled-text; // Fallback
+        border-right-color: fade(@btn__disabled-text, 40%);
+    }
+}
+
+.a-btn_icon__right {
+    padding: 0 0 0 unit( 10.5px / @btn-font-size, em);
+    border-right: 0;
+    border-left: 1px solid @btn-text; // Fallback
+    border-left: 1px solid fade(@btn-text, 40%);
+    margin: 0 0 0 unit( 7px / @btn-font-size, em);
+
+    .a-btn__secondary & {
+        border-left-color: @btn__secondary-text; // Fallback
+        border-left-color: fade(@btn__secondary-text, 40%);
+    }
+    .a-btn__warning & {
+        border-left-color: @btn__warning-text; // Fallback
+        border-left-color: fade(@btn__warning-text, 40%);
+    }
+    .a-btn__disabled &,
+    .a-btn[disabled] & {
+        border-left-color: @btn__disabled-text; // Fallback
+        border-left-color: fade(@btn__disabled-text, 40%);
+    }
+}
