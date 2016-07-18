@@ -16,6 +16,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-core:** [MINOR] Removed vendor prefixes handled by autoprefixer.
 - **cf-grid:** [MINOR] Removed vendor prefixes handled by autoprefixer.
 - **cf-icons:** [MINOR] Removed vendor prefixes handled by autoprefixer.
+-
+
+### Changed
+- **cf-tables:** Fix documentation order and details. 
+
+### Removed
+-
 
 ## 3.5.2 - 2016-07-06
 
