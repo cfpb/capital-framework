@@ -1,4 +1,4 @@
-The cf-typography component includes multiple patterns for headings, links and other typographical patterns.
+The cf-typography component includes multiple patterns for headings, links, lists, and other advanced typographic treatments.
 
 The [`cf-core`](../core) component is a dependency of this component
 and has more basic typography patterns.
@@ -468,7 +468,7 @@ This is just another set of variations to show off what you could do.
 
 ### Styled link
 
-### Default pattern
+#### Default pattern
 
 <a class="styled-link" href="#">
     Default styled link
@@ -510,7 +510,7 @@ The large jump link has an 18px font-size, compared to the default of 16px.
 
 #### Jump link with icon
 
-- .jump-link extends .icon-link, so all that is needed to add an icon to a jump link is to add a modifier with the icon's name.
+- `.jump-link` extends `.icon-link`, so all that is needed to add an icon to a jump link is to add a modifier with the icon's name.
 - In this example, `.jump-link__right` is a taken from the `cf-icon__right` icon in [cf-icons](../cf-icons).
 
 <a class="jump-link jump-link__right" href="#">
@@ -526,6 +526,8 @@ The large jump link has an 18px font-size, compared to the default of 16px.
 
 #### Jump link with icon on left
 
+Jump links can also have icons before the text, like icon links.
+
 <a class="jump-link jump-link__left jump-link__before" href="#">
     <span class="jump-link_text">Jump link with icon on left</span>
 </a>
@@ -535,9 +537,6 @@ The large jump link has an 18px font-size, compared to the default of 16px.
     <span class="jump-link_text">Jump link with icon on left</span>
 </a>
 ```
-
-- Jump links can also have icons before the text, like icon links.
-
 
 #### Jump link with background
 
@@ -558,7 +557,7 @@ The large jump link has an 18px font-size, compared to the default of 16px.
 The block link class converts a standard inline link
 to a block-level element with padding, background, and borders.
 
-It is primarily used within a max-width 599px media query (see .jump-link and .list__links).
+It is primarily used within a max-width 599px media query (see `.jump-link` and `.list__links`).
 
 #### Default example
 
