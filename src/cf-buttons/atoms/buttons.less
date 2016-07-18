@@ -3,7 +3,7 @@
 //
 
 // Color variables
-// $color- variables are from 18F's US Web Design Standards
+// $color- variables are from 18F's U.S. Web Design Standards
 // https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss
 
 // .btn
@@ -33,7 +33,9 @@
 
 // .btn
 @btn-font-size:                 16px;
+@btn-border-radius-size:        4px;
 @btn-v-padding:                 8px;
+@btn-h-padding:                 14px;
 @btn-v-padding-modifier-ie:     .8;
 
 // .btn__super
@@ -44,81 +46,76 @@
 //
 
 .a-btn {
+  display: inline-block;
+  box-sizing: border-box;
+  padding:
+    unit( @btn-v-padding / @btn-font-size, em )
+    unit( @btn-h-padding / @btn-font-size, em );
+  border: 0;
+  border-radius: unit( @btn-border-radius-size / @btn-font-size, em );
+  margin: 0;
 
-    display: inline-block;
-    box-sizing: border-box;
-    padding:
-        unit( @btn-v-padding / @btn-font-size, em )
-        unit( 14px / @btn-font-size, em );
+  .webfont-medium();
+  cursor: pointer;
+  font-size: unit( @btn-font-size / @base-font-size-px, em );
+  line-height: normal;
+  text-decoration: none;
+  transition: background-color .1s;
+  vertical-align: middle;
+  -webkit-appearance: none;
+
+  &,
+  &:link,
+  &:visited {
+    background-color: @btn-bg;
+    color: @btn-text;
+  }
+
+  &:hover,
+  &.hover {
+    background-color: @btn-bg-hover;
+  }
+
+  &:focus,
+  &.focus {
+    background-color: @btn-bg-hover;
+    outline: 1px dotted @btn-bg;
+    // outline-offset is not supported everywhere but it adds a nice touch
+    // in browsers where it is.
+    outline-offset: 1px;
+  }
+
+  &:active,
+  &.active {
+    background-color: @btn-bg-active;
+  }
+
+  button&::-moz-focus-inner,
+  input&::-moz-focus-inner {
+    // Fixes inconsistent button.btn height in FireFox
+    // Helps with inconsistent input.btn height in FireFox but not completely
     border: 0;
-    border-radius: unit( 4px / @btn-font-size, em );
-    margin: 0;
+  }
 
-    vertical-align: middle;
-
-    .webfont-medium();
-    font-size: unit( @btn-font-size / @base-font-size-px, em );
-    line-height: normal;
-    text-decoration: none;
-
-    cursor: pointer;
-    transition: background-color .1s;
-    -webkit-appearance: none;
-
-    &,
-    &:link,
-    &:visited {
-        background-color: @btn-bg;
-        color: @btn-text;
-    }
-
-    &:hover,
-    &.hover {
-        background-color: @btn-bg-hover;
-    }
-
-    &:focus,
-    &.focus {
-        background-color: @btn-bg-hover;
-        outline: 1px dotted @btn-bg;
-        // outline-offset is not supported everywhere but it adds a nice touch
-        // in browsers where it is.
-        outline-offset: 1px;
-    }
-
-    &:active,
-    &.active {
-        background-color: @btn-bg-active;
-    }
-
-    button&::-moz-focus-inner,
-    input&::-moz-focus-inner {
-        // Fixes inconsistent button.btn height in FireFox
-        // Helps with inconsistent input.btn height in FireFox but not completely
-        border: 0;
-    }
-
-    & + & {
-        margin-left: unit( 6px / @btn-font-size, em);
-    }
+  & + & {
+    margin-left: unit( 6px / @btn-font-size, em);
+  }
 }
 
 .lt-ie8 {
+  // Fixes scroll rendering bug
+  // http://snipplr.com/view/518/
+  & {
+    background: url(null) fixed no-repeat;
+  }
 
-    // Fixes scroll rendering bug
-    // http://snipplr.com/view/518/
-    & {
-        background: url(null) fixed no-repeat;
-    }
-
-    // Fixes button and input sizes in IE7
-    button.a-btn,
-    input.a-btn {
-        overflow: visible;
-        padding-top: unit( (@btn-v-padding-modifier-ie * @btn-v-padding) / @btn-font-size, em );
-        padding-bottom: unit( (@btn-v-padding-modifier-ie * @btn-v-padding) / @btn-font-size, em );
-    }
-
+  // Fixes button and input sizes in IE7
+  button.a-btn,
+  input.a-btn {
+    overflow: visible;
+    padding-top: unit( (@btn-v-padding-modifier-ie * @btn-v-padding) / @btn-font-size, em );
+    padding-bottom: unit( (@btn-v-padding-modifier-ie * @btn-v-padding) / @btn-font-size, em );
+  }
 }
 
 //
@@ -126,30 +123,28 @@
 //
 
 .a-btn__secondary {
+  &,
+  &:link,
+  &:visited {
+    background-color: @btn__secondary-bg;
+    color: @btn__secondary-text;
+  }
 
-    &,
-    &:link,
-    &:visited {
-        background-color: @btn__secondary-bg;
-        color: @btn__secondary-text;
-    }
+  &:hover,
+  &.hover {
+    background-color: @btn__secondary-bg-hover;
+  }
 
-    &:hover,
-    &.hover {
-        background-color: @btn__secondary-bg-hover;
-    }
+  &:focus,
+  &.focus {
+    background-color: @btn__secondary-bg-hover;
+    outline-color: @btn__secondary-bg;
+  }
 
-    &:focus,
-    &.focus {
-        background-color: @btn__secondary-bg-hover;
-        outline-color: @btn__secondary-bg;
-    }
-
-    &:active,
-    &.active {
-        background-color: @btn__secondary-bg-active;
-    }
-
+  &:active,
+  &.active {
+    background-color: @btn__secondary-bg-active;
+  }
 }
 
 //
@@ -157,30 +152,28 @@
 //
 
 .a-btn__warning {
+  &,
+  &:link,
+  &:visited {
+    background-color: @btn__warning-bg;
+    color: @btn__warning-text;
+  }
 
-    &,
-    &:link,
-    &:visited {
-        background-color: @btn__warning-bg;
-        color: @btn__warning-text;
-    }
+  &:hover,
+  &.hover {
+    background-color: @btn__warning-bg-hover;
+  }
 
-    &:hover,
-    &.hover {
-        background-color: @btn__warning-bg-hover;
-    }
+  &:focus,
+  &.focus {
+    background-color: @btn__warning-bg-hover;
+    outline-color: @btn__warning-bg;
+  }
 
-    &:focus,
-    &.focus {
-        background-color: @btn__warning-bg-hover;
-        outline-color: @btn__warning-bg;
-    }
-
-    &:active,
-    &.active {
-        background-color: @btn__warning-bg-active;
-    }
-
+  &:active,
+  &.active {
+    background-color: @btn__warning-bg-active;
+  }
 }
 
 //
@@ -189,27 +182,25 @@
 
 .a-btn__disabled,
 .a-btn[disabled] {
+  &,
+  &:link,
+  &:visited,
+  &:hover,
+  &.hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    background-color: @btn__disabled-bg;
+    color: @btn__disabled-text;
+    cursor: default; // Fallback for IE/Opera
+    cursor: not-allowed;
+  }
 
-    &,
-    &:link,
-    &:visited,
-    &:hover,
-    &.hover,
-    &:focus,
-    &.focus,
-    &:active,
-    &.active {
-        background-color: @btn__disabled-bg;
-        color: @btn__disabled-text;
-        cursor: default; // Fallback for IE/Opera
-        cursor: not-allowed;
-    }
-
-    &:focus,
-    &.focus {
-        outline-color: @btn__disabled-outline;
-    }
-
+  &:focus,
+  &.focus {
+    outline-color: @btn__disabled-outline;
+  }
 }
 
 //
@@ -217,145 +208,22 @@
 //
 
 .a-btn__super {
+  padding:
+    unit( 11px / @super-btn-font-size, em )
+    unit( 29px / @super-btn-font-size, em );
+  font-size: unit( @super-btn-font-size / @base-font-size-px, em );
 
-    padding:
-        unit( 11px / @super-btn-font-size, em )
-        unit( 29px / @super-btn-font-size, em );
-    font-size: unit( @super-btn-font-size / @base-font-size-px, em );
-
-    & + & {
-        margin-left: unit( 6px / @super-btn-font-size, em);
-    }
-
+  & + & {
+    margin-left: unit( 6px / @super-btn-font-size, em);
+  }
 }
 
 .lt-ie8 {
-
-    // Fixes button and input sizes in IE7
-    // Note that the "3" below is a magic number
-    button.a-btn__super,
-    input.a-btn__super {
-        padding-top: unit( (@btn-v-padding-modifier-ie * 15px) / @super-btn-font-size, em );
-        padding-bottom: unit( (@btn-v-padding-modifier-ie * 15px) / @super-btn-font-size, em );
-    }
-
-}
-
-//
-// Button link
-//
-
-.a-btn__link {
-
-    padding: 0;
-    border-bottom: 1px dotted @link-underline;
-    border-radius: 0;
-    // This margin is necessary to vertically align link buttons with
-    // regular buttons.
-    margin: unit( @btn-v-padding / @btn-font-size, em) 0;
-
-    &,
-    &:link,
-    &:visited {
-        border-bottom-color: @link-underline-visited;
-        background-color: transparent;
-        color: @link-text-visited;
-    }
-
-    &:hover,
-    &.hover {
-        border-bottom: 1px solid @link-underline-hover;
-        background-color: transparent;
-        color: @link-text-hover;
-    }
-
-    &:focus,
-    &.focus {
-        border-bottom-style: solid;
-        background-color: transparent;
-        outline: thin dotted @link-underline;
-    }
-
-    &:active,
-    &.active {
-        border-bottom: 1px solid @link-underline-active;
-        background-color: transparent;
-        color: @link-text-active;
-    }
-
-}
-
-.lt-ie8 {
-
-    button.a-btn__link,
-    input.a-btn__link {
-        padding: 0;
-    }
-
-}
-
-//
-// Secondary button link
-//
-
-.a-btn__link.a-btn__secondary {
-
-    &,
-    &:link,
-    &:visited {
-        border-bottom-color: @btn__secondary-bg;
-        background-color: transparent;
-        color: @btn__secondary-bg;
-    }
-
-    &:hover,
-    &.hover {
-        border-bottom-color: @btn__secondary-bg-hover;
-        color: @btn__secondary-bg-hover;
-    }
-
-    &:focus,
-    &.focus {
-        outline-color: @btn__secondary-bg;
-    }
-
-    &:active,
-    &.active {
-        border-bottom-color: @btn__secondary-bg-active;
-        color: @btn__secondary-bg-active;
-    }
-
-}
-
-//
-// Destructive action button link
-//
-
-.a-btn__link.a-btn__warning {
-
-    &,
-    &:link,
-    &:visited {
-        border-bottom-color: @btn__warning-bg;
-        background-color: transparent;
-        color: @btn__warning-bg;
-    }
-
-    &:hover,
-    &.hover {
-        border-bottom-color: @btn__warning-bg-hover;
-        color: @btn__warning-bg-hover;
-    }
-
-    &:focus,
-    &.focus {
-        outline-color: @btn__warning-bg;
-    }
-
-    &:active,
-    &.active {
-        border-bottom-color: @btn__warning-bg-active;
-        color: @btn__warning-bg-active;
-    }
-
+  // Fixes button and input sizes in IE7
+  // Note that the "3" below is a magic number
+  button.a-btn__super,
+  input.a-btn__super {
+    padding-top: unit( (@btn-v-padding-modifier-ie * 15px) / @super-btn-font-size, em );
+    padding-bottom: unit( (@btn-v-padding-modifier-ie * 15px) / @super-btn-font-size, em );
+  }
 }

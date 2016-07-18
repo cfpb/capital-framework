@@ -1,0 +1,138 @@
+@import '../atoms/buttons.less';
+@import 'cf-icons';
+
+//
+// Button icons
+//
+
+.a-btn_left-icon {
+  &:before {
+    padding-right: unit( 10.5px / @btn-font-size, em );
+    border-right: 1px solid @btn-text; // Fallback
+    border-right: 1px solid fade( @btn-text, 40% );
+    margin-right: unit( 7px / @btn-font-size, em );
+  }
+
+  .a-btn__secondary &:before {
+    border-right-color: @btn__secondary-text; // Fallback
+    border-right-color: fade( @btn__secondary-text, 40% );
+  }
+
+  .a-btn__warning &:before {
+    border-right-color: @btn__warning-text; // Fallback
+    border-right-color: fade( @btn__warning-text, 40% );
+  }
+
+  .a-btn__disabled &:before,
+  .a-btn[disabled] &:before {
+    border-right-color: @btn__disabled-text; // Fallback
+    border-right-color: fade( @btn__disabled-text, 40% );
+  }
+}
+
+.a-btn_icon__right {
+  &:before  {
+    padding-left: unit( 10.5px / @btn-font-size, em);
+    border-right: 0;
+    border-left: 1px solid @btn-text; // Fallback
+    border-left: 1px solid fade(@btn-text, 40%);
+    margin-left: unit( 7px / @btn-font-size, em);
+  }
+  .a-btn__secondary & {
+    border-left-color: @btn__secondary-text; // Fallback
+    border-left-color: fade(@btn__secondary-text, 40%);
+  }
+  .a-btn__warning & {
+    border-left-color: @btn__warning-text; // Fallback
+    border-left-color: fade(@btn__warning-text, 40%);
+  }
+  .a-btn__disabled &,
+  .a-btn[disabled] & {
+    border-left-color: @btn__disabled-text; // Fallback
+    border-left-color: fade(@btn__disabled-text, 40%);
+  }
+}
+
+
+.a-btn_icon__left:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-left;
+}
+
+.a-btn_icon__left-round:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-left-round;
+}
+
+.a-btn_icon__right:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-right;
+}
+
+.a-btn_icon__right-round:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-right-round;
+}
+
+.a-btn_icon__up:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-up;
+}
+
+.a-btn_icon__up-round:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-up-round;
+}
+
+.a-btn_icon__down:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-down;
+}
+
+.a-btn_icon__down-round:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-down-round;
+}
+
+.a-btn_icon__arrow-left:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-arrow-left;
+}
+
+.a-btn_icon__arrow-left-round:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-arrow-left-round;
+}
+
+.a-btn_icon__right-round:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-right-round;
+}
+
+.a-btn_icon__up:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-up;
+}
+
+.a-btn_icon__up-round:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-up-round;
+}
+
+.a-btn_icon__down:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-down;
+}
+
+.a-btn_icon__down-round:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-down-round;
+}
+
+
+// TODO: Add all the icons
+
+.a-btn_icon__delete:before {
+  font-family: 'CFPB Minicons';
+  content: @cf-icon-delete;
+}
