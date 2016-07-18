@@ -1,6 +1,7 @@
 The cf-typography component includes multiple patterns for headings, links and other typographical patterns.
-Additional basic typography patterns are contained in [`cf-core`](../cf-core).
-The [`cf-core`](../core) component is a dependency of this component.
+
+The [`cf-core`](../core) component is a dependency of this component
+and has more basic typography patterns.
 
 
 ## Contents
@@ -30,7 +31,7 @@ The [`cf-core`](../core) component is a dependency of this component.
     - [Icon list](#icon-list)
     - [Link list with icons](#link-list-with-icons)
     - [Custom bullet mixin](#custom-bullet-mixin)
-    
+
 
 ## Variables
 
@@ -40,7 +41,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 ### Color variables
 
 Default color variables are from 18F's
-[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss).
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss).
 
 ```
 // .pull-quote
@@ -84,9 +85,10 @@ Default color variables are from 18F's
 
 ## Pull quote
 
-- Use a pull quote to highlight excerpts from the current work. This is not to be confused with `blockquote` which quotes from an external work.
-
-- Since a pull quote is an excerpt and repeats content from the article it's contained within you should use the `aside` element.
+Use a pull quote to highlight excerpts from the current work.
+This is not to be confused with `blockquote` which quotes from an external work.
+Since a pull quote is an excerpt and repeats content from the article
+you should use the `aside` element.
 
 ### Default pull quote
 
@@ -121,20 +123,18 @@ Default color variables are from 18F's
 
 ### Large pull quote
 
-<div class="block">
-    <aside class="pull-quote pull-quote__large">
-        <div class="pull-quote_body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Cum corrupti tempora nam nihil qui mollitia consectetur
-            corporis nemo culpa dolorum!
-        </div>
-        <footer>
-            <cite class="pull-quote_citation">
-                - Author Name
-            </cite>
-        </footer>
-    </aside>
-</div>
+<aside class="pull-quote pull-quote__large">
+    <div class="pull-quote_body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Cum corrupti tempora nam nihil qui mollitia consectetur
+        corporis nemo culpa dolorum!
+    </div>
+    <footer>
+        <cite class="pull-quote_citation">
+            - Author Name
+        </cite>
+    </footer>
+</aside>
 
 ```
 <aside class="pull-quote pull-quote__large">
@@ -301,9 +301,13 @@ we suggest using a `.u-visually-hidden` element to add more context for screen r
 
 ### Meta header
 
-- `.meta-header_right` should come first in the markup so that when it floats to the right it will appear on the same line as `.meta-header_left`.
+`.meta-header_right` should come first in the markup so that
+when it floats to the right it will appear on the same line as `.meta-header_left`.
 
-- Note that the example shows `.meta-header_left` using the `.category-slug` pattern and `.meta-header_right` using the `.date` pattern but you could use other patterns in place of them. Or you can even swap them so that date is attached to `.meta-header_left` and `.category-slug` is attacked to `.meta-header_right`.
+Note that the example shows `.meta-header_left` using the `.category-slug` pattern
+and `.meta-header_right` using the `.date` pattern but you could use other patterns in place of them.
+Or you can even swap them so that date is
+attached to `.meta-header_left` and `.category-slug` is attached to `.meta-header_right`.
 
 #### Default meta header
 
@@ -331,7 +335,7 @@ we suggest using a `.u-visually-hidden` element to add more context for screen r
 
 #### Alternate meta header arrangements
 
-- Just some random variations to show off what you could do.
+This is just another set of variations to show off what you could do.
 
 <div class="meta-header">
     <a href="#" class="meta-header_right category-slug">
@@ -769,24 +773,28 @@ It converts to a finger-friendly link with a large tap area on smaller screens.
 
 Used when you have a list of links that you would like to include icons as bullets.
 It converts to a finger-friendly link with a large tap area on smaller screens.
-For accessibility reasons, always include a text label accessible to screenreaders when using icon bullets.
+For accessibility reasons, always include a text label accessible to screenreaders
+with `.u-visually-hidden` when using icon bullets.
 
 <ul class="list list__links list__icons">
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__email"
            href="#">
+            <span class="u-visually-hidden">Email: </span>
             <span class="icon-link_text">List item 1</span>
         </a>
     </li>
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__phone"
            href="#">
+            <span class="u-visually-hidden">Phone: </span>
             <span class="icon-link_text">List item 2</span>
         </a>
     </li>
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__fax"
            href="#">
+            <span class="u-visually-hidden">Fax: </span>
             <span class="icon-link_text">List item 3</span>
         </a>
     </li>
@@ -797,18 +805,21 @@ For accessibility reasons, always include a text label accessible to screenreade
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__email"
            href="#">
+            <span class="u-visually-hidden">Email: </span>
             <span class="icon-link_text">List item 1</span>
         </a>
     </li>
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__phone"
            href="#">
+            <span class="u-visually-hidden">Phone: </span>
             <span class="icon-link_text">List item 2</span>
         </a>
     </li>
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__fax"
            href="#">
+            <span class="u-visually-hidden">Fax: </span>
             <span class="icon-link_text">List item 3</span>
         </a>
     </li>
