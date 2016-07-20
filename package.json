@@ -36,6 +36,7 @@
     "fs-readdir-promise": "^1.0.1",
     "gulp": "^3.9.0",
     "gulp-apply-template": "0.0.2",
+    "gulp-autoprefixer": "3.1.0",
     "gulp-cssmin": "^0.1.7",
     "gulp-data": "^1.2.0",
     "gulp-debug": "^2.1.2",

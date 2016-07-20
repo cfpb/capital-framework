@@ -30,6 +30,11 @@ and apply the mixins to those semantic classes, like this:
 
 Read on for more details on the variables and mixins this component provides.
 
+> NOTE: If you use `cf-grid.less` directly,
+  be sure to run the file through
+  [Autoprefixer](https://github.com/postcss/autoprefixer),
+  or your compiled Capital Framework CSS will
+  not work perfectly in older browsers.
 
 ## Variables
 

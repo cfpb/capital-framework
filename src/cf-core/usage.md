@@ -1,5 +1,10 @@
 The cf-core component acts as the backbone for Capital Framework. It's made up of four child components `cf-vars`, `cf-media-queries`, `cf-utilities`, and `cf-base`.
 
+> NOTE: If you use any cf-core Less file directly,
+  be sure to run the files through
+  [Autoprefixer](https://github.com/postcss/autoprefixer),
+  or your compiled Capital Framework CSS will
+  not work perfectly in older browsers.
 
 ## Vars
 

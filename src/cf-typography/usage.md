@@ -32,6 +32,11 @@ and has more basic typography patterns.
     - [Link list with icons](#link-list-with-icons)
     - [Custom bullet mixin](#custom-bullet-mixin)
 
+> NOTE: If you use `cf-typography.less` directly,
+  be sure to run the file through
+  [Autoprefixer](https://github.com/postcss/autoprefixer),
+  or your compiled Capital Framework CSS will
+  not work perfectly in older browsers.
 
 ## Variables
 
