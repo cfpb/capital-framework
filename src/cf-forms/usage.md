@@ -427,3 +427,61 @@ Provides sizeable margins between groups of form elements.
         </div>
     </div>
 </fieldset>
+
+
+## Select dropdown
+
+### Required select
+
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example">
+            Required select example
+    </label>
+    <div class="m-select">
+        <select id="select_example" required>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+
+
+### Disabled select
+
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example">
+            Disabled select example
+    </label>
+    <div class="m-select">
+        <select id="select_example" disabled>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+
+
+### Optional select
+
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example">
+            Optional select example
+            <span class="micro-copy">&nbsp;(Optional)</span>
+    </label>
+    <div class="m-select">
+        <select id="select_example">
+            <option value="" disabled selected>Please select</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
