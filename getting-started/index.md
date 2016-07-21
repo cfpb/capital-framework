@@ -74,7 +74,7 @@ just remember to import them in `main.less` using the correct path.
 If you don't want to use the generator, you can just download the source files and
 import them into your project.
 
-> NOTE: Be sure to run the less files through
+> NOTE: Be sure to run the Less files through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
   or your compiled Capital Framework CSS will not work perfectly in older browsers.
 
