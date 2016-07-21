@@ -1,29 +1,94 @@
+The cf-typography component includes multiple patterns for headings, links, lists, and other advanced typographic treatments.
+
+The [`cf-core`](../core) component is a dependency of this component
+and has more basic typography patterns.
+
+
+## Contents
+
+- [Variables](#variables)
+- [Pull quote](#pull-quote)
+- [Micro copy](#micro-copy)
+- [Short description](#short-description)
+- [Date](#date)
+- [Headers](#headers)
+    - [Category slug](#category-slug)
+    - [Header slug](#header-slug)
+    - [Padded header](#padded-slug)
+    - [Fancy slug](#fancy-slug)
+    - [Meta header](#meta-header)
+- [Link patterns](#link-patterns)
+    - [Links with icons](#links-with-icons)
+    - [Styled link](#styled-link)
+    - [Jump link](#jump-link)
+    - [Block link](#block-link)
+- [Lists](#lists)
+    - [Unstyled list](#unstyled-list)
+    - [Spaced list](#spaced-list)
+    - [Spaced list item](#spaced-list-item)
+    - [Horizontal list](#horizontal-list)
+    - [Link list](#link-list)
+    - [Icon list](#icon-list)
+    - [Link list with icons](#link-list-with-icons)
+    - [Custom bullet mixin](#custom-bullet-mixin)
+
+
 ## Variables
+
+Theme variables for setting the color and sizes.
+Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
+Default color variables are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss).
+
 ```
-@pull-quote_body
-@pull-quote_citation
-@micro-copy-text
-@date-text
-@category-slug-text
-@category-slug-hover
-@header-slug-thin-border
-@header-slug-thick-border
-@padded-header-text
-@padded-header-bg
-@padded-header-border
-@fancy-slug-text
-@fancy-slug-bg
-@fancy-slug-border
-@meta-header-border
-@jump-link__bg
-@jump-link__bg-border
-@list__branded-bullet
+// .pull-quote
+@pull-quote_body:               #494440; // $color-gray-warm-dark
+@pull-quote_citation:           #205493; // $color-cool-blue
+
+// .micro-copy
+@micro-copy-text:               #112e51; // $color-primary-darkest
+
+// .date
+@date-text:                     #112e51; // $color-primary-darkest
+
+// .category-slug
+@category-slug-text:            #112e51; // $color-primary-darkest
+@category-slug-hover:           #205493; // $color-primary-darker
+
+// .header-slug
+@header-slug-thin-border:       #323a45; // $color-gray-dark
+@header-slug-thick-border:      #02bfe7; // $color-primary-alt
+
+// .padded-header
+@padded-header-text:            #046b99; // $color-primary-alt-darkest
+@padded-header-bg:              #dce4ef; // color-gray-cool-light
+@padded-header-border:          #046b99; // $color-primary-alt-darkest
+
+// .fancy-slug
+@fancy-slug-text:               #046b99; // $color-primary-alt-darkest
+@fancy-slug-bg:                 #dce4ef; // color-gray-cool-light
+@fancy-slug-border:             #046b99; // $color-primary-alt-darkest
+
+// .meta-header
+@meta-header-border:            #323a45; // $color-gray-dark
+
+// .jump-link
+@jump-link__bg:                 #f1f1f1; // $color-gray-lightest
+@jump-link__bg-border:          #323a45; // $color-gray-dark
+
+// .list__branded
+@list__branded-bullet:          #02bfe7; // $color-primary-alt
 ```
 
 ## Pull quote
+
+Use a pull quote to highlight excerpts from the current work.
+This is not to be confused with `blockquote` which quotes from an external work.
+Since a pull quote is an excerpt and repeats content from the article
+you should use the `aside` element.
 
 ### Default pull quote
 
@@ -39,6 +104,7 @@
         </cite>
     </footer>
 </aside>
+
 
 ```
 <aside class="pull-quote">
@@ -67,7 +133,7 @@
         <cite class="pull-quote_citation">
             - Author Name
         </cite>
-    <footer>
+    </footer>
 </aside>
 
 ```
@@ -81,16 +147,14 @@
         <cite class="pull-quote_citation">
             - Author Name
         </cite>
-    <footer>
+    </footer>
 </aside>
 ```
 
-- Use a pull quote to highlight excerpts from the current work. This is not to be confused with blockquote which quotes from an external work.
-
-- Since a pull quote is an excerpt and repeats content from the article it's contained within you should use the aside element.
-
 
 ## Micro copy
+
+The `.micro-copy` class is good for highlighting small pieces of text.
 
 ### Standard micro copy
 
@@ -106,33 +170,40 @@
 
 ### Large micro copy
 
-<p class="micro-copy">
+<p class="micro-copy__large">
     Lorem ipsum dolor sit amet
 </p>
 
 ```
-<p class="micro-copy">
+<p class="micro-copy__large">
     Lorem ipsum dolor sit amet
 </p>
 ```
+
+## Short description
+
+The `.short-desc` class is about a line or two of text underneath a headline.
 
 ### Short description
 
-## .short-desc
-
 <p class="short-desc">I am short description.</p>
 
 ```
-<p class="short-desc">I am short description.</p>
+<p class="short-desc">
+    I am short description.
+</p>
 ```
 
-### .short-desc__large (modifier)
+### Large short description
 
 <p class="short-desc short-desc__large">I am large short description.</p>
 
 ```
-<p class="short-desc short-desc__large">I am large short description.</p>
+<p class="short-desc short-desc__large">
+    I am large short description.
+</p>
 ```
+
 
 ## Date
 
@@ -147,9 +218,17 @@
     Nov 4, 2013
 </span>
 ```
-## Category slug
 
-### Default category slug
+
+## Headers
+
+### Category slug
+
+The category slug is used on top of a section.
+Since categories can be repetitive,
+we suggest using a `.u-visually-hidden` element to add more context for screen readers.
+
+#### Default category slug
 
 <a href="#" class="category-slug">
     <span class="category-slug_icon cf-icon cf-icon-dialogue"></span>
@@ -165,12 +244,9 @@
 </a>
 ```
 
-- We suggest using a .u-visually-hidden element to add more context for screen readers.
+### Header slug
 
-
-## Header slug
-
-### Default header slug
+#### Default header slug
 
 <h2 class="header-slug">
     <span class="header-slug_inner">
@@ -186,9 +262,9 @@
 </h2>
 ```
 
-## Padded header
+### Padded header
 
-### Default padded header
+#### Default padded header
 
 <h2 class="padded-header">
     Header
@@ -199,9 +275,11 @@
     Header
 </h2>
 ```
-## Fancy slug
 
-### Default fancy slug
+
+### Fancy slug
+
+#### Default fancy slug
 
 <h2 class="fancy-slug">
     <span class="fancy-slug_text">
@@ -221,9 +299,17 @@
 </h2>
 ```
 
-## Meta header
+### Meta header
 
-### Default meta header
+`.meta-header_right` should come first in the markup so that
+when it floats to the right it will appear on the same line as `.meta-header_left`.
+
+Note that the example shows `.meta-header_left` using the `.category-slug` pattern
+and `.meta-header_right` using the `.date` pattern but you could use other patterns in place of them.
+Or you can even swap them so that date is
+attached to `.meta-header_left` and `.category-slug` is attached to `.meta-header_right`.
+
+#### Default meta header
 
 <div class="meta-header">
     <span class="meta-header_right date">
@@ -247,12 +333,9 @@
 </div>
 ```
 
-- meta-header_right should come first in the markup so that when it floats to the right it will appear on the same line as .meta-header_left.
+#### Alternate meta header arrangements
 
-- Note that the example shows .meta-header_left using the .category-slug pattern and .meta-header_right using the .date pattern but you could use other patterns in place of them. Or you can even swap them so that date is attached to .meta-header_left and .category-slug is attacked to .meta-header_right.
-
-
-### Alternate meta header arrangements
+This is just another set of variations to show off what you could do.
 
 <div class="meta-header">
     <a href="#" class="meta-header_right category-slug">
@@ -289,99 +372,103 @@
 </div>
 ```
 
-- Just some random variations to show off what you could do.
 
+## Link patterns
 
-## Links with icons
+### Links with icons
 
 - Styles to enable adding an icon to a link and preventing the link's underline from extending under the icon.
 - For the underlined icon prevention to work, you must wrap the link text with a `span.icon-link_text`. There can be no whitespace between the text and the opening and closing span tags.
 
-<p>
-    For more information, email
-    <a class="icon-link icon-link__mail" href="#">
-        <span class="icon-link_text">john.smith@cfpb.gov</span>
-    </a>.
-    Alternatively, you can
-    <a class="icon-link icon-link__download" href="#">
-        <span class="icon-link_text">download the info sheet</span>
-    </a>.
-    Oh, you might also want to visit this
-    <a class="icon-link icon-link__external-link" href="#">
-        <span class="icon-link_text">other organization's website</span>
-    </a> for further details.
-</p>
-<a class="icon-link icon-link__right" href="#">
-    Visit another section of our site
-</a>
-
-```
-<p>
-    For more information, email
-    <a class="icon-link icon-link__mail" href="#">
-        <span class="icon-link_text">john.smith@cfpb.gov</span>
-    </a>.
-    Alternatively, you can
-    <a class="icon-link icon-link__download" href="#">
-        <span class="icon-link_text">download the info sheet</span>
-    </a>.
-    Oh, you might also want to visit this
-    <a class="icon-link icon-link__external-link" href="#">
-        <span class="icon-link_text">other organization's website</span>
-    </a> for further details.
-</p>
-<a class="icon-link icon-link__right" href="#">
-    Visit another section of our site
-</a>
-```
+#### Default pattern
 
 - The modifier names match the cf-icon names of commonly-used icons.
 - Icons appear to the right of a link, by default.
 
-
-### Links with icons on the left (modifier)
-
-<a class="icon-link icon-link__mail icon-link__before" href="#">
-    <span class="icon-link_text">john.smith@cfpb.gov</span>
-</a><br>
-<a class="icon-link icon-link__phone icon-link__before" href="#">
-    (123) 456-7890
+<p>
+    For more information, email
+    <a class="icon-link icon-link__mail" href="#">
+        <span class="icon-link_text">john.smith@cfpb.gov</span>
+    </a>.
+    Alternatively, you can
+    <a class="icon-link icon-link__download" href="#">
+        <span class="icon-link_text">download the info sheet</span>
+    </a>.
+    Oh, you might also want to visit this
+    <a class="icon-link icon-link__external-link" href="#">
+        <span class="icon-link_text">other organization's website</span>
+    </a> for further details.
+</p>
+<a class="icon-link icon-link__right" href="#">
+    Visit another section of our site
 </a>
 
+
 ```
-<a class="icon-link icon-link__mail icon-link__before" href="#">
-    <span class="icon-link_text">john.smith@cfpb.gov</span>
-</a><br>
-<a class="icon-link icon-link__phone icon-link__before" href="#">
-    (123) 456-7890
+<p>
+    For more information, email
+    <a class="icon-link icon-link__mail" href="#">
+        <span class="icon-link_text">john.smith@cfpb.gov</span>
+    </a>.
+    Alternatively, you can
+    <a class="icon-link icon-link__download" href="#">
+        <span class="icon-link_text">download the info sheet</span>
+    </a>.
+    Oh, you might also want to visit this
+    <a class="icon-link icon-link__external-link" href="#">
+        <span class="icon-link_text">other organization's website</span>
+    </a> for further details.
+</p>
+<a class="icon-link icon-link__right" href="#">
+    Visit another section of our site
 </a>
 ```
+
+#### Links with icons on the left
+
 - Simply add the `.icon-link__before` modifier to place the icon before the link text.
 - You can omit the `span.icon-link_text` wrapper if you do not need an underline on a particular link.
 
-
-### Non-wrapping icon links
-
-<p>
-    For more information, email
-    <a class="icon-link icon-link__mail icon-link__no-wrap" href="#">
-        <span class="icon-link_text">john.smith@cfpb.gov</span>
-    </a>.
-</p>
+<a class="icon-link icon-link__mail icon-link__before" href="#">
+    <span class="icon-link_text">john.smith@cfpb.gov</span>
+</a><br>
+<a class="icon-link icon-link__phone icon-link__before" href="#">
+    (123) 456-7890
+</a>
 
 ```
-<p>
-    For more information, email
-    <a class="icon-link icon-link__mail icon-link__no-wrap" href="#">
-        <span class="icon-link_text">john.smith@cfpb.gov</span>
-    </a>.
-</p>
+<a class="icon-link icon-link__mail icon-link__before" href="#">
+    <span class="icon-link_text">john.smith@cfpb.gov</span>
+</a><br>
+<a class="icon-link icon-link__phone icon-link__before" href="#">
+    (123) 456-7890
+</a>
 ```
+
+#### Non-wrapping icon links
 
 - Warning: Icons added to inline links can sometimes break onto the next line. If you want to prevent this, you can add the `__no-wrap` modifier to `.icon-link`.
 
+<p>
+    For more information, email
+    <a class="icon-link icon-link__mail icon-link__no-wrap" href="#">
+        <span class="icon-link_text">john.smith@cfpb.gov</span>
+    </a>.
+</p>
 
-## Styled link
+```
+<p>
+    For more information, email
+    <a class="icon-link icon-link__mail icon-link__no-wrap" href="#">
+        <span class="icon-link_text">john.smith@cfpb.gov</span>
+    </a>.
+</p>
+```
+
+
+### Styled link
+
+#### Default pattern
 
 <a class="styled-link" href="#">
     Default styled link
@@ -393,7 +480,9 @@
 </a>
 ```
 
-## Jump link
+### Jump link
+
+#### Default pattern
 
 <a class="jump-link" href="#">
     <span class="jump-link_text">Default jump link</span>
@@ -405,7 +494,9 @@
 </a>
 ```
 
-### .jump-link__large (modifier)
+#### Large jump link
+
+The large jump link has an 18px font-size, compared to the default of 16px.
 
 <a class="jump-link jump-link__large" href="#">
     <span class="jump-link_text">Large jump link</span>
@@ -417,9 +508,10 @@
 </a>
 ```
 
-- 18px font-size, compared to the default of 16px
+#### Jump link with icon
 
-## .jump-link__{icon} (modifier)
+- `.jump-link` extends `.icon-link`, so all that is needed to add an icon to a jump link is to add a modifier with the icon's name.
+- In this example, `.jump-link__right` is a taken from the `cf-icon__right` icon in [cf-icons](../cf-icons).
 
 <a class="jump-link jump-link__right" href="#">
     <span class="jump-link_text">Jump link using the right icon from cf-icons</span>
@@ -430,10 +522,11 @@
     <span class="jump-link_text">Jump link using the right icon from cf-icons</span>
 </a>
 ```
-- .jump-link extends .icon-link, so all that is needed to add an icon to a jump link is to add a modifier with the icon's name.
 
 
-### .jump-link__before (modifier)
+#### Jump link with icon on left
+
+Jump links can also have icons before the text, like icon links.
 
 <a class="jump-link jump-link__left jump-link__before" href="#">
     <span class="jump-link_text">Jump link with icon on left</span>
@@ -445,10 +538,7 @@
 </a>
 ```
 
-- Jump links can also have icons before the text, like icon links.
-
-
-### .jump-link__bg (modifier)
+#### Jump link with background
 
 <a class="jump-link jump-link__bg" href="#">
     <span class="jump-link_text">Jump link with grey background and
@@ -462,10 +552,14 @@
 </a>
 ```
 
-## Block link
+### Block link
 
+The block link class converts a standard inline link
+to a block-level element with padding, background, and borders.
 
-### .block-link
+It is primarily used within a max-width 599px media query (see `.jump-link` and `.list__links`).
+
+#### Default example
 
 <a class="block-link" href="#">
     Default block link
@@ -477,13 +571,12 @@
 </a>
 ```
 
-- Convert a standard inline link to a block-level element with padding, background, and borders.
-- Primarily used within a max-width 599px media query (see .jump-link and .list__links).
 
+## Lists
 
-## Unstyled list modifier
+### Unstyled list
 
-### Default example
+Unstyled list removes bullets and other styling from a list.
 
 <ul class="list list__unstyled">
     <li class="list_item">
@@ -511,9 +604,9 @@
 </ul>
 ```
 
-## Spaced list modifier
+### Spaced list
 
-### Default example
+Spaced list adds extra padding to every element in a list.
 
 <ul class="list list__spaced">
     <li class="list_item">
@@ -541,9 +634,9 @@
 </ul>
 ```
 
-## Spaced list item modifier
+### Spaced list item
 
-### Default example
+The spaced list item class will space one item in an otherwise standard list.
 
 <ul class="list">
     <li class="list_item">
@@ -553,7 +646,7 @@
         <a class="list_link">List item 2</a>
     </li>
     <li class="list_item list_item__spaced">
-        <a class="list_link">List item 3</a>
+        <a class="list_link">List item 3 (Spaced)</a>
     </li>
     <li class="list_item">
         <a class="list_link">List item 4</a>
@@ -569,7 +662,7 @@
         <a class="list_link">List item 2</a>
     </li>
     <li class="list_item list_item__spaced">
-        <a class="list_link">List item 3</a>
+        <a class="list_link">List item 3 (Spaced)</a>
     </li>
     <li class="list_item">
         <a class="list_link">List item 4</a>
@@ -577,9 +670,9 @@
 </ul>
 ```
 
-## Horizontal list modifier
+### Horizontal list
 
-### Default example
+A modifier for the list to make it show items horizontally.
 
 <ul class="list list__horizontal">
     <li class="list_item">
@@ -607,12 +700,10 @@
 </ul>
 ```
 
-## Icon list modifier
+### Icon list
 
-- Set up a list with icons on the left, in place of bullets.
-- Will need some more work to allow lines to wrap.
-
-### Default example
+The icon list will set up a list with icons on the left, in place of bullets.
+Will need some more work to allow lines to wrap.
 
 <ul class="list list__icons">
     <li class="list_item">
@@ -646,11 +737,10 @@
 </ul>
 ```
 
-## Link list modifier
+### Link list
 
-- The link list modifier is intended to be used for lists where each item is a link. It converts to a finger-friendly link with a large tap area on smaller screens.
-
-### Default example
+The link list modifier is intended to be used for lists where each item is a link.
+It converts to a finger-friendly link with a large tap area on smaller screens.
 
 <ul class="list list__links">
     <li class="list_item">
@@ -680,22 +770,30 @@
 
 ### Link list with icons
 
+Used when you have a list of links that you would like to include icons as bullets.
+It converts to a finger-friendly link with a large tap area on smaller screens.
+For accessibility reasons, always include a text label accessible to screenreaders
+with `.u-visually-hidden` when using icon bullets.
+
 <ul class="list list__links list__icons">
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__email"
            href="#">
+            <span class="u-visually-hidden">Email: </span>
             <span class="icon-link_text">List item 1</span>
         </a>
     </li>
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__phone"
            href="#">
+            <span class="u-visually-hidden">Phone: </span>
             <span class="icon-link_text">List item 2</span>
         </a>
     </li>
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__fax"
            href="#">
+            <span class="u-visually-hidden">Fax: </span>
             <span class="icon-link_text">List item 3</span>
         </a>
     </li>
@@ -706,29 +804,29 @@
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__email"
            href="#">
+            <span class="u-visually-hidden">Email: </span>
             <span class="icon-link_text">List item 1</span>
         </a>
     </li>
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__phone"
            href="#">
+            <span class="u-visually-hidden">Phone: </span>
             <span class="icon-link_text">List item 2</span>
         </a>
     </li>
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__fax"
            href="#">
+            <span class="u-visually-hidden">Fax: </span>
             <span class="icon-link_text">List item 3</span>
         </a>
     </li>
 </ul>
 ```
 
-## Custom bullet mixin
 
-### Custom bullet
-
-.custom-bullet(@text, @color, @offset, @size, @font, @type)
+### Custom bullet mixin
 
 - Displays custom bullets to the left of specified elements as :before pseudo elements.
 
@@ -738,23 +836,4 @@
 
 - By default, custom bullets hang outside of their parent's content box (in the margin or padding if there is any). If you want the bullets to align with the left boundary of the parent's content box, give the parent a left margin value equal to the offset.
 
-
-## Branded list modifier
-
-### Branded list
-
-<ul class="list__branded">
-    <li>First item</li>
-    <li>Second item</li>
-    <li>Third item</li>
-</ul>
-
-```
-<ul class="list__branded">
-    <li>First item</li>
-    <li>Second item</li>
-    <li>Third item</li>
-</ul>
-```
-
-- Uses .custom-bullet mixin to generate custom main-brand-color square bullets.
+`.custom-bullet(@text, @color, @offset, @size, @font, @type)`

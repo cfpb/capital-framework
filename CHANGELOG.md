@@ -4,13 +4,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-typography:** [MINOR] Many documentation fixes and standardization
 
 ### Removed
-- 
+- **cf-typography:** [MINOR] Removed remaining Less from branded bullets
 
 ## 3.5.2 - 2016-07-06
 
