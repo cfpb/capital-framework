@@ -36,7 +36,7 @@
 @btn-border-radius-size:        4px;
 @btn-v-padding:                 8px;
 @btn-h-padding:                 14px;
-@btn-v-padding-modifier-ie:     .8;
+@btn-v-padding-modifier-ie:     0.8;
 
 // .btn__super
 @super-btn-font-size:           20px;
@@ -60,9 +60,9 @@
   font-size: unit( @btn-font-size / @base-font-size-px, em );
   line-height: normal;
   text-decoration: none;
-  transition: background-color .1s;
+  transition: background-color 0.1s;
   vertical-align: middle;
-  -webkit-appearance: none;
+  appearance: none;
 
   &,
   &:link,
@@ -96,10 +96,6 @@
     // Helps with inconsistent input.btn height in FireFox but not completely
     border: 0;
   }
-
-  & + & {
-    margin-left: unit( 6px / @btn-font-size, em);
-  }
 }
 
 .lt-ie8 {
@@ -113,8 +109,8 @@
   button.a-btn,
   input.a-btn {
     overflow: visible;
-    padding-top: unit( (@btn-v-padding-modifier-ie * @btn-v-padding) / @btn-font-size, em );
-    padding-bottom: unit( (@btn-v-padding-modifier-ie * @btn-v-padding) / @btn-font-size, em );
+    padding-top: unit( @btn-v-padding-modifier-ie * @btn-v-padding / @btn-font-size, em );
+    padding-bottom: unit( @btn-v-padding-modifier-ie * @btn-v-padding / @btn-font-size, em );
   }
 }
 
@@ -212,18 +208,13 @@
     unit( 11px / @super-btn-font-size, em )
     unit( 29px / @super-btn-font-size, em );
   font-size: unit( @super-btn-font-size / @base-font-size-px, em );
-
-  & + & {
-    margin-left: unit( 6px / @super-btn-font-size, em);
-  }
 }
 
 .lt-ie8 {
   // Fixes button and input sizes in IE7
-  // Note that the "3" below is a magic number
   button.a-btn__super,
   input.a-btn__super {
-    padding-top: unit( (@btn-v-padding-modifier-ie * 15px) / @super-btn-font-size, em );
-    padding-bottom: unit( (@btn-v-padding-modifier-ie * 15px) / @super-btn-font-size, em );
+    padding-top: unit( @btn-v-padding-modifier-ie * 15px / @super-btn-font-size, em );
+    padding-bottom: unit( @btn-v-padding-modifier-ie * 15px / @super-btn-font-size, em );
   }
 }
