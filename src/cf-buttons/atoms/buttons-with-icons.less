@@ -7,7 +7,7 @@
 
 // Icon directions
 
-.a-btn_left-icon {
+.a-btn_icon-position-left {
   &:before {
     padding-right: unit( 10.5px / @btn-font-size, em );
     border-right: 1px solid @btn-text; // Fallback
@@ -32,8 +32,8 @@
   }
 }
 
-.a-btn_right-icon {
-  &:before  {
+.a-btn_icon-position-right {
+  &:after  {
     padding-left: unit( 10.5px / @btn-font-size, em);
     border-right: 0;
     border-left: 1px solid @btn-text; // Fallback
@@ -58,939 +58,1485 @@
 
 // Navigation icons
 
-.a-btn_icon__left:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-left;
+.a-btn_icon__left {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-left;
+  }
 }
 
-.a-btn_icon__left-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-left-round;
+.a-btn_icon__left-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-left-round;
+  }
 }
 
-.a-btn_icon__right:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-right;
+.a-btn_icon__right {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-right;
+  }
 }
 
-.a-btn_icon__right-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-right-round;
+.a-btn_icon__right-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-right-round;
+  }
 }
 
-.a-btn_icon__up:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-up;
+.a-btn_icon__up {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-up;
+  }
 }
 
-.a-btn_icon__up-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-up-round;
+.a-btn_icon__up-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-up-round;
+  }
 }
 
-.a-btn_icon__down:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-down;
+.a-btn_icon__down {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-down;
+  }
 }
 
-.a-btn_icon__down-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-down-round;
+.a-btn_icon__down-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-down-round;
+  }
 }
 
-.a-btn_icon__arrow-left:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-arrow-left;
+.a-btn_icon__arrow-left {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-arrow-left;
+  }
 }
 
-.a-btn_icon__arrow-left-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-arrow-left-round;
+.a-btn_icon__arrow-left-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-arrow-left-round;
+  }
 }
 
-.a-btn_icon__right:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-right;
+.a-btn_icon__right {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-right;
+  }
 }
 
-.a-btn_icon__right-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-right-round;
+.a-btn_icon__right-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-right-round;
+  }
 }
 
-.a-btn_icon__up:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-up;
+.a-btn_icon__up {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-up;
+  }
 }
 
-.a-btn_icon__up-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-up-round;
+.a-btn_icon__up-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-up-round;
+  }
 }
 
-.a-btn_icon__down:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-down;
+.a-btn_icon__down {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-down;
+  }
 }
 
-.a-btn_icon__down-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-down-round;
+.a-btn_icon__down-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-down-round;
+  }
 }
 
 // Status icons
 
-.a-btn_icon__approved:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-approved;
+.a-btn_icon__approved {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-approved;
+  }
 }
 
-.a-btn_icon__approved-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-approved-round;
+.a-btn_icon__approved-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-approved-round;
+  }
+}
+.a-btn_icon__error {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-error;
+  }
 }
 
-.a-btn_icon__error:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-error;
+.a-btn_icon__error-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-error-round;
+  }
+}
+.a-btn_icon__help {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-help;
+  }
 }
 
-.a-btn_icon__error-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-error-round;
+.a-btn_icon__help-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-help-round;
+  }
+}
+.a-btn_icon__delete {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-delete;
+  }
 }
 
-.a-btn_icon__help:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-help;
+.a-btn_icon__delete-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-delete-round;
+  }
 }
 
-.a-btn_icon__help-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-help-round;
+.a-btn_icon__plus {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-plus;
+  }
+}
+.a-btn_icon__plus-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-plus-round;
+  }
+}
+.a-btn_icon__minus {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-minus;
+  }
+}
+.a-btn_icon__minus-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-minus-round;
+  }
 }
 
-.a-btn_icon__delete:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-delete;
+.a-btn_icon__update {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-update;
+  }
 }
-
-.a-btn_icon__delete-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-delete-round;
-}
-
-.a-btn_icon__plus:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-plus;
-}
-
-.a-btn_icon__plus-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-plus-round;
-}
-
-.a-btn_icon__minus:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-minus;
-}
-
-.a-btn_icon__minus-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-minus-round;
-}
-
-.a-btn_icon__update:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-update;
-}
-
-.a-btn_icon__update-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-update-round;
+.a-btn_icon__update-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-update-round;
+  }
 }
 
 // Social icons
 
-.a-btn_icon__youtube:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-youtube;
+.a-btn_icon__youtube {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-youtube;
+  }
 }
 
-.a-btn_icon__youtube-square:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-youtube-square;
+.a-btn_icon__youtube-square {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-youtube-square;
+  }
 }
 
-.a-btn_icon__linkedin:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-linkedin;
+.a-btn_icon__linkedin {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-linkedin;
+  }
 }
 
-.a-btn_icon__linkedin-square:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-linkedin-square;
+.a-btn_icon__linkedin-square {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-linkedin-square;
+  }
 }
 
-.a-btn_icon__facebook:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-facebook;
+.a-btn_icon__facebook {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-facebook;
+  }
 }
 
-.a-btn_icon__facebook-square:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-facebook-square;
+.a-btn_icon__facebook-square {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-facebook-square;
+  }
 }
 
-.a-btn_icon__flickr:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-flickr;
+.a-btn_icon__flickr {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-flickr;
+  }
 }
 
-.a-btn_icon__flickr-square:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-flickr-square;
+.a-btn_icon__flickr-square {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-flickr-square;
+  }
 }
 
-.a-btn_icon__twitter:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-twitter;
+.a-btn_icon__twitter {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-twitter;
+  }
 }
 
-.a-btn_icon__twitter-square:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-twitter-square;
+.a-btn_icon__twitter-square {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-twitter-square;
+  }
 }
 
-.a-btn_icon__github:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-github;
+.a-btn_icon__github {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-github;
+  }
 }
 
-.a-btn_icon__github-square:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-github-square;
+.a-btn_icon__github-square {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-github-square;
+  }
 }
 
-.a-btn_icon__email-social:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-email-social;
+.a-btn_icon__email-social {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-email-social;
+  }
 }
 
-.a-btn_icon__email-social-square:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-email-social-square;
+.a-btn_icon__email-social-square {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-email-social-square;
+  }
 }
 
 // Communication icons
 
-.a-btn_icon__web:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-web;
+.a-btn_icon__web {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-web;
+  }
 }
 
-.a-btn_icon__web-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-web-round;
+.a-btn_icon__web-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-web-round;
+  }
 }
 
-.a-btn_icon__email:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-email;
+.a-btn_icon__email {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-email;
+  }
 }
 
-.a-btn_icon__email-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-email-round;
+.a-btn_icon__email-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-email-round;
+  }
 }
 
-.a-btn_icon__mail:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-mail;
+.a-btn_icon__mail {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-mail;
+  }
 }
 
-.a-btn_icon__mail-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-mail-round;
+.a-btn_icon__mail-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-mail-round;
+  }
 }
 
-.a-btn_icon__phone:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-phone;
+.a-btn_icon__phone {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-phone;
+  }
 }
 
-.a-btn_icon__phone-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-phone-round;
+.a-btn_icon__phone-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-phone-round;
+  }
 }
 
-.a-btn_icon__technology:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-technology;
+.a-btn_icon__technology {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-technology;
+  }
 }
 
-.a-btn_icon__technology-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-technology-round;
+.a-btn_icon__technology-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-technology-round;
+  }
 }
 
-.a-btn_icon__fax:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-fax;
+.a-btn_icon__fax {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-fax;
+  }
 }
 
-.a-btn_icon__fax-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-fax-round;
+.a-btn_icon__fax-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-fax-round;
+  }
 }
-
 // Document icons
 
-.a-btn_icon__document:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-document;
+.a-btn_icon__document {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-document;
+  }
 }
 
-.a-btn_icon__document-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-document-round;
+.a-btn_icon__document-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-document-round;
+  }
 }
 
-.a-btn_icon__pdf:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-pdf;
+.a-btn_icon__pdf {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-pdf;
+  }
 }
 
-.a-btn_icon__pdf-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-pdf-round;
+.a-btn_icon__pdf-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-pdf-round;
+  }
 }
 
-.a-btn_icon__upload:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-upload;
+.a-btn_icon__upload {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-upload;
+  }
 }
 
-.a-btn_icon__upload-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-upload-round;
+.a-btn_icon__upload-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-upload-round;
+  }
 }
 
-.a-btn_icon__download:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-download;
+.a-btn_icon__download {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-download;
+  }
 }
 
-.a-btn_icon__download-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-download-round;
+.a-btn_icon__download-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-download-round;
+  }
 }
 
-.a-btn_icon__copy:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-copy;
+.a-btn_icon__copy {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-copy;
+  }
 }
 
-.a-btn_icon__copy-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-copy-round;
+.a-btn_icon__copy-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-copy-round;
+  }
 }
 
-.a-btn_icon__edit:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-edit;
+.a-btn_icon__edit {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-edit;
+  }
 }
 
-.a-btn_icon__edit-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-edit-round;
+.a-btn_icon__edit-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-edit-round;
+  }
 }
 
-.a-btn_icon__attach:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-attach;
+.a-btn_icon__attach {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-attach;
+  }
 }
 
-.a-btn_icon__attach:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-attach-round;
+.a-btn_icon__attach {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-attach-round;
+  }
 }
 
-.a-btn_icon__print:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-print;
+.a-btn_icon__print {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-print;
+  }
 }
 
-.a-btn_icon__print-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-print-round;
+.a-btn_icon__print-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-print-round;
+  }
 }
 
-.a-btn_icon__appendix:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-appendix;
+.a-btn_icon__appendix {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-appendix;
+  }
 }
 
-.a-btn_icon__appendix-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-appendix-round;
+.a-btn_icon__appendix-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-appendix-round;
+  }
 }
 
-.a-btn_icon__supplement:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-supplement;
+.a-btn_icon__supplement {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-supplement;
+  }
 }
 
-.a-btn_icon__supplement-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-supplement-round;
+.a-btn_icon__supplement-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-supplement-round;
+  }
 }
 
-.a-btn_icon__rss:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-rss;
+.a-btn_icon__rss {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-rss;
+  }
 }
 
-.a-btn_icon__rss-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-rss-round;
+.a-btn_icon__rss-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-rss-round;
+  }
 }
 
 // Financial products
 
-.a-btn_icon__bank-account:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-bank-account;
+.a-btn_icon__bank-account {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-bank-account;
+  }
 }
 
-.a-btn_icon__bank-account-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-bank-account-round;
+.a-btn_icon__bank-account-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-bank-account-round;
+  }
 }
 
-.a-btn_icon__credit-card:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-credit-card;
+.a-btn_icon__credit-card {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-credit-card;
+  }
 }
 
-.a-btn_icon__credit-card-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-credit-card-round;
+.a-btn_icon__credit-card-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-credit-card-round;
+  }
 }
 
-.a-btn_icon__loan:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-loan;
+.a-btn_icon__loan {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-loan;
+  }
 }
 
-.a-btn_icon__loan-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-loan-round;
+.a-btn_icon__loan-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-loan-round;
+  }
 }
 
-.a-btn_icon__money-transfer:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-money-transfer;
+.a-btn_icon__money-transfer {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-money-transfer;
+  }
 }
 
-.a-btn_icon__money-transfer-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-money-transfer-round;
+.a-btn_icon__money-transfer-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-money-transfer-round;
+  }
 }
 
-.a-btn_icon__mortgage:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-mortgage;
+.a-btn_icon__mortgage {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-mortgage;
+  }
 }
 
-.a-btn_icon__mortgage-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-mortgage-round;
+.a-btn_icon__mortgage-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-mortgage-round;
+  }
 }
 
-.a-btn_icon__debt-collection:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-debt-collection;
+.a-btn_icon__debt-collection {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-debt-collection;
+  }
 }
 
-.a-btn_icon__debt-collection-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-debt-collection-round;
+.a-btn_icon__debt-collection-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-debt-collection-round;
+  }
 }
 
-.a-btn_icon__credit-report:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-credit-report;
+.a-btn_icon__credit-report {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-credit-report;
+  }
 }
 
-.a-btn_icon__credit-report-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-credit-report-round;
+.a-btn_icon__credit-report-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-credit-report-round;
+  }
 }
 
-.a-btn_icon__money:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-money;
+.a-btn_icon__money {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-money;
+  }
 }
 
-.a-btn_icon__money-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-money-round;
+.a-btn_icon__money-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-money-round;
+  }
 }
 
-.a-btn_icon__quick-cash:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-quick-cash;
+.a-btn_icon__quick-cash {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-quick-cash;
+  }
 }
 
-.a-btn_icon__quick-cash-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-quick-cash-round;
+.a-btn_icon__quick-cash-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-quick-cash-round;
+  }
 }
 
-.a-btn_icon__contract:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-contract;
+.a-btn_icon__contract {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-contract;
+  }
 }
 
-.a-btn_icon__contract-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-contract-round;
+.a-btn_icon__contract-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-contract-round;
+  }
 }
 
-.a-btn_icon__complaint:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-complaint;
+.a-btn_icon__complaint {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-complaint;
+  }
 }
 
-.a-btn_icon__complaint-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-complaint-round;
+.a-btn_icon__complaint-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-complaint-round;
+  }
 }
 
-.a-btn_icon__getting-credit-card:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-getting-credit-card;
+.a-btn_icon__getting-credit-card {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-getting-credit-card;
+  }
 }
 
-.a-btn_icon__getting-credit-card-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-getting-credit-card-round;
+.a-btn_icon__getting-credit-card-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-getting-credit-card-round;
+  }
 }
 
-.a-btn_icon__buying-car:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-buying-car;
+.a-btn_icon__buying-car {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-buying-car;
+  }
 }
 
-.a-btn_icon__buying-car-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-buying-car-round;
+.a-btn_icon__buying-car-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-buying-car-round;
+  }
 }
 
-.a-btn_icon__paying-college:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-paying-college;
+.a-btn_icon__paying-college {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-paying-college;
+  }
 }
 
-.a-btn_icon__paying-college-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-paying-college-round;
+.a-btn_icon__paying-college-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-paying-college-round;
+  }
 }
 
-.a-btn_icon__owning-home:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-owning-home;
+.a-btn_icon__owning-home {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-owning-home;
+  }
 }
 
-.a-btn_icon__owning-home-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-owning-home-round;
+.a-btn_icon__owning-home-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-owning-home-round;
+  }
 }
 
-.a-btn_icon__debt:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-debt;
+.a-btn_icon__debt {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-debt;
+  }
 }
 
-.a-btn_icon__debt-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-debt-round;
+.a-btn_icon__debt-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-debt-round;
+  }
 }
 
-.a-btn_icon__building-credit:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-building-credit;
+.a-btn_icon__building-credit {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-building-credit;
+  }
 }
 
-.a-btn_icon__building-credit-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-building-credit-round;
+.a-btn_icon__building-credit-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-building-credit-round;
+  }
 }
 
-.a-btn_icon__prepaid-cards:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-prepaid-cards;
+.a-btn_icon__prepaid-cards {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-prepaid-cards;
+  }
 }
 
-.a-btn_icon__prepaid-cards-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-prepaid-cards-round;
+.a-btn_icon__prepaid-cards-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-prepaid-cards-round;
+  }
 }
 
-.a-btn_icon__payday-loan:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-payday-loan;
+.a-btn_icon__payday-loan {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-payday-loan;
+  }
 }
 
-.a-btn_icon__payday-loan-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-payday-loan-round;
+.a-btn_icon__payday-loan-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-payday-loan-round;
+  }
 }
 
-.a-btn_icon__retirement:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-retirement-round;
+.a-btn_icon__retirement {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-retirement-round;
+  }
 }
-
-.a-btn_icon__retirement-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-retirement-round;
+.a-btn_icon__retirement-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-retirement-round;
+  }
 }
 
 // Web icons
 
-.a-btn_icon__user:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-user;
+.a-btn_icon__user {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-user;
+  }
 }
 
-.a-btn_icon__user-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-user-round;
+.a-btn_icon__user-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-user-round;
+  }
 }
 
-.a-btn_icon__wifi:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-wifi;
+.a-btn_icon__wifi {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-wifi;
+  }
 }
 
-.a-btn_icon__wifi-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-wifi-round;
+.a-btn_icon__wifi-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-wifi-round;
+  }
 }
 
-.a-btn_icon__search:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-search;
+.a-btn_icon__search {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-search;
+  }
 }
 
-.a-btn_icon__search-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-search-round;
+.a-btn_icon__search-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-search-round;
+  }
 }
 
-.a-btn_icon__link:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-link;
+.a-btn_icon__link {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-link;
+  }
 }
 
-.a-btn_icon__link-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-link-round;
+.a-btn_icon__link-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-link-round;
+  }
 }
 
-.a-btn_icon__external-link:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-external-link;
+.a-btn_icon__external-link {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-external-link;
+  }
 }
 
-.a-btn_icon__external-link-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-external-link-round;
+.a-btn_icon__external-link-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-external-link-round;
+  }
 }
 
-.a-btn_icon__audio-mute:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-audio-mute;
+.a-btn_icon__audio-mute {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-audio-mute;
+  }
 }
 
-.a-btn_icon__audio-mute-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-audio-mute-round;
+.a-btn_icon__audio-mute-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-audio-mute-round;
+  }
 }
 
-.a-btn_icon__audio-low:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-audio-low;
+.a-btn_icon__audio-low {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-audio-low;
+  }
 }
 
-.a-btn_icon__audio-low-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-audio-low-round;
+.a-btn_icon__audio-low-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-audio-low-round;
+  }
 }
 
-.a-btn_icon__audio-medium:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-audio-medium;
+.a-btn_icon__audio-medium {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-audio-medium;
+  }
 }
 
-.a-btn_icon__audio-medium-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-audio-medium-round;
+.a-btn_icon__audio-medium-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-audio-medium-round;
+  }
 }
 
-.a-btn_icon__audio-max:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-audio-max;
+.a-btn_icon__audio-max {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-audio-max;
+  }
 }
 
-.a-btn_icon__audio-max-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-audio-max-round;
+.a-btn_icon__audio-max-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-audio-max-round;
+  }
 }
 
-.a-btn_icon__favorite:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-favorite;
+.a-btn_icon__favorite {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-favorite;
+  }
 }
 
-.a-btn_icon__favorite-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-favorite-round;
+.a-btn_icon__favorite-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-favorite-round;
+  }
 }
 
-.a-btn_icon__bookmark:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-bookmark;
+.a-btn_icon__bookmark {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-bookmark;
+  }
 }
 
-.a-btn_icon__bookmark-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-bookmark-round;
+.a-btn_icon__bookmark-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-bookmark-round;
+  }
 }
 
-.a-btn_icon__unbookmark:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-unbookmark;
+.a-btn_icon__unbookmark {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-unbookmark;
+  }
 }
 
-.a-btn_icon__unbookmark-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-unbookmark-round;
+.a-btn_icon__unbookmark-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-unbookmark-round;
+  }
 }
 
-.a-btn_icon__settings:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-settings;
+.a-btn_icon__settings {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-settings;
+  }
 }
 
-.a-btn_icon__settings-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-settings-round;
+.a-btn_icon__settings-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-settings-round;
+  }
 }
 
-.a-btn_icon__menu:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-menu;
+.a-btn_icon__menu {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-menu;
+  }
 }
 
-.a-btn_icon__menu-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-menu-round;
+.a-btn_icon__menu-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-menu-round;
+  }
 }
 
-.a-btn_icon__lock:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-lock;
+.a-btn_icon__lock {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-lock;
+  }
 }
 
-.a-btn_icon__lock-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-lock-round;
+.a-btn_icon__lock-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-lock-round;
+  }
 }
 
-.a-btn_icon__unlock:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-unlock;
+.a-btn_icon__unlock {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-unlock;
+  }
 }
 
-.a-btn_icon__unlock-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-unlock-round;
+.a-btn_icon__unlock-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-unlock-round;
+  }
 }
 
-.a-btn_icon__clock:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-clock;
+.a-btn_icon__clock {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-clock;
+  }
 }
 
-.a-btn_icon__clock-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-clock-round;
+.a-btn_icon__clock-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-clock-round;
+  }
 }
 
-.a-btn_icon__chart:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-chart;
+.a-btn_icon__chart {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-chart;
+  }
 }
 
-.a-btn_icon__chart-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-chart-round;
+.a-btn_icon__chart-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-chart-round;
+  }
 }
 
-.a-btn_icon__play:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-play;
+.a-btn_icon__play {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-play;
+  }
 }
 
-.a-btn_icon__play-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-play-round;
+.a-btn_icon__play-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-play-round;
+  }
 }
 
-.a-btn_icon__history:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-history;
+.a-btn_icon__history {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-history;
+  }
 }
 
-.a-btn_icon__history-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-history-round;
+.a-btn_icon__history-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-history-round;
+  }
 }
 
-.a-btn_icon__table-of-contents:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-table-of-contents;
+.a-btn_icon__table-of-contents {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-table-of-contents;
+  }
 }
 
-.a-btn_icon__table-of-contents-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-table-of-contents-round;
+.a-btn_icon__table-of-contents-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-table-of-contents-round;
+  }
 }
 
-.a-btn_icon__newspaper:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-newspaper;
+.a-btn_icon__newspaper {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-newspaper;
+  }
 }
 
-.a-btn_icon__newspaper-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-newspaper-round;
+.a-btn_icon__newspaper-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-newspaper-round;
+  }
 }
 
-.a-btn_icon__microphone:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-microphone;
+.a-btn_icon__microphone {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-microphone;
+  }
 }
 
-.a-btn_icon__microphone-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-microphone-round;
+.a-btn_icon__microphone-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-microphone-round;
+  }
 }
 
-.a-btn_icon__bullhorn:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-bullhorn;
+.a-btn_icon__bullhorn {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-bullhorn;
+  }
 }
 
-.a-btn_icon__bullhorn-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-bullhorn-round;
+.a-btn_icon__bullhorn-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-bullhorn-round;
+  }
 }
 
-.a-btn_icon__double-quote:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-double-quote;
+.a-btn_icon__double-quote {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-double-quote;
+  }
 }
 
-.a-btn_icon__double-quote-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-double-quote-round;
+.a-btn_icon__double-quote-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-double-quote-round;
+  }
 }
 
-.a-btn_icon__speech-bubble:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-speech-bubble;
+.a-btn_icon__speech-bubble {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-speech-bubble;
+  }
 }
 
-.a-btn_icon__speech-bubble-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-speech-bubble-round;
+.a-btn_icon__speech-bubble-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-speech-bubble-round;
+  }
 }
 
-.a-btn_icon__information:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-information;
+.a-btn_icon__information {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-information;
+  }
 }
 
-.a-btn_icon__information-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-information-round;
+.a-btn_icon__information-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-information-round;
+  }
 }
 
-.a-btn_icon__lightbulb:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-lightbulb;
+.a-btn_icon__lightbulb {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-lightbulb;
+  }
 }
 
-.a-btn_icon__dialogue:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-dialogue;
+.a-btn_icon__dialogue {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-dialogue;
+  }
 }
 
-.a-btn_icon__dialogue-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-dialogue-round;
+.a-btn_icon__dialogue-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-dialogue-round;
+  }
 }
 
-.a-btn_icon__date:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-date;
+.a-btn_icon__date {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-date;
+  }
 }
 
-.a-btn_icon__date-round:before {
+.a-btn_icon__date-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
   font-family: 'CFPB Minicons';
   content: @cf-icon-date-round;
+  }
 }
 
-.a-btn_icon__closing-quote:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-closing-quote;
+.a-btn_icon__closing-quote {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-closing-quote;
+  }
 }
 
-.a-btn_icon__closing-quote-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-closing-quote-round;
+.a-btn_icon__closing-quote-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-closing-quote-round;
+  }
 }
 
-.a-btn_icon__livestream:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-livestream;
+.a-btn_icon__livestream {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-livestream;
+  }
 }
 
-.a-btn_icon__livestream-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-livestream-round;
+.a-btn_icon__livestream-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-livestream-round;
+  }
 }
 
-.a-btn_icon__parents:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-parents;
+.a-btn_icon__parents {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-parents;
+  }
 }
 
-.a-btn_icon__parents-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-parents-round;
+.a-btn_icon__parents-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-parents-round;
+  }
 }
 
-.a-btn_icon__servicemembers:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-servicemembers;
+.a-btn_icon__servicemembers {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-servicemembers;
+  }
 }
 
-.a-btn_icon__servicemembers-round:before {
-  font-family: 'CFPB Minicons';
-  content: @cf-icon-servicemembers-round;
+.a-btn_icon__servicemembers-round {
+  &.a-btn_icon-position-left:before,
+  &.a-btn_icon-position-right:after {
+    font-family: 'CFPB Minicons';
+    content: @cf-icon-servicemembers-round;
+  }
 }
