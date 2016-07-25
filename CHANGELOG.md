@@ -5,6 +5,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Added
 -
+- Added CSS autoprefixer to build pipeline.
 
 ### Changed
 - **cf-typography:** [MINOR] Many documentation fixes and standardization
