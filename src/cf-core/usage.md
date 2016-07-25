@@ -139,7 +139,7 @@ such as Apple retina screens
 .example {
     background: url(regular-resolution-image.png);
 }
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .example {
         background-image: url(retina-image.png);
     }
