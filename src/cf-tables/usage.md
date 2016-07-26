@@ -1,4 +1,5 @@
 The cf-tables component formats tables, and provides an easy way to make tables sortable.
+The [`cf-core`](../core) component is a dependency of this component."
 
 <<<<<<< b6939a2f8eb00274fc8c71d8c555ae808ec48a9f
 > NOTE: If you use `cf-tables.less` directly,
@@ -105,7 +106,7 @@ This striping is not visible on small screens.
 ```
 
 
-## Right-aligned cells.
+## Right-aligned cells
 
 The use of the `.table_cell__right-align` class on a TD aligns the text right -
 see the third column above.
@@ -431,14 +432,11 @@ highest to lowest)
 
 ## Responsive tables
 
-**Important notes:**
-- Tables are not responsive without adding one of the small screen classes below.
-- The `data-label` attribute is used to label each entry in a table for small screen responsive views. Always include the `data-label` attribute for each cell.
-
 ### Responsive stacked table
 
 The `.table__stack-on-small` class adds the "stacked" table style for small screens.
-Please note that tables are not responsive without adding one of the small screen classes.
+_Please note that tables are not responsive without adding one of the small screen classes._
+
 Also note that the `data-label` attribute is used to label each entry in a table
 for small screen responsive views.
 Always include the `data-label` attribute for each cell.
@@ -514,7 +512,8 @@ Always include the `data-label` attribute for each cell.
 The `.table__entry-header-on-small` class in addition to `.table__stack-on-small` class
 changes the first column to be styled as an entry header.
 This style requires both classes be added.
-Note that tables are not responsive without adding one of the small screen classes.
+_Note that tables are not responsive without adding one of the small screen classes._
+
 Also note that the `data-label` attribute is used to label each entry.
 Always include the `data-label` attribute for each cell.
 
