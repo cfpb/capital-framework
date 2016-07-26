@@ -1260,14 +1260,14 @@ A hero consists of a headline, a small amount of additional text,
 an optional call to action, and an illustration.
 Its background color is flush with the sides of the screen, and the content is centered with wrapper classes.
 
-The illustration can be customized by setting the `background-image` property on the `.hero_image` element.
+The illustration can be customized by setting the `background-image` property on the `.m-hero_image` element.
 
 On small screens (or where media queries are not supported),
-the text spans the full width of the `.hero_wrapper` and the illustration is displayed underneath.
+the text spans the full width of the `.m-hero_wrapper` and the illustration is displayed underneath.
 
 For larger screen sizes, media queries are used to position the illustration to the right of the text.
 
-On desktop, the hero should not exceed 285px in height.
+At the grid's maximum width and above, the hero should not exceed 285px in height.
 The image should be 195px in height to conform to this standard.
 
 <section class="m-hero">
@@ -1275,13 +1275,16 @@ The image should be 195px in height to conform to this standard.
         <div class="m-hero_text">
             <h1 class="m-hero_heading">Hero title</h1>
             <p class="m-hero_subhead">
-                Hero text goes here
+                Hero text goes here. This paragraph has a recommended maximum length of 185 characters.
+                This paragraph has a recommended maximum length of 185 characters.
             </p>
-            <p class="m-hero_cta">
-                <a>Call to action</a>
-            </p>
+            <a class="m-hero_cta" href="#">
+                Call to action
+            </a>
         </div>
-        <div class="m-hero_image" style="background-image: url('http://placekitten.com/g/400/195')"></div>
+        <div class="m-hero_image-wrapper">
+            <div class="m-hero_image" style="background-image: url('http://www.consumerfinance.gov/static/fin-ed-resources/static/img/parents_hero_760x390.png')"></div>
+        </div>
     </div>
 </section>
 
@@ -1291,13 +1294,16 @@ The image should be 195px in height to conform to this standard.
         <div class="m-hero_text">
             <h1 class="m-hero_heading">Hero title</h1>
             <p class="m-hero_subhead">
-                Hero text goes here
+                Hero text goes here. This paragraph has a recommended maximum length of 185 characters.
+                This paragraph has a recommended maximum length of 185 characters.
             </p>
-            <p class="m-hero_cta">
-                <a>Call to action</a>
-            </p>
+            <a class="m-hero_cta" href="#">
+                Call to action
+            </a>
         </div>
-        <div class="m-hero_image" style="background-image: url('http://placekitten.com/g/400/195')"></div>
+        <div class="m-hero_image-wrapper">
+            <div class="m-hero_image" style="background-image: url('http://www.consumerfinance.gov/static/fin-ed-resources/static/img/parents_hero_760x390.png')"></div>
+        </div>
     </div>
 </section>
 ```
