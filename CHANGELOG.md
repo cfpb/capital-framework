@@ -8,6 +8,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Changed
 - **cf-typography:** [MINOR] Many documentation fixes and standardization
+- **cf-core:** [MINOR] Standardized the usage doc
 
 ### Removed
 - **cf-typography:** [MINOR] Removed remaining Less from branded bullets
