@@ -1,7 +1,6 @@
 The cf-tables component formats tables, and provides an easy way to make tables sortable.
 The [`cf-core`](../core) component is a dependency of this component."
 
-<<<<<<< b6939a2f8eb00274fc8c71d8c555ae808ec48a9f
 > NOTE: If you use `cf-tables.less` directly,
   be sure to run the file through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
@@ -9,9 +8,8 @@ The [`cf-core`](../core) component is a dependency of this component."
   not work perfectly in older browsers.
 
 ## Vars
-=======
-## Tables of contents
->>>>>>> Standardize documentation for cf-tables
+
+## Table of contents
 
 - [Variables](#variables)
 - [Striped table](#striped-table)
