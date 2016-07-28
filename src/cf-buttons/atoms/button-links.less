@@ -1,0 +1,110 @@
+//
+// Button link
+//
+
+.a-btn__link {
+  padding: 0;
+  border-bottom: 1px dotted @link-underline;
+  border-radius: 0;
+  // This margin is necessary to vertically align link buttons with
+  // regular buttons.
+  margin: unit( @btn-v-padding / @btn-font-size, em) 0;
+
+  &,
+  &:link,
+  &:visited {
+    border-bottom-color: @link-underline-visited;
+    background-color: transparent;
+    color: @link-text-visited;
+  }
+
+  &:hover,
+  &.hover {
+    border-bottom: 1px solid @link-underline-hover;
+    background-color: transparent;
+    color: @link-text-hover;
+  }
+
+  &:focus,
+  &.focus {
+    border-bottom-style: solid;
+    background-color: transparent;
+    outline: 1px dotted @link-underline;
+  }
+
+  &:active,
+  &.active {
+    border-bottom: 1px solid @link-underline-active;
+    background-color: transparent;
+    color: @link-text-active;
+  }
+}
+
+.lt-ie8 {
+  button.a-btn__link,
+  input.a-btn__link {
+    padding: 0;
+  }
+}
+
+//
+// Secondary button link
+//
+
+.a-btn__link.a-btn__secondary {
+  &,
+  &:link,
+  &:visited {
+    border-bottom-color: @btn__secondary-bg;
+    background-color: transparent;
+    color: @btn__secondary-bg;
+  }
+
+  &:hover,
+  &.hover {
+    border-bottom-color: @btn__secondary-bg-hover;
+    color: @btn__secondary-bg-hover;
+  }
+
+  &:focus,
+  &.focus {
+    outline-color: @btn__secondary-bg;
+  }
+
+  &:active,
+  &.active {
+    border-bottom-color: @btn__secondary-bg-active;
+    color: @btn__secondary-bg-active;
+  }
+}
+
+//
+// Destructive action button link
+//
+
+.a-btn__link.a-btn__warning {
+  &,
+  &:link,
+  &:visited {
+    border-bottom-color: @btn__warning-bg;
+    background-color: transparent;
+    color: @btn__warning-bg;
+  }
+
+  &:hover,
+  &.hover {
+    border-bottom-color: @btn__warning-bg-hover;
+    color: @btn__warning-bg-hover;
+  }
+
+  &:focus,
+  &.focus {
+    outline-color: @btn__warning-bg;
+  }
+
+  &:active,
+  &.active {
+    border-bottom-color: @btn__warning-bg-active;
+    color: @btn__warning-bg-active;
+  }
+}
