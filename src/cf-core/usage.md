@@ -279,32 +279,30 @@ Force word breaks within an element. Useful for small containers where text may 
 
 _This only works in IE8 when the element with the `.u-break-word` class has layout. See <http://stackoverflow.com/questions/3997223/word-wrapbreak-word-not-working-in-ie8> for more information._
 
-<div style="width: 100px;">
+<div class="u-break-word u-mb30" style="width: 100px; padding: 0.5em; border: 1px solid silver;">
     This link should break:
-    <br>
-    <a class="u-break-word" href="#">
+    <a href="#">
         something@something.com
     </a>
-    <br>
-    <br>
+</div>
+
+<div class="u-mb30" style="width: 100px; padding: 0.5em; border: 1px solid silver;">
     This link should not:
-    <br>
     <a href="#">
         something@something.com
     </a>
 </div>
 
 ```
-<div style="width: 100px;">
+<div class="u-break-word">
     This link should break:
-    <br>
-    <a class="u-break-word" href="#">
+    <a href="#">
         something@something.com
     </a>
-    <br>
-    <br>
+</div>
+
+<div>
     This link should not:
-    <br>
     <a href="#">
         something@something.com
     </a>
