@@ -88,9 +88,6 @@ Ex. to set your base font size, add `@base-font-size-px: 17px;` to your project.
 @input-border:           #5b616b; // $color-gray
 @input-border-focus:     #3e94cf; // $color-focus
 @input-placeholder:      grayscale(#c7336e);
-
-// .figure__bordered
-@figure__bordered:       #d6d7d9; // $color-gray-lighter
 ```
 
 
@@ -631,10 +628,10 @@ Sets the element to 14px (in ems) based on the text size passed as `@context`.
 Sets the font-stack, weight, and style of an element.
 
 ```
-.webfont-regular();
-.webfont-italic();
-.webfont-medium();
-.webfont-demi();
+.u-webfont-regular();
+.u-webfont-italic();
+.u-webfont-medium();
+.u-webfont-demi();
 ```
 
 To use your own fonts in the webfont mixins, set your own font with the `@webfont-regular/italic/medium/demi` variables in your `theme-overrides.less` file.
@@ -1221,24 +1218,15 @@ Gives all images a default max-width of 100% of their container.
 
 ### Figure
 
+Resets browser default side margins for `figure` to 0,
+and removes bottom inline spacing from `img` elements within.
+
 <figure>
     <img src="http://placekitten.com/340/320">
 </figure>
 
 ```
 <figure>
-    <img src="http://placekitten.com/340/320">
-</figure>
-```
-
-### Bordered figure
-
-<figure class="figure__bordered">
-    <img src="http://placekitten.com/340/320">
-</figure>
-
-```
-<figure class="figure__bordered">
     <img src="http://placekitten.com/340/320">
 </figure>
 ```
