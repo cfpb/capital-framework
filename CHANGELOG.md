@@ -19,6 +19,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - `.subheader`
   - `.superheader`
   - `.figure__bordered`
+  - `.u-link-child__hover`
+  - Ability to use radio buttons and checkboxes within a `label`
 
 ## 3.5.0 - 2016-05-26
 

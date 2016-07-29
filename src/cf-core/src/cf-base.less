@@ -58,6 +58,12 @@
     }
 }
 
+// TODO: Deprecate these old mixin names once all of v4 is merged together.
+.webfont-regular { .u-webfont-regular(); }
+.webfont-italic  { .u-webfont-italic(); }
+.webfont-medium  { .u-webfont-medium(); }
+.webfont-demi    { .u-webfont-demi(); }
+
 //
 // Type hierarchy
 //
@@ -516,11 +522,6 @@ label {
     display: block;
     // 5px is eyeballed to 10px when considering line height.
     margin-bottom: unit( 5px / @base-font-size-px, em );
-
-    input[type="radio"],
-    input[type="checkbox"] {
-        margin-right: unit( 6px / @base-font-size-px, em );
-    }
 }
 
 //
@@ -588,6 +589,13 @@ select[multiple].focus {
 }
 :-ms-input-placeholder {
     color: @input-placeholder;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-top: unit( 4px / @base-font-size-px, em );
+    margin-right: unit( 7px / @base-font-size-px, em );
+    float: left;
 }
 
 //

@@ -242,32 +242,30 @@ Adds a `.lt-ie8` fallback to hack inline block for IE 7 and below.
 
 Force word breaks within an element. Useful for small containers where text may over-run the width of the container.
 
-<div style="width: 100px;">
+<div class="u-break-word u-mb30" style="width: 100px; padding: 0.5em; border: 1px solid silver;">
     This link should break:
-    <br>
-    <a class="u-break-word" href="#">
+    <a href="#">
         something@something.com
     </a>
-    <br>
-    <br>
+</div>
+
+<div class="u-mb30" style="width: 100px; padding: 0.5em; border: 1px solid silver;">
     This link should not:
-    <br>
     <a href="#">
         something@something.com
     </a>
 </div>
 
 ```
-<div style="width: 100px;">
+<div class="u-break-word">
     This link should break:
-    <br>
-    <a class="u-break-word" href="#">
+    <a href="#">
         something@something.com
     </a>
-    <br>
-    <br>
+</div>
+
+<div>
     This link should not:
-    <br>
     <a href="#">
         something@something.com
     </a>
