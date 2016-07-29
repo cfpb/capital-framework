@@ -8,48 +8,51 @@
 //
 
 @webfont-regular: Arial;
-@webfont-italic: Arial;
-@webfont-medium: Arial;
-@webfont-demi: Arial;
+@webfont-italic:  Arial;
+@webfont-medium:  Arial;
+@webfont-demi:    Arial;
 
-.webfont-regular() {
+.u-webfont-regular() {
     font-family: @webfont-regular, Arial, sans-serif;
     font-style: normal;
     font-weight: normal;
 
     & em,
     & i {
-        .webfont-italic();
+        .u-webfont-italic();
     }
 
     & strong,
     & b {
-        .webfont-demi();
+        .u-webfont-demi();
     }
 }
 
-.webfont-italic() {
+.u-webfont-italic() {
     font-family: @webfont-italic, Arial, sans-serif;
     font-style: italic;
     font-weight: normal;
+
     .lt-ie9 & {
         font-style: normal !important;
     }
 }
 
-.webfont-medium() {
+.u-webfont-medium() {
     font-family: @webfont-medium, Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
+
     .lt-ie9 & {
         font-weight: normal !important;
     }
 }
 
-.webfont-demi() {
+.u-webfont-demi() {
     font-family: @webfont-demi, Arial, sans-serif;
     font-style: normal;
     font-weight: bold;
+
     .lt-ie9 & {
         font-weight: normal !important;
     }
@@ -60,15 +63,16 @@
 //
 
 body {
+    .u-webfont-regular();
+
     color: @text;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: unit(@base-font-size-px / 16 * 100, %);
+    font-size: unit( @base-font-size-px / 16 * 100, % );
     line-height: @base-line-height;
 }
 
 .heading-1( @fs: @size-i ) {
     @font-size: @fs;
-    .webfont-regular();
+    .u-webfont-regular();
 
     margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
@@ -77,7 +81,7 @@ body {
 
 .heading-2( @fs: @size-ii ) {
     @font-size: @fs;
-    .webfont-regular();
+    .u-webfont-regular();
 
     margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
@@ -86,7 +90,7 @@ body {
 
 .heading-3( @fs: @size-iii )  {
     @font-size: @fs;
-    .webfont-regular();
+    .u-webfont-regular();
 
     margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
@@ -95,7 +99,7 @@ body {
 
 .heading-4( @fs: @size-iv )  {
     @font-size: @fs;
-    .webfont-medium();
+    .u-webfont-medium();
 
     margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
@@ -104,7 +108,7 @@ body {
 
 .heading-5( @fs: @size-v )  {
     @font-size: @fs;
-    .webfont-demi();
+    .u-webfont-demi();
 
     margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
@@ -115,7 +119,7 @@ body {
 
 .heading-6( @fs: @size-vi )  {
     @font-size: @fs;
-    .webfont-demi();
+    .u-webfont-demi();
 
     margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
@@ -149,7 +153,7 @@ h1,
         margin-top: unit( 60px / @font-size, em );
     }
 
-    .respond-to-max(@bp-xs-max, {
+    .respond-to-max( @bp-xs-max, {
         .heading-2();
 
         p + &,
@@ -175,7 +179,7 @@ h1,
         .h6 + & {
             margin-top: unit( 30px / @font-size, em );
         }
-    });
+    } );
 }
 
 h2,
@@ -206,7 +210,7 @@ h2,
         margin-top: unit( 30px / @font-size, em );
     }
 
-    .respond-to-max(@bp-xs-max, {
+    .respond-to-max( @bp-xs-max, {
         .heading-3();
 
         p + &,
@@ -219,7 +223,7 @@ h2,
         blockquote + & {
             margin-top: unit( 30px / @font-size, em );
         }
-    });
+    } );
 }
 
 h3,
@@ -247,9 +251,9 @@ h3,
         margin-top: unit( 30px / @font-size, em );
     }
 
-    .respond-to-max(@bp-xs-max, {
+    .respond-to-max( @bp-xs-max, {
         .heading-4();
-    });
+    } );
 }
 
 h4,
@@ -343,25 +347,14 @@ h6,
     });
 }
 
-// To be deprecated at the 2.0 release:
-.subheader {
-    &:extend(.lead-paragraph);
-}
-
 .superheading {
     // For when you want a heading that's bigger than a normal H1
     @font-size: @size-xl;
-
-    .webfont-regular();
+    .u-webfont-regular();
 
     margin-bottom: unit( 20px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
     line-height: 1.25;
-}
-
-// To be deprecated at the 2.0 release:
-.superheader {
-    &:extend(.superheading);
 }
 
 //
@@ -376,16 +369,16 @@ figure,
 table,
 blockquote {
     margin-top: 0;
-    margin-bottom: unit(15px / @base-font-size-px, em);
+    margin-bottom: unit( 15px / @base-font-size-px, em );
 }
 
 p + ul,
 p + ol {
-    margin-top: unit(-5px / @base-font-size-px, em);
+    margin-top: unit( -5px / @base-font-size-px, em );
 }
 
 li {
-    margin-bottom: unit(8px / @base-font-size-px, em);
+    margin-bottom: unit( 8px / @base-font-size-px, em );
 
     &:last-child,
     nav & {
@@ -403,6 +396,9 @@ a {
     border-color: @link-underline;
     color: @link-text;
     text-decoration: none;
+
+    // Note: The class definitions below are only for use in
+    // demonstrating link states. Do not use in production.
 
     &:visited,
     &.visited {
@@ -457,16 +453,16 @@ nav a {
 ul {
     // 32px provides exactly 15px between left margin
     // and bullet character in most browsers
-    padding-left: unit(32px / @base-font-size-px, em);
+    padding-left: unit( 32px / @base-font-size-px, em );
     list-style: square;
 }
 
 // Use the same overall number as ULs, but pull the number 1px to the left
 ol {
-    padding-left: unit(31px / @base-font-size-px, em);
+    padding-left: unit( 31px / @base-font-size-px, em );
 
     > li {
-        padding-left: unit(1px / @base-font-size-px, em);
+        padding-left: unit( 1px / @base-font-size-px, em );
     }
 }
 
@@ -474,19 +470,16 @@ ol {
 // Tables
 //
 
-table {
-    .webfont-regular();
-}
-
 th,
 td {
-    padding: unit(10px / @base-font-size-px, em);
+    padding: unit( 10px / @base-font-size-px, em );
 
     thead & {
-        padding: unit(10px / @font-size, em);
-        color: @thead-text;
-        background: @thead-bg;
         .h5();
+
+        padding: unit( 10px / @font-size, em );
+        background: @thead-bg;
+        color: @thead-text;
     }
 }
 
@@ -496,25 +489,23 @@ tbody tr {
 }
 
 th {
-    .webfont-demi();
+    .u-webfont-demi();
+
     text-align: left;
 }
 
-tbody th {
-    .webfont-regular();
-}
 //
 // Block quote
 //
 
 blockquote {
-    margin-right: unit(15px / @base-font-size-px, em);
-    margin-left: unit(15px / @base-font-size-px, em);
+    margin-right: unit( 15px / @base-font-size-px, em );
+    margin-left: unit( 15px / @base-font-size-px, em );
 
-    .respond-to-min(@bp-sm-min, {
-        margin-right: unit(30px / @base-font-size-px, em);
-        margin-left: unit(30px / @base-font-size-px, em);
-    });
+    .respond-to-min( @bp-sm-min, {
+        margin-right: unit( 30px / @base-font-size-px, em );
+        margin-left: unit( 30px / @base-font-size-px, em );
+    } );
 }
 
 //
@@ -524,12 +515,11 @@ blockquote {
 label {
     display: block;
     // 5px is eyeballed to 10px when considering line height.
-    margin-bottom: unit(5px / @base-font-size-px, em);
-    .webfont-regular();
+    margin-bottom: unit( 5px / @base-font-size-px, em );
 
     input[type="radio"],
     input[type="checkbox"] {
-        margin-right: unit(6px / @base-font-size-px, em);
+        margin-right: unit( 6px / @base-font-size-px, em );
     }
 }
 
@@ -548,13 +538,13 @@ select[multiple] {
     @font-size: 16px;
 
     display: inline-block;
-    margin: 0;
-    padding: unit(6 / @base-font-size-px, em);
-    font-family: Arial, sans-serif;
-    font-size: unit(@font-size / @base-font-size-px, em);
-    background: @input-bg;
+    padding: unit( 6 / @base-font-size-px, em );
     border: 1px solid @input-border;
     border-radius: 0;
+    margin: 0;
+    background: @input-bg;
+    font-family: Arial, sans-serif;
+    font-size: unit( @font-size / @base-font-size-px, em );
     vertical-align: top;
     -webkit-appearance: none;
     -webkit-user-modify: read-write-plaintext-only;
@@ -591,13 +581,13 @@ select[multiple].focus {
 }
 
 ::-webkit-input-placeholder {
-   color: @input-placeholder;
+    color: @input-placeholder;
 }
 ::-moz-placeholder {
-   color: @input-placeholder;
+    color: @input-placeholder;
 }
 :-ms-input-placeholder {
-   color: @input-placeholder;
+    color: @input-placeholder;
 }
 
 //
@@ -613,17 +603,15 @@ img {
 //
 
 figure {
-    margin-left: 0;
+    // reset browser default side margins
     margin-right: 0;
+    margin-left: 0;
 
     img {
         // Removes weird vertical spacing below images.
+        // TODO: Discuss whether this could just be universally applied to img
         vertical-align: middle;
     }
-}
-
-.figure__bordered img {
-    border: 1px solid @figure__bordered;
 }
 
 //
