@@ -253,6 +253,7 @@ textarea {
             .grid_nested-col-group();
         });
     }
+
     &__float {
         .respond-to-min( @bp-lg-min, {
             .u-clearfix();
@@ -327,8 +328,8 @@ textarea {
 @input-inset-bg:        #d2d3d5; // gray-20;
 @input-inset-selected:  #d6e8fa; // pacific-20;
 
-@checkbox-width: unit( 18px / @base-font-size-px, em);
-@radio-width: unit( 14px / @base-font-size-px, em);
+@checkbox-width:        unit( 18px / @base-font-size-px, em);
+@radio-width:           unit( 14px / @base-font-size-px, em);
 
 .cf-input {
 
@@ -338,13 +339,12 @@ textarea {
         .u-visually-hidden();
 
         .lt-ie9 & {
-            height: 20px;
-            width: 20px;
-            border: 0;
-            float: left;
-            margin: 1em;
-            position: static;
             width: auto;
+            height: 20px;
+            border: 0;
+            margin: 1em;
+            float: left;
+            position: static;
         }
     }
 
@@ -425,45 +425,52 @@ textarea {
 
 .form-l-inset {
     border-right-width: 2.5px;
-    + .form-l_col-1-2.form-l-inset:nth-child(odd) { border-left-width: 2.5px; }
+
+    + .form-l_col-1-2.form-l-inset:nth-child(odd) { 
+        border-left-width: 2.5px;
+    }
+    
     &.form-l_col-1-2:nth-child(odd),
-    &.form-l_col-1-2:last-child { border-right-width: 15px; }
+    &.form-l_col-1-2:last-child {
+        border-right-width: 15px;
+    }
 
-      .form-l-inset_container {
-          background: @input-inset-bg;
+    .form-l-inset_container {
+        background: @input-inset-bg;
 
-          .cf-input_label {
-              margin: 0;
-              padding: unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em )
-                   unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em )
-                   unit( ( @grid_gutter-width / 1.75 ) / @base-font-size-px, em );
-          }
+        .cf-input_label {
+            margin: 0;
+            padding: unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em )
+               unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em )
+               unit( ( @grid_gutter-width / 1.75 ) / @base-font-size-px, em );
+        }
 
-          .cf-input_text {
-              margin-left: unit( @grid_gutter-width / @base-font-size-px, em );
-          }
+        .cf-input_text {
+            margin-left: unit( @grid_gutter-width / @base-font-size-px, em );
+        }
 
-          .cf-input_radio,
-          .cf-input_checkbox {
-              position: absolute;
-              top: unit( ( @grid_gutter-width / 1.75 ) / @base-font-size-px, em );
-              left: 15px;
-              z-index: 3;
-          }
+        .cf-input_radio,
+        .cf-input_checkbox {
+            position: absolute;
+            top: unit( ( @grid_gutter-width / 1.75 ) / @base-font-size-px, em );
+            left: 15px;
+            z-index: 3;
+        }
 
-          &:hover,
-          &:focus,
-          &.focus {
-              .cf-input_checkbox,
-              .cf-input_radio {
-                  box-shadow: 0px 0px 0px 2px @input-border-focus;
-                  // Older IE does not support border-radius or box-shadow it's ok to
-                  // use outline here.
-                  .lt-ie9 & {
-                      outline: 1px solid @input-border-focus;
-                  }
-              }
-          }
+        &:hover,
+        &:focus,
+        &.focus {
+            .cf-input_checkbox,
+            .cf-input_radio {
+                box-shadow: 0px 0px 0px 2px @input-border-focus;
+                
+                // Older IE does not support border-radius or box-shadow it's ok to
+                // use outline here.
+                .lt-ie9 & {
+                    outline: 1px solid @input-border-focus;
+                }
+            }
+        }
 
         &.selected .cf-input_label,
         &.focus .cf-input_label,
