@@ -9,7 +9,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Changed
 - **cf-typography:** [MINOR] Many documentation fixes and standardization.
 - **cf-core:** [MINOR] Standardized the usage doc.
-- **cf-tables:** Fix documentation order and details.
+- **cf-tables:** [MINOR] Fix documentation order and details.
 
 ### Removed
 - **cf-typography:** [MINOR] Removed remaining Less from branded bullets
