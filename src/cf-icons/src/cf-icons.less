@@ -58,6 +58,9 @@
   font-style: normal;
   font-weight: normal;
   line-height: 1;
+  // TODO: Determine whether this can be safely removed and remove it.
+  //       Font smooth/smoothing is non-standard:
+  //       https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth
   -webkit-font-smoothing: antialiased;
 }
 
@@ -299,17 +302,15 @@
 //
 
 .cf-icon__rotate(@degrees, @rotation) {
+  // TOOD: Check whether `filter` can be replaced
+  //       by `-ms-transform` for CF supported browsers.
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=@rotation);
-  -webkit-transform: rotate(@degrees);
-      -ms-transform: rotate(@degrees);
-          transform: rotate(@degrees);
+  transform: rotate(@degrees);
 }
 
 .cf-icon__flip(@horiz, @vert, @rotation) {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=@rotation, mirror=1);
-  -webkit-transform: scale(@horiz, @vert);
-      -ms-transform: scale(@horiz, @vert);
-          transform: scale(@horiz, @vert);
+  transform: scale(@horiz, @vert);
 }
 //
 // Helper classes for modified icons
@@ -341,34 +342,19 @@
 //
 
 .@{cf-icon-prefix}__spin {
-  -webkit-animation: cf-spin 2s infinite linear;
-          animation: cf-spin 2s infinite linear;
+  animation: cf-spin 2s infinite linear;
 }
 
 .@{cf-icon-prefix}__pulse {
-  -webkit-animation: cf-spin 1s infinite steps(8);
-          animation: cf-spin 1s infinite steps(8);
-}
-
-@-webkit-keyframes cf-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-            transform: rotate(359deg);
-  }
+  animation: cf-spin 1s infinite steps(8);
 }
 
 @keyframes cf-spin {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(359deg);
-            transform: rotate(359deg);
+    transform: rotate(359deg);
   }
 }
 
