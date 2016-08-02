@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 3.6.0 - 2016-08-02
+
+### Added
 - **capital-framework:** Added CSS autoprefixer to build pipeline.
 
 ### Changed
