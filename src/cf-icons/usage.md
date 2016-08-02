@@ -1,6 +1,11 @@
 The cf-icon component provides the custom icon font for Capital Framework.
 This component can be used by itself, but is designed to work with Capital Framework.
 
+> NOTE: If you use `cf-icons.less` directly,
+  be sure to run the file through
+  [Autoprefixer](https://github.com/postcss/autoprefixer),
+  or your compiled Capital Framework CSS will
+  not work perfectly in older browsers.
 
 ## Variables
 

@@ -1,5 +1,10 @@
 The cf-pagination component provides a responsive approach to multipage page navigation.
 
+> NOTE: If you use `cf-pagination.less` directly,
+  be sure to run the file through
+  [Autoprefixer](https://github.com/postcss/autoprefixer),
+  or your compiled Capital Framework CSS will
+  not work perfectly in older browsers.
 
 ## Dependencies
 - cf-core

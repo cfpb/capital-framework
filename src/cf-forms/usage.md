@@ -1,5 +1,11 @@
 # Forms
 
+> NOTE: If you use `cf-forms.less` directly,
+  be sure to run the file through
+  [Autoprefixer](https://github.com/postcss/autoprefixer),
+  or your compiled Capital Framework CSS will
+  not work perfectly in older browsers.
+
 ## Vars
 
 Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.

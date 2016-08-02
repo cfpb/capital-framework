@@ -1,18 +1,18 @@
 'use strict';
 
 var gulp = require( 'gulp' );
-var $ = require( 'gulp-load-plugins' )();
+var plugins = require( 'gulp-load-plugins' )();
 var component = require('./parseComponentName');
 var fs = require('fs');
 
 gulp.task('template:readmes', function() {
   var pkgs = './src/' + (component || '*') + '/package.json';
   return gulp.src(pkgs)
-    .pipe($.data(function(file) {
+    .pipe(plugins.data(function(file) {
       var content = String(file.contents);
       return JSON.parse(content);
     }))
-    .pipe($.applyTemplate({
+    .pipe(plugins.applyTemplate({
       engine: 'lodash',
       template: './scripts/templates/README.md.tmpl',
       props: ['contents', 'data'],
@@ -20,7 +20,7 @@ gulp.task('template:readmes', function() {
         return file.data;
       }
     }))
-    .pipe($.rename(function(path) {
+    .pipe(plugins.rename(function(path) {
       path.dirname = component || path.dirname;
       path.basename = 'README';
       path.extname = '.md';
@@ -30,8 +30,8 @@ gulp.task('template:readmes', function() {
 
 gulp.task('template:usage', function () {
   return gulp.src('./src/' + (component || '*') + '/usage.md')
-    .pipe($.markdown())
-    .pipe($.data(function(file) {
+    .pipe(plugins.markdown())
+    .pipe(plugins.data(function(file) {
       var content = String(file.contents),
           component = file.path.split('/'),
           component = component[component.length - 2];
@@ -41,7 +41,7 @@ gulp.task('template:usage', function () {
         hasJS: fs.existsSync('./src/' + component + '/src/' + component + '.js')
       };
     }))
-    .pipe($.applyTemplate({
+    .pipe(plugins.applyTemplate({
       engine: 'lodash',
       template: './scripts/templates/preview.html.tmpl',
       props: ['contents', 'data'],
@@ -49,7 +49,7 @@ gulp.task('template:usage', function () {
         return file.data;
       }
     }))
-    .pipe($.rename(function (path) {
+    .pipe(plugins.rename(function (path) {
       path.dirname = component || path.dirname;
     }))
     .pipe(gulp.dest('tmp'));
