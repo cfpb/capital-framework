@@ -41,6 +41,10 @@
     margin: -1px;
     padding: 0;
     overflow: hidden;
+    // `clip` is deprecated, but retained for safety in making sure that this
+    // utility works as expected for screenreaders. Comma-separated syntax is
+    // not used because space-separated is more backward-compatible,
+    // per https://developer.mozilla.org/en-US/docs/Web/CSS/clip
     clip: rect(0 0 0 0);
 }
 

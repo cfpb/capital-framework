@@ -537,6 +537,7 @@ input[type="number"],
 textarea,
 select[multiple] {
     @font-size: 16px;
+    .u-webfont-regular();
 
     display: inline-block;
     padding: unit( 6px / @base-font-size-px, em );
@@ -544,7 +545,6 @@ select[multiple] {
     border-radius: 0;
     margin: 0;
     background: @input-bg;
-    font-family: Arial, sans-serif;
     font-size: unit( @font-size / @base-font-size-px, em );
     vertical-align: top;
     -webkit-appearance: none;
