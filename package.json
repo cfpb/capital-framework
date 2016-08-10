@@ -22,7 +22,6 @@
     "url": "https://github.com/cfpb/capital-framework/issues"
   },
   "scripts": {
-    "postinstall": "node scripts/npm/postinstall",
     "release": "./scripts/travis/release.sh",
     "build": "gulp build",
     "test": "gulp test && node test/accessibility/wcag.js"
@@ -76,7 +75,10 @@
     "wcag": "^0.2.2"
   },
   "dependencies": {
-    "async": "^1.5.0",
-    "npmi": "^1.0.1"
+    "box-sizing-polyfill": "0.1.0",
+    "jquery": "~1.11.0",
+    "jquery.easing": "~1.3.0",
+    "normalize-css": "^2.0.0",
+    "normalize-legacy-addon": "0.1.0"
   }
 }
