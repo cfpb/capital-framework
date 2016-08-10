@@ -1,25 +1,99 @@
+<p>The cf-typography component includes multiple patterns for headings, links, lists, and other advanced typographic treatments.</p>
+<p>The <a href="../core"><code>cf-core</code></a> component is a dependency of this component
+and has more basic typography patterns.</p>
+<h2>Contents</h2>
+<ul>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#pull-quote">Pull quote</a></li>
+<li><a href="#micro-copy">Micro copy</a></li>
+<li><a href="#short-description">Short description</a></li>
+<li><a href="#date">Date</a></li>
+<li><a href="#headers">Headers</a>
+<ul>
+<li><a href="#category-slug">Category slug</a></li>
+<li><a href="#header-slug">Header slug</a></li>
+<li><a href="#padded-slug">Padded header</a></li>
+<li><a href="#fancy-slug">Fancy slug</a></li>
+<li><a href="#meta-header">Meta header</a></li>
+</ul>
+</li>
+<li><a href="#link-patterns">Link patterns</a>
+<ul>
+<li><a href="#links-with-icons">Links with icons</a></li>
+<li><a href="#styled-link">Styled link</a></li>
+<li><a href="#jump-link">Jump link</a></li>
+<li><a href="#block-link">Block link</a></li>
+</ul>
+</li>
+<li><a href="#lists">Lists</a>
+<ul>
+<li><a href="#unstyled-list">Unstyled list</a></li>
+<li><a href="#spaced-list">Spaced list</a></li>
+<li><a href="#spaced-list-item">Spaced list item</a></li>
+<li><a href="#horizontal-list">Horizontal list</a></li>
+<li><a href="#link-list">Link list</a></li>
+<li><a href="#icon-list">Icon list</a></li>
+<li><a href="#link-list-with-icons">Link list with icons</a></li>
+<li><a href="#custom-bullet-mixin">Custom bullet mixin</a></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>NOTE: If you use <code>cf-typography.less</code> directly,
+be sure to run the file through
+<a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>,
+or your compiled Capital Framework CSS will
+not work perfectly in older browsers.</p>
+</blockquote>
 <h2>Variables</h2>
+<p>Theme variables for setting the color and sizes.
+Overwrite them in your own project by duplicating the variable <code>@key: value</code>.</p>
 <h3>Color variables</h3>
-<pre><code>@pull-quote_body
-@pull-quote_citation
-@micro-copy-text
-@date-text
-@category-slug-text
-@category-slug-hover
-@header-slug-thin-border
-@header-slug-thick-border
-@padded-header-text
-@padded-header-bg
-@padded-header-border
-@fancy-slug-text
-@fancy-slug-bg
-@fancy-slug-border
-@meta-header-border
-@jump-link__bg
-@jump-link__bg-border
-@list__branded-bullet
+<p>Default color variables are from 18F's
+<a href="https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss">U.S. Web Design Standards</a>.</p>
+<pre><code>// .pull-quote
+@pull-quote_body:               #494440; // $color-gray-warm-dark
+@pull-quote_citation:           #205493; // $color-cool-blue
+
+// .micro-copy
+@micro-copy-text:               #112e51; // $color-primary-darkest
+
+// .date
+@date-text:                     #112e51; // $color-primary-darkest
+
+// .category-slug
+@category-slug-text:            #112e51; // $color-primary-darkest
+@category-slug-hover:           #205493; // $color-primary-darker
+
+// .header-slug
+@header-slug-thin-border:       #323a45; // $color-gray-dark
+@header-slug-thick-border:      #02bfe7; // $color-primary-alt
+
+// .padded-header
+@padded-header-text:            #046b99; // $color-primary-alt-darkest
+@padded-header-bg:              #dce4ef; // color-gray-cool-light
+@padded-header-border:          #046b99; // $color-primary-alt-darkest
+
+// .fancy-slug
+@fancy-slug-text:               #046b99; // $color-primary-alt-darkest
+@fancy-slug-bg:                 #dce4ef; // color-gray-cool-light
+@fancy-slug-border:             #046b99; // $color-primary-alt-darkest
+
+// .meta-header
+@meta-header-border:            #323a45; // $color-gray-dark
+
+// .jump-link
+@jump-link__bg:                 #f1f1f1; // $color-gray-lightest
+@jump-link__bg-border:          #323a45; // $color-gray-dark
+
+// .list__branded
+@list__branded-bullet:          #02bfe7; // $color-primary-alt
 </code></pre>
 <h2>Pull quote</h2>
+<p>Use a pull quote to highlight excerpts from the current work.
+This is not to be confused with <code>blockquote</code> which quotes from an external work.
+Since a pull quote is an excerpt and repeats content from the article
+you should use the <code>aside</code> element.</p>
 <h3>Default pull quote</h3>
 <aside class="pull-quote">
     <div class="pull-quote_body">
@@ -57,7 +131,7 @@
         <cite class="pull-quote_citation">
             - Author Name
         </cite>
-    <footer>
+    </footer>
 </aside>
 <pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>aside</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pull-quote pull-quote__large<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pull-quote_body<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
@@ -69,18 +143,11 @@
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>cite</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pull-quote_citation<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
             - Author Name
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>cite</span><span class="token punctuation" >&gt;</span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>footer</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>footer</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>aside</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<ul>
-<li>
-<p>Use a pull quote to highlight excerpts from the current work. This is not to be confused with blockquote which quotes from an external work.</p>
-</li>
-<li>
-<p>Since a pull quote is an excerpt and repeats content from the article it's contained within you should use the aside element.</p>
-</li>
-</ul>
 <h2>Micro copy</h2>
+<p>The <code>.micro-copy</code> class is good for highlighting small pieces of text.</p>
 <h3>Standard micro copy</h3>
 <p class="micro-copy">
     Lorem ipsum dolor sit amet
@@ -90,21 +157,26 @@
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
 <h3>Large micro copy</h3>
-<p class="micro-copy">
+<p class="micro-copy__large">
     Lorem ipsum dolor sit amet
 </p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>micro-copy<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>micro-copy__large<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
     Lorem ipsum dolor sit amet
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
+<h2>Short description</h2>
+<p>The <code>.short-desc</code> class is about a line or two of text underneath a headline.</p>
 <h3>Short description</h3>
-<h2>.short-desc</h2>
 <p class="short-desc">I am short description.</p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>short-desc<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>I am short description.<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>short-desc<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    I am short description.
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>.short-desc__large (modifier)</h3>
+<h3>Large short description</h3>
 <p class="short-desc short-desc__large">I am large short description.</p>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>short-desc short-desc__large<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>I am large short description.<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>short-desc short-desc__large<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    I am large short description.
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
 <h2>Date</h2>
 <h3>Default date</h3>
@@ -115,8 +187,12 @@
     Nov 4, 2013
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Category slug</h2>
-<h3>Default category slug</h3>
+<h2>Headers</h2>
+<h3>Category slug</h3>
+<p>The category slug is used on top of a section.
+Since categories can be repetitive,
+we suggest using a <code>.u-visually-hidden</code> element to add more context for screen readers.</p>
+<h4>Default category slug</h4>
 <a href="#" class="category-slug">
     <span class="category-slug_icon cf-icon cf-icon-dialogue"></span>
     <span class="u-visually-hidden">Category:</span>
@@ -128,11 +204,8 @@
     Consumer finance
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<ul>
-<li>We suggest using a .u-visually-hidden element to add more context for screen readers.</li>
-</ul>
-<h2>Header slug</h2>
-<h3>Default header slug</h3>
+<h3>Header slug</h3>
+<h4>Default header slug</h4>
 <h2 class="header-slug">
     <span class="header-slug_inner">
         Blog summary
@@ -144,8 +217,8 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>h2</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Padded header</h2>
-<h3>Default padded header</h3>
+<h3>Padded header</h3>
+<h4>Default padded header</h4>
 <h2 class="padded-header">
     Header
 </h2>
@@ -153,8 +226,8 @@
     Header
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>h2</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Fancy slug</h2>
-<h3>Default fancy slug</h3>
+<h3>Fancy slug</h3>
+<h4>Default fancy slug</h4>
 <h2 class="fancy-slug">
     <span class="fancy-slug_text">
         <span class="fancy-slug_ribbon-left"></span>
@@ -170,8 +243,14 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>h2</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Meta header</h2>
-<h3>Default meta header</h3>
+<h3>Meta header</h3>
+<p><code>.meta-header_right</code> should come first in the markup so that
+when it floats to the right it will appear on the same line as <code>.meta-header_left</code>.</p>
+<p>Note that the example shows <code>.meta-header_left</code> using the <code>.category-slug</code> pattern
+and <code>.meta-header_right</code> using the <code>.date</code> pattern but you could use other patterns in place of them.
+Or you can even swap them so that date is
+attached to <code>.meta-header_left</code> and <code>.category-slug</code> is attached to <code>.meta-header_right</code>.</p>
+<h4>Default meta header</h4>
 <div class="meta-header">
     <span class="meta-header_right date">
         Nov 4, 2013
@@ -191,15 +270,8 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<ul>
-<li>
-<p>meta-header_right should come first in the markup so that when it floats to the right it will appear on the same line as .meta-header_left.</p>
-</li>
-<li>
-<p>Note that the example shows .meta-header_left using the .category-slug pattern and .meta-header_right using the .date pattern but you could use other patterns in place of them. Or you can even swap them so that date is attached to .meta-header_left and .category-slug is attacked to .meta-header_right.</p>
-</li>
-</ul>
-<h3>Alternate meta header arrangements</h3>
+<h4>Alternate meta header arrangements</h4>
+<p>This is just another set of variations to show off what you could do.</p>
 <div class="meta-header">
     <a href="#" class="meta-header_right category-slug">
         <span class="cf-icon cf-icon-credit-card"></span>
@@ -231,13 +303,16 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<ul>
-<li>Just some random variations to show off what you could do.</li>
-</ul>
-<h2>Links with icons</h2>
+<h2>Link patterns</h2>
+<h3>Links with icons</h3>
 <ul>
 <li>Styles to enable adding an icon to a link and preventing the link's underline from extending under the icon.</li>
 <li>For the underlined icon prevention to work, you must wrap the link text with a <code>span.icon-link_text</code>. There can be no whitespace between the text and the opening and closing span tags.</li>
+</ul>
+<h4>Default pattern</h4>
+<ul>
+<li>The modifier names match the cf-icon names of commonly-used icons.</li>
+<li>Icons appear to the right of a link, by default.</li>
 </ul>
 <p>
     For more information, email
@@ -274,11 +349,11 @@
     Visit another section of our site
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
+<h4>Links with icons on the left</h4>
 <ul>
-<li>The modifier names match the cf-icon names of commonly-used icons.</li>
-<li>Icons appear to the right of a link, by default.</li>
+<li>Simply add the <code>.icon-link__before</code> modifier to place the icon before the link text.</li>
+<li>You can omit the <code>span.icon-link_text</code> wrapper if you do not need an underline on a particular link.</li>
 </ul>
-<h3>Links with icons on the left (modifier)</h3>
 <a class="icon-link icon-link__mail icon-link__before" href="#">
     <span class="icon-link_text">john.smith@cfpb.gov</span>
 </a><br>
@@ -292,11 +367,10 @@
     (123) 456-7890
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
+<h4>Non-wrapping icon links</h4>
 <ul>
-<li>Simply add the <code>.icon-link__before</code> modifier to place the icon before the link text.</li>
-<li>You can omit the <code>span.icon-link_text</code> wrapper if you do not need an underline on a particular link.</li>
+<li>Warning: Icons added to inline links can sometimes break onto the next line. If you want to prevent this, you can add the <code>__no-wrap</code> modifier to <code>.icon-link</code>.</li>
 </ul>
-<h3>Non-wrapping icon links</h3>
 <p>
     For more information, email
     <a class="icon-link icon-link__mail icon-link__no-wrap" href="#">
@@ -310,10 +384,8 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>.
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<ul>
-<li>Warning: Icons added to inline links can sometimes break onto the next line. If you want to prevent this, you can add the <code>__no-wrap</code> modifier to <code>.icon-link</code>.</li>
-</ul>
-<h2>Styled link</h2>
+<h3>Styled link</h3>
+<h4>Default pattern</h4>
 <a class="styled-link" href="#">
     Default styled link
 </a>
@@ -321,7 +393,8 @@
     Default styled link
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Jump link</h2>
+<h3>Jump link</h3>
+<h4>Default pattern</h4>
 <a class="jump-link" href="#">
     <span class="jump-link_text">Default jump link</span>
 </a>
@@ -329,7 +402,8 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>jump-link_text<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Default jump link<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>.jump-link__large (modifier)</h3>
+<h4>Large jump link</h4>
+<p>The large jump link has an 18px font-size, compared to the default of 16px.</p>
 <a class="jump-link jump-link__large" href="#">
     <span class="jump-link_text">Large jump link</span>
 </a>
@@ -337,10 +411,11 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>jump-link_text<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Large jump link<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
+<h4>Jump link with icon</h4>
 <ul>
-<li>18px font-size, compared to the default of 16px</li>
+<li><code>.jump-link</code> extends <code>.icon-link</code>, so all that is needed to add an icon to a jump link is to add a modifier with the icon's name.</li>
+<li>In this example, <code>.jump-link__right</code> is a taken from the <code>cf-icon__right</code> icon in <a href="../cf-icons">cf-icons</a>.</li>
 </ul>
-<h2>.jump-link__{icon} (modifier)</h2>
 <a class="jump-link jump-link__right" href="#">
     <span class="jump-link_text">Jump link using the right icon from cf-icons</span>
 </a>
@@ -348,10 +423,8 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>jump-link_text<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Jump link using the right icon from cf-icons<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<ul>
-<li>.jump-link extends .icon-link, so all that is needed to add an icon to a jump link is to add a modifier with the icon's name.</li>
-</ul>
-<h3>.jump-link__before (modifier)</h3>
+<h4>Jump link with icon on left</h4>
+<p>Jump links can also have icons before the text, like icon links.</p>
 <a class="jump-link jump-link__left jump-link__before" href="#">
     <span class="jump-link_text">Jump link with icon on left</span>
 </a>
@@ -359,10 +432,7 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>jump-link_text<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Jump link with icon on left<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<ul>
-<li>Jump links can also have icons before the text, like icon links.</li>
-</ul>
-<h3>.jump-link__bg (modifier)</h3>
+<h4>Jump link with background</h4>
 <a class="jump-link jump-link__bg" href="#">
     <span class="jump-link_text">Jump link with grey background and
         solid borders on small screens</span>
@@ -372,8 +442,11 @@
         solid borders on small screens<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Block link</h2>
-<h3>.block-link</h3>
+<h3>Block link</h3>
+<p>The block link class converts a standard inline link
+to a block-level element with padding, background, and borders.</p>
+<p>It is primarily used within a max-width 599px media query (see <code>.jump-link</code> and <code>.list__links</code>).</p>
+<h4>Default example</h4>
 <a class="block-link" href="#">
     Default block link
 </a>
@@ -381,12 +454,9 @@
     Default block link
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<ul>
-<li>Convert a standard inline link to a block-level element with padding, background, and borders.</li>
-<li>Primarily used within a max-width 599px media query (see .jump-link and .list__links).</li>
-</ul>
-<h2>Unstyled list modifier</h2>
-<h3>Default example</h3>
+<h2>Lists</h2>
+<h3>Unstyled list</h3>
+<p>Unstyled list removes bullets and other styling from a list.</p>
 <ul class="list list__unstyled">
     <li class="list_item">
         <a class="list_link">List item 1</a>
@@ -410,8 +480,8 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>ul</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Spaced list modifier</h2>
-<h3>Default example</h3>
+<h3>Spaced list</h3>
+<p>Spaced list adds extra padding to every element in a list.</p>
 <ul class="list list__spaced">
     <li class="list_item">
         <a class="list_link">List item 1</a>
@@ -435,8 +505,8 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>ul</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Spaced list item modifier</h2>
-<h3>Default example</h3>
+<h3>Spaced list item</h3>
+<p>The spaced list item class will space one item in an otherwise standard list.</p>
 <ul class="list">
     <li class="list_item">
         <a class="list_link">List item 1</a>
@@ -445,7 +515,7 @@
         <a class="list_link">List item 2</a>
     </li>
     <li class="list_item list_item__spaced">
-        <a class="list_link">List item 3</a>
+        <a class="list_link">List item 3 (Spaced)</a>
     </li>
     <li class="list_item">
         <a class="list_link">List item 4</a>
@@ -459,15 +529,15 @@
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>list_link<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>List item 2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>list_item list_item__spaced<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>list_link<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>List item 3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>list_link<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>List item 3 (Spaced)<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>list_item<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>list_link<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>List item 4<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>ul</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Horizontal list modifier</h2>
-<h3>Default example</h3>
+<h3>Horizontal list</h3>
+<p>A modifier for the list to make it show items horizontally.</p>
 <ul class="list list__horizontal">
     <li class="list_item">
         <a class="list_link">List item 1</a>
@@ -491,12 +561,9 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>ul</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Icon list modifier</h2>
-<ul>
-<li>Set up a list with icons on the left, in place of bullets.</li>
-<li>Will need some more work to allow lines to wrap.</li>
-</ul>
-<h3>Default example</h3>
+<h3>Icon list</h3>
+<p>The icon list will set up a list with icons on the left, in place of bullets.
+Will need some more work to allow lines to wrap.</p>
 <ul class="list list__icons">
     <li class="list_item">
         <span class="cf-icon cf-icon-email list_icon"></span>
@@ -526,11 +593,9 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>ul</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Link list modifier</h2>
-<ul>
-<li>The link list modifier is intended to be used for lists where each item is a link. It converts to a finger-friendly link with a large tap area on smaller screens.</li>
-</ul>
-<h3>Default example</h3>
+<h3>Link list</h3>
+<p>The link list modifier is intended to be used for lists where each item is a link.
+It converts to a finger-friendly link with a large tap area on smaller screens.</p>
 <ul class="list list__links">
     <li class="list_item">
         <a class="list_link" href="#">List item 1</a>
@@ -555,22 +620,29 @@
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>ul</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
 <h3>Link list with icons</h3>
+<p>Used when you have a list of links that you would like to include icons as bullets.
+It converts to a finger-friendly link with a large tap area on smaller screens.
+For accessibility reasons, always include a text label accessible to screenreaders
+with <code>.u-visually-hidden</code> when using icon bullets.</p>
 <ul class="list list__links list__icons">
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__email"
            href="#">
+            <span class="u-visually-hidden">Email: </span>
             <span class="icon-link_text">List item 1</span>
         </a>
     </li>
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__phone"
            href="#">
+            <span class="u-visually-hidden">Phone: </span>
             <span class="icon-link_text">List item 2</span>
         </a>
     </li>
     <li class="list_item">
         <a class="list_link icon-link icon-link__before icon-link__fax"
            href="#">
+            <span class="u-visually-hidden">Fax: </span>
             <span class="icon-link_text">List item 3</span>
         </a>
     </li>
@@ -579,26 +651,27 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>list_item<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>list_link icon-link icon-link__before icon-link__email<span class="token punctuation" >"</span></span>
            <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>u-visually-hidden<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Email: <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
             <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>icon-link_text<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>List item 1<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>list_item<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>list_link icon-link icon-link__before icon-link__phone<span class="token punctuation" >"</span></span>
            <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>u-visually-hidden<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Phone: <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
             <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>icon-link_text<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>List item 2<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>list_item<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>list_link icon-link icon-link__before icon-link__fax<span class="token punctuation" >"</span></span>
            <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>u-visually-hidden<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>Fax: <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
             <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>icon-link_text<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>List item 3<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>ul</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Custom bullet mixin</h2>
-<h3>Custom bullet</h3>
-<p>.custom-bullet(@text, @color, @offset, @size, @font, @type)</p>
+<h3>Custom bullet mixin</h3>
 <ul>
 <li>
 <p>Displays custom bullets to the left of specified elements as :before pseudo elements.</p>
@@ -613,19 +686,4 @@
 <p>By default, custom bullets hang outside of their parent's content box (in the margin or padding if there is any). If you want the bullets to align with the left boundary of the parent's content box, give the parent a left margin value equal to the offset.</p>
 </li>
 </ul>
-<h2>Branded list modifier</h2>
-<h3>Branded list</h3>
-<ul class="list__branded">
-    <li>First item</li>
-    <li>Second item</li>
-    <li>Third item</li>
-</ul>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>ul</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>list__branded<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >&gt;</span></span>First item<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >&gt;</span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >&gt;</span></span>Second item<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >&gt;</span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >&gt;</span></span>Third item<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>ul</span><span class="token punctuation" >&gt;</span></span>
-</code></pre>
-<ul>
-<li>Uses .custom-bullet mixin to generate custom main-brand-color square bullets.</li>
-</ul>
+<p><code>.custom-bullet(@text, @color, @offset, @size, @font, @type)</code></p>

@@ -1,35 +1,69 @@
-<h2>CF Grid</h2>
-<h3>Less variables</h3>
-<p>The following variables are exposed, allowing you to easily override them before compiling. Most mixins allows you to further override these values by passing them arguments.</p>
-<pre><code>@grid_box-sizing-polyfill-path: '../../box-sizing-polyfill;
+<p>The grid component is a suite of Less variable and mixins that enables you to
+lay out a flexible 12-column grid with fixed-size gutters.
+(Column widths will expand and contract with the width of the page,
+but the gutter width remains constant.)
+The mixins are made to be used within your project's Less code to give grid
+layout to your content without needing to use non-semantic grid classes.</p>
+<p>For example, when creating a half-and-half layout, instead of applying classes
+to your column wrappers, like this:</p>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col-half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span> … <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col-half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span> … <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<p>The path where boxsizing.htc is located.</p>
-<p>This path MUST be overridden in your project and set to a root relative url.</p>
+<p>You can give your wrappers semantic class names that describe their content,
+and apply the mixins to those semantic classes, like this:</p>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>description<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span> … <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>illustration<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span> … <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<pre><code>.description,
+.illustration {
+    .grid_column(1, 2);
+}
+</code></pre>
+<p>Read on for more details on the variables and mixins this component provides.</p>
+<blockquote>
+<p>NOTE: If you use <code>cf-grid.less</code> directly,
+be sure to run the file through
+<a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>,
+or your compiled Capital Framework CSS will
+not work perfectly in older browsers.</p>
+</blockquote>
+<h2>Variables</h2>
+<p>The following Less variables are exposed,
+allowing you to easily override them before compiling.</p>
+<pre><code>@grid_box-sizing-polyfill-path: '../../box-sizing-polyfill';
+</code></pre>
+<p>For full IE 6/7 support, ensure that the path to boxsizing.htc is set
+using the <code>@grid_box-sizing-polyfill-path</code> Less variable.
+This path <strong>must</strong> be overridden in your project and set to a root-relative URL.</p>
+<p>Read more about the polyfill: https://github.com/Schepp/box-sizing-polyfill.</p>
 <pre><code>@grid_wrapper-width: 1200px;
 </code></pre>
-<p>The grid's maximum width in px.</p>
+<p>The grid's maximum width in px.
+This value can be overridden in the <code>grid_wrapper()</code> mixin.</p>
 <pre><code>@grid_gutter-width: 30px;
 </code></pre>
 <p>The fixed width between columns.</p>
 <pre><code>@grid_total-columns: 12;
 </code></pre>
-<p>The total number of columns used in calculating column widths.</p>
-<pre><code>@grid_debug
+<p>The total number of columns used in calculating column widths.
+This value can be overridden in the <code>grid_column()</code> mixin.</p>
+<pre><code>@grid_debug: false;
 </code></pre>
 <p>Gives column blocks a background color if set to true.</p>
-<h2>Wrapper</h2>
-<p>Wrappers are centered containers with a max-width and fixed gutters that match the gutter widths of columns.</p>
-<p>To support IE 6/7, ensure that the path to boxsizing.htc is set using the <code>@grid_box-sizing-polyfill-path</code> Less variable. Read more: https://github.com/Schepp/box-sizing-polyfill.</p>
+<h2>Wrappers</h2>
+<p>Wrappers are centered containers with a max-width
+and outside left/right padding of ½ the gutter width on each side.</p>
 <h3>Less mixin</h3>
 <pre><code>.grid_wrapper( @grid_wrapper-width: @grid_wrapper-width )
 </code></pre>
-<p>You can create wrappers with different max-widths by passing a pixel value into the mixin.</p>
-<h3>Usage</h3>
+<p>You can create a wrapper with max-width other than the default
+by passing a pixel value into the mixin.</p>
+<h3>Example</h3>
 <pre><code>.main-wrapper {
-  .grid_wrapper();
+    .grid_wrapper();
 }
 .wide-wrapper {
-  .grid_wrapper( 1900px );
+    .grid_wrapper( 1900px );
 }
 </code></pre>
 <pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main-wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
@@ -39,26 +73,85 @@
     This container is the same except it has a wider max-width.
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h3>Columns</h3>
+<h2>Columns</h2>
 <h3>Less mixin</h3>
 <pre><code>.grid_column( @columns: 1; @total: @grid_total-columns; @prefix: 0; @suffix: 0 )
 </code></pre>
-<p>Computes column widths and prefix/suffix padding.</p>
-<p>CSS borders are used for fixed gutters.</p>
+<p>Create a grid column that is <code>@columns</code> wide given <code>@total</code> total grid columns.</p>
+<p>Optionally give the column left or right padding with the
+<code>@prefix</code> and <code>@suffix</code> parameters.</p>
+<p>Grid columns use transparent borders to create the gutters of the grid,
+so if you want a column to have a background or border, you'll need to
+add a wrapper just inside the column to be styled that way.</p>
 <h3>Usage</h3>
 <pre><code>.main-wrapper {
-  .grid_wrapper();
+    .grid_wrapper();
 }
 .half {
-  .grid_column(1, 2);
+    .grid_column(1, 2);
+}
+.styled {
+    border: 1px solid #999;
+    background: #EEE;
 }
 </code></pre>
 <pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main-wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>I am half of my parent.<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>I am half of my parent.<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>styled<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            I am half of my parent. I also have a border and background.
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Push and Pull mixins for source ordering</h2>
+<p><strong>NOTE:</strong> cf-grid does not have a &quot;row&quot; concept.
+If you have a 12-column grid and place 24 columns inside a wrapper,
+cf-grid columns will automatically stack into two rows of 12.</p>
+<h2>Nested columns</h2>
+<p>Since all grid columns have left and right gutters,
+you will notice undesirable offsetting when nesting columns.
+Normally this is removed with complex selectors
+or by adding classes to the first and last column per 'row'.</p>
+<p>In cf-grid, the way to get around this is by wrapping your columns
+in a container that utilizes the <code>.grid_nested-col-group()</code> mixin.
+This mixin uses negative left and right margins to
+pull the columns back into alignment with parent columns.</p>
+<p>Working this way allows you to easily create responsive grids.
+You are free to control the number of columns per &quot;row&quot; at different breakpoints
+without having to deal with the first and last columns of each row.</p>
+<h3>Less mixin</h3>
+<pre><code>.grid_nested-col-group()
+</code></pre>
+<h3>Usage</h3>
+<pre><code>.main-wrapper {
+    .grid_wrapper();
+}
+.nested {
+    .grid_nested-col-group();
+}
+.half {
+    .grid_column(1, 2);
+}
+</code></pre>
+<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main-wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>nested<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>nested<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+</code></pre>
+<h2>Push and pull mixins for source ordering</h2>
+<p><strong>NOTE:</strong> Using these is not advised, because the disadvantages for users
+of assistive technology outweigh the advantages of putting your most important
+content first in the source order, but it's here if you absolutely need it.</p>
 <h3>Less mixin</h3>
 <pre><code>.push( @offset: 1, @grid_total-columns: @grid_total-columns )
 </code></pre>
@@ -79,58 +172,24 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>first<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>I am second in the markup but appear before .second.<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
-<h2>Nested columns</h2>
-<p>Since all cf-grid columns have left and right gutters you will notice undesirable offsetting when nesting columns. Normally this is removed with complex selectors or by adding classes to the first and last column per 'row'. In cf-grid the way to get around this is by wrapping your columns in a container that utilizes the .grid_nested-col-group() mixin. This mixin uses negative left and right margins to pull the columns back into alignment with parent columns.</p>
-<p><strong>NOTE:</strong> Working this way allows you to easily create responsive grids. You are free to control the number of columns per 'row' without having to deal with the first and last columns of each row.</p>
-<p><strong>NOTE:</strong> cf-grids does not use 'rows' and there is no row container. To clarify, if you have a 12 column grid and place 24 columns inside of a wrapper cf-grid columns will automatically stack into 2 'rows' of 12.</p>
-<h3>Less mixin</h3>
-<pre><code>.grid_nested-col-group()
-</code></pre>
-<h3>Usage</h3>
-<pre><code>.main-wrapper {
-  .grid_wrapper();
-}
-.cols {
-  .grid_nested-col-group();
-}
-.half {
-  .grid_column(1, 2);
-}
-</code></pre>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>main-wrapper<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cols<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cols<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>half<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-</code></pre>
 <h2>Example grid layouts</h2>
 <h3>12 columns w/ 1200px max width</h3>
 <div class="cols-12">
+    <section>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+        <div class="col col-1"><p>one</p></div>
+    </section>
 <pre><code>&lt;section&gt;
-    &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;col col-1&quot;&gt;&lt;p&gt;one&lt;/p&gt;&lt;/div&gt;
-&lt;/section&gt;
-
-&lt;section&gt;
     &lt;div class=&quot;col col-2&quot;&gt;&lt;p&gt;two&lt;/p&gt;&lt;/div&gt;
     &lt;div class=&quot;col col-2&quot;&gt;&lt;p&gt;two&lt;/p&gt;&lt;/div&gt;
     &lt;div class=&quot;col col-2&quot;&gt;&lt;p&gt;two&lt;/p&gt;&lt;/div&gt;
@@ -171,7 +230,6 @@
 </code></pre>
 </div>
 <pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cols-12<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-1<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>one<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-1<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>one<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
@@ -225,29 +283,26 @@
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-12<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>twelve<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
-
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
 <h3>Prefixing/Suffixing</h3>
-  <div class="cols-12">
-<pre><code>  &lt;section&gt;
-      &lt;div class=&quot;col col-1 suffix-11&quot;&gt;&lt;p&gt;prefix 0, suffix 11&lt;/p&gt;&lt;/div&gt;
-      &lt;div class=&quot;col col-1 prefix-1 suffix-10&quot;&gt;&lt;p&gt;prefix 1, suffix 10&lt;/p&gt;&lt;/div&gt;
-      &lt;div class=&quot;col col-1 prefix-2 suffix-9&quot;&gt;&lt;p&gt;prefix 2, suffix 9&lt;/p&gt;&lt;/div&gt;
-      &lt;div class=&quot;col col-1 prefix-3 suffix-8&quot;&gt;&lt;p&gt;prefix 3, suffix 8&lt;/p&gt;&lt;/div&gt;
-      &lt;div class=&quot;col col-1 prefix-4 suffix-7&quot;&gt;&lt;p&gt;prefix 4, suffix 7&lt;/p&gt;&lt;/div&gt;
-      &lt;div class=&quot;col col-1 prefix-5 suffix-6&quot;&gt;&lt;p&gt;prefix 5, suffix 6&lt;/p&gt;&lt;/div&gt;
-      &lt;div class=&quot;col col-1 prefix-6 suffix-5&quot;&gt;&lt;p&gt;prefix 6, suffix 5&lt;/p&gt;&lt;/div&gt;
-      &lt;div class=&quot;col col-1 prefix-7 suffix-4&quot;&gt;&lt;p&gt;prefix 7, suffix 4&lt;/p&gt;&lt;/div&gt;
-      &lt;div class=&quot;col col-1 prefix-8 suffix-3&quot;&gt;&lt;p&gt;prefix 8, suffix 3&lt;/p&gt;&lt;/div&gt;
-      &lt;div class=&quot;col col-1 prefix-9 suffix-2&quot;&gt;&lt;p&gt;prefix 9, suffix 2&lt;/p&gt;&lt;/div&gt;
-      &lt;div class=&quot;col col-1 prefix-10 suffix-1&quot;&gt;&lt;p&gt;prefix 10, suffix 1&lt;/p&gt;&lt;/div&gt;
-      &lt;div class=&quot;col col-1 prefix-11&quot;&gt;&lt;p&gt;prefix 11, suffix 0&lt;/p&gt;&lt;/div&gt;
-  &lt;/section&gt;
-</code></pre>
-  </div>
+<div class="cols-12">
+    <section>
+        <div class="col col-1 suffix-11"><p>prefix 0, suffix 11</p></div>
+        <div class="col col-1 prefix-1 suffix-10"><p>prefix 1, suffix 10</p></div>
+        <div class="col col-1 prefix-2 suffix-9"><p>prefix 2, suffix 9</p></div>
+        <div class="col col-1 prefix-3 suffix-8"><p>prefix 3, suffix 8</p></div>
+        <div class="col col-1 prefix-4 suffix-7"><p>prefix 4, suffix 7</p></div>
+        <div class="col col-1 prefix-5 suffix-6"><p>prefix 5, suffix 6</p></div>
+        <div class="col col-1 prefix-6 suffix-5"><p>prefix 6, suffix 5</p></div>
+        <div class="col col-1 prefix-7 suffix-4"><p>prefix 7, suffix 4</p></div>
+        <div class="col col-1 prefix-8 suffix-3"><p>prefix 8, suffix 3</p></div>
+        <div class="col col-1 prefix-9 suffix-2"><p>prefix 9, suffix 2</p></div>
+        <div class="col col-1 prefix-10 suffix-1"><p>prefix 10, suffix 1</p></div>
+        <div class="col col-1 prefix-11"><p>prefix 11, suffix 0</p></div>
+    </section>
+</div>
 <pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cols-12<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-1 suffix-11<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>prefix 0, suffix 11<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-1 prefix-1 suffix-10<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>prefix 1, suffix 10<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
@@ -262,87 +317,60 @@
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-1 prefix-10 suffix-1<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>prefix 10, suffix 1<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-1 prefix-11<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>prefix 11, suffix 0<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
-
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-</code></pre>
-<h3>Push/Pull</h3>
-  <div class="cols-12">
-<pre><code>&lt;section&gt;
-    &lt;div class=&quot;col col-4 push-8&quot;&gt;&lt;p&gt;four, push eight&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;col col-8 pull-4&quot;&gt;&lt;p&gt;eight, pull four&lt;/p&gt;&lt;/div&gt;
-&lt;/section&gt;
-
-&lt;section&gt;
-    &lt;div class=&quot;col col-9 push-3&quot;&gt;&lt;p&gt;nine, push three&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;col col-3 pull-9&quot;&gt;&lt;p&gt;three, pull nine&lt;/p&gt;&lt;/div&gt;
-&lt;/section&gt;
-</code></pre>
-  </div>
-<pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cols-12<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span><span class="token punctuation" >&gt;</span></span>
-      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-4 push-8<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>four, push eight<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-8 pull-4<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>eight, pull four<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
-
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span><span class="token punctuation" >&gt;</span></span>
-      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-9 push-3<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>nine, push three<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-3 pull-9<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>three, pull nine<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
-
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
 <h3>Nesting</h3>
-  <div class="cols-12">
-<pre><code>  &lt;section&gt;
-      &lt;div class=&quot;col col-6&quot;&gt;
-          &lt;p&gt;six&lt;/p&gt;
-          &lt;section&gt;
-              &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
-              &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
-              &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
-          &lt;/section&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;col col-6&quot;&gt;
-          &lt;p&gt;six&lt;/p&gt;
-          &lt;section&gt;
-              &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
-              &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
-              &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
-          &lt;/section&gt;
-      &lt;/div&gt;
-  &lt;/section&gt;
+<div class="cols-12">
+    <section>
+        <div class="col col-6">
+            <p>six</p>
+            <section>
+                <div class="col col-4"><p>four</p></div>
+                <div class="col col-4"><p>four</p></div>
+                <div class="col col-4"><p>four</p></div>
+            </section>
+        </div>
+<pre><code>    &lt;div class=&quot;col col-6&quot;&gt;
+        &lt;p&gt;six&lt;/p&gt;
+        &lt;section&gt;
+            &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+            &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+            &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
 
-  &lt;section&gt;
-      &lt;div class=&quot;col col-3&quot;&gt;
-          &lt;p&gt;three&lt;/p&gt;
-          &lt;section&gt;
-              &lt;div class=&quot;col col-6&quot;&gt;&lt;p&gt;six&lt;/p&gt;&lt;/div&gt;
-              &lt;div class=&quot;col col-6&quot;&gt;&lt;p&gt;six&lt;/p&gt;&lt;/div&gt;
-          &lt;/section&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;col col-6&quot;&gt;
-          &lt;p&gt;six&lt;/p&gt;
-          &lt;section&gt;
-              &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
-              &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
-              &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
-          &lt;/section&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;col col-3&quot;&gt;
-          &lt;p&gt;three&lt;/p&gt;
-          &lt;section&gt;
-              &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
-              &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
-              &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
-              &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
-          &lt;/section&gt;
-      &lt;/div&gt;
-  &lt;/section&gt;
+&lt;section&gt;
+    &lt;div class=&quot;col col-3&quot;&gt;
+        &lt;p&gt;three&lt;/p&gt;
+        &lt;section&gt;
+            &lt;div class=&quot;col col-6&quot;&gt;&lt;p&gt;six&lt;/p&gt;&lt;/div&gt;
+            &lt;div class=&quot;col col-6&quot;&gt;&lt;p&gt;six&lt;/p&gt;&lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col col-6&quot;&gt;
+        &lt;p&gt;six&lt;/p&gt;
+        &lt;section&gt;
+            &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+            &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+            &lt;div class=&quot;col col-4&quot;&gt;&lt;p&gt;four&lt;/p&gt;&lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col col-3&quot;&gt;
+        &lt;p&gt;three&lt;/p&gt;
+        &lt;section&gt;
+            &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+            &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+            &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+            &lt;div class=&quot;col col-3&quot;&gt;&lt;p&gt;three&lt;/p&gt;&lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
 </code></pre>
-  </div>
+</div>
 <pre><code><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>cols-12<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
-
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-6<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
             <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>six<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
@@ -352,6 +380,7 @@
                 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-4<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>four<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
             <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-6<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
             <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>six<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
             <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span><span class="token punctuation" >&gt;</span></span>
@@ -370,6 +399,7 @@
                 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-6<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>six<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
             <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-6<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
             <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>six<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
             <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span><span class="token punctuation" >&gt;</span></span>
@@ -378,6 +408,7 @@
                 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-4<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>four<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
             <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
+
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col col-3<span class="token punctuation" >"</span></span><span class="token punctuation" >&gt;</span></span>
             <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >&gt;</span></span>three<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >&gt;</span></span>
             <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span><span class="token punctuation" >&gt;</span></span>
@@ -388,6 +419,5 @@
             <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
         <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >&gt;</span></span>
-
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >&gt;</span></span>
 </code></pre>
