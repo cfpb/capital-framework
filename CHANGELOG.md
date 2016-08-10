@@ -4,13 +4,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-icons:** [PATCH] Standardized the usage doc.
 
 ### Removed
-- 
+-
 
 ## 3.6.0 - 2016-08-02
 
