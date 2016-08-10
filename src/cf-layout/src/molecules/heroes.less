@@ -1,8 +1,19 @@
+//
+// Theme variables
+//
+
+// Sizing variables
+
 @hero-desktop-height: 285px;
-@hero-image-height: 195px;
-@hero-bg: #f7f8f9;
-@hero-overlay-bg: #5a5d61;
-@hero-overlay-text: white;
+@hero-image-height:   195px;
+
+// Color variables
+// $color- variables are from 18F's U.S. Web Design Standards
+// https://github.com/18F/web-design-standards/blob/master/src/stylesheets/core/_variables.scss
+
+@hero-bg:             #dce4ef; // $color-gray-cool-light
+@hero-overlay-bg:     #5b616b; // $color-gray
+@hero-overlay-text:   white;
 
 .m-hero {
     background-color: @hero-bg;
@@ -24,7 +35,7 @@
         .respond-to-min( @bp-med-min, {
             padding-top: unit( 45px / @base-font-size-px, em );
             padding-bottom: unit( 45px / @base-font-size-px, em );
-        });
+        } );
     }
 
     &_text {
@@ -35,7 +46,7 @@
 
             display: table-cell;
             vertical-align: middle;
-        });
+        } );
     }
 
     &_heading {
@@ -48,6 +59,8 @@
 
     &_subhead,
     &_cta:not( .btn ) {
+        // Not using the `.heading-3()` mixin here because we want the weight
+        // to remain Regular on smaller screens.
         .webfont-regular();
 
         font-size: @size-iv;
@@ -117,7 +130,7 @@
         } );
     }
 
-    &__white-text {
+    &__overlay-text {
         .respond-to-min( @bp-sm-min, {
             .m-hero_wrapper {
                 background-color: @hero-overlay-bg;
