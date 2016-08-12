@@ -3,14 +3,14 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
-- 
-
 ### Changed
-- 
+- **cf-icons:** Standardized the usage doc.
+- **cf-pagination:** Standardized the usage doc.
+- **cf-forms:** Standardized the usage doc.
 
 ### Removed
-- 
+- **capital-framework:** Remove post install script to allow shrinkwrapping.
+
 
 ## 3.6.0 - 2016-08-02
 

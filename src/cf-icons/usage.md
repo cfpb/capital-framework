@@ -7,6 +7,25 @@ This component can be used by itself, but is designed to work with Capital Frame
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
+## Table of contents
+
+- [Variables](#variables)
+    - [Settings](#settings)
+- [The basics](#the-basics)
+- [Helper classes](#helper-classes)
+    - [Icon sizes](#Icon-sizes)
+    - [Mixins](#mixins)
+    - [Modified icons](#modified-icons)
+    - [Animated icons](#animated-icons)
+- [Icons](#icons)
+    - [Navigation icons](#navigation-icons)
+    - [Status icons](#status-icons)
+    - [Social icons](#social-icons)
+    - [Document icons](#document-icons)
+    - [Financial product icons](#financial-product-icons)
+    - [Web icons](#web-icons)
+- [Icon character variables](#icon-character-variables)
+
 ## Variables
 
 Theme variables for setting the color of sizes throughout the projects.
@@ -21,12 +40,16 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 @cf-icon-border-color:          #eee;
 ```
 
-#### IE7 Support
+#### IE7 support
 
 IE7 support is added by using dynamic properties (CSS expressions).
 
 To turn off IE7 support for performance reasons,
-simply set @cf-icon-ie7-support to false.
+simply set
+
+```
+@cf-icon-ie7-support: false;
+```
 
 
 ## The basics
@@ -45,9 +68,11 @@ on i elements and then another font for the icons.
 Note that this issue only pops up in older versions of Internet Explorer.
 
 
-## Helper classes for icon sizes
+## Helpers
 
-### Large icon size
+### Icon sizes
+
+#### Large icon size
 
 <span class="cf-icon cf-icon-money cf-icon__lg"></span>
 
@@ -55,7 +80,7 @@ Note that this issue only pops up in older versions of Internet Explorer.
 <span class="cf-icon cf-icon-money cf-icon__lg"></span>
 ```
 
-### 2x icon size
+#### 2x icon size
 
 <span class="cf-icon cf-icon-money cf-icon__2x"></span>
 
@@ -63,7 +88,7 @@ Note that this issue only pops up in older versions of Internet Explorer.
 <span class="cf-icon cf-icon-money cf-icon__2x"></span>
 ```
 
-### 3x icon size
+#### 3x icon size
 
 <span class="cf-icon cf-icon-money cf-icon__3x"></span>
 
@@ -71,7 +96,7 @@ Note that this issue only pops up in older versions of Internet Explorer.
 <span class="cf-icon cf-icon-money cf-icon__3x"></span>
 ```
 
-### 4x icon size
+#### 4x icon size
 
 <span class="cf-icon cf-icon-money cf-icon__4x"></span>
 
@@ -79,7 +104,7 @@ Note that this issue only pops up in older versions of Internet Explorer.
 <span class="cf-icon cf-icon-money cf-icon__4x"></span>
 ```
 
-### 5x icon size
+#### 5x icon size
 
 <span class="cf-icon cf-icon-money cf-icon__5x"></span>
 
@@ -87,20 +112,20 @@ Note that this issue only pops up in older versions of Internet Explorer.
 <span class="cf-icon cf-icon-money cf-icon__5x"></span>
 ```
 
-## Mixin classes
+### Mixins
 
 MIT Licensed by Font Awesome
 
-### Icon rotation mixin
+#### Icon rotation mixin
 
 ```
 .@{cf-icon-prefix}__rotate-90  { .cf-icon__rotate(90deg, 1);  }
 ```
 
-First parameter is @degrees.
-Second parameter is @rotation
+First parameter is `@degrees`.
+Second parameter is `@rotation`.
 
-### Icon flip mixin
+#### Icon flip mixin
 
 ```
 .@{cf-icon-prefix}__flip-horizontal { .cf-icon__flip(-1, 1, 0); }
@@ -111,11 +136,11 @@ First parameter is for number of horizontal flips
 Second parameter is for number of vertical flips
 Third parameter is for rotation
 
-## Helper classes for modified icons
+### Modified icons
 
 MIT Licensed by Font Awesome
 
-### Bordered icons
+#### Bordered icons
 
 <span class="cf-icon cf-icon-update cf-icon__border"></span>
 
@@ -123,9 +148,9 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-update cf-icon__border"></span>
 ```
 
-Border color set by @cf-icon-border-color
+Border color set by `@cf-icon-border-color`
 
-### Rotated icons
+#### Rotated icons
 
 <span class="cf-icon cf-icon-update cf-icon__rotate-90"></span>
 <span class="cf-icon cf-icon-update cf-icon__rotate-180"></span>
@@ -137,7 +162,7 @@ Border color set by @cf-icon-border-color
 <span class="cf-icon cf-icon-update cf-icon__rotate-270"></span>
 ```
 
-### Flipped icons
+#### Flipped icons
 
 <span class="cf-icon cf-icon-update cf-icon__flip-horizontal"></span>
 <span class="cf-icon cf-icon-update cf-icon__flip-vertical"></span>
@@ -147,10 +172,11 @@ Border color set by @cf-icon-border-color
 <span class="cf-icon cf-icon-update cf-icon__flip-vertical"></span>
 ```
 
-## Helper classes for animated icons
+### Animated icons
 
 MIT Licensed by Font Awesome
-### Spinning icons
+
+#### Spinning icons
 
 <span class="cf-icon cf-icon-update cf-icon__spin"></span>
 
@@ -158,14 +184,15 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-update cf-icon__spin"></span>
 ```
 
-### Pulsing icons
+#### Pulsing icons
+
 <span class="cf-icon cf-icon-update cf-icon__pulse"></span>
 
 ```
 <span class="cf-icon cf-icon-update cf-icon__pulse"></span>
 ```
 
-### Flipped icons
+#### Flipped icons
 
 <span class="cf-icon cf-icon-phone cf-icon__flip-horizontal"></span>
 <span class="cf-icon cf-icon-phone cf-icon__flip-vertical"></span>
@@ -175,9 +202,11 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-phone cf-icon__flip-vertical"></span>
 ```
 
-## Navigation Icons
+## Icons
 
-### left
+### Navigation icons
+
+#### Left
 
 <span class="cf-icon cf-icon-left"></span>
 <span class="cf-icon cf-icon-left-round"></span>
@@ -187,7 +216,8 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-left-round"></span>
 ```
 
-### right
+#### Right
+
 <span class="cf-icon cf-icon-right"></span>
 <span class="cf-icon cf-icon-right-round"></span>
 
@@ -197,7 +227,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-right-round"></span>
 ```
 
-### up
+#### Up
 
 <span class="cf-icon cf-icon-up"></span>
 <span class="cf-icon cf-icon-up-round"></span>
@@ -207,7 +237,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-up-round"></span>
 ```
 
-### down
+#### Down
 
 <span class="cf-icon cf-icon-down"></span>
 <span class="cf-icon cf-icon-down-round"></span>
@@ -217,7 +247,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-down-round"></span>
 ```
 
-### arrow-left
+#### Arrow left
 
 <span class="cf-icon cf-icon-arrow-left"></span>
 <span class="cf-icon cf-icon-arrow-left-round"></span>
@@ -227,7 +257,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-arrow-left-round"></span>
 ```
 
-### arrow-right
+#### Arrow right
 
 <span class="cf-icon cf-icon-arrow-right"></span>
 <span class="cf-icon cf-icon-arrow-right-round"></span>
@@ -237,7 +267,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-arrow-right-round"></span>
 ```
 
-### arrow-up
+#### Arrow up
 
 <span class="cf-icon cf-icon-arrow-up"></span>
 <span class="cf-icon cf-icon-arrow-up-round"></span>
@@ -247,7 +277,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-arrow-up-round"></span>
 ```
 
-### arrow-down
+#### Arrow down
 
 <span class="cf-icon cf-icon-arrow-down"></span>
 <span class="cf-icon cf-icon-arrow-down-round"></span>
@@ -257,9 +287,9 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-arrow-down-round"></span>
 ```
 
-## Status Icon
+### Status icons
 
-### approved
+#### Approved
 
 <span class="cf-icon cf-icon-approved"></span>
 <span class="cf-icon cf-icon-approved-round"></span>
@@ -269,7 +299,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-approved-round"></span>
 ```
 
-### error
+#### Error
 
 <span class="cf-icon cf-icon-error"></span>
 <span class="cf-icon cf-icon-error-round"></span>
@@ -279,7 +309,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-error-round"></span>
 ```
 
-### help
+#### Help
 
 <span class="cf-icon cf-icon-help"></span>
 <span class="cf-icon cf-icon-help-round"></span>
@@ -289,7 +319,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-help-round"></span>
 ```
 
-### delete
+#### Delete
 
 <span class="cf-icon cf-icon-delete"></span>
 <span class="cf-icon cf-icon-delete-round"></span>
@@ -299,7 +329,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-delete-round"></span>
 ```
 
-### plus
+#### Plus
 
 <span class="cf-icon cf-icon-plus"></span>
 <span class="cf-icon cf-icon-plus-round"></span>
@@ -309,7 +339,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-plus-round"></span>
 ```
 
-### minus
+#### Minus
 
 <span class="cf-icon cf-icon-minus"></span>
 <span class="cf-icon cf-icon-minus-round"></span>
@@ -319,7 +349,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-minus-round"></span>
 ```
 
-### update
+#### Update
 
 <span class="cf-icon cf-icon-update"></span>
 <span class="cf-icon cf-icon-update-round"></span>
@@ -328,9 +358,10 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-update"></span>
 <span class="cf-icon cf-icon-update-round"></span>
 ```
-## Social Icons
 
-### youtube
+### Social icons
+
+#### YouTube
 
 <span class="cf-icon cf-icon-youtube"></span>
 <span class="cf-icon cf-icon-youtube-square"></span>
@@ -340,7 +371,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-youtube-square"></span>
 ```
 
-### linkedin
+#### Linkedin
 
 <span class="cf-icon cf-icon-linkedin"></span>
 <span class="cf-icon cf-icon-linkedin-square"></span>
@@ -350,7 +381,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-linkedin-square"></span>
 ```
 
-### facebook
+#### Facebook
 
 <span class="cf-icon cf-icon-facebook"></span>
 <span class="cf-icon cf-icon-facebook-square"></span>
@@ -360,7 +391,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-facebook-square"></span>
 ```
 
-### flickr
+#### Flickr
 
 <span class="cf-icon cf-icon-flickr"></span>
 <span class="cf-icon cf-icon-flickr-square"></span>
@@ -370,7 +401,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-flickr-square"></span>
 ```
 
-### plus
+#### Twitter
 
 <span class="cf-icon cf-icon-twitter"></span>
 <span class="cf-icon cf-icon-twitter-square"></span>
@@ -380,7 +411,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-twitter-square"></span>
 ```
 
-### github
+#### GitHub
 
 <span class="cf-icon cf-icon-github"></span>
 <span class="cf-icon cf-icon-github-square"></span>
@@ -390,7 +421,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-github-square"></span>
 ```
 
-### email-social
+#### Email
 
 <span class="cf-icon cf-icon-email-social"></span>
 <span class="cf-icon cf-icon-email-social-square"></span>
@@ -400,9 +431,9 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-email-social-square"></span>
 ```
 
-## Document icons
+### Document icons
 
-### document
+#### Document
 
 <span class="cf-icon cf-icon-document"></span>
 <span class="cf-icon cf-icon-document-round"></span>
@@ -412,7 +443,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-document-round"></span>
 ```
 
-### pdf
+#### PDF
 
 <span class="cf-icon cf-icon-pdf"></span>
 <span class="cf-icon cf-icon-pdf-round"></span>
@@ -421,7 +452,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-pdf-round"></span>
 ```
 
-### upload
+#### Upload
 
 <span class="cf-icon cf-icon-upload"></span>
 <span class="cf-icon cf-icon-upload-round"></span>
@@ -431,7 +462,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-upload-round"></span>
 ```
 
-### download
+#### Download
 
 <span class="cf-icon cf-icon-download"></span>
 <span class="cf-icon cf-icon-download-round"></span>
@@ -441,7 +472,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-download-round"></span>
 ```
 
-### copy
+#### Copy
 
 <span class="cf-icon cf-icon-copy"></span>
 <span class="cf-icon cf-icon-copy-round"></span>
@@ -451,7 +482,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-copy-round"></span>
 ```
 
-### edit
+#### Edit
 
 <span class="cf-icon cf-icon-edit"></span>
 <span class="cf-icon cf-icon-edit-round"></span>
@@ -461,7 +492,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-edit-round"></span>
 ```
 
-### attach
+#### Attach
 
 <span class="cf-icon cf-icon-attach"></span>
 <span class="cf-icon cf-icon-attach-round"></span>
@@ -471,7 +502,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-attach-round"></span>
 ```
 
-###print
+#### Print
 
 <span class="cf-icon cf-icon-print"></span>
 <span class="cf-icon cf-icon-print-round"></span>
@@ -481,7 +512,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-print-round"></span>
 ```
 
-### save
+#### Save
 
 <span class="cf-icon cf-icon-save"></span>
 <span class="cf-icon cf-icon-save-round"></span>
@@ -491,7 +522,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-save-round"></span>
 ```
 
-### appendix
+#### Appendix
 
 <span class="cf-icon cf-icon-appendix"></span>
 <span class="cf-icon cf-icon-appendix-round"></span>
@@ -501,7 +532,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-appendix-round"></span>
 ```
 
-### supplement
+#### Supplement
 
 <span class="cf-icon cf-icon-supplement"></span>
 <span class="cf-icon cf-icon-supplement-round"></span>
@@ -511,7 +542,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-supplement-round"></span>
 ```
 
-### rss
+#### RSS
 
 <span class="cf-icon cf-icon-rss"></span>
 <span class="cf-icon cf-icon-rss-round"></span>
@@ -521,9 +552,9 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-rss-round"></span>
 ```
 
-## Financial product icons
+### Financial product icons
 
-### bank-account
+#### Bank account
 
 <span class="cf-icon cf-icon-bank-account"></span>
 <span class="cf-icon cf-icon-bank-account-round"></span>
@@ -533,7 +564,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-bank-account-round"></span>
 ```
 
-### credit-card
+#### Credit card
 
 <span class="cf-icon cf-icon-credit-card"></span>
 <span class="cf-icon cf-icon-credit-card-round"></span>
@@ -543,7 +574,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-credit-card-round"></span>
 ```
 
-### loan
+#### Loan
 
 <span class="cf-icon cf-icon-loan"></span>
 <span class="cf-icon cf-icon-loan-round"></span>
@@ -553,7 +584,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-loan-round"></span>
 ```
 
-### money-transfer
+#### Money transfer
 
 <span class="cf-icon cf-icon-money-transfer"></span>
 <span class="cf-icon cf-icon-money-transfer-round"></span>
@@ -563,7 +594,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-money-transfer-round"></span>
 ```
 
-### mortgage
+#### Mortgage
 
 <span class="cf-icon cf-icon-mortgage"></span>
 <span class="cf-icon cf-icon-mortgage-round"></span>
@@ -573,7 +604,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-mortgage-round"></span>
 ```
 
-### debt-collection
+#### Debt collection
 
 <span class="cf-icon cf-icon-debt-collection"></span>
 <span class="cf-icon cf-icon-debt-collection-round"></span>
@@ -583,7 +614,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-debt-collection-round"></span>
 ```
 
-### credit-report
+#### Credit report
 
 <span class="cf-icon cf-icon-credit-report"></span>
 <span class="cf-icon cf-icon-credit-report-round"></span>
@@ -593,7 +624,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-credit-report-round"></span>
 ```
 
-### money
+#### Money
 
 <span class="cf-icon cf-icon-money"></span>
 <span class="cf-icon cf-icon-money-round"></span>
@@ -603,7 +634,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-money-round"></span>
 ```
 
-### quick-cash
+#### Quick cash
 
 <span class="cf-icon cf-icon-quick-cash"></span>
 <span class="cf-icon cf-icon-quick-cash-round"></span>
@@ -613,7 +644,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-quick-cash-round"></span>
 ```
 
-### contract
+#### Contract
 
 <span class="cf-icon cf-icon-contract"></span>
 <span class="cf-icon cf-icon-contract-round"></span>
@@ -623,7 +654,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-contract-round"></span>
 ```
 
-### complaint
+#### Complaint
 
 <span class="cf-icon cf-icon-complaint"></span>
 <span class="cf-icon cf-icon-complaint-round"></span>
@@ -633,7 +664,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-complaint-round"></span>
 ```
 
-### getting-credit-card
+#### Getting a credit card
 
 <span class="cf-icon cf-icon-getting-credit-card"></span>
 <span class="cf-icon cf-icon-getting-credit-card-round"></span>
@@ -643,7 +674,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-getting-credit-card-round"></span>
 ```
 
-### buying-car
+#### Buying a car
 
 <span class="cf-icon cf-icon-buying-car"></span>
 <span class="cf-icon cf-icon-buying-car-round"></span>
@@ -653,7 +684,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-buying-car-round"></span>
 ```
 
-### paying-college
+#### Paying for college
 
 <span class="cf-icon cf-icon-paying-college"></span>
 <span class="cf-icon cf-icon-paying-college-round"></span>
@@ -663,7 +694,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-paying-college-round"></span>
 ```
 
-### owning-home
+#### Owning a home
 
 <span class="cf-icon cf-icon-owning-home"></span>
 <span class="cf-icon cf-icon-owning-home-round"></span>
@@ -673,7 +704,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-owning-home-round"></span>
 ```
 
-### debt
+#### Debt
 
 <span class="cf-icon cf-icon-debt"></span>
 <span class="cf-icon cf-icon-debt-round"></span>
@@ -683,7 +714,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-debt-round"></span>
 ```
 
-### building-credit
+#### Building credit
 
 <span class="cf-icon cf-icon-building-credit"></span>
 <span class="cf-icon cf-icon-building-credit-round"></span>
@@ -693,7 +724,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-building-credit-round"></span>
 ```
 
-### prepaid-cards
+#### Prepaid cards
 
 <span class="cf-icon cf-icon-prepaid-cards"></span>
 <span class="cf-icon cf-icon-prepaid-cards-round"></span>
@@ -703,7 +734,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-prepaid-cards-round"></span>
 ```
 
-### payday-loan
+#### Payday loan
 
 <span class="cf-icon cf-icon-payday-loan"></span>
 <span class="cf-icon cf-icon-payday-loan-round"></span>
@@ -713,7 +744,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-payday-loan-round"></span>
 ```
 
-### retirement
+#### Retirement
 
 <span class="cf-icon cf-icon-retirement"></span>
 <span class="cf-icon cf-icon-retirement-round"></span>
@@ -724,9 +755,9 @@ MIT Licensed by Font Awesome
 ```
 
 
-## Web icons
+### Web icons
 
-### user
+#### User
 
 <span class="cf-icon cf-icon-user"></span>
 <span class="cf-icon cf-icon-user-round"></span>
@@ -736,7 +767,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-user-round"></span>
 ```
 
-### wifi
+#### WiFi
 
 <span class="cf-icon cf-icon-wifi"></span>
 <span class="cf-icon cf-icon-wifi-round"></span>
@@ -746,7 +777,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-wifi-round"></span>
 ```
 
-### search
+#### Search
 
 <span class="cf-icon cf-icon-search"></span>
 <span class="cf-icon cf-icon-search-round"></span>
@@ -756,7 +787,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-search-round"></span>
 ```
 
-### share
+#### Share
 
 <span class="cf-icon cf-icon-share"></span>
 <span class="cf-icon cf-icon-share-round"></span>
@@ -766,7 +797,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-share-round"></span>
 ```
 
-### link
+#### Link
 
 <span class="cf-icon cf-icon-link"></span>
 <span class="cf-icon cf-icon-link-round"></span>
@@ -776,7 +807,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-link-round"></span>
 ```
 
-### external-link
+#### External link
 
 <span class="cf-icon cf-icon-external-link"></span>
 <span class="cf-icon cf-icon-external-link-round"></span>
@@ -786,7 +817,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-external-link-round"></span>
 ```
 
-### audio-mute
+#### Audio mute
 
 <span class="cf-icon cf-icon-audio-mute"></span>
 <span class="cf-icon cf-icon-audio-mute-round"></span>
@@ -796,7 +827,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-audio-mute-round"></span>
 ```
 
-### audio-low
+#### Audio low
 
 <span class="cf-icon cf-icon-audio-low"></span>
 <span class="cf-icon cf-icon-audio-low-round"></span>
@@ -806,7 +837,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-audio-low-round"></span>
 ```
 
-### audio-medium
+#### Audio medium
 
 <span class="cf-icon cf-icon-audio-medium"></span>
 <span class="cf-icon cf-icon-audio-medium-round"></span>
@@ -816,7 +847,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-audio-medium-round"></span>
 ```
 
-### audio-max
+#### Audio max
 
 <span class="cf-icon cf-icon-audio-max"></span>
 <span class="cf-icon cf-icon-audio-max-round"></span>
@@ -826,7 +857,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-audio-max-round"></span>
 ```
 
-### favorite
+#### Favorite
 
 <span class="cf-icon cf-icon-favorite"></span>
 <span class="cf-icon cf-icon-favorite-round"></span>
@@ -836,7 +867,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-favorite-round"></span>
 ```
 
-### unfavorite
+#### Unfavorite
 
 <span class="cf-icon cf-icon-unfavorite"></span>
 <span class="cf-icon cf-icon-unfavorite-round"></span>
@@ -846,7 +877,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-unfavorite-round"></span>
 ```
 
-### bookmark
+#### Bookmark
 
 <span class="cf-icon cf-icon-bookmark"></span>
 <span class="cf-icon cf-icon-bookmark-round"></span>
@@ -856,7 +887,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-bookmark-round"></span>
 ```
 
-### unbookmark
+#### Unbookmark
 
 <span class="cf-icon cf-icon-unbookmark"></span>
 <span class="cf-icon cf-icon-unbookmark-round"></span>
@@ -866,7 +897,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-unbookmark-round"></span>
 ```
 
-### settings
+#### Settings
 
 <span class="cf-icon cf-icon-settings"></span>
 <span class="cf-icon cf-icon-settings-round"></span>
@@ -876,7 +907,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-settings-round"></span>
 ```
 
-### menu
+#### Menu
 
 <span class="cf-icon cf-icon-menu"></span>
 <span class="cf-icon cf-icon-menu-round"></span>
@@ -886,7 +917,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-menu-round"></span>
 ```
 
-### lock
+#### Lock
 
 <span class="cf-icon cf-icon-lock"></span>
 <span class="cf-icon cf-icon-lock-round"></span>
@@ -896,7 +927,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-lock-round"></span>
 ```
 
-### unlock
+#### Unlock
 
 <span class="cf-icon cf-icon-unlock"></span>
 <span class="cf-icon cf-icon-unlock-round"></span>
@@ -906,7 +937,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-unlock-round"></span>
 ```
 
-### clock
+#### Clock
 
 <span class="cf-icon cf-icon-clock"></span>
 <span class="cf-icon cf-icon-clock-round"></span>
@@ -916,7 +947,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-clock-round"></span>
 ```
 
-### chart
+#### Chart
 
 <span class="cf-icon cf-icon-chart"></span>
 <span class="cf-icon cf-icon-chart-round"></span>
@@ -926,7 +957,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-chart-round"></span>
 ```
 
-### play
+#### Play
 
 <span class="cf-icon cf-icon-play"></span>
 <span class="cf-icon cf-icon-play-round"></span>
@@ -936,7 +967,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-play-round"></span>
 ```
 
-### history
+#### History
 
 <span class="cf-icon cf-icon-history"></span>
 <span class="cf-icon cf-icon-history-round"></span>
@@ -946,7 +977,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-history-round"></span>
 ```
 
-### table of contents
+#### Table of contents
 
 <span class="cf-icon cf-icon-table-of-contents"></span>
 <span class="cf-icon cf-icon-table-of-contents-round"></span>
@@ -956,7 +987,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-table-of-contents-round"></span>
 ```
 
-### newspaper
+#### Newspaper
 
 <span class="cf-icon cf-icon-newspaper"></span>
 <span class="cf-icon cf-icon-newspaper-round"></span>
@@ -966,7 +997,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-newspaper-round"></span>
 ```
 
-### microphone
+#### Microphone
 
 <span class="cf-icon cf-icon-microphone"></span>
 <span class="cf-icon cf-icon-microphone-round"></span>
@@ -976,7 +1007,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-microphone-round"></span>
 ```
 
-### bullhorn
+#### Bullhorn
 
 <span class="cf-icon cf-icon-bullhorn"></span>
 <span class="cf-icon cf-icon-bullhorn-round"></span>
@@ -986,7 +1017,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-bullhorn-round"></span>
 ```
 
-### double-quote
+#### Double quote
 
 <span class="cf-icon cf-icon-double-quote"></span>
 <span class="cf-icon cf-icon-double-quote-round"></span>
@@ -996,7 +1027,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-double-quote-round"></span>
 ```
 
-### speech-bubble
+#### Speech bubble
 
 <span class="cf-icon cf-icon-speech-bubble"></span>
 <span class="cf-icon cf-icon-speech-bubble-round"></span>
@@ -1006,7 +1037,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-speech-bubble-round"></span>
 ```
 
-### information
+#### Information
 
 <span class="cf-icon cf-icon-information"></span>
 <span class="cf-icon cf-icon-information-round"></span>
@@ -1016,7 +1047,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-information-round"></span>
 ```
 
-### lightbulb
+#### Lightbulb
 
 <span class="cf-icon cf-icon-lightbulb"></span>
 <span class="cf-icon cf-icon-lightbulb-round"></span>
@@ -1026,7 +1057,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-lightbulb-round"></span>
 ```
 
-### dialogue
+#### Dialogue
 
 <span class="cf-icon cf-icon-dialogue"></span>
 <span class="cf-icon cf-icon-dialogue-round"></span>
@@ -1036,7 +1067,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-dialogue-round"></span>
 ```
 
-### date
+#### Date
 
 <span class="cf-icon cf-icon-date"></span>
 <span class="cf-icon cf-icon-date-round"></span>
@@ -1046,7 +1077,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-date-round"></span>
 ```
 
-### closing-quote
+#### Closing quote
 
 <span class="cf-icon cf-icon-closing-quote"></span>
 <span class="cf-icon cf-icon-closing-quote-round"></span>
@@ -1056,7 +1087,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-closing-quote-round"></span>
 ```
 
-### livestream
+#### Livestream
 
 <span class="cf-icon cf-icon-livestream"></span>
 <span class="cf-icon cf-icon-livestream-round"></span>
@@ -1066,7 +1097,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-livestream-round"></span>
 ```
 
-### parents
+#### Parents
 
 <span class="cf-icon cf-icon-parents"></span>
 <span class="cf-icon cf-icon-parents-round"></span>
@@ -1076,7 +1107,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-parents-round"></span>
 ```
 
-### servicemembers
+#### Servicemembers
 
 <span class="cf-icon cf-icon-servicemembers"></span>
 <span class="cf-icon cf-icon-servicemembers-round"></span>
@@ -1092,7 +1123,7 @@ MIT Licensed by Font Awesome
 Inspired by Font Awesome, we've added LESS variables for adding icons in
 LESS files.
 
-```
+```less
 .download-icon:after {
      .cf-icon();
      display: inline-block;
