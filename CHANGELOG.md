@@ -11,7 +11,6 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - `.webfont-<style>()` mixins renamed to `.u-webfont-<style>()`
   - `body` font is now `@webfont-regular` (Arial, by default).
 
-
 ### Removed
 - **cf-core:** [MAJOR] Removed deprecated items:
   - `@mobile-max`
@@ -21,6 +20,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - `.figure__bordered`
   - `.u-link-child__hover`
   - Ability to use radio buttons and checkboxes within a `label`
+
+### Fixed
+- **cf-typography:** [PATCH] Fixed old variables removed from cf-core
 
 ## 3.5.0 - 2016-05-26
 
