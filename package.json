@@ -26,7 +26,7 @@
     "release": "./scripts/travis/release.sh",
     "build": "gulp build",
     "test": "gulp test && node test/accessibility/wcag.js",
-    "cf-link": "cd ./src/cf-core && npm link && cd ../cf-buttons/ && npm link && cd ../cf-typography && npm link"
+    "cf-link": "cd ./src/cf-core && npm link && cd ../cf-buttons && npm link && cd ../cf-typography && npm link && cd ../cf-layout && npm link"
   },
   "devDependencies": {
     "bluebird": "^3.0.5",
