@@ -10,6 +10,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-icons:** [PATCH] Standardized the usage doc.
 **cf-forms:** [PATCH] Standardized the usage doc.
 - **cf-pagination:** [PATCH] Standardized the usage doc.
+- **cf-forms:** [PATCH] Standardized the usage doc.
 
 ### Removed
 -
