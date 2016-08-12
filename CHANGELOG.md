@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 3.6.1 - 2016-08-12
+
 ### Changed
 - **cf-icons:** Standardized the usage doc.
 - **cf-pagination:** Standardized the usage doc.
