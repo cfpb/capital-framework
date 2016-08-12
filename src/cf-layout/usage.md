@@ -1254,50 +1254,50 @@ The visual should be 640x360 (16x9 ratio) and resize to fit the height of the FC
 ```
 
 
-## Hero
+## Heroes
 
-Hero consists of a headline, a small amount of additional text,
+A hero consists of a headline, a small amount of additional text,
 an optional call to action, and an illustration.
 Its background color is flush with the sides of the screen, and the content is centered with wrapper classes.
 
-The illustration can be customized by setting the background-image property on the .hero_image element.
+The illustration can be customized by setting the `background-image` property on the `.hero_image` element.
 
 On small screens (or where media queries are not supported),
-the text spans the full width of the .hero_wrapper and the illustration is displayed underneath.
+the text spans the full width of the `.hero_wrapper` and the illustration is displayed underneath.
 
 For larger screen sizes, media queries are used to position the illustration to the right of the text.
 
 On desktop, the hero should not exceed 285px in height.
 The image should be 195px in height to conform to this standard.
 
-<section class="content_hero hero">
-    <div class="hero_wrapper wrapper">
-        <div class="hero_text">
-            <h1 class="hero_heading">Hero title</h1>
-            <p class="hero_subhead">
+<section class="m-hero">
+    <div class="m-hero_wrapper wrapper">
+        <div class="m-hero_text">
+            <h1 class="m-hero_heading">Hero title</h1>
+            <p class="m-hero_subhead">
                 Hero text goes here
             </p>
-            <p class="hero_cta">
+            <p class="m-hero_cta">
                 <a>Call to action</a>
             </p>
         </div>
-        <div class="hero_image" style="background-image: url('http://placekitten.com/g/400/195')"></div>
+        <div class="m-hero_image" style="background-image: url('http://placekitten.com/g/400/195')"></div>
     </div>
 </section>
 
 ```
-<section class="content_hero hero">
-    <div class="hero_wrapper wrapper">
-        <div class="hero_text">
-            <h1 class="hero_heading">Hero title</h1>
-            <p class="hero_subhead">
+<section class="m-hero">
+    <div class="m-hero_wrapper wrapper">
+        <div class="m-hero_text">
+            <h1 class="m-hero_heading">Hero title</h1>
+            <p class="m-hero_subhead">
                 Hero text goes here
             </p>
-            <p class="hero_cta">
+            <p class="m-hero_cta">
                 <a>Call to action</a>
             </p>
         </div>
-        <div class="hero_image" style="background-image: url('http://placekitten.com/g/400/195')"></div>
+        <div class="m-hero_image" style="background-image: url('http://placekitten.com/g/400/195')"></div>
     </div>
 </section>
 ```
