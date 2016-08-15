@@ -121,8 +121,8 @@
           'The open cue should be hidden'
         );
         ok(
-          $expandable.find( '.expandable_target' ).attr( 'aria-pressed' ===
-          'true' ),
+          $expandable.find( '.expandable_target' ).attr( 'aria-pressed') ===
+          'true',
           'The target should have an aria-pressed attribute that is true'
         );
         ok(
