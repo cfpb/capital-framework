@@ -4,13 +4,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **capital-framework:** [PATCH] Fixed various linting errors and warnings in tests and gulp tasks.
 
 ### Removed
-- 
+-
 
 ## 3.6.1 - 2016-08-12
 
