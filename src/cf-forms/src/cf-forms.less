@@ -359,7 +359,6 @@ textarea {
         background: white;
         content: '\a0';
         display: inline-block;
-        // margin-top: unit( 2px / @base-font-size-px, em );
         margin-right: .6em;
         vertical-align: middle;
     }
@@ -412,9 +411,9 @@ textarea {
 
     &[type="checkbox"]:disabled + label::before,
     &[type="radio"]:disabled + label::before {
-      background: @input-bg-disabled;
-      box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-border-disabled;
-      cursor: not-allowed;
+        background: @input-bg-disabled;
+        box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-border-disabled;
+        cursor: not-allowed;
     }
 
 }
