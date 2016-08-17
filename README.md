@@ -2,6 +2,12 @@
 
 The Consumer Financial Protection Bureau's user interface framework.
 
+| buttons | core | expandables | forms | grid | icons | layout | pagination | typography |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| [![npm](https://img.shields.io/npm/v/cf-buttons.svg?style=flat-square)](https://www.npmjs.com/package/cf-buttons)  | [![npm](https://img.shields.io/npm/v/cf-core.svg?style=flat-square)](https://www.npmjs.com/package/cf-core)  | [![npm](https://img.shields.io/npm/v/cf-expandables.svg?style=flat-square)](https://www.npmjs.com/package/cf-expandables)  | [![npm](https://img.shields.io/npm/v/cf-forms.svg?style=flat-square)](https://www.npmjs.com/package/cf-forms)  | [![npm](https://img.shields.io/npm/v/cf-grid.svg?style=flat-square)](https://www.npmjs.com/package/cf-grid)  | [![npm](https://img.shields.io/npm/v/cf-icons.svg?style=flat-square)](https://www.npmjs.com/package/cf-icons)  | [![npm](https://img.shields.io/npm/v/cf-layout.svg?style=flat-square)](https://www.npmjs.com/package/cf-layout)  | [![npm](https://img.shields.io/npm/v/cf-pagination.svg?style=flat-square)](https://www.npmjs.com/package/cf-pagination)  | [![npm](https://img.shields.io/npm/v/cf-typography.svg?style=flat-square)](https://www.npmjs.com/package/cf-typography)  |
+
+## Installation
+
 ```sh
 npm install capital-framework
 ```
@@ -13,7 +19,11 @@ npm install cf-buttons
 npm install cf-expandables
 ```
 
+### Project scaffolding
+
 Want some boilerplate?
+There is a Yeoman generator through the
+[generator-cf](https://github.com/cfpb/generator-cf) project:
 
 ```sh
 npm install -g yo generator-cf
@@ -21,10 +31,29 @@ mkdir my-new-project && cd $_
 yo cf
 ```
 
-| buttons | core | expandables | forms | grid | icons | layout | pagination | typography |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| [![npm](https://img.shields.io/npm/v/cf-buttons.svg?style=flat-square)](https://www.npmjs.com/package/cf-buttons)  | [![npm](https://img.shields.io/npm/v/cf-core.svg?style=flat-square)](https://www.npmjs.com/package/cf-core)  | [![npm](https://img.shields.io/npm/v/cf-expandables.svg?style=flat-square)](https://www.npmjs.com/package/cf-expandables)  | [![npm](https://img.shields.io/npm/v/cf-forms.svg?style=flat-square)](https://www.npmjs.com/package/cf-forms)  | [![npm](https://img.shields.io/npm/v/cf-grid.svg?style=flat-square)](https://www.npmjs.com/package/cf-grid)  | [![npm](https://img.shields.io/npm/v/cf-icons.svg?style=flat-square)](https://www.npmjs.com/package/cf-icons)  | [![npm](https://img.shields.io/npm/v/cf-layout.svg?style=flat-square)](https://www.npmjs.com/package/cf-layout)  | [![npm](https://img.shields.io/npm/v/cf-pagination.svg?style=flat-square)](https://www.npmjs.com/package/cf-pagination)  | [![npm](https://img.shields.io/npm/v/cf-typography.svg?style=flat-square)](https://www.npmjs.com/package/cf-typography)  |
+### Using Less files directly
 
+If you don't want to use the
+[generator-cf](https://github.com/cfpb/generator-cf) Yeoman generator,
+you can download the Capital Framework source files and
+import them into your project.
+
+Run `npm install capital-framework`.
+This will download Capital Framework to your project's `node_modules` folder.
+You can then import the framework into your application's primary Less file:
+
+```less
+@import (less) "node_modules/capital-framework/src/capital-framework.less";
+
+// the rest of your stylesheet...
+```
+
+You may want to install individual [Capital Framework Components](https://cfpb.github.io/capital-framework/components/), so that you can leave out things you don't need, or to make it possible to update the components one-at-a-time in the future.
+
+> NOTE: Be sure to run the Less files through
+  [Autoprefixer](https://github.com/postcss/autoprefixer),
+  or your compiled Capital Framework CSS will not work
+  perfectly in older browsers.
 
 ## Contributing
 

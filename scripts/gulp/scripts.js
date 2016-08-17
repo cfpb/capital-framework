@@ -1,20 +1,20 @@
 'use strict';
 
-var gulp = require('gulp'),
-    named = require('vinyl-named'),
-    $ = require('gulp-load-plugins')(),
-    component = require('./parseComponentName');
+var gulp = require('gulp');
+var named = require('vinyl-named');
+var plugins = require('gulp-load-plugins')();
+var component = require('./parseComponentName');
 
 // Compile the master capital-framework.less file.
 gulp.task( 'scripts:cf', function() {
   return gulp.src('./src/capital-framework.js')
-    .pipe($.webpack())
-    .pipe($.rename({
+    .pipe(plugins.webpack())
+    .pipe(plugins.rename({
       basename: 'capital-framework'
     }))
     .pipe(gulp.dest('./dist'))
-    .pipe($.uglify())
-    .pipe($.rename({
+    .pipe(plugins.uglify())
+    .pipe(plugins.rename({
       suffix: '.min'
     }))
     .pipe(gulp.dest('./dist'));
@@ -25,27 +25,27 @@ gulp.task( 'scripts:cf', function() {
 gulp.task( 'scripts:components', function() {
   var tmp = {};
   return gulp.src('./src/' + (component || '*') + '/src/*.js')
-    .pipe($.ignore.exclude(function(vf) {
+    .pipe(plugins.ignore.exclude(function(vf) {
       // Exclude JS files that don't share the same name as the directory
       // they're in. This filters out utility files.
       var matches = vf.path.match(/\/([\w-]*)\/src\/([\w-]*)\.js/);
       return matches[1] !== matches[2];
     }))
     .pipe(named())
-    .pipe($.rename(function (path) {
+    .pipe(plugins.rename(function (path) {
       tmp[path.basename] = path;
     }))
-    .pipe($.webpack({
+    .pipe(plugins.webpack({
       output: {
-        filename : '[name].js'    
+        filename : '[name].js'
       }
     }))
-    .pipe($.rename(function (path) {
+    .pipe(plugins.rename(function (path) {
       path.dirname = tmp[path.basename].dirname.replace('/src', '');
     }))
     .pipe(gulp.dest('./tmp'))
-    .pipe($.uglify())
-    .pipe($.rename({
+    .pipe(plugins.uglify())
+    .pipe(plugins.rename({
       suffix: '.min'
     }))
     .pipe(gulp.dest('./tmp'));
