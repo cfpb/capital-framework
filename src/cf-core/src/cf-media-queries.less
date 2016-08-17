@@ -32,7 +32,7 @@
 // TODO: Discuss whether to split this into min and max queries.
 .respond-to-dpi( @ratio, @rules ) {
     @dpi: ( @ratio * 96dpi );
-    @media ( -webkit-min-device-pixel-ratio: @ratio ), ( min-resolution: @dpi ) {
+    @media ( min-device-pixel-ratio: @ratio ), ( min-resolution: @dpi ) {
         @rules();
     }
 }

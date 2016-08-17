@@ -547,14 +547,13 @@ select[multiple] {
     background: @input-bg;
     font-size: unit( @font-size / @base-font-size-px, em );
     vertical-align: top;
-    -webkit-appearance: none;
-    -webkit-user-modify: read-write-plaintext-only;
+    appearance: none;
 }
 
 // Overrides extra left padding.
 // http://stackoverflow.com/questions/11127891/how-can-i-get-rid-of-horizontal-padding-or-indent-in-html5-search-inputs-in-webk
 ::-webkit-search-decoration {
-    -webkit-appearance: none;
+    appearance: none;
 }
 
 // The .focus class is only included for documentation demos and should not

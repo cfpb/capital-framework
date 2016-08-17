@@ -9,6 +9,12 @@
 - [Molecules](#molecules)
   - [Button group](#button-group)
 
+> NOTE: If you use `cf-buttons.less` directly,
+  be sure to run the file through
+  [Autoprefixer](https://github.com/postcss/autoprefixer),
+  or your compiled Capital Framework CSS will
+  not work perfectly in older browsers.
+
 ## Variables
 
 Theme variables for setting the color and sizes.
