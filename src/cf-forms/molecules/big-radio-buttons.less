@@ -1,0 +1,87 @@
+.m-big-radio-button {
+    margin-bottom: unit( 15px / @base-font-size-px, em );
+
+    &:last-child {
+        margin-bottom: unit( 30px / @base-font-size-px, em );
+    }
+    .a-input {
+        @radio-width: unit( 17px / @base-font-size-px, em );
+
+        &[type="radio"] {
+            .u-visually-hidden();
+
+            .lt-ie9 & {
+                height: 20px;
+                width: 20px;
+                border: 0;
+                float: left;
+                margin: 1em;
+                position: static;
+                width: auto;
+            }
+        }
+
+        &[type="radio"] + label {
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+
+        &[type="radio"] + label::before {
+            display: inline-block;
+            margin-top: unit( 2px / @base-font-size-px, em );
+            margin-right: 0.6em;
+            border-radius: 100%;
+            box-shadow: 0 0 0 2px #fff, 0 0 0 3px @input-border;
+            height: @radio-width;
+            width: @radio-width;
+            background: white;
+            content: '\a0';
+        }
+
+        &[type="radio"]:checked + label::before {
+            background-color: @input-border__selected;
+            box-shadow: 0 0 0 2px @input-bg, 0 0 0 3px @input-border__selected;
+        }
+
+        &[type="radio"]:hover + label::before {
+            box-shadow: 0 0 0 2px @input-bg, 0 0 0 3px @input-border__selected;
+        }
+
+        &[type="radio"]:focus + label::before {
+            box-shadow: 0 0 0 1px @input-bg, 0 0 0 3px @input-border__selected;
+        }
+
+        &[type="radio"]:disabled + label {
+            color: @input-disabled;
+        }
+
+        &[type="radio"]:disabled + label::before {
+            background: @input-big-target-bg__disabled;
+            box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-disabled;
+            cursor: not-allowed;
+        }
+    }
+
+    label {
+        margin: 0;
+        padding: unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em )
+                 unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em )
+                 unit( ( @grid_gutter-width / 1.75 ) / @base-font-size-px, em );
+    }
+
+    &.selected label,
+    &.focus label,
+    input:focus + label,
+    input:checked + label {
+        outline: 1px solid @input-border-focus;
+    }
+
+    &.selected label,
+    input:checked + label {
+        background-color: @input-big-target-bg__selected;
+    }
+
+    &_container {
+        background: @input-big-target-bg;
+    }
+}
