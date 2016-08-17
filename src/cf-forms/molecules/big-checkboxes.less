@@ -1,0 +1,88 @@
+.m-big-checkbox {
+    margin-bottom: unit( 15px / @base-font-size-px, em );
+
+    &:last-child {
+        margin-bottom: unit( 30px / @base-font-size-px, em );
+    }
+    .a-input {
+        @checkbox-width: unit( 18px / @base-font-size-px, em );
+
+        &[type="checkbox"] {
+            .u-visually-hidden();
+
+            .lt-ie9 & {
+                height: 20px;
+                width: 20px;
+                border: 0;
+                margin: 1em;
+                position: static;
+                float: left;
+            }
+        }
+
+        &[type="checkbox"] + label {
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        &[type="checkbox"] + label::before {
+            display: inline-block;
+            margin-top: unit( 2px / @base-font-size-px, em );
+            margin-right: 0.6em;
+            height: @checkbox-width;
+            width: @checkbox-width;
+            box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-border;
+            background: white;
+            content: '\a0';
+        }
+
+        &[type="checkbox"]:checked + label::before {
+            box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-border__selected;
+            content: @cf-icon-approved;
+            font-family: 'CFPB Minicons';
+            font-size: unit( 16px / @base-font-size-px, em );
+            text-align: center;
+        }
+
+        &[type="checkbox"]:hover + label::before {
+            box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-border__selected;
+        }
+
+        &[type="checkbox"]:focus + label::before {
+            box-shadow: 0 0 0 2px @input-border__selected;
+        }
+
+        &[type="checkbox"]:disabled + label {
+            color: @input-disabled;
+        }
+
+        &[type="checkbox"]:disabled + label::before {
+            background: @input-big-target-bg__disabled;
+            box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-disabled;
+            cursor: not-allowed;
+        }
+    }
+
+    label {
+        padding: unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em )
+                 unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em )
+                 unit( ( @grid_gutter-width / 1.75 ) / @base-font-size-px, em );
+        margin: 0;
+    }
+
+    &.selected label,
+    &.focus label,
+    input:focus + label,
+    input:checked + label {
+        outline: 1px solid @input-border-focus;
+    }
+
+    &.selected label,
+    input:checked + label {
+        background-color: @input-big-target-bg__selected;
+    }
+
+    &_container {
+        background: @input-big-target-bg;
+    }
+}
