@@ -4,13 +4,70 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-core:** [MAJOR] Update to atomic naming conventions:
+  - `.webfont-<style>()` mixins renamed to `.u-webfont-<style>()`
+  - `body` font is now `@webfont-regular` (Arial, by default).
+- **cf-pagination** [MAJOR] Update to atomic naming conventions:
 
 ### Removed
-- 
+- **cf-core:** [MAJOR] Removed deprecated items:
+  - `@mobile-max`
+  - `@tablet-min`
+  - `.subheader`
+  - `.superheader`
+  - `.figure__bordered`
+  - `.u-link-child__hover`
+  - Ability to use radio buttons and checkboxes within a `label`
+
+## Fixed
+- **cf-typography:** [PATCH] Fixed old variables removed from cf-core
+
+## 3.6.1 - 2016-08-12
+
+### Changed
+- **cf-icons:** Standardized the usage doc.
+- **cf-pagination:** Standardized the usage doc.
+- **cf-forms:** Standardized the usage doc.
+
+### Removed
+- **capital-framework:** Remove post install script to allow shrinkwrapping.
+
+
+## 3.6.0 - 2016-08-02
+
+### Added
+- **capital-framework:** Added CSS autoprefixer to build pipeline.
+
+### Changed
+- **cf-typography:** Many documentation fixes and standardization.
+- **cf-core:** Standardized the usage doc.
+- **cf-tables:** Fix documentation order and details.
+
+### Removed
+- **cf-typography:** Removed remaining Less from branded bullets
+- **cf-buttons:** Removed vendor prefixes handled by autoprefixer.
+- **cf-core:** Removed vendor prefixes handled by autoprefixer.
+- **cf-grid:** Removed vendor prefixes handled by autoprefixer.
+- **cf-icons:** Removed vendor prefixes handled by autoprefixer.
+
+
+## 3.5.2 - 2016-07-06
+
+### Changed
+- **capital-framework:** Improve contributing docs in readme for outside contributors and documentation fixes.
+
+
+## 3.5.1 - 2016-07-05
+
+### Changed
+- **cf-layout:** Add negative side margin to FCMs so they don't double
+  up the border when against a sidebar.
+- **cf-layout:** Update recommended FCM markup to use `category-slug`.
+- **cf-forms:** Fix markup in documentation.
+- **cf-typography:** Fix markup in documentation.
 
 ## 3.5.0 - 2016-05-26
 

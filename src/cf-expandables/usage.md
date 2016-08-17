@@ -2,6 +2,11 @@ Expandables are components that have additional content that can be
 opened (expanded) and closed (collapsed). They can appear on their own
 or can appear in groups.
 
+> NOTE: If you use `cf-expandables.less` directly,
+  be sure to run the file through
+  [Autoprefixer](https://github.com/postcss/autoprefixer),
+  or your compiled Capital Framework CSS will
+  not work perfectly in older browsers.
 
 ## Dependencies
 
