@@ -41,7 +41,7 @@
 
 .form-label-header {
     .heading-5();
-    margin-bottom: unit(10px / @font-size, em);
+    margin-bottom: unit(10px / @font-size, em );
 }
 
 //
@@ -99,9 +99,9 @@ textarea {
     @font-size: 20px;
 
     position: relative;
-    top: unit(6px / @font-size, em);
-    margin-left: unit(4px / @font-size, em);
-    font-size: unit(@font-size / @base-font-size-px, em);
+    top: unit(6px / @font-size, em );
+    margin-left: unit(4px / @font-size, em );
+    font-size: unit(@font-size / @base-font-size-px, em );
 }
 
 .error + .@{cf-forms_input-icon-class} {
@@ -121,11 +121,11 @@ textarea {
 //
 
 .form-group + .form-group {
-    margin-top: unit(30px / @base-font-size-px, em);
+    margin-top: unit(30px / @base-font-size-px, em );
 }
 
 .form-group_item + .form-group_item {
-    margin-top: unit( 15px / @base-font-size-px, em);
+    margin-top: unit( 15px / @base-font-size-px, em );
 }
 
 //
@@ -139,7 +139,7 @@ textarea {
     });
 
     &_input {
-        margin-bottom: unit( 15px / @base-font-size-px, em);
+        margin-bottom: unit( 15px / @base-font-size-px, em );
         .respond-to-min( 480px, {
             .grid_column(9);
             border-right-width: 0;
@@ -156,7 +156,7 @@ textarea {
     }
 
     &_btn {
-        margin-bottom: unit( 15px / @base-font-size-px, em);
+        margin-bottom: unit( 15px / @base-font-size-px, em );
 
         .respond-to-min( 480px, {
             .grid_column(3);
@@ -171,8 +171,8 @@ textarea {
         }
 
         .btn__super {
-            padding-left: unit( 15px / @super-btn-font-size, em);
-            padding-right: unit( 15px / @super-btn-font-size, em);
+            padding-left: unit( 15px / @super-btn-font-size, em );
+            padding-right: unit( 15px / @super-btn-font-size, em );
         }
     }
 
@@ -194,21 +194,21 @@ textarea {
     input[type="number"] {
         box-sizing: border-box;
         width: 100%;
-        padding-right: unit(65px / @btn-font-size, em);
+        padding-right: unit(65px / @btn-font-size, em );
 
         &.input__super {
-            padding-right: unit(90px / @super-btn-font-size, em);
+            padding-right: unit(90px / @super-btn-font-size, em );
         }
     }
 
     .btn {
         .u-link__no-border();
         position: absolute;
-        right: unit( 15px / @btn-font-size, em);
+        right: unit( 15px / @btn-font-size, em );
         top: 0;
 
         &__super {
-            right: unit( 15px / @super-btn-font-size, em);
+            right: unit( 15px / @super-btn-font-size, em );
         }
 
         /* pa11y fails unless the background color is explicitly set */
@@ -232,7 +232,7 @@ textarea {
         z-index: 1;
 
         & + & {
-            margin-left: unit(-5px / @base-font-size-px, em);
+            margin-left: unit(-5px / @base-font-size-px, em );
         }
 
         &:focus {
@@ -271,7 +271,7 @@ textarea {
 }
 
 .form-l_col {
-    margin-bottom: unit(@grid_gutter-width / @base-font-size-px, em);
+    margin-bottom: unit(@grid_gutter-width / @base-font-size-px, em );
 
     &__flush-bottom {
         // Used when a col is wrapping inner cols that
@@ -328,8 +328,8 @@ textarea {
 @input-inset-bg:        #d6d7d9;
 @input-inset-selected:  #e1f3f8;
 
-@checkbox-width:        unit( 18px / @base-font-size-px, em);
-@radio-width:           unit( 14px / @base-font-size-px, em);
+@checkbox-width:        unit( 18px / @base-font-size-px, em );
+@radio-width:           unit( 14px / @base-font-size-px, em );
 
 .cf-input {
 
@@ -359,7 +359,7 @@ textarea {
         background: white;
         content: '\a0';
         display: inline-block;
-        // margin-top: unit( 2px / @base-font-size-px, em);
+        // margin-top: unit( 2px / @base-font-size-px, em );
         margin-right: .6em;
         vertical-align: middle;
     }
@@ -393,7 +393,7 @@ textarea {
     &[type="checkbox"]:checked + label::before {
         content: @cf-icon-approved;
         font-family: 'CFPB Minicons';
-        font-size: unit( 16px / @base-font-size-px, em);
+        font-size: unit( 16px / @base-font-size-px, em );
         box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-active;
         text-align: center;
     }
