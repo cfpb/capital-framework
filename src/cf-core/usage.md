@@ -955,7 +955,7 @@ Links within a nav element are not underlined.
 
 ### Tables
 
-#### Standard label
+#### Standard table
 
 <table>
     <thead>
