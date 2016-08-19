@@ -1230,34 +1230,93 @@ Featured content module, like a hero, consists of headline/text/optional call to
 Text is full width & displayed above the visual in the default/mobile view.
 At larger screen sizes, the text occupies a fixed portion of the screen (equal to the width of 5 of 12 columns at 701px & 3 of 12 columns at 901px for desktop).
 The visual occupies the remaining space.
-The visual should be 640x360 (16x9 ratio) and resize to fit the height of the FCM with a static width and is center-cropped when it becomes too wide for the available space.
+The visual should be 640x360 (16x9 ratio) and resize to fit the height of the FCM with a static width and is anchored left when it becomes too wide for the available space.
 
-<section class="block block__border block__flush featured-content-module">
-    <div class="featured-content-module_text">
+<section class="block block__border block__flush o-featured-content-module">
+    <div class="o-featured-content-module_text">
         <div class="category-slug">
-            <span class="featured-content-module_icon cf-icon cf-icon-speech-bubble">
+            <span class="o-featured-content-module_icon cf-icon cf-icon-speech-bubble">
 </span> Featured </div>
         <h2>Feature title</h2>
         <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
         <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
     </div>
-    <div class="featured-content-module_visual"> <img class="featured-content-module_img" src="http://placekitten.com/g/540/270"> </div>
+    <div class="o-featured-content-module_visual"> <img class="o-featured-content-module_img" src="http://placekitten.com/g/540/270"> </div>
 </section>
 
 ```
-<section class="block block__border block__flush featured-content-module">
-    <div class="featured-content-module_text">
+<section class="block block__border block__flush o-featured-content-module">
+    <div class="o-featured-content-module_text">
         <div class="category-slug">
-            <span class="featured-content-module_icon cf-icon cf-icon-speech-bubble">
+            <span class="o-featured-content-module_icon cf-icon cf-icon-speech-bubble">
 </span> Featured </div>
         <h2>Feature title</h2>
         <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
         <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
     </div>
-    <div class="featured-content-module_visual"> <img class="featured-content-module_img" src="http://placekitten.com/g/540/270"> </div>
+    <div class="o-featured-content-module_visual"> <img class="o-featured-content-module_img" src="http://placekitten.com/g/540/270"> </div>
 </section>
 ```
 
+### Featured content module - Maps
+
+When the featured content module image is a map, the `o-featured-content-module_img__map` modifier class is added to the `o-featured-content-module_img` image. This anchors the image to the right side so that the copyright information is displayed.
+
+<section class="block block__border block__flush o-featured-content-module">
+    <div class="o-featured-content-module_text">
+        <div class="category-slug">
+            <span class="o-featured-content-module_icon cf-icon cf-icon-speech-bubble">
+</span> Featured (Map)</div>
+        <h2>Feature title</h2>
+        <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
+        <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
+    </div>
+    <div class="o-featured-content-module_visual"> <img class="o-featured-content-module_img o-featured-content-module_img__map" src="http://placekitten.com/g/540/270"> </div>
+</section>
+
+```
+<section class="block block__border block__flush o-featured-content-module">
+    <div class="o-featured-content-module_text">
+        <div class="category-slug">
+            <span class="o-featured-content-module_icon cf-icon cf-icon-speech-bubble">
+</span> Featured (Map)</div>
+        <h2>Feature title</h2>
+        <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
+        <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
+    </div>
+    <div class="o-featured-content-module_visual"> <img class="o-featured-content-module_img o-featured-content-module_img__map" src="http://placekitten.com/g/540/270"> </div>
+</section>
+```
+
+### Featured content module - Videos
+
+When the featured content module image is a video, the `o-featured-content-module_img__video` modifier class is added to the `o-featured-content-module_img` image. This anchors the center of the image to the center of the available space so that the focal point of the video generally remains centered.
+
+<section class="block block__border block__flush o-featured-content-module">
+    <div class="o-featured-content-module_text">
+        <div class="category-slug">
+            <span class="o-featured-content-module_icon cf-icon cf-icon-speech-bubble">
+</span> Featured (Video) </div>
+        <h2>Feature title</h2>
+        <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
+        <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
+    </div>
+    <div class="o-featured-content-module_visual"> <img class="o-featured-content-module_img o-featured-content-module_img__video" src="http://placekitten.com/g/540/270"> </div>
+</section>
+
+```
+<section class="block block__border block__flush o-featured-content-module">
+    <div class="o-featured-content-module_text">
+        <div class="category-slug">
+            <span class="o-featured-content-module_icon cf-icon cf-icon-speech-bubble">
+</span> Featured (Video) </div>
+        <h2>Feature title</h2>
+        <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
+        <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
+    </div>
+    <div class="o-featured-content-module_visual"> <img class="o-featured-content-module_img o-featured-content-module_img__video" src="http://placekitten.com/g/540/270"> </div>
+</section>
+```
 
 ## Heroes
 
