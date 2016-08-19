@@ -13,34 +13,34 @@
 
   background-color: @block__bg;
 
-  .respond-to-max(@bp-xs-max, {
+  .respond-to-max( @bp-xs-max, {
     padding-right: 15px;
     padding-left: 15px;
   });
 
-  .respond-to-range(@bp-sm-min, @fcm-bp-max, {
+  .respond-to-range( @bp-sm-min, @fcm-bp-max, {
     padding-right: 30px;
     padding-left: 30px;
   });
 
   &_text {
-    padding-top: unit(@grid_gutter-width / @base-font-size-px, em);
-    padding-bottom: unit(@grid_gutter-width / @base-font-size-px, em);
+    padding-top: unit( @grid_gutter-width / @base-font-size-px, em);
+    padding-bottom: unit( @grid_gutter-width / @base-font-size-px, em);
 
-    .respond-to-min(@fcm-bp-min, {
+    .respond-to-min( @fcm-bp-min, {
       width: 300px; // width of 5 of 12 cols at 799px - 30px padding
 
-      padding-right: unit(@grid_gutter-width / @base-font-size-px, em);
-      padding-left: unit(@grid_gutter-width / @base-font-size-px, em);
+      padding-right: unit( @grid_gutter-width / @base-font-size-px, em);
+      padding-left: unit( @grid_gutter-width / @base-font-size-px, em);
     });
 
-    .respond-to-min(@bp-med-min, {
+    .respond-to-min( @bp-med-min, {
       width: 270px; // width of 3 of 12 cols at 1140px - 15px padding
     });
   }
 
   &_visual {
-    .respond-to-min(@fcm-bp-min, {
+    .respond-to-min( @fcm-bp-min, {
       position: absolute;
       left: 360px;
       right: 0;
@@ -49,7 +49,7 @@
       overflow: hidden;
     });
 
-    .respond-to-min(@bp-med-min, {
+    .respond-to-min( @bp-med-min, {
       left: 330px;
     });
   }
@@ -57,7 +57,7 @@
   &_img {
     display: block;
 
-    .respond-to-min(@fcm-bp-min, {
+    .respond-to-min( @fcm-bp-min, {
       height: 100%;
       max-width: none;
 
@@ -68,7 +68,7 @@
     });
 
     &.o-featured-content-module_img__map {
-      .respond-to-min(@fcm-bp-min, {
+      .respond-to-min( @fcm-bp-min, {
         position: relative;
         left: 100%;
         transform: translateX(-100%);
@@ -76,7 +76,7 @@
     }
 
     &.o-featured-content-module_img__video {
-      .respond-to-min(@fcm-bp-min, {
+      .respond-to-min( @fcm-bp-min, {
         position: relative;
         left: 50%;
         transform: translateX(-50%);
