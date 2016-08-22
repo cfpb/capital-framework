@@ -15,25 +15,23 @@
 //
 
 // Color variables
-// $color- variables are from 18F's US Web Design Standards
-// https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss
 
 // .error
-@input-error:                   #e31c3d; // $color-secondary
+@input-error:                   @red;
 
 // warning
-@input-warning:                 #fdb81e; // $color-gold
+@input-warning:                 @gold;
 
 // .success
-@input-success:                 #2e8540; // $color-green
+@input-success:                 @green;
 
 // .disabled
-@input-disabled:                #aeb0b5; // $color-gray-light
-@input-disabled-text:           #5b616b; // $color-gray
+@input-disabled:                @gray-10;
+@input-disabled-text:           @gray-80;
 
 // select
-@select-border:                 #aeb0b5; // $color-gray-light
-@select-icon:                   #5b616b; // $color-gray
+@select-border:                 @gray-40;
+@select-icon:                   @gray-80;
 
 // Sizing variables
 
@@ -315,6 +313,7 @@ textarea {
         outline: 2px solid transparent;
         appearance: none;
         background-color: @input-bg;
+        border-radius: 0;
         color: @text;
 
         &:hover,
