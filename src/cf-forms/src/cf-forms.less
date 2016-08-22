@@ -224,29 +224,6 @@ textarea {
 
 }
 
-.input-group {
-
-    &_item,
-    &_item[type="text"] {
-        display: inline-block;
-        box-sizing: border-box;
-        width: 50%;
-        position: relative;
-        // Since an input-group_item can overlap another we need to use z-index
-        // is needed to allow the focused input to pop over unfocused inputs.
-        z-index: 1;
-
-        & + & {
-            margin-left: unit(-5px / @base-font-size-px, em );
-        }
-
-        &:focus {
-            z-index: 2;
-        }
-    }
-
-}
-
 
 //
 // Form layouts
