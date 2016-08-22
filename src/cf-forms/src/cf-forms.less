@@ -29,6 +29,11 @@
 
 // .disabled
 @input-disabled:                #aeb0b5; // $color-gray-light
+@input-disabled-text:           #5b616b; // $color-gray
+
+// select
+@select-border:                 #aeb0b5; // $color-gray-light
+@select-icon:                   #5b616b; // $color-gray
 
 // Sizing variables
 
@@ -322,7 +327,7 @@ textarea {
 .m-select {
     position: relative;
     margin-top: 0.5em;
-    border: 1px solid @gray-40;
+    border: 1px solid @select-border;
 
     select {
         height: unit( 30px / @base-font-size-px, em );
@@ -332,35 +337,35 @@ textarea {
         border: 0;
         outline: 2px solid transparent;
         appearance: none;
-        background-color: @white;
-        color: @black;
+        background-color: @input-bg;
+        color: @text;
 
         &:hover,
         &:active,
         &:focus {
-            outline-color: @pacific;
+            outline-color: @input-border-focus;
             outline-offset: 0;
         }
     }
 
     select[disabled] {
-        color: @gray-80;
-        background-color: @gray-10;
+        color: @input-disabled-text;
+        background-color: @input-disabled;
     }
 
     select option:disabled {
-        color: @gray-80;
+        color: @input-disabled;
     }
 
     &:after {
         width: unit( 30px / @base-font-size-px, em );
         height: unit( 30px / @base-font-size-px, em );
-        border-left: 1px solid @gray-40;
+        border-left: 1px solid @select-border;
         position: absolute;
         top: 0;
         right: 0;
-        background-color: @gray-10;
-        color: @gray-80;
+        background-color: @input-disabled;
+        color: @select-icon;
         content: @cf-icon-down;
         font-family: 'CFPB Minicons';
         line-height: unit( 30px / @base-font-size-px, em );
