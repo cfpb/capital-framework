@@ -316,178 +316,6 @@ textarea {
 });
 
 //
-// Checkboxes and radio buttons
-//
-
-@input-active:          #046b99;
-
-@input-bg-disabled:     #5b616b;
-@input-border-disabled: #aeb0b5;
-
-// Insets
-@input-inset-bg:        #d6d7d9;
-@input-inset-selected:  #e1f3f8;
-
-@checkbox-width:        unit( 18px / @base-font-size-px, em );
-@radio-width:           unit( 14px / @base-font-size-px, em );
-
-.cf-input {
-
-
-    &[type="checkbox"],
-    &[type="radio"]{
-        .u-visually-hidden();
-
-        .lt-ie9 & {
-            width: auto;
-            height: 20px;
-            border: 0;
-            margin: 1em;
-            float: left;
-            position: static;
-        }
-    }
-
-    &[type="checkbox"] + label,
-    &[type="radio"] + label {
-        cursor: pointer;
-        margin-bottom: 0.5em;
-    }
-
-    &[type="checkbox"] + label::before,
-    &[type="radio"] + label::before {
-        background: white;
-        content: '\a0';
-        display: inline-block;
-        margin-right: .6em;
-        vertical-align: middle;
-    }
-
-    &[type="radio"] + label::before {
-        height: @radio-width;
-        width: @radio-width;
-        border-radius: 100%;
-        box-shadow: 0 0 0 3px #fff, 0 0 0 4px @input-border;
-    }
-
-    &[type="radio"]:checked + label::before {
-        background-color: @input-active;
-        box-shadow: 0 0 0 3px @input-bg, 0 0 0 4px @input-active;
-    }
-
-    &[type="radio"]:hover + label::before {
-        box-shadow: 0 0 0 3px @input-bg, 0 0 0 4px @input-active;
-    }
-
-    &[type="radio"]:focus + label::before {
-        box-shadow: 0 0 0 2px @input-bg, 0 0 0 4px @input-active;
-    }
-
-    &[type="checkbox"] + label::before {
-        height: @checkbox-width;
-        width: @checkbox-width;
-        box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-border;
-    }
-
-    &[type="checkbox"]:checked + label::before {
-        content: @cf-icon-approved;
-        font-family: 'CFPB Minicons';
-        font-size: unit( 16px / @base-font-size-px, em );
-        box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-active;
-        text-align: center;
-    }
-
-    &[type="checkbox"]:hover + label::before {
-        box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-active;
-    }
-
-    &[type="checkbox"]:focus + label::before {
-        box-shadow: 0 0 0 2px @input-active;
-    }
-
-    &[type="checkbox"]:disabled + label {
-        color: @input-border-disabled;
-    }
-
-    &[type="checkbox"]:disabled + label::before,
-    &[type="radio"]:disabled + label::before {
-        background: @input-bg-disabled;
-        box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-border-disabled;
-        cursor: not-allowed;
-    }
-
-}
-
-//
-// Form layouts
-//
-
-.form-l-inset {
-    border-right-width: 2.5px;
-
-    + .form-l_col-1-2.form-l-inset:nth-child(odd) { 
-        border-left-width: 2.5px;
-    }
-    
-    &.form-l_col-1-2:nth-child(odd),
-    &.form-l_col-1-2:last-child {
-        border-right-width: 15px;
-    }
-
-    .form-l-inset_container {
-        background: @input-inset-bg;
-
-        .cf-input_label {
-            margin: 0;
-            padding: unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em )
-               unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em )
-               unit( ( @grid_gutter-width / 1.75 ) / @base-font-size-px, em );
-        }
-
-        .cf-input_text {
-            margin-left: unit( @grid_gutter-width / @base-font-size-px, em );
-        }
-
-        .cf-input_radio,
-        .cf-input_checkbox {
-            position: absolute;
-            top: unit( ( @grid_gutter-width / 1.75 ) / @base-font-size-px, em );
-            left: 15px;
-            z-index: 3;
-        }
-
-        &:hover,
-        &:focus,
-        &.focus {
-            .cf-input_checkbox,
-            .cf-input_radio {
-                box-shadow: 0px 0px 0px 2px @input-border-focus;
-                
-                // Older IE does not support border-radius or box-shadow it's ok to
-                // use outline here.
-                .lt-ie9 & {
-                    outline: 1px solid @input-border-focus;
-                }
-            }
-        }
-
-        &.selected .cf-input_label,
-        &.focus .cf-input_label,
-        &:focus .cf-input_label,
-        &:hover .cf-input_label,
-        input:focus + .cf-input_label,
-        input:checked + .cf-input_label     {
-            outline: 2px solid @input-border-focus;
-        }
-
-        &.selected .cf-input_label,
-        input:checked + .cf-input_label {
-            background-color: @input-inset-selected;
-        }
-    }
-}
-
-//
 // m-select menu
 //
 
@@ -525,12 +353,12 @@ textarea {
     }
 
     &:after {
+        width: unit( 30px / @base-font-size-px, em );
+        height: unit( 30px / @base-font-size-px, em );
+        border-left: 1px solid @gray-40;
         position: absolute;
         top: 0;
         right: 0;
-        height: unit( 30px / @base-font-size-px, em );
-        width: unit( 30px / @base-font-size-px, em );
-        border-left: 1px solid @gray-40;
         background-color: @gray-10;
         color: @gray-80;
         content: @cf-icon-down;
@@ -551,7 +379,3 @@ textarea {
         content: '';
     }
 }
-
-//
-// EOF
-//
