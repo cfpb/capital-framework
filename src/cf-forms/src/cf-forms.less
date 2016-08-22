@@ -343,6 +343,10 @@ textarea {
     select[disabled] {
         color: @input-disabled-text;
         background-color: @input-disabled;
+
+        &:hover {
+            outline: 2px solid transparent;
+        }
     }
 
     select option:disabled {
