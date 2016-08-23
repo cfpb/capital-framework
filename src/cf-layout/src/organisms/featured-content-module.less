@@ -68,10 +68,17 @@
     });
 
     &.o-featured-content-module_img__map {
+
       .respond-to-min( @fcm-bp-min, {
         position: relative;
         left: 100%;
         transform: translateX(-100%);
+
+        .lt-ie10 & {
+          position: absolute;
+          right: 0px;
+          left: auto;
+        }
       });
     }
 
