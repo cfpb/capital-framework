@@ -87,6 +87,13 @@
         position: relative;
         left: 50%;
         transform: translateX(-50%);
+
+        .lt-ie10 & {
+          position: absolute;
+          left: -100%;
+          right: -100%;
+          margin: auto;
+        }
       });
     }
 
