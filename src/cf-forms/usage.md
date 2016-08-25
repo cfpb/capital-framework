@@ -115,10 +115,20 @@ See the 'Form icons' section below for guidance on adding icons to states.
 
 #### Disabled state
 
-<input class="disabled" disabled="true" autocomplete="off" type="text" value="Validated input" title="Test input">
+<input class="disabled"
+       disabled="true"
+       autocomplete="off"
+       type="text"
+       value="Validated input"
+       title="Test input">
 
 ```
-<input class="disabled" disabled="true" autocomplete="off" type="text" value="Validated input" title="Test input">
+<input class="disabled"
+       disabled="true"
+       autocomplete="off"
+       type="text"
+       value="Validated input"
+       title="Test input">
 ```
 
 ### Input icons
@@ -320,7 +330,8 @@ Provides sizeable margins between groups of form elements.
 
 <div class="btn-inside-input">
     <input type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
+           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+           title="Test input">
     <button class="btn btn__link">
         Clear
         <span class="cf-icon cf-icon-delete"></span>
@@ -330,7 +341,8 @@ Provides sizeable margins between groups of form elements.
 ```
 <div class="btn-inside-input">
     <input type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
+           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+           title="Test input">
     <button class="btn btn__link">
         Clear
         <span class="cf-icon cf-icon-delete"></span>
@@ -343,7 +355,8 @@ Provides sizeable margins between groups of form elements.
 <div class="btn-inside-input">
     <input class="input__super"
            type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
+           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+           title="Test input">
     <button class="btn btn__super btn__link btn__secondary">
         Clear
         <span class="cf-icon cf-icon-delete"></span>
@@ -354,10 +367,121 @@ Provides sizeable margins between groups of form elements.
 <div class="btn-inside-input">
     <input class="input__super"
            type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
+           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+           title="Test input">
     <button class="btn btn__super btn__link btn__secondary">
         Clear
         <span class="cf-icon cf-icon-delete"></span>
     </button>
+</div>
+```
+
+## Select dropdown
+
+### Required select
+
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example">
+            Required select example
+    </label>
+    <div class="m-select">
+        <select id="select_example" required>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+
+```
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example">
+            Required select example
+    </label>
+    <div class="m-select">
+        <select id="select_example" required>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+```
+
+
+### Disabled select
+
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example__disabled">
+            Disabled select example
+    </label>
+    <div class="m-select">
+        <select id="select_example__disabled" disabled>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+
+```
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example__disabled">
+            Disabled select example
+    </label>
+    <div class="m-select">
+        <select id="select_example__disabled" disabled>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+```
+
+
+### Optional select
+
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example__optional">
+            Optional select example
+            <span class="micro-copy">&nbsp;(Optional)</span>
+    </label>
+    <div class="m-select">
+        <select id="select_example__optional">
+            <option value="" disabled selected>Please select</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+
+```
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example__optional">
+            Optional select example
+            <span class="micro-copy">&nbsp;(Optional)</span>
+    </label>
+    <div class="m-select">
+        <select id="select_example__optional">
+            <option value="" disabled selected>Please select</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
 </div>
 ```

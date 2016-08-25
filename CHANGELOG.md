@@ -10,6 +10,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-core:** [MAJOR] Update to atomic naming conventions:
   - `.webfont-<style>()` mixins renamed to `.u-webfont-<style>()`
   - `body` font is now `@webfont-regular` (Arial, by default).
+- **cf-layout:** [MAJOR] Update hero to atomic naming conventions
+- **cf-layout:** [MAJOR] Enable hero images that bleed off the top and bottom of
+  the hero container when in the two-column layout
 - **cf-pagination** [MAJOR] Update to atomic naming conventions:
 
 ### Removed
@@ -22,7 +25,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - `.u-link-child__hover`
   - Ability to use radio buttons and checkboxes within a `label`
 
-## Fixed
+### Fixed
 - **cf-typography:** [PATCH] Fixed old variables removed from cf-core
 
 ## 3.6.1 - 2016-08-12
