@@ -1,13 +1,13 @@
-.m-big-checkbox {
+.m-big-radio-button {
     margin-bottom: unit( 15px / @base-font-size-px, em );
 
     &:last-child {
         margin-bottom: unit( 30px / @base-font-size-px, em );
     }
     .a-input {
-        @checkbox-width: unit( 18px / @base-font-size-px, em );
+        @radio-width: unit( 17px / @base-font-size-px, em );
 
-        &[type="checkbox"] {
+        &[type="radio"] {
             .u-visually-hidden();
 
             .lt-ie9 & {
@@ -20,44 +20,42 @@
             }
         }
 
-        &[type="checkbox"] + label {
-            margin-bottom: 0;
+        &[type="radio"] + label {
             cursor: pointer;
+            margin-bottom: 0;
         }
 
-        &[type="checkbox"] + label::before {
+        &[type="radio"] + label::before {
             display: inline-block;
             margin-top: unit( 2px / @base-font-size-px, em );
             margin-right: 0.6em;
-            height: @checkbox-width;
-            width: @checkbox-width;
-            box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-border;
+            border-radius: 100%;
+            box-shadow: 0 0 0 2px #fff, 0 0 0 3px @input-border;
+            height: @radio-width;
+            width: @radio-width;
             background: white;
             content: '\a0';
         }
 
-        &[type="checkbox"]:checked + label::before {
-            box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-border__selected;
-            content: @cf-icon-approved;
-            font-family: 'CFPB Minicons';
-            font-size: unit( 16px / @base-font-size-px, em );
-            text-align: center;
+        &[type="radio"]:checked + label::before {
+            background-color: @input-border__selected;
+            box-shadow: 0 0 0 2px @input-bg, 0 0 0 3px @input-border__selected;
         }
 
-        &[type="checkbox"]:hover + label::before {
-            box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-border__selected;
+        &[type="radio"]:hover + label::before {
+            box-shadow: 0 0 0 2px @input-bg, 0 0 0 3px @input-border__selected;
         }
 
-        &[type="checkbox"]:focus + label::before {
-            box-shadow: 0 0 0 2px @input-border__selected;
+        &[type="radio"]:focus + label::before {
+            box-shadow: 0 0 0 1px @input-bg, 0 0 0 3px @input-border__selected;
         }
 
-        &[type="checkbox"]:disabled + label {
+        &[type="radio"]:disabled + label {
             color: @input-disabled;
             cursor: not-allowed;
         }
 
-        &[type="checkbox"]:disabled + label::before {
+        &[type="radio"]:disabled + label::before {
             background: @input-big-target-bg__disabled;
             box-shadow: 0 0 0 1px @input-bg, 0 0 0 2px @input-disabled;
             cursor: not-allowed;
