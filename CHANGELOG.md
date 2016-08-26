@@ -13,6 +13,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-layout:** [MAJOR] Update hero to atomic naming conventions
 - **cf-layout:** [MAJOR] Enable hero images that bleed off the top and bottom of
   the hero container when in the two-column layout
+- **cf-layout:** [MAJOR] Updated featured content module to atomic naming conventions
+  - added featured content module modifiers for right and center image anchors
 - **cf-pagination** [MAJOR] Update to atomic naming conventions:
 
 ### Removed
