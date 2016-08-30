@@ -282,21 +282,21 @@ Provides sizeable margins between groups of form elements.
 
 ### Default input and button
 
-<div class="input-with-btn">
-    <div class="input-with-btn_input">
+<div class="m-input-with-btn">
+    <div class="m-input-with-btn_input">
         <input type="text" title="Test input">
     </div>
-    <div class="input-with-btn_btn">
+    <div class="m-input-with-btn_btn">
         <button class="btn">Search</button>
     </div>
 </div>
 
 ```
-<div class="input-with-btn">
-    <div class="input-with-btn_input">
+<div class="m-input-with-btn">
+    <div class="m-input-with-btn_input">
         <input type="text" title="Test input">
     </div>
-    <div class="input-with-btn_btn">
+    <div class="m-input-with-btn_btn">
         <button class="btn">Search</button>
     </div>
 </div>
@@ -304,21 +304,21 @@ Provides sizeable margins between groups of form elements.
 
 ### Super input and button
 
-<div class="input-with-btn">
-    <div class="input-with-btn_input">
+<div class="m-input-with-btn">
+    <div class="m-input-with-btn_input">
         <input class="input__super" type="text" title="Test input">
     </div>
-    <div class="input-with-btn_btn">
+    <div class="m-input-with-btn_btn">
         <button class="btn btn__super">Search</button>
     </div>
 </div>
 
 ```
-<div class="input-with-btn">
-    <div class="input-with-btn_input">
+<div class="m-input-with-btn">
+    <div class="m-input-with-btn_input">
         <input class="input__super" type="text" title="Test input">
     </div>
-    <div class="input-with-btn_btn">
+    <div class="m-input-with-btn_btn">
         <button class="btn btn__super">Search</button>
     </div>
 </div>
