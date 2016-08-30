@@ -59,9 +59,97 @@
 // Form labels
 //
 
+label {
+    display: block;
+    // 5px is eyeballed to 10px when considering line height.
+    margin-bottom: unit( 5px / @base-font-size-px, em );
+}
+
 .form-label-header {
     .heading-5();
     margin-bottom: unit(10px / @font-size, em );
+}
+
+//
+// Form elements
+//
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select[multiple] {
+    @font-size: 16px;
+    .u-webfont-regular();
+
+    display: inline-block;
+    padding: unit( 6px / @base-font-size-px, em );
+    border: 1px solid @input-border;
+    border-radius: 0;
+    margin: 0;
+    background: @input-bg;
+    font-size: unit( @font-size / @base-font-size-px, em );
+    vertical-align: top;
+    appearance: none;
+
+    &.warning {
+        border: 1px solid @input-warning;
+        outline: 1px solid @input-warning;
+    }
+}
+
+.warning + .@{cf-forms_input-icon-class} {
+    color: @input-warning;
+}
+
+// Overrides extra left padding.
+// http://stackoverflow.com/questions/11127891/how-can-i-get-rid-of-horizontal-padding-or-indent-in-html5-search-inputs-in-webk
+::-webkit-search-decoration {
+    appearance: none;
+}
+
+// The .focus class is only included for documentation demos and should not
+// be used in production.
+input[type="text"]:focus,
+input[type="text"].focus,
+input[type="search"]:focus,
+input[type="search"].focus,
+input[type="email"]:focus,
+input[type="email"].focus,
+input[type="url"]:focus,
+input[type="url"].focus,
+input[type="tel"]:focus,
+input[type="tel"].focus,
+input[type="number"]:focus,
+input[type="number"].focus,
+textarea:focus,
+textarea.focus,
+select[multiple]:focus,
+select[multiple].focus {
+    border: 1px solid @input-border-focus;
+    outline: 1px solid @input-border-focus;
+    outline-offset: 0;
+    box-shadow: none;
+}
+
+::-webkit-input-placeholder {
+    color: @input-placeholder;
+}
+::-moz-placeholder {
+    color: @input-placeholder;
+}
+:-ms-input-placeholder {
+    color: @input-placeholder;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-top: unit( 4px / @base-font-size-px, em );
+    margin-right: unit( 7px / @base-font-size-px, em );
+    float: left;
 }
 
 //
