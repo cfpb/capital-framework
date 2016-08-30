@@ -1,0 +1,28 @@
+.m-field {
+    .a-text-input {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .a-label + .a-text-input {
+        margin-top: 5px;
+    }
+
+    .a-checkbox,
+    .a-radio {
+        vertical-align: middle;
+
+        + .a-label {
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        &:not(:disabled) + .a-label {
+            cursor: pointer;
+        }
+
+        &:disabled + .a-label {
+            cursor: not-allowed;
+        }
+    }
+}
