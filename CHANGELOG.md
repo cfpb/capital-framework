@@ -16,6 +16,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-layout:** [MAJOR] Updated featured content module to atomic naming conventions
   - added featured content module modifiers for right and center image anchors
 - **cf-pagination** [MAJOR] Update to atomic naming conventions:
+- **cf-core** [MAJOR] Moved the base form styles to cf-forms
 
 ### Removed
 - **cf-core:** [MAJOR] Removed deprecated items:

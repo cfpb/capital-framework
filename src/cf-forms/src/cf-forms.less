@@ -8,18 +8,28 @@
 
 // Color variables
 
-// .error
-@input-error:                   @red;
+// Input borders
+@input-border:                  #5b616b;
+@input-border__hover:           @pacific;
+@input-border__focused:         @pacific;
+@input-border__active:          @pacific;
+@input-border__error:           @red;
+@input-border__warning:         @gold;
+@input-border__success:         @green;
 
-// warning
-@input-warning:                 @gold;
+// Input backgrounds
+@input-bg:                      #ffffff;
+@input-bg__active:              @pacific;
+@input-bg__disabled:            @gray-5;
 
-// .success
-@input-success:                 @green;
+// Input text
+@input-text__disabled:          @gray-80;
+@input-text__placeholder:       #aeb0b5;
 
-// .disabled
-@input-disabled:                @gray-10;
-@input-disabled-text:           @gray-80;
+// Input icons
+@input-icon__error:             @red;
+@input-icon__warning:           @gold;
+@input-icon__success:           @green;
 
 // select
 @select-border:                 @gray-40;
@@ -48,22 +58,28 @@
 
 
 //
-// Import molecules and atoms
+// Import atoms
+//
+
+@import (less) 'atoms/label.less';
+@import (less) 'atoms/text-input.less';
+
+
+//
+// Import molecules
 //
 
 @import (less) 'molecules/big-checkboxes.less';
 @import (less) 'molecules/big-radio-buttons.less';
-@import (less) 'organisms/input-with-btn.less';
+@import (less) 'molecules/field.less';
+
+//
+// Import organisms
+//
+
+@import (less) 'organisms/form.less';
 @import (less) 'organisms/form-input-group.less';
-
-//
-// Form labels
-//
-
-.form-label-header {
-    .heading-5();
-    margin-bottom: unit(10px / @font-size, em );
-}
+@import (less) 'organisms/input-with-btn.less';
 
 //
 // Super input
@@ -82,35 +98,6 @@
 }
 
 //
-// Input states
-//
-
-input[type="text"],
-input[type="search"],
-input[type="email"],
-input[type="url"],
-input[type="tel"],
-input[type="number"],
-select[multiple],
-textarea {
-    &.error {
-        border: 1px solid @input-error;
-        outline: 1px solid @input-error;
-    }
-    &.warning {
-        border: 1px solid @input-warning;
-        outline: 1px solid @input-warning;
-    }
-    &.success {
-        border: 1px solid @input-success;
-        outline: 1px solid @input-success;
-    }
-    &.disabled {
-        background-color: @input-disabled;
-    }
-}
-
-//
 // Form icons
 //
 
@@ -125,16 +112,16 @@ textarea {
     font-size: unit(@font-size / @base-font-size-px, em );
 }
 
-.error + .@{cf-forms_input-icon-class} {
-    color: @input-error;
+.a-text-input__error + .@{cf-forms_input-icon-class} {
+    color: @input-icon__error;
 }
 
-.warning + .@{cf-forms_input-icon-class} {
-    color: @input-warning;
+.a-text-input__warning + .@{cf-forms_input-icon-class} {
+    color: @input-icon__warning;
 }
 
-.success + .@{cf-forms_input-icon-class} {
-    color: @input-success;
+.a-text-input__success + .@{cf-forms_input-icon-class} {
+    color: @input-icon__success;
 }
 
 //
@@ -275,14 +262,14 @@ textarea {
         &:hover,
         &:active,
         &:focus {
-            outline-color: @input-border-focus;
+            outline-color: @input-border__focused;
             outline-offset: 0;
         }
     }
 
     select[disabled] {
-        color: @input-disabled-text;
-        background-color: @input-disabled;
+        color: @input-text__disabled;
+        background-color: @input-bg__disabled;
         cursor: not-allowed;
 
         &:hover {
