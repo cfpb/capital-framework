@@ -282,44 +282,44 @@ Provides sizeable margins between groups of form elements.
 
 ### Default input and button
 
-<div class="input-with-btn">
-    <div class="input-with-btn_input">
+<div class="o-form__input-w-btn">
+    <div class="o-form__input-w-btn_input-container">
         <input type="text" title="Test input">
     </div>
-    <div class="input-with-btn_btn">
-        <button class="btn">Search</button>
+    <div class="o-form__input-w-btn_btn-container">
+        <button class="a-btn">Search</button>
     </div>
 </div>
 
 ```
-<div class="input-with-btn">
-    <div class="input-with-btn_input">
+<div class="o-form__input-w-btn">
+    <div class="o-form__input-w-btn_input-container">
         <input type="text" title="Test input">
     </div>
-    <div class="input-with-btn_btn">
-        <button class="btn">Search</button>
+    <div class="o-form__input-w-btn_btn-container">
+        <button class="a-btn">Search</button>
     </div>
 </div>
 ```
 
 ### Super input and button
 
-<div class="input-with-btn">
-    <div class="input-with-btn_input">
+<div class="o-form__input-w-btn">
+    <div class="o-form__input-w-btn_input-container">
         <input class="input__super" type="text" title="Test input">
     </div>
-    <div class="input-with-btn_btn">
-        <button class="btn btn__super">Search</button>
+    <div class="o-form__input-w-btn_btn-container">
+        <button class="a-btn a-btn__super">Search</button>
     </div>
 </div>
 
 ```
-<div class="input-with-btn">
-    <div class="input-with-btn_input">
+<div class="o-form__input-w-btn">
+    <div class="o-form__input-w-btn_input-container">
         <input class="input__super" type="text" title="Test input">
     </div>
-    <div class="input-with-btn_btn">
-        <button class="btn btn__super">Search</button>
+    <div class="o-form__input-w-btn_btn-container">
+        <button class="a-btn a-btn__super">Search</button>
     </div>
 </div>
 ```
