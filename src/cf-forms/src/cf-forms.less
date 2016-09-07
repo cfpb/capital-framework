@@ -124,48 +124,6 @@
 }
 
 //
-// Button inside input
-//
-
-.btn-inside-input {
-
-    position: relative;
-
-    input[type="text"],
-    input[type="search"],
-    input[type="email"],
-    input[type="url"],
-    input[type="tel"],
-    input[type="number"] {
-        box-sizing: border-box;
-        width: 100%;
-        padding-right: unit(65px / @btn-font-size, em );
-
-        &.input__super {
-            padding-right: unit(90px / @super-btn-font-size, em );
-        }
-    }
-
-    .btn {
-        .u-link__no-border();
-        position: absolute;
-        right: unit( 15px / @btn-font-size, em );
-        top: 0;
-
-        &__super {
-            right: unit( 15px / @super-btn-font-size, em );
-        }
-
-        /* pa11y fails unless the background color is explicitly set */
-        &__link.btn__secondary {
-            background-color: #fff;
-        }
-    }
-
-}
-
-
-//
 // Form layouts
 //
 

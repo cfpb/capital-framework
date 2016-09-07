@@ -17,6 +17,7 @@
     //
     // Input with button
     //
+
     &__input-w-btn {      
       .respond-to-min( 480px, {
           .grid_nested-col-group();
@@ -57,6 +58,40 @@
           .a-btn__super {
               padding-left: unit( 15px / @super-btn-font-size, em );
               padding-right: unit( 15px / @super-btn-font-size, em );
+          }
+      }
+    }
+
+    //
+    // Button inside input
+    //
+
+    &__btn-inside-input {
+      position: relative;
+
+      .a-text-input {
+          box-sizing: border-box;
+          width: 100%;
+          padding-right: unit( 75px / @btn-font-size, em );
+
+          &.input__super {
+              padding-right: unit( 90px / @super-btn-font-size, em );
+          }
+      }
+
+      .a-btn {
+          .u-link__no-border();
+          position: absolute;
+          right: unit( 15px / @btn-font-size, em );
+          top: 0;
+
+          &__super {
+              right: unit( 15px / @super-btn-font-size, em );
+          }
+
+          /* pa11y fails unless the background color is explicitly set */
+          &__link.a-btn__secondary {
+              background-color: #fff;
           }
       }
     }

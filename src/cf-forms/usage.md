@@ -328,22 +328,24 @@ Provides sizeable margins between groups of form elements.
 
 #### Default button inside of an default input
 
-<div class="btn-inside-input">
+<div class="o-form__btn-inside-input">
     <input type="text"
            value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-           title="Test input">
-    <button class="btn btn__link">
+           title="Test input"
+           class="a-text-input">
+    <button class="a-btn a-btn__link">
         Clear
         <span class="cf-icon cf-icon-delete"></span>
     </button>
 </div>
 
 ```
-<div class="btn-inside-input">
+<div class="o-form__btn-inside-input">
     <input type="text"
            value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-           title="Test input">
-    <button class="btn btn__link">
+           title="Test input"
+           class="a-text-input">
+    <button class="a-btn a-btn__link">
         Clear
         <span class="cf-icon cf-icon-delete"></span>
     </button>
@@ -352,24 +354,22 @@ Provides sizeable margins between groups of form elements.
 
 #### Super button inside of a super input
 
-<div class="btn-inside-input">
-    <input class="input__super"
+<div class="o-form__btn-inside-input">
+    <input class="a-text-input input__super"
            type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-           title="Test input">
-    <button class="btn btn__super btn__link btn__secondary">
+           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
+    <button class="a-btn a-btn__super a-btn__link a-btn__secondary">
         Clear
         <span class="cf-icon cf-icon-delete"></span>
     </button>
 </div>
 
 ```
-<div class="btn-inside-input">
-    <input class="input__super"
+<div class="o-form__btn-inside-input">
+    <input class="a-text-input input__super"
            type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-           title="Test input">
-    <button class="btn btn__super btn__link btn__secondary">
+           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
+    <button class="a-btn a-btn__super a-btn__link a-btn__secondary">
         Clear
         <span class="cf-icon cf-icon-delete"></span>
     </button>
