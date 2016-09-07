@@ -62,6 +62,7 @@
 //
 
 @import (less) 'atoms/label.less';
+@import (less) 'atoms/super-input';
 @import (less) 'atoms/text-input.less';
 
 
@@ -79,22 +80,6 @@
 
 @import (less) 'organisms/form.less';
 @import (less) 'organisms/form-input-group.less';
-
-//
-// Super input
-//
-
-.input__super {
-    &[type="text"],
-    &[type="search"],
-    &[type="email"],
-    &[type="url"],
-    &[type="tel"],
-    &[type="number"] {
-        padding: unit( 10px / @input__super-font-size, em );
-        font-size: unit( @input__super-font-size / @base-font-size-px, em );
-    }
-}
 
 //
 // Form icons
