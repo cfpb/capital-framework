@@ -43,11 +43,6 @@
 
 @input-big-target-bg__disabled: #aeb0b5; // $color-gray-light
 
-// Sizing variables
-
-// .input__super
-@input__super-font-size:        18px;
-
 
 // Import external dependencies
 
@@ -79,22 +74,6 @@
 
 @import (less) 'organisms/form.less';
 @import (less) 'organisms/form-input-group.less';
-
-//
-// Super input
-//
-
-.input__super {
-    &[type="text"],
-    &[type="search"],
-    &[type="email"],
-    &[type="url"],
-    &[type="tel"],
-    &[type="number"] {
-        padding: unit( 10px / @input__super-font-size, em );
-        font-size: unit( @input__super-font-size / @base-font-size-px, em );
-    }
-}
 
 //
 // Form icons
@@ -140,10 +119,6 @@
         box-sizing: border-box;
         width: 100%;
         padding-right: unit(65px / @btn-font-size, em );
-
-        &.input__super {
-            padding-right: unit(90px / @super-btn-font-size, em );
-        }
     }
 
     .btn {
@@ -151,10 +126,6 @@
         position: absolute;
         right: unit( 15px / @btn-font-size, em );
         top: 0;
-
-        &__super {
-            right: unit( 15px / @super-btn-font-size, em );
-        }
 
         /* pa11y fails unless the background color is explicitly set */
         &__link.btn__secondary {

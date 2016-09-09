@@ -16,7 +16,6 @@ The cf-forms component provides extensions to the basic form styles for Capital 
 - [Labels](#labels)
     - [Label header](#label-header)
 - [Inputs](#inputs)
-    - [Super input](#super-input)
     - [Input states](#input-states)
     - [Input icons](#input-icons)
 - [Groups](#groups)
@@ -24,9 +23,7 @@ The cf-forms component provides extensions to the basic form styles for Capital 
     - [Real world example](#real-world-example)
 - [Buttons](#buttons)
     - [Default input and button](#default-input-and-button)
-    - [Super input and button](#super-input-and-button)
     - [Button inside input](#button-inside-input)
-    - [Super button inside of a super input](#super-button-inside-of-a-super-input)
 
 ## Variables
 
@@ -50,12 +47,6 @@ Theme variables for setting the color and sizes throughout the project. Overwrit
 @input-disabled:                #cdb5cd;
 ```
 
-### Sizing variables
-
-```
-// .input__super
-@input__super-font-size:        18px;
-```
 
 ## Labels
 
@@ -72,18 +63,6 @@ Theme variables for setting the color and sizes throughout the project. Overwrit
 ```
 
 ## Inputs
-
-### Super input
-
-An input that matches the height of a super button.
-
-<input class="input__super" type="text" value="Super input" title="Test input">
-<button class="btn btn__super">Super</button>
-
-```
-<input class="input__super" type="text" value="Super input" title="Test input"></input>
-<button class="btn btn__super">Super</button>
-```
 
 ### Input states
 
@@ -302,28 +281,6 @@ Provides sizeable margins between groups of form elements.
 </div>
 ```
 
-### Super input and button
-
-<div class="o-form__input-w-btn">
-    <div class="o-form__input-w-btn_input-container">
-        <input class="input__super" type="text" title="Test input">
-    </div>
-    <div class="o-form__input-w-btn_btn-container">
-        <button class="a-btn a-btn__super">Search</button>
-    </div>
-</div>
-
-```
-<div class="o-form__input-w-btn">
-    <div class="o-form__input-w-btn_input-container">
-        <input class="input__super" type="text" title="Test input">
-    </div>
-    <div class="o-form__input-w-btn_btn-container">
-        <button class="a-btn a-btn__super">Search</button>
-    </div>
-</div>
-```
-
 ### Button inside input
 
 #### Default button inside of an default input
@@ -344,32 +301,6 @@ Provides sizeable margins between groups of form elements.
            value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
            title="Test input">
     <button class="btn btn__link">
-        Clear
-        <span class="cf-icon cf-icon-delete"></span>
-    </button>
-</div>
-```
-
-#### Super button inside of a super input
-
-<div class="btn-inside-input">
-    <input class="input__super"
-           type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-           title="Test input">
-    <button class="btn btn__super btn__link btn__secondary">
-        Clear
-        <span class="cf-icon cf-icon-delete"></span>
-    </button>
-</div>
-
-```
-<div class="btn-inside-input">
-    <input class="input__super"
-           type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-           title="Test input">
-    <button class="btn btn__super btn__link btn__secondary">
         Clear
         <span class="cf-icon cf-icon-delete"></span>
     </button>
