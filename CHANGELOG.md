@@ -29,6 +29,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - Ability to use radio buttons and checkboxes within a `label`
 - **cf-forms**: [MAJOR] Removed deprecated items:
   - `.form-group` and `.form-group_item`
+  - `.input__super`
 
 ### Fixed
 - **cf-typography:** [PATCH] Fixed old variables removed from cf-core
