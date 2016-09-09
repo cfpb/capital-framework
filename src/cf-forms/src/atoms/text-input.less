@@ -37,6 +37,11 @@
         border-color: @input-border__success;
         outline: 1px solid @input-border__success;
     }
+
+    &__super {
+        padding: unit( 10px / @input__super-font-size, em );
+        font-size: unit( @input__super-font-size / @base-font-size-px, em );
+    }
 }
 
 // Overrides extra left padding.
