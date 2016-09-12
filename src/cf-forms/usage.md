@@ -88,16 +88,12 @@ Inputs should always be paired with a label for accessibility reasons.
 <label class="a-label__heading" for="textarea-example"></label>
 <textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
 
-### Super input
-
-An input that matches the height of a super button.
-
-<input class="input__super" type="text" value="Super input" title="Test input">
-<button class="btn btn__super">Super</button>
-
 ```
-<input class="input__super" type="text" value="Super input" title="Test input"></input>
-<button class="btn btn__super">Super</button>
+<label class="a-label" for="text-input-example"></label>
+<input class="a-text-input" type="text" id="text-input example" value="Lorem ipsum">
+
+<label class="a-label__heading" for="textarea-example"></label>
+<textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
 ```
 
 ### Input states
