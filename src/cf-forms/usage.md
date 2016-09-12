@@ -15,6 +15,7 @@ The cf-forms component provides extensions to the basic form styles for Capital 
     - [Sizing variables](#sizing-variables)
 - [Labels](#labels)
     - [Label header](#label-header)
+- [Basic Form Elements](#basic-form-elements)
 - [Inputs](#inputs)
     - [Input states](#input-states)
     - [Input icons](#input-icons)
@@ -50,19 +51,54 @@ Theme variables for setting the color and sizes throughout the project. Overwrit
 
 ## Labels
 
-### Label header
+### Basic label
 
-<label class="form-label-header">
-    Form label header
+<label class="a-label">
+    A basic label
 </label>
 
 ```
-<label class="form-label-header">
-    Form label header
+<label class="a-label">
+    A basic label
 </label>
 ```
+
+### Label heading
+
+<label class="a-label__heading">
+    A label heading
+</label>
+
+```
+<label class="a-label__heading">
+    A label heading
+</label>
+```
+
 
 ## Inputs
+
+Inputs should always be paired with a label for accessibility reasons.
+
+### Basic text inputs
+
+<label class="a-label" for="text-input-example"></label>
+<input class="a-text-input" type="text" id="text-input example" value="Lorem ipsum">
+
+<label class="a-label__heading" for="textarea-example"></label>
+<textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
+
+### Super input
+
+An input that matches the height of a super button.
+
+<input class="input__super" type="text" value="Super input" title="Test input">
+<button class="btn btn__super">Super</button>
+
+```
+<input class="input__super" type="text" value="Super input" title="Test input"></input>
+<button class="btn btn__super">Super</button>
+```
 
 ### Input states
 
@@ -155,108 +191,6 @@ Form input icons add small positioning tweaks to Capital Framework icons.
 <span class="cf-form_input-icon cf-icon cf-icon-approved-round"></span>
 ```
 
-## Groups
-
-A form group is recommended when you need to provide spacing between form elements and between groups of form elements.
-
-### Form group block
-
-Provides sizeable margins between groups of form elements.
-
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-
-```
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-```
-
-### Real world example
-
-<div class="form-group">
-    <label class="form-label-header">Form group</label>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <label class="form-label-header">Form group</label>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-</div>
-
-```
-<div class="form-group">
-    <label class="form-label-header">Form group</label>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <label class="form-label-header">Form group</label>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-</div>
-```
-
 ## Buttons
 
 ### Default input and button
@@ -306,6 +240,7 @@ Provides sizeable margins between groups of form elements.
     </button>
 </div>
 ```
+
 
 ## Select dropdown
 
