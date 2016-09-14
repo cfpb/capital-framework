@@ -43,11 +43,6 @@
 
 @input-big-target-bg__disabled: #aeb0b5; // $color-gray-light
 
-// Sizing variables
-
-// .input__super
-@input__super-font-size:        18px;
-
 
 // Import external dependencies
 
@@ -79,22 +74,6 @@
 
 @import (less) 'organisms/form.less';
 @import (less) 'organisms/form-input-group.less';
-
-//
-// Super input
-//
-
-.input__super {
-    &[type="text"],
-    &[type="search"],
-    &[type="email"],
-    &[type="url"],
-    &[type="tel"],
-    &[type="number"] {
-        padding: unit( 10px / @input__super-font-size, em );
-        font-size: unit( @input__super-font-size / @base-font-size-px, em );
-    }
-}
 
 //
 // Form icons
