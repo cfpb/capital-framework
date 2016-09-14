@@ -64,7 +64,7 @@
 
 @import (less) 'molecules/big-checkboxes.less';
 @import (less) 'molecules/big-radio-buttons.less';
-@import (less) 'molecules/field.less';
+@import (less) 'molecules/form-fields.less';
 
 //
 // Import organisms
@@ -102,76 +102,5 @@
         &__link.btn__secondary {
             background-color: #fff;
         }
-    }
-}
-
-//
-// m-select menu
-//
-
-.m-select {
-    position: relative;
-    margin-top: 0.5em;
-    border: 1px solid @select-border;
-
-    select {
-        height: unit( 30px / @base-font-size-px, em );
-        width: 100%;
-        padding: unit( 4px / @base-font-size-px, em )
-                 unit( 6px / @base-font-size-px, em );
-        border: 0;
-        outline: 2px solid transparent;
-        appearance: none;
-        background-color: @input-bg;
-        border-radius: 0;
-        color: @text;
-
-        &:hover,
-        &:active,
-        &:focus {
-            outline-color: @input-border__focused;
-            outline-offset: 0;
-        }
-    }
-
-    select[disabled] {
-        color: @input-text__disabled;
-        background-color: @input-bg__disabled;
-        cursor: not-allowed;
-
-        &:hover {
-            outline: 2px solid transparent;
-        }
-    }
-
-    select option:disabled {
-        color: @input-disabled;
-    }
-
-    &:after {
-        width: unit( 30px / @base-font-size-px, em );
-        height: unit( 30px / @base-font-size-px, em );
-        border-left: 1px solid @select-border;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: @input-disabled;
-        color: @select-icon;
-        content: @cf-icon-down;
-        font-family: 'CFPB Minicons';
-        line-height: unit( 30px / @base-font-size-px, em );
-        text-align: center;
-        pointer-events: none;
-    }
-}
-
-// @todo: add modernizr to CF so this works:
-
-.no-csspointerevents .m-select {
-    &:after {
-        height: 0;
-        width: 0;
-        border: 0;
-        content: '';
     }
 }
