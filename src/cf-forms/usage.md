@@ -100,30 +100,6 @@ Inputs should always be paired with a label for accessibility reasons.
 
 See the 'Form icons' section below for guidance on adding icons to states.
 
-#### Error state
-
-<input class="error" type="text" value="Invalid input" title="Test input">
-
-```
-<input class="error" type="text" value="Invalid input" title="Test input">
-```
-
-#### Warning state
-
-<input class="warning" type="text" value="Invalid input" title="Test input">
-
-```
-<input class="warning" type="text" value="Invalid input" title="Test input">
-```
-
-#### Success state
-
-<input class="success" type="text" value="Validated input" title="Test input">
-
-```
-<input class="success" type="text" value="Validated input" title="Test input">
-```
-
 #### Disabled state
 
 <input class="disabled"
@@ -142,16 +118,34 @@ See the 'Form icons' section below for guidance on adding icons to states.
        title="Test input">
 ```
 
-### Input icons
+### Inline Form Validation
 
-Form input icons add small positioning tweaks to Capital Framework icons.
-
-<input type="text" value="" title="Test input">
-<span class="cf-form_input-icon cf-icon cf-icon-email"></span>
+<div class="m-field m-field__error">
+    <label class="a-label__heading" for="form-input-error">Label</label>
+    <input class="a-text-input a-text-input__error"
+           type="text"
+           value="Invalid input"
+           id="form-input-error"
+           aria-describedby="form-input-error_message">
+    <div class="a-error-message" id="form-input-error_message" role="alert">
+        <span class="cf-icon cf-icon-delete-round" aria-hidden="true"></span>
+        This is a required question, please answer.
+    </div>
+</div>
 
 ```
-<input type="text" value="" title="Test input">
-<span class="cf-form_input-icon cf-icon cf-icon-email"></span>
+<div class="m-field m-field__error">
+    <label class="a-label__heading" for="form-input-error">Label</label>
+    <input class="a-text-input a-text-input__error"
+           type="text"
+           value="Invalid input"
+           id="form-input-error"
+           aria-describedby="form-input-error_message">
+    <div class="a-error-message" id="form-input-error_message" role="alert">
+        <span class="cf-icon cf-icon-delete-round" aria-hidden="true"></span>
+        This is a required question, please answer.
+    </div>
+</div>
 ```
 
 #### Error icon

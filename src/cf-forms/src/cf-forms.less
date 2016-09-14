@@ -28,8 +28,6 @@
 
 // Input icons
 @input-icon__error:             @red;
-@input-icon__warning:           @gold;
-@input-icon__success:           @green;
 
 // select
 @select-border:                 @gray-40;
@@ -75,32 +73,6 @@
 @import (less) 'organisms/form.less';
 @import (less) 'organisms/form-input-group.less';
 
-//
-// Form icons
-//
-
-@cf-forms_input-icon-class: cf-form_input-icon;
-
-.@{cf-forms_input-icon-class} {
-    @font-size: 20px;
-
-    position: relative;
-    top: unit(6px / @font-size, em );
-    margin-left: unit(4px / @font-size, em );
-    font-size: unit(@font-size / @base-font-size-px, em );
-}
-
-.a-text-input__error + .@{cf-forms_input-icon-class} {
-    color: @input-icon__error;
-}
-
-.a-text-input__warning + .@{cf-forms_input-icon-class} {
-    color: @input-icon__warning;
-}
-
-.a-text-input__success + .@{cf-forms_input-icon-class} {
-    color: @input-icon__success;
-}
 
 //
 // Button inside input
