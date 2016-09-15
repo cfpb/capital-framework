@@ -1,0 +1,39 @@
+.m-btn-inside-input {
+    display: table;
+
+    &_input-container {
+        display: table-cell;
+        width: 100%;
+
+        .a-text-input {
+            border-right: none;
+            box-sizing: border-box;
+            width: 100%;
+        }
+    }
+
+    &_btn-container {
+        display: table-cell;
+        padding-left: unit( 15px / @btn-font-size, em );
+        padding-right: unit( 15px / @btn-font-size, em );
+        border: 1px solid @input-border;
+        border-left: none;
+
+        white-space: nowrap;
+
+        .a-btn {
+            .u-link__no-border();
+            margin: 0;
+            // The placement of borders causes a 1px offset, corrected by:
+            margin-top: -1px;
+
+            // btn-inside-input should be 7/8ths inherited font-size
+            font-size: 0.875em;
+
+            /* pa11y fails unless the background color is explicitly set */
+            &__link.a-btn__secondary {
+                background-color: #fff;
+            }
+        }
+    }
+}
