@@ -96,6 +96,63 @@ Inputs should always be paired with a label for accessibility reasons.
 <textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
 ```
 
+### Basic checkboxes
+
+<div class="m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox">
+    <label class="a-label" for="test_checkbox">Label</label>
+</div>
+
+```
+<div class="m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox">
+    <label class="a-label" for="test_checkbox">Label</label>
+</div>
+```
+
+### Basic radio buttons
+
+<div class="m-form-field__radio">
+    <input class="a-radio" type="radio" id="test_radio">
+    <label class="a-label" for="test_radio">Label</label>
+</div>
+
+```
+<div class="m-form-field__radio">
+    <input class="a-radio" type="radio" id="test_radio">
+    <label class="a-label" for="test_radio">Label</label>
+</div>
+```
+
+### Select box
+
+<div class="m-form-field__select">
+    <label class="a-label" for="test_select">Label</label>
+    <div class="a-select">
+        <select id="test_select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+
+```
+<div class="m-form-field__select">
+    <label class="a-label" for="test_select">Label</label>
+    <div class="a-select">
+        <select id="test_select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+```
+
+
 ### Input states
 
 See the 'Form icons' section below for guidance on adding icons to states.
