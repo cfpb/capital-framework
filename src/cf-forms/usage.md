@@ -285,57 +285,46 @@ Provides sizeable margins between groups of form elements.
 
 #### Default button inside of an default input
 
-<div class="o-form__btn-inside-input">
-    <input type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-           title="Test input"
-           class="a-text-input">
-    <button class="a-btn a-btn__link">
-        Clear
-        <span class="cf-icon cf-icon-delete"></span>
-    </button>
+
+<div class="m-btn-inside-input">
+    <div class="m-btn-inside-input_input-container">
+      <input type="text"
+          value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+          title="Test input"
+          class="a-text-input">
+    </div>
+    <div class="m-btn-inside-input_btn-container">
+      <button class="a-btn a-btn__link">
+          Clear
+          <span class="cf-icon cf-icon-delete"></span>
+      </button>
+    </div>
 </div>
 
-```
-<div class="o-form__btn-inside-input">
-    <input type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-           title="Test input"
-           class="a-text-input">
-    <button class="a-btn a-btn__link">
-        Clear
-        <span class="cf-icon cf-icon-delete"></span>
-    </button>
-</div>
-```
+#### Default button inside of a default input with button
 
-<<<<<<< HEAD
-#### Super button inside of a super input
-
-<div class="o-form__btn-inside-input">
-    <input class="a-text-input input__super"
-           type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
-    <button class="a-btn a-btn__super a-btn__link a-btn__secondary">
-        Clear
-        <span class="cf-icon cf-icon-delete"></span>
-    </button>
+<div class="o-form__input-w-btn">
+    <div class="m-btn-inside-input o-form__input-w-btn_input-container">
+        <div class="m-btn-inside-input_input-container">
+          <input type="text"
+              value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+              title="Test input"
+              class="a-text-input">
+        </div>
+        <div class="m-btn-inside-input_btn-container">
+          <button class="a-btn a-btn__link">
+              Clear
+              <span class="cf-icon cf-icon-delete"></span>
+          </button>
+        </div>
+    </div>
+    <div class="o-form__input-w-btn_btn-container">
+        <button class="a-btn">Search</button>
+    </div>
 </div>
 
-```
-<div class="o-form__btn-inside-input">
-    <input class="a-text-input input__super"
-           type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
-    <button class="a-btn a-btn__super a-btn__link a-btn__secondary">
-        Clear
-        <span class="cf-icon cf-icon-delete"></span>
-    </button>
-</div>
-```
 
-=======
->>>>>>> prerelease-ver-4
+
 ## Select dropdown
 
 ### Required select

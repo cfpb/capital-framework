@@ -1,27 +1,105 @@
 .m-btn-inside-input {
     display: table;
+    position: relative;
+    width: 100%;
 
-    &_input-container {
+    .a-text-input {
         display: table-cell;
         width: 100%;
+        box-sizing: border-box;
+        border-right: none;
+        padding-right: unit( 15px / @btn-font-size, em );
 
-        .a-text-input {
-            border-right: none;
-            box-sizing: border-box;
-            width: 100%;
+        &:focus + .m-btn-inside-input_btn-container,
+        &__focused + .m-btn-inside-input_btn-container {
+            border: none;
+
+            &:before {
+                background-color: @input-bg;
+            }
+
+            &:after {
+                border: 2px solid @input-border__active;
+                border-left: none;
+            }
+
+            & > .a-btn {
+                position: relative;
+                left: -1px;
+            }
         }
+
+        &:disabled,
+        &__disabled {
+            border-right: none;
+            background-color: @input-bg__disabled;
+            cursor: not-allowed;
+
+            & + .m-btn-inside-input_btn-container,
+            & + .m-btn-inside-input_btn-container {
+                border: none;
+                background-color: @input-bg__disabled;
+
+                &:before {
+                    background-color: @input-bg__disabled;
+                }
+
+                &:after {
+                    border: 1px solid @input-border;
+                    border-left: none;
+                }       
+            }
+
+        }
+
+        &__error {
+            border-right: none;
+            border-color: @input-border__error;
+            outline: 1px solid @input-border__error;
+
+            & + .m-btn-inside-input_btn-container,
+            & + .m-btn-inside-input_btn-container {
+                border: none;
+
+                &:before {
+                    background-color: @input-bg;
+                }
+
+                &:after {
+                    border: 1px solid @input-border__error;
+                    border-left: none;
+                    outline: 1px solid @input-border__error;
+                }       
+            }
+        }
+
+        &__warning {
+            border-right: none;
+            border-color: @input-border__warning;
+            outline: 1px solid @input-border__warning;
+        }
+
+        &__success {
+            border-right: none;
+            border-color: @input-border__success;
+            outline: 1px solid @input-border__success;
+        }
+
     }
 
     &_btn-container {
         display: table-cell;
-        padding-left: unit( 15px / @btn-font-size, em );
         padding-right: unit( 15px / @btn-font-size, em );
         border: 1px solid @input-border;
         border-left: none;
+        position: relative;
+        width: 1px;
 
+        background-color: @input-bg;
         white-space: nowrap;
 
         .a-btn {
+            z-index: 1;
             .u-link__no-border();
             margin: 0;
             // The placement of borders causes a 1px offset, corrected by:
@@ -34,6 +112,29 @@
             &__link.a-btn__secondary {
                 background-color: #fff;
             }
+        }
+
+        &:before {
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -2px;
+            width: 2px;
+            height: 100%;
+            content: " ";
+        }
+
+        &:after {
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            content: " ";
+            border: none;
+            border-left: none;
         }
     }
 }
