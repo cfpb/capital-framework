@@ -101,4 +101,14 @@
             }
         }
     }
+
+    &__error {
+        .a-error-message {
+            margin-top: unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em );
+        }
+    }
+}
+
+.a-error-message .cf-icon-delete-round {
+    color: @input-icon__error;
 }

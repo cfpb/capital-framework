@@ -22,6 +22,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - Select form fields
   - Checkboxes and radio buttons
   - Input with Button
+  - Atomized and simplified inline form validation
+- **cf-core:** [MAJOR] Moved the base form styles to cf-form
 
 ### Removed
 - **cf-core:** [MAJOR] Removed deprecated items:
@@ -36,6 +38,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - `.form-group` and `.form-group_item`
   - `.input__super`
   - `.form-l` classes, in favor of content-l classes in cf-layout
+  - `@cf-forms_input-icon-class`
+  - `@input-icon__warning`
+  - `@input-icon__success`
 
 ### Fixed
 - **cf-typography:** [PATCH] Fixed old variables removed from cf-core
