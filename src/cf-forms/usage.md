@@ -65,12 +65,12 @@ Theme variables for setting the color and sizes throughout the project. Overwrit
 
 ### Label heading
 
-<label class="a-label__heading">
+<label class="a-label a-label__heading">
     A label heading
 </label>
 
 ```
-<label class="a-label__heading">
+<label class="a-label a-label__heading">
     A label heading
 </label>
 ```
@@ -85,14 +85,14 @@ Inputs should always be paired with a label for accessibility reasons.
 <label class="a-label" for="text-input-example"></label>
 <input class="a-text-input" type="text" id="text-input example" value="Lorem ipsum">
 
-<label class="a-label__heading" for="textarea-example"></label>
+<label class="a-label a-label__heading" for="textarea-example"></label>
 <textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
 
 ```
 <label class="a-label" for="text-input-example"></label>
 <input class="a-text-input" type="text" id="text-input example" value="Lorem ipsum">
 
-<label class="a-label__heading" for="textarea-example"></label>
+<label class="a-label a-label__heading" for="textarea-example"></label>
 <textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
 ```
 
