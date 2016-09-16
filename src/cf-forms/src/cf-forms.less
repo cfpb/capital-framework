@@ -107,7 +107,6 @@
 //
 
 .btn-inside-input {
-
     position: relative;
 
     input[type="text"],
@@ -132,81 +131,7 @@
             background-color: #fff;
         }
     }
-
 }
-
-
-//
-// Form layouts
-//
-
-.form-l {
-    &__flush {
-        .respond-to-min( @bp-lg-min, {
-            .grid_nested-col-group();
-        });
-    }
-
-    &__float {
-        .respond-to-min( @bp-lg-min, {
-            .u-clearfix();
-            & .form-l_col {
-                display: block;
-                float: left;
-                margin-right: 0;
-            }
-        });
-    }
-
-    .respond-to-min( @bp-sm-min, {
-        .grid_nested-col-group();
-    });
-}
-
-.form-l_col {
-    margin-bottom: unit(@grid_gutter-width / @base-font-size-px, em );
-
-    &__flush-bottom {
-        // Used when a col is wrapping inner cols that
-        // have their own margin
-        margin-bottom: 0;
-    }
-
-    input[type="text"],
-    input[type="search"],
-    input[type="email"],
-    input[type="url"],
-    input[type="tel"],
-    input[type="number"],
-    select,
-    textarea {
-        // TODO: Move border-box value to cf-forms.
-        box-sizing: border-box;
-        width: 100%;
-    }
-}
-
-.respond-to-min( @bp-sm-min, {
-    .form-l_col-1-4 {
-        .grid_column(3);
-    }
-
-    .form-l_col-1-2 {
-        .grid_column(6);
-    }
-
-    .form-l_col-1-3 {
-        .grid_column(4);
-    }
-
-    .form-l_col-2-3 {
-        .grid_column(8);
-    }
-
-    .form-l_col-1 {
-        .grid_column(12);
-    }
-});
 
 //
 // m-select menu

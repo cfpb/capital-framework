@@ -35,6 +35,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-forms**: [MAJOR] Removed deprecated items:
   - `.form-group` and `.form-group_item`
   - `.input__super`
+  - `.form-l` classes, in favor of content-l classes in cf-layout
 
 ### Fixed
 - **cf-typography:** [PATCH] Fixed old variables removed from cf-core
