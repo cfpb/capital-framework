@@ -13,35 +13,30 @@
         &:focus + .m-btn-inside-input_btn-container,
         &__focused + .m-btn-inside-input_btn-container {
             border: none;
+            border: 2px solid @input-border__active;
+            border-left: none;
 
             &:before {
                 background-color: @input-bg;
+                border-color: @input-border__active;
             }
 
-            &:after {
-                border: 2px solid @input-border__active;
-                border-left: none;
-            }
-
-            & > .a-btn {
+            & .a-btn {
                 position: relative;
-                left: -1px;
+                left: 1px;
             }
+
         }
 
         &:disabled,
         &__disabled {
-            border-right: none;
             background-color: @input-bg__disabled;
             cursor: not-allowed;
 
-            & + .m-btn-inside-input_btn-container,
             & + .m-btn-inside-input_btn-container {
-                border: none;
                 background-color: @input-bg__disabled;
 
                 &:before {
-                    background-color: @input-bg__disabled;
                 }
 
                 &:after {
@@ -52,37 +47,133 @@
 
         }
 
-        &__error {
-            border-right: none;
-            border-color: @input-border__error;
-            outline: 1px solid @input-border__error;
-
-            & + .m-btn-inside-input_btn-container,
+        &:disabled:focus,
+        &__disabled:focus,
+        &__focused:disabled,
+        &__disabled&__focused {
             & + .m-btn-inside-input_btn-container {
-                border: none;
-
                 &:before {
-                    background-color: @input-bg;
+                    background-color: @input-bg__disabled;
                 }
 
-                &:after {
-                    border: 1px solid @input-border__error;
-                    border-left: none;
-                    outline: 1px solid @input-border__error;
-                }       
+                & .a-btn {
+                    position: relative;
+                    left: 1px;
+                }
             }
         }
 
+
+        &__error {
+            border-color: @input-border__error;
+
+            & + .m-btn-inside-input_btn-container {
+                outline: 1px solid @input-border__error;
+                border: 1px solid @input-border__error;
+                border-left: none;
+
+                &:before {
+                    background-color: @input-bg;
+                    border-color: @input-border__error;
+                }
+
+                &:after {
+                    border: none;
+                }       
+            }
+
+            &:focus {
+                border-color: @input-border__focused;
+                outline-offset: 0px;
+                outline: 1px solid @input-border__active;
+
+                & + .m-btn-inside-input_btn-container {
+                    outline: 1px solid @input-border__active;
+                    border: 1px solid @input-border__active;
+                    border-left: none;
+
+                    & .a-btn {
+                        position: relative;
+                        left: 0px;
+                    }
+                }
+
+            }
+
+        }
+
         &__warning {
-            border-right: none;
             border-color: @input-border__warning;
-            outline: 1px solid @input-border__warning;
+
+            & + .m-btn-inside-input_btn-container {
+                outline: 1px solid @input-border__warning;
+                border: 1px solid @input-border__warning;
+                border-left: none;
+
+                &:before {
+                    background-color: @input-bg;
+                    border-color: @input-border__warning;
+                }
+
+                &:after {
+                    border: none;
+                }       
+            }
+
+            &:focus {
+                border-color: @input-border__focused;
+                outline-offset: 0px;
+                outline: 1px solid @input-border__active;
+
+                & + .m-btn-inside-input_btn-container {
+                    outline: 1px solid @input-border__active;
+                    border: 1px solid @input-border__active;
+                    border-left: none;
+
+                    & .a-btn {
+                        position: relative;
+                        left: 0px;
+                    }
+                }
+
+            }
         }
 
         &__success {
-            border-right: none;
             border-color: @input-border__success;
-            outline: 1px solid @input-border__success;
+
+            & + .m-btn-inside-input_btn-container {
+                outline: 1px solid @input-border__success;
+                border: 1px solid @input-border__success;
+                border-left: none;
+
+                &:before {
+                    background-color: @input-bg;
+                    border-color: @input-border__success;
+                }
+
+                &:after {
+                    border: none;
+                }       
+            }
+
+            &:focus {
+                border-color: @input-border__focused;
+                outline-offset: 0px;
+                outline: 1px solid @input-border__active;
+
+                & + .m-btn-inside-input_btn-container {
+                    outline: 1px solid @input-border__active;
+                    border: 1px solid @input-border__active;
+                    border-left: none;
+
+                    & .a-btn {
+                        position: relative;
+                        left: 0px;
+                    }
+                }
+
+            }
         }
 
     }
@@ -90,10 +181,11 @@
     &_btn-container {
         display: table-cell;
         padding-right: unit( 15px / @btn-font-size, em );
+        position: relative;
         border: 1px solid @input-border;
         border-left: none;
-        position: relative;
         width: 1px;
+        left: -1px;
 
         background-color: @input-bg;
         white-space: nowrap;
@@ -117,24 +209,27 @@
         &:before {
             display: block;
             position: absolute;
-            top: 0;
+            top: -1px;
             bottom: 0;
             left: -2px;
-            width: 2px;
-            height: 100%;
+            border-top: 1px solid @input-border;
             content: " ";
+            height: 100%;
+            width: 2px;
         }
 
+/*
         &:after {
             display: block;
             position: absolute;
             top: 0;
             bottom: 0;
             right: 0;
-            width: 100%;
-            content: " ";
             border: none;
             border-left: none;
+            content: " ";
+            width: 100%;
         }
+*/
     }
 }
