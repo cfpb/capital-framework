@@ -15,6 +15,7 @@ The cf-forms component provides extensions to the basic form styles for Capital 
     - [Sizing variables](#sizing-variables)
 - [Labels](#labels)
     - [Label header](#label-header)
+- [Basic Form Elements](#basic-form-elements)
 - [Inputs](#inputs)
     - [Input states](#input-states)
     - [Input icons](#input-icons)
@@ -50,47 +51,54 @@ Theme variables for setting the color and sizes throughout the project. Overwrit
 
 ## Labels
 
-### Label header
+### Basic label
 
-<label class="form-label-header">
-    Form label header
+<label class="a-label">
+    A basic label
 </label>
 
 ```
-<label class="form-label-header">
-    Form label header
+<label class="a-label">
+    A basic label
 </label>
 ```
+
+### Label heading
+
+<label class="a-label a-label__heading">
+    A label heading
+</label>
+
+```
+<label class="a-label a-label__heading">
+    A label heading
+</label>
+```
+
 
 ## Inputs
+
+Inputs should always be paired with a label for accessibility reasons.
+
+### Basic text inputs
+
+<label class="a-label" for="text-input-example"></label>
+<input class="a-text-input" type="text" id="text-input example" value="Lorem ipsum">
+
+<label class="a-label a-label__heading" for="textarea-example"></label>
+<textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
+
+```
+<label class="a-label" for="text-input-example"></label>
+<input class="a-text-input" type="text" id="text-input example" value="Lorem ipsum">
+
+<label class="a-label a-label__heading" for="textarea-example"></label>
+<textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
+```
 
 ### Input states
 
 See the 'Form icons' section below for guidance on adding icons to states.
-
-#### Error state
-
-<input class="error" type="text" value="Invalid input" title="Test input">
-
-```
-<input class="error" type="text" value="Invalid input" title="Test input">
-```
-
-#### Warning state
-
-<input class="warning" type="text" value="Invalid input" title="Test input">
-
-```
-<input class="warning" type="text" value="Invalid input" title="Test input">
-```
-
-#### Success state
-
-<input class="success" type="text" value="Validated input" title="Test input">
-
-```
-<input class="success" type="text" value="Validated input" title="Test input">
-```
 
 #### Disabled state
 
@@ -110,16 +118,34 @@ See the 'Form icons' section below for guidance on adding icons to states.
        title="Test input">
 ```
 
-### Input icons
+### Inline Form Validation
 
-Form input icons add small positioning tweaks to Capital Framework icons.
-
-<input type="text" value="" title="Test input">
-<span class="cf-form_input-icon cf-icon cf-icon-email"></span>
+<div class="m-field m-field__error">
+    <label class="a-label__heading" for="form-input-error">Label</label>
+    <input class="a-text-input a-text-input__error"
+           type="text"
+           value="Invalid input"
+           id="form-input-error"
+           aria-describedby="form-input-error_message">
+    <div class="a-error-message" id="form-input-error_message" role="alert">
+        <span class="cf-icon cf-icon-delete-round" aria-hidden="true"></span>
+        This is a required question, please answer.
+    </div>
+</div>
 
 ```
-<input type="text" value="" title="Test input">
-<span class="cf-form_input-icon cf-icon cf-icon-email"></span>
+<div class="m-field m-field__error">
+    <label class="a-label__heading" for="form-input-error">Label</label>
+    <input class="a-text-input a-text-input__error"
+           type="text"
+           value="Invalid input"
+           id="form-input-error"
+           aria-describedby="form-input-error_message">
+    <div class="a-error-message" id="form-input-error_message" role="alert">
+        <span class="cf-icon cf-icon-delete-round" aria-hidden="true"></span>
+        This is a required question, please answer.
+    </div>
+</div>
 ```
 
 #### Error icon
@@ -153,108 +179,6 @@ Form input icons add small positioning tweaks to Capital Framework icons.
 ```
 <input class="success" type="text" value="Validated input" title="Test input">
 <span class="cf-form_input-icon cf-icon cf-icon-approved-round"></span>
-```
-
-## Groups
-
-A form group is recommended when you need to provide spacing between form elements and between groups of form elements.
-
-### Form group block
-
-Provides sizeable margins between groups of form elements.
-
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-
-```
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-```
-
-### Real world example
-
-<div class="form-group">
-    <label class="form-label-header">Form group</label>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <label class="form-label-header">Form group</label>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-</div>
-
-```
-<div class="form-group">
-    <label class="form-label-header">Form group</label>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <label class="form-label-header">Form group</label>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-</div>
 ```
 
 ## Buttons
@@ -322,6 +246,7 @@ Provides sizeable margins between groups of form elements.
         <button class="a-btn">Search</button>
     </div>
 </div>
+
 
 
 

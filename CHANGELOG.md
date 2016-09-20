@@ -4,19 +4,26 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-forms:** [MINOR] Added checkboxes and radio buttons with large target areas
 
 ### Changed
 - **cf-core:** [MAJOR] Update to atomic naming conventions:
   - `.webfont-<style>()` mixins renamed to `.u-webfont-<style>()`
   - `body` font is now `@webfont-regular` (Arial, by default).
-- **cf-layout:** [MAJOR] Update hero to atomic naming conventions
+- **cf-core** [MAJOR] Moved the base form styles to cf-forms
+- **cf-layout:** [MAJOR] Update to atomic naming conventions
+  - Updated hero
+  - Updated featured content module and and added modifiers for center/right anchors
 - **cf-layout:** [MAJOR] Enable hero images that bleed off the top and bottom of
   the hero container when in the two-column layout
-- **cf-layout:** [MAJOR] Updated featured content module to atomic naming conventions
-  - added featured content module modifiers for right and center image anchors
 - **cf-pagination** [MAJOR] Update to atomic naming conventions:
-- **cf-core** [MAJOR] Moved the base form styles to cf-forms
+- **cf-forms:** [MAJOR] Update to atomic naming conventions:
+  - Text form fields
+  - Select form fields
+  - Checkboxes and radio buttons
+  - Input with Button
+  - Atomized and simplified inline form validation
+- **cf-core:** [MAJOR] Moved the base form styles to cf-form
 
 ### Removed
 - **cf-core:** [MAJOR] Removed deprecated items:
@@ -30,6 +37,10 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-forms**: [MAJOR] Removed deprecated items:
   - `.form-group` and `.form-group_item`
   - `.input__super`
+  - `.form-l` classes, in favor of content-l classes in cf-layout
+  - `@cf-forms_input-icon-class`
+  - `@input-icon__warning`
+  - `@input-icon__success`
 
 ### Fixed
 - **cf-typography:** [PATCH] Fixed old variables removed from cf-core
