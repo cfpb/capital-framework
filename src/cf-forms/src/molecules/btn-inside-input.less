@@ -1,118 +1,25 @@
 .m-btn-inside-input {
-    display: table;
     position: relative;
-    width: 100%;
 
     .a-text-input {
-        display: table-cell;
-        width: 100%;
         box-sizing: border-box;
-        position: relative;
-        z-index: 1;
-        border: none;
-        padding-right: unit( 15px / @btn-font-size, em );
+        width: 100%;
+        padding-right: unit( 75px / @btn-font-size, em );
 
-        &:focus,
-        &__focused {
-            outline: none;
-            border-color: @input-border__active;
-
-            & + .m-btn-inside-input_btn-container:after {
-                border-color: @input-border__active;
-                outline: 1px solid @input-border__active;
-            }
+        &.input__super {
+            padding-right: unit( 90px / @super-btn-font-size, em );
         }
-
-        &:disabled,
-        &__disabled {
-            background-color: @input-bg__disabled;
-            cursor: not-allowed;
-
-            & + .m-btn-inside-input_btn-container {
-                background-color: @input-bg__disabled;
-            }
-
-        }
-
-        &:disabled:focus,
-        &__disabled:focus,
-        &__focused:disabled,
-        &__disabled&__focused {
-            & + .m-btn-inside-input_btn-container {
-                border-color: @input-border__active;
-            }
-        }
-
-
-        &__error {
-            outline: none;
-            border-color: @input-border__error;
-
-            & + .m-btn-inside-input_btn-container:after {
-                border-color: @input-border__error;
-                outline: 1px solid @input-border__error;
-            }
-
-        }
-
-        &__warning {
-            outline: none;
-            border-color: @input-border__warning;
-
-            & + .m-btn-inside-input_btn-container:after {
-                border-color: @input-border__warning;
-                outline: 1px solid @input-border__warning;
-            }
-
-        }
-
-        &__success {
-            outline: none;
-            border-color: @input-border__success;
-
-            & + .m-btn-inside-input_btn-container:after {
-                border-color: @input-border__success;
-                outline: 1px solid @input-border__success;
-            }
-
-        }
-
     }
 
-    &_btn-container {
-        display: table-cell;
-        padding-right: unit( 15px / @btn-font-size, em );
-        border: none;
-        width: 1px;
+    .a-btn {
+        .u-link__no-border();
+        position: absolute;
+        right: unit( 15px / @btn-font-size, em );
+        top: 0;
 
-        white-space: nowrap;
-
-        .a-btn {
-            z-index: 1;
-            .u-link__no-border();
-            margin: 0;
-            // The placement of borders causes a 1px offset, corrected by:
-
-
-            // btn-inside-input should be 7/8ths inherited font-size
-            font-size: 0.875em;
-
-            /* pa11y fails unless the background color is explicitly set */
-            &__link.a-btn__secondary {
-                background-color: #fff;
-            }
-        }
-
-        &:after {
-            display: block;
-            position: absolute;
-            top: -1px;
-            right: -1px;
-            height: 100%;
-            z-index: 0;
-            border: 1px solid @input-border;
-            content: " ";
-            width: 100%;
+        /* pa11y fails unless the background color is explicitly set */
+        &__link.a-btn__secondary {
+            background-color: #fff;
         }
     }
 }
