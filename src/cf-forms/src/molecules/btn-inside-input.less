@@ -7,25 +7,20 @@
         display: table-cell;
         width: 100%;
         box-sizing: border-box;
-        border-right: none;
+        position: relative;
+        z-index: 1;
+        border: none;
         padding-right: unit( 15px / @btn-font-size, em );
 
-        &:focus + .m-btn-inside-input_btn-container,
-        &__focused + .m-btn-inside-input_btn-container {
-            border: none;
-            border: 2px solid @input-border__active;
-            border-left: none;
+        &:focus,
+        &__focused {
+            outline: none;
+            border-color: @input-border__active;
 
-            &:before {
-                background-color: @input-bg;
+            & + .m-btn-inside-input_btn-container:after {
                 border-color: @input-border__active;
+                outline: 1px solid @input-border__active;
             }
-
-            & .a-btn {
-                position: relative;
-                left: 1px;
-            }
-
         }
 
         &:disabled,
@@ -35,14 +30,6 @@
 
             & + .m-btn-inside-input_btn-container {
                 background-color: @input-bg__disabled;
-
-                &:before {
-                }
-
-                &:after {
-                    border: 1px solid @input-border;
-                    border-left: none;
-                }       
             }
 
         }
@@ -52,128 +39,42 @@
         &__focused:disabled,
         &__disabled&__focused {
             & + .m-btn-inside-input_btn-container {
-                &:before {
-                    background-color: @input-bg__disabled;
-                }
-
-                & .a-btn {
-                    position: relative;
-                    left: 1px;
-                }
+                border-color: @input-border__active;
             }
         }
 
 
         &__error {
+            outline: none;
             border-color: @input-border__error;
 
-            & + .m-btn-inside-input_btn-container {
+            & + .m-btn-inside-input_btn-container:after {
+                border-color: @input-border__error;
                 outline: 1px solid @input-border__error;
-                border: 1px solid @input-border__error;
-                border-left: none;
-
-                &:before {
-                    background-color: @input-bg;
-                    border-color: @input-border__error;
-                }
-
-                &:after {
-                    border: none;
-                }       
-            }
-
-            &:focus {
-                border-color: @input-border__focused;
-                outline-offset: 0px;
-                outline: 1px solid @input-border__active;
-
-                & + .m-btn-inside-input_btn-container {
-                    outline: 1px solid @input-border__active;
-                    border: 1px solid @input-border__active;
-                    border-left: none;
-
-                    & .a-btn {
-                        position: relative;
-                        left: 0px;
-                    }
-                }
-
             }
 
         }
 
         &__warning {
+            outline: none;
             border-color: @input-border__warning;
 
-            & + .m-btn-inside-input_btn-container {
+            & + .m-btn-inside-input_btn-container:after {
+                border-color: @input-border__warning;
                 outline: 1px solid @input-border__warning;
-                border: 1px solid @input-border__warning;
-                border-left: none;
-
-                &:before {
-                    background-color: @input-bg;
-                    border-color: @input-border__warning;
-                }
-
-                &:after {
-                    border: none;
-                }       
             }
 
-            &:focus {
-                border-color: @input-border__focused;
-                outline-offset: 0px;
-                outline: 1px solid @input-border__active;
-
-                & + .m-btn-inside-input_btn-container {
-                    outline: 1px solid @input-border__active;
-                    border: 1px solid @input-border__active;
-                    border-left: none;
-
-                    & .a-btn {
-                        position: relative;
-                        left: 0px;
-                    }
-                }
-
-            }
         }
 
         &__success {
+            outline: none;
             border-color: @input-border__success;
 
-            & + .m-btn-inside-input_btn-container {
+            & + .m-btn-inside-input_btn-container:after {
+                border-color: @input-border__success;
                 outline: 1px solid @input-border__success;
-                border: 1px solid @input-border__success;
-                border-left: none;
-
-                &:before {
-                    background-color: @input-bg;
-                    border-color: @input-border__success;
-                }
-
-                &:after {
-                    border: none;
-                }       
             }
 
-            &:focus {
-                border-color: @input-border__focused;
-                outline-offset: 0px;
-                outline: 1px solid @input-border__active;
-
-                & + .m-btn-inside-input_btn-container {
-                    outline: 1px solid @input-border__active;
-                    border: 1px solid @input-border__active;
-                    border-left: none;
-
-                    & .a-btn {
-                        position: relative;
-                        left: 0px;
-                    }
-                }
-
-            }
         }
 
     }
@@ -181,13 +82,9 @@
     &_btn-container {
         display: table-cell;
         padding-right: unit( 15px / @btn-font-size, em );
-        position: relative;
-        border: 1px solid @input-border;
-        border-left: none;
+        border: none;
         width: 1px;
-        left: -1px;
 
-        background-color: @input-bg;
         white-space: nowrap;
 
         .a-btn {
@@ -195,7 +92,7 @@
             .u-link__no-border();
             margin: 0;
             // The placement of borders causes a 1px offset, corrected by:
-            margin-top: -1px;
+
 
             // btn-inside-input should be 7/8ths inherited font-size
             font-size: 0.875em;
@@ -206,30 +103,16 @@
             }
         }
 
-        &:before {
-            display: block;
-            position: absolute;
-            top: -1px;
-            bottom: 0;
-            left: -2px;
-            border-top: 1px solid @input-border;
-            content: " ";
-            height: 100%;
-            width: 2px;
-        }
-
-/*
         &:after {
             display: block;
             position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            border: none;
-            border-left: none;
+            top: -1px;
+            right: -1px;
+            height: 100%;
+            z-index: 0;
+            border: 1px solid @input-border;
             content: " ";
             width: 100%;
         }
-*/
     }
 }
