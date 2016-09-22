@@ -24,6 +24,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - Input with Button
   - Atomized and simplified inline form validation
 - **cf-core:** [MAJOR] Moved the base form styles to cf-form
+- **cf-buttons** [PATCH] Standardized and optimized less code
 
 ### Removed
 - **cf-core:** [MAJOR] Removed deprecated items:
