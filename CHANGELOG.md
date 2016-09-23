@@ -22,6 +22,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - Select form fields
   - Checkboxes and radio buttons
   - Input with Button
+  - Button inside input
   - Atomized and simplified inline form validation
 - **cf-core:** [MAJOR] Moved the base form styles to cf-form
 - **cf-buttons** [PATCH] Standardized and optimized less code
