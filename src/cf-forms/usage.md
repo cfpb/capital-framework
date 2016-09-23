@@ -211,35 +211,29 @@ See the 'Form icons' section below for guidance on adding icons to states.
 
 
 <div class="m-btn-inside-input">
-    <div class="m-btn-inside-input_input-container">
-      <input type="text"
-          value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-          title="Test input"
-          class="a-text-input">
-    </div>
-    <div class="m-btn-inside-input_btn-container">
-      <button class="a-btn a-btn__link">
-          Clear
-          <span class="cf-icon cf-icon-delete"></span>
-      </button>
-    </div>
+    <input type="text"
+        value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+        title="Test input"
+        class="a-text-input">
+    <button class="a-btn a-btn__link">
+        Clear
+        <span class="cf-icon cf-icon-delete"></span>
+    </button>
 </div>
 
 #### Default button inside of a default input with button
 
 <div class="o-form__input-w-btn">
-    <div class="m-btn-inside-input o-form__input-w-btn_input-container">
-        <div class="m-btn-inside-input_input-container">
-          <input type="text"
-              value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-              title="Test input"
-              class="a-text-input">
-        </div>
-        <div class="m-btn-inside-input_btn-container">
-          <button class="a-btn a-btn__link">
-              Clear
-              <span class="cf-icon cf-icon-delete"></span>
-          </button>
+    <div class="o-form__input-w-btn_input-container">
+        <div class="m-btn-inside-input">
+            <input type="text"
+                value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+                title="Test input"
+                class="a-text-input">
+            <button class="a-btn a-btn__link">
+                Clear
+                <span class="cf-icon cf-icon-delete"></span>
+            </button>
         </div>
     </div>
     <div class="o-form__input-w-btn_btn-container">
