@@ -32,7 +32,7 @@
 // Sizing variables
 
 // .btn
-@btn-font-size:                 16px;
+@btn-font-size:                 @base-font-size-px;
 @btn-border-radius-size:        4px;
 @btn-v-padding:                 8px;
 @btn-h-padding:                 14px;
@@ -46,23 +46,25 @@
 //
 
 .a-btn {
+  .webfont-medium();
+
+  appearance: none;
+
   display: inline-block;
+
   box-sizing: border-box;
   padding:
     unit( @btn-v-padding / @btn-font-size, em )
     unit( @btn-h-padding / @btn-font-size, em );
   border: 0;
-  border-radius: unit( @btn-border-radius-size / @btn-font-size, em );
   margin: 0;
 
-  .webfont-medium();
+  border-radius: unit( @btn-border-radius-size / @btn-font-size, em );
   cursor: pointer;
   font-size: unit( @btn-font-size / @base-font-size-px, em );
   line-height: normal;
   text-decoration: none;
   transition: background-color 0.1s;
-  vertical-align: middle;
-  appearance: none;
 
   &,
   &:link,
@@ -72,13 +74,14 @@
   }
 
   &:hover,
-  &.hover {
+  &.hover,
+  &:focus,
+  &.focus {
     background-color: @btn-bg-hover;
   }
 
   &:focus,
   &.focus {
-    background-color: @btn-bg-hover;
     outline: 1px dotted @btn-bg;
     // outline-offset is not supported everywhere but it adds a nice touch
     // in browsers where it is.
@@ -96,125 +99,117 @@
     // Helps with inconsistent input.btn height in FireFox but not completely
     border: 0;
   }
-}
-
-.lt-ie8 {
-  // Fixes scroll rendering bug
-  // http://snipplr.com/view/518/
-  & {
-    background: url( null ) fixed no-repeat;
-  }
 
   // Fixes button and input sizes in IE7
-  button.a-btn,
-  input.a-btn {
+  .lt-ie8 button&,
+  .lt-ie8 input& {
     overflow: visible;
     padding-top: unit( @btn-v-padding-modifier-ie * @btn-v-padding / @btn-font-size, em );
     padding-bottom: unit( @btn-v-padding-modifier-ie * @btn-v-padding / @btn-font-size, em );
   }
-}
 
-//
-// Secondary button
-//
+  //
+  // Secondary button
+  //
 
-.a-btn__secondary {
-  &,
-  &:link,
-  &:visited {
-    background-color: @btn__secondary-bg;
-    color: @btn__secondary-text;
+  &__secondary {
+    &,
+    &:link,
+    &:visited {
+      background-color: @btn__secondary-bg;
+      color: @btn__secondary-text;
+    }
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      background-color: @btn__secondary-bg-hover;
+    }
+
+    &:focus,
+    &.focus {
+      outline-color: @btn__secondary-bg;
+    }
+
+    &:active,
+    &.active {
+      background-color: @btn__secondary-bg-active;
+    }
   }
 
-  &:hover,
-  &.hover {
-    background-color: @btn__secondary-bg-hover;
+  //
+  // Destructive action button
+  //
+
+  &__warning {
+    &,
+    &:link,
+    &:visited {
+      background-color: @btn__warning-bg;
+      color: @btn__warning-text;
+    }
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      background-color: @btn__warning-bg-hover;
+    }
+
+    &:focus,
+    &.focus {
+      outline-color: @btn__warning-bg;
+    }
+
+    &:active,
+    &.active {
+      background-color: @btn__warning-bg-active;
+    }
   }
 
-  &:focus,
-  &.focus {
-    background-color: @btn__secondary-bg-hover;
-    outline-color: @btn__secondary-bg;
+  //
+  // Disabled button
+  //
+
+  &__disabled,
+  &[disabled] {
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: @btn__disabled-bg;
+      color: @btn__disabled-text;
+      cursor: default; // Fallback for IE/Opera
+      cursor: not-allowed;
+    }
+
+    &:focus,
+    &.focus {
+      outline-color: @btn__disabled-outline;
+    }
   }
 
-  &:active,
-  &.active {
-    background-color: @btn__secondary-bg-active;
-  }
-}
+  //
+  // Super button
+  //
 
-//
-// Destructive action button
-//
+  &__super {
+    padding:
+      unit( 11px / @super-btn-font-size, em )
+      unit( 29px / @super-btn-font-size, em );
+    font-size: unit( @super-btn-font-size / @base-font-size-px, em );
 
-.a-btn__warning {
-  &,
-  &:link,
-  &:visited {
-    background-color: @btn__warning-bg;
-    color: @btn__warning-text;
-  }
-
-  &:hover,
-  &.hover {
-    background-color: @btn__warning-bg-hover;
-  }
-
-  &:focus,
-  &.focus {
-    background-color: @btn__warning-bg-hover;
-    outline-color: @btn__warning-bg;
-  }
-
-  &:active,
-  &.active {
-    background-color: @btn__warning-bg-active;
-  }
-}
-
-//
-// Disabled button
-//
-
-.a-btn__disabled,
-.a-btn[disabled] {
-  &,
-  &:link,
-  &:visited,
-  &:hover,
-  &.hover,
-  &:focus,
-  &.focus,
-  &:active,
-  &.active {
-    background-color: @btn__disabled-bg;
-    color: @btn__disabled-text;
-    cursor: default; // Fallback for IE/Opera
-    cursor: not-allowed;
-  }
-
-  &:focus,
-  &.focus {
-    outline-color: @btn__disabled-outline;
-  }
-}
-
-//
-// Super button
-//
-
-.a-btn__super {
-  padding:
-    unit( 11px / @super-btn-font-size, em )
-    unit( 29px / @super-btn-font-size, em );
-  font-size: unit( @super-btn-font-size / @base-font-size-px, em );
-}
-
-.lt-ie8 {
-  // Fixes button and input sizes in IE7
-  button.a-btn__super,
-  input.a-btn__super {
-    padding-top: unit( @btn-v-padding-modifier-ie * 15px / @super-btn-font-size, em );
-    padding-bottom: unit( @btn-v-padding-modifier-ie * 15px / @super-btn-font-size, em );
+    // Fixes button and input sizes in IE7
+    .lt-ie8 button&,
+    .lt-ie8 input& {
+      padding-top: unit( @btn-v-padding-modifier-ie * 15px / @super-btn-font-size, em );
+      padding-bottom: unit( @btn-v-padding-modifier-ie * 15px / @super-btn-font-size, em );
+    }
   }
 }

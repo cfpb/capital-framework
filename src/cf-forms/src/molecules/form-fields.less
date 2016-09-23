@@ -1,4 +1,4 @@
-.m-field {
+.m-form-field {
     .a-text-input {
         box-sizing: border-box;
         width: 100%;
@@ -111,4 +111,10 @@
 
 .a-error-message .cf-icon-delete-round {
     color: @input-icon__error;
+
+    &__select {
+        .a-label + .a-select {
+            margin-top: 0.5em;
+        }
+    }
 }

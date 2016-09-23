@@ -32,6 +32,7 @@
 // select
 @select-border:                 @gray-40;
 @select-icon:                   @gray-80;
+@select-icon-bg:                @gray-5;
 
 // Large target area variables
 @input-big-target-bg:           #d6d7d9; // $color-gray-lighter
@@ -41,6 +42,10 @@
 
 @input-big-target-bg__disabled: #aeb0b5; // $color-gray-light
 
+
+// Sizing variables
+
+@select-height:                  30px;
 
 // Import external dependencies
 
@@ -55,6 +60,7 @@
 //
 
 @import (less) 'atoms/label.less';
+@import (less) 'atoms/select.less';
 @import (less) 'atoms/text-input.less';
 
 
@@ -66,6 +72,7 @@
 @import (less) 'molecules/big-radio-buttons.less';
 @import (less) 'molecules/btn-inside-input.less';
 @import (less) 'molecules/field.less';
+@import (less) 'molecules/form-fields.less';
 
 //
 // Import organisms
@@ -144,3 +151,4 @@
         content: '';
     }
 }
+
