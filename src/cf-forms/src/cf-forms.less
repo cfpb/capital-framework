@@ -16,6 +16,7 @@
 @input-border__error:           @red;
 @input-border__warning:         @gold;
 @input-border__success:         @green;
+@input-border__selected:        #046b99; // $color-primary-alt-darkest
 
 // Input backgrounds
 @input-bg:                      #ffffff;
@@ -35,12 +36,9 @@
 @select-icon-bg:                @gray-5;
 
 // Large target area variables
-@input-big-target-bg:           #d6d7d9; // $color-gray-lighter
-
-@input-big-target-bg__selected: #9bdaf1; // $color-primary-alt-light
-@input-border__selected:        #046b99; // $color-primary-alt-darkest
-
-@input-big-target-bg__disabled: #aeb0b5; // $color-gray-light
+@input-lg-target:               #d6d7d9; // $color-gray-lighter
+@input-lg-target__selected:     #9bdaf1; // $color-primary-alt-light
+@input-lg-target__disabled:     #aeb0b5; // $color-gray-light
 
 
 // Sizing variables
@@ -68,10 +66,7 @@
 // Import molecules
 //
 
-@import (less) 'molecules/big-checkboxes.less';
-@import (less) 'molecules/big-radio-buttons.less';
 @import (less) 'molecules/btn-inside-input.less';
-@import (less) 'molecules/field.less';
 @import (less) 'molecules/form-fields.less';
 
 //

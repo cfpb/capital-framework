@@ -18,12 +18,17 @@
                 display: inline-block;
 
                 border: 1px solid @input-border;
-                height: unit( 18 / @base-font-size-px, em );
+                height: unit( 18px / @base-font-size-px, em );
                 width: unit( 18px / @base-font-size-px, em );
                 margin-right: 10px;
 
+                background-color: @input-bg;
                 content: '';
                 vertical-align: top;
+
+                .lt-ie9 & {
+                    display: none !important;
+                }
             }
 
             &:hover:before {
@@ -43,6 +48,7 @@
                 margin: 1em;
                 position: static;
                 width: auto;
+                clear: both;
             }
 
             &:disabled + .a-label {
@@ -61,6 +67,7 @@
             &:before {
                 font-family: 'CFPB Minicons';
                 text-align: center;
+                line-height: unit( 18px / @base-font-size-px, em );
             }
         }
 
@@ -98,6 +105,41 @@
             &:focus:checked + .a-label:before {
                 border-color: @input-border__focused;
                 box-shadow: 0 0 0 1px @input-border__focused, inset 0 0 0 2px #fff;
+            }
+        }
+    }
+
+    &__lg-target {
+
+        .a-label {
+            display: block;
+
+            padding: 10px;
+
+            background-color: @input-lg-target;
+        }
+
+        .a-checkbox,
+        .a-radio {
+            &:focus + .a-label,
+            &:checked + .a-label {
+                outline: 1px solid @input-border__focused;
+            }
+
+            &:checked + .a-label {
+                background-color: @input-lg-target__selected;
+            }
+
+            &:disabled + .a-label {
+
+                &:before {
+                    border: none;
+                    background-color: transparent;
+                    color: @input-lg-target__disabled;
+                    content: @cf-icon-minus-round;
+                    font-family: 'CFPB Minicons';
+                    font-size: unit( 20px / 18px, em );
+                }
             }
         }
     }
