@@ -47,6 +47,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Fixed
 - **cf-typography:** [PATCH] Fixed old variables removed from cf-core
+- **cf-forms:** [PATCH] Fixed a layout bug in btn-inside-input
 
 ## 3.6.1 - 2016-08-12
 

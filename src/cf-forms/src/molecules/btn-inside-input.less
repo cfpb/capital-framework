@@ -9,8 +9,10 @@
 
     .a-btn {
         .u-link__no-border();
+
         position: absolute;
-        right: unit( 15px / @btn-font-size, em );
-        top: 0;
+        // Set the right and top distances to match typical button padding
+        right: unit( @btn-h-padding / @btn-font-size, em );
+        top: unit( @btn-v-padding / @btn-font-size, em );
     }
 }
