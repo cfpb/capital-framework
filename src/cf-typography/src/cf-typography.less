@@ -3,11 +3,6 @@
    Advanced Typography
    ========================================================================== */
 
-// Import external dependencies
-
-@import (less) '../../cf-core/src/cf-core.less';
-@import (less) '../../cf-icons/src/cf-icons.less';
-
 //
 // Theme variables
 //
@@ -16,599 +11,64 @@
 // $color- variables are from 18F's US Web Design Standards
 // https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss
 
-// .pull-quote
-@pull-quote_body:               #494440; // $color-gray-warm-dark
-@pull-quote_citation:           #205493; // $color-cool-blue
+// Running text elements
 
-// .micro-copy
-@micro-copy-text:               #112e51; // $color-primary-darkest
+// .a-micro-copy
+@micro-copy:                #112e51; // $color-primary-darkest
 
-// .date
-@date-text:                     #112e51; // $color-primary-darkest
+// .a-date
+@date:                      #112e51; // $color-primary-darkest
 
-// .category-slug
-@category-slug-text:            #112e51; // $color-primary-darkest
-@category-slug-hover:           #205493; // $color-primary-darker
+// .m-pull-quote
+@pull-quote_body:           #494440; // $color-gray-warm-dark
+@pull-quote_citation:       #205493; // $color-cool-blue
 
-// .header-slug
-@header-slug-thin-border:       #323a45; // $color-gray-dark
-@header-slug-thick-border:      #02bfe7; // $color-primary-alt
+// Headings
 
-// .padded-header
-@padded-header-text:            #046b99; // $color-primary-alt-darkest
-@padded-header-bg:              #dce4ef; // color-gray-cool-light
-@padded-header-border:          #046b99; // $color-primary-alt-darkest
+// .a-heading__icon
+@heading__icon:             #112e51; // $color-primary-darkest
+@heading__icon__hover:      #205493; // $color-primary-darker
 
-// .fancy-slug
-@fancy-slug-text:               #046b99; // $color-primary-alt-darkest
-@fancy-slug-bg:                 #dce4ef; // color-gray-cool-light
-@fancy-slug-border:             #046b99; // $color-primary-alt-darkest
+// .a-heading__padded
+@heading__padded:           #046b99; // $color-primary-alt-darkest
+@heading__padded_bg:        #dce4ef; // color-gray-cool-light
+@heading__padded_border:    #046b99; // $color-primary-alt-darkest
 
-// .meta-header
-@meta-header-border:            #323a45; // $color-gray-dark
+// Headers
 
-// .jump-link
-@jump-link__bg:                 #f1f1f1; // $color-gray-lightest
-@jump-link__bg-border:          #323a45; // $color-gray-dark
+// .m-slug-header
+@slug-header_border__thin:  #323a45; // $color-gray-dark
+@slug-header_border__thick: #02bfe7; // $color-primary-alt
+
+// .m-meta-header
+@meta-header_border:        #323a45; // $color-gray-dark
+
+// Links
+
+// .a-link__jump
+@jump-link_bg:              #f1f1f1; // $color-gray-lightest
+@jump-link_border:          #323a45; // $color-gray-dark
 
 
-//
-// Pull quote
-//
+// Import external dependencies
 
-/* TODO: Re-organize orders to follow FEWD guidelines */
-/* TODO: Standardize line breaks and spacing throughout */
-
-.pull-quote {
-
-    &_body {
-        .heading-3();
-
-        color: @pull-quote_body;
-
-        .respond-to-max(@bp-xs-max, {
-            .heading-4();
-        });
-    }
-
-    &_citation {
-        .heading-5();
-
-        color: @pull-quote_citation;
-    }
-
-    &__large .pull-qote_body {
-        .heading-2();
-
-        .respond-to-max(@bp-xs-max, {
-            .heading-3();
-        });
-    }
-}
-//
-// Micro copy
-//
-
-.micro-copy {
-    @font-size: 14px;
-    color: @micro-copy-text;
-    font-size: unit(@font-size / @base-font-size-px, em);
-    .webfont-regular();
-
-    &__large {
-        @font-size: 16px;
-        font-size: unit(@font-size / @base-font-size-px, em);
-    }
-}
+@import (less) '../../cf-core/src/cf-core.less';
+@import (less) '../../cf-icons/src/cf-icons.less';
 
 //
-// Short description
+// Import atoms
 //
 
-.short-desc {
-    .webfont-regular();
-
-    &__large {
-        @font-size: 18px;
-        font-size: unit(@font-size / @base-font-size-px, em);
-    }
-}
+@import (less) 'atoms/date.less';
+@import (less) 'atoms/headings.less';
+@import (less) 'atoms/links.less';
+@import (less) 'atoms/micro-copy.less';
 
 //
-// Date
+// Import molecules
 //
 
-.date {
-    .heading-5();
-
-    color: @date-text;
-    white-space: nowrap;
-}
-
-//
-// Category slug
-//
-
-.category-slug {
-    .heading-4();
-
-    display: inline-block;
-
-    color: @category-slug-text;
-
-    a& {
-        .u-link__colors(@category-slug-text, @category-slug-hover);
-    }
-
-    &_icon {
-        margin-right: unit(2px / @font-size, em);
-    }
-}
-
-//
-// Header slug
-//
-
-.header-slug {
-    .heading-5();
-
-    margin-bottom: unit(17px / @font-size, em);
-    border-top: 1px solid @header-slug-thin-border;
-
-    &_inner {
-        display: inline-block;
-        padding-top: unit(4px / @font-size, em);
-        margin-top: -3px;
-        border-top: 5px solid @header-slug-thick-border;
-    }
-}
-
-//
-// Padded header
-//
-
-.padded-header {
-    .heading-5();
-    // 8px top padding to account for line-height.
-    padding: unit(8px / @font-size, em)
-             unit(10px / @font-size, em);
-    margin-bottom: 0;
-    border-bottom: 1px solid @padded-header-border;
-    background: @padded-header-bg;
-    color: @padded-header-text;
-}
-//
-// Fancy slug
-//
-
-.fancy-slug {
-    @v-padding: 8px;
-    @ribbon-width: 17px;
-    @ribbon-angle: 33deg;
-
-    .heading-5();
-    position: relative;
-    // Cut the height in half since we will be adding it back with margin.
-    height: unit(((@font-size / 2) + @v-padding + 1) / @font-size, em);
-    padding: 0 unit(@ribbon-width / @font-size, em);
-    // Add back half of the height to create a space for the text to pull
-    // itself up into.
-    margin-top: unit(((@font-size / 2) + @v-padding + 1) / @font-size, em);
-    // Bottom margin is eyeballed to 15px when considering baseline and line-height.
-    margin-bottom: unit(8px / @font-size, em);
-    border-top: 1px solid @fancy-slug-border;
-    line-height: 1;
-    text-align: center;
-
-    &_text {
-        display: inline-block;
-        position: relative;
-        // Pull the text up by half of its height so that it is vertically
-        // centered with .fancy-slugs top border. "Height" means half the
-        // font-size plus half the total padding and half the borders.
-        top: unit(((@font-size / 2) + @v-padding + 1) * -1 / @font-size, em);
-        padding: unit(@v-padding / @font-size, em) unit(20px / @font-size, em);
-        border: 1px solid @fancy-slug-border;
-        background: @fancy-slug-bg;
-    }
-
-    // Use :before as the top corner and :after as the bottom corner.
-    &_ribbon-left,
-    &_ribbon-right {
-        display: block;
-        position: absolute;
-        top: -1px;
-        width: unit(@ribbon-width / @font-size, em);
-        height: 100%;
-        border-top: 1px solid @fancy-slug-border;
-        border-bottom: 1px solid @fancy-slug-border;
-
-        .lt-ie9 & {
-            display: none;
-        }
-
-        &:before,
-        &:after {
-            display: block;
-            content: "";
-            position: absolute;
-            z-index: 3;
-            width: unit(@ribbon-width / @font-size, em);
-            height: 50%;
-            background: @fancy-slug-bg;
-            border: 0 solid @fancy-slug-border;
-        }
-    }
-
-    &_ribbon-left {
-        left: unit(-@ribbon-width / @font-size, em);
-        &:before {
-            top: 0;
-            border-left-width: 1px;
-            transform-origin: 0 0;
-            transform: skewX(@ribbon-angle);
-        }
-        &:after {
-            bottom: 0;
-            border-left-width: 1px;
-            transform-origin: 0 100%;
-            transform: skewX(-@ribbon-angle);
-        }
-    }
-
-    &_ribbon-right {
-        right: unit(-@ribbon-width / @font-size, em);
-        &:before {
-            top: 0;
-            right: 0;
-            border-right-width: 1px;
-            transform-origin: 100% 0;
-            transform:  skewX(-@ribbon-angle);
-        }
-        &:after {
-            right: 0;
-            bottom: 0;
-            border-right-width: 1px;
-            transform-origin: 100% 100%;
-            transform:  skewX(@ribbon-angle);
-        }
-    }
-}
-//
-// Meta header
-//
-
-.meta-header {
-    padding-bottom: unit(8px / @base-font-size-px, em);
-    margin-bottom: unit(10px / @base-font-size-px, em);
-    border-bottom: 1px solid @meta-header-border;
-}
-
-.meta-header_left {
-    margin-bottom: 0;
-}
-
-.meta-header_right {
-    display: block;
-    margin-bottom: 0;
-    .respond-to-min(600px, {
-        .u-right();
-        display: inline-block;
-    });
-}
-
-//
-// Links with icons
-//
-
-.icon-link {
-    border-bottom-width: 0;
-    position: relative;
-
-    &_text {
-        border-bottom-width: 1px;
-        border-bottom-style: inherit;
-    }
-
-    &:before,
-    &:after {
-        .cf-icon();
-        margin-right: 1px;
-        margin-left: 1px;
-    }
-
-    &__download:after,
-    &__download&__before:before {
-        // Inserts the cf-icon-download glyph.
-        content: "\e406";
-    }
-
-    &__email:after,
-    &__email&__before:before {
-        // Inserts the cf-icon-email glyph.
-        content: "\e302";
-    }
-
-    &__external-link:after,
-    &__external-link&__before:before {
-        // Inserts the cf-icon-external-link glyph.
-        content: "\e610";
-    }
-
-    &__fax:after,
-    &__fax&__before:before {
-        // Inserts the cf-icon-fax glyph.
-        content: "\e310";
-    }
-
-    &__left:after,
-    &__left&__before:before {
-          // Inserts the cf-icon-left glyph.
-          content: "\e000";
-      }
-
-    &__mail:after,
-    &__mail&__before:before {
-        // Inserts the cf-icon-mail glyph.
-        content: "\e304";
-    }
-
-    &__pdf:after,
-    &__pdf&__before:before {
-        // Inserts the cf-icon-pdf glyph.
-        content: "\e402";
-    }
-
-    &__pdf:after,
-    &__pdf&__before:before {
-        // Inserts the cf-icon-pdf glyph.
-        content: "\e402";
-    }
-
-    &__phone:after,
-    &__phone&__before:before {
-        // Inserts the cf-icon-phone glyph.
-        content: "\e306";
-    }
-
-    &__right:after,
-    &__right&__before:before {
-        // Inserts the cf-icon-right glyph.
-        content: "\e002";
-    }
-
-    // New icon modifiers must be added ABOVE this line.
-
-    &__before {
-        &:after {
-            content: '';
-        }
-    }
-
-    &__no-wrap {
-        white-space: nowrap;
-    }
-}
-//
-// Styled link
-//
-
-.styled-link {
-    /* TODO: Why set this? It's the base size */
-    @font-size: 16px;
-
-    border-bottom-width: 1px;
-    .webfont-medium();
-    font-size: unit(@font-size / @base-font-size-px, em);
-}
-
-//
-// Jump link
-//
-
-.jump-link {
-    .webfont-medium();
-    /* TODO: Why set this one it's the default size */
-    @font-size: 16px;
-
-    font-size: unit(@font-size / @base-font-size-px, em);
-
-    .icon-link();
-
-    &__large {
-        @font-size: 18px;
-
-        font-size: unit(@font-size / @base-font-size-px, em);
-    }
-
-    .respond-to-max( @bp-xs-max, {
-        .block-link();
-
-        &:after {
-            position: absolute;
-            margin-bottom: -0.625em;
-            right: 0;
-            bottom: 50%;
-            text-align: right;
-        }
-
-        &__before {
-            padding-left: 1.25em;
-
-            &:before {
-                position: absolute;
-                margin-bottom: -0.625em;
-                bottom: 50%;
-                left: 0;
-            }
-        }
-
-        &_text {
-            border-bottom-width: 0;
-        }
-
-        &__bg {
-            background: @jump-link__bg;
-            border: solid @jump-link__bg-border;
-            border-width: 1px 0;
-            padding: unit(10px / @base-font-size-px, em) 1.25em unit(10px / @base-font-size-px, em) 1em;
-            &:after {
-                right: 1em;
-            }
-            &:before {
-                left: unit(10px / @base-font-size-px, em);
-            }
-        }
-    });
-}
-
-//
-// Block link
-//
-
-.block-link {
-    box-sizing: border-box;
-    display: block;
-    padding: unit(10px / @base-font-size-px, em) 1.25em unit(10px / @base-font-size-px, em) 0;
-    border: dotted @link-text;
-    border-width: 1px 0;
-    margin-right: 0;
-    // 100% width is needed when .jump-link is applied to a <button>.
-    width: 100%;
-    text-align: left;
-}
-
-//
-// Unstyled list modifier
-//
-
-.list__unstyled {
-    padding-left: 0;
-    list-style-type: none;
-
-    // This is needed for dd elements.
-    .list_item {
-        margin-left: 0;
-    }
-}
-
-//
-// Spaced list modifier
-//
-
-.list__spaced {
-    .list_item + .list_item {
-        margin-top: unit(24px / @base-font-size-px, em);
-    }
-}
-
-//
-// Spaced list item modifier
-//
-
-.list_item__spaced {
-    margin-top: unit(24px / @base-font-size-px, em);
-}
-
-//
-// Horizontal list modifier
-//
-
-.list__horizontal {
-    padding-left: 0;
-
-    .list_item {
-        .u-inline-block();
-    }
-
-    .list_item {
-        // Assuming a natural space of 4px between inline block items
-        // then the space between would be 8px (4px natural + 4px added).
-        margin-right: unit(4px / @base-font-size-px, em);
-        margin-left: 0;
-    }
-}
-
-//
-// Icon list modifier
-//
-
-.list__icons {
-    .list__unstyled();
-
-    .list_icon {
-        width: 1.5em;
-        text-align: center;
-    }
-}
-
-//
-// Link list modifier
-//
-
-.list__links {
-    .list__unstyled();
-
-    .list_item {
-        margin-bottom: unit(10px / @base-font-size-px, em);
-
-        .respond-to-max(599px, {
-            margin-bottom: -1px;
-        });
-    }
-
-    &.list__spaced .list_item + .list_item {
-        margin-top: 0;
-    }
-
-    .list_link {
-        .respond-to-max(599px, {
-            .block-link();
-
-            &.icon-link:after {
-                position: absolute;
-                margin-bottom: -0.625em;
-                right: 0;
-                bottom: 50%;
-                text-align: right;
-            }
-
-            .icon-link_text {
-                border-bottom-width: 0;
-            }
-        });
-    }
-
-    &.list__icons {
-        .list_link {
-            position: relative;
-            // Adjust for optical alignment of icons.
-            left: -0.125em;
-        }
-
-        .icon-link:before,
-        .icon-link:after {
-            width: 1.125em;
-            text-align: center;
-        }
-    }
-}
-
-//
-// Custom bullet mixin
-//
-
-.custom-bullet(@text, @color, @offset, @size, @font:inherit) {
-    list-style-type: none;
-    position: relative;
-
-  &:before {
-    content: @text;
-    font-family: @font;
-    font-size: @size;
-    color: @color;
-    line-height: 1;
-    position: absolute;
-    left: -@offset;
-  }
-}
+@import (less) 'molecules/list.less';
+@import (less) 'molecules/meta-header.less';
+@import (less) 'molecules/pull-quote.less';
+@import (less) 'molecules/slug-header.less';
