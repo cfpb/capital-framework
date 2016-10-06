@@ -27,6 +27,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-core:** [MAJOR] Moved the base form styles to cf-form
 - **cf-buttons** [PATCH] Standardized and optimized less code
 - **cf-forms** [MINOR] Updated large target radios/checkboxes to use field molecule
+- **cf-tables:** [MAJOR] Atomized cf-tables.
 
 ### Removed
 - **cf-core:** [MAJOR] Removed deprecated items:
