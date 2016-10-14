@@ -1,0 +1,178 @@
+//
+// Links with icons
+// Required for jump link modifier
+//
+
+.a-link__icon,
+.a-link__jump {
+    border-bottom-width: 0;
+
+    .a-link_text {
+        border-bottom-width: 1px;
+        border-bottom-style: inherit;
+    }
+
+    &:before,
+    &:after {
+        .cf-icon();
+
+        margin-right: 1px;
+        margin-left: 1px;
+    }
+
+    &.a-link__download:after,
+    &.a-link__download&.a-link__before:before {
+        // Inserts the cf-icon-download glyph.
+        content: "\e406";
+    }
+
+    &.a-link__email:after,
+    &.a-link__email&.a-link__before:before {
+        // Inserts the cf-icon-email glyph.
+        content: "\e302";
+    }
+
+    &.a-link__external-link:after,
+    &.a-link__external-link&.a-link__before:before {
+        // Inserts the cf-icon-external-link glyph.
+        content: "\e610";
+    }
+
+    &.a-link__fax:after,
+    &.a-link__fax&.a-link__before:before {
+        // Inserts the cf-icon-fax glyph.
+        content: "\e310";
+    }
+
+    &.a-link__left:after,
+    &.a-link__left&.a-link__before:before {
+        // Inserts the cf-icon-left glyph.
+        content: "\e000";
+    }
+
+    &.a-link__mail:after,
+    &.a-link__mail&.a-link__before:before {
+        // Inserts the cf-icon-mail glyph.
+        content: "\e304";
+    }
+
+    &.a-link__pdf:after,
+    &.a-link__pdf&.a-link__before:before {
+        // Inserts the cf-icon-pdf glyph.
+        content: "\e402";
+    }
+
+    &.a-link__pdf:after,
+    &.a-link__pdf&.a-link__before:before {
+        // Inserts the cf-icon-pdf glyph.
+        content: "\e402";
+    }
+
+    &.a-link__phone:after,
+    &.a-link__phone&.a-link__before:before {
+        // Inserts the cf-icon-phone glyph.
+        content: "\e306";
+    }
+
+    &.a-link__right:after,
+    &.a-link__right&.a-link__before:before {
+        // Inserts the cf-icon-right glyph.
+        content: "\e002";
+    }
+
+    // New icon modifiers must be added ABOVE this line.
+
+    &.a-link__before {
+        &:after {
+            content: '';
+        }
+    }
+
+    &.a-link__no-wrap {
+        white-space: nowrap;
+    }
+}
+
+//
+// Jump link
+//
+
+.a-link__jump {
+    .webfont-medium();
+
+    &.a-link__large {
+        font-size: unit( @size-iv / @base-font-size-px, em );
+    }
+
+    .respond-to-max( @bp-xs-max, {
+        .a-link__block();
+
+        position: relative;
+
+        padding-right: 1.25em;
+
+        &:after,
+        &:before {
+            position: absolute;
+            margin-bottom: -0.6em;
+            bottom: 50%;
+        }
+
+        &:after {
+            right: 0;
+        }
+
+        &:before {
+            left: 0;
+        }
+
+        &.a-link__before {
+            padding-right: 0;
+            padding-left: 1.25em;
+        }
+
+        &.a-link__bg {
+            border: solid @jump-link_border;
+            border-width: 1px 0;
+            padding-left: 1em;
+            padding-right: 2.25em;
+
+            background: @jump-link_bg;
+
+            &:after {
+                right: 1em;
+            }
+
+            &:before {
+                left: 1em;
+            }
+
+            &.a-link__before {
+                padding-left: 2.25em;
+                padding-right: 1em;
+            }
+        }
+    } );
+}
+
+//
+// Block link
+//
+
+.a-link__block {
+    box-sizing: border-box;
+    display: block;
+
+    padding-top: unit( 10px / @base-font-size-px, em );
+    padding-bottom: unit( 10px / @base-font-size-px, em );
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    // 100% width is needed when block or jump link are applied to a <button>
+    width: 100%;
+
+    text-align: left;
+
+    .a-link_text {
+        border-bottom-width: 0;
+    }
+}

@@ -28,6 +28,11 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-buttons** [PATCH] Standardized and optimized less code
 - **cf-forms** [MINOR] Updated large target radios/checkboxes to use field molecule
 - **cf-tables:** [MAJOR] Atomized cf-tables.
+- **cf-typography:** [MAJOR] Update to atomic naming conventions:
+  - Broke links apart to create less repetitive code.
+  - Broke headings and headers apart to create a better parent/child relationship and handle layout according to our best practices.
+  - Broke lists apart to create less repetitive code.
+  - Comma separated selectors that share styles rather than list each required class in the markup or turning the required class into a mixin.
 
 ### Removed
 - **cf-core:** [MAJOR] Removed deprecated items:
@@ -45,6 +50,12 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - `@cf-forms_input-icon-class`
   - `@input-icon__warning`
   - `@input-icon__success`
+- **cf-typography**: [MAJOR] Removed unused items:
+  - custom bullet mixin
+  - fancy slug because
+  - short-desc
+  - padded heading
+  - icon lists (for the time being to be addressed later when we can look at existing implementations).
 
 ### Fixed
 - **cf-typography:** [PATCH] Fixed old variables removed from cf-core
