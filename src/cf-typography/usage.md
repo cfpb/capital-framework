@@ -7,36 +7,32 @@ and has more basic typography patterns.
 ## Contents
 
 - [Variables](#variables)
-- [Pull quote](#pull-quote)
-- [Micro copy](#micro-copy)
-- [Short description](#short-description)
-- [Date](#date)
+    - [Color variables](#color-variables)
+- [Headings](#headings)
+    - [Heading with icon](#heading-with-icon)
 - [Headers](#headers)
-    - [Category slug](#category-slug)
-    - [Header slug](#header-slug)
-    - [Padded header](#padded-slug)
-    - [Fancy slug](#fancy-slug)
+    - [Slug header](#slug-header)
     - [Meta header](#meta-header)
 - [Link patterns](#link-patterns)
     - [Links with icons](#links-with-icons)
-    - [Styled link](#styled-link)
     - [Jump link](#jump-link)
     - [Block link](#block-link)
 - [Lists](#lists)
-    - [Unstyled list](#unstyled-list)
-    - [Spaced list](#spaced-list)
-    - [Spaced list item](#spaced-list-item)
-    - [Horizontal list](#horizontal-list)
-    - [Link list](#link-list)
-    - [Icon list](#icon-list)
-    - [Link list with icons](#link-list-with-icons)
-    - [Custom bullet mixin](#custom-bullet-mixin)
+    - [Unstyled list modifier](#unstyled-list-modifier)
+    - [Spaced list modifier](#spaced-list-modifier)
+    - [Horizontal list modifier](#horizontal-list-modifier)
+    - [Link list modifier](#link-list-modifier)
+- [Miscellaneous text](#miscellaneous-text)
+    - [Micro copy](#micro-copy)
+    - [Date](#date)
+    - [Pull quote](#pull-quote)
 
 > NOTE: If you use `cf-typography.less` directly,
   be sure to run the file through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
+
 
 ## Variables
 
@@ -88,102 +84,6 @@ Default color variables are from 18F's
 @jump-link_border:          #323a45; // $color-gray-dark
 ```
 
-## Running Text
-
-### Micro copy
-
-The `.a-micro-copy` class is good for highlighting small pieces of text, typically
-legal copy.
-
-<p class="a-micro-copy">
-    Lorem ipsum dolor sit amet
-</p>
-
-```
-<p class="a-micro-copy">
-    Lorem ipsum dolor sit amet
-</p>
-```
-
-### Date
-
-<span class="a-date">
-    Nov 4, 2013
-</span>
-
-```
-<span class="a-date">
-    Nov 4, 2013
-</span>
-```
-
-### Pull quote
-
-Use a pull quote to highlight excerpts from the current work.
-This is not to be confused with `blockquote` which quotes from an external work.
-Since a pull quote is an excerpt and repeats content from the article
-you should use the `aside` element.
-
-#### Default pull quote
-
-<aside class="m-pull-quote">
-    <p class="m-pull-quote_body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Cum corrupti tempora nam nihil qui mollitia consectetur
-        corporis nemo culpa dolorum!
-    </p>
-    <footer>
-        <cite class="m-pull-quote_citation">
-            - Author Name
-        </cite>
-    </footer>
-</aside>
-
-
-```
-<aside class="m-pull-quote">
-    <p class="m-pull-quote_body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Cum corrupti tempora nam nihil qui mollitia consectetur
-        corporis nemo culpa dolorum!
-    </p>
-    <footer>
-        <cite class="m-pull-quote_citation">
-            - Author Name
-        </cite>
-    </footer>
-</aside>
-```
-
-#### Large pull quote
-
-<aside class="m-pull-quote m-pull-quote__large">
-    <div class="m-pull-quote_body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Cum corrupti tempora nam nihil qui mollitia consectetur
-        corporis nemo culpa dolorum!
-    </div>
-    <footer>
-        <cite class="m-pull-quote_citation">
-            - Author Name
-        </cite>
-    </footer>
-</aside>
-
-```
-<aside class="m-pull-quote m-pull-quote__large">
-    <div class="m-pull-quote_body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Cum corrupti tempora nam nihil qui mollitia consectetur
-        corporis nemo culpa dolorum!
-    </div>
-    <footer>
-        <cite class="m-pull-quote_citation">
-            - Author Name
-        </cite>
-    </footer>
-</aside>
-```
 
 ## Headings
 
@@ -211,6 +111,7 @@ prior to the headings to add more context for screen readers (see Meta Header be
     Consumer finance
 </a>
 ```
+
 
 ## Headers
 
@@ -258,6 +159,7 @@ attached to `.meta-header_left` and `.category-slug` is attached to `.meta-heade
         </a>
     </div>
 </header>
+
 
 ## Link patterns
 
@@ -557,4 +459,101 @@ It converts to a finger-friendly link with a large tap area on smaller screens.
         <a class="m-list_link" href="#">List item 3</a>
     </li>
 </ul>
+```
+
+## Miscellaneous Text
+
+### Micro copy
+
+The `.a-micro-copy` class is good for highlighting small pieces of text, typically
+legal copy.
+
+<p class="a-micro-copy">
+    Lorem ipsum dolor sit amet
+</p>
+
+```
+<p class="a-micro-copy">
+    Lorem ipsum dolor sit amet
+</p>
+```
+
+### Date
+
+<span class="a-date">
+    Nov 4, 2013
+</span>
+
+```
+<span class="a-date">
+    Nov 4, 2013
+</span>
+```
+
+### Pull quote
+
+Use a pull quote to highlight excerpts from the current work.
+This is not to be confused with `blockquote` which quotes from an external work.
+Since a pull quote is an excerpt and repeats content from the article
+you should use the `aside` element.
+
+#### Default pull quote
+
+<aside class="m-pull-quote">
+    <p class="m-pull-quote_body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Cum corrupti tempora nam nihil qui mollitia consectetur
+        corporis nemo culpa dolorum!
+    </p>
+    <footer>
+        <cite class="m-pull-quote_citation">
+            - Author Name
+        </cite>
+    </footer>
+</aside>
+
+
+```
+<aside class="m-pull-quote">
+    <p class="m-pull-quote_body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Cum corrupti tempora nam nihil qui mollitia consectetur
+        corporis nemo culpa dolorum!
+    </p>
+    <footer>
+        <cite class="m-pull-quote_citation">
+            - Author Name
+        </cite>
+    </footer>
+</aside>
+```
+
+#### Large pull quote
+
+<aside class="m-pull-quote m-pull-quote__large">
+    <div class="m-pull-quote_body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Cum corrupti tempora nam nihil qui mollitia consectetur
+        corporis nemo culpa dolorum!
+    </div>
+    <footer>
+        <cite class="m-pull-quote_citation">
+            - Author Name
+        </cite>
+    </footer>
+</aside>
+
+```
+<aside class="m-pull-quote m-pull-quote__large">
+    <div class="m-pull-quote_body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Cum corrupti tempora nam nihil qui mollitia consectetur
+        corporis nemo culpa dolorum!
+    </div>
+    <footer>
+        <cite class="m-pull-quote_citation">
+            - Author Name
+        </cite>
+    </footer>
+</aside>
 ```

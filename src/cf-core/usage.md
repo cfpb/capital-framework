@@ -6,13 +6,14 @@ The cf-core component acts as the backbone for Capital Framework. It's made up o
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
+
 ## Table of contents
 
 - [Variables](#variables)
-    - [Sizing variables](#sizing-variables)
     - [Color variables](#color-variables)
+    - [Sizing variables](#sizing-variables)
 - [Media queries](#media-queries)
-    - [Respond to min and max mixins](#respond-to-min-and-max-mixins)
+    - [Respond to min and max mixins](#respond-to-min-and-max-width-mixins)
     - [Respond to range mixin](#respond-to-range-mixin)
     - [Respond to dpi mixin](#respond-to-dpi-mixin)
     - [Respond to print mixin](#respond-to-print-mixin)
@@ -31,29 +32,11 @@ The cf-core component acts as the backbone for Capital Framework. It's made up o
 - [Base images](#base-images)
     - [Full-width images](#full-width-images)
     - [Figure](#figure)
-    - [Bordered figure](#bordered-figure)
+
 
 ## Variables
 
 Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
-
-Ex. to set your base font size, add `@base-font-size-px: 17px;` to your project.
-
-### Sizing variables
-
-```
-@base-font-size-px:   16px;
-@base-line-height-px: 22px;
-@base-line-height:    unit(@base-line-height-px / @base-font-size-px);
-@bp-xs-max:           600px;
-@bp-sm-min:           @bp-xs-max + 1px;
-@bp-sm-max:           900px;
-@bp-med-min:          @bp-sm-max + 1px;
-@bp-med-max:          1020px;
-@bp-lg-min:           @bp-med-max + 1px;
-@bp-lg-max:           1230px;
-@bp-xl-min:           @bp-lg-max + 1px;
-```
 
 ### Color variables
 
@@ -85,6 +68,22 @@ Ex. to set your base font size, add `@base-font-size-px: 17px;` to your project.
 @input-border:           #5b616b; // $color-gray
 @input-border-focus:     #3e94cf; // $color-focus
 @input-placeholder:      grayscale(#c7336e);
+```
+
+### Sizing variables
+
+```
+@base-font-size-px:   16px;
+@base-line-height-px: 22px;
+@base-line-height:    unit(@base-line-height-px / @base-font-size-px);
+@bp-xs-max:           600px;
+@bp-sm-min:           @bp-xs-max + 1px;
+@bp-sm-max:           900px;
+@bp-med-min:          @bp-sm-max + 1px;
+@bp-med-max:          1020px;
+@bp-lg-min:           @bp-med-max + 1px;
+@bp-lg-max:           1230px;
+@bp-xl-min:           @bp-lg-max + 1px;
 ```
 
 
@@ -446,7 +445,6 @@ Hides content on screens widths under 601px.
 </div>
 ```
 
-
 ### Mixins
 
 #### Align with button
@@ -527,11 +525,11 @@ To create a 4:3 flexible video player, add the `__4_3` modifier to the container
 </div>
 ```
 
-#### Link Modifiers
+#### Link modifiers
 
 Modify link properties using the following mixins.
 
-##### Link Colors
+##### Link colors
 
 Calling the mixin without arguments will set the following states - default(pacific), :hover(pacific-50), :focus:(pacific), :visited teal, :active navy.
 
@@ -1040,6 +1038,7 @@ _Note that it is best practice to document the URL of a quoted work using the ci
     veniam officiis ducimus voluptatum ut necessitatibus non!
 </blockquote>
 ```
+
 
 ## Base images
 

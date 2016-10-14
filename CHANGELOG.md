@@ -33,6 +33,20 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - Broke headings and headers apart to create a better parent/child relationship and handle layout according to our best practices.
   - Broke lists apart to create less repetitive code.
   - Comma separated selectors that share styles rather than list each required class in the markup or turning the required class into a mixin.
+- **cf-icons:** [MINOR] Basic clean up of icons
+  - Updated unicode entries with variables
+  - Updated spacing to be consistent
+  - Removed font-smoothing investigation TODO
+- **cf-buttons:** [MINOR] Standardized the usage doc
+- **cf-core:** [MINOR] Standardized the usage doc
+- **cf-expandables:** [MINOR] Standardized the usage doc
+- **cf-forms:** [MINOR] Standardized the usage doc
+- **cf-grid:** [MINOR] Standardized the usage doc
+- **cf-icons:** [MINOR] Standardized the usage doc
+- **cf-layout:** [MINOR] Standardized the usage doc
+- **cf-pagination:** [MINOR] Standardized the usage doc
+- **cf-tables:** [MINOR] Standardized the usage doc
+- **cf-typography:** [MINOR] Standardized the usage doc
 
 ### Removed
 - **cf-core:** [MAJOR] Removed deprecated items:

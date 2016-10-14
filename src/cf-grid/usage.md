@@ -235,12 +235,12 @@ content first in the source order, but it's here if you absolutely need it.
 
 ```
 .first {
-  .grid_column(1, 2);
-  .grid_pull(1);
+    .grid_column(1, 2);
+    .grid_pull(1);
 }
 .second {
-  .grid_column(1, 2);
-  .grid_push(1);
+    .grid_column(1, 2);
+    .grid_push(1);
 }
 ```
 
