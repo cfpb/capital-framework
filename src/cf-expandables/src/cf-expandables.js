@@ -11,7 +11,7 @@ var ToggleExpandable = require( './cf-expandables-toggle' );
 var ExpandableOrganism = Organism.extend( {
 
   ui: {
-    base: '.expandable'
+    base: '.o-expandable'
   },
 
   modifiers: [ToggleExpandable]

@@ -16,21 +16,21 @@
 // $color- variables are from 18F's US Web Design Standards
 // https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss
 
-// .expandable
+// .o-expandable
 @expandable-focus:              #046b99; // $color-primary-alt-darkest
 
-// .expandable_label
+// .o-expandable_label
 @expandable_label-text:         #323a45; // $color-gray-dark
 
-// .expandable_link
+// .o-expandable_link
 @expandable_link-text:          #205493; // $color-primary-darker
 
-// .expandable__padded
+// .o-expandable__padded
 @expandable__padded-bg:         #f1f1f1; // $color-gray-lightest
 @expandable__padded-bg-hover:   #d6d7d9; // $color-gray-lighter
 @expandable__padded-divider:    #323a45; // $color-gray-dark
 
-// .expandable-group
+// .o-expandable-group
 @expandable-group_header-text:  @text;
 @expandable-group_header-bg:    #d6d7d9; // $color-gray-lighter
 @expandable-group-bg:           #f1f1f1; // $color-gray-lightest
@@ -38,90 +38,97 @@
 
 // Sizing variables
 
-// .expandable_link
+// .o-expandable_link
 @expandable_link-font-size:     14px;
 
 //
 // Recommended expandable pattern
 //
 
-.expandable {
-    margin-bottom: unit(30px / @base-font-size-px, em);
-}
-
-.expandable_target {
-    padding: 0;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-
-    &:focus {
-        outline: 1px dotted @expandable-focus;
-        outline-offset: 1px;
-    }
-}
-
-.expandable_content {
-    // A clearfix prevents twitchy animations from occurring when margins
-    // collapse and extend past the bounds of the expandable.
-    .u-clearfix();
-}
-
-//
-// Expandable text elements
-//
-
-.expandable_label {
-    color: @expandable_label-text;
-    .webfont-medium();
-}
-
-.expandable_link {
-    color: @expandable_link-text;
-    .webfont-regular();
-    font-size: unit(@expandable_link-font-size / @base-font-size-px, em);
-    line-height: unit(@base-line-height-px / @expandable_link-font-size);
-}
-
-//
-// Animated cues
-//
-
-.expandable {
+.o-expandable {
     position: relative;
+    margin-bottom: unit(30px / @base-font-size-px, em);
+
+    &_target {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:focus {
+            outline: 1px dotted @expandable-focus;
+            outline-offset: 1px;
+        }
+    }
+
+    &_content {
+        // A clearfix prevents twitchy animations from occurring when margins
+        // collapse and extend past the bounds of the expandable.
+        .u-clearfix();
+        overflow: hidden;
+
+        &__transition {
+            transition: max-height 0.75s ease-in-out;
+        }
+
+        &__collapsed {
+            max-height: 0px;
+        }
+
+        &__expanded {
+            max-height: 1000px;
+        }
+
+    }
+
+    //
+    // Expandable text elements
+    //
+
+    &_label {
+        color: @expandable_label-text;
+        .webfont-medium();
+    }
+
+    &_link {
+        color: @expandable_link-text;
+        .webfont-regular();
+        font-size: unit(@expandable_link-font-size / @base-font-size-px, em);
+        line-height: unit(@base-line-height-px / @expandable_link-font-size);
+    }
+
+    //
+    // Header and Cues
+    //
+
+    &_header {
+        &__expanded .o-expandable_cue-open {
+            display: none;
+        }
+
+        &__collapsed .o-expandable_cue-close {
+            display: none;
+        }
+
+    }
+
 }
 
-.expandable_content {
-    overflow: hidden;
-}
 
-.expandable_transition {
-    transition: max-height 0.75s ease-in-out;
-    overflow-y: hidden;
-}
-
-.expandable_transition__move-up {
-    max-height: 0%;
-}
-
-.expandable_transition__move-down {
-    max-height: 100%;
-}
-
-.expandable_cue-open__animated,
-.expandable_cue-close__animated {
+.o-expandable_cue-open,
+.o-expandable_cue-close {
     transition: 0.25s transform;
 }
 
-.expandable_cue-close__animated {
+.o-expandable_cue-close__animated {
     transform: rotate(180deg);
 }
 
-.expandable__expanded .expandable_cue-close__animated {
+.o-expandable__expanded .o-expandable_cue-close__animated {
     transform: rotate(0);
 }
 
-.expandable__expanded .expandable_cue-open__animated {
+.o-expandable__expanded .o-expandable_cue-open__animated {
     transform: rotate(-180deg);
 }
 
@@ -129,11 +136,11 @@
 // Expandable header elements
 //
 
-.expandable_header {
+.o-expandable_header {
     display: block;
     .u-clearfix();
 
-    // Using the button element with .expandable_header requires setting an
+    // Using the button element with .o-expandable_header requires setting an
     // explicit width.
     button& {
         width: 100%;
@@ -141,15 +148,15 @@
     }
 }
 
-.expandable_header__spaced {
+.o-expandable_header__spaced {
     padding-bottom: unit(15px / @base-font-size-px, em);
 }
 
-.expandable_header-left {
+.o-expandable_header-left {
     float: left;
 }
 
-.expandable_header-right {
+.o-expandable_header-right {
     float: right;
 }
 
@@ -157,21 +164,21 @@
 // Padded expandable modifier
 //
 
-.expandable__padded {
+.o-expandable__padded {
     margin-bottom: unit(30px / @base-font-size-px, em);
     background: @expandable__padded-bg;
 
     &:hover,
-    &.expandable__expanded {
+    &.o-expandable__expanded {
         background: @expandable__padded-bg-hover;
     }
 
-    .expandable_header {
+    .o-expandable_header {
         padding: unit(10px / @base-font-size-px, em)
                  unit(16px / @base-font-size-px, em);
     }
 
-    .expandable_content {
+    .o-expandable_content {
         // Margin collapsing trick for more consistent bottom padding.
         margin: 0
                 unit(16px / @base-font-size-px, em)
@@ -192,11 +199,11 @@
 // Expandable groups
 //
 
-.expandable-group {
+.o-expandable-group {
     margin-bottom: unit(30px / @base-font-size-px, em);
 }
 
-.expandable-group_header {
+.o-expandable-group_header {
     padding: unit(5px / @font-size, em)
              unit(16px / @font-size, em);
     border-bottom: 1px solid @expandable-group-divider;
@@ -206,41 +213,18 @@
     margin-bottom: 0;
 }
 
-.expandable-group .expandable {
+.o-expandable-group .o-expandable {
     border-bottom: 1px solid @expandable-group-divider;
     margin-bottom: 0;
     background: @expandable-group-bg;
 }
 
-.expandable-group .expandable_label {
+.o-expandable-group .o-expandable_label {
     .heading-4();
     margin-bottom: 0;
 }
 
-.expandable-group .expandable_content {
+.o-expandable-group .o-expandable_content {
     margin-bottom: 0;
 }
 
-.u-move-transition {
-    transition: transform 0.25s ease-out;
-}
-
-.u-no-animation {
-    transition-duration: 0s;
-}
-
-.u-move-to-origin {
-    transform: translateX( 0 );
-}
-
-.u-move-up {
-    transform: translateY( -100% );
-}
-
-.u-alpha-100 {
-    opacity: 1;
-}
-
-.u-alpha-0 {
-    opacity: 0;
-}
