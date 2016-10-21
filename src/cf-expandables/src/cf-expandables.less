@@ -87,6 +87,27 @@
 // Animated cues
 //
 
+.expandable {
+    position: relative;
+}
+
+.expandable_content {
+    overflow: hidden;
+}
+
+.expandable_transition {
+    transition: max-height 0.75s ease-in-out;
+    overflow-y: hidden;
+}
+
+.expandable_transition__move-up {
+    max-height: 0%;
+}
+
+.expandable_transition__move-down {
+    max-height: 100%;
+}
+
 .expandable_cue-open__animated,
 .expandable_cue-close__animated {
     transition: 0.25s transform;
@@ -198,4 +219,28 @@
 
 .expandable-group .expandable_content {
     margin-bottom: 0;
+}
+
+.u-move-transition {
+    transition: transform 0.25s ease-out;
+}
+
+.u-no-animation {
+    transition-duration: 0s;
+}
+
+.u-move-to-origin {
+    transform: translateX( 0 );
+}
+
+.u-move-up {
+    transform: translateY( -100% );
+}
+
+.u-alpha-100 {
+    opacity: 1;
+}
+
+.u-alpha-0 {
+    opacity: 0;
 }
