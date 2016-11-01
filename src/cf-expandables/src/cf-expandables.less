@@ -47,7 +47,7 @@
 
 .o-expandable {
     position: relative;
-    margin-bottom: unit(30px / @base-font-size-px, em);
+    margin-bottom: unit( 30px / @base-font-size-px, em );
 
     &_target {
         padding: 0;
@@ -59,6 +59,19 @@
             outline: 1px dotted @expandable-focus;
             outline-offset: 1px;
         }
+
+        &__expanded .o-expandable_cue-open {
+            display: none;
+        }
+
+        &__collapsed .o-expandable_cue-close {
+            display: none;
+        }
+
+        .lt-ie9 & .o-expandable_cue {
+            display: none;
+        }
+
     }
 
     &_content {
@@ -72,7 +85,7 @@
         }
 
         &__collapsed {
-            max-height: 0px;
+            max-height: 0;
         }
 
         &__expanded {
@@ -98,133 +111,91 @@
     }
 
     //
-    // Header and Cues
+    // Header
     //
 
     &_header {
-        &__expanded .o-expandable_cue-open {
-            display: none;
+        display: block;
+        .u-clearfix();
+
+        // Using the button element with .o-expandable_header requires setting an
+        // explicit width.
+        button& {
+            width: 100%;
+            text-align: left;
         }
 
-        &__collapsed .o-expandable_cue-close {
-            display: none;
+        &__spaced {
+            padding-bottom: unit( 15px / @base-font-size-px, em );
+        }
+
+        &-left {
+            float: left;
+        }
+
+        &-right {
+            float: right;
+        }
+
+    }
+
+    //
+    // Padded expandable modifier
+    //
+
+    &__padded {
+        margin-bottom: unit( 30px / @base-font-size-px, em );
+        background: @expandable__padded-bg;
+
+        &:hover,
+        &.o-expandable__expanded {
+            background: @expandable__padded-bg-hover;
+        }
+
+        .o-expandable_header {
+            padding: unit( 10px / @base-font-size-px, em )
+                     unit( 16px / @base-font-size-px, em );
+        }
+
+        .o-expandable_content {
+            // Margin collapsing trick for more consistent bottom padding.
+            margin: 0
+                    unit( 16px / @base-font-size-px, em )
+                    unit( 22px / @base-font-size-px, em );
+
+            // The divider between _header and _content.
+            &:before {
+                content: '';
+                display: block;
+                height: 1px;
+                margin-bottom: unit( 16px / @base-font-size-px, em );
+                background: @expandable__padded-divider;
+            }
+        }
+    }
+
+    //
+    // Expandable groups
+    //
+
+    &-group {
+        margin-bottom: unit( 30px / @base-font-size-px, em );
+
+        .o-expandable {
+            border-bottom: 1px solid @expandable-group-divider;
+            margin-bottom: 0;
+            background: @expandable-group-bg;
+        }
+
+        .o-expandable_label {
+            .heading-4();
+            margin-bottom: 0;
+        }
+
+        .o-expandable_content {
+            margin-bottom: 0;
         }
 
     }
 
 }
-
-
-.o-expandable_cue-open,
-.o-expandable_cue-close {
-    transition: 0.25s transform;
-}
-
-.o-expandable_cue-close__animated {
-    transform: rotate(180deg);
-}
-
-.o-expandable__expanded .o-expandable_cue-close__animated {
-    transform: rotate(0);
-}
-
-.o-expandable__expanded .o-expandable_cue-open__animated {
-    transform: rotate(-180deg);
-}
-
-//
-// Expandable header elements
-//
-
-.o-expandable_header {
-    display: block;
-    .u-clearfix();
-
-    // Using the button element with .o-expandable_header requires setting an
-    // explicit width.
-    button& {
-        width: 100%;
-        text-align: left;
-    }
-}
-
-.o-expandable_header__spaced {
-    padding-bottom: unit(15px / @base-font-size-px, em);
-}
-
-.o-expandable_header-left {
-    float: left;
-}
-
-.o-expandable_header-right {
-    float: right;
-}
-
-//
-// Padded expandable modifier
-//
-
-.o-expandable__padded {
-    margin-bottom: unit(30px / @base-font-size-px, em);
-    background: @expandable__padded-bg;
-
-    &:hover,
-    &.o-expandable__expanded {
-        background: @expandable__padded-bg-hover;
-    }
-
-    .o-expandable_header {
-        padding: unit(10px / @base-font-size-px, em)
-                 unit(16px / @base-font-size-px, em);
-    }
-
-    .o-expandable_content {
-        // Margin collapsing trick for more consistent bottom padding.
-        margin: 0
-                unit(16px / @base-font-size-px, em)
-                unit(22px / @base-font-size-px, em);
-
-        // The divider between _header and _content.
-        &:before {
-            content: '';
-            display: block;
-            height: 1px;
-            margin-bottom: unit(16px / @base-font-size-px, em);
-            background: @expandable__padded-divider;
-        }
-    }
-}
-
-//
-// Expandable groups
-//
-
-.o-expandable-group {
-    margin-bottom: unit(30px / @base-font-size-px, em);
-}
-
-.o-expandable-group_header {
-    padding: unit(5px / @font-size, em)
-             unit(16px / @font-size, em);
-    border-bottom: 1px solid @expandable-group-divider;
-    background: @expandable-group_header-bg;
-    color: @expandable-group_header-text;
-    .heading-5();
-    margin-bottom: 0;
-}
-
-.o-expandable-group .o-expandable {
-    border-bottom: 1px solid @expandable-group-divider;
-    margin-bottom: 0;
-    background: @expandable-group-bg;
-}
-
-.o-expandable-group .o-expandable_label {
-    .heading-4();
-    margin-bottom: 0;
-}
-
-.o-expandable-group .o-expandable_content {
-    margin-bottom: 0;
-}
-

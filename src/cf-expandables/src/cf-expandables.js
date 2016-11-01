@@ -1,23 +1,8 @@
-/* ==========================================================================
-   Expandable Organism
-   ========================================================================== */
-
 'use strict';
 
-var config = require( 'atomic-component/src/utilities/config' );
-var Organism = require( 'atomic-component/src/components/Organism' );
-var ToggleExpandable = require( './cf-expandables-toggle' );
+var Expandable = require( './Expandable' );
 
-var ExpandableOrganism = Organism.extend( {
+// polyfill for ie9 compatibility
+require( 'classlist-polyfill' );
 
-  ui: {
-    base: '.o-expandable'
-  },
-
-  modifiers: [ToggleExpandable]
-
-} );
-
-ExpandableOrganism.init();
-
-module.exports = ExpandableOrganism;
+Expandable.init();
