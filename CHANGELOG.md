@@ -47,6 +47,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-pagination:** [MINOR] Standardized the usage doc
 - **cf-tables:** [MINOR] Standardized the usage doc
 - **cf-typography:** [MINOR] Standardized the usage doc
+- **cf-typography:** [PATCH] Removed default bottom margin from horizontal list items
 
 ### Removed
 - **cf-core:** [MAJOR] Removed deprecated items:
