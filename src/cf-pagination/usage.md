@@ -8,20 +8,23 @@ The cf-pagination component provides a responsive approach to multipage page nav
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
+
 ## Table of contents
 
 - [Variables](#variables)
-    - [Sizing variables](#sizing-variables)
     - [Color variables](#color-variables)
+    - [Sizing variables](#sizing-variables)
 - [Default pagination](#default-pagination)
 - [Responsive behavior](#responsive-behavior)
 
+
 ## Variables
 
-Theme variables for setting the color and sizes. Color variables are from 18F's [US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss). Overwrite them in your own project by duplicating the variable `@key: value`.
-
+Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
+
+`$color-` variables are from 18F's [US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
 
 Pagination text color.
 ```
@@ -32,7 +35,6 @@ Pagination form background color.
 ```
 @pagination-bg-color: #f1f1f1; // $color-gray-lightest
 ```
-
 
 ### Sizing variables
 
@@ -137,6 +139,7 @@ To enable the component to jump directly to the paginated content, place `#pagin
     </form>
 </nav>
 ```
+
 
 ## Responsive behavior
 

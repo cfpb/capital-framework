@@ -7,6 +7,7 @@ This component can be used by itself, but is designed to work with Capital Frame
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
+
 ## Table of contents
 
 - [Variables](#variables)
@@ -26,10 +27,10 @@ This component can be used by itself, but is designed to work with Capital Frame
     - [Web icons](#web-icons)
 - [Icon character variables](#icon-character-variables)
 
+
 ## Variables
 
-Theme variables for setting the color of sizes throughout the projects.
-Overwrite them in your own project by duplicating the variable `@key: value`.
+Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Settings
 
@@ -201,6 +202,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-phone cf-icon__flip-horizontal"></span>
 <span class="cf-icon cf-icon-phone cf-icon__flip-vertical"></span>
 ```
+
 
 ## Icons
 
