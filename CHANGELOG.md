@@ -72,6 +72,10 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - short-desc
   - padded heading
   - icon lists (for the time being to be addressed later when we can look at existing implementations).
+  - Removed duplicate icon code
+- **cf-buttons**: [MAJOR] Removed unused items:
+  - Removed duplicate icon code
+
 
 ### Fixed
 - **cf-typography:** [PATCH] Fixed old variables removed from cf-core

@@ -348,76 +348,151 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Button with icon on the left
 
-<button class="a-btn a-btn_icon__left cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-left
+               cf-icon
+               cf-icon__before
+               cf-icon-delete">
+  Close
 </button>
 
-<button class="a-btn a-btn__secondary a-btn_icon__left cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-left
+               a-btn__secondary
+               cf-icon
+               cf-icon__before
+               cf-icon-delete">
+  Close
 </button> - Secondary button
 
-<button class="a-btn a-btn__warning a-btn_icon__left cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-left
+               a-btn__warning
+               cf-icon
+               cf-icon__before
+               cf-icon-delete">
+  Close
 </button> - Warning button
 
-<button class="a-btn a-btn__disabled a-btn_icon__left cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-left
+               a-btn__disabled
+               cf-icon
+               cf-icon__before
+               cf-icon-delete">
+  Close
 </button> - Disabled button
 
 ```
-<button class="a-btn a-btn_icon__left cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-left
+               cf-icon
+               cf-icon__before
+               cf-icon-delete">
+  Close
 </button>
 
-<button class="a-btn a-btn__secondary a-btn_icon__left cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-left
+               a-btn__secondary
+               cf-icon
+               cf-icon__before
+               cf-icon-delete">
+  Close
 </button> - Secondary button
 
-<button class="a-btn a-btn__warning a-btn_icon__left cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-left
+               a-btn__warning
+               cf-icon
+               cf-icon__before
+               cf-icon-delete">
+  Close
 </button> - Warning button
 
-<button class="a-btn a-btn__disabled a-btn_icon__left cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-left
+               a-btn__disabled
+               cf-icon
+               cf-icon__before
+               cf-icon-delete">
+  Close
 </button> - Disabled button
 ```
 
 #### Button with icon on the right
 
-<button class="a-btn a-btn_icon__right cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-right
+               cf-icon
+               cf-icon__after
+               cf-icon-delete">
+  Close
 </button>
 
-<button class="a-btn a-btn__secondary a-btn_icon__right cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-right
+               a-btn__secondary
+               cf-icon
+               cf-icon__after
+               cf-icon-delete">
+  Close
 </button> - Secondary button
 
-<button class="a-btn a-btn__warning a-btn_icon__right cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-right
+               a-btn__warning
+               cf-icon
+               cf-icon__after
+               cf-icon-delete">
+  Close
 </button> - Warning button
 
-<button class="a-btn a-btn__disabled a-btn_icon__right cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-right
+               a-btn__disabled
+               cf-icon
+               cf-icon__after
+               cf-icon-delete">
+  Close
 </button> - Disabled button
 
 ```
-<button class="a-btn a-btn_icon__right cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-right
+               cf-icon
+               cf-icon__after
+               cf-icon-delete">
+  Close
 </button>
 
-<button class="a-btn a-btn__secondary a-btn_icon__right cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-right
+               a-btn__secondary
+               cf-icon
+               cf-icon__after
+               cf-icon-delete">
+  Close
 </button> - Secondary button
 
-<button class="a-btn a-btn__warning a-btn_icon__right cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-right
+               a-btn__warning
+               cf-icon
+               cf-icon__after
+               cf-icon-delete">
+  Close
 </button> - Warning button
 
-<button class="a-btn a-btn__disabled a-btn_icon__right cf-icon cf-icon-delete">
-    Close
+<button class="a-btn
+               a-btn__icon-on-right
+               a-btn__disabled
+               cf-icon
+               cf-icon__after
+               cf-icon-delete">
+  Close
 </button> - Disabled button
 ```
-
 
 ## Molecules
 
