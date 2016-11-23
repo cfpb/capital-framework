@@ -8,20 +8,17 @@
 @import '../../cf-core/src/cf-core.less';
 
 //
-// Less variables
+// Theme variables
 //
 
 @cf-icon-prefix:                cf-icon;
 @cf-icon-path:                  'fonts';
-@cf-icon-ie7-support:           true;
-@cf-icon-border-color:          #5b616b; //$color-gray in 18F's web design standards
-//
-// IE7 Support
-//
 
-.cf-icon-ie7( @inner ) when ( @cf-icon-ie7-support ) {
-    *zoom: ~"expression(  this.runtimeStyle['zoom'] = '1', this.innerHTML = '@{inner}' )";
-}
+// Color variables
+// $color- variables are from 18F's U.S. Web Design Standards
+// https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss
+
+@cf-icon-border-color:          #5b616b; //$color-gray
 
 //
 // The basics
@@ -44,21 +41,35 @@
 //
 // For example you can't do this:
 // .link-with-auto-icon {
-//   .@{cf-icon-prefix}(  );
+//   .@{cf-icon-prefix}();
 // }
 //
 // But you can do this:
 // .link-with-auto-icon {
-//   .@cf-icon(  );
+//   .@cf-icon();
 // }
-.cf-icon,
-.@{cf-icon-prefix} {
+
+.cf-icon() {
     font-family: 'CFPB Minicons';
     display: inline-block;
     font-style: normal;
     font-weight: normal;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
+}
+
+.cf-icon-pseudo-elem( @rules ) {
+    &.@{cf-icon-prefix}:before,
+    &.@{cf-icon-prefix}__before:before,
+    &.@{cf-icon-prefix}__after:after {
+        @rules();
+    }
+}
+
+.@{cf-icon-prefix}:before,
+.@{cf-icon-prefix}__before:before,
+.@{cf-icon-prefix}__after:after {
+    .cf-icon();
 }
 
 //
@@ -284,15 +295,32 @@
 
 // makes the font 33% larger relative to the icon container
 .@{cf-icon-prefix}__lg {
-    font-size: ( 4em / 3 );
-    line-height: ( 3em / 4 );
-    vertical-align: -15%;
+    .cf-icon-pseudo-elem( {
+        font-size: ( 4em / 3 );
+        line-height: ( 3em / 4 );
+        vertical-align: -15%;
+    } );
 }
-
-.@{cf-icon-prefix}__2x { font-size: 2em; }
-.@{cf-icon-prefix}__3x { font-size: 3em; }
-.@{cf-icon-prefix}__4x { font-size: 4em; }
-.@{cf-icon-prefix}__5x { font-size: 5em; }
+.@{cf-icon-prefix}__2x {
+    .cf-icon-pseudo-elem( {
+        font-size: 2em;
+    } );
+}
+.@{cf-icon-prefix}__3x {
+    .cf-icon-pseudo-elem( {
+        font-size: 3em;
+    } );
+}
+.@{cf-icon-prefix}__4x {
+    .cf-icon-pseudo-elem( {
+        font-size: 4em;
+    } );
+}
+.@{cf-icon-prefix}__5x {
+    .cf-icon-pseudo-elem( {
+        font-size: 5em;
+    } );
+}
 
 //
 // Mixin classes
@@ -314,24 +342,47 @@
 //
 
 .@{cf-icon-prefix}__border {
-    padding: .2em .25em .15em;
-    border: solid .08em @cf-icon-border-color;
-    border-radius: .1em;
+    .cf-icon-pseudo-elem( {
+        padding: .2em .25em .15em;
+        border: solid .08em @cf-icon-border-color;
+        border-radius: .1em;
+    } );
 }
 
-.@{cf-icon-prefix}__rotate-90  { .cf-icon__rotate( 90deg,  1 ); }
-.@{cf-icon-prefix}__rotate-180 { .cf-icon__rotate( 180deg, 2 ); }
-.@{cf-icon-prefix}__rotate-270 { .cf-icon__rotate( 270deg, 3 ); }
-
-.@{cf-icon-prefix}__flip-horizontal { .cf-icon__flip( -1, 1, 0 ); }
-.@{cf-icon-prefix}__flip-vertical   { .cf-icon__flip( 1, -1, 2 ); }
+.@{cf-icon-prefix}__rotate-90 {
+    .cf-icon-pseudo-elem( {
+        .cf-icon__rotate( 90deg,  1 );
+    } );
+}
+.@{cf-icon-prefix}__rotate-180 {
+    .cf-icon-pseudo-elem( {
+        .cf-icon__rotate( 180deg, 2 );
+    } );
+}
+.@{cf-icon-prefix}__rotate-270 {
+    .cf-icon-pseudo-elem( {
+        .cf-icon__rotate( 270deg, 3 );
+    } );
+}
+.@{cf-icon-prefix}__flip-horizontal {
+    .cf-icon-pseudo-elem( {
+        .cf-icon__flip( -1, 1, 0 );
+    } );
+}
+.@{cf-icon-prefix}__flip-vertical {
+    .cf-icon-pseudo-elem( {
+        .cf-icon__flip( 1, -1, 2 );
+    } );
+}
 
 :root .@{cf-icon-prefix}__rotate-90,
 :root .@{cf-icon-prefix}__rotate-180,
 :root .@{cf-icon-prefix}__rotate-270,
 :root .@{cf-icon-prefix}__flip-horizontal,
 :root .@{cf-icon-prefix}__flip-vertical {
-    filter: none;
+    .cf-icon-pseudo-elem( {
+        filter: none;
+    } );
 }
 
 //
@@ -339,11 +390,15 @@
 //
 
 .@{cf-icon-prefix}__spin {
-    animation: cf-spin 2s infinite linear;
+    .cf-icon-pseudo-elem( {
+        animation: cf-spin 2s infinite linear;
+    } );
 }
 
 .@{cf-icon-prefix}__pulse {
-    animation: cf-spin 1s infinite steps( 8 );
+    .cf-icon-pseudo-elem( {
+        animation: cf-spin 1s infinite steps( 8 );
+    } );
 }
 
 @keyframes cf-spin {
@@ -360,83 +415,99 @@
 //
 
 .@{cf-icon-prefix}-left {
-    &:before  {      content: @cf-icon-left; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-left ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-left;
+    } );
 }
 
 .@{cf-icon-prefix}-left-round {
-    &:before  {      content: @cf-icon-left-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-left-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-left-round;
+    } );
 }
 
 .@{cf-icon-prefix}-right {
-    &:before  {      content: @cf-icon-right; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-right ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-right;
+    } );
 }
 
 .@{cf-icon-prefix}-right-round {
-    &:before  {      content: @cf-icon-right-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-right-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-right-round;
+    } );
 }
 
 .@{cf-icon-prefix}-up {
-    &:before  {      content: @cf-icon-up; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-up ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-up;
+    } );
 }
 
 .@{cf-icon-prefix}-up-round {
-    &:before  {      content: @cf-icon-up-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-up-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-up-round;
+    } );
 }
 
 .@{cf-icon-prefix}-down {
-    &:before  {      content: @cf-icon-down; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-down ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-down;
+    } );
 }
 
 .@{cf-icon-prefix}-down-round {
-    &:before  {      content: @cf-icon-down-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-down-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-down-round;
+    } );
 }
 
 .@{cf-icon-prefix}-arrow-left {
-    &:before  {      content: @cf-icon-arrow-left; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-arrow-left ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-arrow-left;
+    } );
 }
 
 .@{cf-icon-prefix}-arrow-left-round {
-    &:before  {      content: @cf-icon-arrow-left-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-arrow-left-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-arrow-left-round;
+    } );
 }
 
 .@{cf-icon-prefix}-arrow-right {
-    &:before  {      content: @cf-icon-arrow-right; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-arrow-right ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-arrow-right;
+    } );
 }
 
 .@{cf-icon-prefix}-arrow-right-round {
-    &:before  {      content: @cf-icon-arrow-right-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-arrow-right-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-arrow-right-round;
+    } );
 }
 
 .@{cf-icon-prefix}-arrow-up {
-    &:before  {      content: @cf-icon-arrow-up; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-arrow-up ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-arrow-up;
+    } );
 }
 
 .@{cf-icon-prefix}-arrow-up-round {
-    &:before  {      content: @cf-icon-arrow-up-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-arrow-up-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-arrow-up-round;
+    } );
 }
 
 .@{cf-icon-prefix}-arrow-down {
-    &:before  {      content: @cf-icon-arrow-down; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-arrow-down ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-arrow-down;
+    } );
 }
 
 .@{cf-icon-prefix}-arrow-down-round {
-    &:before  {      content: @cf-icon-arrow-down-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-arrow-down-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-arrow-down-round;
+    } );
 }
 
 //
@@ -444,73 +515,87 @@
 //
 
 .@{cf-icon-prefix}-approved {
-    &:before  {      content: @cf-icon-approved; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-approved ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-approved;
+    } );
 }
 
 .@{cf-icon-prefix}-approved-round {
-    &:before  {      content: @cf-icon-approved-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-approved-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-approved-round;
+    } );
 }
 
 .@{cf-icon-prefix}-error {
-    &:before  {      content: @cf-icon-error; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-error ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-error;
+    } );
 }
 
 .@{cf-icon-prefix}-error-round {
-    &:before  {      content: @cf-icon-error-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-error-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-error-round;
+    } );
 }
 
 .@{cf-icon-prefix}-help {
-    &:before  {      content: @cf-icon-help; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-help ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-help;
+    } );
 }
 
 .@{cf-icon-prefix}-help-round {
-    &:before  {      content: @cf-icon-help-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-help-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-help-round;
+    } );
 }
 
 .@{cf-icon-prefix}-delete {
-    &:before  {      content: @cf-icon-delete; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-delete ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-delete;
+    } );
 }
 
 .@{cf-icon-prefix}-delete-round {
-    &:before  {      content: @cf-icon-delete-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-delete-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-delete-round;
+    } );
 }
 
 .@{cf-icon-prefix}-plus {
-    &:before  {      content: @cf-icon-plus; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-plus ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-plus;
+    } );
 }
 
 .@{cf-icon-prefix}-plus-round {
-    &:before  {      content: @cf-icon-plus-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-plus-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-plus-round;
+    } );
 }
 
 .@{cf-icon-prefix}-minus {
-    &:before  {      content: @cf-icon-minus; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-minus ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-minus;
+    } );
 }
 
 .@{cf-icon-prefix}-minus-round {
-    &:before  {      content: @cf-icon-minus-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-minus-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-minus-round;
+    } );
 }
 
 .@{cf-icon-prefix}-update {
-    &:before  {      content: @cf-icon-update; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-update ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-update;
+    } );
 }
 
 .@{cf-icon-prefix}-update-round {
-    &:before  {      content: @cf-icon-update-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-update-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-update-round;
+    } );
 }
 
 //
@@ -518,73 +603,87 @@
 //
 
 .@{cf-icon-prefix}-youtube {
-    &:before  {      content: @cf-icon-youtube; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-youtube ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-youtube;
+    } );
 }
 
 .@{cf-icon-prefix}-youtube-square {
-    &:before  {      content: @cf-icon-youtube-square; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-youtube-square ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-youtube-square;
+    } );
 }
 
 .@{cf-icon-prefix}-linkedin {
-    &:before  {      content: @cf-icon-linkedin; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-linkedin ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-linkedin;
+    } );
 }
 
 .@{cf-icon-prefix}-linkedin-square {
-    &:before  {      content: @cf-icon-linkedin-square; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-linkedin-square ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-linkedin-square;
+    } );
 }
 
 .@{cf-icon-prefix}-facebook {
-    &:before  {      content: @cf-icon-facebook; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-facebook ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-facebook;
+    } );
 }
 
 .@{cf-icon-prefix}-facebook-square {
-    &:before  {      content: @cf-icon-facebook-square; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-facebook-square ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-facebook-square;
+    } );
 }
 
 .@{cf-icon-prefix}-flickr {
-    &:before  {      content: @cf-icon-flickr; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-flickr ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-flickr;
+    } );
 }
 
 .@{cf-icon-prefix}-flickr-square {
-    &:before  {      content: @cf-icon-flickr-square; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-flickr-square ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-flickr-square;
+    } );
 }
 
 .@{cf-icon-prefix}-twitter {
-    &:before  {      content: @cf-icon-twitter; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-twitter ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-twitter;
+    } );
 }
 
 .@{cf-icon-prefix}-twitter-square {
-    &:before  {      content: @cf-icon-twitter-square; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-twitter-square ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-twitter-square;
+    } );
 }
 
 .@{cf-icon-prefix}-github {
-    &:before  {      content: @cf-icon-github; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-github ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-github;
+    } );
 }
 
 .@{cf-icon-prefix}-github-square {
-    &:before  {      content: @cf-icon-github-square; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-github-square ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-github-square;
+    } );
 }
 
 .@{cf-icon-prefix}-email-social {
-    &:before  {      content: @cf-icon-email-social; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-email-social ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-email-social;
+    } );
 }
 
 .@{cf-icon-prefix}-email-social-square {
-    &:before  {      content: @cf-icon-email-social-square; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-email-social-square ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-email-social-square;
+    } );
 }
 
 //
@@ -592,63 +691,75 @@
 //
 
 .@{cf-icon-prefix}-web {
-    &:before  {      content: @cf-icon-web; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-web ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-web;
+    } );
 }
 
 .@{cf-icon-prefix}-web-round {
-    &:before  {      content: @cf-icon-web-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-web-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-web-round;
+    } );
 }
 
 .@{cf-icon-prefix}-email {
-    &:before  {      content: @cf-icon-email; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-email ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-email;
+    } );
 }
 
 .@{cf-icon-prefix}-email-round {
-    &:before  {      content: @cf-icon-email-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-email-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-email-round;
+    } );
 }
 
 .@{cf-icon-prefix}-mail {
-    &:before  {      content: @cf-icon-mail; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-mail ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-mail;
+    } );
 }
 
 .@{cf-icon-prefix}-mail-round {
-    &:before  {      content: @cf-icon-mail-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-mail-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-mail-round;
+    } );
 }
 
 .@{cf-icon-prefix}-phone {
-    &:before  {      content: @cf-icon-phone; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-phone ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-phone;
+    } );
 }
 
 .@{cf-icon-prefix}-phone-round {
-    &:before  {      content: @cf-icon-phone-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-phone-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-phone-round;
+    } );
 }
 
 .@{cf-icon-prefix}-technology {
-    &:before  {      content: @cf-icon-technology; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-technology ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-technology;
+    } );
 }
 
 .@{cf-icon-prefix}-technology-round {
-    &:before  {      content: @cf-icon-technology-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-technology-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-technology-round;
+    } );
 }
 
 .@{cf-icon-prefix}-fax {
-    &:before  {      content: @cf-icon-fax; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-fax ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-fax;
+    } );
 }
 
 .@{cf-icon-prefix}-fax-round {
-    &:before  {      content: @cf-icon-fax-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-fax-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-fax-round;
+    } );
 }
 
 //
@@ -656,123 +767,147 @@
 //
 
 .@{cf-icon-prefix}-document {
-    &:before  {      content: @cf-icon-document; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-document ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-document;
+    } );
 }
 
 .@{cf-icon-prefix}-document-round {
-    &:before  {      content: @cf-icon-document-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-document-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-document-round;
+    } );
 }
 
 .@{cf-icon-prefix}-pdf {
-    &:before  {      content: @cf-icon-pdf; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-pdf ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-pdf;
+    } );
 }
 
 .@{cf-icon-prefix}-pdf-round {
-    &:before  {      content: @cf-icon-pdf-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-pdf-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-pdf-round;
+    } );
 }
 
 .@{cf-icon-prefix}-upload {
-    &:before  {      content: @cf-icon-upload; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-upload ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-upload;
+    } );
 }
 
 .@{cf-icon-prefix}-upload-round {
-    &:before  {      content: @cf-icon-upload-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-upload-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-upload-round;
+    } );
 }
 
 .@{cf-icon-prefix}-download {
-    &:before  {      content: @cf-icon-download; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-download ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-download;
+    } );
 }
 
 .@{cf-icon-prefix}-download-round {
-    &:before  {      content:@cf-icon-download-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-download-round ); }
+    .cf-icon-pseudo-elem( {
+        content:@cf-icon-download-round;
+    } );
 }
 
 .@{cf-icon-prefix}-copy {
-    &:before  {      content: @cf-icon-copy; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-copy ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-copy;
+    } );
 }
 
 .@{cf-icon-prefix}-copy-round {
-    &:before  {      content: @cf-icon-copy-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-copy-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-copy-round;
+    } );
 }
 
 .@{cf-icon-prefix}-edit {
-    &:before  {      content: @cf-icon-edit; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-edit ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-edit;
+    } );
 }
 
 .@{cf-icon-prefix}-edit-round {
-    &:before  {      content: @cf-icon-edit-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-edit-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-edit-round;
+    } );
 }
 
 .@{cf-icon-prefix}-attach {
-    &:before  {      content: @cf-icon-attach; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-attach ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-attach;
+    } );
 }
 
 .@{cf-icon-prefix}-attach-round {
-    &:before  {      content: @cf-icon-attach-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-attach-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-attach-round;
+    } );
 }
 
 .@{cf-icon-prefix}-print {
-    &:before  {      content: @cf-icon-print; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-print ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-print;
+    } );
 }
 
 .@{cf-icon-prefix}-print-round {
-    &:before  {      content: @cf-icon-print-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-print-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-print-round;
+    } );
 }
 
 .@{cf-icon-prefix}-save {
-    &:before  {      content: @cf-icon-save; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-save ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-save;
+    } );
 }
 
 .@{cf-icon-prefix}-save-round {
-    &:before  {      content: @cf-icon-save-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-save-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-save-round;
+    } );
 }
 
 .@{cf-icon-prefix}-appendix {
-    &:before  {      content: @cf-icon-appendix; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-appendix ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-appendix;
+    } );
 }
 
 .@{cf-icon-prefix}-appendix-round {
-    &:before  {      content: @cf-icon-appendix-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-appendix-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-appendix-round;
+    } );
 }
 
 .@{cf-icon-prefix}-supplement {
-    &:before  {      content:@cf-icon-supplement; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-supplement ); }
+    .cf-icon-pseudo-elem( {
+        content:@cf-icon-supplement;
+    } );
 }
 
 .@{cf-icon-prefix}-supplement-round {
-    &:before  {      content: @cf-icon-supplement-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-supplement-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-supplement-round;
+    } );
 }
 
 .@{cf-icon-prefix}-rss {
-    &:before  {      content: @cf-icon-rss; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-rss ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-rss;
+    } );
 }
 
 .@{cf-icon-prefix}-rss-round {
-    &:before  {      content: @cf-icon-rss-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-rss-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-rss-round;
+    } );
 }
 
 //
@@ -780,203 +915,243 @@
 //
 
 .@{cf-icon-prefix}-bank-account {
-    &:before  {      content: @cf-icon-bank-account; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-bank-account ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-bank-account;
+    } );
 }
 
 .@{cf-icon-prefix}-bank-account-round {
-    &:before  {      content: @cf-icon-bank-account-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-bank-account-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-bank-account-round;
+    } );
 }
 
 .@{cf-icon-prefix}-credit-card {
-    &:before  {      content: @cf-icon-credit-card; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-credit-card ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-credit-card;
+    } );
 }
 
 .@{cf-icon-prefix}-credit-card-round {
-    &:before  {      content: @cf-icon-credit-card-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-credit-card-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-credit-card-round;
+    } );
 }
 
 .@{cf-icon-prefix}-loan {
-    &:before  {      content: @cf-icon-loan; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-loan ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-loan;
+    } );
 }
 
 .@{cf-icon-prefix}-loan-round {
-    &:before  {      content: @cf-icon-loan-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-loan-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-loan-round;
+    } );
 }
 
 .@{cf-icon-prefix}-money-transfer {
-    &:before  {      content: @cf-icon-money-transfer; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-money-transfer ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-money-transfer;
+    } );
 }
 
 .@{cf-icon-prefix}-money-transfer-round {
-    &:before  {      content: @cf-icon-money-transfer-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-money-transfer-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-money-transfer-round;
+    } );
 }
 
 .@{cf-icon-prefix}-mortgage {
-    &:before  {      content: @cf-icon-mortgage; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-mortgage ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-mortgage;
+    } );
 }
 
 .@{cf-icon-prefix}-mortgage-round {
-    &:before  {      content: @cf-icon-mortgage-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-mortgage-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-mortgage-round;
+    } );
 }
 
 .@{cf-icon-prefix}-debt-collection {
-    &:before  {      content: @cf-icon-debt-collection; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-debt-collection ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-debt-collection;
+    } );
 }
 
 .@{cf-icon-prefix}-debt-collection-round {
-    &:before  {      content: @cf-icon-debt-collection-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-debt-collection-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-debt-collection-round;
+    } );
 }
 
 .@{cf-icon-prefix}-credit-report {
-    &:before  {      content: @cf-icon-credit-report; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-credit-report ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-credit-report;
+    } );
 }
 
 .@{cf-icon-prefix}-credit-report-round {
-    &:before  {      content:@cf-icon-credit-report-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-credit-report-round ); }
+    .cf-icon-pseudo-elem( {
+        content:@cf-icon-credit-report-round;
+    } );
 }
 
 .@{cf-icon-prefix}-money {
-    &:before  {      content: @cf-icon-money; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-money ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-money;
+    } );
 }
 
 .@{cf-icon-prefix}-money-round {
-    &:before  {      content: @cf-icon-money-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-money-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-money-round;
+    } );
 }
 
 .@{cf-icon-prefix}-quick-cash {
-    &:before  {      content: @cf-icon-quick-cash; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-quick-cash ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-quick-cash;
+    } );
 }
 
 .@{cf-icon-prefix}-quick-cash-round {
-    &:before  {      content: @cf-icon-quick-cash-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-quick-cash-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-quick-cash-round;
+    } );
 }
 
 .@{cf-icon-prefix}-contract {
-    &:before  {      content: @cf-icon-contract; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-contract ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-contract;
+    } );
 }
 
 .@{cf-icon-prefix}-contract-round {
-    &:before  {      content: @cf-icon-contract-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-contract-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-contract-round;
+    } );
 }
 
 .@{cf-icon-prefix}-complaint {
-    &:before  {      content: @cf-icon-complaint; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-complaint ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-complaint;
+    } );
 }
 
 .@{cf-icon-prefix}-complaint-round {
-    &:before  {      content: @cf-icon-complaint-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-complaint-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-complaint-round;
+    } );
 }
 
 .@{cf-icon-prefix}-getting-credit-card {
-    &:before  {      content: @cf-icon-getting-credit-card; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-getting-credit-card ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-getting-credit-card;
+    } );
 }
 
 .@{cf-icon-prefix}-getting-credit-card-round {
-    &:before  {      content: @cf-icon-getting-credit-card-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-getting-credit-card-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-getting-credit-card-round;
+    } );
 }
 
 .@{cf-icon-prefix}-buying-car {
-    &:before  {      content: @cf-icon-buying-car; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-buying-car ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-buying-car;
+    } );
 }
 
 .@{cf-icon-prefix}-buying-car-round {
-    &:before  {      content: @cf-icon-buying-car-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-buying-car-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-buying-car-round;
+    } );
 }
 
 .@{cf-icon-prefix}-paying-college {
-    &:before  {      content: @cf-icon-paying-college; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-paying-college ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-paying-college;
+    } );
 }
 
 .@{cf-icon-prefix}-paying-college-round {
-    &:before  {      content: @cf-icon-paying-college-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-paying-college-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-paying-college-round;
+    } );
 }
 
 .@{cf-icon-prefix}-owning-home {
-    &:before  {      content: @cf-icon-owning-home; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-owning-home ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-owning-home;
+    } );
 }
 
 .@{cf-icon-prefix}-owning-home-round {
-    &:before  {      content: @cf-icon-owning-home-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-owning-home-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-owning-home-round;
+    } );
 }
 
 .@{cf-icon-prefix}-debt {
-    &:before  {      content: @cf-icon-debt; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-debt ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-debt;
+    } );
 }
 
 .@{cf-icon-prefix}-debt-round {
-    &:before  {      content: @cf-icon-debt-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-debt-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-debt-round;
+    } );
 }
 
 .@{cf-icon-prefix}-building-credit {
-    &:before  {      content: @cf-icon-building-credit; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-building-credit ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-building-credit;
+    } );
 }
 
 .@{cf-icon-prefix}-building-credit-round {
-    &:before  {      content: @cf-icon-building-credit-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-building-credit-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-building-credit-round;
+    } );
 }
 
 .@{cf-icon-prefix}-prepaid-cards {
-    &:before  {      content: @cf-icon-prepaid-cards; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-prepaid-cards ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-prepaid-cards;
+    } );
 }
 
 .@{cf-icon-prefix}-prepaid-cards-round {
-    &:before  {      content: @cf-icon-prepaid-cards-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-prepaid-cards-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-prepaid-cards-round;
+    } );
 }
 
 .@{cf-icon-prefix}-payday-loan {
-    &:before  {      content: @cf-icon-payday-loan; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-payday-loan ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-payday-loan;
+    } );
 }
 
 .@{cf-icon-prefix}-payday-loan-round {
-    &:before  {      content: @cf-icon-payday-loan-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-payday-loan-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-payday-loan-round;
+    } );
 }
 
 .@{cf-icon-prefix}-retirement {
-    &:before  {      content: @cf-icon-retirement; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-retirement ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-retirement;
+    } );
 }
 
 .@{cf-icon-prefix}-retirement-round {
-    &:before  {      content: @cf-icon-retirement-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-retirement-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-retirement-round;
+    } );
 }
 
 //
@@ -984,361 +1159,443 @@
 //
 
 .@{cf-icon-prefix}-user {
-    &:before  {      content: @cf-icon-user; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-user ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-user;
+    } );
 }
 
 .@{cf-icon-prefix}-user-round {
-    &:before  {      content: @cf-icon-user-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-user-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-user-round;
+    } );
 }
 
 .@{cf-icon-prefix}-wifi {
-    &:before  {      content: @cf-icon-wifi; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-wifi ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-wifi;
+    } );
 }
 
 .@{cf-icon-prefix}-wifi-round {
-    &:before  {      content: @cf-icon-wifi-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-wifi-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-wifi-round;
+    } );
 }
 
 .@{cf-icon-prefix}-search {
-    &:before  {      content: @cf-icon-search; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-search ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-search;
+    } );
 }
 
 .@{cf-icon-prefix}-search-round {
-    &:before  {      content: @cf-icon-search-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-search-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-search-round;
+    } );
 }
 
 .@{cf-icon-prefix}-share {
-    &:before  {      content: @cf-icon-share; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-share ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-share;
+    } );
 }
 
 .@{cf-icon-prefix}-share-round {
-    &:before  {      content: @cf-icon-share-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-share-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-share-round;
+    } );
 }
 
 .@{cf-icon-prefix}-link {
-    &:before  {      content: @cf-icon-link; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-link ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-link;
+    } );
 }
 
 .@{cf-icon-prefix}-link-round {
-    &:before  {      content: @cf-icon-link-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-link-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-link-round;
+    } );
 }
 
 .@{cf-icon-prefix}-external-link {
-    &:before  {      content: @cf-icon-external-link; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-external-link ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-external-link;
+    } );
 }
 
 .@{cf-icon-prefix}-external-link-round {
-    &:before  {      content: @cf-icon-external-link-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-external-link-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-external-link-round;
+    } );
 }
 
 .@{cf-icon-prefix}-audio-mute {
-    &:before  {      content: @cf-icon-audio-mute; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-audio-mute ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-audio-mute;
+    } );
 }
 
 .@{cf-icon-prefix}-audio-mute-round {
-    &:before  {      content: @cf-icon-audio-mute-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-audio-mute-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-audio-mute-round;
+    } );
 }
 
 .@{cf-icon-prefix}-audio-low {
-    &:before  {      content: @cf-icon-audio-low; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-audio-low ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-audio-low;
+    } );
 }
 
 .@{cf-icon-prefix}-audio-low-round {
-    &:before  {      content: @cf-icon-audio-low-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-audio-low-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-audio-low-round;
+    } );
 }
 
 .@{cf-icon-prefix}-audio-medium {
-    &:before  {      content: @cf-icon-audio-medium; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-audio-medium ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-audio-medium;
+    } );
 }
 
 .@{cf-icon-prefix}-audio-medium-round {
-    &:before  {      content: @cf-icon-audio-medium-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-audio-medium-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-audio-medium-round;
+    } );
 }
 
 .@{cf-icon-prefix}-audio-max {
-    &:before  {      content: @cf-icon-audio-max; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-audio-max ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-audio-max;
+    } );
 }
 
 .@{cf-icon-prefix}-audio-max-round {
-    &:before  {      content: @cf-icon-audio-max-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-audio-max-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-audio-max-round;
+    } );
 }
 
 .@{cf-icon-prefix}-favorite {
-    &:before  {      content: @cf-icon-favorite; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-favorite ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-favorite;
+    } );
 }
 
 .@{cf-icon-prefix}-favorite-round {
-    &:before  {      content: @cf-icon-favorite-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-favorite-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-favorite-round;
+    } );
 }
 
 .@{cf-icon-prefix}-unfavorite {
-    &:before  {      content: @cf-icon-unfavorite; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-unfavorite ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-unfavorite;
+    } );
 }
 
 .@{cf-icon-prefix}-unfavorite-round {
-    &:before  {      content: @cf-icon-unfavorite-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-unfavorite-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-unfavorite-round;
+    } );
 }
 
 .@{cf-icon-prefix}-bookmark {
-    &:before  {      content: @cf-icon-bookmark; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-bookmark ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-bookmark;
+    } );
 }
 
 .@{cf-icon-prefix}-bookmark-round {
-    &:before  {      content: @cf-icon-bookmark-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-bookmark-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-bookmark-round;
+    } );
 }
 
 .@{cf-icon-prefix}-unbookmark {
-    &:before  {      content: @cf-icon-unbookmark; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-unbookmark ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-unbookmark;
+    } );
 }
 
 .@{cf-icon-prefix}-unbookmark-round {
-    &:before  {      content: @cf-icon-unbookmark-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-unbookmark-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-unbookmark-round;
+    } );
 }
 
 .@{cf-icon-prefix}-settings {
-    &:before  {      content: @cf-icon-settings; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-settings ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-settings;
+    } );
 }
 
 .@{cf-icon-prefix}-settings-round {
-    &:before  {      content: @cf-icon-settings-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-settings-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-settings-round;
+    } );
 }
 
 .@{cf-icon-prefix}-menu {
-    &:before  {      content: @cf-icon-menu; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-menu ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-menu;
+    } );
 }
 
 .@{cf-icon-prefix}-menu-round {
-    &:before  {      content: @cf-icon-menu-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-menu-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-menu-round;
+    } );
 }
 
 .@{cf-icon-prefix}-lock {
-    &:before  {      content: @cf-icon-lock; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-lock ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-lock;
+    } );
 }
 
 .@{cf-icon-prefix}-lock-round {
-    &:before  {      content: @cf-icon-lock-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-lock-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-lock-round;
+    } );
 }
 
 .@{cf-icon-prefix}-unlock {
-    &:before  {      content: @cf-icon-unlock; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-unlock ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-unlock;
+    } );
 }
 
 .@{cf-icon-prefix}-unlock-round {
-    &:before  {      content: @cf-icon-unlock-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-unlock-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-unlock-round;
+    } );
 }
 
 .@{cf-icon-prefix}-clock {
-    &:before  {      content: @cf-icon-clock; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-clock ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-clock;
+    } );
 }
 
 .@{cf-icon-prefix}-clock-round {
-    &:before  {      content: @cf-icon-clock-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-clock-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-clock-round;
+    } );
 }
 
 .@{cf-icon-prefix}-chart {
-    &:before  {      content: @cf-icon-chart; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-chart ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-chart;
+    } );
 }
 
 .@{cf-icon-prefix}-chart-round {
-    &:before  {      content: @cf-icon-chart-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-chart-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-chart-round;
+    } );
 }
 
 .@{cf-icon-prefix}-play {
-    &:before  {      content: @cf-icon-play; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-play ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-play;
+    } );
 }
 
 .@{cf-icon-prefix}-play-round {
-    &:before  {      content: @cf-icon-play-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-play-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-play-round;
+    } );
 }
 
 .@{cf-icon-prefix}-history {
-    &:before  {      content: @cf-icon-history; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-history ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-history;
+    } );
 }
 
 .@{cf-icon-prefix}-history-round {
-    &:before  {      content: @cf-icon-history-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-history-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-history-round;
+    } );
 }
 
 .@{cf-icon-prefix}-table-of-contents {
-    &:before  {      content: @cf-icon-table-of-contents; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-table-of-contents ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-table-of-contents;
+    } );
 }
 
 .@{cf-icon-prefix}-table-of-contents-round {
-    &:before  {      content: @cf-icon-table-of-contents-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-table-of-contents-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-table-of-contents-round;
+    } );
 }
 
 .@{cf-icon-prefix}-newspaper {
-    &:before  {      content: @cf-icon-newspaper; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-newspaper ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-newspaper;
+    } );
 }
 
 .@{cf-icon-prefix}-newspaper-round {
-    &:before  {      content: @cf-icon-newspaper-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-newspaper-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-newspaper-round;
+    } );
 }
 
 .@{cf-icon-prefix}-microphone {
-    &:before  {      content: @cf-icon-microphone; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-microphone ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-microphone;
+    } );
 }
 
 .@{cf-icon-prefix}-microphone-round {
-    &:before  {      content: @cf-icon-microphone-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-microphone-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-microphone-round;
+    } );
 }
 
 .@{cf-icon-prefix}-bullhorn {
-    &:before  {      content: @cf-icon-bullhorn; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-bullhorn ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-bullhorn;
+    } );
 }
 
 .@{cf-icon-prefix}-bullhorn-round {
-    &:before  {      content: @cf-icon-bullhorn-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-bullhorn-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-bullhorn-round;
+    } );
 }
 
 .@{cf-icon-prefix}-double-quote {
-    &:before  {      content: @cf-icon-double-quote; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-double-quote ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-double-quote;
+    } );
 }
 
 .@{cf-icon-prefix}-double-quote-round {
-    &:before  {      content: @cf-icon-double-quote-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-double-quote-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-double-quote-round;
+    } );
 }
 
 .@{cf-icon-prefix}-speech-bubble {
-    &:before  {      content: @cf-icon-speech-bubble; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-speech-bubble ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-speech-bubble;
+    } );
 }
 
 .@{cf-icon-prefix}-speech-bubble-round {
-    &:before  {      content: @cf-icon-speech-bubble-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-speech-bubble-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-speech-bubble-round;
+    } );
 }
 
 .@{cf-icon-prefix}-information {
-    &:before  {      content: @cf-icon-information; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-information ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-information;
+    } );
 }
 
 .@{cf-icon-prefix}-information-round {
-    &:before  {      content: @cf-icon-information-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-information-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-information-round;
+    } );
 }
 
 .@{cf-icon-prefix}-lightbulb {
-    &:before  {      content: @cf-icon-lightbulb; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-lightbulb ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-lightbulb;
+    } );
 }
 
 .@{cf-icon-prefix}-lightbulb-round {
-    &:before  {      content: @cf-icon-lightbulb-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-lightbulb-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-lightbulb-round;
+    } );
 }
 
 .@{cf-icon-prefix}-dialogue {
-    &:before  {      content: @cf-icon-dialogue; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-dialogue ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-dialogue;
+    } );
 }
 
 .@{cf-icon-prefix}-dialogue-round {
-    &:before  {      content: @cf-icon-dialogue-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-dialogue-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-dialogue-round;
+    } );
 }
 
 .@{cf-icon-prefix}-date {
-    &:before  {      content: @cf-icon-date; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-date ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-date;
+    } );
 }
 
 .@{cf-icon-prefix}-date-round {
-    &:before  {      content: @cf-icon-date-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-date-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-date-round;
+    } );
 }
 
 .@{cf-icon-prefix}-closing-quote {
-    &:before  {      content: @cf-icon-closing-quote; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-closing-quote ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-closing-quote;
+    } );
 }
 
 .@{cf-icon-prefix}-closing-quote-round {
-    &:before  {      content: @cf-icon-closing-quote-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-closing-quote-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-closing-quote-round;
+    } );
 }
 
 .@{cf-icon-prefix}-livestream {
-    &:before  {      content: @cf-icon-livestream; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-livestream ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-livestream;
+    } );
 }
 
 .@{cf-icon-prefix}-livestream-round {
-    &:before  {      content: @cf-icon-livestream-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-livestream-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-livestream-round;
+    } );
 }
 
 .@{cf-icon-prefix}-parents {
-    &:before  {      content: @cf-icon-parents; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-parents ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-parents;
+    } );
 }
 
 .@{cf-icon-prefix}-parents-round {
-    &:before  {      content: @cf-icon-parents-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-parents-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-parents-round;
+    } );
 }
 
 .@{cf-icon-prefix}-servicemembers {
-    &:before  {      content: @cf-icon-servicemembers; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-servicemembers ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-servicemembers;
+    } );
 }
 
 .@{cf-icon-prefix}-servicemembers-round {
-    &:before  {      content: @cf-icon-servicemembers-round; }
-    .lt-ie8 & { .cf-icon-ie7( @cf-icon-servicemembers-round ); }
+    .cf-icon-pseudo-elem( {
+        content: @cf-icon-servicemembers-round;
+    } );
+}
+
+//
+// This must come last to avoid displaying the icon both before and after
+//
+
+.@{cf-icon-prefix}__after:before {
+    display: none;
+
+    content: '';
 }
