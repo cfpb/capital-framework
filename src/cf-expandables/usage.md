@@ -16,17 +16,7 @@ or can appear in groups.
 
 ## Variables
 
-Theme variables for setting the color and sizes.
-Overwrite them in your own project by duplicating the variable `@key: value`.
-
-Ex. to set your base font size,
-add `@expandable_link-font-size: 17px;` to your project.
-
-### Sizing variables
-
-```
-@expandable_link-font-size: 14px;
-```
+Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
@@ -48,6 +38,12 @@ add `@expandable_link-font-size: 17px;` to your project.
 @expandable-group_header-bg:   #d6d7d9; // $color-gray-lighter
 @expandable-group-bg:          #fff;
 @expandable-group-divider:     #046b99; // $color-primary-alt-darkest
+```
+
+### Sizing variables
+
+```
+@expandable_link-font-size: 14px;
 ```
 
 

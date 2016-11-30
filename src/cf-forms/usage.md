@@ -8,23 +8,28 @@ The cf-forms component provides extensions to the basic form styles for Capital 
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
+
 ## Table of contents
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
-    - [Sizing variables](#sizing-variables)
 - [Labels](#labels)
-    - [Label header](#label-header)
-- [Basic Form Elements](#basic-form-elements)
+    - [Basic label](#basic-label)
+    - [Label heading](#label-heading)
 - [Inputs](#inputs)
+    - [Basic Text Inputs](#basic-text-inputs)
+    - [Basic checkboxes](#basic-checkboxes)
+    - [Basic radio buttons](#basic-radio-buttons)
+    - [Select box](#select-box)
     - [Input states](#input-states)
-    - [Input icons](#input-icons)
-- [Groups](#groups)
-    - [Form group block](#form-group-block)
-    - [Real world example](#real-world-example)
 - [Buttons](#buttons)
-    - [Default input and button](#default-input-and-button)
+    - [Input and button](#input-and-button)
     - [Button inside input](#button-inside-input)
+- [Select dropdown](#select-dropdown)
+    - [Required select](#required-select)
+    - [Disabled select](#disabled-select)
+    - [Optional select](#optional-select)
+
 
 ## Variables
 
@@ -152,7 +157,6 @@ Inputs should always be paired with a label for accessibility reasons.
 </div>
 ```
 
-
 ### Input states
 
 See the 'Form icons' section below for guidance on adding icons to states.
@@ -238,9 +242,10 @@ See the 'Form icons' section below for guidance on adding icons to states.
 <span class="cf-form_input-icon cf-icon cf-icon-approved-round"></span>
 ```
 
+
 ## Buttons
 
-### Default input and button
+### Input and button
 
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
@@ -266,7 +271,6 @@ See the 'Form icons' section below for guidance on adding icons to states.
 
 #### Default button inside of an default input
 
-
 <div class="m-btn-inside-input">
     <input type="text"
         value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
@@ -278,7 +282,7 @@ See the 'Form icons' section below for guidance on adding icons to states.
     </button>
 </div>
 
-#### Default button inside of a default input with button
+#### Button inside input and button
 
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
@@ -297,8 +301,6 @@ See the 'Form icons' section below for guidance on adding icons to states.
         <button class="a-btn">Search</button>
     </div>
 </div>
-
-
 
 
 ## Select dropdown
@@ -337,7 +339,6 @@ See the 'Form icons' section below for guidance on adding icons to states.
 </div>
 ```
 
-
 ### Disabled select
 
 <div class="form-l_col form-l_col-1">
@@ -371,7 +372,6 @@ See the 'Form icons' section below for guidance on adding icons to states.
     </div>
 </div>
 ```
-
 
 ### Optional select
 

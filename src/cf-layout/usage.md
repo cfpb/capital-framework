@@ -6,6 +6,7 @@ A set of HTML and CSS layout helpers.
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
+
 ## Dependencies
 
 - cf-core
@@ -14,13 +15,11 @@ A set of HTML and CSS layout helpers.
 
 ## Variables
 
-Theme variables for setting the color and sizes.
-Overwrite them in your own project by duplicating the variable `@key: value`.
-
-Ex. to change the color of your main content border
-add `@content_main-border: #cc0000;` to your project.
+Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
+
+`$color-` variables are from 18F's [US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
 
 ```
 // .block
@@ -652,6 +651,7 @@ Add a class of `.content__flush-bottom` to `.content_main` or content_sidebar to
     </div>
 </footer>
 ```
+
 
 ## Flush top modifier (only on small screens)
 
@@ -1317,6 +1317,7 @@ When the featured content module image is a video (or other centered content), t
     <div class="o-featured-content-module_visual"> <img class="o-featured-content-module_img" src="http://placekitten.com/g/540/270"> </div>
 </section>
 ```
+
 
 ## Heroes
 

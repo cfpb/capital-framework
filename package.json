@@ -25,7 +25,7 @@
     "release": "./scripts/travis/release.sh",
     "build": "gulp build",
     "test": "gulp test && node test/accessibility/wcag.js",
-    "cf-link": "cd ./src/cf-core && npm link && cd ../cf-buttons/ && npm link && cd ../cf-typography && npm link && cd ../cf-pagination && npm link && cd ../cf-layout && npm link"
+    "cf-link": "cd ./src/cf-core && npm link && cd ../cf-buttons/ && npm link && cd ../cf-typography && npm link && cd ../cf-pagination && npm link && cd ../cf-layout && npm link && cd ../cf-icons && npm link"
   },
   "devDependencies": {
     "bluebird": "^3.0.5",
@@ -40,6 +40,7 @@
     "gulp-cssmin": "^0.1.7",
     "gulp-data": "^1.2.0",
     "gulp-debug": "^2.1.2",
+    "gulp-eslint": "^3.0.1",
     "gulp-foreach": "^0.1.0",
     "gulp-if": "^2.0.0",
     "gulp-ignore": "^2.0.1",
