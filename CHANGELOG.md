@@ -7,6 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-forms:** [MINOR] Added checkboxes and radio buttons with large target areas
 
 ### Changed
+- **capital-framework:** [PATCH] Fixed various linting errors and warnings in tests and gulp tasks.
 - **cf-core:** [MAJOR] Update to atomic naming conventions:
   - `.webfont-<style>()` mixins renamed to `.u-webfont-<style>()`
   - `body` font is now `@webfont-regular` (Arial, by default).

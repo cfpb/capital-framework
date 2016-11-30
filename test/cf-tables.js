@@ -1,8 +1,10 @@
-(function( $ ) {
-  /*
-    ======== A Handy Little QUnit Reference ========
-    http://api.qunitjs.com/
+'use strict';
 
+( function( $ ) {
+
+  /*
+  ======== A Handy Little QUnit Reference ========
+    http://api.qunitjs.com/
     Test methods:
       module(name, {[setup][ ,teardown]})
       test(name, callback)
@@ -27,7 +29,7 @@
       getElement = document.querySelector.bind( document );
       this.testOne = getElement( '#test-one' );
     }
-  });
+  } );
 
   test( '".sort-up class sorts on load', function( assert ) {
     expect( 3 );
@@ -65,7 +67,7 @@
       getElement('#test-one tbody tr:nth-child(7) td:nth-child(2)').innerText.trim() === 'English, Spanish',
       'Row 7 is correct'
     );
-  });
+  } );
 
   test( 'Column sorts high-to-low on second click ', function() {
     expect( 3 );
@@ -82,7 +84,7 @@
       getElement('#test-one tbody tr:nth-child(1) td:nth-child(2)').innerText.trim() === 'English, Spanish',
       'Row 1 is correct'
     );
-  });
+  } );
 
   test( 'Column sorts low-to-high on click for "number" sort type', function() {
     expect( 3 );
@@ -99,7 +101,7 @@
       getElement('#test-one tbody tr:nth-child(7) td:nth-child(3)').innerText.trim() === '11.1 mi',
       'Row 7 is correct'
     );
-  });
+  } );
 
 
 }());
