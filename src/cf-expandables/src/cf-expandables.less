@@ -41,6 +41,9 @@
 // .o-expandable_link
 @expandable_link-font-size:     14px;
 
+// .o-expandable_content__transition
+@expandable__transition-speed:  0.25s;
+
 //
 // Recommended expandable pattern
 //
@@ -81,7 +84,7 @@
         overflow: hidden;
 
         &__transition {
-            transition: max-height 0.25s ease-in-out;
+            transition: max-height @expandable__transition-speed ease-in-out;
         }
 
         &__collapsed {
