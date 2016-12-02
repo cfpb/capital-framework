@@ -45,18 +45,6 @@ Default color variables are from 18F's
 [U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss).
 
 ```
-// Running text elements
-
-// .a-micro-copy
-@micro-copy:                #112e51; // $color-primary-darkest
-
-// .a-date
-@date:                      #112e51; // $color-primary-darkest
-
-// .m-pull-quote
-@pull-quote_body:           #494440; // $color-gray-warm-dark
-@pull-quote_citation:       #205493; // $color-cool-blue
-
 // Headings
 
 // .a-heading__icon
@@ -82,6 +70,18 @@ Default color variables are from 18F's
 // .a-link__jump
 @jump-link_bg:              #f1f1f1; // $color-gray-lightest
 @jump-link_border:          #323a45; // $color-gray-dark
+
+// Miscellaneous text elements
+
+// .a-micro-copy
+@micro-copy:                #112e51; // $color-primary-darkest
+
+// .a-date
+@date:                      #112e51; // $color-primary-darkest
+
+// .m-pull-quote
+@pull-quote_body:           #494440; // $color-gray-warm-dark
+@pull-quote_citation:       #205493; // $color-cool-blue
 ```
 
 
@@ -175,15 +175,30 @@ attached to `.meta-header_left` and `.category-slug` is attached to `.meta-heade
 
 <p>
     For more information, email
-    <a class="a-link a-link__icon a-link__mail" href="#">
+    <a class="a-link
+              a-link__icon
+              cf-icon
+              cf-icon__after
+              cf-icon-mail"
+       href="#">
         <span class="a-link_text">john.smith@cfpb.gov</span>
     </a>.
     Alternatively, you can
-    <a class="a-link a-link__icon a-link__download" href="#">
+    <a class="a-link
+              a-link__icon
+              cf-icon
+              cf-icon__after
+              cf-icon-download"
+       href="#">
         <span class="a-link_text">download the info sheet</span>
     </a>.
     Oh, you might also want to visit this
-    <a class="a-link a-link__icon a-link__external-link" href="#">
+    <a class="a-link
+              a-link__icon
+              cf-icon
+              cf-icon__after
+              cf-icon-external-link"
+       href="#">
         <span class="a-link_text">other organization's website</span>
     </a> for further details.
 </p>
@@ -191,16 +206,31 @@ attached to `.meta-header_left` and `.category-slug` is attached to `.meta-heade
 
 ```
 <p>
-    For more information, email
-    <a class="a-link a-link__icon a-link__mail" href="#">
+   For more information, email
+    <a class="a-link
+              a-link__icon
+              cf-icon
+              cf-icon__after
+              cf-icon-mail"
+       href="#">
         <span class="a-link_text">john.smith@cfpb.gov</span>
     </a>.
     Alternatively, you can
-    <a class="a-link a-link__icon a-link__download" href="#">
+    <a class="a-link
+              a-link__icon
+              cf-icon
+              cf-icon__after
+              cf-icon-download"
+       href="#">
         <span class="a-link_text">download the info sheet</span>
     </a>.
     Oh, you might also want to visit this
-    <a class="a-link a-link__icon a-link__external-link" href="#">
+    <a class="a-link
+              a-link__icon
+              cf-icon
+              cf-icon__after
+              cf-icon-external-link"
+       href="#">
         <span class="a-link_text">other organization's website</span>
     </a> for further details.
 </p>
@@ -211,18 +241,36 @@ attached to `.meta-header_left` and `.category-slug` is attached to `.meta-heade
 - Simply add the `.icon-link__before` modifier to place the icon before the link text.
 - You can omit the `span.icon-link_text` wrapper if you do not need an underline on a particular link.
 
-<a class="a-link a-link__icon a-link__mail a-link__before" href="#">
+<a class="a-link a-link__icon
+          cf-icon
+          cf-icon__before
+          cf-icon-mail"
+    href="#">
     <span class="a-link_text">john.smith@cfpb.gov</span>
 </a><br>
-<a class="a-link a-link__icon a-link__phone a-link__before" href="#">
+<a class="a-link
+          a-link__icon
+          cf-icon
+          cf-icon__before
+          cf-icon-phone"
+   href="#">
     <span class="a-link_text">(123) 456-7890</span>
 </a>
 
 ```
-<a class="a-link a-link__icon a-link__mail a-link__before" href="#">
+<a class="a-link a-link__icon
+          cf-icon
+          cf-icon__before
+          cf-icon-mail"
+    href="#">
     <span class="a-link_text">john.smith@cfpb.gov</span>
 </a><br>
-<a class="a-link a-link__icon a-link__phone a-link__before" href="#">
+<a class="a-link
+          a-link__icon
+          cf-icon
+          cf-icon__before
+          cf-icon-phone"
+   href="#">
     <span class="a-link_text">(123) 456-7890</span>
 </a>
 ```
@@ -231,34 +279,50 @@ attached to `.meta-header_left` and `.category-slug` is attached to `.meta-heade
 
 - Warning: Icons added to inline links can sometimes break onto the next line. If you want to prevent this, you can add the `__no-wrap` modifier to `.icon-link`.
 
-<p>
-    For more information, email
-    <a class="a-link a-link__icon a-link__mail a-link__no-wrap" href="#">
-        <span class="a-link_text">john.smith@cfpb.gov</span>
-    </a>.
-</p>
+
+For more information, email
+<a class="a-link
+          a-link__icon
+          a-link__no-wrap
+          cf-icon
+          cf-icon__after
+          cf-icon-mail"
+   href="#">
+    <span class="a-link_text">john.smith@cfpb.gov</span>
+</a>.
 
 ```
-<p>
-    For more information, email
-    <a class="a-link a-link__icon a-link__mail a-link__no-wrap" href="#">
-        <span class="a-link_text">john.smith@cfpb.gov</span>
-    </a>.
-</p>
+
+For more information, email
+<a class="a-link
+          a-link__icon
+          a-link__no-wrap
+          cf-icon
+          cf-icon__after
+          cf-icon-mail"
+   href="#">
+    <span class="a-link_text">john.smith@cfpb.gov</span>
+</a>.
 ```
 
 ### Jump link
 
 <a class="a-link
           a-link__jump
-          a-link__right" href="#">
+          cf-icon
+          cf-icon__after
+          cf-icon-right"
+   href="#">
     <span class="a-link_text">Default jump link</span>
 </a>
 
 ```
 <a class="a-link
           a-link__jump
-          a-link__right" href="#">
+          cf-icon
+          cf-icon__after
+          cf-icon-right"
+   href="#">
     <span class="a-link_text">Default jump link</span>
 </a>
 ```
@@ -270,7 +334,10 @@ The large jump link has an 18px font-size, compared to the default of 16px.
 <a class="a-link
           a-link__jump
           a-link__large
-          a-link__right" href="#">
+          cf-icon
+          cf-icon__after
+          cf-icon-right"
+   href="#">
     <span class="a-link_text">Large jump link</span>
 </a>
 
@@ -278,7 +345,10 @@ The large jump link has an 18px font-size, compared to the default of 16px.
 <a class="a-link
           a-link__jump
           a-link__large
-          a-link__right" href="#">
+          cf-icon
+          cf-icon__after
+          cf-icon-right"
+   href="#">
     <span class="a-link_text">Large jump link</span>
 </a>
 ```
@@ -289,16 +359,20 @@ Jump links can also have icons before the text, like icon links.
 
 <a class="a-link
           a-link__jump
-          a-link__before
-          a-link__left" href="#">
+          cf-icon
+          cf-icon__before
+          cf-icon-left"
+   href="#">
     <span class="a-link_text">Jump link with icon on left</span>
 </a>
 
 ```
 <a class="a-link
           a-link__jump
-          a-link__before
-          a-link__left" href="#">
+          cf-icon
+          cf-icon__before
+          cf-icon-left"
+   href="#">
     <span class="a-link_text">Jump link with icon on left</span>
 </a>
 ```
@@ -308,7 +382,10 @@ Jump links can also have icons before the text, like icon links.
 <a class="a-link
           a-link__jump
           a-link__bg
-          a-link__right" href="#">
+          cf-icon
+          cf-icon__after
+          cf-icon-right"
+   href="#">
     <span class="a-link_text">Jump link with grey background and
         solid borders on small screens</span>
 </a>
@@ -317,7 +394,10 @@ Jump links can also have icons before the text, like icon links.
 <a class="a-link
           a-link__jump
           a-link__bg
-          a-link__right" href="#">
+          cf-icon
+          cf-icon__after
+          cf-icon-right"
+   href="#">
     <span class="a-link_text">Jump link with grey background and
         solid borders on small screens</span>
 </a>
