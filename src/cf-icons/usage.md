@@ -30,7 +30,8 @@ This component can be used by itself, but is designed to work with Capital Frame
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
+Theme variables for setting the color and sizes throughout the project.
+Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Settings
 
@@ -44,7 +45,8 @@ Theme variables for setting the color and sizes throughout the project. Overwrit
 
 The cf-icon-prefix class applies all shared icon styles including the font family.
 By default, this class will be named `cf-icon` but it can be changed in the settings.
-All icons must use three classes, one for this base class, one for the chosen pseudo-element, and one to set the font character. For example:
+All icons must use three classes, one for the base class, one to select the
+desired icon and one for the chosen pseudo-element. For example:
 
 ```
 <span class="cf-icon
@@ -52,8 +54,9 @@ All icons must use three classes, one for this base class, one for the chosen ps
              cf-icon__before"></span>
 ```
 
-When using an empty element, please use the span element instead of the i element.
-This avoids font family cascading conflicts when using an italic webfont
+It's preferred to combine the icon classes with an existing element, but if it's
+necessary to use an empty element, please use the span element instead of the i
+element. This avoids font family cascading conflicts when using an italic webfont
 on i elements and then another font for the icons.
 Note that this issue only pops up in older versions of Internet Explorer.
 
