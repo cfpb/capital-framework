@@ -1,0 +1,203 @@
+/* topdoc
+  name: Custom radio and checkbox input
+  family: cfgov-molecules
+  patterns:
+    - name: Radio button example
+      markup: |
+          <div class="m-custom-input">
+            <input type="radio" id="input-1" name="group-1">
+            <label for="input-1">
+              <div class="m-custom-input_text">Option 1
+                <span class="m-custom-input_text-helper">(optional)</span>
+              </div>
+            </label>
+          </div>
+    - name: Checkbox example
+      markup: |
+          <div class="m-custom-input">
+            <input type="checkbox" id="input-1" name="group-1">
+            <label for="input-1">
+              <div class="m-custom-input_text">Option 1
+                <span class="m-custom-input_text-helper">(optional)</span>
+              </div>
+            </label>
+          </div>
+    - name: Block modifier example
+      markup: |
+          <div class="m-custom-input m-custom-input__block">
+            <input type="checkbox" id="input-1" name="group-1">
+            <label for="input-1">
+              <div class="m-custom-input_text">Option 1
+                <span class="m-custom-input_text-helper">(optional)</span>
+              </div>
+            </label>
+          </div>
+    - name: Disabled example
+      markup: |
+          <div class="m-custom-input m-custom-input__block">
+            <input type="checkbox" id="input-1" name="group-1" disabled>
+            <label for="input-1">
+              <div class="m-custom-input_text">Option 1
+                <span class="m-custom-input_text-helper">(optional)</span>
+              </div>
+            </label>
+          </div>
+    codenotes:
+        - |
+          Structural cheat sheet:
+          -----------------------
+          .m-custom-input.m-custom-input__block
+            input[radio|checkbox]
+            label
+              .m-custom-input_text
+              .m-custom-input_text-helper
+  tags:
+    - cfgov-molecules
+*/
+
+@custom-input-outline-width: 2px;
+
+.m-custom-input {
+  margin: @custom-input-outline-width;
+  margin-top: @custom-input-outline-width + 1;
+
+  & label {
+    display: table-row;
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+
+  // Style block rollover and outline.
+  &__block {
+    & label {
+      background-color: @gray-10;
+      outline: @custom-input-outline-width solid @gray-10;
+
+      &:hover {
+        outline: @custom-input-outline-width solid @pacific;
+      }
+    }
+
+    & input[type="radio"]:checked + label,
+    & input[type="checkbox"]:checked + label {
+      background-color: @pacific-20;
+      outline: @custom-input-outline-width solid @pacific;
+    }
+  }
+
+  & label::before,
+  &_text {
+    display: table-cell;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  & label::before {
+    margin-left: unit( @grid_gutter-width / 2 / @base-font-size-px, em);
+  }
+
+  &_text {
+    padding: unit( @grid_gutter-width / 2 / @base-font-size-px, em);
+  }
+
+  &_text-helper {
+    display: block;
+    font-size: unit( 14px / @base-font-size-px, em);
+  }
+
+  // Hide native inputs.
+  & input[type="checkbox"],
+  & input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  // Add custom inputs.
+  & input[type="checkbox"] + label::before,
+  & input[type="radio"] + label::before {
+    background: @white;
+    content: '\a0'; // non-breaking space.
+    display: inline-block;
+    margin-top: unit( 17px / @base-font-size-px, em); // 1.0625em;
+  }
+
+  // Style custom radio button.
+  & input[type="radio"] + label::before {
+    min-width: unit( 17px / @base-font-size-px, em); // 1.0625em;
+    height: unit( 17px / @base-font-size-px, em); // 1.0625em;
+    width: unit( 17px / @base-font-size-px, em); // 1.0625em;
+    border-radius: 100%;
+    box-shadow: 0 0 0 2px @white, 0 0 0 3px @gray-80;
+  }
+
+  & input[type="radio"]:checked + label::before {
+    background-color: @pacific;
+    box-shadow: 0 0 0 3px @white, 0 0 0 4px @pacific;
+  }
+
+  // Extra hover on label needed for IE11 compatibility.
+  & input[type="radio"]:hover + label::before,
+  & input[type="radio"] + label:hover::before {
+      box-shadow: 0 0 0 2px @white, 0 0 0 4px @pacific;
+  }
+
+  & input[type="radio"]:focus + label::before {
+      box-shadow: 0 0 0 3px @white, 0 0 0 4px @pacific;
+  }
+
+  // Style custom checkbox.
+  & input[type="checkbox"] + label::before {
+    min-width: unit( 18px / @base-font-size-px, em); // 1.0625em;
+    height: unit( 18px / @base-font-size-px, em); // 1.125em;
+    width: unit( 18px / @base-font-size-px, em); // 1.125em;
+    box-shadow: 0 0 0 1px @white, 0 0 0 2px @gray-40;
+  }
+
+  & input[type="checkbox"]:checked + label::before {
+    content: @cf-icon-approved;
+    font-family: 'CFPB Minicons';
+    font-size: 1em;
+    box-shadow: 0 0 0 1px @white, 0 0 0 2px @pacific;
+    text-align: center;
+  }
+
+  // Extra hover on label needed for IE11 compatibility.
+  & input[type="checkbox"]:hover + label::before,
+  & input[type="checkbox"] + label:hover::before {
+      box-shadow: 0 0 0 1px @white, 0 0 0 2px @pacific;
+  }
+
+  & input[type="checkbox"]:focus + label::before {
+      box-shadow: 0 0 0 2px @pacific;
+  }
+
+  // Style disabled state.
+  & input[type="radio"]:disabled + label::before {
+      background: @gray-40;
+      box-shadow: 0 0 0 2px @gray-40, 0 0 0 3px @gray;
+      cursor: not-allowed;
+  }
+
+  & input[type="checkbox"]:disabled + label::before {
+      background: @gray-40;
+      box-shadow: 0 0 0 1px @gray-40, 0 0 0 2px @gray;
+      cursor: not-allowed;
+  }
+
+  & input[type="radio"]:disabled + label,
+  & input[type="checkbox"]:disabled + label {
+      outline: none;
+  }
+}
+
+/* topdoc
+    name: EOF
+    eof: true
+*/

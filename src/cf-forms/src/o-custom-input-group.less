@@ -1,0 +1,62 @@
+/* topdoc
+  name: Custom input group
+  family: cfgov-organisms
+  patterns:
+    - name: Default example
+      markup: |
+          <div class="o-custom-input-group">
+            <div class="m-custom-input">
+              <input type="radio" id="input-1" name="group-1">
+              <label for="input-1">
+                <div class="m-custom-input_text">Option 1
+                  <span class="m-custom-input_text-helper">(optional)</span>
+                </div>
+              </label>
+            </div>
+            <div class="m-custom-input">
+              <input type="radio" id="input-2" name="group-1">
+              <label for="input-2">
+                <div class="m-custom-input_text">Option 1
+                  <span class="m-custom-input_text-helper">(optional)</span>
+                </div>
+              </label>
+            </div>
+          </div>
+    codenotes:
+        - |
+          Structural cheat sheet:
+          -----------------------
+          .o-custom-input-group
+            .m-custom-input
+            .m-custom-input
+            …
+  tags:
+    - cfgov-organisms
+*/
+
+@custom-input-outline-width: 2px;
+
+// Add margin between inputs in a group.
+.o-custom-input-group {
+  .m-custom-input {
+    // Offset the outline and add the gap between buttons.
+    margin-bottom: unit( ( ( @custom-input-outline-width * 2 ) + ( @grid_gutter-width / 2 ) ) / @base-font-size-px, em);
+  }
+
+  .m-custom-input:last-child {
+    // Offset the outline.
+    margin-bottom: @custom-input-outline-width * 2;
+  }
+
+  // Handle outline offset between custom input groups.
+  & + & {
+    .m-custom-input:last-child {
+      margin-bottom: @custom-input-outline-width;
+    }
+  }
+}
+
+/* topdoc
+    name: EOF
+    eof: true
+*/
