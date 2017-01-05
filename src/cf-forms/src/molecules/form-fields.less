@@ -12,13 +12,13 @@
     &__checkbox,
     &__radio {
         .a-label {
-            display: table-row;
             display: flex;
             vertical-align: middle;
             cursor: pointer;
+            width: 100%;
 
             &:before {
-                display: table-cell;
+                display: inline-block;
                 align-self: flex-start;
 
                 border: 1px solid @input-border;
@@ -37,7 +37,7 @@
             }
 
             .a-label_text {
-                display: table-row;
+                display: table-cell;
             }
 
             &:hover:before {
