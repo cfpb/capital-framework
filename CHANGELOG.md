@@ -38,6 +38,10 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - Updated unicode entries with variables
   - Updated spacing to be consistent
   - Removed font-smoothing investigation TODO
+- **cf-icons:** [MAJOR] Updated cf-icons to restrict icon styles to pseudo elems
+  - Updated the cf-icon class to be a mixin only, so that it's not duplicated when cf-icon-prefix is set as cf-icon.
+  - Updated the pseudo elem to only include an icon when a modifier class is used, this is important to mix icons into elems with normal text like buttons, links, etc.
+  - Removed IE7 support because the hack stopped working.
 - **cf-buttons:** [MINOR] Standardized the usage doc
 - **cf-core:** [MINOR] Standardized the usage doc
 - **cf-expandables:** [MINOR] Standardized the usage doc
