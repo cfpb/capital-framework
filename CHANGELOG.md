@@ -5,6 +5,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Added
 - **cf-forms:** [MINOR] Added checkboxes and radio buttons with large target areas
+- **capital-framework:** [MINOR] Added cf-link script to automate installing component dependencies and npm linking
 
 ### Changed
 - **capital-framework:** [PATCH] Fixed various linting errors and warnings in tests and gulp tasks.
