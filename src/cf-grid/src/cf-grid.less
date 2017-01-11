@@ -12,7 +12,6 @@
 // Less variables
 //
 
-@grid_box-sizing-polyfill-path: '../../box-sizing-polyfill';
 @grid_wrapper-width:            1200px;
 @grid_gutter-width:             30px;
 @grid_total-columns:            12;
@@ -60,14 +59,6 @@
   .lt-ie8 & {
     // Hack inline-block into submission
     display: inline;
-    // Mixing negative margins and the box-sizing hack can be dangerous.
-    // This is a temporary fix for: https://github.com/cfpb/cf-grid/issues/17
-    margin-right: 0;
-
-    // Clearfix hack for IE 6/7 only
-    zoom: 1;
-    // Box-sizing polyfill
-    behavior: url('@{grid_box-sizing-polyfill-path}/boxsizing.htc');
   }
 
   // Modifying standard width and padding for prefixed/suffixed columns, if necessary:
