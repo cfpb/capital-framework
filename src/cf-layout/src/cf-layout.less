@@ -97,10 +97,22 @@
     }
 }
 
+// Create a gap between columns when they are stacked at mobile size.
 .content-l_col {
     .respond-to-max(@bp-xs-max, {
         & + & {
             margin-top: unit(@grid_gutter-width / @base-font-size-px, em);
+        }
+    });
+}
+
+// Some circumstances call for no gap between columns at mobile size,
+// such as when there are groups of items in columns which handle their
+// oh vertical spacing (o-form_fieldset, for instance).
+.content-l__flush {
+    .respond-to-max(@bp-xs-max, {
+        .content-l_col + .content-l_col {
+            margin-top: 0;
         }
     });
 }

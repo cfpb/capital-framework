@@ -37,7 +37,8 @@
             }
 
             .a-label_text {
-                display: table-cell;
+                display: block;
+                flex: 0 1 auto; // Needed for IE10 to wrap text.
             }
 
             &:hover:before {
