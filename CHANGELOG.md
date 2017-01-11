@@ -85,6 +85,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-typography:** [PATCH] Fixed old variables removed from cf-core
 - **cf-forms:** [PATCH] Fixed a layout bug in btn-inside-input
 - **cf-forms:** [PATCH] Fixed a layout bug in input-w-btn
+- **cf-forms:** [PATCH] Fixed undefined var references.
 
 ## 3.6.1 - 2016-08-12
 
