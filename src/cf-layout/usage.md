@@ -1,5 +1,8 @@
 A set of HTML and CSS layout helpers.
 
+[`cf-core`](../cf-core) and [`cf-grid`](../cf-grid) components are
+dependencies of this component.
+
 > NOTE: If you use `cf-layout.less` directly,
   be sure to run the file through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
@@ -7,19 +10,62 @@ A set of HTML and CSS layout helpers.
   not work perfectly in older browsers.
 
 
-## Dependencies
+## Table of contents
 
-- cf-core
-- cf-grid
+- [Variables](#variables)
+    - [Color variables](#color-variables)
+- [Content layouts](#content-layouts)
+    - [Standard content columns](#standard-content-columns)
+    - [Large gutters modifier](#large-gutters-modifier)
+- [Content layout column dividers](#content-layout-column-dividers)
+- [Content bar](#content-bar)
+- [Content line](#content-line)
+- [Main content and sidebar](#main-content-and-sidebar)
+- [Left-hand navigation layout](#left-hand-navigation-layout)
+- [Right-hand sidebar layout](#right-hand-sidebar-layout)
+- [Narrow content column option](#narrow-content-column-option)
+- [Flush bottom modifier](#flush-bottom-modifier)
+- [Flush top modifier (only on small screens)](#flush-top-modifier-only-on-small-screens)
+- [Block](#block)
+    - [Standard block example](#standard-block-example)
+    - [Border-top modifier](#border-top-modifier)
+    - [Border-right modifier](#border-right-modifier)
+    - [Border-bottom modifier](#border-bottom-modifier)
+    - [Border-left modifier](#border-left-modifier)
+    - [Border modifier](#border-modifier)
+    - [Flush-top modifier](#flush-top-modifier)
+    - [Flush-top modifier](#flush-bottom-modifier-1)
+    - [Flush-bottom modifier](#flush-bottom-modifier-1)
+    - [Flush-sides modifier](#flush-sides-modifier)
+    - [Flush modifier](#flush-modifier)
+    - [Background modifier](#background-modifier)
+    - [Background and flush sides modifier combo example](#background-and-flush-sides-modifier-combo-example)
+    - [Padded-top modifier](#padded-top-modifier)
+    - [Padded-bottom modifier](#padded-bottom-modifier)
+    - [Sub blocks](#sub-blocks)
+    - [Mixing content blocks with content layouts](#mixing-content-blocks-with-content-layouts)
+- [Bleedbar sidebar styling](#bleedbar-sidebar-styling)
+- [cf-grid helpers](#cf-grid-helpers)
+    - [.wrapper (base)](#wrapper-base)
+    - [Column divider modifiers](#column-divider-modifiers)
+- [Featured content module](#featured-content-module)
+    - [Featured content module - maps](#featured-content-module---maps)
+    - [Featured content module - videos](#featured-content-module---videos)
+- [Heroes](#heroes)
+    - [Standard hero with illustration](standard-hero-with-illustration)
+    - [Hero with bleeding illustration](#hero-with-bleeding-illustration)
+    - [Hero with photograph](#hero-with-photograph)
 
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
+Theme variables for setting the color and sizes throughout the project.
+Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's [US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables are from 18F's
+[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
 
 ```
 // .block

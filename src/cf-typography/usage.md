@@ -1,4 +1,5 @@
-The cf-typography component includes multiple patterns for headings, links, lists, and other advanced typographic treatments.
+The cf-typography component includes multiple patterns for headings,
+links, lists, and other advanced typographic treatments.
 
 The [`cf-core`](../core) component is a dependency of this component
 and has more basic typography patterns.

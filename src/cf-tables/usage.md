@@ -1,5 +1,6 @@
-The cf-tables component formats tables, and provides an easy way to make tables sortable.
-The [`cf-core`](../core) component is a dependency of this component."
+The cf-tables component formats tables, and provides an easy way to make
+tables sortable. The [`cf-core`](../core) component is a dependency of
+this component."
 
 > NOTE: If you use `cf-tables.less` directly,
   be sure to run the file through
@@ -23,17 +24,19 @@ The [`cf-core`](../core) component is a dependency of this component."
     - [Important notes about sortable tables](#important-notes-about-sortable-tables)
 - [Responsive tables](#responsive-tables)
     - [Responsive stacked table](#responsive-stacked-table)
-    - [Responsive stacked table with header](responsive-stacked-table-with-header)
+    - [Responsive stacked table with header](#responsive-stacked-table-with-header)
     - [Responsive table - horizontal scroll variation](#responsive-table---horizontal-scroll-variation)
 
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
+Theme variables for setting the color and sizes throughout the project.
+Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's [US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables are from 18F's
+[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
 
 ```
 @table-cell-bg:              #ffffff; // $color-white

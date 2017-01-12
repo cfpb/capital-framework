@@ -1,4 +1,6 @@
-The cf-core component acts as the backbone for Capital Framework. It's made up of four child components `cf-vars`, `cf-media-queries`, `cf-utilities`, and `cf-base`.
+The cf-core component acts as the backbone for Capital Framework.
+It's made up of four child components `cf-vars`, `cf-media-queries`,
+`cf-utilities`, and `cf-base`.
 
 > NOTE: If you use any cf-core Less file directly,
   be sure to run the files through
@@ -36,11 +38,13 @@ The cf-core component acts as the backbone for Capital Framework. It's made up o
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
+Theme variables for setting the color and sizes throughout the project.
+Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's [US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables are from 18F's
+[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
 
 ```
 // body
