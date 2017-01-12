@@ -55,7 +55,7 @@ If you're hacking on a component and want to test it in a local project, use `np
 
 ```sh
 cd ~/Projects/capital-framework/ # wherever you cloned this repo
-npm run build
+npm run cf-link && npm run build
 cd tmp/cf-buttons
 npm link
 cd ~/Projects/owning-a-home
