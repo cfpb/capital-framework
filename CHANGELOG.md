@@ -3,57 +3,20 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
-- **cf-forms:** [MINOR] Added checkboxes and radio buttons with large target areas
-- **capital-framework:** [MINOR] Added cf-link script to automate installing component dependencies and npm linking
-
 ### Changed
-- **capital-framework:** [PATCH] Fixed various linting errors and warnings in tests and gulp tasks.
-- **cf-core:** [MAJOR] Update to atomic naming conventions:
-  - `.webfont-<style>()` mixins renamed to `.u-webfont-<style>()`
-  - `body` font is now `@webfont-regular` (Arial, by default).
-- **cf-core** [MAJOR] Moved the base form styles to cf-forms
-- **cf-layout:** [MAJOR] Update to atomic naming conventions
-  - Updated hero
-  - Updated featured content module and and added modifiers for center/right anchors
-- **cf-layout:** [MAJOR] Enable hero images that bleed off the top and bottom of
-  the hero container when in the two-column layout
-- **cf-pagination** [MAJOR] Update to atomic naming conventions:
-- **cf-forms:** [MAJOR] Update to atomic naming conventions:
-  - Text form fields
-  - Select form fields
-  - Checkboxes and radio buttons
-  - Input with Button
-  - Button inside input
-  - Atomized and simplified inline form validation
-- **cf-core:** [MAJOR] Moved the base form styles to cf-form
-- **cf-buttons** [PATCH] Standardized and optimized less code
-- **cf-forms** [MINOR] Updated large target radios/checkboxes to use field molecule
-- **cf-tables:** [MAJOR] Atomized cf-tables.
-- **cf-typography:** [MAJOR] Update to atomic naming conventions:
-  - Broke links apart to create less repetitive code.
-  - Broke headings and headers apart to create a better parent/child relationship and handle layout according to our best practices.
-  - Broke lists apart to create less repetitive code.
-  - Comma separated selectors that share styles rather than list each required class in the markup or turning the required class into a mixin.
-- **cf-icons:** [MINOR] Basic clean up of icons
-  - Updated unicode entries with variables
-  - Updated spacing to be consistent
-  - Removed font-smoothing investigation TODO
-- **cf-icons:** [MAJOR] Updated cf-icons to restrict icon styles to pseudo elems
-  - Updated the cf-icon class to be a mixin only, so that it's not duplicated when cf-icon-prefix is set as cf-icon.
-  - Updated the pseudo elem to only include an icon when a modifier class is used, this is important to mix icons into elems with normal text like buttons, links, etc.
-  - Removed IE7 support because the hack stopped working.
-- **cf-buttons:** [MINOR] Standardized the usage doc
-- **cf-core:** [MINOR] Standardized the usage doc
-- **cf-expandables:** [MINOR] Standardized the usage doc
-- **cf-forms:** [MINOR] Standardized the usage doc
-- **cf-grid:** [MINOR] Standardized the usage doc
-- **cf-icons:** [MINOR] Standardized the usage doc
-- **cf-layout:** [MINOR] Standardized the usage doc
-- **cf-pagination:** [MINOR] Standardized the usage doc
-- **cf-tables:** [MINOR] Standardized the usage doc
-- **cf-typography:** [MINOR] Standardized the usage doc
-- **cf-typography:** [PATCH] Removed default bottom margin from horizontal list items
+- **cf-buttons:** [MAJOR] Update for atomic design overhaul
+- **cf-core:** [MAJOR] Update for atomic design overhaul
+- **cf-expandables:** [MAJOR] Update for atomic design overhaul
+- **cf-forms:** [MAJOR] Update for atomic design overhaul
+- **cf-grid:** [MAJOR] Update for atomic design overhaul
+- **cf-icons:** [MAJOR] Update for atomic design overhaul
+- **cf-layout:** [MAJOR] Update for atomic design overhaul
+- **cf-pagination:** [MAJOR] Update for atomic design overhaul
+- **cf-tables:** [MAJOR] Update for atomic design overhaul
+- **cf-typography:** [MAJOR] Update for atomic design overhaul
+
+### Added
+- **capital-framework:** [MAJOR] Added cf-link script to automate installing component dependencies and npm linking
 
 ### Removed
 - **cf-core:** [MAJOR] Removed deprecated items:
@@ -63,7 +26,6 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - `.superheader`
   - `.figure__bordered`
   - `.u-link-child__hover`
-  - Ability to use radio buttons and checkboxes within a `label`
 - **cf-forms**: [MAJOR] Removed deprecated items:
   - `.form-group` and `.form-group_item`
   - `.input__super`
@@ -73,21 +35,14 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - `@input-icon__success`
 - **cf-typography**: [MAJOR] Removed unused items:
   - custom bullet mixin
-  - fancy slug because
-  - short-desc
+  - fancy slug
+  - short desc
   - padded heading
   - icon lists (for the time being to be addressed later when we can look at existing implementations).
-  - Removed duplicate icon code
+  - duplicate icon code
 - **cf-buttons**: [MAJOR] Removed unused items:
-  - Removed duplicate icon code
-- **cf-layout:** [MAJOR] Removed deprecated items:
-  - `.content-bar`
+  - duplicate icon code
 
-### Fixed
-- **cf-typography:** [PATCH] Fixed old variables removed from cf-core
-- **cf-forms:** [PATCH] Fixed a layout bug in btn-inside-input
-- **cf-forms:** [PATCH] Fixed a layout bug in input-w-btn
-- **cf-forms:** [PATCH] Fixed undefined var references.
 
 ## 3.6.1 - 2016-08-12
 
