@@ -31,7 +31,7 @@ For example, if you wanted to change `cf-buttons`, here's what you'd do:
 
 1. `git clone git@github.com:cfpb/capital-framework.git`
 1. `cd capital-framework`
-1. `npm install`
+1. `npm install && npm run cf-link`
 1. `git checkout -b button-fix canary`
 1. Edit file(s) in `/src/cf-buttons/` however you want.
 1. `npm run build` This will build every component (compiling Less, bundling JS, processing markdown docs) to `tmp/` in the project's root.
@@ -55,8 +55,8 @@ If you're hacking on a component and want to test it in a local project, use `np
 
 ```sh
 cd ~/Projects/capital-framework/ # wherever you cloned this repo
-npm run cf-link && npm run build
-cd tmp/cf-buttons
+npm run build
+cd src/cf-buttons
 npm link
 cd ~/Projects/owning-a-home
 npm link cf-buttons
