@@ -1,10 +1,10 @@
 'use strict';
 
-var path = require('path'),
-    fs = require('fs'),
-    componentsDir = path.join(__dirname, '..', '..', '..', 'src'),
-    components = getDirectories( componentsDir ),
-    exec = require( 'child-process-promise' ).exec;
+var path = require( 'path' );
+var fs = require( 'fs' );
+var componentsDir = path.join( __dirname, '..', '..', '..', 'src' );
+var components = getDirectories( componentsDir );
+var exec = require( 'child-process-promise' ).exec;
 
 function getDirectories( srcpath ) {
   return fs.readdirSync( srcpath ).filter( function( file ) {
