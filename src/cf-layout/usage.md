@@ -37,9 +37,6 @@ Theme variables for setting the color and sizes throughout the project. Overwrit
 @content_sidebar-bg:            lighten(#3a8899, 55%);
 @content_sidebar-border:        #3a8899;
 
-// .content_bar
-@content_bar:                   #3a8899;
-
 // .content_line
 @content_line:                  #3a8899;
 
@@ -351,20 +348,6 @@ overlapping since they will span the height of the entire .content-l element.
         Third-width column (spans 4/12 columns)
     </div>
 </div>
-```
-
-
-## Content bar
-
-A 10 pixel bar that divides the header or hero from the main content.
-This is necessary because we don't have a predictable place to put a full-width border.
-It needs to be under the hero on pages with heroes, but under the header if there is no hero.
-``.content_bar` must come after ``.content_hero` but before ``.content_wrapper`.
-
-<div class="content_bar"></div>
-
-```
-<div class="content_bar"></div>
 ```
 
 

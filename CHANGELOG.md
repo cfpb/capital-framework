@@ -80,7 +80,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - Removed duplicate icon code
 - **cf-buttons**: [MAJOR] Removed unused items:
   - Removed duplicate icon code
-
+- **cf-layout:** [MAJOR] Removed deprecated items:
+  - `.content-bar`
 
 ### Fixed
 - **cf-typography:** [PATCH] Fixed old variables removed from cf-core
