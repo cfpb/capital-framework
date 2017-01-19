@@ -42,16 +42,6 @@ The following Less variables are exposed,
 allowing you to easily override them before compiling.
 
 ```
-@grid_box-sizing-polyfill-path: '../../box-sizing-polyfill';
-```
-
-For full IE 6/7 support, ensure that the path to boxsizing.htc is set
-using the `@grid_box-sizing-polyfill-path` Less variable.
-This path **must** be overridden in your project and set to a root-relative URL.
-
-Read more about the polyfill: https://github.com/Schepp/box-sizing-polyfill.
-
-```
 @grid_wrapper-width: 1200px;
 ```
 
