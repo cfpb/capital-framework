@@ -26,6 +26,22 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   - `.superheader`
   - `.figure__bordered`
   - `.u-link-child__hover`
+- **cf-forms**: Removed deprecated items:
+  - `.form-group` and `.form-group_item`
+  - `.input__super`
+  - `.form-l` classes, in favor of content-l classes in cf-layout
+  - `@cf-forms_input-icon-class`
+  - `@input-icon__warning`
+  - `@input-icon__success`
+- **cf-typography**: Removed unused items:
+  - custom bullet mixin
+  - fancy slug
+  - short desc
+  - padded heading
+  - icon lists (for the time being to be addressed later when we can look at existing implementations).
+  - duplicate icon code
+- **cf-buttons**: Removed unused items:
+  - duplicate icon code
 
 
 ## 3.6.1 - 2016-08-12
