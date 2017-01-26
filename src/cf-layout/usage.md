@@ -1,26 +1,71 @@
 A set of HTML and CSS layout helpers.
 
+[`cf-core`](../cf-core) and [`cf-grid`](../cf-grid) components are
+dependencies of this component.
+
 > NOTE: If you use `cf-layout.less` directly,
   be sure to run the file through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
-## Dependencies
 
-- cf-core
-- cf-grid
+## Table of contents
+
+- [Variables](#variables)
+    - [Color variables](#color-variables)
+- [Content layouts](#content-layouts)
+    - [Standard content columns](#standard-content-columns)
+    - [Large gutters modifier](#large-gutters-modifier)
+- [Content layout column dividers](#content-layout-column-dividers)
+- [Content bar](#content-bar)
+- [Content line](#content-line)
+- [Main content and sidebar](#main-content-and-sidebar)
+- [Left-hand navigation layout](#left-hand-navigation-layout)
+- [Right-hand sidebar layout](#right-hand-sidebar-layout)
+- [Narrow content column option](#narrow-content-column-option)
+- [Flush bottom modifier](#flush-bottom-modifier)
+- [Flush top modifier (only on small screens)](#flush-top-modifier-only-on-small-screens)
+- [Block](#block)
+    - [Standard block example](#standard-block-example)
+    - [Border-top modifier](#border-top-modifier)
+    - [Border-right modifier](#border-right-modifier)
+    - [Border-bottom modifier](#border-bottom-modifier)
+    - [Border-left modifier](#border-left-modifier)
+    - [Border modifier](#border-modifier)
+    - [Flush-top modifier](#flush-top-modifier)
+    - [Flush-top modifier](#flush-bottom-modifier-1)
+    - [Flush-bottom modifier](#flush-bottom-modifier-1)
+    - [Flush-sides modifier](#flush-sides-modifier)
+    - [Flush modifier](#flush-modifier)
+    - [Background modifier](#background-modifier)
+    - [Background and flush sides modifier combo example](#background-and-flush-sides-modifier-combo-example)
+    - [Padded-top modifier](#padded-top-modifier)
+    - [Padded-bottom modifier](#padded-bottom-modifier)
+    - [Sub blocks](#sub-blocks)
+    - [Mixing content blocks with content layouts](#mixing-content-blocks-with-content-layouts)
+- [Bleedbar sidebar styling](#bleedbar-sidebar-styling)
+- [cf-grid helpers](#cf-grid-helpers)
+    - [.wrapper (base)](#wrapper-base)
+    - [Column divider modifiers](#column-divider-modifiers)
+- [Featured content module](#featured-content-module)
+    - [Featured content module - maps](#featured-content-module---maps)
+    - [Featured content module - videos](#featured-content-module---videos)
+- [Heroes](#heroes)
+    - [Standard hero with illustration](standard-hero-with-illustration)
+    - [Hero with bleeding illustration](#hero-with-bleeding-illustration)
+    - [Hero with photograph](#hero-with-photograph)
 
 
 ## Variables
 
-Theme variables for setting the color and sizes.
+Theme variables for setting the color and sizes throughout the project.
 Overwrite them in your own project by duplicating the variable `@key: value`.
 
-Ex. to change the color of your main content border
-add `@content_main-border: #cc0000;` to your project.
-
 ### Color variables
+
+`$color-` variables are from 18F's
+[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
 
 ```
 // .block
@@ -37,9 +82,6 @@ add `@content_main-border: #cc0000;` to your project.
 // .content_sidebar
 @content_sidebar-bg:            lighten(#3a8899, 55%);
 @content_sidebar-border:        #3a8899;
-
-// .content_bar
-@content_bar:                   #3a8899;
 
 // .content_line
 @content_line:                  #3a8899;
@@ -355,20 +397,6 @@ overlapping since they will span the height of the entire .content-l element.
 ```
 
 
-## Content bar
-
-A 10 pixel bar that divides the header or hero from the main content.
-This is necessary because we don't have a predictable place to put a full-width border.
-It needs to be under the hero on pages with heroes, but under the header if there is no hero.
-``.content_bar` must come after ``.content_hero` but before ``.content_wrapper`.
-
-<div class="content_bar"></div>
-
-```
-<div class="content_bar"></div>
-```
-
-
 ## Content line
 
 A 1 pixel edge to edge bar that can divide content.
@@ -652,6 +680,7 @@ Add a class of `.content__flush-bottom` to `.content_main` or content_sidebar to
     </div>
 </footer>
 ```
+
 
 ## Flush top modifier (only on small screens)
 
@@ -1230,79 +1259,177 @@ Featured content module, like a hero, consists of headline/text/optional call to
 Text is full width & displayed above the visual in the default/mobile view.
 At larger screen sizes, the text occupies a fixed portion of the screen (equal to the width of 5 of 12 columns at 701px & 3 of 12 columns at 901px for desktop).
 The visual occupies the remaining space.
-The visual should be 640x360 (16x9 ratio) and resize to fit the height of the FCM with a static width and is center-cropped when it becomes too wide for the available space.
+The visual should be 640x360 (16x9 ratio) and resize to fit the height of the FCM with a static width and is anchored left when it becomes too wide for the available space.
 
-<section class="block block__border block__flush featured-content-module">
-    <div class="featured-content-module_text">
+<section class="block block__border block__flush o-featured-content-module">
+    <div class="o-featured-content-module_text">
         <div class="category-slug">
-            <span class="featured-content-module_icon cf-icon cf-icon-speech-bubble">
+            <span class="o-featured-content-module_icon cf-icon cf-icon-speech-bubble">
 </span> Featured </div>
         <h2>Feature title</h2>
         <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
         <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
     </div>
-    <div class="featured-content-module_visual"> <img class="featured-content-module_img" src="http://placekitten.com/g/540/270"> </div>
+    <div class="o-featured-content-module_visual"> <img class="o-featured-content-module_img" src="http://placekitten.com/g/540/270"> </div>
 </section>
 
 ```
-<section class="block block__border block__flush featured-content-module">
-    <div class="featured-content-module_text">
+<section class="block block__border block__flush o-featured-content-module">
+    <div class="o-featured-content-module_text">
         <div class="category-slug">
-            <span class="featured-content-module_icon cf-icon cf-icon-speech-bubble">
+            <span class="o-featured-content-module_icon cf-icon cf-icon-speech-bubble">
 </span> Featured </div>
         <h2>Feature title</h2>
         <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
         <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
     </div>
-    <div class="featured-content-module_visual"> <img class="featured-content-module_img" src="http://placekitten.com/g/540/270"> </div>
+    <div class="o-featured-content-module_visual"> <img class="o-featured-content-module_img" src="http://placekitten.com/g/540/270"> </div>
+</section>
+```
+
+### Featured content module - Maps
+
+When the featured content module image is a map (or other right-aligned content), the `o-featured-content-module__right` modifier class is added to the `o-featured-content-module` organism. This anchors the image to the right side so that the copyright information is displayed.
+
+<section class="block block__border block__flush o-featured-content-module o-featured-content-module__right">
+    <div class="o-featured-content-module_text">
+        <div class="category-slug">
+            <span class="o-featured-content-module_icon cf-icon cf-icon-speech-bubble">
+</span> Featured (Map)</div>
+        <h2>Feature title</h2>
+        <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
+        <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
+    </div>
+    <div class="o-featured-content-module_visual"> <img class="o-featured-content-module_img" src="http://placekitten.com/g/540/270"> </div>
+</section>
+
+```
+<section class="block block__border block__flush o-featured-content-module o-featured-content-module__right">
+    <div class="o-featured-content-module_text">
+        <div class="category-slug">
+            <span class="o-featured-content-module_icon cf-icon cf-icon-speech-bubble">
+</span> Featured (Map)</div>
+        <h2>Feature title</h2>
+        <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
+        <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
+    </div>
+    <div class="o-featured-content-module_visual"> <img class="o-featured-content-module_img" src="http://placekitten.com/g/540/270"> </div>
+</section>
+```
+
+### Featured content module - Videos
+
+When the featured content module image is a video (or other centered content), the `o-featured-content-module__center` modifier class is added to the `o-featured-content-module` organism. This anchors the center of the image to the center of the available space so that the focal point of the video generally remains centered.
+
+<section class="block block__border block__flush o-featured-content-module o-featured-content-module__center">
+    <div class="o-featured-content-module_text">
+        <div class="category-slug">
+            <span class="o-featured-content-module_icon cf-icon cf-icon-speech-bubble">
+</span> Featured (Video) </div>
+        <h2>Feature title</h2>
+        <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
+        <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
+    </div>
+    <div class="o-featured-content-module_visual"> <img class="o-featured-content-module_img" src="http://placekitten.com/g/540/270"> </div>
+</section>
+
+```
+<section class="block block__border block__flush o-featured-content-module o-featured-content-module__center">
+    <div class="o-featured-content-module_text">
+        <div class="category-slug">
+            <span class="o-featured-content-module_icon cf-icon cf-icon-speech-bubble">
+</span> Featured (Video) </div>
+        <h2>Feature title</h2>
+        <p>Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur instructior ex pri. Cu pri inani constituto, cum aeque noster commodo cu.</p>
+        <a class="jump-link jump-link__underline"> <span class="jump-link_text">Read more about the feature</span> </a>
+    </div>
+    <div class="o-featured-content-module_visual"> <img class="o-featured-content-module_img" src="http://placekitten.com/g/540/270"> </div>
 </section>
 ```
 
 
-## Hero
+## Heroes
 
-Hero consists of a headline, a small amount of additional text,
+A hero consists of a headline, a small amount of additional text,
 an optional call to action, and an illustration.
 Its background color is flush with the sides of the screen, and the content is centered with wrapper classes.
 
-The illustration can be customized by setting the background-image property on the .hero_image element.
+The illustration can be customized by setting the `background-image` property on the `.m-hero_image` element.
 
 On small screens (or where media queries are not supported),
-the text spans the full width of the .hero_wrapper and the illustration is displayed underneath.
+the text spans the full width of the `.m-hero_wrapper` and the illustration is displayed underneath.
 
 For larger screen sizes, media queries are used to position the illustration to the right of the text.
 
-On desktop, the hero should not exceed 285px in height.
+At the grid's maximum width and above, the hero should not exceed 285px in height.
 The image should be 195px in height to conform to this standard.
 
-<section class="content_hero hero">
-    <div class="hero_wrapper wrapper">
-        <div class="hero_text">
-            <h1 class="hero_heading">Hero title</h1>
-            <p class="hero_subhead">
-                Hero text goes here
+### Standard hero with illustration
+
+<section class="m-hero">
+    <div class="m-hero_wrapper wrapper">
+        <div class="m-hero_text">
+            <h1 class="m-hero_heading">Hero title</h1>
+            <p class="m-hero_subhead">
+                Hero text goes here. This paragraph has a recommended maximum length of 185 characters.
+                This paragraph has a recommended maximum length of 185 characters.
             </p>
-            <p class="hero_cta">
-                <a>Call to action</a>
-            </p>
+            <a class="m-hero_cta" href="#">
+                Call to action
+            </a>
         </div>
-        <div class="hero_image" style="background-image: url('http://placekitten.com/g/400/195')"></div>
+        <div class="m-hero_image-wrapper">
+            <div class="m-hero_image" style="background-image: url('http://www.consumerfinance.gov/static/fin-ed-resources/static/img/parents_hero_760x390.png')"></div>
+        </div>
     </div>
 </section>
 
 ```
-<section class="content_hero hero">
-    <div class="hero_wrapper wrapper">
-        <div class="hero_text">
-            <h1 class="hero_heading">Hero title</h1>
-            <p class="hero_subhead">
-                Hero text goes here
+<section class="m-hero">
+    <div class="m-hero_wrapper wrapper">
+        <div class="m-hero_text">
+            <h1 class="m-hero_heading">Hero title</h1>
+            <p class="m-hero_subhead">
+                Hero text goes here. This paragraph has a recommended maximum length of 185 characters.
+                This paragraph has a recommended maximum length of 185 characters.
             </p>
-            <p class="hero_cta">
-                <a>Call to action</a>
-            </p>
+            <a class="m-hero_cta" href="#">
+                Call to action
+            </a>
         </div>
-        <div class="hero_image" style="background-image: url('http://placekitten.com/g/400/195')"></div>
+        <div class="m-hero_image-wrapper">
+            <div class="m-hero_image" style="background-image: url('http://www.consumerfinance.gov/static/fin-ed-resources/static/img/parents_hero_760x390.png')"></div>
+        </div>
     </div>
 </section>
 ```
+
+### Hero with bleeding illustration
+{: class="u-mt30"}
+
+_Examples coming when we can hotlink to the images live on our server,
+so they don't have to be included in this repo._
+
+### Hero with photograph
+{: class="u-mt30"}
+
+The text overlays the photograph at larger screen sizes.
+It's best to avoid a non-button call to action in these,
+as it's unlikely that the Pacific Blue will have accessible contrast with a
+non-white (or light gray) background.
+
+<section class="m-hero m-hero__overlay"
+         style="background-image: url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg')">
+    <div class="m-hero_wrapper wrapper">
+        <div class="m-hero_text">
+            <h1 class="m-hero_heading">Hero title</h1>
+            <p class="m-hero_subhead">
+                Hero text goes here. This paragraph has a recommended maximum length of 185 characters.
+                This example paragraph is 151 characters long.
+            </p>
+        </div>
+        <div class="m-hero_image-wrapper">
+            <div class="m-hero_image" style="background-image: url('http://files.consumerfinance.gov/f/images/pc_mobile_1.original.jpg')"></div>
+        </div>
+    </div>
+</section>

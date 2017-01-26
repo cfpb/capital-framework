@@ -1,4 +1,6 @@
-The cf-core component acts as the backbone for Capital Framework. It's made up of four child components `cf-vars`, `cf-media-queries`, `cf-utilities`, and `cf-base`.
+The cf-core component acts as the backbone for Capital Framework.
+It's made up of four child components `cf-vars`, `cf-media-queries`,
+`cf-utilities`, and `cf-base`.
 
 > NOTE: If you use any cf-core Less file directly,
   be sure to run the files through
@@ -6,13 +8,14 @@ The cf-core component acts as the backbone for Capital Framework. It's made up o
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
+
 ## Table of contents
 
 - [Variables](#variables)
-    - [Sizing variables](#sizing-variables)
     - [Color variables](#color-variables)
+    - [Sizing variables](#sizing-variables)
 - [Media queries](#media-queries)
-    - [Respond to min and max mixins](#respond-to-min-and-max-mixins)
+    - [Respond to min and max mixins](#respond-to-min-and-max-width-mixins)
     - [Respond to range mixin](#respond-to-range-mixin)
     - [Respond to dpi mixin](#respond-to-dpi-mixin)
     - [Respond to print mixin](#respond-to-print-mixin)
@@ -28,39 +31,20 @@ The cf-core component acts as the backbone for Capital Framework. It's made up o
     - [Lists](#lists)
     - [Tables](#tables)
     - [Block quote](#block-quote)
-- [Base forms](#base-forms)
-    - [Form labels](#form-labels)
-    - [Form elements](#form-elements)
 - [Base images](#base-images)
     - [Full-width images](#full-width-images)
     - [Figure](#figure)
-    - [Bordered figure](#bordered-figure)
+
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
-
-Ex. to set your base font size, add `@base-font-size-px: 17px;` to your project.
-
-### Sizing variables
-
-```
-@base-font-size-px:   16px;
-@base-line-height-px: 22px;
-@base-line-height:    unit(@base-line-height-px / @base-font-size-px);
-@bp-xs-max:           600px;
-@bp-sm-min:           @bp-xs-max + 1px;
-@bp-sm-max:           900px;
-@bp-med-min:          @bp-sm-max + 1px;
-@bp-med-max:          1020px;
-@bp-lg-min:           @bp-med-max + 1px;
-@bp-lg-max:           1230px;
-@bp-xl-min:           @bp-lg-max + 1px;
-```
+Theme variables for setting the color and sizes throughout the project.
+Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's [US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables are from 18F's
+[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
 
 ```
 // body
@@ -88,9 +72,22 @@ Ex. to set your base font size, add `@base-font-size-px: 17px;` to your project.
 @input-border:           #5b616b; // $color-gray
 @input-border-focus:     #3e94cf; // $color-focus
 @input-placeholder:      grayscale(#c7336e);
+```
 
-// .figure__bordered
-@figure__bordered:       #d6d7d9; // $color-gray-lighter
+### Sizing variables
+
+```
+@base-font-size-px:   16px;
+@base-line-height-px: 22px;
+@base-line-height:    unit(@base-line-height-px / @base-font-size-px);
+@bp-xs-max:           600px;
+@bp-sm-min:           @bp-xs-max + 1px;
+@bp-sm-max:           900px;
+@bp-med-min:          @bp-sm-max + 1px;
+@bp-med-max:          1020px;
+@bp-lg-min:           @bp-med-max + 1px;
+@bp-lg-max:           1230px;
+@bp-xl-min:           @bp-lg-max + 1px;
 ```
 
 
@@ -282,32 +279,30 @@ Force word breaks within an element. Useful for small containers where text may 
 
 _This only works in IE8 when the element with the `.u-break-word` class has layout. See <http://stackoverflow.com/questions/3997223/word-wrapbreak-word-not-working-in-ie8> for more information._
 
-<div style="width: 100px;">
+<div class="u-break-word u-mb30" style="width: 100px; padding: 0.5em; border: 1px solid silver;">
     This link should break:
-    <br>
-    <a class="u-break-word" href="#">
+    <a href="#">
         something@something.com
     </a>
-    <br>
-    <br>
+</div>
+
+<div class="u-mb30" style="width: 100px; padding: 0.5em; border: 1px solid silver;">
     This link should not:
-    <br>
     <a href="#">
         something@something.com
     </a>
 </div>
 
 ```
-<div style="width: 100px;">
+<div class="u-break-word">
     This link should break:
-    <br>
-    <a class="u-break-word" href="#">
+    <a href="#">
         something@something.com
     </a>
-    <br>
-    <br>
+</div>
+
+<div>
     This link should not:
-    <br>
     <a href="#">
         something@something.com
     </a>
@@ -454,7 +449,6 @@ Hides content on screens widths under 601px.
 </div>
 ```
 
-
 ### Mixins
 
 #### Align with button
@@ -535,11 +529,11 @@ To create a 4:3 flexible video player, add the `__4_3` modifier to the container
 </div>
 ```
 
-#### Link Modifiers
+#### Link modifiers
 
 Modify link properties using the following mixins.
 
-##### Link Colors
+##### Link colors
 
 Calling the mixin without arguments will set the following states - default(pacific), :hover(pacific-50), :focus:(pacific), :visited teal, :active navy.
 
@@ -631,10 +625,10 @@ Sets the element to 14px (in ems) based on the text size passed as `@context`.
 Sets the font-stack, weight, and style of an element.
 
 ```
-.webfont-regular();
-.webfont-italic();
-.webfont-medium();
-.webfont-demi();
+.u-webfont-regular();
+.u-webfont-italic();
+.u-webfont-medium();
+.u-webfont-demi();
 ```
 
 To use your own fonts in the webfont mixins, set your own font with the `@webfont-regular/italic/medium/demi` variables in your `theme-overrides.less` file.
@@ -1050,163 +1044,6 @@ _Note that it is best practice to document the URL of a quoted work using the ci
 ```
 
 
-## Base forms
-
-_Visit https://github.com/cfpb/cf-forms for advanced form field patterns._
-
-### Form labels
-
-#### Default label
-
-<label>Form label</label>
-
-```
-<label>Form label</label>
-```
-
-#### Label for a radio or checkbox
-
-<input type="radio" id="radio-input">
-<label for="radio-input">Radio label</label>
-<input type="checkbox" id="checkbox-input">
-<label for="checkbox-input">Checkbox label</label>
-
-```
-<input type="radio" id="radio-input">
-<label for="radio-input">Radio label</label>
-<input type="checkbox" id="checkbox-input">
-<label for="checkbox-input">Checkbox label</label>
-```
-
-### Form elements
-
-_Note that the `.focus` class is for documentation purposes only and should not be used in production._
-
-#### Text input
-
-<input type="text" value="Lorem ipsum">
-<input class="focus" type="text" value="Lorem ipsum">
-<br><br>
-<input placeholder="Lorem ipsum" type="text" value="">
-
-```
-<input type="text" value="Lorem ipsum">
-<input class="focus" type="text" value="Lorem ipsum">
-<br><br>
-<input placeholder="Lorem ipsum" type="text" value="">
-```
-
-#### Search input
-
-<input type="search" value="Lorem ipsum">
-<input class="focus" type="search" value="Lorem ipsum">
-<br><br>
-<input placeholder="Lorem ipsum" type="search" value="">
-
-```
-<input type="search" value="Lorem ipsum">
-<input class="focus" type="search" value="Lorem ipsum">
-<br><br>
-<input placeholder="Lorem ipsum" type="search" value="">
-```
-
-#### Email input
-
-<input type="email" value="Lorem ipsum">
-<input class="focus" type="email" value="Lorem ipsum">
-<br><br>
-<input placeholder="Lorem ipsum" type="email" value="">
-
-```
-<input type="email" value="Lorem ipsum">
-<input class="focus" type="email" value="Lorem ipsum">
-<br><br>
-<input placeholder="Lorem ipsum" type="email" value="">
-```
-
-#### URL input
-
-<input type="url" value="Lorem ipsum">
-<input class="focus" type="url" value="Lorem ipsum">
-<br><br>
-<input placeholder="Lorem ipsum" type="url" value="">
-
-```
-<input type="url" value="Lorem ipsum">
-<input class="focus" type="url" value="Lorem ipsum">
-<br><br>
-<input placeholder="Lorem ipsum" type="url" value="">
-```
-
-#### TEL input
-
-<input type="tel" value="Lorem ipsum">
-<input class="focus" type="tel" value="Lorem ipsum">
-<br><br>
-<input placeholder="Lorem ipsum" type="tel" value="">
-
-```
-<input type="tel" value="Lorem ipsum">
-<input class="focus" type="tel" value="Lorem ipsum">
-<br><br>
-<input placeholder="Lorem ipsum" type="tel" value="">
-```
-
-#### Number input
-
-<input type="number" value="1000">
-<input class="focus" type="number" value="1000">
-<br><br>
-<input placeholder="Lorem ipsum" type="number" value="">
-
-```
-<input type="number" value="1000">
-<input class="focus" type="number" value="1000">
-<br><br>
-<input placeholder="Lorem ipsum" type="number" value="">
-```
-
-#### Textarea
-
-<textarea>Lorem ipsum</textarea>
-<textarea class="focus">Lorem ipsum</textarea>
-
-```
-<textarea>Lorem ipsum</textarea>
-<textarea class="focus">Lorem ipsum</textarea>
-```
-
-#### Multiselect
-
-<select multiple>
-    <option value="option1">Lorem</option>
-    <option value="option2">Ipsum</option>
-    <option value="option3">Dolor</option>
-    <option value="option4">Sit</option>
-</select>
-<select class="focus" multiple>
-    <option value="option1">Lorem</option>
-    <option value="option2">Ipsum</option>
-    <option value="option3">Dolor</option>
-    <option value="option4">Sit</option>
-</select>
-
-```
-<select multiple>
-    <option value="option1">Lorem</option>
-    <option value="option2">Ipsum</option>
-    <option value="option3">Dolor</option>
-    <option value="option4">Sit</option>
-</select>
-<select class="focus" multiple>
-    <option value="option1">Lorem</option>
-    <option value="option2">Ipsum</option>
-    <option value="option3">Dolor</option>
-    <option value="option4">Sit</option>
-</select>
-```
-
-
 ## Base images
 
 ### Full-width images
@@ -1221,24 +1058,15 @@ Gives all images a default max-width of 100% of their container.
 
 ### Figure
 
+Resets browser default side margins for `figure` to 0,
+and removes bottom inline spacing from `img` elements within.
+
 <figure>
     <img src="http://placekitten.com/340/320">
 </figure>
 
 ```
 <figure>
-    <img src="http://placekitten.com/340/320">
-</figure>
-```
-
-### Bordered figure
-
-<figure class="figure__bordered">
-    <img src="http://placekitten.com/340/320">
-</figure>
-
-```
-<figure class="figure__bordered">
     <img src="http://placekitten.com/340/320">
 </figure>
 ```

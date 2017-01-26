@@ -3,14 +3,46 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
-- 
-
 ### Changed
-- 
+- **cf-buttons:** Update for atomic design overhaul
+- **cf-core:** Update for atomic design overhaul
+- **cf-expandables:** Update for atomic design overhaul
+- **cf-forms:** Update for atomic design overhaul
+- **cf-grid:** Update for atomic design overhaul
+- **cf-icons:** Update for atomic design overhaul
+- **cf-layout:** Update for atomic design overhaul
+- **cf-pagination:** Update for atomic design overhaul
+- **cf-tables:** Update for atomic design overhaul
+- **cf-typography:** Update for atomic design overhaul
+
+### Added
+- **capital-framework:** Added cf-link script to automate installing component dependencies and npm linking
 
 ### Removed
-- 
+- **cf-core:** Removed deprecated items:
+  - `@mobile-max`
+  - `@tablet-min`
+  - `.subheader`
+  - `.superheader`
+  - `.figure__bordered`
+  - `.u-link-child__hover`
+- **cf-forms**: Removed deprecated items:
+  - `.form-group` and `.form-group_item`
+  - `.input__super`
+  - `.form-l` classes, in favor of content-l classes in cf-layout
+  - `@cf-forms_input-icon-class`
+  - `@input-icon__warning`
+  - `@input-icon__success`
+- **cf-typography**: Removed unused items:
+  - custom bullet mixin
+  - fancy slug
+  - short desc
+  - padded heading
+  - icon lists (for the time being to be addressed later when we can look at existing implementations).
+  - duplicate icon code
+- **cf-buttons**: Removed unused items:
+  - duplicate icon code
+
 
 ## 3.6.1 - 2016-08-12
 
@@ -55,7 +87,6 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-layout:** Update recommended FCM markup to use `category-slug`.
 - **cf-forms:** Fix markup in documentation.
 - **cf-typography:** Fix markup in documentation.
-
 
 ## 3.5.0 - 2016-05-26
 

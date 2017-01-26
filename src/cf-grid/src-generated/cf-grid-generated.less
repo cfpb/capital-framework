@@ -58,7 +58,7 @@
 
 
 .prefixX ( @index, @indexP ) when (@indexP > 0) {
-  
+
   .col-@{index}.prefix-@{indexP} {
     .grid_column( @columns: @index; @prefix: @indexP; );
   }
@@ -70,7 +70,7 @@
 
 
 .suffixX ( @index, @indexS ) when (@indexS > 0) {
-  
+
   .col-@{index}.suffix-@{indexS} {
     .grid_column( @columns: @index; @suffix: @indexS; );
   }
@@ -94,4 +94,3 @@
 .columnX ( 0 ) {}
 
 .columnX ( @grid_total-columns );
-

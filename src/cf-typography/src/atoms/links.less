@@ -1,0 +1,112 @@
+//
+// Links with icons
+// Required for jump link modifier
+//
+
+.a-link__icon,
+.a-link__jump {
+    border-bottom-width: 0;
+
+    .a-link_text {
+        border-bottom-width: 1px;
+        border-bottom-style: inherit;
+    }
+
+    &:before,
+    &:after {
+        margin-right: 1px;
+        margin-left: 1px;
+    }
+
+    &.a-link__no-wrap {
+        white-space: nowrap;
+    }
+}
+
+//
+// Jump link
+//
+
+.a-link__jump {
+    .webfont-medium();
+
+    &.a-link__large {
+        font-size: unit( @size-iv / @base-font-size-px, em );
+    }
+
+    .respond-to-max( @bp-xs-max, {
+        .a-link__block();
+
+        position: relative;
+
+        &:after,
+        &:before {
+            position: absolute;
+            margin-bottom: -0.6em;
+            bottom: 50%;
+        }
+
+        &:after {
+            right: 0;
+        }
+
+        &:before {
+            left: 0;
+        }
+
+        &.cf-icon__after {
+            padding-right: 1.25em;
+        }
+
+        &.cf-icon__before {
+            padding-left: 1.25em;
+        }
+
+        &.a-link__bg {
+            border: solid @jump-link_border;
+            border-width: 1px 0;
+
+            background: @jump-link_bg;
+
+            &:after {
+                right: 1em;
+            }
+
+            &:before {
+                left: 1em;
+            }
+
+            &.cf-icon__after {
+                padding-left: 1em;
+                padding-right: 2.25em;
+            }
+
+            &.cf-icon__before {
+                padding-left: 2.25em;
+                padding-right: 1em;
+            }
+        }
+    } );
+}
+
+//
+// Block link
+//
+
+.a-link__block {
+    box-sizing: border-box;
+    display: block;
+
+    padding-top: unit( 10px / @base-font-size-px, em );
+    padding-bottom: unit( 10px / @base-font-size-px, em );
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    // 100% width is needed when block or jump link are applied to a <button>
+    width: 100%;
+
+    text-align: left;
+
+    .a-link_text {
+        border-bottom-width: 0;
+    }
+}

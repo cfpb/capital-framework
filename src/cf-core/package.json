@@ -1,6 +1,6 @@
 {
   "name": "cf-core",
-  "version": "3.5.0",
+  "version": "5.0.0",
   "description": "Capital Framework core styles",
   "less": "src/cf-core.less",
   "style": "cf-core.css",
@@ -12,7 +12,6 @@
     "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
   },
   "dependencies": {
-    "box-sizing-polyfill": "0.1.0",
     "normalize-css": "^2.0.0",
     "normalize-legacy-addon": "0.1.0"
   }

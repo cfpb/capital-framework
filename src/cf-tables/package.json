@@ -1,6 +1,6 @@
 {
   "name": "cf-tables",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Capital Framework tables",
   "main": "src/cf-tables.js",
   "less": "src/cf-tables.less",
@@ -14,10 +14,9 @@
   },
   "dependencies": {
     "cf-core": "^3.0.0",
-    "jquery": "~1.11.0"
+    "atomic-component": "github:cfpb/AtomicComponent"
   },
   "keywords": [
-    "tables",
-    "jquery"
+    "tables"
   ]
 }
