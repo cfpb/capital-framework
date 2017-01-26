@@ -27,7 +27,6 @@
     // This will run before each test in this module.
     setup: function() {
       getElement = document.querySelector.bind( document );
-      this.testOne = getElement( '#test-one' );
     }
   } );
 
