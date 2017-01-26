@@ -4,44 +4,28 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Changed
-- **cf-buttons:** [MAJOR] Update for atomic design overhaul
-- **cf-core:** [MAJOR] Update for atomic design overhaul
-- **cf-expandables:** [MAJOR] Update for atomic design overhaul
-- **cf-forms:** [MAJOR] Update for atomic design overhaul
-- **cf-grid:** [MAJOR] Update for atomic design overhaul
-- **cf-icons:** [MAJOR] Update for atomic design overhaul
-- **cf-layout:** [MAJOR] Update for atomic design overhaul
-- **cf-pagination:** [MAJOR] Update for atomic design overhaul
-- **cf-tables:** [MAJOR] Update for atomic design overhaul
-- **cf-typography:** [MAJOR] Update for atomic design overhaul
+- **cf-buttons:** Update for atomic design overhaul
+- **cf-core:** Update for atomic design overhaul
+- **cf-expandables:** Update for atomic design overhaul
+- **cf-forms:** Update for atomic design overhaul
+- **cf-grid:** Update for atomic design overhaul
+- **cf-icons:** Update for atomic design overhaul
+- **cf-layout:** Update for atomic design overhaul
+- **cf-pagination:** Update for atomic design overhaul
+- **cf-tables:** Update for atomic design overhaul
+- **cf-typography:** Update for atomic design overhaul
 
 ### Added
-- **capital-framework:** [MAJOR] Added cf-link script to automate installing component dependencies and npm linking
+- **capital-framework:** Added cf-link script to automate installing component dependencies and npm linking
 
 ### Removed
-- **cf-core:** [MAJOR] Removed deprecated items:
+- **cf-core:** Removed deprecated items:
   - `@mobile-max`
   - `@tablet-min`
   - `.subheader`
   - `.superheader`
   - `.figure__bordered`
   - `.u-link-child__hover`
-- **cf-forms**: [MAJOR] Removed deprecated items:
-  - `.form-group` and `.form-group_item`
-  - `.input__super`
-  - `.form-l` classes, in favor of content-l classes in cf-layout
-  - `@cf-forms_input-icon-class`
-  - `@input-icon__warning`
-  - `@input-icon__success`
-- **cf-typography**: [MAJOR] Removed unused items:
-  - custom bullet mixin
-  - fancy slug
-  - short desc
-  - padded heading
-  - icon lists (for the time being to be addressed later when we can look at existing implementations).
-  - duplicate icon code
-- **cf-buttons**: [MAJOR] Removed unused items:
-  - duplicate icon code
 
 
 ## 3.6.1 - 2016-08-12

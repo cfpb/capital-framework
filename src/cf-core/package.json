@@ -1,6 +1,6 @@
 {
   "name": "cf-core",
-  "version": "3.5.0",
+  "version": "5.0.0",
   "description": "Capital Framework core styles",
   "less": "src/cf-core.less",
   "style": "cf-core.css",
