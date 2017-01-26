@@ -13,8 +13,8 @@ This component can be used by itself, but is designed to work with Capital Frame
 - [Variables](#variables)
     - [Settings](#settings)
 - [The basics](#the-basics)
-- [Helper classes](#helper-classes)
-    - [Icon sizes](#Icon-sizes)
+- [Helpers](#helpers)
+    - [Icon sizes](#icon-sizes)
     - [Mixins](#mixins)
     - [Modified icons](#modified-icons)
     - [Animated icons](#animated-icons)
@@ -66,7 +66,7 @@ Note that this issue only pops up in older versions of Internet Explorer.
 ### Icon sizes
 
 
-### Large icon size
+#### Large icon size
 
 <span class="cf-icon
              cf-icon-money
@@ -80,7 +80,7 @@ Note that this issue only pops up in older versions of Internet Explorer.
              cf-icon__lg"></span>
 ```
 
-### 2x icon size
+#### 2x icon size
 
 <span class="cf-icon
              cf-icon-money
@@ -94,7 +94,7 @@ Note that this issue only pops up in older versions of Internet Explorer.
              cf-icon__2x"></span>
 ```
 
-### 3x icon size
+#### 3x icon size
 
 <span class="cf-icon
              cf-icon-money
@@ -108,7 +108,7 @@ Note that this issue only pops up in older versions of Internet Explorer.
              cf-icon__3x"></span>
 ```
 
-### 4x icon size
+#### 4x icon size
 
 <span class="cf-icon
              cf-icon-money
@@ -122,7 +122,7 @@ Note that this issue only pops up in older versions of Internet Explorer.
              cf-icon__4x"></span>
 ```
 
-### 5x icon size
+#### 5x icon size
 
 <span class="cf-icon
              cf-icon-money

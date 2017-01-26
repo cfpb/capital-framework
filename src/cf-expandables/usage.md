@@ -2,25 +2,46 @@ Expandables are components that have additional content that can be
 opened (expanded) and closed (collapsed). They can appear on their own
 or can appear in groups.
 
+[`cf-core`](../cf-core) and [`cf-icons`](../cf-icons) components are
+dependencies of this component.
+
 > NOTE: If you use `cf-expandables.less` directly,
   be sure to run the file through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
-## Dependencies
 
-- cf-core
-- cf-icons
+## Table of contents
+
+- [Variables](#variables)
+  - [Color variables](#color-variables)
+  - [Sizing variables](#sizing-variables)
+  - [Timing variables](#timing-variables)
+- [Modifiers](#modifiers)
+  - [Expanded](#expandables)
+  - [Padded](#padded)
+  - [Spaced header](#spaced-header)
+- [Elements](#elements)
+    - [Text elements](#text-elements)
+    - [Header elements](#header-elements)
+- [Recommended expandable pattern](#recommended-expandable-pattern)
+  - [Default state](#default-state)
+  - [Default state - open on load](#default-state-open-on-load)
+  - [Barebones example](#barebones-expandable)
+- [Expandable groups](#expandable-groups)
+  - [Accordion style group](#accordion-style-group)
 
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
+Theme variables for setting the color and sizes throughout the project.
+Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's [US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables are from 18F's
+[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
 
 ```
 // Single expandable
@@ -30,8 +51,8 @@ Theme variables for setting the color and sizes throughout the project. Overwrit
 
 // Padded expandable modifier
 @expandable__padded-bg:        #e1f3f8; // $color-primary-alt-lightest
-@expandable__padded-bg-hover:  lighten(@expandable__padded-bg, 3%);
-@expandable__padded-divider:   darken(@expandable__padded-bg, 5%);
+@expandable__padded-bg-hover:  lighten( @expandable__padded-bg, 3% );
+@expandable__padded-divider:   darken( @expandable__padded-bg, 5% );
 
 // Expandable group
 @expandable-group_header-text: @text;

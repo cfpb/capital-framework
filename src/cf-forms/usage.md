@@ -1,6 +1,8 @@
-The cf-forms component provides extensions to the basic form styles for Capital Framework.
+The cf-forms component provides extensions to the basic form styles for
+Capital Framework.
 
-[`cf-core`](../cf-core), [`cf-buttons`](../cf-buttons), and [`cf-icons`](../cf-icons) components are all dependencies of this component."
+[`cf-core`](../cf-core), [`cf-buttons`](../cf-buttons), and
+[`cf-icons`](../cf-icons) components are all dependencies of this component.
 
 > NOTE: If you use `cf-forms.less` directly,
   be sure to run the file through
@@ -33,11 +35,13 @@ The cf-forms component provides extensions to the basic form styles for Capital 
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
+Theme variables for setting the color and sizes throughout the project.
+Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's [US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables are from 18F's
+[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
 
 ```
 // .error
