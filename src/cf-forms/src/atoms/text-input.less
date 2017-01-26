@@ -1,0 +1,56 @@
+.a-text-input {
+    .u-webfont-regular();
+
+    // Browser Reset
+    appearance: none;
+
+    display: inline-block;
+
+    padding: unit( 7px / @base-font-size-px, em );
+    border: 1px solid @input-border;
+
+    background: @input-bg;
+
+    &:focus,
+    &__focused {
+        border-color: @input-border__focused;
+        outline: 1px solid @input-border__focused;
+    }
+
+    &:disabled,
+    &__disabled {
+        background-color: @input-bg__disabled;
+        cursor: not-allowed;
+    }
+
+    &__error {
+        border-color: @input-border__error;
+        outline: 1px solid @input-border__error;
+    }
+
+    &__warning {
+        border-color: @input-border__warning;
+        outline: 1px solid @input-border__warning;
+    }
+
+    &__success {
+        border-color: @input-border__success;
+        outline: 1px solid @input-border__success;
+    }
+}
+
+// Overrides extra left padding.
+// http://stackoverflow.com/questions/11127891/how-can-i-get-rid-of-horizontal-padding-or-indent-in-html5-search-inputs-in-webk
+::-webkit-search-decoration {
+    appearance: none;
+}
+
+::-webkit-input-placeholder {
+    color: @input-text__placeholder;
+}
+::-moz-placeholder {
+    color: @input-text__placeholder;
+}
+:-ms-input-placeholder {
+    color: @input-text__placeholder;
+}

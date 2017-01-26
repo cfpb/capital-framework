@@ -4,6 +4,7 @@ node_js:
 before_script:
   - npm config set spin false --global
   - npm install -g gulp
+  - npm run cf-link
   - gulp build
 after_success:
   - ./scripts/travis/release.sh

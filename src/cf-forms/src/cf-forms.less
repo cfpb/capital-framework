@@ -2,6 +2,49 @@
    Capital Framework
    Form Element Styling
    ========================================================================== */
+//
+// Theme variables
+//
+
+// Color variables
+
+// Input borders
+@input-border:                  #5b616b;
+@input-border__hover:           #0072ce; // @pacific;
+@input-border__focused:         #0072ce; // @pacific;
+@input-border__active:          #0072ce; // @pacific;
+@input-border__error:           #d14124; // @red;
+@input-border__warning:         #ff9e1b; // @gold;
+@input-border__success:         #20aa3f; // @green;
+@input-border__selected:        #046b99; // $color-primary-alt-darkest
+
+// Input backgrounds
+@input-bg:                      #ffffff;
+@input-bg__active:              #0072ce; // @pacific;
+@input-bg__disabled:            #f7f8f9; // @gray-5;
+
+// Input text
+@input-text__disabled:          #75787b; // @gray-80;
+@input-text__placeholder:       #aeb0b5;
+
+// Input icons
+@input-icon__error:             #d14124; // @red;
+
+// select
+@select-border:                 #b4b5b6; // @gray-40;
+@select-icon:                   #75787b; // @gray-80;
+@select-icon-bg:                #f7f8f9; // @gray-5;
+
+// Large target area variables
+@input-lg-target:               #d6d7d9; // $color-gray-lighter
+@input-lg-target__selected:     #9bdaf1; // $color-primary-alt-light
+@input-lg-target__disabled:     #aeb0b5; // $color-gray-light
+
+@input-disabled:                #75787b; // @gray
+
+// Sizing variables
+
+@select-height:                  30px;
 
 // Import external dependencies
 
@@ -10,215 +53,97 @@
 @import (less) '../../cf-buttons/src/cf-buttons.less';
 @import (less) '../../cf-icons/src/cf-icons.less';
 
-//
-// Theme variables
-//
-
-// Color variables
-// $color- variables are from 18F's US Web Design Standards
-// https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss
-
-// .error
-@input-error:                   #e31c3d; // $color-secondary
-
-// warning
-@input-warning:                 #fdb81e; // $color-gold
-
-// .success
-@input-success:                 #2e8540; // $color-green
-
-// .disabled
-@input-disabled:                #aeb0b5; // $color-gray-light
-
-// Sizing variables
-
-// .input__super
-@input__super-font-size:        18px;
 
 //
-// Form labels
+// Import atoms
 //
 
-.form-label-header {
-    .heading-5();
-    margin-bottom: unit(10px / @font-size, em);
-}
+@import (less) 'atoms/label.less';
+@import (less) 'atoms/select.less';
+@import (less) 'atoms/text-input.less';
+
 
 //
-// Super input
+// Import molecules
 //
 
-.input__super {
-    &[type="text"],
-    &[type="search"],
-    &[type="email"],
-    &[type="url"],
-    &[type="tel"],
-    &[type="number"] {
-        padding: unit( 10px / @input__super-font-size, em );
-        font-size: unit( @input__super-font-size / @base-font-size-px, em );
-    }
-}
+@import (less) 'molecules/btn-inside-input.less';
+@import (less) 'molecules/form-fields.less';
 
 //
-// Input states
+// Import organisms
 //
 
-input[type="text"],
-input[type="search"],
-input[type="email"],
-input[type="url"],
-input[type="tel"],
-input[type="number"],
-select[multiple],
-textarea {
-    &.error {
-        border: 1px solid @input-error;
-        outline: 1px solid @input-error;
-    }
-    &.warning {
-        border: 1px solid @input-warning;
-        outline: 1px solid @input-warning;
-    }
-    &.success {
-        border: 1px solid @input-success;
-        outline: 1px solid @input-success;
-    }
-    &.disabled {
-        background-color: @input-disabled;
-    }
-}
+@import (less) 'organisms/form.less';
 
 //
-// Form icons
+// m-select menu
 //
 
-@cf-forms_input-icon-class: cf-form_input-icon;
-
-.@{cf-forms_input-icon-class} {
-    @font-size: 20px;
-
+.m-select {
     position: relative;
-    top: unit(6px / @font-size, em);
-    margin-left: unit(4px / @font-size, em);
-    font-size: unit(@font-size / @base-font-size-px, em);
-}
+    margin-top: 0.5em;
+    border: 1px solid @select-border;
 
-.error + .@{cf-forms_input-icon-class} {
-    color: @input-error;
-}
-
-.warning + .@{cf-forms_input-icon-class} {
-    color: @input-warning;
-}
-
-.success + .@{cf-forms_input-icon-class} {
-    color: @input-success;
-}
-
-//
-// Form group
-//
-
-.form-group + .form-group {
-    margin-top: unit(30px / @base-font-size-px, em);
-}
-
-.form-group_item + .form-group_item {
-    margin-top: unit(15px / @base-font-size-px, em);
-}
-
-//
-// Input with button
-//
-
-.input-with-btn {
-
-    .respond-to-min(480px, {
-        .grid_nested-col-group();
-    });
-
-    &_input {
-        margin-bottom: unit(15px / @base-font-size-px, em);
-        .respond-to-min(480px, {
-            .grid_column(9);
-            border-right-width: 0;
-        });
-        .respond-to-min(960px, {
-            .grid_column(10);
-            border-right-width: 0;
-        });
-
-        input {
-            box-sizing: border-box;
-            width: 100%;
-        }
-    }
-
-    &_btn {
-        margin-bottom: unit(15px / @base-font-size-px, em);
-
-        .respond-to-min(480px, {
-            .grid_column(3);
-        });
-        .respond-to-min(960px, {
-            .grid_column(2);
-        });
-
-        .btn {
-            box-sizing: border-box;
-            width: 100%;
-        }
-
-        .btn__super {
-            padding-left: unit(15px / @super-btn-font-size, em);
-            padding-right: unit(15px / @super-btn-font-size, em);
-        }
-    }
-
-}
-
-//
-// Button inside input
-//
-
-.btn-inside-input {
-
-    position: relative;
-
-    input[type="text"],
-    input[type="search"],
-    input[type="email"],
-    input[type="url"],
-    input[type="tel"],
-    input[type="number"] {
-        box-sizing: border-box;
+    select {
+        height: unit( 30px / @base-font-size-px, em );
         width: 100%;
-        padding-right: unit(65px / @btn-font-size, em);
+        padding: unit( 4px / @base-font-size-px, em )
+                 unit( 6px / @base-font-size-px, em );
+        border: 0;
+        outline: 2px solid transparent;
+        appearance: none;
+        background-color: @input-bg;
+        border-radius: 0;
+        color: @text;
 
-        &.input__super {
-            padding-right: unit(90px / @super-btn-font-size, em);
+        &:hover,
+        &:active,
+        &:focus {
+            outline-color: @input-border__focused;
+            outline-offset: 0;
         }
     }
 
-    .btn {
-        .u-link__no-border();
+    select[disabled] {
+        color: @input-text__disabled;
+        background-color: @input-bg__disabled;
+        cursor: not-allowed;
+
+        &:hover {
+            outline: 2px solid transparent;
+        }
+    }
+
+    select option:disabled {
+        color: @input-disabled;
+    }
+
+    &:after {
+        width: unit( 30px / @base-font-size-px, em );
+        height: unit( 30px / @base-font-size-px, em );
+        border-left: 1px solid @select-border;
         position: absolute;
-        right: unit(15px / @btn-font-size, em);
         top: 0;
-
-        &__super {
-            right: unit(15px / @super-btn-font-size, em);
-        }
-
-        /* pa11y fails unless the background color is explicitly set */
-        &__link.btn__secondary {
-            background-color: #fff;
-        }
+        right: 0;
+        background-color: @input-disabled;
+        color: @select-icon;
+        content: @cf-icon-down;
+        font-family: 'CFPB Minicons';
+        line-height: unit( 30px / @base-font-size-px, em );
+        text-align: center;
+        pointer-events: none;
     }
-
 }
 
-//
-// EOF
-//
+// @todo: add modernizr to CF so this works:
+
+.no-csspointerevents .m-select {
+    &:after {
+        height: 0;
+        width: 0;
+        border: 0;
+        content: '';
+    }
+}
+

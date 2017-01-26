@@ -1,6 +1,8 @@
-The cf-forms component provides extensions to the basic form styles for Capital Framework.
+The cf-forms component provides extensions to the basic form styles for
+Capital Framework.
 
-[`cf-core`](../cf-core), [`cf-buttons`](../cf-buttons), and [`cf-icons`](../cf-icons) components are all dependencies of this component."
+[`cf-core`](../cf-core), [`cf-buttons`](../cf-buttons), and
+[`cf-icons`](../cf-icons) components are all dependencies of this component.
 
 > NOTE: If you use `cf-forms.less` directly,
   be sure to run the file through
@@ -8,33 +10,38 @@ The cf-forms component provides extensions to the basic form styles for Capital 
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
+
 ## Table of contents
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
-    - [Sizing variables](#sizing-variables)
 - [Labels](#labels)
-    - [Label header](#label-header)
+    - [Basic label](#basic-label)
+    - [Label heading](#label-heading)
 - [Inputs](#inputs)
-    - [Super input](#super-input)
+    - [Basic Text Inputs](#basic-text-inputs)
+    - [Basic checkboxes](#basic-checkboxes)
+    - [Basic radio buttons](#basic-radio-buttons)
+    - [Select box](#select-box)
     - [Input states](#input-states)
-    - [Input icons](#input-icons)
-- [Groups](#groups)
-    - [Form group block](#form-group-block)
-    - [Real world example](#real-world-example)
 - [Buttons](#buttons)
-    - [Default input and button](#default-input-and-button)
-    - [Super input and button](#super-input-and-button)
+    - [Input and button](#input-and-button)
     - [Button inside input](#button-inside-input)
-    - [Super button inside of a super input](#super-button-inside-of-a-super-input)
+- [Select dropdown](#select-dropdown)
+    - [Required select](#required-select)
+    - [Disabled select](#disabled-select)
+    - [Optional select](#optional-select)
+
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
+Theme variables for setting the color and sizes throughout the project.
+Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's [US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables are from 18F's
+[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
 
 ```
 // .error
@@ -50,87 +57,160 @@ Theme variables for setting the color and sizes throughout the project. Overwrit
 @input-disabled:                #cdb5cd;
 ```
 
-### Sizing variables
-
-```
-// .input__super
-@input__super-font-size:        18px;
-```
 
 ## Labels
 
-### Label header
+### Basic label
 
-<label class="form-label-header">
-    Form label header
+<label class="a-label">
+    A basic label
 </label>
 
 ```
-<label class="form-label-header">
-    Form label header
+<label class="a-label">
+    A basic label
 </label>
 ```
+
+### Label heading
+
+<label class="a-label a-label__heading">
+    A label heading
+</label>
+
+```
+<label class="a-label a-label__heading">
+    A label heading
+</label>
+```
+
 
 ## Inputs
 
-### Super input
+Inputs should always be paired with a label for accessibility reasons.
 
-An input that matches the height of a super button.
+### Basic text inputs
 
-<input class="input__super" type="text" value="Super input" title="Test input">
-<button class="btn btn__super">Super</button>
+<label class="a-label" for="text-input-example"></label>
+<input class="a-text-input" type="text" id="text-input example" value="Lorem ipsum">
+
+<label class="a-label a-label__heading" for="textarea-example"></label>
+<textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
 
 ```
-<input class="input__super" type="text" value="Super input" title="Test input"></input>
-<button class="btn btn__super">Super</button>
+<label class="a-label" for="text-input-example"></label>
+<input class="a-text-input" type="text" id="text-input example" value="Lorem ipsum">
+
+<label class="a-label a-label__heading" for="textarea-example"></label>
+<textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
+```
+
+### Basic checkboxes
+
+<div class="m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox">
+    <label class="a-label" for="test_checkbox">Label</label>
+</div>
+
+```
+<div class="m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox">
+    <label class="a-label" for="test_checkbox">Label</label>
+</div>
+```
+
+### Basic radio buttons
+
+<div class="m-form-field__radio">
+    <input class="a-radio" type="radio" id="test_radio">
+    <label class="a-label" for="test_radio">Label</label>
+</div>
+
+```
+<div class="m-form-field__radio">
+    <input class="a-radio" type="radio" id="test_radio">
+    <label class="a-label" for="test_radio">Label</label>
+</div>
+```
+
+### Select box
+
+<div class="m-form-field__select">
+    <label class="a-label" for="test_select">Label</label>
+    <div class="a-select">
+        <select id="test_select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+
+```
+<div class="m-form-field__select">
+    <label class="a-label" for="test_select">Label</label>
+    <div class="a-select">
+        <select id="test_select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
 ```
 
 ### Input states
 
 See the 'Form icons' section below for guidance on adding icons to states.
 
-#### Error state
-
-<input class="error" type="text" value="Invalid input" title="Test input">
-
-```
-<input class="error" type="text" value="Invalid input" title="Test input">
-```
-
-#### Warning state
-
-<input class="warning" type="text" value="Invalid input" title="Test input">
-
-```
-<input class="warning" type="text" value="Invalid input" title="Test input">
-```
-
-#### Success state
-
-<input class="success" type="text" value="Validated input" title="Test input">
-
-```
-<input class="success" type="text" value="Validated input" title="Test input">
-```
-
 #### Disabled state
 
-<input class="disabled" disabled="true" autocomplete="off" type="text" value="Validated input" title="Test input">
+<input class="disabled"
+       disabled="true"
+       autocomplete="off"
+       type="text"
+       value="Validated input"
+       title="Test input">
 
 ```
-<input class="disabled" disabled="true" autocomplete="off" type="text" value="Validated input" title="Test input">
+<input class="disabled"
+       disabled="true"
+       autocomplete="off"
+       type="text"
+       value="Validated input"
+       title="Test input">
 ```
 
-### Input icons
+### Inline Form Validation
 
-Form input icons add small positioning tweaks to Capital Framework icons.
-
-<input type="text" value="" title="Test input">
-<span class="cf-form_input-icon cf-icon cf-icon-email"></span>
+<div class="m-field m-field__error">
+    <label class="a-label__heading" for="form-input-error">Label</label>
+    <input class="a-text-input a-text-input__error"
+           type="text"
+           value="Invalid input"
+           id="form-input-error"
+           aria-describedby="form-input-error_message">
+    <div class="a-error-message" id="form-input-error_message" role="alert">
+        <span class="cf-icon cf-icon-delete-round" aria-hidden="true"></span>
+        This is a required question, please answer.
+    </div>
+</div>
 
 ```
-<input type="text" value="" title="Test input">
-<span class="cf-form_input-icon cf-icon cf-icon-email"></span>
+<div class="m-field m-field__error">
+    <label class="a-label__heading" for="form-input-error">Label</label>
+    <input class="a-text-input a-text-input__error"
+           type="text"
+           value="Invalid input"
+           id="form-input-error"
+           aria-describedby="form-input-error_message">
+    <div class="a-error-message" id="form-input-error_message" role="alert">
+        <span class="cf-icon cf-icon-delete-round" aria-hidden="true"></span>
+        This is a required question, please answer.
+    </div>
+</div>
 ```
 
 #### Error icon
@@ -166,150 +246,27 @@ Form input icons add small positioning tweaks to Capital Framework icons.
 <span class="cf-form_input-icon cf-icon cf-icon-approved-round"></span>
 ```
 
-## Groups
-
-A form group is recommended when you need to provide spacing between form elements and between groups of form elements.
-
-### Form group block
-
-Provides sizeable margins between groups of form elements.
-
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-
-```
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" title="Test input">
-    </div>
-</div>
-```
-
-### Real world example
-
-<div class="form-group">
-    <label class="form-label-header">Form group</label>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <label class="form-label-header">Form group</label>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-</div>
-
-```
-<div class="form-group">
-    <label class="form-label-header">Form group</label>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-</div>
-<div class="form-group">
-    <label class="form-label-header">Form group</label>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-    <div class="form-group_item">
-        <input type="text" value="Form group item" title="Test input">
-    </div>
-</div>
-```
 
 ## Buttons
 
-### Default input and button
+### Input and button
 
-<div class="input-with-btn">
-    <div class="input-with-btn_input">
+<div class="o-form__input-w-btn">
+    <div class="o-form__input-w-btn_input-container">
         <input type="text" title="Test input">
     </div>
-    <div class="input-with-btn_btn">
-        <button class="btn">Search</button>
+    <div class="o-form__input-w-btn_btn-container">
+        <button class="a-btn">Search</button>
     </div>
 </div>
 
 ```
-<div class="input-with-btn">
-    <div class="input-with-btn_input">
+<div class="o-form__input-w-btn">
+    <div class="o-form__input-w-btn_input-container">
         <input type="text" title="Test input">
     </div>
-    <div class="input-with-btn_btn">
-        <button class="btn">Search</button>
-    </div>
-</div>
-```
-
-### Super input and button
-
-<div class="input-with-btn">
-    <div class="input-with-btn_input">
-        <input class="input__super" type="text" title="Test input">
-    </div>
-    <div class="input-with-btn_btn">
-        <button class="btn btn__super">Search</button>
-    </div>
-</div>
-
-```
-<div class="input-with-btn">
-    <div class="input-with-btn_input">
-        <input class="input__super" type="text" title="Test input">
-    </div>
-    <div class="input-with-btn_btn">
-        <button class="btn btn__super">Search</button>
+    <div class="o-form__input-w-btn_btn-container">
+        <button class="a-btn">Search</button>
     </div>
 </div>
 ```
@@ -318,46 +275,142 @@ Provides sizeable margins between groups of form elements.
 
 #### Default button inside of an default input
 
-<div class="btn-inside-input">
+<div class="m-btn-inside-input">
     <input type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
-    <button class="btn btn__link">
+        value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+        title="Test input"
+        class="a-text-input">
+    <button class="a-btn a-btn__link">
         Clear
         <span class="cf-icon cf-icon-delete"></span>
     </button>
 </div>
 
+#### Button inside input and button
+
+<div class="o-form__input-w-btn">
+    <div class="o-form__input-w-btn_input-container">
+        <div class="m-btn-inside-input">
+            <input type="text"
+                value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+                title="Test input"
+                class="a-text-input">
+            <button class="a-btn a-btn__link">
+                Clear
+                <span class="cf-icon cf-icon-delete"></span>
+            </button>
+        </div>
+    </div>
+    <div class="o-form__input-w-btn_btn-container">
+        <button class="a-btn">Search</button>
+    </div>
+</div>
+
+
+## Select dropdown
+
+### Required select
+
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example">
+            Required select example
+    </label>
+    <div class="m-select">
+        <select id="select_example" required>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+
 ```
-<div class="btn-inside-input">
-    <input type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
-    <button class="btn btn__link">
-        Clear
-        <span class="cf-icon cf-icon-delete"></span>
-    </button>
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example">
+            Required select example
+    </label>
+    <div class="m-select">
+        <select id="select_example" required>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
 </div>
 ```
 
-#### Super button inside of a super input
+### Disabled select
 
-<div class="btn-inside-input">
-    <input class="input__super"
-           type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
-    <button class="btn btn__super btn__link btn__secondary">
-        Clear
-        <span class="cf-icon cf-icon-delete"></span>
-    </button>
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example__disabled">
+            Disabled select example
+    </label>
+    <div class="m-select">
+        <select id="select_example__disabled" disabled>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
 </div>
 
 ```
-<div class="btn-inside-input">
-    <input class="input__super"
-           type="text"
-           value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable." title="Test input">
-    <button class="btn btn__super btn__link btn__secondary">
-        Clear
-        <span class="cf-icon cf-icon-delete"></span>
-    </button>
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example__disabled">
+            Disabled select example
+    </label>
+    <div class="m-select">
+        <select id="select_example__disabled" disabled>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+```
+
+### Optional select
+
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example__optional">
+            Optional select example
+            <span class="micro-copy">&nbsp;(Optional)</span>
+    </label>
+    <div class="m-select">
+        <select id="select_example__optional">
+            <option value="" disabled selected>Please select</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+
+```
+<div class="form-l_col form-l_col-1">
+    <label class="form-label-header"
+           for="select_example__optional">
+            Optional select example
+            <span class="micro-copy">&nbsp;(Optional)</span>
+    </label>
+    <div class="m-select">
+        <select id="select_example__optional">
+            <option value="" disabled selected>Please select</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
 </div>
 ```

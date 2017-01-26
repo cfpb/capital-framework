@@ -14,10 +14,9 @@
   },
   "dependencies": {
     "cf-core": "^3.0.0",
-    "jquery": "~1.11.0"
+    "atomic-component": "github:cfpb/AtomicComponent"
   },
   "keywords": [
-    "tables",
-    "jquery"
+    "tables"
   ]
 }
