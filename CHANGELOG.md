@@ -4,13 +4,18 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+-
 
 ### Removed
-- 
+-
+
+## 4.0.1 - 2017-01-26
+
+### Changed
+- **capital-framework:** Bumped all components' internal CF dependencies.
 
 ## 4.0.0 - 2017-01-26
 
