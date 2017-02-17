@@ -8,6 +8,7 @@ It's made up of four child components `cf-vars`, `cf-media-queries`,
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
+[//]: # (NOTE: The markdown adds a `p` element inside the `blockquote`, we need to explore a style fix so this is more obviously a `blockquote`.)
 
 ## Table of contents
 
@@ -93,11 +94,13 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ## Media queries
 
-Mixins for consistent media queries that take `px` values and convert them to `em`s.
+Mixins for consistent media queries that take `px` values and convert them
+to `em`s.
 
 ### Respond to min and max width mixins
 
-These mixins take a `px` value breakpoint and set of style rules and converts them to the corresponding min or max width media query.
+These mixins take a `px` value breakpoint and set of style rules and converts
+them to the corresponding min or max width media query.
 
 ```
 .respond-to-min(@bp, @rules);
@@ -124,7 +127,8 @@ Ex.
 
 ### Respond to range mixin
 
-This mixin takes both min and max `px` values and a set of style rules and converts them to the corresponding min and max media query.
+This mixin takes both min and max `px` values and a set of style rules and
+converts them to the corresponding min and max media query.
 
 ```
 .respond-to-range(@bp1, @bp2, @rules);
@@ -208,17 +212,18 @@ This mixin allows us to easily write styles that target both
 
 #### JS only
 
-Hide an element when JavaScript isn't available. Requires a small script in the HEAD of your HTML document that removes a `.no-js` class.
+Hide an element when JavaScript isn't available. Requires a small script in the
+`<head>` of your `<html>` document that removes a `.no-js` class.
 
 1. Add a `no-js` class added to the `html`
   ```
   <html class="no-js">
   ```
 
-2. Add a script to remove the `no-js` class after confirming JS is available
+2. Add a script to remove the `no-js` class after confirming JavaScript is available
   ```
   <script>
-      // Confirm availability of JS and remove no-js class from html
+      // Confirm availability of JavaScript and remove no-js class from html
       var docElement = document.documentElement;
       docElement.className = docElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2');
   </script>
@@ -231,9 +236,11 @@ Hide an element when JavaScript isn't available. Requires a small script in the 
 
 #### Clearfix
 
-Clear floated elements to avoid following elements from flowing into the previous one.
+Clear floated elements to avoid following elements from flowing into the
+previous one.
 
-For example, to float an element to the left, but prevent the following text from flowing into it.
+For example, to float an element to the left, but prevent the following text
+from flowing into it.
 
 _More information see: <http://css-tricks.com/snippets/css/clear-fix>_
 
@@ -248,7 +255,9 @@ _More information see: <http://css-tricks.com/snippets/css/clear-fix>_
 
 Hide an element from view while keeping it accessible to screen readers.
 
-For example, to create a link with a social network icon, but allow non-sighted users to understand the context, add descriptive text with the `u-visually-hidden` class.
+For example, to create a link with a social network icon, but allow non-sighted
+users to understand the context, add descriptive text with the
+`u-visually-hidden` class.
 
 ```
 <h1>
@@ -261,7 +270,7 @@ For example, to create a link with a social network icon, but allow non-sighted 
 
 #### Inline block
 
-Adds a `.lt-ie8` fallback to hack inline block for IE 7 and below.
+Adds a `.lt-ie8` fallback to hack inline block for Internet Explorer 7 and below.
 
 ```
 <div class="u-inline-block"></div>
@@ -275,18 +284,24 @@ Adds a `.lt-ie8` fallback to hack inline block for IE 7 and below.
 
 #### Break word
 
-Force word breaks within an element. Useful for small containers where text may over-run the width of the container.
+Force word breaks within an element. Useful for small containers where text may
+over-run the width of the container.
 
-_This only works in IE8 when the element with the `.u-break-word` class has layout. See <http://stackoverflow.com/questions/3997223/word-wrapbreak-word-not-working-in-ie8> for more information._
+_This only works in Internet Explorer 8 when the element with the
+`.u-break-word` class has layout. See
+<http://stackoverflow.com/questions/3997223/word-wrapbreak-word-not-working-in-ie8>
+for more information._
 
-<div class="u-break-word u-mb30" style="width: 100px; padding: 0.5em; border: 1px solid silver;">
+<div class="u-break-word u-mb30"
+     style="width: 100px; padding: 0.5em; border: 1px solid silver;">
     This link should break:
     <a href="#">
         something@something.com
     </a>
 </div>
 
-<div class="u-mb30" style="width: 100px; padding: 0.5em; border: 1px solid silver;">
+<div class="u-mb30"
+     style="width: 100px; padding: 0.5em; border: 1px solid silver;">
     This link should not:
     <a href="#">
         something@something.com
@@ -311,11 +326,12 @@ _This only works in IE8 when the element with the `.u-break-word` class has layo
 
 #### Margin utilities
 
-Force a margin top or bottom on an element in pixels.
+Force a `margin` top or bottom on an element in pixels.
 
 `.u-m[p][#]`
 
-_`[p]` is the position, use `t` for top or `b` for bottom. `[#]` is the pixel value, available options are 0, 5, 10, 15, 20, 30, 45, 60_
+_`[p]` is the position, use `t` for top or `b` for bottom. `[#]` is the pixel
+value, available options are 0, 5, 10, 15, 20, 30, 45, 60_
 
 ```
 <h1 class="u-mb0">Heading with zero bottom margin</h1>
@@ -323,7 +339,7 @@ _`[p]` is the position, use `t` for top or `b` for bottom. `[#]` is the pixel va
 
 #### Width utilities
 
-Set the width of an element in percentages.
+Set the `width` of an element in percentages.
 
 **NOTE: Inline style properties for demonstration only.**
 
@@ -423,7 +439,7 @@ __NOTE: Inline style properties for demonstration only__
 
 ##### Show on mobile
 
-Displays content on screen widths under 601px.
+Displays content on screen widths under `601px`.
 
 <div style="border: 1px solid black; height: 22px; padding: 5px;">
     <p class="u-show-on-mobile">Visible on mobile</p>
@@ -437,7 +453,7 @@ Displays content on screen widths under 601px.
 
 ##### Hide on mobile
 
-Hides content on screens widths under 601px.
+Hides content on screens widths under `601px`.
 
 <div style="border: 1px solid black; height: 22px; padding: 5px;">
     <p class="u-hide-on-mobile">Hidden on mobile</p>
@@ -453,9 +469,11 @@ Hides content on screens widths under 601px.
 
 #### Align with button
 
-Align an element vertically with the text within a button that may be to either side.
+Align an element vertically with the text within a button that may be to either
+side.
 
-_Pass font-size as the argument for calculating spacing, default value is `@base-font-size-px`._
+_Pass `font-size` as the argument for calculating spacing, default value is
+`@base-font-size-px`._
 
 ```
 .u-align-with-btn(@font-size: @base-font-size-px);
@@ -463,23 +481,30 @@ _Pass font-size as the argument for calculating spacing, default value is `@base
 
 #### Flexible proportional containers
 
-Utilize intrinsic ratios to create a flexible container that retains an aspect ratio. When image tags scale they retain their aspect ratio, but if you need a flexible video you will need to use this mixin.
+Utilize intrinsic ratios to create a flexible container that retains an aspect
+ratio. When `<img>` tags scale they retain their aspect ratio, but if you need
+a flexible video you will need to use this mixin.
 
-_Read more about intrinsic rations: <http://alistapart.com/article/creating-intrinsic-ratios-for-video>_
+_Read more about intrinsic rations:
+<http://alistapart.com/article/creating-intrinsic-ratios-for-video>_
 
 ```
 .u-flexible-container-mixin(@width: 16, @height: 9);
 ```
 
-In addition to the mixin, there are two default classes available for building 16:9 and 4:3 containers.
+In addition to the mixin, there are two default classes available for building
+16:9 and 4:3 containers.
 
-_When using the mixin, pass the width as the first argument, and the height as the second argument, default values are `16, 9`._
+_When using the mixin, pass the `width` as the first argument, and the `height`
+as the second argument, default values are `16, 9`._
 
 _Original mixin credit: <https://gist.github.com/craigmdennis/6655047>_
 
 __NOTE: Inline style properties for demonstration only__
 
-To create a 16:9 flexible video player, wrap the video element in an element with `u-flexible-container` and add the `u-flexible-container_inner` to the video element.
+To create a 16:9 flexible video player, wrap the video element in an element
+with `u-flexible-container` and add the `u-flexible-container_inner` to the
+video element.
 
 <div class="u-flexible-container">
     <video class="u-flexible-container_inner"
@@ -497,7 +522,8 @@ To create a 16:9 flexible video player, wrap the video element in an element wit
 </div>
 ```
 
-To create a flexible container with only a background (no inner video or object element), ommit the inner container.
+To create a flexible container with only a background (no inner video or object
+element), ommit the inner container.
 
 <div class="u-flexible-container"
      style="background-image: url(http://placekitten.com/700/394);
@@ -535,49 +561,66 @@ Modify link properties using the following mixins.
 
 ##### Link colors
 
-Calling the mixin without arguments will set the following states - default(pacific), :hover(pacific-50), :focus:(pacific), :visited teal, :active navy.
+Calling the mixin without arguments will set the following states:
+`default` - `@pacific`, `:hover` - `@pacific-50`, `focus:` - `@pacific`,
+`:visited` - `@teal`, `:active` - `@navy`.
+
+[//]: # (NOTE: These aren't the default colors within this project, only once the brand theme has been applied.)
 
 `u-link__colors()`
 
-Passing a single argument into the mixin will set the color for the default, :visited, :hover, :focus, :active states.
+Passing a single argument into the mixin will set the color for the
+`default`, `:visited`, `:hover`, `:focus`, `:active` states.
 
 `u-link__colors(@c)`
 
-Passing two arguments into the mixin will set the color for the default, :visited, and :active states as the first argument, and :hover and :focus as the second argument.
+Passing two arguments into the mixin will set the color for the `default`,
+`:visited`, and `:active` states as the first argument, and `:hover` and
+`:focus` as the second argument.
 
 `u-link__colors(@c, @h)`
 
-Passing five arguments will set the color for the default, :visited, :hover, :focus, and :active states respectively.
+Passing five arguments will set the color for the `default`, `:visited`,
+`:hover`, `:focus`, and `:active` states respectively.
 
 `u-link__colors(@c, @v, @h, @f, @a)`
 
-Passing ten arguments will set the text (default, :visited, :hover, :focus, and :active states in the first five arguments) and border colors (default, :visited, :hover, :focus, and :active states in the following five arguments) separately.
+Passing ten arguments will set the text (`default`, `:visited`, `:hover`,
+`:focus`, and `:active` states in the first five arguments) and border colors
+(`default`, `:visited`, `:hover`, `:focus`, and `:active` states in the
+following five arguments) separately.
 
 `u-link__colors(@c, @v, @h, @f, @a, @bc, @bv, @bh, @bf, @ba)`
 
-__A base mixin of `u-link__colors-base()` exists, but please refrain from using this mixin directly in order to promote consistent naming throughout this project. If you need to set colors for all states of a link, use `.u-link__colors(@c, @v, @h, @f, @a)`.__
+__A base mixin of `u-link__colors-base()` exists, but please refrain from
+using this mixin directly in order to promote consistent naming throughout
+this project. If you need to set colors for all states of a link, use
+`.u-link__colors(@c, @v, @h, @f, @a)`.__
 
 ##### Link borders
 
-Force the default bottom border on the default and :hover states.
+Force the default bottom `border` on the `default` and `:hover` states.
 
 `.u-link__border()`
 
-Turn off the default bottom border on the default and :hover states.
+Turn off the default bottom `border` on the `default` and `:hover` states.
 
 `.u-link__no-border()`
 
-Turn off the default bottom border on the default state but force a bottom border on the :hover state.
+Turn off the default bottom `border` on the `default` state but force a bottom
+`border` on the `:hover` state.
 
 `.u-link__hover-border()`
 
 ##### Link children
 
-Calling this mixin without arguments will set the default color for the hover state of a child within a link, without affecting the link itself.
+Calling this mixin without arguments will set the default color for the
+`:hover` state of a child within a link, without affecting the link itself.
 
 `.u-link__hover-child()`
 
-Passing a single argument into the mixin will set a custom color for the hover state of a child within a link, without affecting the link itself.
+Passing a single argument into the mixin will set a custom color for the
+`:hover` state of a child within a link, without affecting the link itself.
 
 `.u-link__hover-child(@c)`
 
@@ -585,15 +628,17 @@ Passing a single argument into the mixin will set a custom color for the hover s
 
 ##### Class
 
-Sets the element to 14px (in ems).
+Sets the element to `14px` (in `em`s).
 
-_To be used on default 16px text only. To use on text set to another size, use the mixin below._
+_To be used on default `16px` text only. To use on text set to another size,
+use the mixin below._
 
 `.u-small-text`
 
 ##### Mixin
 
-Sets the element to 14px (in ems) based on the text size passed as `@context`.
+Sets the element to `14px` (in `em`s) based on the text size passed as
+`@context`.
 
 `.u-small-text(@context)`
 
@@ -631,18 +676,31 @@ Sets the font-stack, weight, and style of an element.
 .u-webfont-demi();
 ```
 
-To use your own fonts in the webfont mixins, set your own font with the `@webfont-regular/italic/medium/demi` variables in your `theme-overrides.less` file.
+To use your own fonts in the webfont mixins, set your own font with the
+`@webfont-regular/italic/medium/demi` variables in your `theme-overrides.less`
+file.
 
-_These mixins also add the appropriate .lt-ie9 overrides. .lt-ie9 overrides are necessary to override font-style and font-weight each time the webfont is used. These overrides are built into the webfont mixins so you get them automatically. Note that this requires you to use conditional classes on the <html> element: <https://github.com/h5bp/html5-boilerplate/blob/v4.3.0/doc/html.md#conditional-html-classes.>_
+_These mixins also add the appropriate `.lt-ie9` overrides. `.lt-ie9`
+overrides are necessary to override `font-style` and `font-weight` each time
+the webfont is used. These overrides are built into the webfont mixins so you
+get them automatically. Note that this requires you to use conditional
+classes on the `<html>` element:
+<https://github.com/h5bp/html5-boilerplate/blob/v4.3.0/doc/html.md#conditional-html-classes.>_
 
 ### Type hierarchy
 
 #### Default body type
 
-<p>Lorem ipsum dolor sit amet, <em>consectetur adipisicing elit</em>, sed do eiusmod <strong>tempor incididunt</strong> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p>Lorem ipsum dolor sit amet, <em>consectetur adipisicing elit</em>, sed do
+eiusmod <strong>tempor incididunt</strong> ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat.</p>
 
 ```
-<p>Lorem ipsum dolor sit amet, <em>consectetur adipisicing elit</em>, sed do eiusmod <strong>tempor incididunt</strong> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p>Lorem ipsum dolor sit amet, <em>consectetur adipisicing elit</em>, sed do
+eiusmod <strong>tempor incididunt</strong> ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat.</p>
 ```
 
 #### Heading level 1
@@ -719,12 +777,15 @@ _Not a responsive heading._
 
 #### Lead paragraph
 
-_Responsive text. Displays as a Heading 3 on large screens; displays at Heading 4 size (but still Regular weight) on small screens._
+_Responsive text. Displays as a Heading 3 on large screens; displays at Heading
+4 size (but still Regular weight) on small screens._
 
-<p class="lead-paragraph">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p class="lead-paragraph">Ut enim ad minim veniam, quis nostrud exercitation
+ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
 ```
-<p class="lead-paragraph">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p class="lead-paragraph">Ut enim ad minim veniam, quis nostrud exercitation
+ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 ```
 
 #### Display heading (aka "superheading")
@@ -737,10 +798,13 @@ _Responsive text. Displays as a Heading 3 on large screens; displays at Heading 
 
 ### Body copy vertical margins
 
-- _Applies 15px bottom margin to all `p`, `ul`, `ol`, `dl`, `figure`, `table`, and `blockquote` elements._
-- _Applies -5px top margin to lists following paragraphs to reduce margin between them to 10px._
-- _Applies 8px bottom margin to list items that are not within a nav element._
-- _Assumes that the font size of each of these items remains the default._
+- Applies `15px` bottom `margin` to all `p`, `ul`, `ol`, `dl`, `figure`,
+  `table`, and `blockquote` elements.
+- Applies `-5px` top `margin` to lists following paragraphs to reduce `margin`
+  between them to `10px`.
+- Applies `8px` bottom `margin` to list items that are not within a `nav`
+  element.
+- Assumes that the font size of each of these items remains the default.
 
 <p>Paragraph margin example</p>
 <p>Paragraph margin example</p>
@@ -763,6 +827,9 @@ _Responsive text. Displays as a Heading 3 on large screens; displays at Heading 
 ```
 
 ### Default links
+
+_Note that the `.visited`, `.hover`, `.focus`, `.active` classes are for
+demonstration purposes only and should not be used in production._
 
 #### Default state
 
@@ -798,8 +865,6 @@ _Responsive text. Displays as a Heading 3 on large screens; displays at Heading 
 
 #### Active state
 
-_Note that the `.visited`, `.hover`, `.focus`, `.active` classes are for demonstration purposes only and should not be used in production._
-
 <a href="#" class="active">Visited link style</a>
 
 ```
@@ -808,11 +873,13 @@ _Note that the `.visited`, `.hover`, `.focus`, `.active` classes are for demonst
 
 ### Underlined links
 
-Links are automatically underlined when they are a child of a `p`, `li`, or `dd`. To enable them elsewhere, simply add a bottom-border-width to the link.
+Links are automatically underlined when they are a child of a `p`, `li`, or
+`dd`. To enable them elsewhere, simply add a bottom-border-width to the link.
+
+_Note that the `.visited`, `.hover`, `.focus`, `.active` classes are for
+demonstration purposes only and should not be used in production._
 
 #### States
-
-_Note that the `.visited`, `.hover`, `.focus`, `.active` classes are for demonstration purposes only and should not be used in production._
 
 <p>
     <a href="#">Default</a>,
@@ -872,7 +939,7 @@ _Note that the `.visited`, `.hover`, `.focus`, `.active` classes are for demonst
 
 #### Exceptions for underlined links
 
-Links within a nav element are not underlined.
+Links within a `nav` element are not underlined.
 
 <nav>
     <p>
@@ -937,24 +1004,24 @@ Links within a nav element are not underlined.
 #### Ordered list
 
 <p>Paragraph example for visual reference</p>
-<ul>
+<ol>
     <li>List item 1</li>
     <li>List item 2</li>
     <li>List item 3</li>
-</ul>
+</ol>
 
 ```
 <p>Paragraph example for visual reference</p>
-<ul>
+<ol>
     <li>List item 1</li>
     <li>List item 2</li>
     <li>List item 3</li>
-</ul>
+</ol>
 ```
 
 ### Tables
 
-#### Standard label
+#### Standard table
 
 <table>
     <thead>
@@ -1014,8 +1081,11 @@ Links within a nav element are not underlined.
 
 ### Block quote
 
-_Note that the use of a block quote is to quote an external work. See `.pull-quote` if you need to highlight an excerpt from the current work._
-_Note that it is best practice to document the URL of a quoted work using the cite attribute._
+_Note that the use of a `blockquote` is to quote an external work. See
+`.pull-quote` if you need to highlight an excerpt from the current work._
+
+_Note that it is best practice to document the URL of a quoted work using
+the `cite` attribute._
 
 <blockquote cite="link-to-source">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
@@ -1048,7 +1118,7 @@ _Note that it is best practice to document the URL of a quoted work using the ci
 
 ### Full-width images
 
-Gives all images a default max-width of 100% of their container.
+Gives all images a default `max-width` of `100%` of their container.
 
 <img src="http://placekitten.com/800/40" alt="">
 
@@ -1058,7 +1128,7 @@ Gives all images a default max-width of 100% of their container.
 
 ### Figure
 
-Resets browser default side margins for `figure` to 0,
+Resets browser default side `margins` for `figure` to `0`,
 and removes bottom inline spacing from `img` elements within.
 
 <figure>

@@ -5,7 +5,13 @@ The [`cf-core`](../core) component is a dependency of this component
 and has more basic typography patterns.
 
 
-## Contents
+> NOTE: If you use `cf-typography.less` directly,
+  be sure to run the file through
+  [Autoprefixer](https://github.com/postcss/autoprefixer),
+  or your compiled Capital Framework CSS will
+  not work perfectly in older browsers.
+
+## Table of cntents
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
@@ -28,17 +34,11 @@ and has more basic typography patterns.
     - [Date](#date)
     - [Pull quote](#pull-quote)
 
-> NOTE: If you use `cf-typography.less` directly,
-  be sure to run the file through
-  [Autoprefixer](https://github.com/postcss/autoprefixer),
-  or your compiled Capital Framework CSS will
-  not work perfectly in older browsers.
-
 
 ## Variables
 
-Theme variables for setting the color and sizes.
-Overwrite them in your own project by duplicating the variable `@key: value`.
+Theme variables for setting the color and sizes. Overwrite them in your own
+project by duplicating the variable `@key: value`.
 
 ### Color variables
 
@@ -97,9 +97,10 @@ Default color variables are from 18F's
 
 ### Heading with icon
 
-The heading with icon is typically used for listing categories in a meta header.
-Since categories can be repetitive, we suggest placing a label with `.u-visually-hidden`
-prior to the headings to add more context for screen readers (see Meta Header below).
+The heading with icon is typically used for listing categories in a meta
+header. Since categories can be repetitive, we suggest placing a label with
+`.u-visually-hidden` prior to the headings to add more context for screen
+readers (see Meta Header below).
 
 <a href="#" class="a-heading a-heading__icon">
     <span class="cf-icon cf-icon-dialogue"></span>
@@ -134,10 +135,11 @@ prior to the headings to add more context for screen readers (see Meta Header be
 
 ### Meta header
 
-Note that the example shows `.m-meta-header_left` using the `.a-heading__icon` pattern
-and `.meta-header_right` using the `.a-date` pattern but you could use other patterns in place of them.
-Or you can even swap them so that date is
-attached to `.meta-header_left` and `.category-slug` is attached to `.meta-header_right`.
+Note that the example shows `.m-meta-header_left` using the `.a-heading__icon`
+pattern and `.meta-header_right` using the `.a-date` pattern but you could use
+other patterns in place of them. Or you can even swap them so that date is
+attached to `.meta-header_left` and `.category-slug` is attached to
+`.meta-header_right`.
 
 #### Default meta header
 
@@ -166,8 +168,11 @@ attached to `.meta-header_left` and `.category-slug` is attached to `.meta-heade
 
 ### Links with icons
 
-- Styles to enable adding an icon to a link and preventing the link's underline from extending under the icon.
-- For the underlined icon prevention to work, you must wrap the link text with a `span.icon-link_text`. There can be no whitespace between the text and the opening and closing span tags.
+- Styles to enable adding an icon to a link and preventing the link's underline
+  from extending under the icon.
+- For the underlined icon prevention to work, you must wrap the link text with
+  a `span.icon-link_text`. There can be no whitespace between the text and the
+  opening and closing `span` tags.
 
 #### Default pattern
 
@@ -239,8 +244,10 @@ attached to `.meta-header_left` and `.category-slug` is attached to `.meta-heade
 
 #### Links with icons on the left
 
-- Simply add the `.icon-link__before` modifier to place the icon before the link text.
-- You can omit the `span.icon-link_text` wrapper if you do not need an underline on a particular link.
+- Simply add the `.icon-link__before` modifier to place the icon before the
+  link text.
+- You can omit the `span.icon-link_text` wrapper if you do not need an
+  underline on a particular link.
 
 <a class="a-link a-link__icon
           cf-icon
@@ -278,7 +285,9 @@ attached to `.meta-header_left` and `.category-slug` is attached to `.meta-heade
 
 #### Non-wrapping icon links
 
-- Warning: Icons added to inline links can sometimes break onto the next line. If you want to prevent this, you can add the `__no-wrap` modifier to `.icon-link`.
+- Warning: Icons added to inline links can sometimes break onto the next line.
+  If you want to prevent this, you can add the `__no-wrap` modifier to
+  `.icon-link`.
 
 
 For more information, email
@@ -330,7 +339,7 @@ For more information, email
 
 #### Jump link with large link modifier
 
-The large jump link has an 18px font-size, compared to the default of 16px.
+The large jump link has an `18px` `font-size`, compared to the default of `16px`.
 
 <a class="a-link
           a-link__jump
@@ -406,8 +415,8 @@ Jump links can also have icons before the text, like icon links.
 
 ### Block link
 
-The block link class converts a standard inline link
-to a block-level element with padding, background, and borders.
+The block link class converts a standard inline link to a block-level element
+with `padding`, `background`, and `border`.
 
 It is primarily used within a max-width `@bp-xs-max` media query
 (see `.link__jump` and `.list__links`).
@@ -513,8 +522,9 @@ A modifier for the list to make it show items horizontally.
 
 ### Link list modifier
 
-The link list modifier is intended to be used for lists where each item is a link.
-It converts to a finger-friendly link with a large tap area on smaller screens.
+The link list modifier is intended to be used for lists where each item is a
+link. It converts to a finger-friendly link with a large tap area on smaller
+screens.
 
 <ul class="m-list m-list__links">
     <li class="m-list_item">
@@ -546,8 +556,8 @@ It converts to a finger-friendly link with a large tap area on smaller screens.
 
 ### Micro copy
 
-The `.a-micro-copy` class is good for highlighting small pieces of text, typically
-legal copy.
+The `.a-micro-copy` class is good for highlighting small pieces of text,
+typically legal copy.
 
 <p class="a-micro-copy">
     Lorem ipsum dolor sit amet
@@ -573,10 +583,10 @@ legal copy.
 
 ### Pull quote
 
-Use a pull quote to highlight excerpts from the current work.
-This is not to be confused with `blockquote` which quotes from an external work.
-Since a pull quote is an excerpt and repeats content from the article
-you should use the `aside` element.
+Use a pull quote to highlight excerpts from the current work. This is not to
+be confused with `blockquote` which quotes from an external work. Since a pull
+quote is an excerpt and repeats content from the article you should use the
+`aside` element.
 
 #### Default pull quote
 

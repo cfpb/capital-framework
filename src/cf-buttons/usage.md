@@ -1,3 +1,16 @@
+The cf-buttons component provides extensions to the basic button styles for
+Capital Framework.
+
+[`cf-core`](../cf-core) and [`cf-icons`](../cf-icons) components are all
+dependencies of this component.
+
+> NOTE: If you use `cf-buttons.less` directly,
+  be sure to run the file through
+  [Autoprefixer](https://github.com/postcss/autoprefixer),
+  or your compiled Capital Framework CSS will
+  not work perfectly in older browsers.
+
+## Table of contents
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
@@ -12,13 +25,6 @@
     - [Icon buttons](#icon-buttons)
 - [Molecules](#molecules)
     - [Button group](#button-group)
-
-> NOTE: If you use `cf-buttons.less` directly,
-  be sure to run the file through
-  [Autoprefixer](https://github.com/postcss/autoprefixer),
-  or your compiled Capital Framework CSS will
-  not work perfectly in older browsers.
-
 
 ## Variables
 
@@ -63,7 +69,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 ### Default Button
 
 The default button is an atom in our atomic design standards.
-You can apply the a-btn class to a link, button and submit input field
+You can apply the `a-btn` class to a link, button and submit input field
 to receive the atomic button styles.
 
 For accessibility reasons, use the semantic `<button>` instead of a link when possible.
@@ -133,36 +139,48 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 #### Hovered state
 
 <a href="#" class="a-btn a-btn__secondary hover">Anchor Tag</a>
-<button class="a-btn a-btn__secondary hover" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__secondary hover" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__secondary hover">
 
 ```
 <a href="#" class="a-btn a-btn__secondary hover">Anchor Tag</a>
-<button class="a-btn a-btn__secondary hover" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__secondary hover" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__secondary hover">
 ```
 
 #### Focused state
 
 <a href="#" class="a-btn a-btn__secondary focus">Anchor Tag</a>
-<button class="a-btn a-btn__secondary focus" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__secondary focus" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__secondary focus">
 
 ```
 <a href="#" class="a-btn a-btn__secondary focus">Anchor Tag</a>
-<button class="a-btn a-btn__secondary focus" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__secondary focus" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__secondary focus">
 ```
 
 #### Active state
 
 <a href="#" class="a-btn a-btn__secondary active">Anchor Tag</a>
-<button class="a-btn a-btn__secondary active" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__secondary active" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__secondary active">
 
 ```
 <a href="#" class="a-btn a-btn__secondary active">Anchor Tag</a>
-<button class="a-btn a-btn__secondary active" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__secondary active" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__secondary active">
 ```
 
@@ -171,48 +189,64 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 #### Default state
 
 <a href="#" class="a-btn a-btn__warning">Anchor Tag</a>
-<button class="a-btn a-btn__warning" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__warning" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__warning">
 
 ```
 <a href="#" class="a-btn a-btn__warning">Anchor Tag</a>
-<button class="a-btn a-btn__warning" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__warning" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__warning">
 ```
 
 #### Hovered state
 
 <a href="#" class="a-btn a-btn__warning hover">Anchor Tag</a>
-<button class="a-btn a-btn__warning hover" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__warning hover" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__warning hover">
 
 ```
 <a href="#" class="a-btn a-btn__warning hover">Anchor Tag</a>
-<button class="a-btn a-btn__warning hover" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__warning hover" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__warning hover">
 ```
 
 #### Focused state
 
 <a href="#" class="a-btn a-btn__warning focus">Anchor Tag</a>
-<button class="a-btn a-btn__warning focus" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__warning focus" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__warning focus">
 
 ```
 <a href="#" class="a-btn a-btn__warning focus">Anchor Tag</a>
-<button class="a-btn a-btn__warning focus" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__warning focus" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__warning focus">
 ```
 
 #### Active state
 
 <a href="#" class="a-btn a-btn__warning active">Anchor Tag</a>
-<button class="a-btn a-btn__warning active" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__warning active" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__warning active">
 
 ```
 <a href="#" class="a-btn a-btn__warning active">Anchor Tag</a>
-<button class="a-btn a-btn__warning active" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__warning active" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__warning active">
 ```
 
@@ -223,13 +257,17 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 <a href="#" class="a-btn a-btn__disabled">Anchor Tag</a>
 <button class="a-btn a-btn__disabled" title="Test button">Button Tag</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__disabled">
-<button class="a-btn" disabled title="Test button">Button Tag w/ disabled attr</button>
+<button class="a-btn" disabled title="Test button">
+    Button Tag w/ disabled attr
+</button>
 
 ```
 <a href="#" class="a-btn a-btn__disabled">Anchor Tag</a>
 <button class="a-btn a-btn__disabled" title="Test button">Button Tag</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__disabled">
-<button class="a-btn" disabled title="Test button">Button Tag w/ disabled attr</button>
+<button class="a-btn" disabled title="Test button">
+    Button Tag w/ disabled attr
+</button>
 ```
 
 #### Focused state
@@ -237,13 +275,17 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 <a href="#" class="a-btn a-btn__disabled focus">Anchor Tag</a>
 <button class="a-btn a-btn__disabled focus" title="Test button">Button Tag</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__disabled focus">
-<button class="a-btn focus" disabled title="Test button">Button Tag w/ disabled attr</button>
+<button class="a-btn focus" disabled title="Test button">
+    Button Tag w/ disabled attr
+</button>
 
 ```
 <a href="#" class="a-btn a-btn__disabled focus">Anchor Tag</a>
 <button class="a-btn a-btn__disabled focus" title="Test button">Button Tag</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__disabled focus">
-<button class="a-btn focus" disabled title="Test button">Button Tag w/ disabled attr</button>
+<button class="a-btn focus" disabled title="Test button">
+    Button Tag w/ disabled attr
+</button>
 ```
 
 ### Super button
@@ -263,36 +305,48 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 #### Hovered state
 
 <a href="#" class="a-btn a-btn__super hover">Anchor Tag</a>
-<button class="a-btn a-btn__super hover" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__super hover" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__super hover">
 
 ```
 <a href="#" class="a-btn a-btn__super hover">Anchor Tag</a>
-<button class="a-btn a-btn__super hover" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__super hover" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__super hover">
 ```
 
 #### Focused state
 
 <a href="#" class="a-btn a-btn__super focus">Anchor Tag</a>
-<button class="a-btn a-btn__super focus" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__super focus" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__super focus">
 
 ```
 <a href="#" class="a-btn a-btn__super focus">Anchor Tag</a>
-<button class="a-btn a-btn__super focus" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__super focus" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__super focus">
 ```
 
 #### Active state
 
 <a href="#" class="a-btn a-btn__super active">Anchor Tag</a>
-<button class="a-btn a-btn__super active" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__super active" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__super active">
 
 ```
 <a href="#" class="a-btn a-btn__super active">Anchor Tag</a>
-<button class="a-btn a-btn__super active" title="Test button">Button Tag</button>
+<button class="a-btn a-btn__super active" title="Test button">
+    Button Tag
+</button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__super active">
 ```
 
@@ -301,48 +355,64 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 #### Default state
 
 <a href="#" class="a-btn a-btn__link">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary">Secondary Button Link</a>
+<a href="#" class="a-btn a-btn__link a-btn__secondary">
+    Secondary Button Link
+</a>
 <a href="#" class="a-btn a-btn__link a-btn__warning">Warning Button Link</a>
 
 ```
 <a href="#" class="a-btn a-btn__link">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary">Secondary Button Link</a>
+<a href="#" class="a-btn a-btn__link a-btn__secondary">
+    Secondary Button Link
+</a>
 <a href="#" class="a-btn a-btn__link a-btn__warning">Warning Button Link</a>
 ```
 
 #### Hovered state
 
 <a href="#" class="a-btn a-btn__link hover">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary hover">Secondary Button Link</a>
+<a href="#" class="a-btn a-btn__link a-btn__secondary hover">
+    Secondary Button Link
+</a>
 <a href="#" class="a-btn a-btn__link a-btn__warning hover">Warning Button Link</a>
 
 ```
 <a href="#" class="a-btn a-btn__link hover">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary hover">Secondary Button Link</a>
+<a href="#" class="a-btn a-btn__link a-btn__secondary hover">
+    Secondary Button Link
+</a>
 <a href="#" class="a-btn a-btn__link a-btn__warning hover">Warning Button Link</a>
 ```
 
 #### Focus state
 
 <a href="#" class="a-btn a-btn__link focus">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary focus">Secondary Button Link</a>
+<a href="#" class="a-btn a-btn__link a-btn__secondary focus">
+    Secondary Button Link
+</a>
 <a href="#" class="a-btn a-btn__link a-btn__warning focus">Warning Button Link</a>
 
 ```
 <a href="#" class="a-btn a-btn__link focus">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary focus">Secondary Button Link</a>
+<a href="#" class="a-btn a-btn__link a-btn__secondary focus">
+    Secondary Button Link
+</a>
 <a href="#" class="a-btn a-btn__link a-btn__warning focus">Warning Button Link</a>
 ```
 
 #### Active state
 
 <a href="#" class="a-btn a-btn__link active">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary active">Secondary Button Link</a>
+<a href="#" class="a-btn a-btn__link a-btn__secondary active">
+    Secondary Button Link
+</a>
 <a href="#" class="a-btn a-btn__link a-btn__warning active">Warning Button Link</a>
 
 ```
 <a href="#" class="a-btn a-btn__link active">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary active">Secondary Button Link</a>
+<a href="#" class="a-btn a-btn__link a-btn__secondary active">
+    Secondary Button Link
+</a>
 <a href="#" class="a-btn a-btn__link a-btn__warning active">Warning Button Link</a>
 ```
 

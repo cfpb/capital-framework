@@ -1,5 +1,6 @@
 The cf-icon component provides the custom icon font for Capital Framework.
-This component can be used by itself, but is designed to work with Capital Framework.
+This component can be used by itself, but is designed to work with Capital
+Framework.
 
 > NOTE: If you use `cf-icons.less` directly,
   be sure to run the file through
@@ -43,10 +44,11 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ## The basics
 
-The cf-icon-prefix class applies all shared icon styles including the font family.
-By default, this class will be named `cf-icon` but it can be changed in the settings.
-All icons must use three classes, one for the base class, one to select the
-desired icon, and one for the chosen pseudo-element. For example:
+The cf-icon-prefix class applies all shared icon styles including the font
+family. By default, this class will be named `cf-icon` but it can be changed
+in the settings. All icons must use three classes, one for the base class,
+one to select the desired icon, and one for the chosen pseudo-element.
+For example:
 
 ```
 <span class="cf-icon
@@ -54,11 +56,11 @@ desired icon, and one for the chosen pseudo-element. For example:
              cf-icon__before"></span>
 ```
 
-It's preferred to combine the icon classes with an existing element, but if it's
-necessary to use an empty element, please use the `span` element instead of the `i`
-element. This avoids font family cascading conflicts when using an italic webfont
-on `i` elements and then another font for the icons.
-Note that this issue only pops up in older versions of Internet Explorer.
+It's preferred to combine the icon classes with an existing element, but if
+it's necessary to use an empty element, please use the `span` element instead
+of the `i` element. This avoids font family cascading conflicts when using an
+italic webfont on `i` elements and then another font for the icons.
+_Note that this issue only pops up in older versions of Internet Explorer._
 
 
 ## Helpers
@@ -146,8 +148,8 @@ MIT Licensed by Font Awesome
 .@{cf-icon-prefix}__rotate-90  { .cf-icon__rotate(90deg, 1);  }
 ```
 
-First parameter is `@degrees`.
-Second parameter is `@rotation`.
+- First parameter is `@degrees`.
+- Second parameter is `@rotation`.
 
 #### Icon flip mixin
 
@@ -156,9 +158,9 @@ Second parameter is `@rotation`.
 .@{cf-icon-prefix}__flip-vertical   { .cf-icon__flip(1, -1, 2); }
 ```
 
-First parameter is for number of horizontal flips
-Second parameter is for number of vertical flips
-Third parameter is for rotation
+- First parameter is for number of horizontal flips.
+- Second parameter is for number of vertical flips
+- Third parameter is for rotation.
 
 ### Modified icons
 
@@ -174,7 +176,8 @@ MIT Licensed by Font Awesome
 <span class="cf-icon
              cf-icon-update
              cf-icon__before
-             cf-icon__border"></span>```
+             cf-icon__border"></span>
+```
 
 Border color set by `@cf-icon-border-color`
 
@@ -204,7 +207,8 @@ Border color set by `@cf-icon-border-color`
 <span class="cf-icon
              cf-icon-update
              cf-icon__before
-             cf-icon__rotate-270"></span>```
+             cf-icon__rotate-270"></span>
+```
 
 #### Flipped icons
 
@@ -260,27 +264,6 @@ MIT Licensed by Font Awesome
              cf-icon-update
              cf-icon__before
              cf-icon__pulse"></span>
-```
-
-#### Flipped icons
-
-<span class="cf-icon
-             cf-icon-phone
-             cf-icon__before
-             cf-icon__flip-horizontal"></span>
-<span class="cf-icon
-             cf-icon-phone
-             cf-icon__before
-             cf-icon__flip-vertical"></span>
-```
-<span class="cf-icon
-             cf-icon-phone
-             cf-icon__before
-             cf-icon__flip-horizontal"></span>
-<span class="cf-icon
-             cf-icon-phone
-             cf-icon__before
-             cf-icon__flip-vertical"></span>
 ```
 
 
