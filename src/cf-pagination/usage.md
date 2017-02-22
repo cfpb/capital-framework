@@ -31,18 +31,17 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 [U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
-// text color
-@pagination-text-color: #757575; // $color-gray-medium
-
-// form background color
-@pagination-bg-color:   #f1f1f1; // $color-gray-lightest
+@pagination-text-color:    #323a45; // $color-gray-dark
+@pagination-bg-color:      #f1f1f1; // $color-gray-lightest
 ```
 
 ### Sizing variables
 
 ```
-// pagination text
-@pagination-font-size__px: 16px;
+@pagination-font-size-px:  @base-font-size-px;
+@pagination-font-size-em:  unit( @pagination-font-size-px / @base-font-size-px, em );
+@pagination-btn-height-px: 42px;
+@pagination-btn-width-px:  130px;
 ```
 
 

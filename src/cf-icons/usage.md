@@ -12,7 +12,8 @@ Framework.
 ## Table of contents
 
 - [Variables](#variables)
-    - [Settings](#settings)
+    - [Color variables](#color-variables)
+    - [Icon generation variables](#icon-generation-variables)
 - [The basics](#the-basics)
 - [Helpers](#helpers)
     - [Icon sizes](#icon-sizes)
@@ -34,12 +35,20 @@ Framework.
 Theme variables for setting the color and sizes throughout the project.
 Overwrite them in your own project by duplicating the variable `@key: value`.
 
-### Settings
+### Color variables
+
+`$color-` variables are from 18F's
+[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+
+```
+@cf-icon-border-color:          #5b616b; //$color-gray
+```
+
+## Icon generation variables
 
 ```
 @cf-icon-prefix:                cf-icon;
 @cf-icon-path:                  'fonts';
-@cf-icon-border-color:          #eee;
 ```
 
 ## The basics
