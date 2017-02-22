@@ -27,8 +27,8 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's
-[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables referenced in comments are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
 // text color
@@ -149,4 +149,4 @@ To enable the component to jump directly to the paginated content, place
 ## Responsive behavior
 
 - `@bp-xs-max`: On small screens, the pagination links display next to each
-other, stacked on top of the form.
+  other, stacked on top of the form.

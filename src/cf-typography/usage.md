@@ -11,7 +11,7 @@ and has more basic typography patterns.
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
-## Table of cntents
+## Table of contents
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
@@ -42,8 +42,8 @@ project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-Default color variables are from 18F's
-[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss).
+`$color-` variables referenced in comments are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
 // Headings

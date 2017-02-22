@@ -44,8 +44,8 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's
-[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables referenced in comments are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
 // body
@@ -485,7 +485,7 @@ Utilize intrinsic ratios to create a flexible container that retains an aspect
 ratio. When `<img>` tags scale they retain their aspect ratio, but if you need
 a flexible video you will need to use this mixin.
 
-_Read more about intrinsic rations:
+_Read more about intrinsic ratios:
 <http://alistapart.com/article/creating-intrinsic-ratios-for-video>_
 
 ```
@@ -496,7 +496,7 @@ In addition to the mixin, there are two default classes available for building
 16:9 and 4:3 containers.
 
 _When using the mixin, pass the `width` as the first argument, and the `height`
-as the second argument, default values are `16, 9`._
+as the second argument. Default values are `16, 9`._
 
 _Original mixin credit: <https://gist.github.com/craigmdennis/6655047>_
 
@@ -562,32 +562,32 @@ Modify link properties using the following mixins.
 ##### Link colors
 
 Calling the mixin without arguments will set the following states:
-`default` - `@pacific`, `:hover` - `@pacific-50`, `focus:` - `@pacific`,
-`:visited` - `@teal`, `:active` - `@navy`.
+default - `#0071bc`, `:hover` - `#205493`, `focus:` - `#0071bc`,
+`:visited` - `#4c2c92`, `:active` - `#046b99`.
 
 [//]: # (NOTE: These aren't the default colors within this project, only once the brand theme has been applied.)
 
 `u-link__colors()`
 
 Passing a single argument into the mixin will set the color for the
-`default`, `:visited`, `:hover`, `:focus`, `:active` states.
+default, `:visited`, `:hover`, `:focus`, `:active` states.
 
 `u-link__colors(@c)`
 
-Passing two arguments into the mixin will set the color for the `default`,
+Passing two arguments into the mixin will set the color for the default,
 `:visited`, and `:active` states as the first argument, and `:hover` and
 `:focus` as the second argument.
 
 `u-link__colors(@c, @h)`
 
-Passing five arguments will set the color for the `default`, `:visited`,
+Passing five arguments will set the color for the default, `:visited`,
 `:hover`, `:focus`, and `:active` states respectively.
 
 `u-link__colors(@c, @v, @h, @f, @a)`
 
-Passing ten arguments will set the text (`default`, `:visited`, `:hover`,
+Passing ten arguments will set the text (default, `:visited`, `:hover`,
 `:focus`, and `:active` states in the first five arguments) and border colors
-(`default`, `:visited`, `:hover`, `:focus`, and `:active` states in the
+(default, `:visited`, `:hover`, `:focus`, and `:active` states in the
 following five arguments) separately.
 
 `u-link__colors(@c, @v, @h, @f, @a, @bc, @bv, @bh, @bf, @ba)`
@@ -599,15 +599,15 @@ this project. If you need to set colors for all states of a link, use
 
 ##### Link borders
 
-Force the default bottom `border` on the `default` and `:hover` states.
+Force the default bottom `border` on the default and `:hover` states.
 
 `.u-link__border()`
 
-Turn off the default bottom `border` on the `default` and `:hover` states.
+Turn off the default bottom `border` on the default and `:hover` states.
 
 `.u-link__no-border()`
 
-Turn off the default bottom `border` on the `default` state but force a bottom
+Turn off the default bottom `border` on the default state but force a bottom
 `border` on the `:hover` state.
 
 `.u-link__hover-border()`
@@ -677,14 +677,14 @@ Sets the font-stack, weight, and style of an element.
 ```
 
 To use your own fonts in the webfont mixins, set your own font with the
-`@webfont-regular/italic/medium/demi` variables in your `theme-overrides.less`
+`@webfont-regular/italic/medium/demi` variables in your `cf-theme-overrides.less`
 file.
 
 _These mixins also add the appropriate `.lt-ie9` overrides. `.lt-ie9`
 overrides are necessary to override `font-style` and `font-weight` each time
 the webfont is used. These overrides are built into the webfont mixins so you
 get them automatically. Note that this requires you to use conditional
-classes on the `<html>` element:
+classes on the `html` element:
 <https://github.com/h5bp/html5-boilerplate/blob/v4.3.0/doc/html.md#conditional-html-classes.>_
 
 ### Type hierarchy
@@ -874,7 +874,8 @@ demonstration purposes only and should not be used in production._
 ### Underlined links
 
 Links are automatically underlined when they are a child of a `p`, `li`, or
-`dd`. To enable them elsewhere, simply add a bottom-border-width to the link.
+`dd`. To enable them elsewhere, simply add a `border-bottom-width: 1px;` to
+the link.
 
 _Note that the `.visited`, `.hover`, `.focus`, `.active` classes are for
 demonstration purposes only and should not be used in production._

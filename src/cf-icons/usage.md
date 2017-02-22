@@ -44,11 +44,11 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ## The basics
 
-The cf-icon-prefix class applies all shared icon styles including the font
-family. By default, this class will be named `cf-icon` but it can be changed
-in the settings. All icons must use three classes, one for the base class,
-one to select the desired icon, and one for the chosen pseudo-element.
-For example:
+The class defined by the @cf-icon-prefix variable applies all shared icon
+styles including the font family. By default, this class will be named
+`cf-icon` but it can be changed in the settings. All icons must use three
+classes, one for the base class, one to select the desired icon, and one
+for the chosen pseudo-element. For example:
 
 ```
 <span class="cf-icon
@@ -159,7 +159,7 @@ MIT Licensed by Font Awesome
 ```
 
 - First parameter is for number of horizontal flips.
-- Second parameter is for number of vertical flips
+- Second parameter is for number of vertical flips.
 - Third parameter is for rotation.
 
 ### Modified icons
