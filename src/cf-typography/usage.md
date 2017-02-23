@@ -583,10 +583,10 @@ typically legal copy.
 
 ### Pull quote
 
-Use a pull quote to highlight excerpts from the current work. This is not to
-be confused with `blockquote` which quotes from an external work. Since a pull
-quote is an excerpt and repeats content from the article you should use the
-`aside` element.
+Use a pull quote to highlight excerpts from the current work.
+This is not to be confused with `blockquote` which quotes from an external
+work. Since a pull quote is an excerpt and repeats content from the article
+you should use the `aside` element.
 
 #### Default pull quote
 

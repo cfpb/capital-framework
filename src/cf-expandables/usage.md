@@ -78,9 +78,9 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Expanded
 
-Sometimes you may want the expandable to be open by default. This is as easy
-as adding the `.o-expandable_content__onload-open` modifier to the
-`.o-expandable_content` block.
+Sometimes you may want the expandable to be open by default.
+This is as easy as adding the `.o-expandable_content__onload-open` modifier
+to the `.o-expandable_content` block.
 
 ```
 .o-expandable_content__onload-open
@@ -169,8 +169,8 @@ Allows you to float information left and right.
 ## Recommended expandable pattern
 
 Expandables can be built by combining the basic barebones structure described
-in the next section along with more specialized expandable elements and
-modifiers described throughout.
+in the next section along with more specialized expandable elements
+and modifiers described throughout.
 
 ### Default state
 
@@ -518,9 +518,9 @@ In this barebones example there are no visual styles.
 
 ### Accordion-style group
 
-Accordions can only show one open expandable at a time. Add the
-`data-accordion="true"` attribute to the expandable group to activate the
-accordion mode.
+Accordions can only show one open expandable at a time.
+Add the `data-accordion="true"` attribute to the expandable group to activate
+the accordion mode.
 
 <div class="o-expandable-group o-expandable-group__accordion" >
     <div class="o-expandable o-expandable__padded">

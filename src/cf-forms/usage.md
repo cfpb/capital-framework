@@ -200,9 +200,6 @@ See the 'Form icons' section below for guidance on adding icons to states.
     </div>
 </div>
 
-##NOTE: Fix the button text size
-
-
 ```
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
