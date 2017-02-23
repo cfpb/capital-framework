@@ -1,4 +1,5 @@
 .m-form-field {
+
     .a-text-input {
         box-sizing: border-box;
         width: 100%;
@@ -11,15 +12,19 @@
     &__checkbox,
     &__radio {
         .a-label {
+            display: flex;
             vertical-align: middle;
             cursor: pointer;
+            width: 100%;
 
             &:before {
                 display: inline-block;
+                align-self: flex-start;
 
                 border: 1px solid @input-border;
-                height: unit( 18px / @base-font-size-px, em );
-                width: unit( 18px / @base-font-size-px, em );
+                min-width: unit( 20px / @base-font-size-px, em);
+                height: unit( 20px / @base-font-size-px, em );
+                width: unit( 20px / @base-font-size-px, em );
                 margin-right: 10px;
 
                 background-color: @input-bg;
@@ -29,6 +34,11 @@
                 .lt-ie9 & {
                     display: none !important;
                 }
+            }
+
+            .a-label_text {
+                display: block;
+                flex: 0 1 auto; // Needed for IE10 to wrap text.
             }
 
             &:hover:before {
@@ -112,9 +122,8 @@
     &__lg-target {
 
         .a-label {
-            display: block;
-
             padding: 10px;
+            margin: 0;
 
             background-color: @input-lg-target;
         }
@@ -123,7 +132,7 @@
         .a-radio {
             &:focus + .a-label,
             &:checked + .a-label {
-                outline: 1px solid @input-border__focused;
+                box-shadow: 0px 0px 0px 1px @input-border__focused inset;
             }
 
             &:checked + .a-label {
