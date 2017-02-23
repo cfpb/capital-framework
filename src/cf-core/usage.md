@@ -15,6 +15,8 @@ It's made up of four child components `cf-vars`, `cf-media-queries`,
 - [Variables](#variables)
     - [Color variables](#color-variables)
     - [Sizing variables](#sizing-variables)
+    - [Breakpoint variables](#breakpoint-variables)
+    - [Webfont variables](#webfont-variables)
 - [Media queries](#media-queries)
     - [Respond to min and max mixins](#respond-to-min-and-max-width-mixins)
     - [Respond to range mixin](#respond-to-range-mixin)
@@ -67,12 +69,6 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 // thead
 @thead-text:             @text;
 @thead-bg:               #f1f1f1; // $color-gray-lightest
-
-// input
-@input-bg:               #fff;
-@input-border:           #5b616b; // $color-gray
-@input-border-focus:     #3e94cf; // $color-focus
-@input-placeholder:      grayscale(#c7336e);
 ```
 
 ### Sizing variables
@@ -81,6 +77,20 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 @base-font-size-px:   16px;
 @base-line-height-px: 22px;
 @base-line-height:    unit(@base-line-height-px / @base-font-size-px);
+
+@size-xl:             48px; // Super-size
+
+@size-i:              34px; // h1-size
+@size-ii:             26px; // h2-size
+@size-iii:            22px; // h3-size
+@size-iv:             18px; // h4-size
+@size-v:              14px; // h5-site
+@size-vi:             12px; // h6-size
+```
+
+### Breakpoint variables
+
+```
 @bp-xs-max:           600px;
 @bp-sm-min:           @bp-xs-max + 1px;
 @bp-sm-max:           900px;
@@ -89,6 +99,15 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 @bp-lg-min:           @bp-med-max + 1px;
 @bp-lg-max:           1230px;
 @bp-xl-min:           @bp-lg-max + 1px;
+```
+
+### Webfont variables
+
+```
+@webfont-regular: Arial;
+@webfont-italic:  Arial;
+@webfont-medium:  Arial;
+@webfont-demi:    Arial;
 ```
 
 

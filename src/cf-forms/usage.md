@@ -42,17 +42,45 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 [U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
-// .error
-@input-error:                   #ea130b;
+// .a-text-input borders
+@input-border:                  #5b616b;
+@input-border__hover:           #0072ce; // @pacific;
+@input-border__focused:         #0072ce; // @pacific;
+@input-border__active:          #0072ce; // @pacific;
+@input-border__error:           #d14124; // @red;
+@input-border__warning:         #ff9e1b; // @gold;
+@input-border__success:         #20aa3f; // @green;
+@input-border__selected:        #046b99; // $color-primary-alt-darkest
 
-// warning
-@input-warning:                 #ffb108;
+// .a-text-input backgrounds
+@input-bg:                      #ffffff;
+@input-bg__active:              #0072ce; // @pacific;
+@input-bg__disabled:            #f7f8f9; // @gray-5;
 
-// .success
-@input-success:                 #009d38;
+// .a-text-input text
+@input-text__disabled:          #75787b; // @gray-80;
+@input-text__placeholder:       #aeb0b5;
 
-// .disabled
-@input-disabled:                #cdb5cd;
+// .a-text-input icons
+@input-icon__error:             #d14124; // @red;
+
+// .a-select
+@select-border:                 #b4b5b6; // @gray-40;
+@select-icon:                   #75787b; // @gray-80;
+@select-icon-bg:                #f7f8f9; // @gray-5;
+@select-text__disabled          @input-text__disabled;
+
+// .m-form-field__lg-target
+@input-lg-target:               #d6d7d9; // $color-gray-lighter
+@input-lg-target__selected:     #9bdaf1; // $color-primary-alt-light
+@input-lg-target__disabled:     #aeb0b5; // $color-gray-light
+```
+
+### Sizing variables
+
+```
+// .a-select
+@select-height:                  30px;
 ```
 
 

@@ -41,6 +41,8 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 ```
 @table-cell-bg:              #ffffff; // $color-white
 @table-cell-bg_alt:          #f1f1f1; // $color-gray-lightest
+@table-row-link-bg-hover:    #205493; // $color-cool-blue
+@table-row-link-hover-color: #ffffff; // $color-white
 @table-scrolling-border:     #e4e2e0; // $color-gray-warm-light
 ```
 

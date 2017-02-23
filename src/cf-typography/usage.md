@@ -46,6 +46,18 @@ project by duplicating the variable `@key: value`.
 [U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
+// Running text elements
+
+// .a-micro-copy
+@micro-copy:                #112e51; // $color-primary-darkest
+
+// .a-date
+@date:                      #112e51; // $color-primary-darkest
+
+// .m-pull-quote
+@pull-quote_body:           #494440; // $color-gray-warm-dark
+@pull-quote_citation:       #205493; // $color-cool-blue
+
 // Headings
 
 // .a-heading__icon
@@ -71,18 +83,6 @@ project by duplicating the variable `@key: value`.
 // .a-link__jump
 @jump-link_bg:              #f1f1f1; // $color-gray-lightest
 @jump-link_border:          #323a45; // $color-gray-dark
-
-// Miscellaneous text elements
-
-// .a-micro-copy
-@micro-copy:                #112e51; // $color-primary-darkest
-
-// .a-date
-@date:                      #112e51; // $color-primary-darkest
-
-// .m-pull-quote
-@pull-quote_body:           #494440; // $color-gray-warm-dark
-@pull-quote_citation:       #205493; // $color-cool-blue
 ```
 
 
