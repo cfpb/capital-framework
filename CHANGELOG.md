@@ -10,7 +10,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **all components:** [PATCH] Standardized all the usage docs for v4
 
 ### Removed
--
+- **capital-framework:** [MINOR] Deprecated code
+  - Deprecated webfont mixins
+  - Extra select element
 
 ## 4.0.1 - 2017-01-26
 
