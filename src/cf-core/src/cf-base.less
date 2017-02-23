@@ -377,6 +377,11 @@ p + ol {
     margin-top: unit( -5px / @base-font-size-px, em );
 }
 
+ul ul,
+ol ul {
+    margin-top: unit( 8px / @base-font-size-px, em );
+}
+
 li {
     margin-bottom: unit( 8px / @base-font-size-px, em );
 
@@ -450,20 +455,16 @@ nav a {
 // Lists
 //
 
+ul, ol {
+    padding-left: unit( 18px / @base-font-size-px, em );
+}
+
 ul {
-    // 32px provides exactly 15px between left margin
-    // and bullet character in most browsers
-    padding-left: unit( 32px / @base-font-size-px, em );
     list-style: square;
 }
 
-// Use the same overall number as ULs, but pull the number 1px to the left
-ol {
-    padding-left: unit( 31px / @base-font-size-px, em );
-
-    > li {
-        padding-left: unit( 1px / @base-font-size-px, em );
-    }
+ul ul {
+    list-style-type: circle;
 }
 
 //
