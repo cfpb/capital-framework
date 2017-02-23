@@ -1548,7 +1548,7 @@ as it's unlikely that the Pacific Blue will have accessible contrast
 with a non-white (or light gray) background.
 
 <section class="m-hero m-hero__overlay"
-         style="background-image: url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg')">
+         style="background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/PC_hero.original.jpg')">
     <div class="m-hero_wrapper wrapper">
         <div class="m-hero_text">
             <h1 class="m-hero_heading">Hero title</h1>
@@ -1560,7 +1560,7 @@ with a non-white (or light gray) background.
         </div>
         <div class="m-hero_image-wrapper">
             <div class="m-hero_image"
-                 style="background-image: url('http://files.consumerfinance.gov/f/images/pc_mobile_1.original.jpg')">
+                 style="background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/pc_mobile_1.original.jpg')">
             </div>
         </div>
     </div>
@@ -1568,7 +1568,7 @@ with a non-white (or light gray) background.
 
 ```
 <section class="m-hero m-hero__overlay"
-         style="background-image: url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg')">
+         style="background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/PC_hero.original.jpg')">
     <div class="m-hero_wrapper wrapper">
         <div class="m-hero_text">
             <h1 class="m-hero_heading">Hero title</h1>
@@ -1580,7 +1580,7 @@ with a non-white (or light gray) background.
         </div>
         <div class="m-hero_image-wrapper">
             <div class="m-hero_image"
-                 style="background-image: url('http://files.consumerfinance.gov/f/images/pc_mobile_1.original.jpg')">
+                 style="background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/pc_mobile_1.original.jpg')">
             </div>
         </div>
     </div>
