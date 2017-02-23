@@ -8,9 +8,11 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Changed
 - **all components:** [PATCH] Standardized all the usage docs for v4
+- **cf-core:** [MINOR] Updated the base list styles to match latest DM Spec
+- **cf-core:** [MINOR] Updated the body copy elements to remove margin from the `last-child`
 
 ### Removed
-- **capital-framework:** [MINOR] Deprecated code
+- **all components:** [MINOR] Deprecated code
   - Deprecated webfont mixins
   - Extra select element
 
