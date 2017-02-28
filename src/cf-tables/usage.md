@@ -35,20 +35,22 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's
-[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables referenced in comments are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
 @table-cell-bg:              #ffffff; // $color-white
 @table-cell-bg_alt:          #f1f1f1; // $color-gray-lightest
+@table-row-link-bg-hover:    #205493; // $color-cool-blue
+@table-row-link-hover-color: #ffffff; // $color-white
 @table-scrolling-border:     #e4e2e0; // $color-gray-warm-light
 ```
 
 
 ## Striped tables
 
-The `.o-table__striped` class adds stripes to the table rows.
-This striping is not visible on small screens.
+The `.o-table__striped` class adds stripes to the `table` rows. This striping is
+not visible on small screens.
 
 <table class="o-table o-table__striped">
     <thead>
@@ -119,8 +121,8 @@ This striping is not visible on small screens.
 
 ## Right-aligned cells
 
-The use of the `.o-table_cell__right-align` class on a TD aligns the text right -
-see the third column above.
+The use of the `.o-table_cell__right-align` class on a `td` aligns the text
+right - see the third column above.
 
 <table class="o-table o-table__stack-on-small">
     <thead>
@@ -171,8 +173,8 @@ see the third column above.
 
 ## Tables with row links
 
-The `.o-table_cell__row-links` class is added to a table to enable highlighting and hyperlinking rows which
-contain links.
+The `.o-table_cell__row-links` class is added to a `table` to enable
+highlighting and hyperlinking rows which contain links.
 
 <table class="o-table o-table__row-links">
     <thead>
@@ -231,8 +233,8 @@ The cf-tables module also includes a sortable table utility.
 
 ### Making a table sortable
 
-By adding the `.o-table__sortable` class to a table, the table becomes sortable.
-To allow the table to be sorted by a column, add a button to the `th` of the
+By adding the `.o-table__sortable` class to a `table`, the `table` becomes sortable.
+To allow the `table` to be sorted by a column, add a `button` to the `th` of the
 column like so:
 
 ```
@@ -241,19 +243,18 @@ column like so:
 </button>
 ```
 
-The use of a button helps address certain accessibility concerns.
+The use of a `button` helps address certain accessibility concerns.
 
 ### Sorting type
 
-To sort properly, the type of the data can be specified.
-By default, the column's values will be sorted as string values.
-However, the column can be specifically sorted by number values
-(in which case, the cell's contents are stripped of non-numeric characters,
-then sorted by the resulting number).
-To see an example, the sample table later in this document sorts the "Distance"
-column by number value.
+To sort properly, the type of the `data` can be specified. By default, the
+column's values will be sorted as `string` values. However, the column can be
+specifically sorted by `number` values (in which case, the cell's contents are
+stripped of non-numeric characters, then sorted by the resulting number). To
+see an example, the sample table later in this document sorts the "Distance"
+column by `number` value.
 
-To sort by number value, add the `data-sort_type="number"` attribute
+To sort by `number` value, add the `data-sort_type="number"` attribute
 to the sorting button:
 
 ```
@@ -501,12 +502,15 @@ highest to lowest)
 
 ### Responsive stacked table
 
-The `.o-table__stack-on-small` class adds the "stacked" table style for small screens.
-_Please note that tables are not responsive without adding one of the small screen classes._
+The `.o-table__stack-on-small` class adds the "stacked" `table` style for small
+screens.
 
-Also note that the `data-label` attribute is used to label each entry in a table
-for small screen responsive views.
-Always include the `data-label` attribute for each cell.
+_Please note that tables are not responsive without adding one of the small
+screen classes._
+
+_Also note that the `data-label` attribute is used to label each entry in a `table`
+for small screen responsive views. Always include the `data-label` attribute for
+each cell._
 
 <table class="o-table o-table__stack-on-small">
     <thead>
@@ -576,13 +580,15 @@ Always include the `data-label` attribute for each cell.
 
 ### Responsive stacked table with header
 
-The `.o-table__entry-header-on-small` class in addition to `.o-table__stack-on-small` class
-changes the first column to be styled as an entry header.
-This style requires both classes be added.
-_Note that tables are not responsive without adding one of the small screen classes._
+The `.o-table__entry-header-on-small` class in addition to
+`.o-table__stack-on-small` class changes the first column to be styled as an
+entry header. This style requires both classes be added.
 
-Also note that the `data-label` attribute is used to label each entry.
-Always include the `data-label` attribute for each cell.
+_Note that tables are not responsive without adding one of the small screen
+classes._
+
+_Also note that the `data-label` attribute is used to label each entry.
+Always include the `data-label` attribute for each cell._
 
 <table class="o-table
               o-table__stack-on-small
@@ -657,11 +663,10 @@ Always include the `data-label` attribute for each cell.
 ### Responsive table - horizontal scroll variation
 
 The `.o-table-wrapper__scrolling` class must be added to the parent element of
-the table (by adding a wrapping `<div>`, in most cases).
-The `<table>` element does not need additional markup in this case.
-The "Comparative with horizontal scroll" style also adds striped rows
-to the table contained within, and
-remains striped on small screens (unlike the `o-table__striped `class, below).
+the `table` (by adding a wrapping `div`, in most cases). The `table` element
+does not need additional markup in this case. The "Comparative with horizontal
+scroll" style also adds striped rows to the table contained within, and remains
+striped on small screens (unlike the `o-table__striped` class, below).
 
 <div class="o-table o-table-wrapper__scrolling">
     <table>

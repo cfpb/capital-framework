@@ -7,8 +7,10 @@
 //
 
 // Color variables
+// `$color-` variables referenced in comments are from 18F's U.S. Web Design Standards
+// https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
-// Input borders
+// .a-text-input borders
 @input-border:                  #5b616b;
 @input-border__hover:           #0072ce; // @pacific;
 @input-border__focused:         #0072ce; // @pacific;
@@ -18,35 +20,38 @@
 @input-border__success:         #20aa3f; // @green;
 @input-border__selected:        #046b99; // $color-primary-alt-darkest
 
-// Input backgrounds
+// .a-text-input backgrounds
 @input-bg:                      #ffffff;
 @input-bg__active:              #0072ce; // @pacific;
 @input-bg__disabled:            #f7f8f9; // @gray-5;
 
-// Input text
+// .a-text-input text
 @input-text__disabled:          #75787b; // @gray-80;
 @input-text__placeholder:       #aeb0b5;
 
-// Input icons
+// .a-text-input icons
 @input-icon__error:             #d14124; // @red;
 
-// select
+// .a-select
 @select-border:                 #b4b5b6; // @gray-40;
 @select-icon:                   #75787b; // @gray-80;
 @select-icon-bg:                #f7f8f9; // @gray-5;
+@select-text__disabled:         @input-text__disabled;
 
-// Large target area variables
+// .m-form-field__lg-target
 @input-lg-target:               #d6d7d9; // $color-gray-lighter
 @input-lg-target__selected:     #9bdaf1; // $color-primary-alt-light
 @input-lg-target__disabled:     #aeb0b5; // $color-gray-light
 
-@input-disabled:                #75787b; // @gray
-
 // Sizing variables
 
+// .a-select
 @select-height:                  30px;
 
+
+//
 // Import external dependencies
+//
 
 @import (less) '../../cf-grid/src/cf-grid.less';
 @import (less) '../../cf-core/src/cf-core.less';
@@ -75,75 +80,3 @@
 //
 
 @import (less) 'organisms/form.less';
-
-//
-// m-select menu
-//
-
-.m-select {
-    position: relative;
-    margin-top: 0.5em;
-    border: 1px solid @select-border;
-
-    select {
-        height: unit( 30px / @base-font-size-px, em );
-        width: 100%;
-        padding: unit( 4px / @base-font-size-px, em )
-                 unit( 6px / @base-font-size-px, em );
-        border: 0;
-        outline: 2px solid transparent;
-        appearance: none;
-        background-color: @input-bg;
-        border-radius: 0;
-        color: @text;
-
-        &:hover,
-        &:active,
-        &:focus {
-            outline-color: @input-border__focused;
-            outline-offset: 0;
-        }
-    }
-
-    select[disabled] {
-        color: @input-text__disabled;
-        background-color: @input-bg__disabled;
-        cursor: not-allowed;
-
-        &:hover {
-            outline: 2px solid transparent;
-        }
-    }
-
-    select option:disabled {
-        color: @input-disabled;
-    }
-
-    &:after {
-        width: unit( 30px / @base-font-size-px, em );
-        height: unit( 30px / @base-font-size-px, em );
-        border-left: 1px solid @select-border;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: @input-disabled;
-        color: @select-icon;
-        content: @cf-icon-down;
-        font-family: 'CFPB Minicons';
-        line-height: unit( 30px / @base-font-size-px, em );
-        text-align: center;
-        pointer-events: none;
-    }
-}
-
-// @todo: add modernizr to CF so this works:
-
-.no-csspointerevents .m-select {
-    &:after {
-        height: 0;
-        width: 0;
-        border: 0;
-        content: '';
-    }
-}
-

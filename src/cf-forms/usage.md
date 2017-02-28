@@ -22,15 +22,13 @@ Capital Framework.
     - [Basic Text Inputs](#basic-text-inputs)
     - [Basic checkboxes](#basic-checkboxes)
     - [Basic radio buttons](#basic-radio-buttons)
-    - [Select box](#select-box)
     - [Input states](#input-states)
 - [Buttons](#buttons)
     - [Input and button](#input-and-button)
     - [Button inside input](#button-inside-input)
 - [Select dropdown](#select-dropdown)
-    - [Required select](#required-select)
+    - [Basic select](#basic-select)
     - [Disabled select](#disabled-select)
-    - [Optional select](#optional-select)
 
 
 ## Variables
@@ -40,21 +38,49 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's
-[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables referenced in comments are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
-// .error
-@input-error:                   #ea130b;
+// .a-text-input borders
+@input-border:                  #5b616b;
+@input-border__hover:           #0072ce; // @pacific;
+@input-border__focused:         #0072ce; // @pacific;
+@input-border__active:          #0072ce; // @pacific;
+@input-border__error:           #d14124; // @red;
+@input-border__warning:         #ff9e1b; // @gold;
+@input-border__success:         #20aa3f; // @green;
+@input-border__selected:        #046b99; // $color-primary-alt-darkest
 
-// warning
-@input-warning:                 #ffb108;
+// .a-text-input backgrounds
+@input-bg:                      #ffffff;
+@input-bg__active:              #0072ce; // @pacific;
+@input-bg__disabled:            #f7f8f9; // @gray-5;
 
-// .success
-@input-success:                 #009d38;
+// .a-text-input text
+@input-text__disabled:          #75787b; // @gray-80;
+@input-text__placeholder:       #aeb0b5;
 
-// .disabled
-@input-disabled:                #cdb5cd;
+// .a-text-input icons
+@input-icon__error:             #d14124; // @red;
+
+// .a-select
+@select-border:                 #b4b5b6; // @gray-40;
+@select-icon:                   #75787b; // @gray-80;
+@select-icon-bg:                #f7f8f9; // @gray-5;
+@select-text__disabled          @input-text__disabled;
+
+// .m-form-field__lg-target
+@input-lg-target:               #d6d7d9; // $color-gray-lighter
+@input-lg-target__selected:     #9bdaf1; // $color-primary-alt-light
+@input-lg-target__disabled:     #aeb0b5; // $color-gray-light
+```
+
+### Sizing variables
+
+```
+// .a-select
+@select-height:                  30px;
 ```
 
 
@@ -87,21 +113,27 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ## Inputs
 
-Inputs should always be paired with a label for accessibility reasons.
+Inputs should always be paired with a `label` for accessibility reasons.
 
 ### Basic text inputs
 
-<label class="a-label" for="text-input-example"></label>
-<input class="a-text-input" type="text" id="text-input example" value="Lorem ipsum">
+<label class="a-label" for="text-input-example">A text input</label>
+<input class="a-text-input"
+       type="text"
+       id="text-input example"
+       value="Lorem ipsum">
 
-<label class="a-label a-label__heading" for="textarea-example"></label>
+<label class="a-label" for="textarea-example">A textarea input</label>
 <textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
 
 ```
-<label class="a-label" for="text-input-example"></label>
-<input class="a-text-input" type="text" id="text-input example" value="Lorem ipsum">
+<label class="a-label" for="text-input-example">A text input</label>
+<input class="a-text-input"
+       type="text"
+       id="text-input example"
+       value="Lorem ipsum">
 
-<label class="a-label a-label__heading" for="textarea-example"></label>
+<label class="a-label" for="textarea-example">A textarea input</label>
 <textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
 ```
 
@@ -133,59 +165,29 @@ Inputs should always be paired with a label for accessibility reasons.
 </div>
 ```
 
-### Select box
-
-<div class="m-form-field__select">
-    <label class="a-label" for="test_select">Label</label>
-    <div class="a-select">
-        <select id="test_select">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-            <option value="option4">Option 4</option>
-        </select>
-    </div>
-</div>
-
-```
-<div class="m-form-field__select">
-    <label class="a-label" for="test_select">Label</label>
-    <div class="a-select">
-        <select id="test_select">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-            <option value="option4">Option 4</option>
-        </select>
-    </div>
-</div>
-```
-
 ### Input states
 
 See the 'Form icons' section below for guidance on adding icons to states.
 
 #### Disabled state
 
-<input class="disabled"
+<input class="a-text-input disabled"
        disabled="true"
        autocomplete="off"
        type="text"
-       value="Validated input"
-       title="Test input">
+       value="Disabled input">
 
 ```
-<input class="disabled"
+<input class="a-text-input disabled"
        disabled="true"
        autocomplete="off"
        type="text"
-       value="Validated input"
-       title="Test input">
+       value="Disabled input">
 ```
 
 ### Inline Form Validation
 
-<div class="m-field m-field__error">
+<div class="m-form-field m-form-field__error">
     <label class="a-label__heading" for="form-input-error">Label</label>
     <input class="a-text-input a-text-input__error"
            type="text"
@@ -212,40 +214,6 @@ See the 'Form icons' section below for guidance on adding icons to states.
     </div>
 </div>
 ```
-
-#### Error icon
-
-- The icon must be placed directly after the form input in the markup and the input must use the 'error' class.
-- For invalid fields only use the alert role to call attention to fields that need immediate attention: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role
-
-<input class="error" type="text" value="Invalid input" title="Test input">
-<span class="cf-form_input-icon cf-icon cf-icon-delete-round" role="alert"></span>
-
-```
-<input class="error" type="text" value="Invalid input" title="Test input">
-<span class="cf-form_input-icon cf-icon cf-icon-delete-round" role="alert"></span>
-```
-
-#### Warning icon
-
-<input class="warning" type="text" value="Invalid input" title="Test input">
-<span class="cf-form_input-icon cf-icon cf-icon-error-round" role="alert"></span>
-
-```
-<input class="warning" type="text" value="Invalid input" title="Test input">
-<span class="cf-form_input-icon cf-icon cf-icon-error-round" role="alert"></span>
-```
-
-#### Success icon
-
-<input class="success" type="text" value="Validated input" title="Test input">
-<span class="cf-form_input-icon cf-icon cf-icon-approved-round"></span>
-
-```
-<input class="success" type="text" value="Validated input" title="Test input">
-<span class="cf-form_input-icon cf-icon cf-icon-approved-round"></span>
-```
-
 
 ## Buttons
 
@@ -253,7 +221,7 @@ See the 'Form icons' section below for guidance on adding icons to states.
 
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
-        <input type="text" title="Test input">
+        <input class="a-text-input" type="text" title="Test input">
     </div>
     <div class="o-form__input-w-btn_btn-container">
         <button class="a-btn">Search</button>
@@ -263,7 +231,7 @@ See the 'Form icons' section below for guidance on adding icons to states.
 ```
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
-        <input type="text" title="Test input">
+        <input class="a-text-input" type="text" title="Test input">
     </div>
     <div class="o-form__input-w-btn_btn-container">
         <button class="a-btn">Search</button>
@@ -277,7 +245,9 @@ See the 'Form icons' section below for guidance on adding icons to states.
 
 <div class="m-btn-inside-input">
     <input type="text"
-        value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+        value="This is some really long text to make sure that the button
+               doesn't overlap the content in such a way that this input
+               becomes unusable."
         title="Test input"
         class="a-text-input">
     <button class="a-btn a-btn__link">
@@ -292,7 +262,9 @@ See the 'Form icons' section below for guidance on adding icons to states.
     <div class="o-form__input-w-btn_input-container">
         <div class="m-btn-inside-input">
             <input type="text"
-                value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+                value="This is some really long text to make sure that the
+                       button doesn't overlap the content in such a way
+                       that this input becomes unusable."
                 title="Test input"
                 class="a-text-input">
             <button class="a-btn a-btn__link">
@@ -309,15 +281,12 @@ See the 'Form icons' section below for guidance on adding icons to states.
 
 ## Select dropdown
 
-### Required select
+### Basic select
 
-<div class="form-l_col form-l_col-1">
-    <label class="form-label-header"
-           for="select_example">
-            Required select example
-    </label>
-    <div class="m-select">
-        <select id="select_example" required>
+<div class="m-form-field__select">
+    <label class="a-label" for="test_select">Label</label>
+    <div class="a-select">
+        <select id="test_select">
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
@@ -327,13 +296,10 @@ See the 'Form icons' section below for guidance on adding icons to states.
 </div>
 
 ```
-<div class="form-l_col form-l_col-1">
-    <label class="form-label-header"
-           for="select_example">
-            Required select example
-    </label>
-    <div class="m-select">
-        <select id="select_example" required>
+<div class="m-form-field__select">
+    <label class="a-label" for="test_select">Label</label>
+    <div class="a-select">
+        <select id="test_select">
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
@@ -345,13 +311,10 @@ See the 'Form icons' section below for guidance on adding icons to states.
 
 ### Disabled select
 
-<div class="form-l_col form-l_col-1">
-    <label class="form-label-header"
-           for="select_example__disabled">
-            Disabled select example
-    </label>
-    <div class="m-select">
-        <select id="select_example__disabled" disabled>
+<div class="m-form-field__select">
+    <label class="a-label" for="test_select__disabled">Label</label>
+    <div class="a-select">
+        <select id="test_select__disabled" disabled>
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
@@ -361,51 +324,10 @@ See the 'Form icons' section below for guidance on adding icons to states.
 </div>
 
 ```
-<div class="form-l_col form-l_col-1">
-    <label class="form-label-header"
-           for="select_example__disabled">
-            Disabled select example
-    </label>
-    <div class="m-select">
-        <select id="select_example__disabled" disabled>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-            <option value="option4">Option 4</option>
-        </select>
-    </div>
-</div>
-```
-
-### Optional select
-
-<div class="form-l_col form-l_col-1">
-    <label class="form-label-header"
-           for="select_example__optional">
-            Optional select example
-            <span class="micro-copy">&nbsp;(Optional)</span>
-    </label>
-    <div class="m-select">
-        <select id="select_example__optional">
-            <option value="" disabled selected>Please select</option>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-            <option value="option4">Option 4</option>
-        </select>
-    </div>
-</div>
-
-```
-<div class="form-l_col form-l_col-1">
-    <label class="form-label-header"
-           for="select_example__optional">
-            Optional select example
-            <span class="micro-copy">&nbsp;(Optional)</span>
-    </label>
-    <div class="m-select">
-        <select id="select_example__optional">
-            <option value="" disabled selected>Please select</option>
+<div class="m-form-field__select">
+    <label class="a-label" for="test_select__disabled">Label</label>
+    <div class="a-select">
+        <select id="test_select__disabled" disabled>
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>

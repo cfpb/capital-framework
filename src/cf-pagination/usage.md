@@ -1,6 +1,8 @@
-The cf-pagination component provides a responsive approach to multipage page navigation for Capital Framework.
+The cf-pagination component provides a responsive approach to multipage page
+navigation for Capital Framework.
 
-[`cf-core`](../cf-core), [`cf-buttons`](../cf-buttons), and [`cf-icons`](../cf-icons) components are all dependencies of this component."
+[`cf-core`](../cf-core), [`cf-buttons`](../cf-buttons), and
+[`cf-icons`](../cf-icons) components are all dependencies of this component.
 
 > NOTE: If you use `cf-pagination.less` directly,
   be sure to run the file through
@@ -20,52 +22,54 @@ The cf-pagination component provides a responsive approach to multipage page nav
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project. Overwrite them in your own project by duplicating the variable `@key: value`.
+Theme variables for setting the color and sizes throughout the project.
+Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's [US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables referenced in comments are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
-Pagination text color.
 ```
-@pagination-text-color: #757575; // $color-gray-medium
-```
-
-Pagination form background color.
-```
-@pagination-bg-color: #f1f1f1; // $color-gray-lightest
+@pagination-text-color:    #323a45; // $color-gray-dark
+@pagination-bg-color:      #f1f1f1; // $color-gray-lightest
 ```
 
 ### Sizing variables
 
-The font size of pagination text.
 ```
-@pagination-font-size__px:          16px;
+@pagination-font-size-px:  @base-font-size-px;
+@pagination-font-size-em:  unit( @pagination-font-size-px / @base-font-size-px, em );
+@pagination-btn-height-px: 42px;
+@pagination-btn-width-px:  130px;
 ```
 
 
 ## Default pagination
 
-Default pagination consists of "Previous" and "Next" links, styled as buttons, and an inline form (input, submit button) that allows users to navigate to specific pages by number.
+Default pagination consists of "Previous" and "Next" links, styled as buttons,
+and an inline form (input, submit button) that allows users to navigate to
+specific pages by number.
 
-To enable the component to jump directly to the paginated content, place `#pagination_content` directly above your paginated content.
+To enable the component to jump directly to the paginated content, place
+`#pagination_content` directly above your paginated content.
 
 <div id="pagination_content"></div>
 
 <!-- Paginated content here -->
 
 <nav class="m-pagination" role="navigation" aria-label="Pagination">
-    <a class="btn
+    <a class="a-btn
               m-pagination_btn-prev"
        href="?page=1#pagination_content">
-        <span class="cf-icon cf-icon-left btn_icon__left "></span>
+        <span class="cf-icon cf-icon-left cf-icon__before"></span>
         Newer
     </a>
-    <a class="btn
-             m-pagination_btn-next"
+    <a class="a-btn
+              m-pagination_btn-next"
        href="?page=3#pagination_content">
         Older
-        <span class="cf-icon cf-icon-right btn_icon__right"></span>
+        <span class="cf-icon cf-icon-right cf-icon__after"></span>
     </a>
     <form class="m-pagination_form"
             action="#pagination_content">
@@ -86,9 +90,9 @@ To enable the component to jump directly to the paginated content, place `#pagin
                      value="2">
             of 149
         </label>
-        <button class="btn
-                         btn__link
-                         m-pagination_submit-btn"
+        <button class="a-btn
+                       a-btn__link
+                       m-pagination_submit-btn"
                   id="m-pagination_submit-btn"
                   type="submit">Go</button>
     </form>
@@ -100,17 +104,17 @@ To enable the component to jump directly to the paginated content, place `#pagin
 <!-- Paginated content here -->
 
 <nav class="m-pagination" role="navigation" aria-label="Pagination">
-    <a class="btn
+    <a class="a-btn
               m-pagination_btn-prev"
        href="?page=1#pagination_content">
-        <span class="cf-icon cf-icon-left btn_icon__left "></span>
+        <span class="cf-icon cf-icon-left cf-icon__before"></span>
         Newer
     </a>
-    <a class="btn
-             m-pagination_btn-next"
+    <a class="a-btn
+              m-pagination_btn-next"
        href="?page=3#pagination_content">
         Older
-        <span class="cf-icon cf-icon-right btn_icon__right"></span>
+        <span class="cf-icon cf-icon-right cf-icon__after"></span>
     </a>
     <form class="m-pagination_form"
             action="#pagination_content">
@@ -131,8 +135,8 @@ To enable the component to jump directly to the paginated content, place `#pagin
                      value="2">
             of 149
         </label>
-        <button class="btn
-                       btn__link
+        <button class="a-btn
+                       a-btn__link
                        m-pagination_submit-btn"
                   id="m-pagination_submit-btn"
                   type="submit">Go</button>
@@ -143,4 +147,5 @@ To enable the component to jump directly to the paginated content, place `#pagin
 
 ## Responsive behavior
 
-- `@bp-xs-max`: On small screens, the pagination links display next to each other, stacked on top of the form.
+- `@bp-xs-max`: On small screens, the pagination links display next to each
+  other, stacked on top of the form.

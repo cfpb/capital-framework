@@ -1,21 +1,28 @@
-// Import external dependencies
-
-@import '../../cf-core/src/cf-core.less';
-
 /* ==========================================================================
    Capital Framework
    Table Styling
    ========================================================================== */
 
-// Color Variables
-// $color- variables are from 18F's US Web Design Standards
-// https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss
+//
+// Theme variables
+//
+
+// Color variables
+// `$color-` variables referenced in comments are from 18F's U.S. Web Design Standards
+// https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 @table-cell-bg:              #ffffff; // $color-white
 @table-cell-bg_alt:          #f1f1f1; // $color-gray-lightest
 @table-row-link-bg-hover:    #205493; // $color-cool-blue
 @table-row-link-hover-color: #ffffff; // $color-white
 @table-scrolling-border:     #e4e2e0; // $color-gray-warm-light
+
+
+//
+// Import external dependencies
+//
+
+@import '../../cf-core/src/cf-core.less';
 
 
 // Mixins
@@ -125,7 +132,7 @@
         }
 
         td[data-label]:before {
-            .webfont-demi();
+            .u-webfont-demi();
             display: block;
             margin-top: 0;
             margin-bottom: .41666667em;

@@ -1,6 +1,6 @@
 Expandables are components that have additional content that can be
 opened (expanded) and closed (collapsed). They can appear on their own
-or can appear in groups.
+or in groups.
 
 [`cf-core`](../cf-core) and [`cf-icons`](../cf-icons) components are
 dependencies of this component.
@@ -19,7 +19,7 @@ dependencies of this component.
   - [Sizing variables](#sizing-variables)
   - [Timing variables](#timing-variables)
 - [Modifiers](#modifiers)
-  - [Expanded](#expandables)
+  - [Expanded](#expanded)
   - [Padded](#padded)
   - [Spaced header](#spaced-header)
 - [Elements](#elements)
@@ -40,8 +40,8 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's
-[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables referenced in comments are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
 // Single expandable
@@ -79,7 +79,8 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 ### Expanded
 
 Sometimes you may want the expandable to be open by default.
-This is as easy as adding the `.o-expandable_content__onload-open` modifier to the `.o-expandable_content` block.
+This is as easy as adding the `.o-expandable_content__onload-open` modifier
+to the `.o-expandable_content` block.
 
 ```
 .o-expandable_content__onload-open
@@ -87,10 +88,11 @@ This is as easy as adding the `.o-expandable_content__onload-open` modifier to t
 
 ### Padded
 
-Adds padding and a background color to `.o-expandable_header` and `.o-expandable_content`.
+Adds `padding` and a `background` color to `.o-expandable_header` and
+`.o-expandable_content`.
 
-In addition to using the `.o-expandable__padded` modifier you also
-need to make sure you are using `.o-expandable_header`.
+In addition to using the `.o-expandable__padded` modifier you also need to make
+sure you are using `.o-expandable_header`.
 
 ```
 .o-expandable__padded
@@ -98,7 +100,7 @@ need to make sure you are using `.o-expandable_header`.
 
 ### Spaced header
 
-Allows you to add space between .o-expandable_header and .o-expandable_content.
+Allows you to add space between `.o-expandable_header` and `.o-expandable_content`.
 
 ```
 .o-expandable_header__spaced
@@ -124,7 +126,9 @@ Allows you to add some styled text.
 
 #### Link
 
-Allows you to add some styled text with a link-like look.
+Allows you to add some styled text to look like a link.
+
+_Note: only use this in the expandable header_
 
 <span class="o-expandable_link">
     Lorem ipsum
@@ -138,14 +142,15 @@ Allows you to add some styled text with a link-like look.
 
 ### Header elements
 
-These additional elements are useful for more complicated expandables
-that need to convey more information than just 'Show/Hide' before the user expands it.
+These additional elements are useful for more complicated expandables that need
+to convey more information than just 'Show/Hide' before the user expands it.
 
 #### Header
 
 Creates a full-width container to house information that is always visible.
 
-Combine `.o-expandable_header` with `.o-expandable_target` for a full-width trigger.
+Combine `.o-expandable_header` with `.o-expandable_target` for a full-width
+trigger.
 
 ```
 .o-expandable_header
@@ -172,7 +177,8 @@ and modifiers described throughout.
 The following combination is our recommended go-to expandable pattern.
 
 <div class="o-expandable o-expandable__padded">
-    <button class="o-expandable_header o-expandable_target" title="Expand content">
+    <button class="o-expandable_header o-expandable_target"
+            title="Expand content">
         <span class="o-expandable_header-left o-expandable_label">
             Expandable Header
         </span>
@@ -197,9 +203,11 @@ The following combination is our recommended go-to expandable pattern.
         </p>
     </div>
 </div>
+
 ```
 <div class="o-expandable o-expandable__padded">
-    <button class="o-expandable_header o-expandable_target" title="Expand content">
+    <button class="o-expandable_header o-expandable_target"
+            title="Expand content">
         <span class="o-expandable_header-left o-expandable_label">
             Expandable Header
         </span>
@@ -229,7 +237,8 @@ The following combination is our recommended go-to expandable pattern.
 ### Default state (open on load)
 
 <div class="o-expandable o-expandable__padded">
-    <button class="o-expandable_header o-expandable_target" title="Expand content">
+    <button class="o-expandable_header o-expandable_target"
+            title="Expand content">
         <span class="o-expandable_header-left o-expandable_label">
             Expandable Header
         </span>
@@ -254,9 +263,11 @@ The following combination is our recommended go-to expandable pattern.
         </p>
     </div>
 </div>
+
 ```
 <div class="o-expandable o-expandable__padded">
-    <button class="o-expandable_header o-expandable_target" title="Expand content">
+    <button class="o-expandable_header o-expandable_target"
+            title="Expand content">
         <span class="o-expandable_header-left o-expandable_label">
             Expandable Header
         </span>
@@ -285,8 +296,8 @@ The following combination is our recommended go-to expandable pattern.
 
 ### Barebones expandable
 
-This is the barebones structure for expandables that can be used
-(along with other expanable elements and modifiers) to create custom expandable patterns.
+This is the barebones structure for expandables that can be used (along with
+other expanable elements and modifiers) to create custom expandable patterns.
 
 In this barebones example there are no visual styles.
 
@@ -337,7 +348,8 @@ In this barebones example there are no visual styles.
 
 <div class="o-expandable-group">
     <div class="o-expandable o-expandable__padded">
-        <button class="o-expandable_header o-expandable_target" title="Expand content">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
             <span class="o-expandable_header-left o-expandable_label">
                 Expandable Header 1
             </span>
@@ -363,7 +375,8 @@ In this barebones example there are no visual styles.
         </div>
     </div>
     <div class="o-expandable o-expandable__padded">
-        <button class="o-expandable_header o-expandable_target" title="Expand content">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
             <span class="o-expandable_header-left o-expandable_label">
                 Expandable Header 2
             </span>
@@ -389,7 +402,8 @@ In this barebones example there are no visual styles.
         </div>
     </div>
     <div class="o-expandable o-expandable__padded">
-        <button class="o-expandable_header o-expandable_target" title="Expand content">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
             <span class="o-expandable_header-left o-expandable_label">
                 Expandable Header 3
             </span>
@@ -419,7 +433,8 @@ In this barebones example there are no visual styles.
 ```
 <div class="o-expandable-group">
     <div class="o-expandable o-expandable__padded">
-        <button class="o-expandable_header o-expandable_target" title="Expand content">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
             <span class="o-expandable_header-left o-expandable_label">
                 Expandable Header 1
             </span>
@@ -445,7 +460,8 @@ In this barebones example there are no visual styles.
         </div>
     </div>
     <div class="o-expandable o-expandable__padded">
-        <button class="o-expandable_header o-expandable_target" title="Expand content">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
             <span class="o-expandable_header-left o-expandable_label">
                 Expandable Header 2
             </span>
@@ -471,7 +487,8 @@ In this barebones example there are no visual styles.
         </div>
     </div>
     <div class="o-expandable o-expandable__padded">
-        <button class="o-expandable_header o-expandable_target" title="Expand content">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
             <span class="o-expandable_header-left o-expandable_label">
                 Expandable Header 3
             </span>
@@ -502,11 +519,13 @@ In this barebones example there are no visual styles.
 ### Accordion-style group
 
 Accordions can only show one open expandable at a time.
-Add the `data-accordion="true"` attribute to the expandable group to activate the accordion mode.
+Add the `data-accordion="true"` attribute to the expandable group to activate
+the accordion mode.
 
 <div class="o-expandable-group o-expandable-group__accordion" >
     <div class="o-expandable o-expandable__padded">
-        <button class="o-expandable_header o-expandable_target" title="Expand content">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
             <span class="o-expandable_header-left o-expandable_label">
                 Expandable Header 1
             </span>
@@ -532,7 +551,8 @@ Add the `data-accordion="true"` attribute to the expandable group to activate th
         </div>
     </div>
     <div class="o-expandable o-expandable__padded">
-        <button class="o-expandable_header o-expandable_target" title="Expand content">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
             <span class="o-expandable_header-left o-expandable_label">
                 Expandable Header 2
             </span>
@@ -558,7 +578,8 @@ Add the `data-accordion="true"` attribute to the expandable group to activate th
         </div>
     </div>
     <div class="o-expandable o-expandable__padded">
-        <button class="o-expandable_header o-expandable_target" title="Expand content">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
             <span class="o-expandable_header-left o-expandable_label">
                 Expandable Header 3
             </span>
@@ -588,7 +609,8 @@ Add the `data-accordion="true"` attribute to the expandable group to activate th
 ```
 <div class="o-expandable-group o-expandable-group__accordion" >
     <div class="o-expandable o-expandable__padded">
-        <button class="o-expandable_header o-expandable_target" title="Expand content">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
             <span class="o-expandable_header-left o-expandable_label">
                 Expandable Header 1
             </span>
@@ -614,7 +636,8 @@ Add the `data-accordion="true"` attribute to the expandable group to activate th
         </div>
     </div>
     <div class="o-expandable o-expandable__padded">
-        <button class="o-expandable_header o-expandable_target" title="Expand content">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
             <span class="o-expandable_header-left o-expandable_label">
                 Expandable Header 2
             </span>
@@ -640,7 +663,8 @@ Add the `data-accordion="true"` attribute to the expandable group to activate th
         </div>
     </div>
     <div class="o-expandable o-expandable__padded">
-        <button class="o-expandable_header o-expandable_target" title="Expand content">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
             <span class="o-expandable_header-left o-expandable_label">
                 Expandable Header 3
             </span>

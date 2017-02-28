@@ -7,11 +7,6 @@
 // Webfonts
 //
 
-@webfont-regular: Arial;
-@webfont-italic:  Arial;
-@webfont-medium:  Arial;
-@webfont-demi:    Arial;
-
 .u-webfont-regular() {
     font-family: @webfont-regular, Arial, sans-serif;
     font-style: normal;
@@ -57,12 +52,6 @@
         font-weight: normal !important;
     }
 }
-
-// TODO: Deprecate these old mixin names once all of v4 is merged together.
-.webfont-regular { .u-webfont-regular(); }
-.webfont-italic  { .u-webfont-italic(); }
-.webfont-medium  { .u-webfont-medium(); }
-.webfont-demi    { .u-webfont-demi(); }
 
 //
 // Type hierarchy
@@ -376,11 +365,22 @@ table,
 blockquote {
     margin-top: 0;
     margin-bottom: unit( 15px / @base-font-size-px, em );
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 p + ul,
 p + ol {
     margin-top: unit( -5px / @base-font-size-px, em );
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin-top: unit( 8px / @base-font-size-px, em );
 }
 
 li {
@@ -456,20 +456,16 @@ nav a {
 // Lists
 //
 
+ul, ol {
+    padding-left: unit( 18px / @base-font-size-px, em );
+}
+
 ul {
-    // 32px provides exactly 15px between left margin
-    // and bullet character in most browsers
-    padding-left: unit( 32px / @base-font-size-px, em );
     list-style: square;
 }
 
-// Use the same overall number as ULs, but pull the number 1px to the left
-ol {
-    padding-left: unit( 31px / @base-font-size-px, em );
-
-    > li {
-        padding-left: unit( 1px / @base-font-size-px, em );
-    }
+ul ul {
+    list-style-type: circle;
 }
 
 //

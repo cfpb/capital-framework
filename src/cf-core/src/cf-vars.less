@@ -7,6 +7,31 @@
 // Theme variables
 //
 
+// Color variables
+// `$color-` variables referenced in comments are from 18F's U.S. Web Design Standards
+// https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
+
+// body
+@text:                          #212121; // $color-base
+
+// a
+@link-text:                     #0071bc; // $color-primary
+@link-underline:                #0071bc; // $color-primary
+@link-text-visited:             #4c2c92; // $color-visited
+@link-underline-visited:        #4c2c92; // $color-visited
+@link-text-hover:               #205493; // $color-primary-darker
+@link-underline-hover:          #205493; // $color-primary-darker
+@link-text-active:              #046b99; // $color-primary-darkest
+@link-underline-active:         #046b99; // $color-primary-darkest
+
+// table
+@table-border:                  #5b616b; // $color-gray
+
+// thead
+@thead-text:                    @text;
+@thead-bg:                      #f1f1f1; // $color-gray-lightest
+
+
 // Sizing variables
 
 @base-font-size-px:             16px;
@@ -35,26 +60,9 @@
 @bp-xl-min:                     @bp-lg-max + 1px;
 
 
-// Color variables
-// $color- variables are from 18F's U.S. Web Design Standards
-// https://github.com/18F/web-design-standards/blob/master/src/stylesheets/core/_variables.scss
+// Web fonts
 
-// body
-@text:                          #212121; // $color-base
-
-// a
-@link-text:                     #0071bc; // $color-primary
-@link-underline:                #0071bc; // $color-primary
-@link-text-visited:             #4c2c92; // $color-visited
-@link-underline-visited:        #4c2c92; // $color-visited
-@link-text-hover:               #205493; // $color-primary-darker
-@link-underline-hover:          #205493; // $color-primary-darker
-@link-text-active:              #046b99; // $color-primary-darkest
-@link-underline-active:         #046b99; // $color-primary-darkest
-
-// table
-@table-border:                  #5b616b; // $color-gray
-
-// thead
-@thead-text:                    @text;
-@thead-bg:                      #f1f1f1; // $color-gray-lightest
+@webfont-regular: Arial;
+@webfont-italic:  Arial;
+@webfont-medium:  Arial;
+@webfont-demi:    Arial;
