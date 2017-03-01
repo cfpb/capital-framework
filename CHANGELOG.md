@@ -11,6 +11,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 - Added usage docs to the Gulp copy task
 - Updated Jekyll config to use GitHub settings in Kramdown
+- Updated the variable names to match latest from CF
 
 ## 2.0.0 - 2015-12-18
 
