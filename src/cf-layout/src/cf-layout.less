@@ -3,16 +3,13 @@
    Layout Helpers
    ========================================================================== */
 
-// Import external dependencies
-
-@import (less) '../../cf-core/src/cf-core.less';
-@import (less) '../../cf-grid/src/cf-grid.less';
-
 //
 // Theme variables
 //
 
 // Color variables
+// `$color-` variables referenced in comments are from 18F's U.S. Web Design Standards
+// https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 // .block
 @block__bg:                     lighten(#3a8899, 55%);
@@ -38,10 +35,18 @@
 // .grid_column__top-divider
 @grid_column__left-divider:     #3a8899;
 
+
+//
+// Import external dependencies
+//
+
+@import (less) '../../cf-core/src/cf-core.less';
+@import (less) '../../cf-grid/src/cf-grid.less';
+
+
 //
 // Content layouts
 //
-
 
 .content-l {
     // Used to position __divider modifiers
