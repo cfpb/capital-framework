@@ -4,4 +4,4 @@ title:  "cf-forms"
 parent: "Components"
 ---
 
-{% include usage/cf-forms.html %}
+{% include usage/cf-forms.md %}

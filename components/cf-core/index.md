@@ -4,4 +4,4 @@ title:  "cf-core"
 parent: "Components"
 ---
 
-{% include usage/cf-core.html %}
+{% include usage/cf-core.md %}

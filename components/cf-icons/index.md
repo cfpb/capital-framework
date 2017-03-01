@@ -4,4 +4,4 @@ title:  "cf-icons"
 parent: "Components"
 ---
 
-{% include usage/cf-icons.html %}
+{% include usage/cf-icons.md %}

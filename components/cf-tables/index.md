@@ -4,4 +4,4 @@ title:  "cf-tables"
 parent: "Components"
 ---
 
-{% include usage/cf-tables.html %}
+{% include usage/cf-tables.md %}

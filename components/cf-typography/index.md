@@ -4,4 +4,4 @@ title:  "cf-typography"
 parent: "Components"
 ---
 
-{% include usage/cf-typography.html %}
+{% include usage/cf-typography.md %}
