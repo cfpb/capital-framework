@@ -24,7 +24,7 @@
   "scripts": {
     "release": "./scripts/travis/release.sh",
     "build": "gulp build",
-    "test": "gulp test && node test/accessibility/wcag.js",
+    "test": "gulp test",
     "cf-link": "node scripts/npm/link"
   },
   "devDependencies": {
