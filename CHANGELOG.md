@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.1.0 - 2017-03-02
+
 ### Changed
 - **all components:** Corrected the variables correct names, locations, and organization
 - **all components:** Standardized all the usage docs for v4
