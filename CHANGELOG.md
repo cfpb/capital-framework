@@ -4,13 +4,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-core** [PATCH] Fixed line breaks before codefences
 
 ### Removed
-- 
+-
 
 ## 4.1.0 - 2017-03-02
 
