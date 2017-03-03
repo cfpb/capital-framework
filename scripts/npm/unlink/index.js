@@ -12,7 +12,7 @@ function getDirectories( srcpath ) {
   } );
 }
 
-function npmLink( component ) {
+function npmUnlink( component ) {
   exec( 'npm unlink ' + component + ' && npm install ' + component,
     function( err, out ) {
       if ( err instanceof Error ) {
@@ -24,5 +24,5 @@ function npmLink( component ) {
 }
 
 for ( var i = 0, l = components.length; i < l; i++ ) {
-  npmLink( components[i] );
+  npmUnlink( components[i] );
 }
