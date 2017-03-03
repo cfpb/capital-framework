@@ -128,6 +128,7 @@ them to the corresponding min or max width media query.
 ```
 
 Ex.
+
 ```
 .respond-to-min( @bp-sm-min, {
     .title {
@@ -154,6 +155,7 @@ converts them to the corresponding min and max media query.
 ```
 
 Ex.
+
 ```
 .respond-to-range( @bp-sm-min, @bp-sm-max, {
     .title {
@@ -235,11 +237,13 @@ Hide an element when JavaScript isn't available. Requires a small script in the
 `<head>` of your `<html>` document that removes a `.no-js` class.
 
 1. Add a `no-js` class added to the `html`
+
   ```
   <html class="no-js">
   ```
 
 2. Add a script to remove the `no-js` class after confirming JavaScript is available
+
   ```
   <script>
       // Confirm availability of JavaScript and remove no-js class from html
@@ -249,6 +253,7 @@ Hide an element when JavaScript isn't available. Requires a small script in the
   ```
 
 3. Add the utility class to the element you want to hide
+
   ```
   <div class="u-js-only"></div>
   ```
