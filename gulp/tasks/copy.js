@@ -5,6 +5,8 @@ var $ = require( 'gulp-load-plugins' )();
 var config = require( '../config' ).copy;
 var handleErrors = require( '../utils/handleErrors' );
 var browserSync = require( 'browser-sync' );
+var path = require( 'path' );
+var fileName;
 
 gulp.task( 'copy:files', function() {
   return gulp.src( config.files.src )
@@ -36,10 +38,30 @@ gulp.task( 'copy:vendorjs', function() {
     } ) );
 } );
 
+gulp.task( 'copy:usage', function() {
+  return gulp.src( config.usage.src )
+    .pipe( $.changed( config.usage.dest ) )
+    .pipe( $.tap( function ( file, t ) {
+      fileName = path.dirname( file.path )
+        .split( path.sep )
+        .pop();
+    } ) )
+    .pipe( $.rename( function ( path ) {
+      path.basename = fileName;
+      path.extname = '.md'
+    } ) )
+    .on( 'error', handleErrors )
+    .pipe( gulp.dest( config.usage.dest ) )
+    .pipe( browserSync.reload( {
+      stream: true
+    } ) );
+} );
+
 gulp.task( 'copy',
   [
     'copy:files',
     'copy:icons',
-    'copy:vendorjs'
+    'copy:vendorjs',
+    'copy:usage'
   ]
 );

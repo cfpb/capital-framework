@@ -81,10 +81,8 @@ module.exports = {
         loc.lib + '/html5shiv/dist/html5shiv-printshiv.min.js'
       ],
       dest: loc.dist + '/static/js/'
-    }
-  },
-  usage: {
-    files: {
+    },
+    usage: {
       src: [
         loc.lib + '/cf-buttons/usage.md',
         loc.lib + '/cf-core/usage.md',

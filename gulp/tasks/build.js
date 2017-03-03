@@ -7,7 +7,6 @@ gulp.task( 'build',
     'styles',
     'scripts',
     'images',
-    'copy',
-    'usage'
+    'copy'
   ]
 );

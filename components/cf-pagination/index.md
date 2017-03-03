@@ -4,4 +4,4 @@ title:  "cf-pagination"
 parent: "Components"
 ---
 
-{% include usage/cf-pagination.html %}
+{% include usage/cf-pagination.md %}

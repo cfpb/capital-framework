@@ -13,4 +13,5 @@ gulp.task( 'watch', [ 'browserSync' ], function() {
   gulp.watch( config.styles.cwd + '/**/*.less', [ 'styles' ] );
   gulp.watch( config.images.src, [ 'images' ] );
   gulp.watch( config.copy.files.src, [ 'copy:files' ] );
+  gulp.watch( config.copy.usage.src, [ 'copy:usage' ] );
 } );

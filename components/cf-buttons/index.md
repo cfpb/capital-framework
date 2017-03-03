@@ -4,4 +4,4 @@ title:  "cf-buttons"
 parent: "Components"
 ---
 
-{% include usage/cf-buttons.html %}
+{% include usage/cf-buttons.md %}

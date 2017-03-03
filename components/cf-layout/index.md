@@ -4,4 +4,4 @@ title:  "cf-layout"
 parent: "Components"
 ---
 
-{% include usage/cf-layout.html %}
+{% include usage/cf-layout.md %}

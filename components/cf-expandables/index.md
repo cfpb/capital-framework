@@ -4,4 +4,4 @@ title:  "cf-expandables"
 parent: "Components"
 ---
 
-{% include usage/cf-expandables.html %}
+{% include usage/cf-expandables.md %}
