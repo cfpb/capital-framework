@@ -64,8 +64,8 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's
-[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables referenced in comments are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
 // .block
@@ -335,12 +335,12 @@ For example `.content-l_col-1-2` has different divider needs than
 `.content-l_col-1-3` because they may break to single columns at different
 breakpoints.
 
-Dividers use absolute positioning relative to the `.content-l` element and
-depend on `.content-l` using `position: relative;`. This allows vertical
-dividers to span the height of the tallest column. Just be aware that if you
-have more than one row of columns, and each row has columns of different
-widths, the borders will cause unwanted overlapping since they will span the
-height of the entire `.content-l` element.
+Dividers use absolute positioning relative to the `.content-l` element
+and depend on `.content-l` using `position: relative;`.
+This allows vertical dividers to span the height of the tallest column.
+Just be aware that if you have more than one row of columns,
+and each row has columns of different widths, the borders will cause unwanted
+overlapping since they will span the height of the entire `.content-l` element.
 
 <div class="content-l content-l__large-gutters">
     <div class="content-l_col content-l_col-1-2">
@@ -413,9 +413,10 @@ A 1 pixel edge to edge bar that can divide content.
 
 Standard layout for the main content area and sidebar.
 
-By default `.content_main` and `.content_sidebar` stack vertically. When using
-the modifiers described below to create columns, the columns will remain
-stacked for smaller screens and then convert to to columns at `801px`.
+By default `.content_main` and `.content_sidebar` stack vertically.
+When using the modifiers described below to create columns,
+the columns will remain stacked for smaller screens and then convert to to
+columns at `801px`.
 
 `.content_bar` must come after `.content_hero` (if it exists) but before
 `.content_wrapper`.
@@ -1505,7 +1506,7 @@ height. The image should be `195px` in height to conform to this standard.
         </div>
         <div class="m-hero_image-wrapper">
             <div class="m-hero_image"
-                 style="background-image: url('http://www.consumerfinance.gov/static/fin-ed-resources/static/img/parents_hero_760x390.png')">
+                 style="background-image: url('https://www.consumerfinance.gov/static/fin-ed-resources/static/img/parents_hero_760x390.png')">
             </div>
         </div>
     </div>
@@ -1527,7 +1528,7 @@ height. The image should be `195px` in height to conform to this standard.
         </div>
         <div class="m-hero_image-wrapper">
             <div class="m-hero_image"
-                 style="background-image: url('http://www.consumerfinance.gov/static/fin-ed-resources/static/img/parents_hero_760x390.png')">
+                 style="background-image: url('https://www.consumerfinance.gov/static/fin-ed-resources/static/img/parents_hero_760x390.png')">
             </div>
         </div>
     </div>
@@ -1541,12 +1542,13 @@ so they don't have to be included in this repo._
 
 ### Hero with photograph
 
-The text overlays the photograph at larger screen sizes. It's best to avoid a
-non-button call to action in these, as it's unlikely that the Pacific Blue will
-have accessible contrast with a non-white (or light gray) background.
+The text overlays the photograph at larger screen sizes.
+It's best to avoid a non-button call to action in these,
+as it's unlikely that the Pacific Blue will have accessible contrast
+with a non-white (or light gray) background.
 
 <section class="m-hero m-hero__overlay"
-         style="background-image: url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg')">
+         style="background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/PC_hero.original.jpg')">
     <div class="m-hero_wrapper wrapper">
         <div class="m-hero_text">
             <h1 class="m-hero_heading">Hero title</h1>
@@ -1558,7 +1560,7 @@ have accessible contrast with a non-white (or light gray) background.
         </div>
         <div class="m-hero_image-wrapper">
             <div class="m-hero_image"
-                 style="background-image: url('http://files.consumerfinance.gov/f/images/pc_mobile_1.original.jpg')">
+                 style="background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/pc_mobile_1.original.jpg')">
             </div>
         </div>
     </div>
@@ -1566,7 +1568,7 @@ have accessible contrast with a non-white (or light gray) background.
 
 ```
 <section class="m-hero m-hero__overlay"
-         style="background-image: url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg')">
+         style="background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/PC_hero.original.jpg')">
     <div class="m-hero_wrapper wrapper">
         <div class="m-hero_text">
             <h1 class="m-hero_heading">Hero title</h1>
@@ -1578,7 +1580,7 @@ have accessible contrast with a non-white (or light gray) background.
         </div>
         <div class="m-hero_image-wrapper">
             <div class="m-hero_image"
-                 style="background-image: url('http://files.consumerfinance.gov/f/images/pc_mobile_1.original.jpg')">
+                 style="background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/pc_mobile_1.original.jpg')">
             </div>
         </div>
     </div>

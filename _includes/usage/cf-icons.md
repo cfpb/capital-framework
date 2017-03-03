@@ -12,7 +12,8 @@ Framework.
 ## Table of contents
 
 - [Variables](#variables)
-    - [Settings](#settings)
+    - [Color variables](#color-variables)
+    - [Icon generation variables](#icon-generation-variables)
 - [The basics](#the-basics)
 - [Helpers](#helpers)
     - [Icon sizes](#icon-sizes)
@@ -34,21 +35,29 @@ Framework.
 Theme variables for setting the color and sizes throughout the project.
 Overwrite them in your own project by duplicating the variable `@key: value`.
 
-### Settings
+### Color variables
+
+`$color-` variables are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
+
+```
+@cf-icon-border-color:          #5b616b; //$color-gray
+```
+
+## Icon generation variables
 
 ```
 @cf-icon-prefix:                cf-icon;
 @cf-icon-path:                  'fonts';
-@cf-icon-border-color:          #eee;
 ```
 
 ## The basics
 
-The cf-icon-prefix class applies all shared icon styles including the font
-family. By default, this class will be named `cf-icon` but it can be changed
-in the settings. All icons must use three classes, one for the base class,
-one to select the desired icon, and one for the chosen pseudo-element.
-For example:
+The class defined by the @cf-icon-prefix variable applies all shared icon
+styles including the font family. By default, this class will be named
+`cf-icon` but it can be changed in the settings. All icons must use three
+classes, one for the base class, one to select the desired icon, and one
+for the chosen pseudo-element. For example:
 
 ```
 <span class="cf-icon
@@ -159,7 +168,7 @@ MIT Licensed by Font Awesome
 ```
 
 - First parameter is for number of horizontal flips.
-- Second parameter is for number of vertical flips
+- Second parameter is for number of vertical flips.
 - Third parameter is for rotation.
 
 ### Modified icons

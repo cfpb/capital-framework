@@ -11,7 +11,7 @@ and has more basic typography patterns.
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
-## Table of cntents
+## Table of contents
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
@@ -42,10 +42,22 @@ project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-Default color variables are from 18F's
-[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss).
+`$color-` variables referenced in comments are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
+// Running text elements
+
+// .a-micro-copy
+@micro-copy:                #112e51; // $color-primary-darkest
+
+// .a-date
+@date:                      #112e51; // $color-primary-darkest
+
+// .m-pull-quote
+@pull-quote_body:           #494440; // $color-gray-warm-dark
+@pull-quote_citation:       #205493; // $color-cool-blue
+
 // Headings
 
 // .a-heading__icon
@@ -71,18 +83,6 @@ Default color variables are from 18F's
 // .a-link__jump
 @jump-link_bg:              #f1f1f1; // $color-gray-lightest
 @jump-link_border:          #323a45; // $color-gray-dark
-
-// Miscellaneous text elements
-
-// .a-micro-copy
-@micro-copy:                #112e51; // $color-primary-darkest
-
-// .a-date
-@date:                      #112e51; // $color-primary-darkest
-
-// .m-pull-quote
-@pull-quote_body:           #494440; // $color-gray-warm-dark
-@pull-quote_citation:       #205493; // $color-cool-blue
 ```
 
 
@@ -583,10 +583,10 @@ typically legal copy.
 
 ### Pull quote
 
-Use a pull quote to highlight excerpts from the current work. This is not to
-be confused with `blockquote` which quotes from an external work. Since a pull
-quote is an excerpt and repeats content from the article you should use the
-`aside` element.
+Use a pull quote to highlight excerpts from the current work.
+This is not to be confused with `blockquote` which quotes from an external
+work. Since a pull quote is an excerpt and repeats content from the article
+you should use the `aside` element.
 
 #### Default pull quote
 

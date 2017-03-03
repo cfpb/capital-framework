@@ -27,22 +27,21 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's
-[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables referenced in comments are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
-// text color
-@pagination-text-color: #757575; // $color-gray-medium
-
-// form background color
-@pagination-bg-color:   #f1f1f1; // $color-gray-lightest
+@pagination-text-color:    #323a45; // $color-gray-dark
+@pagination-bg-color:      #f1f1f1; // $color-gray-lightest
 ```
 
 ### Sizing variables
 
 ```
-// pagination text
-@pagination-font-size__px: 16px;
+@pagination-font-size-px:  @base-font-size-px;
+@pagination-font-size-em:  unit( @pagination-font-size-px / @base-font-size-px, em );
+@pagination-btn-height-px: 42px;
+@pagination-btn-width-px:  130px;
 ```
 
 
@@ -149,4 +148,4 @@ To enable the component to jump directly to the paginated content, place
 ## Responsive behavior
 
 - `@bp-xs-max`: On small screens, the pagination links display next to each
-other, stacked on top of the form.
+  other, stacked on top of the form.

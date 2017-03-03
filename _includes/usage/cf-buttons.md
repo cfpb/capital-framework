@@ -33,36 +33,47 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's
-[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables referenced in comments are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
-@btn-text
-@btn-bg
-@btn-bg-hover
-@btn-bg-active
-@btn__secondary-text
-@btn__secondary-bg
-@btn__secondary-bg-hover
-@btn__secondary-bg-active
-@btn__warning-text
-@btn__warning-bg
-@btn__warning-bg-hover
-@btn__warning-bg-active
-@btn__disabled-text
-@btn__disabled-bg
-@btn__disabled-outline
+// .btn
+@btn-text:                      #ffffff; // $color-white
+@btn-bg:                        #0071bc; // $color-primary
+@btn-bg-hover:                  #205493; // $color-primary-darker
+@btn-bg-active:                 #112e51; // $color-primary-darkest
+
+// .btn__secondary
+@btn__secondary-text:           #212121; // $color-base
+@btn__secondary-bg:             #9bdaf1; // $color-primary-alt-light
+@btn__secondary-bg-hover:       #02bfe7; // $color-primary-alt
+@btn__secondary-bg-active:      #00a6d2; // $color-primary-alt-dark
+
+// .btn__warning
+@btn__warning-text:             #ffffff; // $color-white
+@btn__warning-bg:               #e31c3d; // $color-secondary
+@btn__warning-bg-hover:         #cd2026; // $color-secondary-dark
+@btn__warning-bg-active:        #981b1e; // $color-secondary-darkest
+
+// .btn__disabled
+@btn__disabled-text:            darken( greyscale( #c7336e ), 10% );
+@btn__disabled-bg:              lighten( greyscale( #c7336e ), 40% );
+@btn__disabled-outline:         greyscale( #c7336e );
 ```
 
 ### Sizing variables
 
 ```
-@btn-font-size
-@btn-v-padding
-@btn-v-padding-modifier-ie
-@super-btn-font-size
-```
+// .btn
+@btn-font-size:                 @base-font-size-px;
+@btn-border-radius-size:        4px;
+@btn-v-padding:                 8px;
+@btn-h-padding:                 14px;
+@btn-v-padding-modifier-ie:     0.8;
 
+// .btn__super
+@btn__super-font-size:           20px;
+```
 
 ## Atoms
 

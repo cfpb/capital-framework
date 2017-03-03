@@ -35,12 +35,14 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's
-[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables referenced in comments are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
 @table-cell-bg:              #ffffff; // $color-white
 @table-cell-bg_alt:          #f1f1f1; // $color-gray-lightest
+@table-row-link-bg-hover:    #205493; // $color-cool-blue
+@table-row-link-hover-color: #ffffff; // $color-white
 @table-scrolling-border:     #e4e2e0; // $color-gray-warm-light
 ```
 
@@ -119,8 +121,8 @@ not visible on small screens.
 
 ## Right-aligned cells
 
-The use of the `.o-table_cell__right-align` class on a `td` aligns the text right
-- see the third column above.
+The use of the `.o-table_cell__right-align` class on a `td` aligns the text
+right - see the third column above.
 
 <table class="o-table o-table__stack-on-small">
     <thead>
@@ -664,7 +666,7 @@ The `.o-table-wrapper__scrolling` class must be added to the parent element of
 the `table` (by adding a wrapping `div`, in most cases). The `table` element
 does not need additional markup in this case. The "Comparative with horizontal
 scroll" style also adds striped rows to the table contained within, and remains
-striped on small screens (unlike the `o-table__striped `class, below).
+striped on small screens (unlike the `o-table__striped` class, below).
 
 <div class="o-table o-table-wrapper__scrolling">
     <table>

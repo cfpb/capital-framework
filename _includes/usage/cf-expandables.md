@@ -19,7 +19,7 @@ dependencies of this component.
   - [Sizing variables](#sizing-variables)
   - [Timing variables](#timing-variables)
 - [Modifiers](#modifiers)
-  - [Expanded](#expandables)
+  - [Expanded](#expanded)
   - [Padded](#padded)
   - [Spaced header](#spaced-header)
 - [Elements](#elements)
@@ -40,8 +40,8 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's
-[US Web Design Standards](https://github.com/18F/web-design-standards/blob/18f-pages/assets/_scss/core/_variables.scss)
+`$color-` variables referenced in comments are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
 // Single expandable
@@ -78,9 +78,9 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Expanded
 
-Sometimes you may want the expandable to be open by default. This is as easy
-as adding the `.o-expandable_content__onload-open` modifier to the
-`.o-expandable_content` block.
+Sometimes you may want the expandable to be open by default.
+This is as easy as adding the `.o-expandable_content__onload-open` modifier
+to the `.o-expandable_content` block.
 
 ```
 .o-expandable_content__onload-open
@@ -91,7 +91,7 @@ as adding the `.o-expandable_content__onload-open` modifier to the
 Adds `padding` and a `background` color to `.o-expandable_header` and
 `.o-expandable_content`.
 
-In addition to using the `.o-expandable__padded` modifier you alsoneed to make
+In addition to using the `.o-expandable__padded` modifier you also need to make
 sure you are using `.o-expandable_header`.
 
 ```
@@ -169,8 +169,8 @@ Allows you to float information left and right.
 ## Recommended expandable pattern
 
 Expandables can be built by combining the basic barebones structure described
-in the next section along with more specialized expandable elements and
-modifiers described throughout.
+in the next section along with more specialized expandable elements
+and modifiers described throughout.
 
 ### Default state
 
@@ -518,9 +518,9 @@ In this barebones example there are no visual styles.
 
 ### Accordion-style group
 
-Accordions can only show one open expandable at a time. Add the
-`data-accordion="true"` attribute to the expandable group to activate the
-accordion mode.
+Accordions can only show one open expandable at a time.
+Add the `data-accordion="true"` attribute to the expandable group to activate
+the accordion mode.
 
 <div class="o-expandable-group o-expandable-group__accordion" >
     <div class="o-expandable o-expandable__padded">
