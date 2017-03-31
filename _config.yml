@@ -12,13 +12,6 @@ kramdown:
 name: Capital Framework
 subtitle: Everything you wanted to know about Capital Framework
 
-# When using this template with a project page set the baseurl to '/project-name'
-# For user/organization pages set this to an empty string
-# When working locally use jekyll serve --baseurl '' so that you can view everything at localhost:4000
-# See http://jekyllrb.com/docs/github-pages/ for more info
-#baseurl: ''
-baseurl: '/capital-framework'
-
 # Author/Organization info to be displayed in the templates
 author:
   name: The CFPB

@@ -6,7 +6,6 @@
 *.exe
 *.o
 *.so
-_site/
 
 # Packages #
 ############
@@ -41,7 +40,7 @@ Thumbs.db
 *.swp
 
 # Python #
-#################
+##########
 *.pyc
 *.egg-info/
 __pycache__/
@@ -49,12 +48,12 @@ __pycache__/
 .env
 
 # Django #
-#################
+##########
 *.egg-info
 .installed.cfg
 
-# Unit test / coverage reports
-#################
+# Unit test / coverage reports #
+################################
 htmlcov/
 .tox/
 .coverage
@@ -70,3 +69,10 @@ bower_components/
 vendor/
 static/vendor/
 tmp/
+
+# Jekyll stuff #
+################
+_site
+.sass-cache
+.jekyll-metadata
+Gemfile.lock

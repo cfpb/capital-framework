@@ -9,7 +9,7 @@
     "url": "http://consumerfinance.gov"
   },
   "scripts": {
-    "start": "parallelshell 'bundle exec jekyll serve --watch --baseurl ''' 'gulp watch'",
+    "start": "parallelshell 'bundle exec jekyll serve --watch' 'gulp watch'",
     "build": "gulp build",
     "cf-link": "node scripts/npm/link",
     "cf-unlink": "node scripts/npm/unlink"

@@ -12,7 +12,7 @@ description: >
 <h2>Table of contents</h2>
 
 <pre class="highlight">
-<code>{% for term in site.data.component-grunt-terms %}<a href="{{ site.baseurl }}/components/anatomy.html#{{ term.slug }}">{{ term.name }}</a>
+<code>{% for term in site.data.component-grunt-terms %}<a href="{{ site.github.url }}/components/anatomy.html#{{ term.slug }}">{{ term.name }}</a>
 {% endfor %}</code>
 </pre>
 
