@@ -11,15 +11,13 @@
 // `$color-` variables referenced in comments are from 18F's U.S. Web Design Standards
 // https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
-@pagination-text-color:    #323a45; // $color-gray-dark
-@pagination-bg-color:      #f1f1f1; // $color-gray-lightest
+@pagination-text-color:       #323a45; // $color-gray-dark
+@pagination-bg-color:         #f1f1f1; // $color-gray-lightest
 
 // Sizing variables
 
-@pagination-font-size-px:  @base-font-size-px;
-@pagination-font-size-em:  unit( @pagination-font-size-px / @base-font-size-px, em );
-@pagination-btn-height-px: 42px;
-@pagination-btn-width-px:  130px;
+@pagination-btn-min-width-px: 130px;
+
 
 //
 // Import external dependencies
@@ -28,6 +26,7 @@
 @import (less) '../../cf-core/src/cf-core.less';
 @import (less) '../../cf-buttons/src/cf-buttons.less';
 @import (less) '../../cf-icons/src/cf-icons.less';
+
 
 //
 // Molecules

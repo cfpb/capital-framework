@@ -1,16 +1,15 @@
 All notable changes to this project will be documented in this file.
 We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
+
 ## Unreleased
 
-### Added
-- 
-
 ### Changed
-- 
+- **cf-pagination:** Cleaned up styling
 
 ### Removed
-- 
+- **cf-pagination:** Unneeded variables
+
 
 ## 4.1.1 - 2017-03-03
 
