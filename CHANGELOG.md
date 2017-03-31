@@ -5,13 +5,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **capital-framework:** [PATCH] Updated Travis script to print which components are published to npm
 
 ### Removed
-- 
+-
 
 ## 4.1.2 - 2017-03-31
 
