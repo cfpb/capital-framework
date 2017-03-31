@@ -3,6 +3,10 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+## Added
+
+- Added NPM linking and unlinking scripts
+
 ## Removed
 
 - Removed the Gulp usage task and related packages

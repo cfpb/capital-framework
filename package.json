@@ -11,7 +11,8 @@
   "scripts": {
     "start": "parallelshell 'bundle exec jekyll serve --watch --baseurl ''' 'gulp watch'",
     "build": "gulp build",
-    "cf-link": "npm link cf-core && npm link cf-buttons && npm link cf-pagination && npm link cf-typography && npm link cf-layout && npm link cf-icons && npm link cf-tables && npm link cf-expandables"
+    "cf-link": "node scripts/npm/link",
+    "cf-unlink": "node scripts/npm/unlink"
   },
   "license": "CC0",
   "keywords": [
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "browser-sync": "2.13.0",
+    "child-process-promise": "2.2.0",
     "del": "2.2.0",
     "fs": "0.0.2",
     "gulp": "3.9.1",
