@@ -33,7 +33,7 @@ parent:
     </tbody>
 </table>
 
-<script src="{{ site.baseurl }}/assets/js/jquery-1.11.0.min.js"></script>
+<script src="{{ site.github.url }}/assets/js/jquery-1.11.0.min.js"></script>
 <script src="//cdn.jsdelivr.net/jstorage/0.1/jstorage.min.js"></script>
 <script src="https://cdn.rawgit.com/oauth-io/oauth-js/master/dist/oauth.min.js"></script>
 <script>
