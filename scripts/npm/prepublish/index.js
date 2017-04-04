@@ -215,6 +215,7 @@ function publishComponents(result) {
   var components = componentsToPublish.map(function(component) {
     return component.name;
   });
+  util.printLn.info('Publishing ' + components.join(', ') + ' to npm...');
   return Promise.all(components.map(util.publish));
 }
 
