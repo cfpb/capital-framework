@@ -583,7 +583,7 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Button with an animated icon
 
-<button class="a-btn">
+<button class="a-btn a-btn__disabled">
     Submit your complaint
     <span class="a-btn_icon
                  a-btn_icon__on-right
