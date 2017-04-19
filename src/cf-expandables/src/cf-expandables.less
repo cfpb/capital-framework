@@ -98,7 +98,6 @@
         &__expanded {
             max-height: 1000px;
         }
-
     }
 
     //
@@ -174,9 +173,13 @@
             &:before {
                 content: '';
                 display: block;
-                height: 1px;
+                border-bottom: 1px solid @expandable__padded-divider;
                 margin-bottom: unit( 16px / @base-font-size-px, em );
-                background: @expandable__padded-divider;
+            }
+
+            &:after {
+                margin-bottom: unit( 16px / @base-font-size-px, em );
+                width: 100%;
             }
         }
     }
