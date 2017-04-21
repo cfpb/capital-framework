@@ -5,7 +5,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-tables:** [PATCH] Added rule to .o-table__stack-on-small so that TD and TH elements
+are 100% width when stacked on small screens
 
 ### Changed
 - **capital-framework:** [PATCH] Updated Travis script to print which components are published to npm
