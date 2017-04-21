@@ -10,6 +10,8 @@ are 100% width when stacked on small screens
 
 ### Changed
 - **capital-framework:** [PATCH] Updated Travis script to print which components are published to npm
+- **cf-buttons:** [MINOR] Fixed a bug when animating icons within a button. Changes button icon markup,
+  see usage doc for details
 
 ### Removed
 -
