@@ -5,6 +5,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.2.0 - 2017-04-21
+
+### Added
 - **cf-tables:** Added rule to .o-table__stack-on-small so that TD and TH elements
 are 100% width when stacked on small screens
 
