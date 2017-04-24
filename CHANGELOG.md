@@ -4,14 +4,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
-- **cf-expandables:** [PATCH] Fixed bottom spacing of the expandable content
+- **cf-expandables:** Fixed bottom spacing of the expandable content
 
-### Removed
--
 
 ## 4.2.0 - 2017-04-21
 
