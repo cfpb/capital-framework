@@ -98,7 +98,6 @@
         &__expanded {
             max-height: 1000px;
         }
-
     }
 
     //
@@ -161,22 +160,26 @@
 
         .o-expandable_header {
             padding: unit( 10px / @base-font-size-px, em )
-                     unit( 16px / @base-font-size-px, em );
+                     unit( 15px / @base-font-size-px, em );
         }
 
         .o-expandable_content {
             // Margin collapsing trick for more consistent bottom padding.
             margin: 0
-                    unit( 16px / @base-font-size-px, em )
+                    unit( 15px / @base-font-size-px, em )
                     unit( 22px / @base-font-size-px, em );
 
             // The divider between _header and _content.
             &:before {
                 content: '';
                 display: block;
-                height: 1px;
-                margin-bottom: unit( 16px / @base-font-size-px, em );
-                background: @expandable__padded-divider;
+                border-bottom: 1px solid @expandable__padded-divider;
+                margin-bottom: unit( 15px / @base-font-size-px, em );
+            }
+
+            &:after {
+                margin-bottom: unit( 15px / @base-font-size-px, em );
+                width: 100%;
             }
         }
     }
