@@ -8,7 +8,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
-- **cf-layout:** Updated Heros to match latest spec from the Design Manual
+- **cf-layout:** [MINOR] Updated Heros to match latest spec from the Design Manual
 
 ### Removed
 -
