@@ -5,13 +5,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-layout:** Updated Heros to match latest spec from the Design Manual
 
 ### Removed
-- 
+-
 
 ## 4.2.1 - 2017-04-24
 
