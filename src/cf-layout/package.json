@@ -1,6 +1,6 @@
 {
   "name": "cf-layout",
-  "version": "4.1.0",
+  "version": "null",
   "description": "Capital Framework layouts",
   "less": "src/cf-layout.less",
   "style": "cf-layout.css",
