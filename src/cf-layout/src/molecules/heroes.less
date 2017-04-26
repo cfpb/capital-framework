@@ -5,37 +5,38 @@
 // Sizing variables
 
 @hero-desktop-height: 285px;
-@hero-image-height:   195px;
 
 // Color variables
 // $color- variables are from 18F's U.S. Web Design Standards
 // https://github.com/18F/web-design-standards/blob/master/src/stylesheets/core/_variables.scss
 
 @hero-bg:             #dce4ef; // $color-gray-cool-light
-@hero-overlay-bg:     #5b616b; // $color-gray
-@hero-overlay-text:   white;
+@hero-knockout-bg:    #5b616b; // $color-gray
+@hero-knockout-text:  white;
 
 
 .m-hero {
     background-color: @hero-bg;
-
-    .respond-to-min( @bp-sm-min, {
-        display: table;
-        width: 100%;
-        height: @hero-desktop-height;
-    } );
 
     &_wrapper {
         padding-top: unit( @grid_gutter-width / @base-font-size-px, em );
         padding-bottom: unit( @grid_gutter-width / @base-font-size-px, em );
 
         .respond-to-min( @bp-sm-min, {
-            display: table-row;
+            // IE specific fix
+            display: table;
+
+            @supports( display: flex ) {
+                display: flex;
+            }
+
+            min-height: @hero-desktop-height - ( @grid_gutter-width * 2 );
         } );
 
-        .respond-to-max( @bp-xs-max, {
-            padding-top: unit( @grid_gutter-width / @base-font-size-px, em );
-            padding-bottom: unit( @grid_gutter-width / @base-font-size-px, em );
+        .respond-to-min( @bp-lg-min, {
+            padding-top: unit( ( @grid_gutter-width * 1.5 ) / @base-font-size-px, em );
+            padding-bottom: unit( ( @grid_gutter-width * 1.5 ) / @base-font-size-px, em );
+            min-height: @hero-desktop-height - ( ( @grid_gutter-width * 1.5 ) * 2 );
         } );
     }
 
@@ -45,12 +46,14 @@
         .respond-to-min( @bp-sm-min, {
             .grid_column( 7, 12 );
 
-            padding: unit( @grid_gutter-width / @base-font-size-px, em )
-                     unit( 15px / @base-font-size-px, em );
-
-            // Keep the text vertically centered
+            // IE specific fix
             display: table-cell;
             vertical-align: middle;
+
+            @supports ( display: flex ) {
+                display: block;
+                margin: auto;
+            }
         } );
     }
 
@@ -62,133 +65,121 @@
         } );
     }
 
-    &_subhead,
-    &_cta:not( .btn ) {
+    &_subhead {
         // Not using the `.heading-3()` mixin here because we want the weight
         // to remain Regular on smaller screens.
         .u-webfont-regular();
 
-        font-size: @size-iv;
+        font-size: @size-iii;
         line-height: 1.25;
 
-        .respond-to-min( @bp-med-min, {
-            font-size: @size-iii;
-        } );
-    }
-
-    &_subhead:last-child {
-        margin-bottom: 0;
-    }
-
-    &_cta {
-        &:not( .btn ) {
-            border-bottom-width: 1px;
-        }
-
-        .respond-to-min( @bp-sm-min, {
-            margin-bottom: 0;
+        .respond-to-max( @bp-sm-max, {
+            font-size: @size-iv;
         } );
     }
 
     &_image-wrapper {
         .grid_column( 1, 1 );
 
+        overflow: hidden;
+
         .respond-to-min( @bp-sm-min, {
             .grid_column( 5, 12 );
 
-            // Keep the image vertically centered
+
+            // IE specific fix
             display: table-cell;
             vertical-align: middle;
+
+            @supports ( display: flex ) {
+                display: block;
+                margin: auto;
+            }
         } );
 
         .respond-to-max( @bp-xs-max, {
             margin-top: unit( @grid_gutter-width / @base-font-size-px, em );
         } );
-
-        &__bleed-vertical {
-            position: relative;
-
-            .m-hero_image {
-                display: block;
-                height: auto;
-            }
-
-            .m-hero_image__bleeding {
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            .respond-to-max( @bp-xs-max, {
-                .m-hero_image__bleeding {
-                    display: none;
-                }
-            } );
-
-            .respond-to-min( @bp-sm-min, {
-                .m-hero_image {
-                    display: none;
-                }
-            } );
-
-            .respond-to-min( @bp-med-min, {
-                .m-hero_image {
-                    display: none;
-                }
-            } );
-        }
     }
 
     &_image {
-        // height is the same as min-height in a table
-        height: unit( @hero-image-height / @base-font-size-px, em );
+        .u-flexible-container-mixin( 16, 9 );
 
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
     }
 
-    &__overlay {
-        background-repeat: no-repeat;
-        background-size: cover;
+    &__knockout {
+        background-color: @hero-knockout-bg;
+        color: @hero-knockout-text;
+    }
 
-        .respond-to-max( @bp-xs-max, {
-            // Overwrite the image that is set in the markup because
-            // we're showing the image container below instead
-            background-image: none !important;
+    &__bleeding {
+        .respond-to-min( @bp-sm-min, {
 
             .m-hero_wrapper {
+                position: relative;
+            }
+
+            .m-hero_image-wrapper {
+                margin-top: unit( @grid_gutter-width / @base-font-size-px, em ) * -1;
+                margin-bottom: unit( @grid_gutter-width / @base-font-size-px, em ) * -1;
+
+                //IE specific fix
+                position: absolute;
+                height: 100%;
+
+                @supports ( display: flex ) {
+                    position: relative;
+                    height: initial;
+                }
+            }
+
+            .m-hero_image {
+                // Remove the flexible container padding so that the image is a consistent width
+                padding-bottom: 0 !important;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                background-size: cover;
+            }
+        } );
+
+        .respond-to-min( @bp-lg-min, {
+            .m-hero_image-wrapper {
+                margin-top: unit( ( @grid_gutter-width * 1.5 ) / @base-font-size-px, em ) * -1;
+                margin-bottom: unit( ( @grid_gutter-width * 1.5 ) / @base-font-size-px, em ) * -1;
+            }
+        } );
+    }
+
+    &__overlay {
+        .m-hero_wrapper {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .respond-to-max( @bp-xs-max, {
+
+            .m-hero_wrapper {
+                // Overwrite the image that is set in the markup because
+                // we're showing the image container below instead
+                background-image: none !important;
+
                 // Remove wrapper bottom padding
                 padding-bottom: 0;
             }
 
             .m-hero_image-wrapper {
+                position: relative;
                 border-width: 0;
             }
-
-            .m-hero_image {
-                background-size: cover;
-            }
         } );
 
         .respond-to-min( @bp-sm-min, {
             .m-hero_image {
-                // Overwrite the image but don't remove the container from
-                // the grid flow. Necessary due to table-cell.
-                background: transparent !important;
-            }
-        } );
-    }
-
-    &__overlay-text {
-        .respond-to-min( @bp-sm-min, {
-            .m-hero_wrapper {
-                background-color: @hero-overlay-bg;
-                color: @hero-overlay-text;
+                display: none;
             }
         } );
     }

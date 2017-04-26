@@ -1473,9 +1473,9 @@ generally remains centered.
 
 ## Heroes
 
-A hero consists of a headline, a small amount of additional text, an optional
-call to action, and an illustration. Its background color is flush with the
-sides of the screen, and the content is centered with wrapper classes.
+A hero consists of a headline, a small amount of additional sub-heading text
+and an image. Its background color or image is flush with the sides of the
+screen, and the content is vertically centered.
 
 The illustration can be customized by setting the `background-image` property
 on the `.m-hero_image` element.
@@ -1491,54 +1491,352 @@ height. The image should be `195px` in height to conform to this standard.
 
 ### Standard hero with illustration
 
-<section class="m-hero">
+<section class="m-hero" id="hero1">
     <div class="m-hero_wrapper wrapper">
         <div class="m-hero_text">
-            <h1 class="m-hero_heading">Hero title</h1>
+            <h1 class="m-hero_heading">Standard hero with illustration</h1>
             <p class="m-hero_subhead">
-                Hero text goes here. This paragraph has a recommended maximum
-                length of 185 characters. This paragraph has a recommended
-                maximum length of 185 characters.
+                This text has a recommended count of 165-186 characters
+                (three lines at 1230px) following a one-line heading
+                and 108-124 characters (two lines at 1230px)
+                following a two-line heading.
             </p>
-            <a class="m-hero_cta" href="#">
-                Call to action
-            </a>
         </div>
         <div class="m-hero_image-wrapper">
-            <div class="m-hero_image"
-                 style="background-image: url('https://www.consumerfinance.gov/static/fin-ed-resources/static/img/parents_hero_760x390.png')">
-            </div>
+            <div class="m-hero_image"></div>
         </div>
     </div>
+    <style>
+        #hero1 .m-hero_image {
+            background-image:
+                url('http://placekitten.com/g/570/236');
+            background-image: -webkit-image-set(
+                url('http://placekitten.com/g/570/236') 1x,
+                url('http://placekitten.com/g/1140/472') 2x
+            );
+            background-image: image-set(
+                url('http://placekitten.com/g/570/236') 1x,
+                url('http://placekitten.com/g/1140/472') 2x
+            );
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                src='http://placekitten.com/g/570/236',
+                sizingMethod='scale');
+            padding-bottom: 41.4893617%;
+        }
+
+        @media screen and (min-width: 37.5625em) {
+            #hero1 .m-hero_image {
+                background-image:
+                    url('http://placekitten.com/g/470/195');
+                background-image: -webkit-image-set(
+                    url('http://placekitten.com/g/470/195') 1x,
+                    url('http://placekitten.com/g/940/390') 2x
+                );
+                background-image: image-set(
+                    url('http://placekitten.com/g/470/195') 1x,
+                    url('http://placekitten.com/g/940/390') 2x
+                );
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src='http://placekitten.com/g/470/195',
+                    sizingMethod='scale');
+                padding-bottom: 41.4893617%;
+            }
+        }
+    </style>
 </section>
 
 ```
-<section class="m-hero">
+<section class="m-hero" id="hero1">
     <div class="m-hero_wrapper wrapper">
         <div class="m-hero_text">
-            <h1 class="m-hero_heading">Hero title</h1>
+            <h1 class="m-hero_heading">Standard hero with illustration</h1>
             <p class="m-hero_subhead">
-                Hero text goes here. This paragraph has a recommended maximum
-                length of 185 characters. This paragraph has a recommended
-                maximum length of 185 characters.
+                This text has a recommended count of 165-186 characters
+                (three lines at 1230px) following a one-line heading
+                and 108-124 characters (two lines at 1230px)
+                following a two-line heading.
             </p>
-            <a class="m-hero_cta" href="#">
-                Call to action
-            </a>
         </div>
         <div class="m-hero_image-wrapper">
-            <div class="m-hero_image"
-                 style="background-image: url('https://www.consumerfinance.gov/static/fin-ed-resources/static/img/parents_hero_760x390.png')">
-            </div>
+            <div class="m-hero_image"></div>
         </div>
     </div>
+    <style>
+        #hero1 .m-hero_image {
+            background-image:
+                url('http://placekitten.com/g/570/236');
+            background-image: -webkit-image-set(
+                url('http://placekitten.com/g/570/236') 1x,
+                url('http://placekitten.com/g/1140/472') 2x
+            );
+            background-image: image-set(
+                url('http://placekitten.com/g/570/236') 1x,
+                url('http://placekitten.com/g/1140/472') 2x
+            );
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                src='http://placekitten.com/g/570/236',
+                sizingMethod='scale');
+            padding-bottom: 41.4893617%;
+        }
+
+        @media screen and (min-width: 37.5625em) {
+            #hero1 .m-hero_image {
+                background-image:
+                    url('http://placekitten.com/g/470/195');
+                background-image: -webkit-image-set(
+                    url('http://placekitten.com/g/470/195') 1x,
+                    url('http://placekitten.com/g/940/390') 2x
+                );
+                background-image: image-set(
+                    url('http://placekitten.com/g/470/195') 1x,
+                    url('http://placekitten.com/g/940/390') 2x
+                );
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src='http://placekitten.com/g/470/195',
+                    sizingMethod='scale');
+                padding-bottom: 41.4893617%;
+            }
+        }
+    </style>
 </section>
 ```
 
-### Hero with bleeding illustration
+### Hero with knockout text
 
-_Examples coming when we can hotlink to the images live on our server,
-so they don't have to be included in this repo._
+When using a dark background add the `__knockout` modifier to the hero to
+switch the text to white.
+
+<section class="m-hero m-hero__knockout" id="hero2">
+    <div class="m-hero_wrapper wrapper">
+        <div class="m-hero_text">
+            <h1 class="m-hero_heading">Max of 41 chars for a one-line heading</h1>
+            <p class="m-hero_subhead">
+                This text has a recommended count of 165-186 characters
+                (three lines at 1230px) following a one-line heading
+                and 108-124 characters (two lines at 1230px)
+                following a two-line heading.
+            </p>
+        </div>
+        <div class="m-hero_image-wrapper">
+            <div class="m-hero_image"></div>
+        </div>
+    </div>
+    <style>
+        #hero2 {
+            background-color: #207676;
+        }
+
+        #hero2 .m-hero_image {
+            background-image:
+                url('http://placekitten.com/g/570/236');
+            background-image: -webkit-image-set(
+                url('http://placekitten.com/g/570/236') 1x,
+                url('http://placekitten.com/g/1140/472') 2x
+            );
+            background-image: image-set(
+                url('http://placekitten.com/g/570/236') 1x,
+                url('http://placekitten.com/g/1140/472') 2x
+            );
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                src='http://placekitten.com/g/570/236',
+                sizingMethod='scale');
+            padding-bottom: 41.4893617%;
+        }
+
+        @media screen and (min-width: 37.5625em) {
+            #hero2 .m-hero_image {
+                background-image:
+                    url('http://placekitten.com/g/470/195');
+                background-image: -webkit-image-set(
+                    url('http://placekitten.com/g/470/195') 1x,
+                    url('http://placekitten.com/g/940/390') 2x
+                );
+                background-image: image-set(
+                    url('http://placekitten.com/g/470/195') 1x,
+                    url('http://placekitten.com/g/940/390') 2x
+                );
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src='http://placekitten.com/g/470/195',
+                    sizingMethod='scale');
+                padding-bottom: 41.4893617%;
+            }
+        }
+    </style>
+</section>
+
+```
+<section class="m-hero m-hero__knockout" id="hero2">
+    <div class="m-hero_wrapper wrapper">
+        <div class="m-hero_text">
+            <h1 class="m-hero_heading">Max of 41 chars for a one-line heading</h1>
+            <p class="m-hero_subhead">
+                This text has a recommended count of 165-186 characters
+                (three lines at 1230px) following a one-line heading
+                and 108-124 characters (two lines at 1230px)
+                following a two-line heading.
+            </p>
+        </div>
+        <div class="m-hero_image-wrapper">
+            <div class="m-hero_image"></div>
+        </div>
+    </div>
+    <style>
+        #hero2 {
+            background-color: #207676;
+        }
+
+        #hero2 .m-hero_image {
+            background-image:
+                url('http://placekitten.com/g/570/236');
+            background-image: -webkit-image-set(
+                url('http://placekitten.com/g/570/236') 1x,
+                url('http://placekitten.com/g/1140/472') 2x
+            );
+            background-image: image-set(
+                url('http://placekitten.com/g/570/236') 1x,
+                url('http://placekitten.com/g/1140/472') 2x
+            );
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                src='http://placekitten.com/g/570/236',
+                sizingMethod='scale');
+            padding-bottom: 41.4893617%;
+        }
+
+        @media screen and (min-width: 37.5625em) {
+            #hero2 .m-hero_image {
+                background-image:
+                    url('http://placekitten.com/g/470/195');
+                background-image: -webkit-image-set(
+                    url('http://placekitten.com/g/470/195') 1x,
+                    url('http://placekitten.com/g/940/390') 2x
+                );
+                background-image: image-set(
+                    url('http://placekitten.com/g/470/195') 1x,
+                    url('http://placekitten.com/g/940/390') 2x
+                );
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src='http://placekitten.com/g/470/195',
+                    sizingMethod='scale');
+                padding-bottom: 41.4893617%;
+            }
+        }
+    </style>
+</section>
+```
+
+### Hero with a bleeding illustration
+
+When using an illustration that bleeds top to bottom at larger screen sizes,
+add the `__bleeding` modifier to the hero and add an additional
+`m-hero_bleeding-image` as a sibling to `m-hero_image`
+
+<section class="m-hero m-hero__bleeding" id="hero3">
+    <div class="m-hero_wrapper wrapper">
+        <div class="m-hero_text">
+            <h1 class="m-hero_heading">Max of 41 chars for a one-line heading</h1>
+            <p class="m-hero_subhead">
+                This text has a recommended count of 165-186 characters
+                (three lines at 1230px) following a one-line heading
+                and 108-124 characters (two lines at 1230px)
+                following a two-line heading.
+            </p>
+        </div>
+        <div class="m-hero_image-wrapper">
+            <div class="m-hero_image"></div>
+        </div>
+    </div>
+    <style>
+        #hero3 .m-hero_image {
+            background-image:
+                url('http://placekitten.com/g/570/140');
+            background-image: -webkit-image-set(
+                url('http://placekitten.com/g/570/140') 1x,
+                url('http://placekitten.com/g/1140/280') 2x
+            );
+            background-image: image-set(
+                url('http://placekitten.com/g/570/140') 1x,
+                url('http://placekitten.com/g/1140/280') 2x
+            );
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                src='http://placekitten.com/g/570/140',
+                sizingMethod='scale');
+            padding-bottom: 25.1020408%;
+        }
+
+        @media screen and (min-width: 37.5625em) {
+            #hero3 .m-hero_image {
+                background-image:
+                    url('http://placekitten.com/g/470/640');
+                background-image: -webkit-image-set(
+                    url('http://placekitten.com/g/470/640') 1x,
+                    url('http://placekitten.com/g/940/1280') 2x
+                );
+                background-image: image-set(
+                    url('http://placekitten.com/g/470/640') 1x,
+                    url('http://placekitten.com/g/940/1280') 2x
+                );
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src='http://placekitten.com/g/470/640',
+                    sizingMethod='scale');
+            }
+        }
+    </style>
+</section>
+
+```
+<section class="m-hero m-hero__bleeding" id="hero3">
+    <div class="m-hero_wrapper wrapper">
+        <div class="m-hero_text">
+            <h1 class="m-hero_heading">Max of 41 chars for a one-line heading</h1>
+            <p class="m-hero_subhead">
+                This text has a recommended count of 165-186 characters
+                (three lines at 1230px) following a one-line heading
+                and 108-124 characters (two lines at 1230px)
+                following a two-line heading.
+            </p>
+        </div>
+        <div class="m-hero_image-wrapper">
+            <div class="m-hero_image"></div>
+        </div>
+    </div>
+    <style>
+        #hero3 .m-hero_image {
+            background-image:
+                url('http://placekitten.com/g/570/140');
+            background-image: -webkit-image-set(
+                url('http://placekitten.com/g/570/140') 1x,
+                url('http://placekitten.com/g/1140/280') 2x
+            );
+            background-image: image-set(
+                url('http://placekitten.com/g/570/140') 1x,
+                url('http://placekitten.com/g/1140/280') 2x
+            );
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                src='http://placekitten.com/g/570/140',
+                sizingMethod='scale');
+            padding-bottom: 25.1020408%;
+        }
+
+        @media screen and (min-width: 37.5625em) {
+            #hero3 .m-hero_image {
+                background-image:
+                    url('http://placekitten.com/g/470/640');
+                background-image: -webkit-image-set(
+                    url('http://placekitten.com/g/470/640') 1x,
+                    url('http://placekitten.com/g/940/1280') 2x
+                );
+                background-image: image-set(
+                    url('http://placekitten.com/g/470/640') 1x,
+                    url('http://placekitten.com/g/940/1280') 2x
+                );
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src='http://placekitten.com/g/470/640',
+                    sizingMethod='scale');
+            }
+        }
+    </style>
+</section>
+```
 
 ### Hero with photograph
 
@@ -1547,42 +1845,110 @@ It's best to avoid a non-button call to action in these,
 as it's unlikely that the Pacific Blue will have accessible contrast
 with a non-white (or light gray) background.
 
-<section class="m-hero m-hero__overlay"
-         style="background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/PC_hero.original.jpg')">
+<section class="m-hero m-hero__overlay" id="hero4">
     <div class="m-hero_wrapper wrapper">
         <div class="m-hero_text">
-            <h1 class="m-hero_heading">Hero title</h1>
+            <h1 class="m-hero_heading">Max of 41 chars for a one-line heading</h1>
             <p class="m-hero_subhead">
-                Hero text goes here. This paragraph has a recommended maximum
-                length of 185 characters. This example paragraph is 151
-                characters long.
+                This text has a recommended count of 165-186 characters
+                (three lines at 1230px) following a one-line heading
+                and 108-124 characters (two lines at 1230px)
+                following a two-line heading.
             </p>
         </div>
         <div class="m-hero_image-wrapper">
-            <div class="m-hero_image"
-                 style="background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/pc_mobile_1.original.jpg')">
-            </div>
+            <div class="m-hero_image"></div>
         </div>
     </div>
+    <style>
+        #hero4 .m-hero_image {
+            background-image:
+                url('http://placekitten.com/g/600/250');
+            background-image: -webkit-image-set(
+                url('http://placekitten.com/g/600/250') 1x,
+                url('http://placekitten.com/g/1200/500') 2x
+            );
+            background-image: image-set(
+                url('http://placekitten.com/g/600/250') 1x,
+                url('http://placekitten.com/g/1200/500') 2x
+            );
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                src='http://placekitten.com/g/600/250',
+                sizingMethod='scale');
+            padding-bottom: 41.6666667%;
+        }
+
+        @media screen and (min-width: 37.5625em) {
+            #hero4 .m-hero_wrapper{
+                background-image:
+                    url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg');
+                background-image: -webkit-image-set(
+                    url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg') 1x,
+                    url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg') 2x
+                );
+                background-image: image-set(
+                    url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg') 1x,
+                    url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg') 2x
+                );
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src='http://files.consumerfinance.gov/f/images/PC_hero.original.jpg',
+                    sizingMethod='scale');
+            }
+        }
+    </style>
 </section>
 
 ```
-<section class="m-hero m-hero__overlay"
-         style="background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/PC_hero.original.jpg')">
+<section class="m-hero m-hero__overlay" id="hero4">
     <div class="m-hero_wrapper wrapper">
         <div class="m-hero_text">
-            <h1 class="m-hero_heading">Hero title</h1>
+            <h1 class="m-hero_heading">Max of 41 chars for a one-line heading</h1>
             <p class="m-hero_subhead">
-                Hero text goes here. This paragraph has a recommended maximum
-                length of 185 characters. This example paragraph is 151
-                characters long.
+                This text has a recommended count of 165-186 characters
+                (three lines at 1230px) following a one-line heading
+                and 108-124 characters (two lines at 1230px)
+                following a two-line heading.
             </p>
         </div>
         <div class="m-hero_image-wrapper">
-            <div class="m-hero_image"
-                 style="background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/pc_mobile_1.original.jpg')">
-            </div>
+            <div class="m-hero_image"></div>
         </div>
     </div>
+    <style>
+        #hero4 .m-hero_image {
+            background-image:
+                url('http://placekitten.com/g/600/250');
+            background-image: -webkit-image-set(
+                url('http://placekitten.com/g/600/250') 1x,
+                url('http://placekitten.com/g/1200/500') 2x
+            );
+            background-image: image-set(
+                url('http://placekitten.com/g/600/250') 1x,
+                url('http://placekitten.com/g/1200/500') 2x
+            );
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                src='http://placekitten.com/g/600/250',
+                sizingMethod='scale');
+            padding-bottom: 41.6666667%;
+        }
+
+        @media screen and (min-width: 37.5625em) {
+            #hero4 .m-hero_wrapper{
+                background-image:
+                    url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg');
+                background-image: -webkit-image-set(
+                    url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg') 1x,
+                    url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg') 2x
+                );
+                background-image: image-set(
+                    url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg') 1x,
+                    url('http://files.consumerfinance.gov/f/images/PC_hero.original.jpg') 2x
+                );
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src='http://files.consumerfinance.gov/f/images/PC_hero.original.jpg',
+                    sizingMethod='scale');
+            }
+        }
+    </style>
 </section>
 ```
