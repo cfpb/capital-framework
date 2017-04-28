@@ -5,13 +5,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-expandables:** [PATCH] Replaced the missing top border for expandable groups
 
 ### Removed
-- 
+-
 
 ## 4.3.0 - 2017-04-26
 
