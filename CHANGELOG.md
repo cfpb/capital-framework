@@ -9,6 +9,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Changed
 - **cf-expandables:** [PATCH] Replaced the missing top border for expandable groups
+- **cf-buttons:** [PATCH] Fix default font-size for super buttons
 
 ### Removed
 -
@@ -16,7 +17,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## 4.3.0 - 2017-04-26
 
 ### Changed
-- **cf-layout:** Updated Heros to match latest spec from the Design Manual
+- **cf-layout:** Updated Heroes to match latest spec from the Design Manual
 
 
 ## 4.2.1 - 2017-04-24
@@ -49,7 +50,7 @@ are 100% width when stacked on small screens
 ## 4.1.1 - 2017-03-03
 
 ### Changed
-- **cf-core:** Fixed line breaks before codefences
+- **cf-core:** Fixed line breaks before code fences
 
 
 ## 4.1.0 - 2017-03-02
