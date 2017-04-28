@@ -1,6 +1,6 @@
 {
   "name": "cf-buttons",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "description": "Capital Framework buttons",
   "less": "src/cf-buttons.less",
   "style": "cf-buttons.css",
