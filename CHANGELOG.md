@@ -4,14 +4,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
-- **cf-forms:** [PATCH] Fixed the documentation for form fields
+- **cf-forms:** Fixed the documentation for form fields
 
-### Removed
--
 
 ## 4.3.1 - 2017-04-28
 
