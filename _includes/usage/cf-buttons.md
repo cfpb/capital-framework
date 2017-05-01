@@ -72,7 +72,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 @btn-v-padding-modifier-ie:     0.8;
 
 // .btn__super
-@btn__super-font-size:           20px;
+@btn__super-font-size:          18px;
 ```
 
 ## Atoms
@@ -483,7 +483,7 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
                  cf-icon
                  cf-icon__before
                  cf-icon-delete"></span>
-  Close
+    Close
 </button> - Secondary button
 
 <button class="a-btn a-btn__warning">
@@ -492,7 +492,7 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
                  cf-icon
                  cf-icon__before
                  cf-icon-delete"></span>
-  Close
+    Close
 </button> - Warning button
 
 <button class="a-btn a-btn__disabled">
@@ -501,7 +501,7 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
                  cf-icon
                  cf-icon__before
                  cf-icon-delete"></span>
-  Close
+    Close
 </button> - Disabled button
 ```
 
