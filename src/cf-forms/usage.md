@@ -139,13 +139,13 @@ Inputs should always be paired with a `label` for accessibility reasons.
 
 ### Basic checkboxes
 
-<div class="m-form-field__checkbox">
+<div class="m-form-field m-form-field__checkbox">
     <input class="a-checkbox" type="checkbox" id="test_checkbox">
     <label class="a-label" for="test_checkbox">Label</label>
 </div>
 
 ```
-<div class="m-form-field__checkbox">
+<div class="m-form-field m-form-field__checkbox">
     <input class="a-checkbox" type="checkbox" id="test_checkbox">
     <label class="a-label" for="test_checkbox">Label</label>
 </div>
@@ -153,13 +153,13 @@ Inputs should always be paired with a `label` for accessibility reasons.
 
 ### Basic radio buttons
 
-<div class="m-form-field__radio">
+<div class="m-form-field m-form-field__radio">
     <input class="a-radio" type="radio" id="test_radio">
     <label class="a-label" for="test_radio">Label</label>
 </div>
 
 ```
-<div class="m-form-field__radio">
+<div class="m-form-field m-form-field__radio">
     <input class="a-radio" type="radio" id="test_radio">
     <label class="a-label" for="test_radio">Label</label>
 </div>
@@ -283,7 +283,7 @@ See the 'Form icons' section below for guidance on adding icons to states.
 
 ### Basic select
 
-<div class="m-form-field__select">
+<div class="m-form-field m-form-field__select">
     <label class="a-label" for="test_select">Label</label>
     <div class="a-select">
         <select id="test_select">
@@ -296,7 +296,7 @@ See the 'Form icons' section below for guidance on adding icons to states.
 </div>
 
 ```
-<div class="m-form-field__select">
+<div class="m-form-field m-form-field__select">
     <label class="a-label" for="test_select">Label</label>
     <div class="a-select">
         <select id="test_select">
@@ -311,7 +311,7 @@ See the 'Form icons' section below for guidance on adding icons to states.
 
 ### Disabled select
 
-<div class="m-form-field__select">
+<div class="m-form-field m-form-field__select">
     <label class="a-label" for="test_select__disabled">Label</label>
     <div class="a-select">
         <select id="test_select__disabled" disabled>
@@ -324,7 +324,7 @@ See the 'Form icons' section below for guidance on adding icons to states.
 </div>
 
 ```
-<div class="m-form-field__select">
+<div class="m-form-field m-form-field__select">
     <label class="a-label" for="test_select__disabled">Label</label>
     <div class="a-select">
         <select id="test_select__disabled" disabled>
