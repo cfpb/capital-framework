@@ -20,6 +20,7 @@
   cursor: pointer;
   font-size: unit( @btn-font-size / @base-font-size-px, em );
   line-height: normal;
+  text-align: center;
   text-decoration: none;
   transition: background-color 0.1s;
 
@@ -168,5 +169,15 @@
       padding-top: unit( @btn-v-padding-modifier-ie * 15px / @btn__super-font-size, em );
       padding-bottom: unit( @btn-v-padding-modifier-ie * 15px / @btn__super-font-size, em );
     }
+  }
+
+  //
+  // Full width button on x-small screens
+  //
+  &__full-on-xsmall {
+    .respond-to-max( @bp-xs-max, {
+        display: block;
+        width: 100%;
+    } );
   }
 }
