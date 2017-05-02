@@ -366,20 +366,20 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 _Reduce screen size to see these in action_
 
-<a href="#" class="a-btn a-btn__full-on-xsmall">Anchor Tag</a>
+<a href="#" class="a-btn a-btn__full-on-xs">Anchor Tag</a>
 
-<button class="a-btn a-btn__full-on-xsmall" title="Test button">
+<button class="a-btn a-btn__full-on-xs" title="Test button">
     Button Tag
 </button>
 
-<input type="submit" value="Input Tag" class="a-btn a-btn__full-on-xsmall">
+<input type="submit" value="Input Tag" class="a-btn a-btn__full-on-xs">
 
 ```
-<a href="#" class="a-btn a-btn__full-on-xsmall">Anchor Tag</a>
-<button class="a-btn a-btn__full-on-xsmall" title="Test button">
+<a href="#" class="a-btn a-btn__full-on-xs">Anchor Tag</a>
+<button class="a-btn a-btn__full-on-xs" title="Test button">
     Button Tag
 </button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__full-on-xsmall">
+<input type="submit" value="Input Tag" class="a-btn a-btn__full-on-xs">
 ```
 
 ### Button links
