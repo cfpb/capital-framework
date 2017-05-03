@@ -5,13 +5,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+- **cf-buttons:** [MINOR] Added full width button utility for x-small screens
 
 ### Changed
-- 
+-
 
 ### Removed
-- 
+-
 
 ## 4.3.2 - 2017-05-01
 

@@ -21,6 +21,7 @@ dependencies of this component.
     - [Destructive action button](#destructive-action-button)
     - [Disabled button](#disabled-button)
     - [Super button](#super-button)
+    - [Full-width buttons on x-small screens](#full-width-buttons-on-x-small-screens)
     - [Button links](#button-links)
     - [Icon buttons](#icon-buttons)
 - [Molecules](#molecules)
@@ -359,6 +360,26 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
     Button Tag
 </button>
 <input type="submit" value="Input Tag" class="a-btn a-btn__super active">
+```
+
+### Full-width buttons on x-small screens
+
+_Reduce screen size to see these in action_
+
+<a href="#" class="a-btn a-btn__full-on-xs">Anchor Tag</a>
+
+<button class="a-btn a-btn__full-on-xs" title="Test button">
+    Button Tag
+</button>
+
+<input type="submit" value="Input Tag" class="a-btn a-btn__full-on-xs">
+
+```
+<a href="#" class="a-btn a-btn__full-on-xs">Anchor Tag</a>
+<button class="a-btn a-btn__full-on-xs" title="Test button">
+    Button Tag
+</button>
+<input type="submit" value="Input Tag" class="a-btn a-btn__full-on-xs">
 ```
 
 ### Button links
