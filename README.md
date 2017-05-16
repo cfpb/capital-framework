@@ -9,7 +9,7 @@ The Consumer Financial Protection Bureau's user interface framework.
 ## Installation
 
 ```sh
-npm install capital-framework
+ npm install capital-framework
 ```
 
 Components can also be installed individually:
