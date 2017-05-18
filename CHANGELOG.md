@@ -5,11 +5,10 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-core:** [MINOR] Added base styling for inline and fenced code blocks
 
 ### Changed
 - **cf-forms:** [PATCH] Improved the form buttons documentation
-- **cf-core:** [MINOR] Added base styling for inline and fenced code blocks
 
 ### Removed
 -
