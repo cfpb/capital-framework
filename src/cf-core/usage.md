@@ -1165,3 +1165,33 @@ and removes bottom inline spacing from `img` elements within.
     <img src="http://placekitten.com/340/320">
 </figure>
 ```
+
+## Code blocks
+
+### Inline code
+
+<p>This is an example of paragraph text <code>&lt;a href="#"&gt;Test Link&lt;/a&gt;</code> with an inline code block</p>
+
+```
+<p>This is an example of paragraph text with an inline code block <code>&lt;a href="#" class="a-btn" title="Test button"&gt;Anchor Tag&lt;/a&gt;</code></p>
+```
+
+### Fenced code block
+
+This is an example of a fenced code block following some paragraph text.
+
+<pre>
+<code>&lt;a href="#" class="a-btn" title="Test button"&gt;Anchor Tag&lt;/a&gt;
+&lt;button class="a-btn" title="Test button"&gt;Button Tag&lt;/button&gt;
+&lt;input type="submit" value="Input Tag" class="a-btn"&gt;</code>
+</pre>
+
+```
+<pre>
+<code>&lt;a href="#" class="a-btn" title="Test button"&gt;Anchor Tag&lt;/a&gt;
+&lt;button class="a-btn" title="Test button"&gt;Button Tag&lt;/button&gt;
+&lt;input type="submit" value="Input Tag" class="a-btn"&gt;</code>
+</pre>
+```
+
+_Do not include indentation or white space within the `<code>` tags unless you want it to be rendered._
