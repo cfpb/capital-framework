@@ -24,8 +24,9 @@ Capital Framework.
     - [Basic radio buttons](#basic-radio-buttons)
     - [Input states](#input-states)
 - [Buttons](#buttons)
-    - [Input and button](#input-and-button)
-    - [Button inside input](#button-inside-input)
+    - [Simple input with a button](#simple-input-with-a-button)
+    - [Button inside an input](#button-inside-an-input)
+    - [Button inside an input with a button](#button-inside-an-input-with-a-button)
 - [Select dropdown](#select-dropdown)
     - [Basic select](#basic-select)
     - [Disabled select](#disabled-select)
@@ -217,7 +218,9 @@ See the 'Form icons' section below for guidance on adding icons to states.
 
 ## Buttons
 
-### Input and button
+### Simple input with a button
+
+These are used for simple forms where a full filter isn't necessary.
 
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
@@ -239,9 +242,10 @@ See the 'Form icons' section below for guidance on adding icons to states.
 </div>
 ```
 
-### Button inside input
+### Button inside an input
 
-#### Default button inside of an default input
+These offer the user an action to take related to the input,
+typically to clear the input.
 
 <div class="m-btn-inside-input">
     <input type="text"
@@ -256,7 +260,25 @@ See the 'Form icons' section below for guidance on adding icons to states.
     </button>
 </div>
 
-#### Button inside input and button
+```
+<div class="m-btn-inside-input">
+    <input type="text"
+        value="This is some really long text to make sure that the button
+               doesn't overlap the content in such a way that this input
+               becomes unusable."
+        title="Test input"
+        class="a-text-input">
+    <button class="a-btn a-btn__link">
+        Clear
+        <span class="cf-icon cf-icon-delete"></span>
+    </button>
+</div>
+```
+
+### Button inside an input with a button
+
+This example combines both of the previous patterns,
+creating a typical site search form.
 
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
@@ -277,6 +299,28 @@ See the 'Form icons' section below for guidance on adding icons to states.
         <button class="a-btn">Search</button>
     </div>
 </div>
+
+```
+<div class="o-form__input-w-btn">
+    <div class="o-form__input-w-btn_input-container">
+        <div class="m-btn-inside-input">
+            <input type="text"
+                value="This is some really long text to make sure that the
+                       button doesn't overlap the content in such a way
+                       that this input becomes unusable."
+                title="Test input"
+                class="a-text-input">
+            <button class="a-btn a-btn__link">
+                Clear
+                <span class="cf-icon cf-icon-delete"></span>
+            </button>
+        </div>
+    </div>
+    <div class="o-form__input-w-btn_btn-container">
+        <button class="a-btn">Search</button>
+    </div>
+</div>
+```
 
 
 ## Select dropdown
