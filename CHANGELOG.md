@@ -5,6 +5,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.5.0 - 2017-05-18
+
+### Added
 - **cf-core:** Added base styling for inline and fenced code blocks
 
 ### Changed
