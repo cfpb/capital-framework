@@ -30,6 +30,7 @@ Capital Framework.
 - [Select dropdown](#select-dropdown)
     - [Basic select](#basic-select)
     - [Disabled select](#disabled-select)
+- [Basic multiselect](#basic-multiselect)
 
 
 ## Variables
