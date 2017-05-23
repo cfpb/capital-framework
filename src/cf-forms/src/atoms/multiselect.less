@@ -1,0 +1,16 @@
+.a-multiselect {
+    display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 5.5em; // This height breaks the bottom border mid-character so it's clear there's more
+    padding-top: unit( 4px / @base-font-size-px, em );
+    padding-bottom: unit( 4px / @base-font-size-px, em );
+
+    border: 1px solid @select-border;
+
+    option {
+        padding: unit( 2px / @base-font-size-px, em )
+                 unit( 6px / @base-font-size-px, em );
+    }
+}
