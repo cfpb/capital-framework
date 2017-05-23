@@ -5,13 +5,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+- **cf-forms:** Added base styling for multiselect element
 
-### Changed
-- 
-
-### Removed
-- 
 
 ## 4.5.0 - 2017-05-18
 

@@ -30,6 +30,7 @@ Capital Framework.
 - [Select dropdown](#select-dropdown)
     - [Basic select](#basic-select)
     - [Disabled select](#disabled-select)
+- [Basic multiselect](#basic-multiselect)
 
 
 ## Variables
@@ -378,5 +379,37 @@ creating a typical site search form.
             <option value="option4">Option 4</option>
         </select>
     </div>
+</div>
+```
+
+### Basic multiselect
+
+<div class="m-form-field m-form-field__select">
+    <label class="a-label" for="test_select__multiple">Label</label>
+    <select class="a-multiselect" id="test_select__multiple" multiple>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+        <option value="option4">Option 4</option>
+        <option value="option1">Option 5</option>
+        <option value="option2">Option 6</option>
+        <option value="option3">Option 7</option>
+        <option value="option4">Option 8</option>
+    </select>
+</div>
+
+```
+<div class="m-form-field m-form-field__select">
+    <label class="a-label" for="test_select__multiple">Label</label>
+    <select class="a-multiselect" id="test_select__multiple" multiple>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+        <option value="option4">Option 4</option>
+        <option value="option1">Option 5</option>
+        <option value="option2">Option 6</option>
+        <option value="option3">Option 7</option>
+        <option value="option4">Option 8</option>
+    </select>
 </div>
 ```
