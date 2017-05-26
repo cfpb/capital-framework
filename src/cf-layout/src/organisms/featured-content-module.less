@@ -28,7 +28,7 @@
     .respond-to-min( @fcm-bp-min, {
       padding-right: unit( @grid_gutter-width / @base-font-size-px, em);
       padding-left: unit( @grid_gutter-width / @base-font-size-px, em);
-      width: 300px; // width of 5 of 12 cols at 799px - @grid_gutter-width padding
+      width: 300px; // width of 5 of 12 cols at lg size
 
       float: left;
     } );
@@ -41,8 +41,8 @@
       .lt-ie10 & {
         position: absolute;
         top: 0;
-        right: 0%;
-        left: 360px;
+        right: 0;
+        left: 360px; // widht of 5 of 12 cols at lg size + grid gutters
         bottom: 0;
       }
     } );
