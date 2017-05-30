@@ -101,18 +101,18 @@
 
 .u-flexible-container {
     .u-flexible-container-mixin();
-}
 
-.u-flexible-container_inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+    &_inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 
-.u-flexible-container__4-3 {
-    .u-flexible-container-mixin( 4, 3 );
+    &__4-3 {
+        .u-flexible-container-mixin( 4, 3 );
+    }
 }
 
 //
