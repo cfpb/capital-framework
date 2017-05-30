@@ -3,7 +3,9 @@
 
     box-sizing: border-box;
     width: 100%;
-    height: 5.5em; // This height breaks the bottom border mid-character so it's clear there's more
+    // Fixed height breaks the bottom border
+    // mid-character to indicate there's more content.
+    height: 5.5em;
     padding-top: unit( 4px / @base-font-size-px, em );
     padding-bottom: unit( 4px / @base-font-size-px, em );
 
