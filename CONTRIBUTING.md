@@ -51,18 +51,39 @@ by first clicking the fork button on top of the repository and cloning your fork
 
 ### Testing components locally
 
-If you're hacking on a component and want to test it in a local project, use `npm link`. For example:
+#### Testing in the documentation site
+
+If you're hacking on a component and want to test it in the documentation site follow the following steps.
+
+In this repo:
+- check out a working branch
+- run `npm run cf-link`
+
+In a site specific clone of this repo:
+
+- make sure you're on the gh-pages branch
+- run `npm run cf-link`
+- run `npm run build`
+- run `npm start`
+- open a browser at http://localhost:3000/ and navigate to the component you've changed
+```
+
+#### Testing in an outside project
+
+If you're hacking on a component and want to test it in a local project, use NPM linking. For example:
 
 ```sh
 cd ~/Projects/capital-framework/ # wherever you cloned this repo
-npm run build
-cd src/cf-buttons
-npm link
+npm run cf-link # this makes all the components linkable
+git checkout [branch] # make your edits on a branch
+
 cd ~/Projects/owning-a-home
-npm link cf-buttons
+npm link cf-buttons # or whatever component you're working on
+gulp build # or whatever build process your project uses
 ```
 
-Now `~/Projects/owning-a-home/node_modules/cf-buttons` will be a symlink pointing to the `~/Projects/capital-framework/tmp/cf-buttons` directory. Whenever you rebuild (`npm run build`, see above) the CF components, your local owning-a-home project will reference your local `tmp/` version of cf-buttons.
+Now `~/Projects/owning-a-home/node_modules/cf-buttons` will be a symlink pointing to the `~/Projects/capital-framework/src/cf-buttons` directory. Whenever you make changes in the Capital Framework repo run the build task in your project to see your changes.
+
 
 ### Updating Documentation
 
