@@ -91,6 +91,12 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 // .grid_column__top-divider
 @grid_column__left-divider:     #3a8899;
+
+// Fetured Content Module variables
+@fcm-bg:                        @block__bg;
+
+@fcm-bp-max:                    700px;
+@fcm-bp-min:                    701px;
 ```
 
 
