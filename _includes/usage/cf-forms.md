@@ -15,6 +15,7 @@ Capital Framework.
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
+- [Legends](#legends)
 - [Labels](#labels)
     - [Basic label](#basic-label)
     - [Label heading](#label-heading)
@@ -85,6 +86,17 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 @select-height:                  30px;
 ```
 
+## Legends
+
+<legend class="a-legend">
+    A basic legend
+</legend>
+
+```
+<legend class="a-legend">
+    A basic legend
+</legend>
+```
 
 ## Labels
 
@@ -111,7 +123,6 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
     A label heading
 </label>
 ```
-
 
 ## Inputs
 
