@@ -5,6 +5,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.7.0 - 2017-06-07
+
+### Added
 - **cf-forms:** Added base styling for legend elements
 
 ### Changed
