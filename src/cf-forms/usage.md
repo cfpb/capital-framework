@@ -88,14 +88,14 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ## Legends
 
-<label class="a-legend">
+<legend class="a-legend">
     A basic legend
-</label>
+</legend>
 
 ```
-<label class="a-legend">
+<legend class="a-legend">
     A basic legend
-</label>
+</legend>
 ```
 
 ## Labels
