@@ -4,14 +4,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
-- **cf-grid:** [PATCH] Fix for nested grid doc examples
+- **cf-grid:** Fix for nested grid doc examples
 
-### Removed
--
 
 ## 4.6.0 - 2017-05-23
 
