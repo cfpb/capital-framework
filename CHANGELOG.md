@@ -8,7 +8,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-forms:** [MINOR] Added base styling for legend elements
 
 ### Changed
--
+- **cf-layout:** [MINOR] Simplified the Featured Content Module styles
 
 ### Removed
 -

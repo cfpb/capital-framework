@@ -91,6 +91,12 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 // .grid_column__top-divider
 @grid_column__left-divider:     #3a8899;
+
+// Fetured Content Module variables
+@fcm-bg:                        @block__bg;
+
+@fcm-bp-max:                    700px;
+@fcm-bp-min:                    701px;
 ```
 
 
@@ -1289,54 +1295,58 @@ desktop). The visual occupies the remaining space. The visual should be
 Module with a static width and is anchored left when it becomes too wide for
 the available space.
 
-<section class="block block__border block__flush o-featured-content-module">
-    <div class="o-featured-content-module_text">
-        <div class="category-slug">
-            <span class="o-featured-content-module_icon
-                         cf-icon
-                         cf-icon-speech-bubble"></span>
-            Featured
+<div class="block block__border block__flush-sides">
+    <section class="o-featured-content-module">
+        <div class="o-featured-content-module_text">
+            <div class="category-slug">
+                <span class="o-featured-content-module_icon
+                             cf-icon
+                             cf-icon-speech-bubble"></span>
+                Featured
+            </div>
+            <h2>Feature title</h2>
+            <p>
+                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+                instructior ex pri. Cu pri inani constituto, cum aeque noster
+                commodo cu.
+            </p>
+            <a class="jump-link jump-link__underline">
+                <span class="jump-link_text">Read more about the feature</span>
+            </a>
         </div>
-        <h2>Feature title</h2>
-        <p>
-            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-            instructior ex pri. Cu pri inani constituto, cum aeque noster
-            commodo cu.
-        </p>
-        <a class="jump-link jump-link__underline">
-            <span class="jump-link_text">Read more about the feature</span>
-        </a>
-    </div>
-    <div class="o-featured-content-module_visual">
-        <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270">
-    </div>
-</section>
+        <div class="o-featured-content-module_visual">
+            <img class="o-featured-content-module_img"
+                 src="http://placekitten.com/g/540/270">
+        </div>
+    </section>
+</div>
 
 ```
-<section class="block block__border block__flush o-featured-content-module">
-    <div class="o-featured-content-module_text">
-        <div class="category-slug">
-            <span class="o-featured-content-module_icon
-                         cf-icon
-                         cf-icon-speech-bubble"></span>
-            Featured
+<div class="block block__border block__flush-sides">
+    <section class="o-featured-content-module">
+        <div class="o-featured-content-module_text">
+            <div class="category-slug">
+                <span class="o-featured-content-module_icon
+                             cf-icon
+                             cf-icon-speech-bubble"></span>
+                Featured
+            </div>
+            <h2>Feature title</h2>
+            <p>
+                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+                instructior ex pri. Cu pri inani constituto, cum aeque noster
+                commodo cu.
+            </p>
+            <a class="jump-link jump-link__underline">
+                <span class="jump-link_text">Read more about the feature</span>
+            </a>
         </div>
-        <h2>Feature title</h2>
-        <p>
-            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-            instructior ex pri. Cu pri inani constituto, cum aeque noster
-            commodo cu.
-        </p>
-        <a class="jump-link jump-link__underline">
-            <span class="jump-link_text">Read more about the feature</span>
-        </a>
-    </div>
-    <div class="o-featured-content-module_visual">
-        <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270">
-    </div>
-</section>
+        <div class="o-featured-content-module_visual">
+            <img class="o-featured-content-module_img"
+                 src="http://placekitten.com/g/540/270">
+        </div>
+    </section>
+</div>
 ```
 
 ### Featured content module - Maps
@@ -1346,62 +1356,60 @@ content), the `o-featured-content-module__right` modifier class is added to
 the `o-featured-content-module` organism. This anchors the image to the right
 side so that the copyright information is displayed.
 
-<section class="block
-                block__border
-                block__flush
-                o-featured-content-module
-                o-featured-content-module__right">
-    <div class="o-featured-content-module_text">
-        <div class="category-slug">
-            <span class="o-featured-content-module_icon
-                         cf-icon
-                         cf-icon-speech-bubble"></span>
-            Featured (Map)
+<div class="block block__border block__flush-sides">
+    <section class="o-featured-content-module
+                    o-featured-content-module__right">
+        <div class="o-featured-content-module_text">
+            <div class="category-slug">
+                <span class="o-featured-content-module_icon
+                             cf-icon
+                             cf-icon-speech-bubble"></span>
+                Featured (Map)
+            </div>
+            <h2>Feature title</h2>
+            <p>
+                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+                instructior ex pri. Cu pri inani constituto, cum aeque noster
+                commodo cu.
+            </p>
+            <a class="jump-link jump-link__underline">
+                <span class="jump-link_text">Read more about the feature</span>
+            </a>
         </div>
-        <h2>Feature title</h2>
-        <p>
-            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-            instructior ex pri. Cu pri inani constituto, cum aeque noster
-            commodo cu.
-        </p>
-        <a class="jump-link jump-link__underline">
-            <span class="jump-link_text">Read more about the feature</span>
-        </a>
-    </div>
-    <div class="o-featured-content-module_visual">
-        <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270">
-    </div>
-</section>
+        <div class="o-featured-content-module_visual">
+            <img class="o-featured-content-module_img"
+                 src="http://placekitten.com/g/540/270">
+        </div>
+    </section>
+</div>
 
 ```
-<section class="block
-                block__border
-                block__flush
-                o-featured-content-module
-                o-featured-content-module__right">
-    <div class="o-featured-content-module_text">
-        <div class="category-slug">
-            <span class="o-featured-content-module_icon
-                         cf-icon
-                         cf-icon-speech-bubble"></span>
-            Featured (Map)
+<div class="block block__border block__flush-sides">
+    <section class="o-featured-content-module
+                    o-featured-content-module__right">
+        <div class="o-featured-content-module_text">
+            <div class="category-slug">
+                <span class="o-featured-content-module_icon
+                             cf-icon
+                             cf-icon-speech-bubble"></span>
+                Featured (Map)
+            </div>
+            <h2>Feature title</h2>
+            <p>
+                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+                instructior ex pri. Cu pri inani constituto, cum aeque noster
+                commodo cu.
+            </p>
+            <a class="jump-link jump-link__underline">
+                <span class="jump-link_text">Read more about the feature</span>
+            </a>
         </div>
-        <h2>Feature title</h2>
-        <p>
-            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-            instructior ex pri. Cu pri inani constituto, cum aeque noster
-            commodo cu.
-        </p>
-        <a class="jump-link jump-link__underline">
-            <span class="jump-link_text">Read more about the feature</span>
-        </a>
-    </div>
-    <div class="o-featured-content-module_visual">
-        <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270">
-    </div>
-</section>
+        <div class="o-featured-content-module_visual">
+            <img class="o-featured-content-module_img"
+                 src="http://placekitten.com/g/540/270">
+        </div>
+    </section>
+</div>
 ```
 
 ### Featured content module - Videos
@@ -1412,62 +1420,60 @@ the `o-featured-content-module__center` modifier class is added to the
 the center of the available space so that the focal point of the video
 generally remains centered.
 
-<section class="block
-                block__border
-                block__flush
-                o-featured-content-module
-                o-featured-content-module__center">
-    <div class="o-featured-content-module_text">
-        <div class="category-slug">
-            <span class="o-featured-content-module_icon
-                         cf-icon
-                         cf-icon-speech-bubble"></span>
-            Featured (Video)
+<div class="block block__border block__flush-sides">
+    <section class="o-featured-content-module
+                    o-featured-content-module__center">
+        <div class="o-featured-content-module_text">
+            <div class="category-slug">
+                <span class="o-featured-content-module_icon
+                             cf-icon
+                             cf-icon-speech-bubble"></span>
+                Featured (Video)
+            </div>
+            <h2>Feature title</h2>
+            <p>
+                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+                instructior ex pri. Cu pri inani constituto, cum aeque noster
+                commodo cu.
+            </p>
+            <a class="jump-link jump-link__underline">
+                <span class="jump-link_text">Read more about the feature</span>
+            </a>
         </div>
-        <h2>Feature title</h2>
-        <p>
-            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-            instructior ex pri. Cu pri inani constituto, cum aeque noster
-            commodo cu.
-        </p>
-        <a class="jump-link jump-link__underline">
-            <span class="jump-link_text">Read more about the feature</span>
-        </a>
-    </div>
-    <div class="o-featured-content-module_visual">
-        <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270">
-    </div>
-</section>
+        <div class="o-featured-content-module_visual">
+            <img class="o-featured-content-module_img"
+                 src="http://placekitten.com/g/540/270">
+        </div>
+    </section>
+</div>
 
 ```
-<section class="block
-                block__border
-                block__flush
-                o-featured-content-module
-                o-featured-content-module__center">
-    <div class="o-featured-content-module_text">
-        <div class="category-slug">
-            <span class="o-featured-content-module_icon
-                         cf-icon
-                         cf-icon-speech-bubble"></span>
-            Featured (Video)
+<div class="block block__border block__flush-sides">
+    <section class="o-featured-content-module
+                    o-featured-content-module__center">
+        <div class="o-featured-content-module_text">
+            <div class="category-slug">
+                <span class="o-featured-content-module_icon
+                             cf-icon
+                             cf-icon-speech-bubble"></span>
+                Featured (Video)
+            </div>
+            <h2>Feature title</h2>
+            <p>
+                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+                instructior ex pri. Cu pri inani constituto, cum aeque noster
+                commodo cu.
+            </p>
+            <a class="jump-link jump-link__underline">
+                <span class="jump-link_text">Read more about the feature</span>
+            </a>
         </div>
-        <h2>Feature title</h2>
-        <p>
-            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-            instructior ex pri. Cu pri inani constituto, cum aeque noster
-            commodo cu.
-        </p>
-        <a class="jump-link jump-link__underline">
-            <span class="jump-link_text">Read more about the feature</span>
-        </a>
-    </div>
-    <div class="o-featured-content-module_visual">
-        <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270">
-    </div>
-</section>
+        <div class="o-featured-content-module_visual">
+            <img class="o-featured-content-module_img"
+                 src="http://placekitten.com/g/540/270">
+        </div>
+    </section>
+</div>
 ```
 
 
