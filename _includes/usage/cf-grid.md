@@ -404,7 +404,7 @@ content first in the source order, but it's here if you absolutely need it.
     <section>
         <div class="col col-6">
             <p>six</p>
-            <section>
+            <section class="nested">
                 <div class="col col-4"><p>four</p></div>
                 <div class="col col-4"><p>four</p></div>
                 <div class="col col-4"><p>four</p></div>
@@ -413,7 +413,7 @@ content first in the source order, but it's here if you absolutely need it.
 
         <div class="col col-6">
             <p>six</p>
-            <section>
+            <section class="nested">
                 <div class="col col-4"><p>four</p></div>
                 <div class="col col-4"><p>four</p></div>
                 <div class="col col-4"><p>four</p></div>
@@ -424,7 +424,7 @@ content first in the source order, but it's here if you absolutely need it.
     <section>
         <div class="col col-3">
             <p>three</p>
-            <section>
+            <section class="nested">
                 <div class="col col-6"><p>six</p></div>
                 <div class="col col-6"><p>six</p></div>
             </section>
@@ -432,7 +432,7 @@ content first in the source order, but it's here if you absolutely need it.
 
         <div class="col col-6">
             <p>six</p>
-            <section>
+            <section class="nested">
                 <div class="col col-4"><p>four</p></div>
                 <div class="col col-4"><p>four</p></div>
                 <div class="col col-4"><p>four</p></div>
@@ -441,7 +441,7 @@ content first in the source order, but it's here if you absolutely need it.
 
         <div class="col col-3">
             <p>three</p>
-            <section>
+            <section class="nested">
                 <div class="col col-3"><p>three</p></div>
                 <div class="col col-3"><p>three</p></div>
                 <div class="col col-3"><p>three</p></div>
@@ -456,7 +456,7 @@ content first in the source order, but it's here if you absolutely need it.
     <section>
         <div class="col col-6">
             <p>six</p>
-            <section>
+            <section class="nested">
                 <div class="col col-4"><p>four</p></div>
                 <div class="col col-4"><p>four</p></div>
                 <div class="col col-4"><p>four</p></div>
@@ -465,7 +465,7 @@ content first in the source order, but it's here if you absolutely need it.
 
         <div class="col col-6">
             <p>six</p>
-            <section>
+            <section class="nested">
                 <div class="col col-4"><p>four</p></div>
                 <div class="col col-4"><p>four</p></div>
                 <div class="col col-4"><p>four</p></div>
@@ -476,7 +476,7 @@ content first in the source order, but it's here if you absolutely need it.
     <section>
         <div class="col col-3">
             <p>three</p>
-            <section>
+            <section class="nested">
                 <div class="col col-6"><p>six</p></div>
                 <div class="col col-6"><p>six</p></div>
             </section>
@@ -484,7 +484,7 @@ content first in the source order, but it's here if you absolutely need it.
 
         <div class="col col-6">
             <p>six</p>
-            <section>
+            <section class="nested">
                 <div class="col col-4"><p>four</p></div>
                 <div class="col col-4"><p>four</p></div>
                 <div class="col col-4"><p>four</p></div>
@@ -493,7 +493,7 @@ content first in the source order, but it's here if you absolutely need it.
 
         <div class="col col-3">
             <p>three</p>
-            <section>
+            <section class="nested">
                 <div class="col col-3"><p>three</p></div>
                 <div class="col col-3"><p>three</p></div>
                 <div class="col col-3"><p>three</p></div>
