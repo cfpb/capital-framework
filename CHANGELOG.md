@@ -5,13 +5,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-layout:** [MINOR] Simplified the Featured Content Module styles
 
 ### Removed
-- 
+-
 
 ## 4.6.1 - 2017-06-07
 
