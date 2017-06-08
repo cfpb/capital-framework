@@ -52,8 +52,12 @@ function handleGitStatus(result) {
   if (!result.stdout && !result.stderr) {
     util.printLn.info('Git working directory is clean.');
   } else {
-    util.printLn.error('Git working directory is not clean. Commit your work before publishing.');
-    process.exit(1);
+    if (!util.option.dryrun) {
+      util.printLn.error('Git working directory is not clean. Commit your work before publishing.');
+      process.exit(1);
+    } else {
+      util.printLn.warning('Your working directory isn\'t clean but this is a dry run so I\'ll continue...');
+    }
   }
 }
 
@@ -70,6 +74,9 @@ function checkoutMaster() {
     util.printLn.info('Checking out ' + process.env.GH_PROD_BRANCH + ' branch...');
     return util.git.checkoutMaster();
   } else {
+    if (util.option.dryrun) {
+      return util.printLn.warning('You\'re not on the proper release branch but this is a dry run so I\'ll continue anyway.');
+    }
     return util.git.checkBranch().then(function(result) {
       if (!process.env.GH_PROD_BRANCH || !process.env.GH_DEV_BRANCH) {
         util.printLn.error('Publishing to npm from you local machine isn\'t recommended but if you\'d like to do it anyway, define GH_PROD_BRANCH and GH_DEV_BRANCH env variables.');
@@ -161,15 +168,20 @@ function buildComponents(components) {
     util.printLn.error('No components\' versions were updated.');
     if (semver.gt(masterComponent.new, masterComponent.old)) {
       util.printLn.success(util.pkg.name + '\'s version was manually updated: ' + masterComponent.old + ' -> ' + masterComponent.new + '.');
+      util.printLn.info('Building components now...');
       return util.build();
     }
-    util.printLn.error(util.pkg.name + '\'s version also wasn\'t updated. Nothing to publish. Abort.');
-    process.exit(1);
+    if (!util.option.dryrun) {
+      util.printLn.error(util.pkg.name + '\'s version also wasn\'t updated. Nothing to publish. Abort.');
+      process.exit(1);
+    } else {
+      util.printLn.warning('There\'s nothing to publish (no component versions have been incremented) but this is a dry run so I\'ll continue anyway.');
+    }
   }
 
   // Sort the diffs and increment CF by whatever the first (largest) increment is
   newVersion = semver.inc(masterComponent.old, diffs.sort().shift());
-  util.printLn.success(util.pkg.name + ' will also be published: ' + masterComponent.old + ' -> ' + newVersion + '. See https://goo.gl/cZvnnL.');
+  util.printLn.success(util.pkg.name + ' will be published: ' + masterComponent.old + ' -> ' + newVersion + '. See https://goo.gl/cZvnnL.');
   util.pkg.version = newVersion;
   util.printLn.info('Building components now...');
   return util.build();
@@ -185,38 +197,62 @@ function confirmPublish() {
 }
 
 function updateManifest() {
-  fs.writeFileSync('package.json', JSON.stringify(util.pkg, null, 2));
+  if (!util.option.dryrun) {
+    fs.writeFileSync('package.json', JSON.stringify(util.pkg, null, 2));
+  } else {
+    util.printLn.warning('I did not update package.json because this is a dry run.');
+  }
 }
 
 function updateChangelog() {
-  return util.changelog(util.pkg.version);
+  if (!util.option.dryrun) {
+    return util.changelog(util.pkg.version);
+  } else {
+    util.printLn.warning('I did not update the changelog because this is a dry run.');
+  }
 }
 
 function commit() {
-  util.printLn.info('Committing change to manifest...');
-  return util.git.commit(util.pkg.version);
+  if (!util.option.dryrun) {
+    util.printLn.info('Committing change to manifest...');
+    return util.git.commit(util.pkg.version);
+  } else {
+    util.printLn.warning('I did not commit any changes because this is a dry run.');
+  }
 }
 
 function tag(result) {
   if (result && result.stdout) util.printLn.console(result.stdout);
-  util.printLn.info('Tagging version ' + util.pkg.version + '...');
-  return util.git.tag(util.pkg.version);
+  if (!util.option.dryrun) {
+    util.printLn.info('Tagging version ' + util.pkg.version + '...');
+    return util.git.tag(util.pkg.version);
+  } else {
+    util.printLn.warning('I did not create a new tag because this is a dry run.');
+  }
 }
 
 function push(result) {
   if (result && result.stdout) util.printLn.console(result.stdout);
-  util.printLn.info('Pushing commit to GitHub...');
-  return util.git.push(util.pkg.repository.url);
+  if (!util.option.dryrun) {
+    util.printLn.info('Pushing commit to GitHub...');
+    return util.git.push(util.pkg.repository.url);
+  } else {
+    util.printLn.warning('I did not push to GitHub because this is a dry run.');
+  }
 }
 
 function publishComponents(result) {
   if (result && result.stdout) util.printLn.console(result.stdout);
-  if (!componentsToPublish.length) return;
-  var components = componentsToPublish.map(function(component) {
-    return component.name;
-  });
-  util.printLn.info('Publishing ' + components.join(', ') + ' to npm...');
-  return Promise.all(components.map(util.publish));
+  if (!util.option.dryrun) {
+    if (!componentsToPublish.length) return;
+    var components = componentsToPublish.map(function(component) {
+      return component.name;
+    });
+    util.printLn.info('Publishing ' + components.join(', ') + ' to npm...');
+    return Promise.all(components.map(util.publish));
+  } else {
+    util.printLn.warning('I did not publish anything to npm because this is a dry run.');
+  }
 }
 
 function finish(result) {
