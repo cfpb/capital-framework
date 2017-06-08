@@ -117,3 +117,6 @@ Release management is now handled by [CFPB's chat bot](https://github.com/cfpb/C
 
 1. In the FEWD channel say "cfpbot capital framework prepare release"
 1. It will do a bunch of stuff and create a release PR. Visit the PR and merge it.
+
+After the PR is merged [Travis](https://travis-ci.org/cfpb/capital-framework) will run `npm run release`.
+To simulate a Travis release locally, run `npm run release -- --dryrun`.
