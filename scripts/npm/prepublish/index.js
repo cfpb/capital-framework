@@ -38,6 +38,8 @@ util.getGitStatus('./')
   .then(push)
   // Publish the components.
   .then(publishComponents)
+  // Update the docs
+  .then(updateDocs)
   // All done.
   .then(finish)
   // Report any errors that happen along the way.
@@ -248,6 +250,12 @@ function publishComponents(result) {
   });
   util.printLn.info('Publishing ' + components.join(', ') + ' to npm...');
   return Promise.all(components.map(util.publish));
+}
+
+function updateDocs(result) {
+  if (result && result.stdout) util.printLn.console(result.stdout);
+  if (!componentsToPublish.length) return;
+  return util.docs(util.pkg.version);
 }
 
 function finish(result) {

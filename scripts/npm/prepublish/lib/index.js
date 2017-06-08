@@ -11,7 +11,8 @@ module.exports = {
   getNpmVersion: require('./getNpmVersion'),
   checkNpmAuth: require('./checkNpmAuth'),
   pkg: JSON.parse(fs.readFileSync('package.json', 'utf8')),
-  option: require('./getArgs')
+  option: require('./getArgs'),
+  docs: require('./docs')
 }
 
 process.on('SIGINT', function() {

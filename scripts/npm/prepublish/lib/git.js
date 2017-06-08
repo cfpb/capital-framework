@@ -4,6 +4,9 @@ var git = {
   checkoutMaster: function() {
     return exec('git checkout ' + process.env.GH_PROD_BRANCH);
   },
+  checkoutDocs: function() {
+    return exec('git checkout gh-pages-test');
+  },
   checkBranch: function() {
     return exec('git rev-parse --abbrev-ref HEAD');
   },
