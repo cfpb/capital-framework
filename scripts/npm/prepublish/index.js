@@ -52,12 +52,11 @@ function handleGitStatus(result) {
   if (!result.stdout && !result.stderr) {
     util.printLn.info('Git working directory is clean.');
   } else {
-    if (!util.option.dryrun) {
-      util.printLn.error('Git working directory is not clean. Commit your work before publishing.');
-      process.exit(1);
-    } else {
-      util.printLn.warning('Your working directory isn\'t clean but this is a dry run so I\'ll continue...');
+    if (util.option.dryrun) {
+      return util.printLn.warning('Your working directory isn\'t clean but this is a dry run so I\'ll continue...');
     }
+    util.printLn.error('Git working directory is not clean. Commit your work before publishing.');
+    process.exit(1);
   }
 }
 
@@ -171,12 +170,11 @@ function buildComponents(components) {
       util.printLn.info('Building components now...');
       return util.build();
     }
-    if (!util.option.dryrun) {
-      util.printLn.error(util.pkg.name + '\'s version also wasn\'t updated. Nothing to publish. Abort.');
-      process.exit(1);
-    } else {
-      util.printLn.warning('There\'s nothing to publish (no component versions have been incremented) but this is a dry run so I\'ll continue anyway.');
+    if (util.option.dryrun) {
+      return util.printLn.warning('There\'s nothing to publish (no component versions have been incremented) but this is a dry run so I\'ll continue anyway.');
     }
+    util.printLn.error(util.pkg.name + '\'s version also wasn\'t updated. Nothing to publish. Abort.');
+    process.exit(1);
   }
 
   // Sort the diffs and increment CF by whatever the first (largest) increment is
@@ -197,62 +195,56 @@ function confirmPublish() {
 }
 
 function updateManifest() {
-  if (!util.option.dryrun) {
-    fs.writeFileSync('package.json', JSON.stringify(util.pkg, null, 2));
-  } else {
-    util.printLn.warning('I did not update package.json because this is a dry run.');
+  if (util.option.dryrun) {
+    return util.printLn.warning('I did not update package.json because this is a dry run.');
   }
+  fs.writeFileSync('package.json', JSON.stringify(util.pkg, null, 2));
 }
 
 function updateChangelog() {
-  if (!util.option.dryrun) {
-    return util.changelog(util.pkg.version);
-  } else {
-    util.printLn.warning('I did not update the changelog because this is a dry run.');
+  if (util.option.dryrun) {
+    return util.printLn.warning('I did not update the changelog because this is a dry run.');
   }
+  return util.changelog(util.pkg.version);
 }
 
 function commit() {
-  if (!util.option.dryrun) {
-    util.printLn.info('Committing change to manifest...');
-    return util.git.commit(util.pkg.version);
-  } else {
-    util.printLn.warning('I did not commit any changes because this is a dry run.');
+  if (util.option.dryrun) {
+    return util.printLn.warning('I did not commit any changes because this is a dry run.');
   }
+  util.printLn.info('Committing change to manifest...');
+  return util.git.commit(util.pkg.version);
 }
 
 function tag(result) {
   if (result && result.stdout) util.printLn.console(result.stdout);
-  if (!util.option.dryrun) {
-    util.printLn.info('Tagging version ' + util.pkg.version + '...');
-    return util.git.tag(util.pkg.version);
-  } else {
-    util.printLn.warning('I did not create a new tag because this is a dry run.');
+  if (util.option.dryrun) {
+    return util.printLn.warning('I did not create a new tag because this is a dry run.');
   }
+  util.printLn.info('Tagging version ' + util.pkg.version + '...');
+  return util.git.tag(util.pkg.version);
 }
 
 function push(result) {
   if (result && result.stdout) util.printLn.console(result.stdout);
-  if (!util.option.dryrun) {
-    util.printLn.info('Pushing commit to GitHub...');
-    return util.git.push(util.pkg.repository.url);
-  } else {
-    util.printLn.warning('I did not push to GitHub because this is a dry run.');
+  if (util.option.dryrun) {
+    return util.printLn.warning('I did not push to GitHub because this is a dry run.');
   }
+  util.printLn.info('Pushing commit to GitHub...');
+  return util.git.push(util.pkg.repository.url);
 }
 
 function publishComponents(result) {
   if (result && result.stdout) util.printLn.console(result.stdout);
-  if (!util.option.dryrun) {
-    if (!componentsToPublish.length) return;
-    var components = componentsToPublish.map(function(component) {
-      return component.name;
-    });
-    util.printLn.info('Publishing ' + components.join(', ') + ' to npm...');
-    return Promise.all(components.map(util.publish));
-  } else {
-    util.printLn.warning('I did not publish anything to npm because this is a dry run.');
+  if (util.option.dryrun) {
+    return util.printLn.warning('I did not publish anything to npm because this is a dry run.');
   }
+  if (!componentsToPublish.length) return;
+  var components = componentsToPublish.map(function(component) {
+    return component.name;
+  });
+  util.printLn.info('Publishing ' + components.join(', ') + ' to npm...');
+  return Promise.all(components.map(util.publish));
 }
 
 function finish(result) {
