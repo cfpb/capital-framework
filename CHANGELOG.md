@@ -5,6 +5,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.7.1 - 2017-06-09
+
+### Added
 - **capital-framework:** Add dry run option to make testing releases easier
 
 
