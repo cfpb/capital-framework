@@ -63,6 +63,9 @@ function handleGitStatus(result) {
 function checkCredentials(result) {
   // Travis gets its credentials from .travis.yml
   if (isTravis) return;
+  if (util.option.dryrun) {
+    return util.printLn.warning('I would normally check your npm credentials but this is a dry run so I\'ll continue anyway.');
+  }
   util.printLn.info('Checking npm credentials...');
   return util.checkNpmAuth(util.pkg.name);
 }
