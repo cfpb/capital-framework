@@ -41,8 +41,8 @@
   &:focus,
   &.focus {
     outline: 1px dotted @btn-bg;
-    // outline-offset is not supported everywhere but it adds a nice touch
-    // in browsers where it is.
+    // The outline-offset property is not supported everywhere (e.g. IE)
+    // but it adds a nice touch in browsers where it is.
     outline-offset: 1px;
   }
 
@@ -53,12 +53,12 @@
 
   button&::-moz-focus-inner,
   input&::-moz-focus-inner {
-    // Fixes inconsistent button.btn height in FireFox
-    // Helps with inconsistent input.btn height in FireFox but not completely
+    // Fixes inconsistent button.btn height in Firefox.
+    // Helps with inconsistent input.btn height in Firefox but not completely.
     border: 0;
   }
 
-  // Fixes button and input sizes in IE7
+  // Fixes button and input sizes in IE7.
   .lt-ie8 button&,
   .lt-ie8 input& {
     overflow: visible;
@@ -163,7 +163,7 @@
       unit( 29px / @btn__super-font-size, em );
     font-size: unit( @btn__super-font-size / @base-font-size-px, em );
 
-    // Fixes button and input sizes in IE7
+    // Fixes button and input sizes in IE7.
     .lt-ie8 button&,
     .lt-ie8 input& {
       padding-top: unit( @btn-v-padding-modifier-ie * 15px / @btn__super-font-size, em );

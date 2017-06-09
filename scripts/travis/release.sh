@@ -23,5 +23,8 @@ if [[ -n "$NPM_USERNAME" ]] && [[ -n "$NPM_PASSWORD" ]] && [[ -n "$NPM_EMAIL" ]]
   git config user.email "CFPBot@users.noreply.github.com"
 fi
 
-node scripts/npm/prepublish
-npm publish
+node scripts/npm/prepublish $1
+
+if [[ $1 != "--dryrun" ]]; then
+  npm publish
+fi
