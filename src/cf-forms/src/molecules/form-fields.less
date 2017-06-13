@@ -72,7 +72,8 @@
         }
 
         .a-checkbox {
-            &:focus + .a-label:before {
+            &:focus + .a-label:before,
+            &:hover + .a-label:before {
                 border-color: @input-border__focused;
                 outline: 1px solid @input-border__focused;
             }
@@ -91,7 +92,8 @@
         }
 
         .a-radio {
-            &:focus + .a-label:before {
+            &:focus + .a-label:before,
+            &:hover + .a-label:before {
                 outline: none;
                 border-color: @input-border__focused;
                 box-shadow: 0 0 0 1px @input-border__focused;
