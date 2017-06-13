@@ -8,7 +8,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
-- **cf-forms:** Fixed checkbox/radio borders on hover
+- **cf-forms:** [PATCH] Fixed checkbox/radio borders on hover
 
 ### Removed
 -
