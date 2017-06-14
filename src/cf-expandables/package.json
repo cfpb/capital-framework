@@ -6,7 +6,7 @@
   "less": "src/cf-expandables.less",
   "style": "cf-expandables.css",
   "scripts": {
-    "//": "before releases are tagged.",
+    "//": "This is a convenience script to allow running `npm test` from this dir.",
     "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
   },
   "dependencies": {
