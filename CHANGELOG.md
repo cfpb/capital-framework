@@ -5,13 +5,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-forms:** [PATCH] Fixed checkbox/radio borders on hover
 
 ### Removed
-- 
+-
 
 ## 4.7.1 - 2017-06-09
 
