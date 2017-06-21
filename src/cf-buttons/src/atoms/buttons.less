@@ -58,14 +58,6 @@
     border: 0;
   }
 
-  // Fixes button and input sizes in IE7.
-  .lt-ie8 button&,
-  .lt-ie8 input& {
-    overflow: visible;
-    padding-top: unit( @btn-v-padding-modifier-ie * @btn-v-padding / @btn-font-size, em );
-    padding-bottom: unit( @btn-v-padding-modifier-ie * @btn-v-padding / @btn-font-size, em );
-  }
-
   //
   // Secondary button
   //
@@ -162,13 +154,6 @@
       unit( 11px / @btn__super-font-size, em )
       unit( 29px / @btn__super-font-size, em );
     font-size: unit( @btn__super-font-size / @base-font-size-px, em );
-
-    // Fixes button and input sizes in IE7.
-    .lt-ie8 button&,
-    .lt-ie8 input& {
-      padding-top: unit( @btn-v-padding-modifier-ie * 15px / @btn__super-font-size, em );
-      padding-bottom: unit( @btn-v-padding-modifier-ie * 15px / @btn__super-font-size, em );
-    }
   }
 
   //

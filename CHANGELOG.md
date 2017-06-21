@@ -14,7 +14,10 @@ and `a-btn__icon-on-right` classes referenced in docs to correct
 `a-btn_icon__on-left` and `a-btn_icon__on-right` classes.
 
 ### Removed
--
+- **cf-core:** [MINOR] Remove IE7 and below support.
+- **cf-buttons:** [MINOR] Remove IE7 and below support.
+- **cf-grid:** [MINOR] Remove IE7 and below support.
+- **cf-layout:** [MINOR] Remove IE7 and below support.
 
 ## 4.7.1 - 2017-06-09
 
