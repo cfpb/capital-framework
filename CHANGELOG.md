@@ -9,6 +9,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Changed
 - **cf-forms:** [PATCH] Fixed checkbox/radio borders on hover
+- **cf-pagination:** [PATCH] Fixed outdated `a-btn__icon-on-left`
+and `a-btn__icon-on-right` classes referenced in docs to correct
+`a-btn_icon__on-left` and `a-btn_icon__on-right` classes.
 
 ### Removed
 -
