@@ -477,12 +477,6 @@
             // Remove background color from actual sidebar.
             // It will now be provided by pseudoelement :after sidebar parent.
             background: transparent;
-
-            .lt-ie8 & {
-                // Make sure the sidebar still has a background in IE7.
-                padding-right: @grid_gutter-width;
-                background: @content_sidebar-bg;
-            }
         }
 
         .content_wrapper {

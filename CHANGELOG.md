@@ -14,7 +14,7 @@ and `a-btn__icon-on-right` classes referenced in docs to correct
 `a-btn_icon__on-left` and `a-btn_icon__on-right` classes.
 
 ### Removed
--
+- **capital-framework:** [MINOR] Remove IE7 and below support.
 
 ## 4.7.1 - 2017-06-09
 

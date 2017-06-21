@@ -294,7 +294,7 @@ users to understand the context, add descriptive text with the
 
 #### Inline block
 
-Adds a `.lt-ie8` fallback to hack inline block for Internet Explorer 7 and below.
+*DEPRECATED*. Identical to `display: inline-block`.
 
 ```
 <div class="u-inline-block"></div>
