@@ -18,6 +18,7 @@ and `a-btn__icon-on-right` classes referenced in docs to correct
 - **cf-buttons:** [MINOR] Remove IE7 and below support.
 - **cf-grid:** [MINOR] Remove IE7 and below support.
 - **cf-layout:** [MINOR] Remove IE7 and below support.
+- **cf-typography:** [PATCH] Remove unused a-heading__padded variables and docs.
 
 ## 4.7.1 - 2017-06-09
 

@@ -64,11 +64,6 @@ project by duplicating the variable `@key: value`.
 @heading__icon:             #112e51; // $color-primary-darkest
 @heading__icon__hover:      #205493; // $color-primary-darker
 
-// .a-heading__padded
-@heading__padded:           #046b99; // $color-primary-alt-darkest
-@heading__padded_bg:        #dce4ef; // color-gray-cool-light
-@heading__padded_border:    #046b99; // $color-primary-alt-darkest
-
 // Headers
 
 // .m-slug-header
@@ -84,15 +79,6 @@ project by duplicating the variable `@key: value`.
 @jump-link_bg:              #f1f1f1; // $color-gray-lightest
 @jump-link_border:          #323a45; // $color-gray-dark
 ```
-
-
-## Headings
-
-### Padded heading
-
-<h2 class="a-heading a-heading__padded">
-    Heading
-</h2>
 
 
 ### Heading with icon
