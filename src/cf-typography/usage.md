@@ -584,7 +584,7 @@ you should use the `aside` element.
     </p>
     <footer>
         <cite class="m-pull-quote_citation">
-            - Author Name
+            Author Name
         </cite>
     </footer>
 </aside>
@@ -599,7 +599,7 @@ you should use the `aside` element.
     </p>
     <footer>
         <cite class="m-pull-quote_citation">
-            - Author Name
+            Author Name
         </cite>
     </footer>
 </aside>
@@ -615,7 +615,7 @@ you should use the `aside` element.
     </div>
     <footer>
         <cite class="m-pull-quote_citation">
-            - Author Name
+            Author Name
         </cite>
     </footer>
 </aside>
@@ -629,7 +629,7 @@ you should use the `aside` element.
     </div>
     <footer>
         <cite class="m-pull-quote_citation">
-            - Author Name
+            Author Name
         </cite>
     </footer>
 </aside>

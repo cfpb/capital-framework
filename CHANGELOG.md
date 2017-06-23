@@ -5,7 +5,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-typography:** [PATCH] Add em dash to pull quote citation.
 
 ### Changed
 - **cf-forms:** [PATCH] Fixed checkbox/radio borders on hover
