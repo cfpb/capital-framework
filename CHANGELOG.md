@@ -13,6 +13,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 and `a-btn__icon-on-right` classes referenced in docs to correct
 `a-btn_icon__on-left` and `a-btn_icon__on-right` classes.
 - **cf-forms:** [PATCH] Changed label heading from 5 to 4, per design manual.
+- **cf-typography:** [PATCH] Remove bottom margin from `m-slug-header`.
 
 ### Removed
 - **cf-core:** [MINOR] Remove IE7 and below support.
