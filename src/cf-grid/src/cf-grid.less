@@ -56,11 +56,6 @@
 
   vertical-align: top;
 
-  .lt-ie8 & {
-    // Hack inline-block into submission
-    display: inline;
-  }
-
   // Modifying standard width and padding for prefixed/suffixed columns, if necessary:
   // LESS will now run through four possible child mixins, only one of which will
   // actually be activated, depending on which one's guard conditions are met.
@@ -84,9 +79,6 @@
     @offset: percentage( @prefix / @total );
     width: @width + @offset;
     padding-left: @offset;
-    .lt-ie8 & {
-      padding-left: 0;
-    }
   }
 
   // Run this when only suffix is specified
@@ -94,9 +86,6 @@
     @offset: percentage( @suffix / @total );
     width: @width + @offset;
     padding-right: @offset;
-    .lt-ie8 & {
-      padding-right: 0;
-    }
   }
 
   // Run this when both prefix and suffix are specified
@@ -106,10 +95,6 @@
     width: @width + @left + @right;
     padding-right: @right;
     padding-left: @left;
-    .lt-ie8 & {
-      padding-right: 0;
-      padding-left: 0;
-    }
   }
 
 }
