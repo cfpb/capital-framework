@@ -23,6 +23,10 @@
         display: table;
         clear: both;
     }
+
+    .lt-ie8 & {
+        zoom: 1; // For IE 6/7 (triggers hasLayout)
+    }
 }
 
 //
@@ -44,13 +48,17 @@
     clip: rect(0 0 0 0);
 }
 
-// TODO: Deprecated. Remove in CFv5.
 //
 // Inline block
 //
 
 .u-inline-block {
     display: inline-block;
+
+    .lt-ie8 & {
+        // Hack inline-block into submission
+        display: inline;
+    }
 }
 
 //
