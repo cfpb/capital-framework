@@ -1,15 +1,19 @@
 'use strict';
 
-var gulp = require( 'gulp' );
-var fs = require('fs');
-var plugins = require('gulp-load-plugins')();
-var component = require('./parseComponentName');
-var merge = require('deepmerge');
-var baseManifest = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+const component = require( './parseComponentName' );
+const deepmerge = require( 'deepmerge' );
+const fs = require( 'fs' );
+const gulp = require( 'gulp' );
+const gulpData = require( 'gulp-data' );
+const gulpForeach = require( 'gulp-foreach' );
+const gulpJsonFormat = require( 'gulp-json-format' );
+const gulpRename = require( 'gulp-rename' );
+
+let baseManifest = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 gulp.task( 'copy:components:boilerplate', function() {
   return gulp.src(['./src/' + (component || '*'), '!./src/*.js', '!./src/*.less'])
-    .pipe(plugins.foreach(function(stream, file) {
+    .pipe(gulpForeach(function(stream, file) {
       var component = file.path.split('/').pop();
       gulp.src( './scripts/templates/component-boilerplate/*' )
           .pipe( gulp.dest('./tmp/' + component) );
@@ -19,7 +23,7 @@ gulp.task( 'copy:components:boilerplate', function() {
 
 gulp.task( 'copy:components:source', function() {
   return gulp.src(['./src/' + (component || '*'), '!./src/*.js', '!./src/*.less'])
-    .pipe(plugins.foreach(function(stream, file) {
+    .pipe(gulpForeach(function(stream, file) {
       var component = file.path.split('/').pop(),
           src = [
                   file.path + '/**',
@@ -36,19 +40,19 @@ gulp.task( 'copy:components:source', function() {
 
 gulp.task( 'copy:components:manifest', function() {
   return gulp.src('./src/' + (component || '*') + '/package.json')
-    .pipe(plugins.data(function(file) {
-      // Remove any dependencies from CF's package.json, we don't want components
-      // to have them.
+    .pipe(gulpData(function(file) {
+      // Remove any dependencies from CF's package.json,
+      // we don't want components to have them.
       delete baseManifest.dependencies;
-      var manifest = merge(baseManifest, JSON.parse(String(file.contents)));
+      var manifest = deepmerge(baseManifest, JSON.parse(String(file.contents)));
       // After the merge, remove any scripts and dev deps.
       delete manifest.scripts;
       delete manifest.devDependencies;
       file.contents = new Buffer(JSON.stringify(manifest));
     }))
-    .pipe(plugins.rename(function(path) {
+    .pipe(gulpRename(function(path) {
       path.dirname = component || path.dirname;
     }))
-    .pipe(plugins.jsonFormat(2))
+    .pipe(gulpJsonFormat(2))
     .pipe(gulp.dest('./tmp'));
 } );

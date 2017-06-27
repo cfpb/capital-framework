@@ -1,7 +1,7 @@
 'use strict';
 
-var gulp = require( 'gulp' );
-var plugins = require( 'gulp-load-plugins' )();
+const gulp = require( 'gulp' );
+const gulpEslint = require( 'gulp-eslint' );
 
 /**
  * Generic lint a script source.
@@ -10,8 +10,8 @@ var plugins = require( 'gulp-load-plugins' )();
  */
 function _genericLint( src ) {
   return gulp.src( src, { base: './' } )
-    .pipe( plugins.eslint() )
-    .pipe( plugins.eslint.format() );
+    .pipe( gulpEslint() )
+    .pipe( gulpEslint.format() );
 }
 
 /**

@@ -1,10 +1,10 @@
 'use strict';
 
-var gulp = require('gulp');
-var plugins = require('gulp-load-plugins')();
-var component = require('./parseComponentName');
+const component = require('./parseComponentName');
+const gulp = require('gulp');
+const gulpQunit = require('gulp-qunit');
 
-gulp.task( 'test', function() {
+gulp.task( 'test', () => {
   return gulp.src('./test/' + (component || '*') + '.html')
-  	.pipe(plugins.qunit({timeout: 20}));
+  	.pipe(gulpQunit({timeout: 20}));
 } );

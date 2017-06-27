@@ -1,10 +1,10 @@
 'use strict';
 
-var gulp = require( 'gulp' );
-var plugins = require( 'gulp-load-plugins' )();
-var component = require('./parseComponentName');
+const component = require('./parseComponentName');
+const gulp = require( 'gulp' );
+const gulpRimraf = require( 'gulp-rimraf' );
 
 gulp.task('clean:tmp', function() {
   return gulp.src('./tmp/' + (component || ''), { read: false })
-    .pipe(plugins.rimraf());
+    .pipe(gulpRimraf());
 });
