@@ -5,13 +5,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- **capital-framework:** [PATCH] Re-add changelog that inadvertently disappeared.
+- **capital-framework:** Re-add changelog that inadvertently disappeared.
 
-### Changed
--
-
-### Removed
--
 
 ## 4.8.0 - 2017-06-27
 
