@@ -5,22 +5,23 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- **cf-typography:** [PATCH] Automatically add em dash to pull quote citation.
+- **cf-typography:** Automatically add em dash to pull quote citation.
 
 ### Changed
-- **cf-forms:** [PATCH] Fixed checkbox/radio borders on hover
-- **cf-pagination:** [PATCH] Fixed outdated `a-btn__icon-on-left`
+- **cf-forms:** Fixed checkbox/radio borders on hover
+- **cf-pagination:** Fixed outdated `a-btn__icon-on-left`
 and `a-btn__icon-on-right` classes referenced in docs to correct
 `a-btn_icon__on-left` and `a-btn_icon__on-right` classes.
-- **cf-forms:** [PATCH] Changed label heading from 5 to 4, per design manual.
-- **cf-typography:** [PATCH] Remove bottom margin from `m-slug-header`.
+- **cf-forms:** Changed label heading from 5 to 4, per design manual.
+- **cf-typography:** Remove bottom margin from `m-slug-header`.
 
 ### Removed
-- **cf-core:** [MINOR] Remove IE7 and below support.
-- **cf-buttons:** [MINOR] Remove IE7 and below support.
-- **cf-grid:** [MINOR] Remove IE7 and below support.
-- **cf-layout:** [MINOR] Remove IE7 and below support.
-- **cf-typography:** [PATCH] Remove unused a-heading__padded variables and docs.
+- **cf-core:** Remove IE7 and below support.
+- **cf-buttons:** Remove IE7 and below support.
+- **cf-grid:** Remove IE7 and below support.
+- **cf-layout:** Remove IE7 and below support.
+- **cf-typography:** Remove unused a-heading__padded variables and docs.
+
 
 ## 4.7.1 - 2017-06-09
 
