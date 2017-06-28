@@ -16,6 +16,9 @@ through `gulp-load-plugins`.
 ### Removed
 - **capital-framework:** [PATCH] Removes `gulp-load-plugins`, and unused
 `gulp-debug`, `gulp-if`, `gulp-tap`, `gulp-template`.
+- **capital-framework:** [PATCH] Updates `gulp-autoprefixer` to `4.0.0`.
+- **capital-framework:** [PATCH] Updates `gulp-uglify` to `3.0.0`.
+
 
 ## 4.8.1 - 2017-06-27
 
