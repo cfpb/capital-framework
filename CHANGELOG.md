@@ -5,13 +5,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **capital-framework:** [PATCH] Imports gulp plugins directly instead of
+through `gulp-load-plugins`.
+- **capital-framework:** [PATCH] Updates some gulp task parts to ES6 syntax.
+- **capital-framework:** [PATCH] Drops IE7 support setting in autoprefixer task.
 
 ### Removed
-- 
+- **capital-framework:** [PATCH] Removes `gulp-load-plugins`, and unused
+`gulp-debug`, `gulp-if`, `gulp-tap`, `gulp-template`.
 
 ## 4.8.1 - 2017-06-27
 
