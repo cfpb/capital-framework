@@ -6,6 +6,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Added
 - **capital-framework:** [PATCH] Added lockfile to the project
+- **all components:** [PATCH] Added lockfile to the component
 
 ### Changed
 - **capital-framework:** [PATCH] Imports gulp plugins directly instead of
