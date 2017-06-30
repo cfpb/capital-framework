@@ -14,6 +14,7 @@ through `gulp-load-plugins`.
 - **capital-framework:** [PATCH] Drops IE7 support setting in autoprefixer task.
 - **cf-typography:** [PATCH] Updates `category-slug` to `a-heading` in docs.
 - **cf-layout:** [PATCH] Updates `category-slug` to `a-heading` in docs.
+- **cf-forms:** [PATCH] Convert fixed pixel units to ems.
 
 ### Removed
 - **capital-framework:** [PATCH] Removes `gulp-load-plugins`, and unused
