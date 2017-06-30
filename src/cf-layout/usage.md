@@ -1298,7 +1298,7 @@ the available space.
 <div class="block block__border block__flush-sides">
     <section class="o-featured-content-module">
         <div class="o-featured-content-module_text">
-            <div class="category-slug">
+            <div class="a-heading a-heading__icon">
                 <span class="o-featured-content-module_icon
                              cf-icon
                              cf-icon-speech-bubble"></span>
@@ -1325,7 +1325,7 @@ the available space.
 <div class="block block__border block__flush-sides">
     <section class="o-featured-content-module">
         <div class="o-featured-content-module_text">
-            <div class="category-slug">
+            <div class="a-heading a-heading__icon">
                 <span class="o-featured-content-module_icon
                              cf-icon
                              cf-icon-speech-bubble"></span>
@@ -1360,7 +1360,7 @@ side so that the copyright information is displayed.
     <section class="o-featured-content-module
                     o-featured-content-module__right">
         <div class="o-featured-content-module_text">
-            <div class="category-slug">
+            <div class="a-heading a-heading__icon">
                 <span class="o-featured-content-module_icon
                              cf-icon
                              cf-icon-speech-bubble"></span>
@@ -1388,7 +1388,7 @@ side so that the copyright information is displayed.
     <section class="o-featured-content-module
                     o-featured-content-module__right">
         <div class="o-featured-content-module_text">
-            <div class="category-slug">
+            <div class="a-heading a-heading__icon">
                 <span class="o-featured-content-module_icon
                              cf-icon
                              cf-icon-speech-bubble"></span>
@@ -1424,7 +1424,7 @@ generally remains centered.
     <section class="o-featured-content-module
                     o-featured-content-module__center">
         <div class="o-featured-content-module_text">
-            <div class="category-slug">
+            <div class="a-heading a-heading__icon">
                 <span class="o-featured-content-module_icon
                              cf-icon
                              cf-icon-speech-bubble"></span>
@@ -1452,7 +1452,7 @@ generally remains centered.
     <section class="o-featured-content-module
                     o-featured-content-module__center">
         <div class="o-featured-content-module_text">
-            <div class="category-slug">
+            <div class="a-heading a-heading__icon">
                 <span class="o-featured-content-module_icon
                              cf-icon
                              cf-icon-speech-bubble"></span>

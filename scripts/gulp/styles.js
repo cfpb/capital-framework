@@ -1,8 +1,12 @@
 'use strict';
 
-var gulp = require('gulp');
-var plugins = require('gulp-load-plugins')();
-var component = require('./parseComponentName');
+const component = require('./parseComponentName');
+const gulp = require('gulp');
+const gulpAutoprefixer = require( 'gulp-autoprefixer' );
+const gulpCssmin = require( 'gulp-cssmin' );
+const gulpIgnore = require( 'gulp-ignore' );
+const gulpLess = require( 'gulp-less' );
+const gulpRename = require( 'gulp-rename' );
 
 /**
  * Compile the master capital-framework.less file.
@@ -10,22 +14,22 @@ var component = require('./parseComponentName');
  */
 function stylesCf() {
   return gulp.src('./src/capital-framework-with-grid.less')
-    .pipe(plugins.less({
+    .pipe(gulpLess({
       paths: ['node_modules/cf-*/src/']
     }))
-    .pipe( plugins.autoprefixer( {
+    .pipe( gulpAutoprefixer( {
       browsers: [ 'last 2 version',
-                  'not ie < 7',
+                  'not ie < 8',
                   'android 4',
                   'BlackBerry 7',
                   'BlackBerry 10' ]
     } ) )
-    .pipe(plugins.rename({
+    .pipe(gulpRename({
       basename: 'capital-framework'
     }))
     .pipe(gulp.dest('./dist'))
-    .pipe(plugins.cssmin())
-    .pipe(plugins.rename({
+    .pipe(gulpCssmin())
+    .pipe(gulpRename({
       suffix: '.min'
     }))
     .pipe(gulp.dest('./dist'));
@@ -38,31 +42,31 @@ function stylesCf() {
  */
 function stylesComponents() {
   return gulp.src('./src/' + (component || '*') + '/src/*.less')
-    .pipe(plugins.ignore.exclude(function(vf) {
+    .pipe(gulpIgnore.exclude( (vf) => {
       // Exclude Less files that don't share the same name as the directory
       // they're in. This filters out things like cf-vars.less but still
       // includes cf-core.less.
       var matches = vf.path.match(/\/([\w-]*)\/src\/([\w-]*)\.less/);
       // We also exclude cf-grid. It needs its own special task. See below.
       return matches[2] === 'cf-grid' || matches[1] !== matches[2];
-    }))
-    .pipe(plugins.less({
+    } ))
+    .pipe( gulpLess({
       paths: ['node_modules/cf-*/src/']
     }))
-    .pipe( plugins.autoprefixer( {
+    .pipe( gulpAutoprefixer( {
       browsers: [ 'last 2 version',
-                  'not ie < 7',
+                  'not ie < 8',
                   'android 4',
                   'BlackBerry 7',
                   'BlackBerry 10' ]
     } ) )
-    .pipe(plugins.rename(function (path) {
+    .pipe(gulpRename( (path) => {
       path.dirname = component || path.dirname;
       path.dirname = path.dirname.replace('/src','');
-    }))
+    } ))
     .pipe(gulp.dest('./tmp'))
-    .pipe(plugins.cssmin())
-    .pipe(plugins.rename({
+    .pipe(gulpCssmin())
+    .pipe(gulpRename({
       suffix: '.min'
     }))
     .pipe(gulp.dest('./tmp'));
@@ -74,22 +78,22 @@ function stylesComponents() {
  */
 function stylesGrid() {
   return gulp.src('./src/cf-grid/src-generated/*.less')
-    .pipe(plugins.less({
+    .pipe(gulpLess({
       paths: ['node_modules/cf-*/src/']
     }))
-    .pipe( plugins.autoprefixer( {
+    .pipe( gulpAutoprefixer( {
       browsers: [ 'last 2 version',
-                  'not ie < 7',
+                  'not ie < 8',
                   'android 4',
                   'BlackBerry 7',
                   'BlackBerry 10' ]
     } ) )
-    .pipe(plugins.rename({
+    .pipe(gulpRename({
       basename: 'cf-grid'
     }))
     .pipe(gulp.dest('./tmp/cf-grid'))
-    .pipe(plugins.cssmin())
-    .pipe(plugins.rename({
+    .pipe(gulpCssmin())
+    .pipe(gulpRename({
       suffix: '.min'
     }))
     .pipe(gulp.dest('./tmp/cf-grid'));

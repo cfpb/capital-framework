@@ -1,14 +1,11 @@
 {
   "name": "cf-forms",
-  "version": "4.3.1",
+  "version": "4.3.2",
   "description": "Capital Framework form fields",
   "less": "src/cf-forms.less",
   "style": "cf-forms.css",
   "scripts": {
-    "//": "This is a convenience script so that if you run `npm test` from this dir",
-    "//": "npm won't return  a 'no tests' error. Instead it'll check if you're in",
-    "//": "the larger capital-framework dir and execute those tests. It's removed",
-    "//": "before releases are tagged.",
+    "//": "This is a convenience script to allow running `npm test` from this dir.",
     "test": "case $(pwd) in */cf/src/*) cd ../.. && npm test;; esac"
   },
   "dependencies": {

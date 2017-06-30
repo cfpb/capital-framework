@@ -122,10 +122,10 @@ readers (see Meta Header below).
 ### Meta header
 
 Note that the example shows `.m-meta-header_left` using the `.a-heading__icon`
-pattern and `.meta-header_right` using the `.a-date` pattern but you could use
+pattern and `.m-meta-header_right` using the `.a-date` pattern but you could use
 other patterns in place of them. Or you can even swap them so that date is
-attached to `.meta-header_left` and `.category-slug` is attached to
-`.meta-header_right`.
+attached to `.m-meta-header_left` and `.a-heading.a-heading__icon` is attached to
+`.m-meta-header_right`.
 
 #### Default meta header
 

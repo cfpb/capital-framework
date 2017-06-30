@@ -5,13 +5,23 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+- **all components:** Added lockfile to the component
+- **capital-framework:** Added lockfile to the project
 
 ### Changed
-- 
+- **capital-framework:** Imports gulp plugins directly instead of
+through `gulp-load-plugins`.
+- **capital-framework:** Updates some gulp task parts to ES6 syntax.
+- **capital-framework:** Drops IE7 support setting in autoprefixer task.
+- **cf-typography:** Updates `category-slug` to `a-heading` in docs.
+- **cf-layout:** Updates `category-slug` to `a-heading` in docs.
 
 ### Removed
-- 
+- **capital-framework:** Removes `gulp-load-plugins`, and unused
+`gulp-debug`, `gulp-if`, `gulp-tap`, `gulp-template`.
+- **capital-framework:** Updates `gulp-autoprefixer` to `4.0.0`.
+- **capital-framework:** Updates `gulp-uglify` to `3.0.0`.
+
 
 ## 4.8.1 - 2017-06-27
 
