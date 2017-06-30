@@ -12,6 +12,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 through `gulp-load-plugins`.
 - **capital-framework:** [PATCH] Updates some gulp task parts to ES6 syntax.
 - **capital-framework:** [PATCH] Drops IE7 support setting in autoprefixer task.
+- **cf-typography:** [PATCH] Updates `category-slug` to `a-heading` in docs.
+- **cf-layout:** [PATCH] Updates `category-slug` to `a-heading` in docs.
 
 ### Removed
 - **capital-framework:** [PATCH] Removes `gulp-load-plugins`, and unused
