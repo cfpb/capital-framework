@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "4"
+  - "5"
 before_script:
   - npm config set spin false --global
   - npm install -g gulp
