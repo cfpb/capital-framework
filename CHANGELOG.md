@@ -5,6 +5,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.8.2 - 2017-07-03
+
+### Added
 - **all components:** Added lockfile to the component
 - **capital-framework:** Added lockfile to the project
 
