@@ -59,7 +59,7 @@ include an `id` on a wrapper of the paginated content
 
 <nav class="m-pagination" role="navigation" aria-label="Pagination">
     <a class="a-btn
-              a-btn__icon-on-left
+              a-btn_icon__on-left
               cf-icon
               cf-icon-left
               cf-icon__before
@@ -68,7 +68,7 @@ include an `id` on a wrapper of the paginated content
         Newer
     </a>
     <a class="a-btn
-              a-btn__icon-on-right
+              a-btn_icon__on-right
               cf-icon
               cf-icon-right
               cf-icon__after
@@ -110,7 +110,7 @@ include an `id` on a wrapper of the paginated content
 
 <nav class="m-pagination" role="navigation" aria-label="Pagination">
     <a class="a-btn
-              a-btn__icon-on-left
+              a-btn_icon__on-left
               cf-icon
               cf-icon-left
               cf-icon__before
@@ -119,7 +119,7 @@ include an `id` on a wrapper of the paginated content
         Newer
     </a>
     <a class="a-btn
-              a-btn__icon-on-right
+              a-btn_icon__on-right
               cf-icon
               cf-icon-right
               cf-icon__after
@@ -166,7 +166,7 @@ For example:
 
 <nav class="m-pagination" role="navigation" aria-label="Pagination">
     <a class="a-btn
-              a-btn__icon-on-left
+              a-btn_icon__on-left
               a-btn__disabled
               cf-icon
               cf-icon-left
@@ -175,7 +175,7 @@ For example:
         Newer
     </a>
     <a class="a-btn
-              a-btn__icon-on-right
+              a-btn_icon__on-right
               cf-icon
               cf-icon-right
               cf-icon__after
@@ -213,7 +213,7 @@ For example:
 ```
 <nav class="m-pagination" role="navigation" aria-label="Pagination">
     <a class="a-btn
-              a-btn__icon-on-left
+              a-btn_icon__on-left
               a-btn__disabled
               cf-icon
               cf-icon-left
@@ -222,7 +222,7 @@ For example:
         Newer
     </a>
     <a class="a-btn
-              a-btn__icon-on-right
+              a-btn_icon__on-right
               cf-icon
               cf-icon-right
               cf-icon__after

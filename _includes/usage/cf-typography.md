@@ -64,11 +64,6 @@ project by duplicating the variable `@key: value`.
 @heading__icon:             #112e51; // $color-primary-darkest
 @heading__icon__hover:      #205493; // $color-primary-darker
 
-// .a-heading__padded
-@heading__padded:           #046b99; // $color-primary-alt-darkest
-@heading__padded_bg:        #dce4ef; // color-gray-cool-light
-@heading__padded_border:    #046b99; // $color-primary-alt-darkest
-
 // Headers
 
 // .m-slug-header
@@ -84,15 +79,6 @@ project by duplicating the variable `@key: value`.
 @jump-link_bg:              #f1f1f1; // $color-gray-lightest
 @jump-link_border:          #323a45; // $color-gray-dark
 ```
-
-
-## Headings
-
-### Padded heading
-
-<h2 class="a-heading a-heading__padded">
-    Heading
-</h2>
 
 
 ### Heading with icon
@@ -136,10 +122,10 @@ readers (see Meta Header below).
 ### Meta header
 
 Note that the example shows `.m-meta-header_left` using the `.a-heading__icon`
-pattern and `.meta-header_right` using the `.a-date` pattern but you could use
+pattern and `.m-meta-header_right` using the `.a-date` pattern but you could use
 other patterns in place of them. Or you can even swap them so that date is
-attached to `.meta-header_left` and `.category-slug` is attached to
-`.meta-header_right`.
+attached to `.m-meta-header_left` and `.a-heading.a-heading__icon` is attached to
+`.m-meta-header_right`.
 
 #### Default meta header
 
@@ -598,7 +584,7 @@ you should use the `aside` element.
     </p>
     <footer>
         <cite class="m-pull-quote_citation">
-            - Author Name
+            Author Name
         </cite>
     </footer>
 </aside>
@@ -613,7 +599,7 @@ you should use the `aside` element.
     </p>
     <footer>
         <cite class="m-pull-quote_citation">
-            - Author Name
+            Author Name
         </cite>
     </footer>
 </aside>
@@ -629,7 +615,7 @@ you should use the `aside` element.
     </div>
     <footer>
         <cite class="m-pull-quote_citation">
-            - Author Name
+            Author Name
         </cite>
     </footer>
 </aside>
@@ -643,7 +629,7 @@ you should use the `aside` element.
     </div>
     <footer>
         <cite class="m-pull-quote_citation">
-            - Author Name
+            Author Name
         </cite>
     </footer>
 </aside>
