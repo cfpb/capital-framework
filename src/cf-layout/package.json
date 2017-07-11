@@ -1,14 +1,11 @@
 {
   "name": "cf-layout",
-  "version": "4.4.0",
+  "version": "4.4.1",
   "description": "Capital Framework layouts",
   "less": "src/cf-layout.less",
   "style": "cf-layout.css",
   "scripts": {
-    "//": "This is a convenience script so that if you run `npm test` from this dir",
-    "//": "npm won't return  a 'no tests' error. Instead it'll check if you're in",
-    "//": "the larger capital-framework dir and execute those tests. It's removed",
-    "//": "before releases are tagged.",
+    "//": "This is a convenience script to allow running `npm test` from this dir.",
     "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
   },
   "dependencies": {
