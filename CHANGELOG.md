@@ -8,7 +8,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - 
 
 ### Changed
-- 
+- **cf-forms:** [PATCH] Convert fixed pixel units to ems.
 
 ### Removed
 - 
