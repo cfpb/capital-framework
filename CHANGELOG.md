@@ -5,13 +5,15 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
 - **cf-forms:** [PATCH] Convert fixed pixel units to ems.
+- **cf-expandables:** [PATCH] Added example in docs for intro content.
+Removed unused data-attribute from docs.
 
 ### Removed
-- 
+-
 
 ## 4.8.2 - 2017-07-03
 
