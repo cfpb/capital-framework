@@ -30,7 +30,8 @@ dependencies of this component.
   - [Default state - open on load](#default-state-open-on-load)
   - [Barebones example](#barebones-expandable)
 - [Expandable groups](#expandable-groups)
-  - [Accordion style group](#accordion-style-group)
+  - [Intro-style expandable group](#intro-style-expandable-group)
+  - [Accordion-style expandable group](#accordion-style-expandable-group)
 
 
 ## Variables
@@ -516,13 +517,21 @@ In this barebones example there are no visual styles.
 </div>
 ```
 
-### Accordion-style group
+### Intro-style expandable group
 
-Accordions can only show one open expandable at a time.
-Add the `data-accordion="true"` attribute to the expandable group to activate
-the accordion mode.
+Expandable groups can contain a top horizontal rule,
+a heading, and an introductory paragraph.
 
-<div class="o-expandable-group o-expandable-group__accordion" >
+<div class="o-expandable-group">
+    <div class="a-rule-break"></div>
+    <h3>Expandable Group Header</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+        temporibus magnam debitis quidem. Ducimus ratione
+        corporis nesciunt earum vel est quaerat blanditiis
+        dolore ipsa?
+    </p>
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
@@ -607,7 +616,192 @@ the accordion mode.
 </div>
 
 ```
-<div class="o-expandable-group o-expandable-group__accordion" >
+<div class="o-expandable-group">
+    <div class="a-rule-break"></div>
+    <h3>Expandable Group Header</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+        temporibus magnam debitis quidem. Ducimus ratione
+        corporis nesciunt earum vel est quaerat blanditiis
+        dolore ipsa?
+    </p>
+    <div class="o-expandable o-expandable__padded">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
+            <span class="o-expandable_header-left o-expandable_label">
+                Expandable Header 1
+            </span>
+            <span class="o-expandable_header-right o-expandable_link">
+                <span class="o-expandable_cue o-expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="o-expandable_cue o-expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="o-expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+    <div class="o-expandable o-expandable__padded">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
+            <span class="o-expandable_header-left o-expandable_label">
+                Expandable Header 2
+            </span>
+            <span class="o-expandable_header-right o-expandable_link">
+                <span class="o-expandable_cue o-expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="o-expandable_cue o-expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="o-expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+    <div class="o-expandable o-expandable__padded">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
+            <span class="o-expandable_header-left o-expandable_label">
+                Expandable Header 3
+            </span>
+            <span class="o-expandable_header-right o-expandable_link">
+                <span class="o-expandable_cue o-expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="o-expandable_cue o-expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="o-expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+</div>
+```
+
+### Accordion-style expandable group
+
+Accordions can only show one open expandable at a time.
+Add the `o-expandable-group__accordion` class to the expandable group to activate
+the accordion mode.
+
+<div class="o-expandable-group o-expandable-group__accordion">
+    <div class="o-expandable o-expandable__padded">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
+            <span class="o-expandable_header-left o-expandable_label">
+                Expandable Header 1
+            </span>
+            <span class="o-expandable_header-right o-expandable_link">
+                <span class="o-expandable_cue o-expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="o-expandable_cue o-expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="o-expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+    <div class="o-expandable o-expandable__padded">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
+            <span class="o-expandable_header-left o-expandable_label">
+                Expandable Header 2
+            </span>
+            <span class="o-expandable_header-right o-expandable_link">
+                <span class="o-expandable_cue o-expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="o-expandable_cue o-expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="o-expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+    <div class="o-expandable o-expandable__padded">
+        <button class="o-expandable_header o-expandable_target"
+                title="Expand content">
+            <span class="o-expandable_header-left o-expandable_label">
+                Expandable Header 3
+            </span>
+            <span class="o-expandable_header-right o-expandable_link">
+                <span class="o-expandable_cue o-expandable_cue-open">
+                    Show
+                    <span class="cf-icon cf-icon-plus-round"></span>
+                </span>
+                <span class="o-expandable_cue o-expandable_cue-close">
+                    Hide
+                    <span class="cf-icon cf-icon-minus-round"></span>
+                </span>
+            </span>
+        </button>
+        <div class="o-expandable_content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Neque ipsa voluptatibus soluta nobis unde quisquam
+                temporibus magnam debitis quidem. Ducimus ratione
+                corporis nesciunt earum vel est quaerat blanditiis
+                dolore ipsa?
+            </p>
+        </div>
+    </div>
+</div>
+
+```
+<div class="o-expandable-group o-expandable-group__accordion">
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
