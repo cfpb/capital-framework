@@ -5,13 +5,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-forms:** [PATCH] Fix the spacing and alignment of radio and checkbox inputs
 
 ### Removed
-- 
+-
 
 ## 4.8.2 - 2017-07-03
 
