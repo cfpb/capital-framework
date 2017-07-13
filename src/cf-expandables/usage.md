@@ -189,11 +189,11 @@ The following combination is our recommended go-to expandable pattern.
         <span class="o-expandable_header-right o-expandable_link">
             <span class="o-expandable_cue o-expandable_cue-open">
                 Show
-                <span class="cf-icon cf-icon-plus-round"></span>
+                {% include icons/plus-round.svg %}
             </span>
             <span class="o-expandable_cue o-expandable_cue-close">
                 Hide
-                <span class="cf-icon cf-icon-minus-round"></span>
+                {% include icons/minus-round.svg %}
             </span>
         </span>
     </button>
@@ -218,11 +218,11 @@ The following combination is our recommended go-to expandable pattern.
         <span class="o-expandable_header-right o-expandable_link">
             <span class="o-expandable_cue o-expandable_cue-open">
                 Show
-                <span class="cf-icon cf-icon-plus-round"></span>
+                {% raw %}{% include icons/plus-round.svg %}{% endraw %}
             </span>
             <span class="o-expandable_cue o-expandable_cue-close">
                 Hide
-                <span class="cf-icon cf-icon-minus-round"></span>
+                {% raw %}{% include icons/minus-round.svg %}{% endraw %}
             </span>
         </span>
     </button>
@@ -249,11 +249,11 @@ The following combination is our recommended go-to expandable pattern.
         <span class="o-expandable_header-right o-expandable_link">
             <span class="o-expandable_cue o-expandable_cue-open">
                 Show
-                <span class="cf-icon cf-icon-plus-round"></span>
+                {% include icons/plus-round.svg %}
             </span>
             <span class="o-expandable_cue o-expandable_cue-close">
                 Hide
-                <span class="cf-icon cf-icon-minus-round"></span>
+                {% include icons/minus-round.svg %}
             </span>
         </span>
     </button>
@@ -278,11 +278,11 @@ The following combination is our recommended go-to expandable pattern.
         <span class="o-expandable_header-right o-expandable_link">
             <span class="o-expandable_cue o-expandable_cue-open">
                 Show
-                <span class="cf-icon cf-icon-plus-round"></span>
+                {% raw %}{% include icons/plus-round.svg %}{% endraw %}
             </span>
             <span class="o-expandable_cue o-expandable_cue-close">
                 Hide
-                <span class="cf-icon cf-icon-minus-round"></span>
+                {% raw %}{% include icons/minus-round.svg %}{% endraw %}
             </span>
         </span>
     </button>
@@ -360,11 +360,11 @@ In this barebones example there are no visual styles.
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
-                    <span class="cf-icon cf-icon-plus-round"></span>
+                    {% include icons/plus-round.svg %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
                     Hide
-                    <span class="cf-icon cf-icon-minus-round"></span>
+                    {% include icons/minus-round.svg %}
                 </span>
             </span>
         </button>
@@ -387,11 +387,11 @@ In this barebones example there are no visual styles.
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
-                    <span class="cf-icon cf-icon-plus-round"></span>
+                    {% include icons/plus-round.svg %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
                     Hide
-                    <span class="cf-icon cf-icon-minus-round"></span>
+                    {% include icons/minus-round.svg %}
                 </span>
             </span>
         </button>
@@ -414,11 +414,11 @@ In this barebones example there are no visual styles.
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
-                    <span class="cf-icon cf-icon-plus-round"></span>
+                    {% include icons/plus-round.svg %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
                     Hide
-                    <span class="cf-icon cf-icon-minus-round"></span>
+                    {% include icons/minus-round.svg %}
                 </span>
             </span>
         </button>
@@ -445,11 +445,11 @@ In this barebones example there are no visual styles.
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
-                    <span class="cf-icon cf-icon-plus-round"></span>
+                    {% raw %}{% include icons/plus-round.svg %}{% endraw %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
                     Hide
-                    <span class="cf-icon cf-icon-minus-round"></span>
+                    {% raw %}{% include icons/minus-round.svg %}{% endraw %}
                 </span>
             </span>
         </button>
@@ -472,11 +472,11 @@ In this barebones example there are no visual styles.
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
-                    <span class="cf-icon cf-icon-plus-round"></span>
+                    {% raw %}{% include icons/plus-round.svg %}{% endraw %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
                     Hide
-                    <span class="cf-icon cf-icon-minus-round"></span>
+                    {% raw %}{% include icons/minus-round.svg %}{% endraw %}
                 </span>
             </span>
         </button>
@@ -499,11 +499,11 @@ In this barebones example there are no visual styles.
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
-                    <span class="cf-icon cf-icon-plus-round"></span>
+                    {% raw %}{% include icons/plus-round.svg %}{% endraw %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
                     Hide
-                    <span class="cf-icon cf-icon-minus-round"></span>
+                    {% raw %}{% include icons/minus-round.svg %}{% endraw %}
                 </span>
             </span>
         </button>
@@ -536,11 +536,11 @@ to activate the accordion mode.
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
-                    <span class="cf-icon cf-icon-plus-round"></span>
+                    {% include icons/plus-round.svg %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
                     Hide
-                    <span class="cf-icon cf-icon-minus-round"></span>
+                    {% include icons/minus-round.svg %}
                 </span>
             </span>
         </button>
@@ -563,11 +563,11 @@ to activate the accordion mode.
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
-                    <span class="cf-icon cf-icon-plus-round"></span>
+                    {% include icons/plus-round.svg %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
                     Hide
-                    <span class="cf-icon cf-icon-minus-round"></span>
+                    {% include icons/minus-round.svg %}
                 </span>
             </span>
         </button>
@@ -590,11 +590,11 @@ to activate the accordion mode.
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
-                    <span class="cf-icon cf-icon-plus-round"></span>
+                    {% include icons/plus-round.svg %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
                     Hide
-                    <span class="cf-icon cf-icon-minus-round"></span>
+                    {% include icons/minus-round.svg %}
                 </span>
             </span>
         </button>
@@ -621,11 +621,11 @@ to activate the accordion mode.
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
-                    <span class="cf-icon cf-icon-plus-round"></span>
+                    {% raw %}{% include icons/plus-round.svg %}{% endraw %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
                     Hide
-                    <span class="cf-icon cf-icon-minus-round"></span>
+                    {% raw %}{% include icons/minus-round.svg %}{% endraw %}
                 </span>
             </span>
         </button>
@@ -648,11 +648,11 @@ to activate the accordion mode.
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
-                    <span class="cf-icon cf-icon-plus-round"></span>
+                    {% raw %}{% include icons/plus-round.svg %}{% endraw %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
                     Hide
-                    <span class="cf-icon cf-icon-minus-round"></span>
+                    {% raw %}{% include icons/minus-round.svg %}{% endraw %}
                 </span>
             </span>
         </button>
@@ -675,11 +675,11 @@ to activate the accordion mode.
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
-                    <span class="cf-icon cf-icon-plus-round"></span>
+                    {% raw %}{% include icons/plus-round.svg %}{% endraw %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
                     Hide
-                    <span class="cf-icon cf-icon-minus-round"></span>
+                    {% raw %}{% include icons/minus-round.svg %}{% endraw %}
                 </span>
             </span>
         </button>

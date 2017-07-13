@@ -1,19 +1,27 @@
 @import '../atoms/buttons.less';
 
 // Icon locations
+// TODO: Replace magic numbers with calculations based off of the
+// button padding size
+
+.lt-ie9 .a-btn_icon__on-left,
+.lt-ie9 .a-btn_icon__on-right {
+    // IE 8 doesn't support currentColor, hide icons and let the paired
+    // text stand on it's own
+    display: none;
+}
 
 .a-btn_icon__on-left {
-    padding-right: unit( 10.5px / @btn-font-size, em );
+    padding-right: unit( 11px / @btn-font-size, em );
     border-right: 1px solid mix( @btn-bg, @btn-text, 50% );
     margin-right: unit( 7px / @btn-font-size, em );
 }
 
 .a-btn_icon__on-right {
-    padding-left: unit( 10.5px / @btn-font-size, em );
+    padding-left: unit( 11px / @btn-font-size, em );
     border-left: 1px solid mix( @btn-bg, @btn-text, 50% );
     margin-left: unit( 7px / @btn-font-size, em );
 }
-
 
 .a-btn_icon {
     .a-btn__secondary & {
