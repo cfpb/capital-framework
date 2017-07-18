@@ -150,6 +150,34 @@ Inputs should always be paired with a `label` for accessibility reasons.
 <textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
 ```
 
+### Full width inputs
+
+<div class="m-form-field">
+    <label class="a-label" for="text-input-example">A text input</label>
+    <input class="a-text-input a-text-input__full"
+           type="text"
+           id="text-input example"
+           value="Lorem ipsum">
+
+    <label class="a-label" for="textarea-example">A textarea input</label>
+    <textarea class="a-text-input a-text-input__full"
+              id="textarea-example">Lorem Ipsum</textarea>
+</div>
+
+```
+<div class="m-form-field">
+    <label class="a-label" for="text-input-example">A text input</label>
+    <input class="a-text-input a-text-input__full"
+           type="text"
+           id="text-input example"
+           value="Lorem ipsum">
+
+    <label class="a-label" for="textarea-example">A textarea input</label>
+    <textarea class="a-text-input a-text-input__full"
+              id="textarea-example">Lorem Ipsum</textarea>
+</div>
+```
+
 ### Basic checkboxes
 
 <div class="m-form-field m-form-field__checkbox">
