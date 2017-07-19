@@ -4,15 +4,10 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
-- **cf-forms:** [PATCH] Convert fixed pixel units to ems.
-- **cf-layout:** [PATCH] Fix the background size of overlay hero images
+- **cf-forms:** Convert fixed pixel units to ems.
+- **cf-layout:** Fix the background size of overlay hero images
 
-### Removed
--
 
 ## 4.8.2 - 2017-07-03
 
