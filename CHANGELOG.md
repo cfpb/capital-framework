@@ -5,13 +5,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-buttons:** Convert button links to actual buttons.
 
 ### Removed
-- 
+-
 
 ## 4.8.2 - 2017-07-03
 
