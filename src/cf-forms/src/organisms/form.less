@@ -1,6 +1,6 @@
 .o-form {
     &_group {
-        margin-bottom: 30px;
+        margin-bottom: unit( 30px / @base-font-size-px, em );
     }
 
     &_fieldset {
@@ -9,8 +9,8 @@
         margin: 0;
         padding: 0;
 
-        .m-field + .m-field {
-            margin-top: 10px;
+        .m-form-field + .m-form-field {
+            margin-top: unit( 10px / @base-font-size-px, em );
         }
     }
 

@@ -5,7 +5,7 @@
     }
 
     .a-label + .a-text-input {
-        margin-top: 5px;
+        margin-top: unit( 5px / @base-font-size-px, em );
     }
 
     &__checkbox,
@@ -41,8 +41,8 @@
             .u-visually-hidden();
 
             .lt-ie9 & {
-                height: 20px;
-                width: 20px;
+                height: unit( 20px / @base-font-size-px, em );
+                width: unit( 20px / @base-font-size-px, em );
                 border: 0;
                 float: left;
                 margin: 1em;
