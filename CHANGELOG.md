@@ -4,69 +4,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
-- 
-
 ### Changed
-- 
+- **capital-framework**: Clean up Travis CI publishing steps.
 
-### Removed
-- 
-
-## 4.8.3 - 2017-07-24
-
-### Added
-- 
-
-### Changed
-- 
-
-### Removed
-- 
-
-## 4.8.3 - 2017-07-24
-
-### Added
-- 
-
-### Changed
-- 
-
-### Removed
-- 
-
-## 4.8.3 - 2017-07-24
-
-### Added
-- 
-
-### Changed
-- 
-
-### Removed
-- 
-
-## 4.8.3 - 2017-07-24
-
-### Added
-- 
-
-### Changed
-- 
-
-### Removed
-- 
-
-## 4.8.3 - 2017-07-24
-
-### Added
-- 
-
-### Changed
-- 
-
-### Removed
-- 
 
 ## 4.8.3 - 2017-07-24
 
