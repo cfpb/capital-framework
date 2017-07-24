@@ -1,7 +1,7 @@
 var exec = require('child-process-promise').exec;
 
 function publish(component) {
-  return exec('npm publish', {
+  return exec('npm whoami && npm publish', {
     cwd: './tmp/' + component
   });
 }
