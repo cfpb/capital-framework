@@ -6,6 +6,7 @@ before_install:
   - npm whoami
 before_script:
   - npm config set spin false --global
+  - npm config set package-lock false
   - npm install -g gulp
   - npm run cf-link
   - gulp build
