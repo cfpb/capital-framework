@@ -1,6 +1,6 @@
 {
   "name": "capital-framework",
-  "version": "4.8.4",
+  "version": "4.8.5",
   "description": "CFPB's UI framework",
   "main": "src/capital-framework.js",
   "less": "src/capital-framework.less",
