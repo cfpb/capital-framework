@@ -1,8 +1,9 @@
 language: node_js
 node_js:
-  - "5"
+  - "8"
 before_install:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
+  - npm whoami
 before_script:
   - npm config set spin false --global
   - npm install -g gulp
@@ -10,12 +11,10 @@ before_script:
   - gulp build
 after_success:
   - ./scripts/travis/release.sh
+  - npm whoami
 env:
   global:
   - GH_PROD_BRANCH=master
   - GH_DEV_BRANCH=canary
-  - secure: d+i41c7frpGoSpo6WFwuDz5xgIHz2f5F40SArZUWdZw1+SUtWA+xQm474FY2Fm6QyJxtzRfrDytFap428WptZJryjDkfzuWMqNqw/BR0abeP0htxJ9SOFWqsdwt4d0vWB8JWUVFOSTkOg83cXdnZQt+Lzwgp2uMGc7bCC5/7zu4=
-  - secure: NcthmXnpuSzj1nBqjTbraX9l0S/+1Wsj2Y737FI43vFthoqIFfrY4pgmIC2HT46r365e631lW3TRwPQp6QpqSK8e/1lH0nSkPWmyXIAL+y3S6OTPLthtLYNv9MBQVOqjPQu5z44i161yJRaPleAokQkiJxFkwuhzZVa/1idq7EA=
   - secure: OXCVx+umyxvsBBAdDnliKggeeDI6+MJnH01DRz3MSwcG2WMUxtzxKtPL4t03t+wfTmCoGmEMFa8OO1UgwfOoAMNwrEQHPG/AfEnV5A67FKoKY56vUD3rkNcWV5V/IfmQzrYzQSjyjgs19RY+1sD7CKK75bQWYuAQOoNrIpb84gc=
-  - secure: P+1ezjcewjb0m6eOJDS018CF2z6wcXeWb8yWKrQvEb/qknOYaa62YSvfoWkb+cfinApLBtPQYQ3Jrf00xQc+K3a93QmCMyGFy/PYx+IhYh56/jvVsEqs4NnTeK3Eov0Q/cgZWA69tCeR8rNRnB1aMLfNsluj1GvkfLO2vth6sxY=
 sudo: false
