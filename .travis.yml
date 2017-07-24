@@ -11,7 +11,8 @@ before_script:
   - npm run cf-link
   - gulp build
 after_success:
-  - git status
+  - git checkout package-lock.json
+  - git status && git diff
   - ./scripts/travis/release.sh
   - npm whoami
 env:
