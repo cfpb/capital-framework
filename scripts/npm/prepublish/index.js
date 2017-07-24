@@ -33,9 +33,9 @@ util.getGitStatus('./')
   // Commit the change.
   .then(commit)
   // Tag the new version.
-  // .then(tag)
+  .then(tag)
   // Push the change to GitHub.
-  // .then(push)
+  .then(push)
   // Publish the components.
   .then(publishComponents)
   // All done.
