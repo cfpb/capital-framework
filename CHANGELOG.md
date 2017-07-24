@@ -4,14 +4,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
-- **cf-buttons:** [PATCH] Change button links in docs to actual buttons.
+- **cf-buttons:** Change button links in docs to actual buttons.
 
-### Removed
--
 
 ## 4.8.4 - 2017-07-24
 
