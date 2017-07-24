@@ -5,7 +5,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- 
 
 ### Changed
 - **cf-forms:** [PATCH] Convert fixed pixel units to ems.
@@ -13,7 +13,26 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-forms:** [MINOR] Add full width modifier to text inputs
 
 ### Removed
--
+- 
+
+## 4.8.5 - 2017-07-24
+
+### Changed
+- **cf-buttons:** Change button links in docs to actual buttons.
+
+
+## 4.8.4 - 2017-07-24
+
+### Changed
+- **capital-framework**: Clean up Travis CI publishing steps.
+
+
+## 4.8.3 - 2017-07-24
+
+### Changed
+- **cf-forms:** Convert fixed pixel units to ems.
+- **cf-layout:** Fix the background size of overlay hero images
+
 
 ## 4.8.2 - 2017-07-03
 
