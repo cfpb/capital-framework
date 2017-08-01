@@ -62,6 +62,7 @@ In this repo:
 In a second local clone of this repo in a different folder:
 
 - make sure you're on the gh-pages branch
+- run `npm install`
 - run `npm run cf-link`
 - run `npm run build`
 - run `npm start`
