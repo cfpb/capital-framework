@@ -46,7 +46,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ```
 // .a-text-input borders
-@input-border:                  #919395;
+@input-border:                  #919395; // @gray-60
 @input-border__hover:           #0072ce; // @pacific;
 @input-border__focused:         #0072ce; // @pacific;
 @input-border__active:          #0072ce; // @pacific;
