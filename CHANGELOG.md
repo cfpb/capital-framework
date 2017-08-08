@@ -1,17 +1,16 @@
 All notable changes to this project will be documented in this file.
 We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
-
 ## Unreleased
 
 ### Added
-- 
+- **capital-framework:** [MINOR] Added auto-generation of documentation to release process
 
 ### Changed
-- 
+-
 
 ### Removed
-- 
+-
 
 ## 4.8.5 - 2017-07-24
 
