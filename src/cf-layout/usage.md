@@ -69,8 +69,8 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ```
 // .block
-@block__bg:                     lighten(#3a8899, 55%);
-@block__border:                 #3a8899;
+@block__bg:                     #f7f8f9; // @gray-5
+@block__border:                 #b4b5b6; // @gray-40
 @block__border-top:             @block__border;
 @block__border-right:           @block__border;
 @block__border-bottom:          @block__border;
