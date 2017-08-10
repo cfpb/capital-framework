@@ -5,13 +5,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-layout:** Update outdated jump link references in docs.
 
 ### Removed
-- 
+-
 
 ## 4.8.5 - 2017-07-24
 
