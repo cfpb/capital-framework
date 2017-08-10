@@ -19,6 +19,7 @@ Capital Framework.
 - [Labels](#labels)
     - [Basic label](#basic-label)
     - [Label heading](#label-heading)
+    - [Label helper text](#label-helper-text)
 - [Inputs](#inputs)
     - [Basic Text Inputs](#basic-text-inputs)
     - [Full-width inputs](#full-width-inputs)
@@ -79,6 +80,9 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 @input-lg-target:               #d6d7d9; // $color-gray-lighter
 @input-lg-target__selected:     #9bdaf1; // $color-primary-alt-light
 @input-lg-target__disabled:     #aeb0b5; // $color-gray-light
+
+// .a-label_helper
+@label-helper                   #43484e; // @dark-gray
 ```
 
 ### Sizing variables
@@ -123,6 +127,20 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 ```
 <label class="a-label a-label__heading">
     A label heading
+</label>
+```
+
+### Label helper text
+
+Used for designating an input as optional for user input.
+
+<label class="a-label">
+    A label <small class="a-label_helper">(optional)</small>
+</label>
+
+```
+<label class="a-label">
+    A label <small class="a-label_helper">(optional)</small>
 </label>
 ```
 

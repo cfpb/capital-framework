@@ -5,7 +5,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-forms:** [MINOR] Add `a-label_helper` class.
 
 ### Changed
 - **cf-forms:** [PATCH] Convert fixed pixel units to ems.
