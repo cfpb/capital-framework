@@ -13,6 +13,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-layout:** [PATCH] Update outdated jump link references in docs.
 - **cf-forms:** [MINOR] Add full width modifier to text inputs
 - **cf-forms:** [PATCH] Fix the spacing and alignment of radio and checkbox inputs
+- **cf-forms:** [PATCH] Update color for `@input-border` to gray 60.
 
 ### Removed
 -
