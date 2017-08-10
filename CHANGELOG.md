@@ -5,15 +5,16 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
 - **cf-forms:** [PATCH] Convert fixed pixel units to ems.
 - **cf-layout:** [PATCH] Fix the background size of overlay hero images
 - **cf-forms:** [MINOR] Add full width modifier to text inputs
+- **cf-forms:** [PATCH] Fix the spacing and alignment of radio and checkbox inputs
 
 ### Removed
-- 
+-
 
 ## 4.8.5 - 2017-07-24
 

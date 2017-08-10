@@ -33,6 +33,7 @@ Capital Framework.
     - [Basic select](#basic-select)
     - [Disabled select](#disabled-select)
 - [Basic multiselect](#basic-multiselect)
+- [Form fieldsets](#form-fieldsets)
 
 
 ## Variables
@@ -47,7 +48,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ```
 // .a-text-input borders
-@input-border:                  #5b616b;
+@input-border:                  #919395; // @gray-60
 @input-border__hover:           #0072ce; // @pacific;
 @input-border__focused:         #0072ce; // @pacific;
 @input-border__active:          #0072ce; // @pacific;
@@ -422,7 +423,7 @@ creating a typical site search form.
 </div>
 ```
 
-### Basic multiselect
+## Basic multiselect
 
 <div class="m-form-field m-form-field__select">
     <label class="a-label" for="test_select__multiple">Label</label>
@@ -452,4 +453,62 @@ creating a typical site search form.
         <option value="option4">Option 8</option>
     </select>
 </div>
+```
+
+### Form fieldsets
+
+<form class="o-form">
+    <div class="o-form_group">
+        <fieldset class="o-form_fieldset">
+            <div class="m-form-field m-form-field__checkbox">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_1" name="test_checkbox">
+                <label class="a-label" for="test_checkbox_1">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__checkbox">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_2" name="test_checkbox">
+                <label class="a-label" for="test_checkbox_2">Label</label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="o-form_group">
+        <fieldset class="o-form_fieldset">
+            <div class="m-form-field m-form-field__radio">
+                <input class="a-radio" type="radio" id="test_radio_1" name="test_radio">
+                <label class="a-label" for="test_radio_1">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__radio">
+                <input class="a-radio" type="radio" id="test_radio_2" name="test_radio">
+                <label class="a-label" for="test_radio_2">Label</label>
+            </div>
+        </fieldset>
+    </div>
+</form>
+
+```
+<form class="o-form">
+    <div class="o-form_group">
+        <fieldset class="o-form_fieldset">
+            <div class="m-form-field m-form-field__checkbox">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_1" name="test_checkbox">
+                <label class="a-label" for="test_checkbox_1">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__checkbox">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_2" name="test_checkbox">
+                <label class="a-label" for="test_checkbox_2">Label</label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="o-form_group">
+        <fieldset class="o-form_fieldset">
+            <div class="m-form-field m-form-field__radio">
+                <input class="a-radio" type="radio" id="test_radio_1" name="test_radio">
+                <label class="a-label" for="test_radio_1">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__radio">
+                <input class="a-radio" type="radio" id="test_radio_2" name="test_radio">
+                <label class="a-label" for="test_radio_2">Label</label>
+            </div>
+        </fieldset>
+    </div>
+</form>
 ```
