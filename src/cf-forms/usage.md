@@ -21,6 +21,7 @@ Capital Framework.
     - [Label heading](#label-heading)
 - [Inputs](#inputs)
     - [Basic Text Inputs](#basic-text-inputs)
+    - [Full-width inputs](#full-width-inputs)
     - [Basic checkboxes](#basic-checkboxes)
     - [Basic radio buttons](#basic-radio-buttons)
     - [Input states](#input-states)
@@ -130,51 +131,51 @@ Inputs should always be paired with a `label` for accessibility reasons.
 
 ### Basic text inputs
 
-<label class="a-label" for="text-input-example">A text input</label>
+<label class="a-label" for="textinput-example">A text input</label>
 <input class="a-text-input"
        type="text"
-       id="text-input example"
+       id="textinput-example"
+       value="Lorem ipsum">
+
+<label class="a-label" for="full-textarea-example">A textarea input</label>
+<textarea class="a-text-input" id="full-textarea-example">Lorem Ipsum</textarea>
+
+```
+<label class="a-label" for="textinput-example">A text input</label>
+<input class="a-text-input"
+       type="text"
+       id="textinput-example"
        value="Lorem ipsum">
 
 <label class="a-label" for="textarea-example">A textarea input</label>
 <textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
-
-```
-<label class="a-label" for="text-input-example">A text input</label>
-<input class="a-text-input"
-       type="text"
-       id="text-input example"
-       value="Lorem ipsum">
-
-<label class="a-label" for="textarea-example">A textarea input</label>
-<textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
 ```
 
-### Full width inputs
+### Full-width inputs
 
 <div class="m-form-field">
-    <label class="a-label" for="text-input-example">A text input</label>
+    <label class="a-label" for="full-textinput-example">A full-width text input</label>
     <input class="a-text-input a-text-input__full"
            type="text"
-           id="text-input example"
+           id="full-textinput-example"
            value="Lorem ipsum">
-
-    <label class="a-label" for="textarea-example">A textarea input</label>
+    <br><br>
+    <label class="a-label" for="full-textarea-example">A full-width textarea input</label>
     <textarea class="a-text-input a-text-input__full"
-              id="textarea-example">Lorem Ipsum</textarea>
+              id="full-textarea-example">Lorem Ipsum</textarea>
 </div>
 
 ```
 <div class="m-form-field">
-    <label class="a-label" for="text-input-example">A text input</label>
+    <label class="a-label" for="full-textinput-example">A text input</label>
     <input class="a-text-input a-text-input__full"
            type="text"
-           id="text-input example"
+           id="full-textinput-example"
            value="Lorem ipsum">
 
-    <label class="a-label" for="textarea-example">A textarea input</label>
+    <label class="a-label" for="full-textarea-example">A textarea input</label>
     <textarea class="a-text-input a-text-input__full"
-              id="textarea-example">Lorem Ipsum</textarea>
+              id="full-textarea-example">Lorem Ipsum</textarea>
 </div>
 ```
 
