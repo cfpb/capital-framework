@@ -1,0 +1,85 @@
+//
+// Notification
+//
+
+.m-notification {
+   display: none;
+   position: relative;
+
+   padding: @notification-padding__px;
+
+   background: @notification-bg;
+   border: 1px solid @notification-border;
+
+   &__success {
+       background: @notification-bg-success;
+       border-color: @notification-border-success;
+
+       .m-notification_icon:before {
+           .cf-icon();
+
+           content: @cf-icon-approved-round;
+           vertical-align: middle;
+           color: @notification-icon-success;
+       }
+   }
+
+   &__warning {
+       background: @notification-bg-warning;
+       border-color: @notification-border-warning;
+
+       .m-notification_icon:before {
+           .cf-icon();
+
+           content: @cf-icon-error-round;
+           vertical-align: middle;
+           color: @notification-icon-warning;
+       }
+   }
+
+   &__error {
+       background: @notification-bg-error;
+       border-color: @notification-border-error;
+
+       .m-notification_icon:before {
+           .cf-icon();
+
+           content: @cf-icon-delete-round;
+           vertical-align: middle;
+           color: @notification-icon-error;
+       }
+   }
+
+   &__visible {
+       display: block;
+   }
+
+   &_icon {
+       position: absolute;
+       top: @notification-padding__px + 2px;
+       left: @notification-padding__px;
+
+       color: @notification-icon;
+       font-size: unit( 18px / @base-font-size-px, em );
+       line-height: 1;
+   }
+
+   // Only adding left padding if an icon is present.
+   &_icon + &_content {
+       padding-left: 25px;
+   }
+
+   div:last-child,
+   p:last-child {
+       margin-top: 0;
+       margin-bottom: 0;
+   }
+
+   &_explanation {
+       font-size: 1em;
+
+       a {
+           border-bottom-width: 1px;
+       }
+   }
+}

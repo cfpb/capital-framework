@@ -5,6 +5,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- **cf-notification:** [MINOR] 1.0 added.
 - **cf-forms:** [MINOR] Add `a-label_helper` class.
 
 ### Changed
