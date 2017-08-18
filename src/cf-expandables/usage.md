@@ -40,25 +40,29 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables referenced in comments are from 18F's
-[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
+Color variables referenced in comments are from [cf-core brand-palette.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/brand-palette.less).
+
 
 ```
-// Single expandable
-@expandable-focus:             #046b99; // $color-primary-alt-darkest
-@expandable_label-text:        #046b99; // $color-primary-alt-darkest
-@expandable_link-text:         #046b99; // $color-primary-alt-darkest
+// .o-expandable
+@expandable-focus:              @black;
 
-// Padded expandable modifier
-@expandable__padded-bg:        #e1f3f8; // $color-primary-alt-lightest
-@expandable__padded-bg-hover:  lighten( @expandable__padded-bg, 3% );
-@expandable__padded-divider:   darken( @expandable__padded-bg, 5% );
+// .o-expandable_label
+@expandable_label-text:         @black;
 
-// Expandable group
-@expandable-group_header-text: @text;
-@expandable-group_header-bg:   #d6d7d9; // $color-gray-lighter
-@expandable-group-bg:          #fff;
-@expandable-group-divider:     #046b99; // $color-primary-alt-darkest
+// .o-expandable_link
+@expandable_link-text:          @pacific;
+
+// .o-expandable__padded
+@expandable__padded-bg:         @gray-10;
+@expandable__padded-bg-hover:   @gray-20;
+@expandable__padded-divider:    @gray-40;
+
+// .o-expandable-group
+@expandable-group_header-text:  @gray;
+@expandable-group_header-bg:    @gray-10;
+@expandable-group-bg:           @white;
+@expandable-group-divider:      @gray-80;
 ```
 
 ### Sizing variables
