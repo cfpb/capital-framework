@@ -46,36 +46,29 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-Color variables referenced in comments are from [cf-core brand-palette.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/brand-palette.less).
+`$color-` variables referenced in comments are from 18F's
+[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
 // body
-@text:                   @black;
+@text:                   #212121; // $color-base
 
 // a
-@link-text:              @pacific;
-@link-underline:         @pacific;
-@link-text-visited:      @teal;
-@link-underline-visited: @teal;
-@link-text-hover:        @pacific-60;
-@link-underline-hover:   @pacific-60;
-@link-text-active:       @navy;
-@link-underline-active:  @navy;
+@link-text:              #0071bc; // $color-primary
+@link-underline:         #0071bc; // $color-primary
+@link-text-visited:      #4c2c92; // $color-visited
+@link-underline-visited: #4c2c92; // $color-visited
+@link-text-hover:        #205493; // $color-primary-darker
+@link-underline-hover:   #205493; // $color-primary-darker
+@link-text-active:       #046b99; // $color-primary-darkest
+@link-underline-active:  #046b99; // $color-primary-darkest
 
 // table
+@table-border:           #5b616b; // $color-gray
 
+// thead
 @thead-text:             @text;
-@thead-bg:               @gray-10;
-
-@table-head-bg:          @thead-bg;
-@table-cell-bg:          @white;
-@table-cell-bg_alt:      @gray-5;
-@table-scrolling-border: @gray-40;
-@table-border:           @gray;
-
-// code
-@code-text:              @text;
-@code-bg:                @gray-5;
+@thead-bg:               #f1f1f1; // $color-gray-lightest
 ```
 
 ### Sizing variables
@@ -93,7 +86,6 @@ Color variables referenced in comments are from [cf-core brand-palette.less](htt
 @size-iv:             18px; // h4-size
 @size-v:              14px; // h5-site
 @size-vi:             12px; // h6-size
-@size-code:           13px; // Custom size only for Mono code blocks
 ```
 
 ### Breakpoint variables
