@@ -62,7 +62,7 @@ Color variables referenced in comments are from [cf-core brand-palette.less](htt
 // .a-text-input backgrounds
 @input-bg:                      @white;
 @input-bg__selected:            @pacific;
-@input-bg__disabled:            @gray-5;
+@input-bg__disabled:            @gray-10;
 
 // .a-text-input text
 @input-text__disabled:          @gray;
@@ -72,15 +72,15 @@ Color variables referenced in comments are from [cf-core brand-palette.less](htt
 @input-icon__error:             @red;
 
 // .a-select
-@select-border:                 @gray-40;
+@select-border:                 @input-border;
 @select-icon:                   @gray-80;
-@select-icon-bg:                @gray-5;
+@select-icon-bg:                @gray-10;
 @select-text__disabled:         @input-text__disabled;
 
 // .m-form-field__lg-target
 @input-lg-target:               @gray-10;
 @input-lg-target__selected:     @pacific-20;
-@input-lg-target__disabled:     @gray-40;
+@input-lg-target__disabled:     @input-lg-target;
 
 // .a-label_helper
 @label-helper:                  @gray;
