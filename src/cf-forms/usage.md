@@ -25,6 +25,8 @@ Capital Framework.
     - [Full-width inputs](#full-width-inputs)
     - [Basic checkboxes](#basic-checkboxes)
     - [Basic radio buttons](#basic-radio-buttons)
+    - [Large target area checkboxes](#large-target-area-checkboxes)
+    - [Large target area radio buttons](#large-target-area-radio-buttons)
     - [Input states](#input-states)
 - [Buttons](#buttons)
     - [Simple input with a button](#simple-input-with-a-button)
@@ -225,6 +227,36 @@ Inputs should always be paired with a `label` for accessibility reasons.
     <label class="a-label" for="test_radio">Label</label>
 </div>
 ```
+
+### Large target area checkboxes
+
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_lg">
+    <label class="a-label" for="test_checkbox_lg">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_lg">
+    <label class="a-label" for="test_checkbox_lg">Label</label>
+</div>
+```
+
+
+### Large target area radio buttons
+
+<div class="m-form-field m-form-field__radio m-form-field__lg-target">
+    <input class="a-radio" type="radio" id="test_radio_lg">
+    <label class="a-label" for="test_radio_lg">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__radio m-form-field__lg-target">
+    <input class="a-radio" type="radio" id="test_radio_lg">
+    <label class="a-label" for="test_radio_lg">Label</label>
+</div>
+```
+
 
 ### Input states
 
