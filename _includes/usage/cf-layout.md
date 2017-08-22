@@ -1310,8 +1310,12 @@ the available space.
                 instructior ex pri. Cu pri inani constituto, cum aeque noster
                 commodo cu.
             </p>
-            <a class="jump-link jump-link__underline">
-                <span class="jump-link_text">Read more about the feature</span>
+            <a class="a-link
+                      a-link__jump
+                      cf-icon
+                      cf-icon__after
+                      cf-icon-right">
+                <span class="a-link_text">Read more about the feature</span>
             </a>
         </div>
         <div class="o-featured-content-module_visual">
@@ -1337,8 +1341,12 @@ the available space.
                 instructior ex pri. Cu pri inani constituto, cum aeque noster
                 commodo cu.
             </p>
-            <a class="jump-link jump-link__underline">
-                <span class="jump-link_text">Read more about the feature</span>
+            <a class="a-link
+                      a-link__jump
+                      cf-icon
+                      cf-icon__after
+                      cf-icon-right">
+                <span class="a-link_text">Read more about the feature</span>
             </a>
         </div>
         <div class="o-featured-content-module_visual">
@@ -1372,8 +1380,12 @@ side so that the copyright information is displayed.
                 instructior ex pri. Cu pri inani constituto, cum aeque noster
                 commodo cu.
             </p>
-            <a class="jump-link jump-link__underline">
-                <span class="jump-link_text">Read more about the feature</span>
+            <a class="a-link
+                      a-link__jump
+                      cf-icon
+                      cf-icon__after
+                      cf-icon-right">
+                <span class="a-link_text">Read more about the feature</span>
             </a>
         </div>
         <div class="o-featured-content-module_visual">
@@ -1400,8 +1412,12 @@ side so that the copyright information is displayed.
                 instructior ex pri. Cu pri inani constituto, cum aeque noster
                 commodo cu.
             </p>
-            <a class="jump-link jump-link__underline">
-                <span class="jump-link_text">Read more about the feature</span>
+            <a class="a-link
+                      a-link__jump
+                      cf-icon
+                      cf-icon__after
+                      cf-icon-right">
+                <span class="a-link_text">Read more about the feature</span>
             </a>
         </div>
         <div class="o-featured-content-module_visual">
@@ -1436,8 +1452,12 @@ generally remains centered.
                 instructior ex pri. Cu pri inani constituto, cum aeque noster
                 commodo cu.
             </p>
-            <a class="jump-link jump-link__underline">
-                <span class="jump-link_text">Read more about the feature</span>
+            <a class="a-link
+                      a-link__jump
+                      cf-icon
+                      cf-icon__after
+                      cf-icon-right">
+                <span class="a-link_text">Read more about the feature</span>
             </a>
         </div>
         <div class="o-featured-content-module_visual">
@@ -1464,8 +1484,12 @@ generally remains centered.
                 instructior ex pri. Cu pri inani constituto, cum aeque noster
                 commodo cu.
             </p>
-            <a class="jump-link jump-link__underline">
-                <span class="jump-link_text">Read more about the feature</span>
+            <a class="a-link
+                      a-link__jump
+                      cf-icon
+                      cf-icon__after
+                      cf-icon-right">
+                <span class="a-link_text">Read more about the feature</span>
             </a>
         </div>
         <div class="o-featured-content-module_visual">
