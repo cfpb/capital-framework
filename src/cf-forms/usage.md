@@ -46,45 +46,44 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables referenced in comments are from 18F's
-[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
+Color variables referenced in comments are from [cf-core brand-palette.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/brand-palette.less).
 
 ```
 // .a-text-input borders
-@input-border:                  #919395; // @gray-60
-@input-border__hover:           #0072ce; // @pacific;
-@input-border__focused:         #0072ce; // @pacific;
-@input-border__active:          #0072ce; // @pacific;
-@input-border__error:           #d14124; // @red;
-@input-border__warning:         #ff9e1b; // @gold;
-@input-border__success:         #20aa3f; // @green;
-@input-border__selected:        #046b99; // $color-primary-alt-darkest
+@input-border:                  @gray-60;
+@input-border__hover:           @pacific;
+@input-border__focused:         @pacific;
+@input-border__active:          @pacific;
+@input-border__error:           @red;
+@input-border__warning:         @gold;
+@input-border__success:         @green;
+@input-border__selected:        @pacific;
 
 // .a-text-input backgrounds
-@input-bg:                      #ffffff;
-@input-bg__active:              #0072ce; // @pacific;
-@input-bg__disabled:            #f7f8f9; // @gray-5;
+@input-bg:                      @white;
+@input-bg__selected:            @pacific;
+@input-bg__disabled:            @gray-5;
 
 // .a-text-input text
-@input-text__disabled:          #75787b; // @gray-80;
-@input-text__placeholder:       #aeb0b5;
+@input-text__disabled:          @gray;
+@input-text__placeholder:       @gray;
 
 // .a-text-input icons
-@input-icon__error:             #d14124; // @red;
+@input-icon__error:             @red;
 
 // .a-select
-@select-border:                 #b4b5b6; // @gray-40;
-@select-icon:                   #75787b; // @gray-80;
-@select-icon-bg:                #f7f8f9; // @gray-5;
-@select-text__disabled          @input-text__disabled;
+@select-border:                 @gray-40;
+@select-icon:                   @gray-80;
+@select-icon-bg:                @gray-5;
+@select-text__disabled:         @input-text__disabled;
 
 // .m-form-field__lg-target
-@input-lg-target:               #d6d7d9; // $color-gray-lighter
-@input-lg-target__selected:     #9bdaf1; // $color-primary-alt-light
-@input-lg-target__disabled:     #aeb0b5; // $color-gray-light
+@input-lg-target:               @gray-10;
+@input-lg-target__selected:     @pacific-20;
+@input-lg-target__disabled:     @gray-40;
 
 // .a-label_helper
-@label-helper                   #43484e; // @dark-gray
+@label-helper:                  @gray;
 ```
 
 ### Sizing variables
