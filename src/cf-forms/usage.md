@@ -262,7 +262,7 @@ See the 'Form icons' section below for guidance on adding icons to states.
 </div>
 
 ```
-<div class="m-field m-field__error">
+<div class="m-form-field m-form-field__error">
     <label class="a-label__heading" for="form-input-error">Label</label>
     <input class="a-text-input a-text-input__error"
            type="text"
