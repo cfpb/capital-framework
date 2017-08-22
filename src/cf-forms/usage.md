@@ -135,12 +135,12 @@ Color variables referenced in comments are from [cf-core brand-palette.less](htt
 
 Used for designating an input as optional for user input.
 
-<label class="a-label">
+<label class="a-label a-label__heading">
     A label <small class="a-label_helper">(optional)</small>
 </label>
 
 ```
-<label class="a-label">
+<label class="a-label a-label__heading">
     A label <small class="a-label_helper">(optional)</small>
 </label>
 ```
