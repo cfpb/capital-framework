@@ -14,6 +14,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-forms:** [MINOR] Add full width modifier to text inputs
 - **cf-forms:** [PATCH] Fix the spacing and alignment of radio and checkbox inputs
 - **cf-forms:** [PATCH] Update color for `@input-border` to gray 60.
+- **cf-core:** [MINOR] Add brand palette variables to cf-core for other components to use and update default colors to use brand colors.
 
 ### Removed
 -
