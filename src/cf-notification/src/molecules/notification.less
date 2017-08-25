@@ -56,7 +56,7 @@
 
    &_icon {
        position: absolute;
-       top: @notification-padding__px + 2px;
+       top: @notification-padding__px;
        left: @notification-padding__px;
 
        color: @notification-icon;
@@ -69,14 +69,15 @@
        padding-left: 25px;
    }
 
-   div:last-child,
-   p:last-child {
-       margin-top: 0;
-       margin-bottom: 0;
+   &_message {
+     margin-bottom: 0;
    }
 
    &_explanation {
+       .u-webfont-regular();
        font-size: 1em;
+       margin-top: unit( 5px / @base-font-size-px, em );
+       margin-bottom: 0;
 
        a {
            border-bottom-width: 1px;
