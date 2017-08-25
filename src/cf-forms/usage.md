@@ -25,6 +25,8 @@ Capital Framework.
     - [Full-width inputs](#full-width-inputs)
     - [Basic checkboxes](#basic-checkboxes)
     - [Basic radio buttons](#basic-radio-buttons)
+    - [Large target area checkboxes](#large-target-area-checkboxes)
+    - [Large target area radio buttons](#large-target-area-radio-buttons)
     - [Input states](#input-states)
 - [Buttons](#buttons)
     - [Simple input with a button](#simple-input-with-a-button)
@@ -44,45 +46,44 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables referenced in comments are from 18F's
-[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
+Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
 ```
 // .a-text-input borders
-@input-border:                  #919395; // @gray-60
-@input-border__hover:           #0072ce; // @pacific;
-@input-border__focused:         #0072ce; // @pacific;
-@input-border__active:          #0072ce; // @pacific;
-@input-border__error:           #d14124; // @red;
-@input-border__warning:         #ff9e1b; // @gold;
-@input-border__success:         #20aa3f; // @green;
-@input-border__selected:        #046b99; // $color-primary-alt-darkest
+@input-border:                  @gray-60;
+@input-border__hover:           @pacific;
+@input-border__focused:         @pacific;
+@input-border__active:          @pacific;
+@input-border__error:           @red;
+@input-border__warning:         @gold;
+@input-border__success:         @green;
+@input-border__selected:        @pacific;
 
 // .a-text-input backgrounds
-@input-bg:                      #ffffff;
-@input-bg__active:              #0072ce; // @pacific;
-@input-bg__disabled:            #f7f8f9; // @gray-5;
+@input-bg:                      @white;
+@input-bg__selected:            @pacific;
+@input-bg__disabled:            @gray-10;
 
 // .a-text-input text
-@input-text__disabled:          #75787b; // @gray-80;
-@input-text__placeholder:       #aeb0b5;
+@input-text__disabled:          @gray;
+@input-text__placeholder:       @gray;
 
 // .a-text-input icons
-@input-icon__error:             #d14124; // @red;
+@input-icon__error:             @red;
 
 // .a-select
-@select-border:                 #b4b5b6; // @gray-40;
-@select-icon:                   #75787b; // @gray-80;
-@select-icon-bg:                #f7f8f9; // @gray-5;
-@select-text__disabled          @input-text__disabled;
+@select-border:                 @input-border;
+@select-icon:                   @gray-80;
+@select-icon-bg:                @gray-10;
+@select-text__disabled:         @input-text__disabled;
 
 // .m-form-field__lg-target
-@input-lg-target:               #d6d7d9; // $color-gray-lighter
-@input-lg-target__selected:     #9bdaf1; // $color-primary-alt-light
-@input-lg-target__disabled:     #aeb0b5; // $color-gray-light
+@input-lg-target:               @gray-10;
+@input-lg-target__selected:     @pacific-20;
+@input-lg-target__disabled:     @input-lg-target;
 
 // .a-label_helper
-@label-helper                   #43484e; // @dark-gray
+@label-helper:                  @gray;
 ```
 
 ### Sizing variables
@@ -134,12 +135,12 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 Used for designating an input as optional for user input.
 
-<label class="a-label">
+<label class="a-label a-label__heading">
     A label <small class="a-label_helper">(optional)</small>
 </label>
 
 ```
-<label class="a-label">
+<label class="a-label a-label__heading">
     A label <small class="a-label_helper">(optional)</small>
 </label>
 ```
@@ -226,6 +227,36 @@ Inputs should always be paired with a `label` for accessibility reasons.
 </div>
 ```
 
+### Large target area checkboxes
+
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_lg">
+    <label class="a-label" for="test_checkbox_lg">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_lg">
+    <label class="a-label" for="test_checkbox_lg">Label</label>
+</div>
+```
+
+
+### Large target area radio buttons
+
+<div class="m-form-field m-form-field__radio m-form-field__lg-target">
+    <input class="a-radio" type="radio" id="test_radio_lg">
+    <label class="a-label" for="test_radio_lg">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__radio m-form-field__lg-target">
+    <input class="a-radio" type="radio" id="test_radio_lg">
+    <label class="a-label" for="test_radio_lg">Label</label>
+</div>
+```
+
+
 ### Input states
 
 See the 'Form icons' section below for guidance on adding icons to states.
@@ -262,7 +293,7 @@ See the 'Form icons' section below for guidance on adding icons to states.
 </div>
 
 ```
-<div class="m-field m-field__error">
+<div class="m-form-field m-form-field__error">
     <label class="a-label__heading" for="form-input-error">Label</label>
     <input class="a-text-input a-text-input__error"
            type="text"
