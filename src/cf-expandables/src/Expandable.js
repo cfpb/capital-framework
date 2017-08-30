@@ -22,7 +22,7 @@ var ExpandableOrganism = Organism.extend( {
   classes: {
     targetExpanded: 'o-expandable_target__expanded',
     targetCollapsed: 'o-expandable_target__collapsed',
-    groupAccordion: 'o-expandable-group__accordion',
+    groupAccordion: 'o-expandable-group__accordion'
   },
 
   events: {
@@ -52,7 +52,7 @@ var ExpandableOrganism = Organism.extend( {
       var fn = this.accordionClose.bind( this );
       Events.on( 'CFAccordionClose', fn );
     }
-    
+
     if ( contains( this.ui.content, customClasses.OPEN_DEFAULT ) ) {
       addClass( this.ui.target, this.classes.targetExpanded );
     } else {

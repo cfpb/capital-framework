@@ -1,4 +1,3 @@
-
 /* ==========================================================================
    Table Row Links
 
@@ -27,12 +26,12 @@ var TableRowLinks = {
    */
   onRowLinkClick: function( event ) {
     var target = event.target;
-    if( target && target.tagName === 'A' ) {
-      return
+    if ( target && target.tagName === 'A' ) {
+      return;
     }
     target = closest( event.target, 'tr' );
     var link = target.querySelector( 'a' );
-    if( link ) window.location = link.getAttribute( 'href' );
+    if ( link ) window.location = link.getAttribute( 'href' );
   }
 };
 
