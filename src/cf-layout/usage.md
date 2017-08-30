@@ -64,35 +64,42 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables referenced in comments are from 18F's
-[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
+Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
 ```
 // .block
-@block__bg:                     lighten(#3a8899, 55%);
-@block__border:                 #3a8899;
-@block__border-top:             @block__border;
-@block__border-right:           @block__border;
-@block__border-bottom:          @block__border;
-@block__border-left:            @block__border;
+@block__bg:                     @gray-5;
+@block__border:                 @gray-40;
+@block__border-top:             @gray-40;
+@block__border-right:           @gray-40;
+@block__border-bottom:          @gray-40;
+@block__border-left:            @gray-40;
 
 // .content_main
-@content_main-border:           #3a8899;
+@content_main-border:           @gray-40;
 
 // .content_sidebar
-@content_sidebar-bg:            lighten(#3a8899, 55%);
-@content_sidebar-border:        #3a8899;
+@content_sidebar-bg:            @gray-5;
+@content_sidebar-border:        @gray-40;
 
 // .content_line
-@content_line:                  #3a8899;
+@content_line:                  @gray-40;
 
 // .grid_column__top-divider
-@grid_column__top-divider:      #3a8899;
+@grid_column__top-divider:      @gray-40;
 
 // .grid_column__top-divider
-@grid_column__left-divider:     #3a8899;
+@grid_column__left-divider:     @gray-40;
 
-// Fetured Content Module variables
+// Hero variables
+
+@hero-desktop-height: 285px;
+
+@hero-bg:                       @gray-5;
+@hero-knockout-bg:              @gray;
+@hero-knockout-text:            @white;
+
+// Featured Content Module variables
 @fcm-bg:                        @block__bg;
 
 @fcm-bp-max:                    700px;
