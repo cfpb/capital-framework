@@ -60,7 +60,7 @@
     "npm-registry-client": "^7.0.7",
     "promisify-node": "^0.2.1",
     "qunit": "^0.7.7",
-    "require-dir": "^0.3.0",
+    "require-dir": "^0.3.2",
     "run-sequence": "^1.1.4",
     "semver": "^5.0.3",
     "serve-static": "^1.10.0",
