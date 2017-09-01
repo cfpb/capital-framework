@@ -12,32 +12,32 @@
 // .block
 @block__bg:                     @gray-5;
 @block__border:                 @gray-40;
-@block__border-top:             @gray-40;
-@block__border-right:           @gray-40;
-@block__border-bottom:          @gray-40;
-@block__border-left:            @gray-40;
+@block__border-top:             @block__border;
+@block__border-right:           @block__border;
+@block__border-bottom:          @block__border;
+@block__border-left:            @block__border;
 
 // .content_main
-@content_main-border:           @gray-40;
+@content_main-border:           @block__border;
 
 // .content_sidebar
-@content_sidebar-bg:            @gray-5;
-@content_sidebar-border:        @gray-40;
+@content_sidebar-bg:            @block__bg;
+@content_sidebar-border:        @block__border;
 
 // .content_line
-@content_line:                  @gray-40;
+@content_line:                  @block__border;
 
 // .grid_column__top-divider
-@grid_column__top-divider:      @gray-40;
+@grid_column__top-divider:      @block__border;
 
 // .grid_column__top-divider
-@grid_column__left-divider:     @gray-40;
+@grid_column__left-divider:     @block__border;
 
 // Hero variables
 
-@hero-desktop-height: 285px;
+@hero-desktop-height:           285px;
 
-@hero-bg:                       @gray-5;
+@hero-bg:                       @block__bg;
 @hero-knockout-bg:              @gray;
 @hero-knockout-text:            @white;
 
