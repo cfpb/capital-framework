@@ -8,34 +8,40 @@
 //
 
 // Color variables
-// `$color-` variables referenced in comments are from 18F's U.S. Web Design Standards
-// https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 // .block
-@block__bg:                     lighten( #3a8899, 55% );
-@block__border:                 #3a8899;
+@block__bg:                     @gray-5;
+@block__border:                 @gray-40;
 @block__border-top:             @block__border;
 @block__border-right:           @block__border;
 @block__border-bottom:          @block__border;
 @block__border-left:            @block__border;
 
 // .content_main
-@content_main-border:           #3a8899;
+@content_main-border:           @block__border;
 
 // .content_sidebar
-@content_sidebar-bg:            lighten( #3a8899, 55% );
-@content_sidebar-border:        #3a8899;
+@content_sidebar-bg:            @block__bg;
+@content_sidebar-border:        @block__border;
 
 // .content_line
-@content_line:                  #3a8899;
+@content_line:                  @block__border;
 
 // .grid_column__top-divider
-@grid_column__top-divider:      #3a8899;
+@grid_column__top-divider:      @block__border;
 
 // .grid_column__top-divider
-@grid_column__left-divider:     #3a8899;
+@grid_column__left-divider:     @block__border;
 
-// Fetured Content Module variables
+// Hero variables
+
+@hero-desktop-height:           285px;
+
+@hero-bg:                       @block__bg;
+@hero-knockout-bg:              @gray;
+@hero-knockout-text:            @white;
+
+// Featured Content Module variables
 @fcm-bg:                        @block__bg;
 
 @fcm-bp-max:                    700px;

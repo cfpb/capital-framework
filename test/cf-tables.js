@@ -34,17 +34,17 @@
     expect( 3 );
 
     ok(
-      getElement('#test-one tbody tr:nth-child(1) td:nth-child(3)').innerText.trim() === '1.2 mi',
+      getElement( '#test-one tbody tr:nth-child(1) td:nth-child(3)' ).innerText.trim() === '1.2 mi',
       'Row 1 is correct'
     );
 
     ok(
-      getElement('#test-one tbody tr:nth-child(5) td:nth-child(3)').innerText.trim() === '2.6 mi',
+      getElement( '#test-one tbody tr:nth-child(5) td:nth-child(3)' ).innerText.trim() === '2.6 mi',
       'Row 3 is correct'
     );
 
     ok(
-      getElement('#test-one tbody tr:nth-child(7) td:nth-child(3)').innerText.trim() === '11.1 mi',
+      getElement( '#test-one tbody tr:nth-child(7) td:nth-child(3)' ).innerText.trim() === '11.1 mi',
       'Row 7 is correct'
     );
 
@@ -53,54 +53,54 @@
 
   test( 'Column sorts low-to-high on click ', function() {
     expect( 3 );
-    getElement('#lang-sort').click();
+    getElement( '#lang-sort' ).click();
     ok(
-      getElement('#test-one tbody tr:nth-child(1) td:nth-child(2)').innerText.trim() === 'English',
+      getElement( '#test-one tbody tr:nth-child(1) td:nth-child(2)' ).innerText.trim() === 'English',
       'Row 1 is correct'
     );
     ok(
-      getElement('#test-one tbody tr:nth-child(4) td:nth-child(2)').innerText.trim() === 'English, French, Spanish',
+      getElement( '#test-one tbody tr:nth-child(4) td:nth-child(2)' ).innerText.trim() === 'English, French, Spanish',
       'Row 4 is correct'
     );
     ok(
-      getElement('#test-one tbody tr:nth-child(7) td:nth-child(2)').innerText.trim() === 'English, Spanish',
+      getElement( '#test-one tbody tr:nth-child(7) td:nth-child(2)' ).innerText.trim() === 'English, Spanish',
       'Row 7 is correct'
     );
   } );
 
   test( 'Column sorts high-to-low on second click ', function() {
     expect( 3 );
-    getElement('#lang-sort').click();
+    getElement( '#lang-sort' ).click();
     ok(
-      getElement('#test-one tbody tr:nth-child(7) td:nth-child(2)').innerText.trim() === 'English',
+      getElement( '#test-one tbody tr:nth-child(7) td:nth-child(2)' ).innerText.trim() === 'English',
       'Row 7 is correct'
     );
     ok(
-      getElement('#test-one tbody tr:nth-child(4) td:nth-child(2)').innerText.trim() === 'English, French, Spanish',
+      getElement( '#test-one tbody tr:nth-child(4) td:nth-child(2)' ).innerText.trim() === 'English, French, Spanish',
       'Row 4 is correct'
     );
     ok(
-      getElement('#test-one tbody tr:nth-child(1) td:nth-child(2)').innerText.trim() === 'English, Spanish',
+      getElement( '#test-one tbody tr:nth-child(1) td:nth-child(2)' ).innerText.trim() === 'English, Spanish',
       'Row 1 is correct'
     );
   } );
 
   test( 'Column sorts low-to-high on click for "number" sort type', function() {
     expect( 3 );
-    getElement('#dist-sort').click();
+    getElement( '#dist-sort' ).click();
     ok(
-      getElement('#test-one tbody tr:nth-child(1) td:nth-child(3)').innerText.trim() === '1.2 mi',
+      getElement( '#test-one tbody tr:nth-child(1) td:nth-child(3)' ).innerText.trim() === '1.2 mi',
       'Row 1 is correct'
     );
     ok(
-      getElement('#test-one tbody tr:nth-child(5) td:nth-child(3)').innerText.trim() === '2.6 mi',
+      getElement( '#test-one tbody tr:nth-child(5) td:nth-child(3)' ).innerText.trim() === '2.6 mi',
       'Row 3 is correct'
     );
     ok(
-      getElement('#test-one tbody tr:nth-child(7) td:nth-child(3)').innerText.trim() === '11.1 mi',
+      getElement( '#test-one tbody tr:nth-child(7) td:nth-child(3)' ).innerText.trim() === '11.1 mi',
       'Row 7 is correct'
     );
   } );
 
 
-}());
+}() );
