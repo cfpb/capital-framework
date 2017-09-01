@@ -37,11 +37,11 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables are from 18F's
-[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
+Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
+
 
 ```
-@cf-icon-border-color:          #5b616b; //$color-gray
+@cf-icon-border-color:          @gray;
 ```
 
 ## Icon generation variables
