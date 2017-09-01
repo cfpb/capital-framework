@@ -2,6 +2,7 @@
 
 const gulp = require( 'gulp' );
 const gulpEslint = require( 'gulp-eslint' );
+const minimist = require( 'minimist' );
 
 /**
  * Generic lint a script source.
@@ -9,9 +10,13 @@ const gulpEslint = require( 'gulp-eslint' );
  * @returns {Object} An output stream from gulp.
  */
 function _genericLint( src ) {
-  return gulp.src( src, { base: './' } )
-    .pipe( gulpEslint() )
-    .pipe( gulpEslint.format() );
+  // Pass all command line flags to EsLint.
+  const options = minimist( process.argv.slice( 2 ) );
+
+  return gulp.src( src.concat( '!**/node_modules/**' ), { base: './' } )
+    .pipe( gulpEslint( options ) )
+    .pipe( gulpEslint.format() )
+    .pipe( gulp.dest( './' ) );
 }
 
 /**
