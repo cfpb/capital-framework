@@ -17,6 +17,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-core:** [MINOR] Add brand palette variables to cf-core for other components to use and update default colors to use brand colors.
 - **cf-forms:** [MINOR] Update default color variables to use brand colors.
 - **cf-buttons:** [MINOR] Update default color variables to use brand colors.
+- **cf-tables:** [PATCH] Fix linting errors.
+- **cf-expandables:** [PATCH] Fix linting errors.
 - **cf-layout:** [MINOR] Update default color variables to use brand colors.
 
 ### Removed

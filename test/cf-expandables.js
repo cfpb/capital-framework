@@ -276,6 +276,7 @@
       }, 3000 );
     }
   );
+
 /*
   asyncTest( 'Verify expandables within an accordion group can be ' +
              'opened and close siblings',
