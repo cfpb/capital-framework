@@ -7,11 +7,9 @@
 var contains = require( 'atomic-component/src/utilities/dom-class-list' ).contains;
 var addClass = require( 'atomic-component/src/utilities/dom-class-list' ).addClass;
 var closest = require( 'atomic-component/src/utilities/dom-closest' ).closest;
-var bind = require( 'atomic-component/src/utilities/function-bind' ).bind;
 var removeClass = require( 'atomic-component/src/utilities/dom-class-list' ).removeClass;
 var ExpandableTransition = require( 'atomic-component/src/utilities/transition/ExpandableTransition' );
 var Events = require( 'atomic-component/src/mixins/Events.js' );
-var config = require( 'atomic-component/src/utilities/config' );
 var Organism = require( 'atomic-component/src/components/Organism' );
 
 var ExpandableOrganism = Organism.extend( {
@@ -73,7 +71,6 @@ var ExpandableOrganism = Organism.extend( {
   },
 
   onToggleAccordion: function( event ) {
-    var group = closest( this.ui.target, '.' + this.classes.groupAccordion );
     Events.trigger( 'CFAccordionClose' );
     this.activeAccordion = true;
   },

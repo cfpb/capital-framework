@@ -7,9 +7,9 @@
 
 'use strict';
 
-var closest = require( 'atomic-component/src/utilities/dom-closest' ).closest;
+const closest = require( 'atomic-component/src/utilities/dom-closest' ).closest;
 
-var TableRowLinks = {
+const TableRowLinks = {
 
   events: {
     'click tbody tr': 'onRowLinkClick'
@@ -25,7 +25,7 @@ var TableRowLinks = {
    * @param {Object} event Mouse event for click on the table.
    */
   onRowLinkClick: function( event ) {
-    var target = event.target;
+    let target = event.target;
     if ( target && target.tagName === 'A' ) {
       return;
     }
