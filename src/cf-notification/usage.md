@@ -117,7 +117,7 @@ such as a search that returned no results.
             m-notification__warning">
     <span class="m-notification_icon cf-icon"></span>
     <div class="m-notification_content">
-        <div class="h4 m-notification_message">No results found!</div>
+        <div class="h4 m-notification_message">No results found.</div>
     </div>
 </div>
 
@@ -127,7 +127,7 @@ such as a search that returned no results.
             m-notification__warning">
     <span class="m-notification_icon cf-icon"></span>
     <div class="m-notification_content">
-        <div class="h4 m-notification_message">No results found!</div>
+        <div class="h4 m-notification_message">No results found.</div>
     </div>
 </div>
 ```
@@ -142,7 +142,7 @@ expected and encountered an error.
             m-notification__error">
     <span class="m-notification_icon cf-icon"></span>
     <div class="m-notification_content">
-        <div class="h4 m-notification_message">Page not found!</div>
+        <div class="h4 m-notification_message">Page not found.</div>
     </div>
 </div>
 
@@ -152,7 +152,7 @@ expected and encountered an error.
             m-notification__error">
     <span class="m-notification_icon cf-icon"></span>
     <div class="m-notification_content">
-        <div class="h4 m-notification_message">Page not found!</div>
+        <div class="h4 m-notification_message">Page not found.</div>
     </div>
 </div>
 ```
@@ -171,7 +171,7 @@ by adding or removing the `m-notification__visible` class to the base element.
             m-notification__error">
     <span class="m-notification_icon cf-icon"></span>
     <div class="m-notification_content">
-        <div class="h4 m-notification_message">Page not found!</div>
+        <div class="h4 m-notification_message">Page not found.</div>
         <p class="h4 m-notification_explanation">
           Please check the URL and try again.
         </p>
