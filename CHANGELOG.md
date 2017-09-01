@@ -24,6 +24,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Removed
 - **cf-tables:** [PATCH] Removed unused init method from `cf-table-row-links.js`.
+- **capital-framework:** [PATCH] Removed un-minified generated JS/CSS.
+- **cf-expandables:** [PATCH] Removed unused `bind`, `config`, and `group` vars.
 
 
 ## 4.8.5 - 2017-07-24

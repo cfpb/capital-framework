@@ -1,6 +1,7 @@
 'use strict';
 
 const component = require('./parseComponentName');
+const environment = require( '../../config/environment' );
 const gulp = require('gulp');
 const gulpAutoprefixer = require( 'gulp-autoprefixer' );
 const gulpCssmin = require( 'gulp-cssmin' );
@@ -18,21 +19,14 @@ function stylesCf() {
       paths: ['node_modules/cf-*/src/']
     }))
     .pipe( gulpAutoprefixer( {
-      browsers: [ 'last 2 version',
-                  'not ie < 8',
-                  'android 4',
-                  'BlackBerry 7',
-                  'BlackBerry 10' ]
+      browsers: environment.getSupportedBrowserList( 'css' )
     } ) )
-    .pipe(gulpRename({
-      basename: 'capital-framework'
-    }))
-    .pipe(gulp.dest('./dist'))
     .pipe(gulpCssmin())
     .pipe(gulpRename({
-      suffix: '.min'
+      basename: 'capital-framework',
+      extname: '.min.css'
     }))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./dist'))
 }
 
 /**
@@ -54,22 +48,15 @@ function stylesComponents() {
       paths: ['node_modules/cf-*/src/']
     }))
     .pipe( gulpAutoprefixer( {
-      browsers: [ 'last 2 version',
-                  'not ie < 8',
-                  'android 4',
-                  'BlackBerry 7',
-                  'BlackBerry 10' ]
+      browsers: environment.getSupportedBrowserList( 'css' )
     } ) )
+    .pipe(gulpCssmin())
     .pipe(gulpRename( (path) => {
       path.dirname = component || path.dirname;
       path.dirname = path.dirname.replace('/src','');
+      path.extname = '.min.css';
     } ))
     .pipe(gulp.dest('./tmp'))
-    .pipe(gulpCssmin())
-    .pipe(gulpRename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('./tmp'));
 }
 
 /**
@@ -82,21 +69,14 @@ function stylesGrid() {
       paths: ['node_modules/cf-*/src/']
     }))
     .pipe( gulpAutoprefixer( {
-      browsers: [ 'last 2 version',
-                  'not ie < 8',
-                  'android 4',
-                  'BlackBerry 7',
-                  'BlackBerry 10' ]
+      browsers: environment.getSupportedBrowserList( 'css' )
     } ) )
-    .pipe(gulpRename({
-      basename: 'cf-grid'
-    }))
-    .pipe(gulp.dest('./tmp/cf-grid'))
     .pipe(gulpCssmin())
     .pipe(gulpRename({
-      suffix: '.min'
+      basename: 'cf-grid',
+      extname: '.min.css'
     }))
-    .pipe(gulp.dest('./tmp/cf-grid'));
+    .pipe(gulp.dest('./tmp/cf-grid'))
 }
 
 gulp.task( 'styles:cf', stylesCf );
@@ -104,5 +84,7 @@ gulp.task( 'styles:components', stylesComponents );
 gulp.task( 'styles:grid', stylesGrid );
 
 gulp.task( 'styles', [
-  'styles:cf'
+  'styles:cf',
+  'styles:components',
+  'styles:grid'
 ] );
