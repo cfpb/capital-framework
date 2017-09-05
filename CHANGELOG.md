@@ -21,6 +21,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-tables:** [PATCH] Fix linting errors.
 - **cf-expandables:** [PATCH] Fix linting errors.
 - **cf-layout:** [MINOR] Update default color variables to use brand colors.
+- **cf-tables:** [MINOR] Update default color variables to use brand colors.
 
 ### Removed
 - **cf-tables:** [PATCH] Removed unused init method from `cf-table-row-links.js`.

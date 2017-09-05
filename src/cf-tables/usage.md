@@ -35,15 +35,16 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables referenced in comments are from 18F's
-[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
+Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
 ```
-@table-cell-bg:              #ffffff; // $color-white
-@table-cell-bg_alt:          #f1f1f1; // $color-gray-lightest
-@table-row-link-bg-hover:    #205493; // $color-cool-blue
-@table-row-link-hover-color: #ffffff; // $color-white
-@table-scrolling-border:     #e4e2e0; // $color-gray-warm-light
+@table-head-bg:                 @gray-10;
+@table-cell-bg:                 @white;
+@table-cell-bg_alt:             @gray-5;
+@table-row-link-bg-hover:       @pacific-80;
+@table-row-link-hover-color:    @white;
+@table-scrolling-border:        @gray-40;
+@table-border:                  @gray;
 ```
 
 
