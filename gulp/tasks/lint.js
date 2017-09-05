@@ -1,27 +1,27 @@
 'use strict';
 
-var gulp = require( 'gulp' );
-var $ = require( 'gulp-load-plugins' )();
-var config = require( '../config' ).lint;
-var handleErrors = require( '../utils/handleErrors' );
+const configLint = require( '../config' ).lint;
+const gulp = require( 'gulp' );
+const gulpEslint = require( 'gulp-eslint' );
+const handleErrors = require( '../utils/handleErrors' );
 
 /**
  * Lints the gulpfile for errors
  */
-gulp.task( 'lint:build', function() {
-  return gulp.src( config.gulp )
-    .pipe( $.eslint() )
-    .pipe( $.eslint.format() )
+gulp.task( 'lint:build', () => {
+  gulp.src( configLint.gulp )
+    .pipe( gulpEslint() )
+    .pipe( gulpEslint.format() )
     .on( 'error', handleErrors );
 } );
 
 /**
  * Lints the source js files for errors
  */
-gulp.task( 'lint:scripts', function() {
-  return gulp.src( config.src )
-    .pipe( $.eslint() )
-    .pipe( $.eslint.format() )
+gulp.task( 'lint:scripts', () => {
+  gulp.src( configLint.src )
+    .pipe( gulpEslint() )
+    .pipe( gulpEslint.format() )
     .on( 'error', handleErrors );
 } );
 
