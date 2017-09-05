@@ -1,5 +1,5 @@
 # cf-docs
-##Project-wide documentation for Capital Framework.
+## Project-wide documentation for Capital Framework.
 
 **Description**: The static documentation site for the Capital Framework. Includes examples, code snippets, getting started and contribution instructions, etc.
 

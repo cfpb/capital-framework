@@ -19,16 +19,16 @@
     "capital-framework"
   ],
   "dependencies": {
-    "cf-buttons": "4.4.1",
-    "cf-core": "4.3.1",
-    "cf-expandables": "4.1.3",
-    "cf-forms": "4.3.2",
-    "cf-grid": "4.2.1",
-    "cf-icons": "4.1.1",
-    "cf-layout": "4.4.1",
-    "cf-pagination": "4.1.3",
-    "cf-tables": "4.1.2",
-    "cf-typography": "4.1.2",
+    "cf-buttons": "latest",
+    "cf-core": "latest",
+    "cf-expandables": "latest",
+    "cf-forms": "latest",
+    "cf-grid": "latest",
+    "cf-icons": "latest",
+    "cf-layout": "latest",
+    "cf-pagination": "latest",
+    "cf-tables": "latest",
+    "cf-typography": "latest",
     "highlight.js": "9.4.0",
     "html5shiv": "latest"
   },
@@ -57,9 +57,9 @@
     "gulp-util": "3.0.7",
     "gulp-webpack": "1.5.0",
     "jquery": "3.0.0",
-    "parallelshell": "2.0.0",
+    "parallelshell": "3.0.1",
     "pretty-hrtime": "1.0.2",
     "pygmentize-bundled": "2.3.0",
-    "require-dir": "0.3.0"
+    "require-dir": "0.3.2"
   }
 }

@@ -386,66 +386,66 @@ _Reduce screen size to see these in action_
 
 #### Default state
 
-<a href="#" class="a-btn a-btn__link">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary">
+<button href="#" class="a-btn a-btn__link">Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__secondary">
     Secondary Button Link
-</a>
-<a href="#" class="a-btn a-btn__link a-btn__warning">Warning Button Link</a>
+</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning">Warning Button Link</button>
 
 ```
-<a href="#" class="a-btn a-btn__link">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary">
+<button href="#" class="a-btn a-btn__link">Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__secondary">
     Secondary Button Link
-</a>
-<a href="#" class="a-btn a-btn__link a-btn__warning">Warning Button Link</a>
+</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning">Warning Button Link</button>
 ```
 
 #### Hovered state
 
-<a href="#" class="a-btn a-btn__link hover">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary hover">
+<button href="#" class="a-btn a-btn__link hover">Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__secondary hover">
     Secondary Button Link
-</a>
-<a href="#" class="a-btn a-btn__link a-btn__warning hover">Warning Button Link</a>
+</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning hover">Warning Button Link</button>
 
 ```
-<a href="#" class="a-btn a-btn__link hover">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary hover">
+<button href="#" class="a-btn a-btn__link hover">Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__secondary hover">
     Secondary Button Link
-</a>
-<a href="#" class="a-btn a-btn__link a-btn__warning hover">Warning Button Link</a>
+</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning hover">Warning Button Link</button>
 ```
 
 #### Focus state
 
-<a href="#" class="a-btn a-btn__link focus">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary focus">
+<button href="#" class="a-btn a-btn__link focus">Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__secondary focus">
     Secondary Button Link
-</a>
-<a href="#" class="a-btn a-btn__link a-btn__warning focus">Warning Button Link</a>
+</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning focus">Warning Button Link</button>
 
 ```
-<a href="#" class="a-btn a-btn__link focus">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary focus">
+<button href="#" class="a-btn a-btn__link focus">Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__secondary focus">
     Secondary Button Link
-</a>
-<a href="#" class="a-btn a-btn__link a-btn__warning focus">Warning Button Link</a>
+</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning focus">Warning Button Link</button>
 ```
 
 #### Active state
 
-<a href="#" class="a-btn a-btn__link active">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary active">
+<button href="#" class="a-btn a-btn__link active">Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__secondary active">
     Secondary Button Link
-</a>
-<a href="#" class="a-btn a-btn__link a-btn__warning active">Warning Button Link</a>
+</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning active">Warning Button Link</button>
 
 ```
-<a href="#" class="a-btn a-btn__link active">Button Link</a>
-<a href="#" class="a-btn a-btn__link a-btn__secondary active">
+<button href="#" class="a-btn a-btn__link active">Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__secondary active">
     Secondary Button Link
-</a>
-<a href="#" class="a-btn a-btn__link a-btn__warning active">Warning Button Link</a>
+</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning active">Warning Button Link</button>
 ```
 
 ### Icon buttons
