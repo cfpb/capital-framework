@@ -208,8 +208,13 @@
 
 // Color variables
 
+<<<<<<< Updated upstream
 @pagination-text:               @gray;
 @pagination-bg:                 @gray-20;
+=======
+// @pagination-text:               @gray;
+// @pagination-bg:                 @gray-20;
+>>>>>>> Stashed changes
 
 // Sizing variables
 
