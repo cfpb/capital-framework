@@ -37,26 +37,26 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 [U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
 
 ```
-@notification-bg:             #323a45; // @gray-20
-@notification-bg-success:     #323a45; // @green-20
-@notification-bg-warning:     #323a45; // @gold-20
-@notification-bg-error:       #323a45; // @red-20
+@notification-bg:             @gray-20;
+@notification-bg-success:     @green-20;
+@notification-bg-warning:     @gold-20;
+@notification-bg-error:       @red-20;
 
-@notification-border:         #323a45; // @gray
-@notification-border-success: #323a45; // @green
-@notification-border-warning: #323a45; // @gold
-@notification-border-error:   #323a45; // @red
+@notification-border:         @gray;
+@notification-border-success: @green;
+@notification-border-warning: @gold; 
+@notification-border-error:   @red;
 
-@notification-icon:           #323a45; // @green
-@notification-icon-success:   #323a45; // @green
-@notification-icon-warning:   #323a45; // @gold
-@notification-icon-error:     #323a45; // @red
+@notification-icon:           @green;
+@notification-icon-success:   @green;
+@notification-icon-warning:   @gold;
+@notification-icon-error:     @red;
 ```
 
 ### Sizing variables
 
 ```
-@notification-padding__px: 15px;
+@notification-padding__px:    15px;
 ```
 
 ## Recommended notification patterns
