@@ -38,7 +38,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
 ```
-@table-head-bg:                 @gray-10;
+@table-head-bg:                 @gray-5;
 @table-cell-bg:                 @white;
 @table-cell-bg_alt:             @gray-5;
 @table-row-link-bg-hover:       @pacific-80;
