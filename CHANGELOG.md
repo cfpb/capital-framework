@@ -4,7 +4,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-modals:** [MAJOR] 1.0 added.
 
 ### Changed
 -
