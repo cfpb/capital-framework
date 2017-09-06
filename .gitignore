@@ -75,3 +75,4 @@ tmp/
 util.js
 dist/
 .npmrc
+src/cf-*/package-lock.json
