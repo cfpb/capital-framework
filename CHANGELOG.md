@@ -5,32 +5,32 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- **cf-notification:** [MINOR] 1.0 added.
-- **cf-forms:** [MINOR] Add `a-label_helper` class.
+- **cf-notification:** 1.0 added.
+- **cf-forms:** Add `a-label_helper` class.
 
 ### Changed
-- **cf-forms:** [PATCH] Convert fixed pixel units to ems.
-- **cf-layout:** [PATCH] Fix the background size of overlay hero images
-- **cf-layout:** [PATCH] Update outdated jump link references in docs.
-- **cf-forms:** [MINOR] Add full width modifier to text inputs
-- **cf-forms:** [PATCH] Fix the spacing and alignment of radio and checkbox inputs
-- **cf-forms:** [PATCH] Update color for `@input-border` to gray 60.
-- **cf-core:** [MINOR] Add brand palette variables to cf-core for other components to use and update default colors to use brand colors.
-- **cf-forms:** [MINOR] Update default color variables to use brand colors.
-- **cf-buttons:** [MINOR] Update default color variables to use brand colors.
-- **cf-expandables:** [MINOR] Update default color variables to use brand colors.
-- **cf-icons:** [MINOR] Update default color variables to use brand colors.
-- **cf-tables:** [PATCH] Fix linting errors.
-- **cf-expandables:** [PATCH] Fix linting errors.
-- **cf-layout:** [MINOR] Update default color variables to use brand colors.
-- **cf-pagination:** [MINOR] Update default color variables to use brand colors.
-- **cf-tables:** [MINOR] Update default color variables to use brand colors.
-- **cf-typography:** [MINOR] Update default color variables to use brand colors.
+- **cf-forms:** Convert fixed pixel units to ems.
+- **cf-layout:** Fix the background size of overlay hero images
+- **cf-layout:** Update outdated jump link references in docs.
+- **cf-forms:** Add full width modifier to text inputs
+- **cf-forms:** Fix the spacing and alignment of radio and checkbox inputs
+- **cf-forms:** Update color for `@input-border` to gray 60.
+- **cf-core:** Add brand palette variables to cf-core for other components to use and update default colors to use brand colors.
+- **cf-forms:** Update default color variables to use brand colors.
+- **cf-buttons:** Update default color variables to use brand colors.
+- **cf-expandables:** Update default color variables to use brand colors.
+- **cf-icons:** Update default color variables to use brand colors.
+- **cf-tables:** Fix linting errors.
+- **cf-expandables:** Fix linting errors.
+- **cf-layout:** Update default color variables to use brand colors.
+- **cf-pagination:** Update default color variables to use brand colors.
+- **cf-tables:** Update default color variables to use brand colors.
+- **cf-typography:** Update default color variables to use brand colors.
 
 ### Removed
-- **cf-tables:** [PATCH] Removed unused init method from `cf-table-row-links.js`.
-- **capital-framework:** [PATCH] Removed un-minified generated JS/CSS.
-- **cf-expandables:** [PATCH] Removed unused `bind`, `config`, and `group` vars.
+- **cf-tables:** Removed unused init method from `cf-table-row-links.js`.
+- **capital-framework:** Removed un-minified generated JS/CSS.
+- **cf-expandables:** Removed unused `bind`, `config`, and `group` vars.
 
 
 ## 4.8.5 - 2017-07-24
