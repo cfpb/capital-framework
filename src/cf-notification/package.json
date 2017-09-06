@@ -1,6 +1,6 @@
 {
   "name": "cf-notification",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Capital Framework notification",
   "less": "src/cf-notification.less",
   "style": "cf-notification.css",
