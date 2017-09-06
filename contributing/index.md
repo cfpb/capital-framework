@@ -76,8 +76,9 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 ### Adhere to any linting errors or warnings
 
 Linting tasks that are set up within component build processes are there to
-promote consistency. When contributing code please publicly track that there
-are no linting errors or warnings testing checklist in the pull request description.
+promote consistency.
+When contributing code please publicly track that there are no linting errors
+or warnings using the testing checklist in the pull request description.
 
 
 ### Follow our CSS naming conventions
