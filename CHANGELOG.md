@@ -6,6 +6,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Added
 
 ### Changed
+- **cf-expandables:** [MINOR] Update atomic-component dependency to 1.3.2.
+- **cf-tables:** [MINOR] Update atomic-component dependency to 1.3.2.
+
 
 ### Removed
 
