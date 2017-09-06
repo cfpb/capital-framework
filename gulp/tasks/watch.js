@@ -5,10 +5,10 @@
    - gulp/tasks/browserSync.js reloads the browser with the compiled files
 */
 
-var gulp = require( 'gulp' );
-var config = require( '../config' );
+const config = require( '../config' );
+const gulp = require( 'gulp' );
 
-gulp.task( 'watch', [ 'browserSync' ], function() {
+gulp.task( 'watch', [ 'browserSync' ], () => {
   gulp.watch( config.scripts.src, [ 'scripts' ] );
   gulp.watch( config.styles.cwd + '/**/*.less', [ 'styles' ] );
   gulp.watch( config.images.src, [ 'images' ] );

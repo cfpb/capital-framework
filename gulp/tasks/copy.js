@@ -1,57 +1,60 @@
 'use strict';
 
-var gulp = require( 'gulp' );
-var $ = require( 'gulp-load-plugins' )();
-var config = require( '../config' ).copy;
-var handleErrors = require( '../utils/handleErrors' );
-var browserSync = require( 'browser-sync' );
-var path = require( 'path' );
-var fileName;
+const browserSync = require( 'browser-sync' );
+const configCopy = require( '../config' ).copy;
+const gulp = require( 'gulp' );
+const gulpChanged = require( 'gulp-changed' );
+const gulpTap = require( 'gulp-tap' );
+const gulpRename = require( 'gulp-rename' );
+const handleErrors = require( '../utils/handleErrors' );
+const path = require( 'path' );
 
-gulp.task( 'copy:files', function() {
-  return gulp.src( config.files.src )
-    .pipe( $.changed( config.files.dest ) )
+let fileName;
+
+gulp.task( 'copy:files', () => {
+  gulp.src( configCopy.files.src )
+    .pipe( gulpChanged( configCopy.files.dest ) )
     .on( 'error', handleErrors )
-    .pipe( gulp.dest( config.files.dest ) )
+    .pipe( gulp.dest( configCopy.files.dest ) )
     .pipe( browserSync.reload( {
       stream: true
     } ) );
 } );
 
-gulp.task( 'copy:icons', function() {
-  return gulp.src( config.icons.src )
-    .pipe( $.changed( config.icons.dest ) )
+gulp.task( 'copy:icons', () => {
+  gulp.src( configCopy.icons.src )
+    .pipe( gulpChanged( configCopy.icons.dest ) )
     .on( 'error', handleErrors )
-    .pipe( gulp.dest( config.icons.dest ) )
+    .pipe( gulp.dest( configCopy.icons.dest ) )
     .pipe( browserSync.reload( {
       stream: true
     } ) );
 } );
 
-gulp.task( 'copy:vendorjs', function() {
-  return gulp.src( config.vendorjs.src )
-    .pipe( $.changed( config.vendorjs.dest ) )
+gulp.task( 'copy:vendorjs', () => {
+  gulp.src( configCopy.vendorjs.src )
+    .pipe( gulpChanged( configCopy.vendorjs.dest ) )
     .on( 'error', handleErrors )
-    .pipe( gulp.dest( config.vendorjs.dest ) )
+    .pipe( gulp.dest( configCopy.vendorjs.dest ) )
     .pipe( browserSync.reload( {
       stream: true
     } ) );
 } );
 
-gulp.task( 'copy:usage', function() {
-  return gulp.src( config.usage.src )
-    .pipe( $.changed( config.usage.dest ) )
-    .pipe( $.tap( function ( file, t ) {
+gulp.task( 'copy:usage', () => {
+  gulp.src( configCopy.usage.src )
+    .pipe( gulpChanged( configCopy.usage.dest ) )
+    .pipe( gulpTap( ( file, t ) => {
       fileName = path.dirname( file.path )
         .split( path.sep )
         .pop();
     } ) )
-    .pipe( $.rename( function ( path ) {
+    .pipe( gulpRename( path => {
       path.basename = fileName;
-      path.extname = '.md'
+      path.extname = '.md';
     } ) )
     .on( 'error', handleErrors )
-    .pipe( gulp.dest( config.usage.dest ) )
+    .pipe( gulp.dest( configCopy.usage.dest ) )
     .pipe( browserSync.reload( {
       stream: true
     } ) );

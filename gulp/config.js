@@ -37,14 +37,14 @@ module.exports = {
     tests: loc.test
   },
   clean: {
-    dest: [loc.dist, './_includes/usage/']
+    dest: [ loc.dist, './_includes/usage/' ]
   },
   styles: {
     cwd:      loc.src + '/static/css',
     src:      '/main.less',
     dest:     loc.dist + '/static/css',
     settings: {
-      paths: glob.sync(loc.lib + '/cf-*/src/'),
+      paths: glob.sync( loc.lib + '/cf-*/src/' ),
       compress: true
     }
   },

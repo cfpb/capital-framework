@@ -1,57 +1,65 @@
 'use strict';
 
-var gulp = require( 'gulp' );
-var $ = require( 'gulp-load-plugins' )();
-var mqr = require( 'gulp-mq-remove' );
-var pkg = require( '../config' ).pkg;
-var banner = require( '../config' ).banner;
-var config = require( '../config' ).styles;
-var handleErrors = require( '../utils/handleErrors' );
-var browserSync = require( 'browser-sync' );
+const browserSync = require( 'browser-sync' );
+const configBanner = require( '../config' ).banner;
+const configPkg = require( '../config' ).pkg;
+const configStyles = require( '../config' ).styles;
+const environment = require( '../../config/environment' );
+const gulp = require( 'gulp' );
+const gulpAutoprefixer = require( 'gulp-autoprefixer' );
+const gulpCssmin = require( 'gulp-cssmin' );
+const gulpHeader = require( 'gulp-header' );
+const gulpLess = require( 'gulp-less' );
+const gulpRename = require( 'gulp-rename' );
+const gulpReplace = require( 'gulp-replace' );
+const gulpSourcemaps = require( 'gulp-sourcemaps' );
+const mqr = require( 'gulp-mq-remove' );
+const handleErrors = require( '../utils/handleErrors' );
 
-gulp.task( 'styles:modern', function() {
-  return gulp.src( config.cwd + config.src )
-    .pipe( $.sourcemaps.init() )
-    .pipe( $.less( config.settings ) )
+
+gulp.task( 'styles:modern', () => {
+  gulp.src( configStyles.cwd + configStyles.src )
+    .pipe( gulpSourcemaps.init() )
+    .pipe( gulpLess( configStyles.settings ) )
     .on( 'error', handleErrors )
-    .pipe( $.autoprefixer( {
-      browsers: [ 'last 2 version' ]
+    .pipe( gulpAutoprefixer( {
+      browsers: environment.getSupportedBrowserList( 'css' )
     } ) )
-    .pipe( $.header( banner, { pkg: pkg } ) )
-    .pipe( $.rename( {
-      suffix: ".min"
+    .pipe( gulpHeader( configBanner, { pkg: configPkg } ) )
+    .pipe( gulpRename( {
+      suffix: '.min'
     } ) )
-    .pipe( $.sourcemaps.write( '.' ) )
-    .pipe( gulp.dest( config.dest ) )
+    .pipe( gulpSourcemaps.write( '.' ) )
+    .pipe( gulp.dest( configStyles.dest ) )
     .pipe( browserSync.reload( {
       stream: true
     } ) );
 } );
 
-gulp.task( 'styles:ie', function() {
-  return gulp.src( config.cwd + config.src )
-    .pipe( $.less( config.settings ) )
+gulp.task( 'styles:ie', () => {
+  gulp.src( configStyles.cwd + configStyles.src )
+    .pipe( gulpLess( configStyles.settings ) )
     .on( 'error', handleErrors )
-    .pipe( $.replace(
+    .pipe( gulpReplace(
       /url\('chosen-sprite.png'\)/ig,
       'url("/static/img/chosen-sprite.png")'
     ) )
-    .pipe( $.replace(
+    .pipe( gulpReplace(
       /url\('chosen-sprite@2x.png'\)/ig,
       'url("/static/img/chosen-sprite@2x.png")'
     ) )
-    .pipe( $.autoprefixer( {
+    .pipe( gulpAutoprefixer( {
       browsers: [ 'IE 7', 'IE 8' ]
     } ) )
     .pipe( mqr( {
       width: '75em'
     } ) )
-    .pipe( $.cssmin() )
-    .pipe( $.rename( {
+    .pipe( gulpCssmin() )
+    .pipe( gulpRename( {
       suffix:  '.ie',
       extname: '.css'
     } ) )
-    .pipe( gulp.dest( config.dest ) )
+    .pipe( gulp.dest( configStyles.dest ) )
     .pipe( browserSync.reload( {
       stream: true
     } ) );
