@@ -18,7 +18,6 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Added
 - **cf-notification:** 1.0 added.
-- **cf-modals:** 1.0 added.
 - **cf-forms:** Add `a-label_helper` class.
 
 ### Changed
