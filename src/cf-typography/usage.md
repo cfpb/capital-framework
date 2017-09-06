@@ -45,8 +45,6 @@ project by duplicating the variable `@key: value`.
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
 ```
-// Color variables
-
 // Running text elements
 
 // .a-micro-copy
