@@ -42,42 +42,41 @@ project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables referenced in comments are from 18F's
-[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
+Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
 ```
 // Running text elements
 
 // .a-micro-copy
-@micro-copy:                #112e51; // $color-primary-darkest
+@micro-copy:                    @black;
 
 // .a-date
-@date:                      #112e51; // $color-primary-darkest
+@date:                          @gray;
 
 // .m-pull-quote
-@pull-quote_body:           #494440; // $color-gray-warm-dark
-@pull-quote_citation:       #205493; // $color-cool-blue
+@pull-quote_body:               @black;
+@pull-quote_citation:           @gray;
 
 // Headings
 
 // .a-heading__icon
-@heading__icon:             #112e51; // $color-primary-darkest
-@heading__icon__hover:      #205493; // $color-primary-darker
+@heading__icon:                 @black;
+@heading__icon__hover:          @link-text-hover;
 
 // Headers
 
 // .m-slug-header
-@slug-header_border__thin:  #323a45; // $color-gray-dark
-@slug-header_border__thick: #02bfe7; // $color-primary-alt
+@slug-header_border__thin:      @gray-10;
+@slug-header_border__thick:     @green;
 
 // .m-meta-header
-@meta-header_border:        #323a45; // $color-gray-dark
+@meta-header_border:            @gray-40;
 
 // Links
 
 // .a-link__jump
-@jump-link_bg:              #f1f1f1; // $color-gray-lightest
-@jump-link_border:          #323a45; // $color-gray-dark
+@jump-link_bg:                  @gray-10;
+@jump-link_border:              @gray-40;
 ```
 
 
