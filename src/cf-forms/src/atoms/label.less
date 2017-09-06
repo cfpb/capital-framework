@@ -1,12 +1,17 @@
 .a-label {
     display: inline-block;
-}
 
-.a-label__heading {
-    .heading-4();
+    &_helper {
+        color: @label-helper;
+        font-size: unit( 16px / @base-font-size-px, em );
+    }
 
-    display: block;
+    &__heading {
+        .heading-4();
 
-    // Overwrites heading-4 margin.
-    margin-bottom: unit( 10px / @font-size, em );
+        display: block;
+
+        // Overwrites heading-4 margin.
+        margin-bottom: unit( 10px / @font-size, em );
+    }
 }

@@ -1,19 +1,18 @@
 {
-  "name": "cf-pagination",
-  "version": "4.2.0",
-  "description": "Capital Framework pagination",
-  "less": "src/cf-pagination.less",
-  "style": "cf-pagination.css",
+  "name": "cf-notification",
+  "version": "1.1.0",
+  "description": "Capital Framework notification",
+  "less": "src/cf-notification.less",
+  "style": "cf-notification.css",
   "scripts": {
     "//": "This is a convenience script to allow running `npm test` from this dir.",
     "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
   },
   "dependencies": {
     "cf-core": "^4.0.0",
-    "cf-buttons": "^4.0.0",
     "cf-icons": "^4.0.0"
   },
   "keywords": [
-    "pagination"
+    "notification"
   ]
 }

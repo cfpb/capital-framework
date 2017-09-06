@@ -27,18 +27,17 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables referenced in comments are from 18F's
-[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
+Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
 ```
-@pagination-text-color:       #323a45; // $color-gray-dark
-@pagination-bg-color:         #f1f1f1; // $color-gray-lightest
+@pagination-text:               @gray;
+@pagination-bg:                 @gray-10;
 ```
 
 ### Sizing variables
 
 ```
-@pagination-btn-min-width-px: 130px;
+@pagination-btn-min-width-px:   130px;
 ```
 
 

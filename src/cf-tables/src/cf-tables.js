@@ -1,4 +1,3 @@
-
 /* ==========================================================================
    TableOrganism
 
@@ -17,7 +16,7 @@ var TableOrganism = Organism.extend( {
     base: '.o-table'
   },
 
-  modifiers: [TableSortable, TableRowLinks]
+  modifiers: [ TableSortable, TableRowLinks ]
 
 } );
 

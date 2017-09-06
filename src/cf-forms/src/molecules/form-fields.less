@@ -1,5 +1,5 @@
 .m-form-field {
-    .a-text-input {
+    .a-text-input__full {
         box-sizing: border-box;
         width: 100%;
     }
@@ -11,7 +11,7 @@
     &__checkbox,
     &__radio {
         .a-label {
-            vertical-align: middle;
+            vertical-align: top;
             cursor: pointer;
 
             &:before {
@@ -100,7 +100,7 @@
             }
 
             &:checked + .a-label:before {
-                background-color: @input-bg__active;
+                background-color: @input-bg__selected;
                 box-shadow: inset 0 0 0 2px #fff;
             }
 
@@ -117,7 +117,7 @@
         .a-label {
             display: block;
 
-            padding: 10px;
+            padding: 15px;
 
             background-color: @input-lg-target;
         }

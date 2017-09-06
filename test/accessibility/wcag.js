@@ -1,18 +1,18 @@
 'use strict';
 
-var finalhandler = require( 'finalhandler' );
-var fs = require( 'fs' );
-var http = require( 'http' );
-var serveStatic = require( 'serve-static' );
-var path = require( 'path' );
-var wcag = require( 'wcag' );
-var logSymbols = require( 'log-symbols' );
+const finalhandler = require( 'finalhandler' );
+const fs = require( 'fs' );
+const http = require( 'http' );
+const serveStatic = require( 'serve-static' );
+const path = require( 'path' );
+const wcag = require( 'wcag' );
+const logSymbols = require( 'log-symbols' );
 
 if ( !process.env.ACHECKER_ID ) {
   throw new Error( 'Please export an ACHECKER_ID environment variable.' );
 }
 
-fs.readdir( path.join( __dirname, '..', '..', '/tmp' ), function( err, dirs ) {
+fs.readdir( path.join( __dirname, '..', '..', '/tmp' ), ( err, dirs ) => {
   if ( err ) {
     throw new Error( 'Didn\'t read directory.' );
   }
@@ -28,9 +28,9 @@ fs.readdir( path.join( __dirname, '..', '..', '/tmp' ), function( err, dirs ) {
  * @param {function} cb - The callback
  */
 function startServer( component, cb ) {
-  var serve = serveStatic( path.join( __dirname, '/tmp/' + component ) );
-  var server = http.createServer( function( req, res ) {
-    var done = finalhandler( req, res );
+  const serve = serveStatic( path.join( __dirname, '/tmp/' + component ) );
+  const server = http.createServer( ( req, res ) => {
+    const done = finalhandler( req, res );
     serve( req, res, done );
   } );
 
@@ -39,20 +39,20 @@ function startServer( component, cb ) {
 
   server.listen( 0 );
 
-  server.on( 'listening', function() {
-    var port = server.address().port;
+  server.on( 'listening', () => {
+    const port = server.address().port;
     cb( component, server, port );
   } );
 }
 
 function testComponent( component, server, port ) {
-  var options = {
+  const options = {
     id: process.env.ACHECKER_ID,
     uri: 'http://localhost:' + port + '/usage.html',
     guide: '508'
   };
 
-  wcag( options, function( error, data ) {
+  wcag( options, ( error, data ) => {
     if ( error ) return console.error( error );
     if ( data.status === 'PASS' ) {
       console.error(
