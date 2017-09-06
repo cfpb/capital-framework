@@ -24,6 +24,8 @@
       subhref: "/components/cf-icons/"
     - subtitle: "cf-layout"
       subhref: "/components/cf-layout/"
+    - subtitle: "cf-notification"
+      subhref: "/components/cf-notification/"
     - subtitle: "cf-pagination"
       subhref: "/components/cf-pagination/"
     - subtitle: "cf-tables"
