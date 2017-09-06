@@ -14,7 +14,7 @@ We actively test Capital Framework components in the following browsers:
 - Chrome
 - Safari
 - Firefox
-- IE7+
+- IE8+
 - Opera
 - iOS6+
 - Android 4+
@@ -22,6 +22,4 @@ We actively test Capital Framework components in the following browsers:
 
 ### Accessibility
 
-We deeply value accessible web products and work to ensure that all of our componets are 508 compliant. We actively test components to ensure that they are keyboard and screen reader friendly.
-
-For more information, please see our [testing checklist](../contributing/testing-snippet.html).
+We deeply value accessible web products and work to ensure that all of our components are 508 compliant. We actively test components to ensure that they are keyboard and screen reader friendly.

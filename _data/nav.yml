@@ -37,8 +37,6 @@
 - title: "Contributing"
   href: "/contributing/"
   subcategories:
-  - subtitle: "Testing checklist"
-    subhref: "/contributing/testing-snippet.html"
   - subtitle: "Anatomy of a Component"
     subhref: "/contributing/anatomy.html"
 
