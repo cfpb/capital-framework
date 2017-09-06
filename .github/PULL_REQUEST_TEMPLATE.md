@@ -16,10 +16,6 @@ Short description explaining the high-level reason for the pull request
 
 -
 
-## Review
-
-- @user
-
 ## Screenshots
 
 
@@ -42,3 +38,31 @@ Short description explaining the high-level reason for the pull request
 * [ ] Placeholder code is flagged
 * [ ] Visually tested in supported browsers and devices
 * [ ] Project documentation has been updated (including the "Unreleased" section of the CHANGELOG)
+
+## Testing checklist
+
+### Browsers
+
+- [ ] Chrome
+- [ ] Safari
+- [ ] FF
+- [ ] IE10
+- [ ] IE9
+- [ ] IE8
+- [ ] Opera
+- [ ] iOS
+- [ ] Android
+- [ ] Blackberry Bold
+
+### Accessibility
+
+- [ ] Keyboard friendly
+- [ ] Screen reader friendly
+
+### Other
+
+- [ ] Is useable without CSS
+- [ ] Is useable without JS
+- [ ] Flexible from small to large screens
+- [ ] No linting errors or warnings
+- [ ] JavaScript tests are passing
