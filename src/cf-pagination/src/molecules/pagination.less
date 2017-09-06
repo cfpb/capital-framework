@@ -8,8 +8,8 @@
     &_form {
         padding: unit( 5px / @base-font-size-px, em );
         border-radius: unit( 4px / @base-font-size-px, em );
-        background: @pagination-bg-color;
-        color: @pagination-text-color;
+        background: @pagination-bg;
+        color: @pagination-text;
         text-align: center;
     }
 
@@ -52,7 +52,8 @@
         text-align: center;
 
         &.a-btn__disabled {
-            background-color: @pagination-bg-color;
+            background-color: @pagination-bg;
+            border-color: transparent;
         }
     }
 
