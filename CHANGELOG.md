@@ -11,7 +11,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-tables:** [MINOR] Update atomic-component dependency to 1.3.2.
 
 ### Removed
-- **capital-framework:** [PATCH] All individual component lockfiles.
+- **all components:** [PATCH] All individual component lockfiles.
 
 
 ## 4.9.0 - 2017-09-06
