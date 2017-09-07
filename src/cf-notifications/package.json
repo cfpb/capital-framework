@@ -1,9 +1,9 @@
 {
-  "name": "cf-notification",
-  "version": "1.0.1",
-  "description": "Capital Framework notification",
-  "less": "src/cf-notification.less",
-  "style": "cf-notification.css",
+  "name": "cf-notifications",
+  "version": "1.0.2",
+  "description": "Capital Framework notifications",
+  "less": "src/cf-notifications.less",
+  "style": "cf-notifications.css",
   "scripts": {
     "//": "This is a convenience script to allow running `npm test` from this dir.",
     "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
@@ -13,6 +13,6 @@
     "cf-icons": "^4.0.0"
   },
   "keywords": [
-    "notification"
+    "notifications"
   ]
 }
