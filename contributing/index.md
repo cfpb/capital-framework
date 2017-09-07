@@ -17,7 +17,7 @@ This will build every component (compiling Less, bundling JS, processing markdow
 
 ## Testing components locally
 
-If you're hacking on a component and want to test it in a local project, use `npm link`. 
+If you're hacking on a component and want to test it in a local project, use `npm link`.
 For example:
 
 {% highlight sh %}
@@ -29,22 +29,22 @@ cd ~/Projects/owning-a-home # whatever project you want to test the component in
 npm link cf-buttons
 {% endhighlight %}
 
-Now `~/Projects/owning-a-home/node_modules/cf-buttons` will be a symlink pointing 
+Now `~/Projects/owning-a-home/node_modules/cf-buttons` will be a symlink pointing
 to the `~/Projects/capital-framework/tmp/cf-buttons` directory.
-Whenever you rebuild (`npm run build`, see above) the CF components, your local 
+Whenever you rebuild (`npm run build`, see above) the CF components, your local
 owning-a-home project will reference your local `tmp/` version of cf-buttons.
 
 
 ### Browser testing
 
-Components should be cross browser tested. When contributing code please publicly track the tests you have run using the
-[testing checklist snippet](testing-snippet.html).
+Components should be cross browser tested. When contributing code please publicly track the tests you have run using the testing checklist in the pull request description.
 
 
 ### JavaScript testing
 
-JavaScript tests can be run with the `npm test` command. Before making a pull 
-request please publicly track that all tests have passed using the [testing checklist snippet](testing-snippet.html).
+JavaScript tests can be run with the `npm test` command. Before making a pull
+request please publicly track that all tests have passed using the testing
+checklist in the pull request description.
 
 New unit tests should be written using [QUnit](https://qunitjs.com/) for any functionality added.
 
@@ -76,8 +76,9 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 ### Adhere to any linting errors or warnings
 
 Linting tasks that are set up within component build processes are there to
-promote consistency. When contributing code please publicly track that there are no linting errors
-or warnings using the [testing checklist snippet](testing-snippet.html).
+promote consistency.
+When contributing code please publicly track that there are no linting errors
+or warnings using the testing checklist in the pull request description.
 
 
 ### Follow our CSS naming conventions
@@ -101,7 +102,7 @@ Avoid this in favor of using a descendant, like this: `.list__spaced .list_item`
 ### Shoot for mobile first declarations
 
 In most cases styles should be declared mobile first,
-then enhanced with `min-width` media queries. By doing this we create a base 
+then enhanced with `min-width` media queries. By doing this we create a base
 experience that all devices can use and one that does not require media query support.
 
 
