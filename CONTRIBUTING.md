@@ -67,6 +67,7 @@ In a second local clone of this repo in a different folder:
 - run `npm run build`
 - run `npm start`
 - open a browser at http://localhost:3000/ and navigate to the component you've changed
+- when you've finished testing run `npm run cf-unlink` to reset your components to the published releases
 
 #### Testing in an outside project
 
