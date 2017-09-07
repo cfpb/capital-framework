@@ -3,15 +3,10 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
-- **cf-notifications:** [PATCH] Renamed from `cf-notification`
+- **cf-notifications:** Renamed from `cf-notification`
   to `cf-notifications`.
 
-### Removed
--
 
 ## 4.9.1 - 2017-09-07
 
