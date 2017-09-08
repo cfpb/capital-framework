@@ -8,7 +8,7 @@ The Consumer Financial Protection Bureau's user interface framework.
 
 | layout | notifications | pagination | tables | typography |
 |:---:|:---:|:---:|:---:|:---:|
-| [![npm](https://img.shields.io/npm/v/cf-layout.svg?style=flat-square)](https://www.npmjs.com/package/cf-layout)  | [![npm](https://img.shields.io/npm/v/cf-notifications.svg?style=flat-square)](https://www.npmjs.com/package/cf-notifications)  | [![npm](https://img.shields.io/npm/v/cf-pagination.svg?style=flat-square)](https://www.npmjs.com/package/cf-pagination)  | [![npm](https://img.shields.io/npm/v/cf-typography.svg?style=flat-square)](https://www.npmjs.com/package/cf-tables)  | [![npm](https://img.shields.io/npm/v/cf-typography.svg?style=flat-square)](https://www.npmjs.com/package/cf-typography)  |
+| [![npm](https://img.shields.io/npm/v/cf-layout.svg?style=flat-square)](https://www.npmjs.com/package/cf-layout)  | [![npm](https://img.shields.io/npm/v/cf-notifications.svg?style=flat-square)](https://www.npmjs.com/package/cf-notifications)  | [![npm](https://img.shields.io/npm/v/cf-pagination.svg?style=flat-square)](https://www.npmjs.com/package/cf-pagination)  | [![npm](https://img.shields.io/npm/v/cf-tables.svg?style=flat-square)](https://www.npmjs.com/package/cf-tables)  | [![npm](https://img.shields.io/npm/v/cf-typography.svg?style=flat-square)](https://www.npmjs.com/package/cf-typography)  |
 
 ## Installation
 
