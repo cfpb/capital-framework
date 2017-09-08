@@ -4,13 +4,14 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+- **cf-forms:** [PATCH] Add sidecar `.hover` classes to basic inputs,
+  for manually triggering hover/focus state.
 
 ### Changed
-- 
+-
 
 ### Removed
-- 
+-
 
 ## 4.9.2 - 2017-09-07
 
