@@ -98,4 +98,4 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Visible state
 
-Having the `o-modal__visible` modifier on the base element displays the modal.
+Adding the `o-modal__visible` modifier on the base element displays the modal.

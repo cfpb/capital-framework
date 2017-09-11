@@ -15,29 +15,41 @@ const ModalOrganism = Organism.extend( {
   },
 
   events: {
-    'click .o-modal_close': 'onModalCloseClick',
+    'click .o-modal_close':    'onModalCloseClick',
     'click .o-modal_backdrop': 'onModalCloseClick',
-    'click .o-modal_offset': 'onModalCloseClick',
-    'click .o-modal_inner': 'onModalPreventHide'
+    'click .o-modal_offset':   'onModalCloseClick',
+    'click .o-modal_inner':    'onModalPreventHide',
+    'keydown document.body':   'onBodyKeyPressed'
   },
 
   ui: {
     base: '.o-modal'
   },
 
-  onModalCloseClick: onModalCloseClick,
+  initialize: initialize,
+
+  onModalCloseClick:  onModalCloseClick,
   onModalPreventHide: onModalPreventHide
 } );
+
+/**
+ * Run this once when the component is initialized.
+ */
+function initialize() {
+  // TODO: Fix line is temporary till AtomicComponent sets this.ui.base
+  //       to equal this.element.
+  this.ui.base = this.element;
+}
+
+function onBodyKeyPressed( evt ) {
+  console.log(evt);
+}
 
 /**
  * Handle a click to close the modal.
  * Applied to the modal close button, backdrop, and offset.
  */
 function onModalCloseClick() {
-
-  // TODO: Fix line is temporary till AtomicComponent sets this.ui.base
-  //       to equal this.element.
-  this.ui.base = this.element;
 
   if ( this.insideClicked === false) {
     this.removeClass( this.ui.base, this.classes.isVisible );
