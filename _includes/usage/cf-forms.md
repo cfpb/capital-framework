@@ -201,29 +201,131 @@ Inputs should always be paired with a `label` for accessibility reasons.
 
 ### Basic checkboxes
 
+The default section below demonstrates how a checkbox would normally
+appear in code.
+
+#### Default
+
 <div class="m-form-field m-form-field__checkbox">
-    <input class="a-checkbox" type="checkbox" id="test_checkbox">
-    <label class="a-label" for="test_checkbox">Label</label>
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_default">
+    <label class="a-label" for="test_checkbox_basic_default">Label</label>
 </div>
 
 ```
 <div class="m-form-field m-form-field__checkbox">
     <input class="a-checkbox" type="checkbox" id="test_checkbox">
     <label class="a-label" for="test_checkbox">Label</label>
+</div>
+```
+
+The following sections demonstrate how a particular state of a checkbox
+could be forced to be shown.
+Generally this is only useful for documentation purposes.
+
+#### Hover/Focus
+
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox hover" type="checkbox" id="test_checkbox_basic_hover">
+    <label class="a-label" for="test_checkbox_basic_hover">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox hover" type="checkbox" id="test_checkbox_basic_hover">
+    <label class="a-label" for="test_checkbox_basic_hover">Label</label>
+</div>
+```
+
+#### Selected
+
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_checked" checked>
+    <label class="a-label" for="test_checkbox_basic_checked">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_checked" checked>
+    <label class="a-label" for="test_checkbox_basic_checked">Label</label>
+</div>
+```
+
+#### Disabled
+
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_disabled" disabled>
+    <label class="a-label" for="test_checkbox_basic_disabled">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_disabled" disabled>
+    <label class="a-label" for="test_checkbox_basic_disabled">Label</label>
 </div>
 ```
 
 ### Basic radio buttons
 
+The default section below demonstrates how a radio button would normally
+appear in code.
+
+#### Default
+
 <div class="m-form-field m-form-field__radio">
-    <input class="a-radio" type="radio" id="test_radio">
-    <label class="a-label" for="test_radio">Label</label>
+    <input class="a-radio" type="radio" id="test_radio_basic_default">
+    <label class="a-label" for="test_radio_basic_default">Label</label>
 </div>
 
 ```
 <div class="m-form-field m-form-field__radio">
-    <input class="a-radio" type="radio" id="test_radio">
-    <label class="a-label" for="test_radio">Label</label>
+    <input class="a-radio" type="radio" id="test_radio_basic_default">
+    <label class="a-label" for="test_radio_basic_default">Label</label>
+</div>
+```
+
+The following sections demonstrate how a particular state of a radio button
+could be forced to be shown.
+Generally this is only useful for documentation purposes.
+
+#### Hover/Focus
+
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio hover" type="radio" id="test_radio_basic_hover">
+    <label class="a-label" for="test_radio_basic_hover">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio hover" type="radio" id="test_radio_basic_hover">
+    <label class="a-label" for="test_radio_basic_hover">Label</label>
+</div>
+```
+
+#### Selected
+
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio" type="radio" id="test_radio_basic_checked" checked>
+    <label class="a-label" for="test_radio_basic_checked">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio" type="radio" id="test_radio_basic_checked" checked>
+    <label class="a-label" for="test_radio_basic_checked">Label</label>
+</div>
+```
+
+#### Disabled
+
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio" type="radio" id="test_radio_basic_disabled" disabled>
+    <label class="a-label" for="test_radio_basic_disabled">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio" type="radio" id="test_radio_basic_disabled" disabled>
+    <label class="a-label" for="test_radio_basic_disabled">Label</label>
 </div>
 ```
 
