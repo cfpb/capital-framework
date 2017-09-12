@@ -147,8 +147,10 @@ function _onWindowKeyPressed( evt ) {
  */
 function _getFirstFocusElm( body, footerSubmit, footerButton, closeButton ) {
 
-  if ( body === null ) {
-    throw new Error( 'Modals must have a body (o-modal_body)!' );
+  if ( body === null || closeButton === null) {
+    const msg = 'Modals must have a body (o-modal_body)! ' +
+                'and a close button (o-modal_close)'
+    throw new Error( msg );
   }
 
   // This will get focus first when the modal opens.
