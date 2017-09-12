@@ -15,8 +15,9 @@ dependencies of this component.
 - [Variables](#variables)
   - [Color variables](#color-variables)
 - [Recommended expandable pattern](#recommended-expandable-pattern)
-  - [Default state](#default-state)
-  - [Visible state](#visible-state)
+  - [Dialog modal](#dialog-modal)
+  - [Alert modal](#alert-modal)
+  - [Visible modifier](#visible-modifier)
 
 ## Variables
 
@@ -25,41 +26,42 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-`$color-` variables referenced in comments are from 18F's
-[U.S. Web Design Standards](https://github.com/18F/web-design-standards/blob/staging/src/stylesheets/core/_variables.scss)
-
 ```
-@modal-bg-outer:              #000000; // @black;
-@modal-bg-inner:              #ffffff; // @white;
-@modal-action-bar:            #f7f8f9; // @gray-5;
-@modal-border-top:            #20aa3f; // @green;
+@modal-backdrop:   @black;
+@modal-body:       @white;
+@modal-footer:     @gray-5;
+@modal-border-top: green;
 ```
 
 
 ## Recommended modal pattern
 
-### Default state
+### Dialog modal
 
-<div class="o-modal">
+A regular dialog modal does not contain a call to action for the user and
+can simply be closed without further interaction.
+
+<div class="o-modal"
+     aria-hidden="true"
+     role="dialog"
+     aria-labelledby="example-modal-1-title"
+     aria-describedby="example-modal-1-desc">
     <div class="o-modal_backdrop"></div>
-    <div class="o-modal_container" aria-hidden="false" role="dialog">
-        <div class="o-modal_offset">
-            <div class="o-modal_content">
-                <div class="o-modal_inner">
-                    <p class="o-modal_close">
-                        <button class="a-btn a-btn__link">
-                            Close
-                            <span class="cf-icon cf-icon-delete-round"></span>
-                        </button>
-                    </p>
-                    <h3>Privacy Act statement</h3>
+    <div class="o-modal_container">
+        <div class="o-modal_content">
+            <div class="o-modal_body">
+                <button class="o-modal_close a-btn a-btn__link">
+                    Close
+                    <span class="cf-icon cf-icon-delete-round"></span>
+                </button>
+                <h1 id="example-modal-title-1">Lorem ipsum</h1>
+                <div id="example-modal-1-desc">
                     <p>
-                        Any identifying information that you provide will only be used to allow the Bureau to respond to your question.
-                        This information may be shared with contractors and other agents authorized by the Bureau to receive this information in the normal course of business.
-                        Your submission of information is entirely voluntary.
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                     </p>
                     <p>
-                      This collection of information is authorized by 12 U.S.C. § 5492.
+                        Quis nostrum exercitationem ullam corporis suscipit laboriosam,
+                        nisi ut aliquid ex ea commodi consequatur?
                     </p>
                 </div>
             </div>
@@ -68,26 +70,27 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 </div>
 
 ```
-<div class="o-modal">
+<div class="o-modal"
+     aria-hidden="true"
+     role="dialog"
+     aria-labelledby="example-modal-1-title"
+     aria-describedby="example-modal-1-desc">
     <div class="o-modal_backdrop"></div>
-    <div class="o-modal_container" aria-hidden="false" role="dialog">
-        <div class="o-modal_offset">
-            <div class="o-modal_content">
-                <div class="o-modal_inner">
-                    <p class="o-modal_close">
-                        <button class="a-btn a-btn__link">
-                            Close
-                            <span class="cf-icon cf-icon-delete-round"></span>
-                        </button>
-                    </p>
-                    <h3>Privacy Act statement</h3>
+    <div class="o-modal_container">
+        <div class="o-modal_content">
+            <div class="o-modal_body">
+                <button class="o-modal_close a-btn a-btn__link">
+                    Close
+                    <span class="cf-icon cf-icon-delete-round"></span>
+                </button>
+                <h1 id="example-modal-title-1">Lorem ipsum</h1>
+                <div id="example-modal-1-desc">
                     <p>
-                        Any identifying information that you provide will only be used to allow the Bureau to respond to your question.
-                        This information may be shared with contractors and other agents authorized by the Bureau to receive this information in the normal course of business.
-                        Your submission of information is entirely voluntary.
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                     </p>
                     <p>
-                      This collection of information is authorized by 12 U.S.C. § 5492.
+                        Quis nostrum exercitationem ullam corporis suscipit laboriosam,
+                        nisi ut aliquid ex ea commodi consequatur?
                     </p>
                 </div>
             </div>
@@ -96,6 +99,77 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 </div>
 ```
 
-### Visible state
+### Alert modal
+
+This version of a modal uses a form for the `o-modal_content` and includes
+a footer that allows the user to perform an action, such as saving
+entered content. Unlike a dialog model, the first content a user should
+interact with is focused, which may be the first occurance of an `<input>`,
+`<submit>`, `<button>` or the close button designated by
+the `o-modal_close` class.
+
+<div class="o-modal"
+     aria-hidden="true"
+     role="alertdialog"
+     aria-labelledby="example-modal-2-title"
+     aria-describedby="example-modal-2-desc">
+    <div class="o-modal_backdrop"></div>
+    <div class="o-modal_container">
+        <form class="o-modal_content">
+            <div class="o-modal_body">
+                <button class="o-modal_close a-btn a-btn__link">
+                    Close
+                    <span class="cf-icon cf-icon-delete-round"></span>
+                </button>
+                <h1 id="example-modal-2-title">Lorem ipsum</h1>
+                <p id="example-modal-2-desc">
+                    <label class="a-label" for="textinput-example">A text input</label>
+                    <input class="a-text-input"
+                           type="text"
+                           id="textinput-example"
+                           value="Lorem ipsum">
+                </p>
+            </div>
+            <div class="o-modal_footer m-btn-group">
+                <submit class="a-btn">Save</submit>
+                <button class="a-btn a-btn__link a-btn__warning">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+```
+<div class="o-modal"
+     aria-hidden="true"
+     role="alertdialog"
+     aria-labelledby="example-modal-2-title"
+     aria-describedby="example-modal-2-desc">
+    <div class="o-modal_backdrop"></div>
+    <div class="o-modal_container">
+        <form class="o-modal_content">
+            <div class="o-modal_body">
+                <button class="o-modal_close a-btn a-btn__link">
+                    Close
+                    <span class="cf-icon cf-icon-delete-round"></span>
+                </button>
+                <h1 id="example-modal-2-title">Lorem ipsum</h1>
+                <p id="example-modal-2-desc">
+                    <label class="a-label" for="textinput-example">A text input</label>
+                    <input class="a-text-input"
+                           type="text"
+                           id="textinput-example"
+                           value="Lorem ipsum">
+                </p>
+            </div>
+            <div class="o-modal_footer m-btn-group">
+                <submit class="a-btn">Save</submit>
+                <button class="a-btn a-btn__link a-btn__warning">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+```
+
+### Visible modifier
 
 Adding the `o-modal__visible` modifier on the base element displays the modal.

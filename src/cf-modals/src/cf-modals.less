@@ -8,10 +8,10 @@
 //
 
 // .o-modal
-@modal-bg-outer:              @black;
-@modal-bg-inner:              @white;
-@modal-action-bar:            @gray-5;
-@modal-border-top:            @green;
+@modal-backdrop:   @black;
+@modal-body:       @white;
+@modal-footer:     @gray-5;
+@modal-border-top: green;
 
 // Import external dependencies
 
@@ -19,69 +19,71 @@
 @import (less) '../../cf-icons/src/cf-icons.less';
 
 .o-modal {
-   z-index: 99999;
-   display: none;
+    z-index: 99999;
+    display: none;
 
-   &__visible {
-     display:block;
-   }
-}
+    &__visible {
+        display:block;
+    }
 
-.o-modal_backdrop {
-   position: fixed;
-   width: 100%;
-   height: 100%;
-   top: 0;
-   left: 0;
-   background-color: @modal-bg-outer;
-   opacity: 0.5;
-   z-index: 99999;
-}
+    &_instructions {
+      .u-visually-hidden();
+    }
 
-.o-modal_offset {
-   position: absolute;
-   top: 5%;
-   width: 100%;
-   z-index: 999999;
-}
+    &_backdrop {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: @modal-backdrop;
+        opacity: 0.5;
+        z-index: 1;
+    }
 
-.o-modal_content {
-   position: relative;
-   width: 60%;
-   margin: 0 auto;
-   min-width: 200px;
-   max-width: 270px;
-}
+    &_container {
+        position: fixed;
+        display: table;
+        top: 5%;
+        left: 0;
+        z-index: 2;
+        padding-left: 5%;
+        padding-right: 5%;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-@media only all and (min-width:37.5625em) {
-   .o-modal_content {
-       max-width: 630px;
-       max-height: 700px;
-       overflow: auto;
-   }
-}
+    &_content {
+      max-width: 270px;
+      margin: 0 auto;
 
-.o-modal_inner {
-   border-top: 3px solid @modal-border-top;
-   background-color: @modal-bg-inner;
-   padding: 30px;
-}
+      @media only all and (min-width:37.5625em) {
+          & {
+              max-width: 630px;
+          }
+      }
+    }
 
-.o-modal_actionbar {
-   background: @modal-action-bar;
-   padding: 10px 30px;
-}
+    &_body {
+       border-top: 3px solid @modal-border-top;
+       background-color: @modal-body;
+       padding: 30px;
+    }
 
-.o-modal_inner h1 {
-   margin: 0 !important;
-}
+    &_footer {
+       background: @modal-footer;
+       padding: 10px 30px;
+    }
 
-.o-modal_close {
-   float: right;
-}
+    &_close {
+       float: right;
+       margin-left: unit( 10px / @base-font-size-px, em );
 
-.o-modal_close .btn__link {
-   border-top: none;
-   border-right: none;
-   border-left: none;
+       // Hide link underline before and after hover and focus.
+       &,
+       &:hover,
+       &:focus {
+           border-bottom: none;
+       }
+    }
 }
