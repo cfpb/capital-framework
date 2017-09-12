@@ -78,7 +78,6 @@ function initialize() {
  * @param  {MouseEvent} evt - The mouse event object with the event target.
  */
 function onModalClick( evt ) {
-
   const target = evt.target;
   const hideTargets = [
     this.ui.container,
