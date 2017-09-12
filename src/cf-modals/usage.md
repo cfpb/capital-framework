@@ -14,7 +14,7 @@ dependencies of this component.
 
 - [Variables](#variables)
   - [Color variables](#color-variables)
-- [Recommended expandable pattern](#recommended-expandable-pattern)
+- [Recommended modal patterns](#recommended-modal-patterns)
   - [Dialog modal](#dialog-modal)
   - [Alert modal](#alert-modal)
   - [Visible modifier](#visible-modifier)
@@ -34,7 +34,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 ```
 
 
-## Recommended modal pattern
+## Recommended modal patterns
 
 ### Dialog modal
 
