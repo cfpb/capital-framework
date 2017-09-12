@@ -93,7 +93,7 @@ function onModalClick( evt ) {
 
   // If anything but the submit button is trying to close the model,
   // prevent the default behavior.
-  if ( target !== this.ui.submit ) {
+  if ( target !== this.ui.footerSubmit ) {
     evt.preventDefault();
   }
 }
