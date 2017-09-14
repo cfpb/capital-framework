@@ -6,6 +6,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Added
 - **cf-forms:** [PATCH] Add sidecar `.hover` classes to basic inputs,
   for manually triggering hover/focus state.
+- **cf-typography:** [MINOR] Add Avenir web fonts to override default Arial fonts from cf-core.
 
 ### Changed
 -
