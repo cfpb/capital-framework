@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.9.3 - 2017-09-15
+
+### Added
 - **cf-forms:** Add sidecar `.hover` classes to basic inputs
   and drop-down for manually triggering hover/focus state.
 - **cf-forms:** Update disabled state appearance for checkboxes/radio.
