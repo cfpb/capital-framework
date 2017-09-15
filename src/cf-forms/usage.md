@@ -33,8 +33,9 @@ Capital Framework.
     - [Button inside an input](#button-inside-an-input)
     - [Button inside an input with a button](#button-inside-an-input-with-a-button)
 - [Select dropdown](#select-dropdown)
-    - [Basic select](#basic-select)
-    - [Disabled select](#disabled-select)
+    - [Default state](#default-state)
+    - [Hover/focus state](#hoverfocus-state)
+    - [Disabled state](#disabled-state)
 - [Basic multiselect](#basic-multiselect)
 - [Form fieldsets](#form-fieldsets)
 
@@ -518,12 +519,15 @@ creating a typical site search form.
 
 ## Select dropdown
 
-### Basic select
+The default section below demonstrates how a dropdown would normally
+appear in code.
+
+### Default state
 
 <div class="m-form-field m-form-field__select">
-    <label class="a-label" for="test_select">Label</label>
+    <label class="a-label" for="test_select_default">Label</label>
     <div class="a-select">
-        <select id="test_select">
+        <select id="test_select_default">
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
@@ -534,9 +538,9 @@ creating a typical site search form.
 
 ```
 <div class="m-form-field m-form-field__select">
-    <label class="a-label" for="test_select">Label</label>
+    <label class="a-label" for="test_select_default">Label</label>
     <div class="a-select">
-        <select id="test_select">
+        <select id="test_select_default">
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
@@ -546,7 +550,39 @@ creating a typical site search form.
 </div>
 ```
 
-### Disabled select
+The following sections demonstrate how a particular state of a dropdown
+could be forced to be shown.
+Generally this is only useful for documentation purposes.
+
+### Hover/focus state
+
+<div class="m-form-field m-form-field__select">
+    <label class="a-label" for="test_select__hover">Label</label>
+    <div class="a-select">
+        <select id="test_select__hover" class="hover">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+
+```
+<div class="m-form-field m-form-field__select">
+    <label class="a-label" for="test_select__hover">Label</label>
+    <div class="a-select">
+        <select id="test_select__hover" class="hover">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+```
+
+### Disabled state
 
 <div class="m-form-field m-form-field__select">
     <label class="a-label" for="test_select__disabled">Label</label>
