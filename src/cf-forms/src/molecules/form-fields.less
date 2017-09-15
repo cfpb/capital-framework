@@ -52,12 +52,23 @@
                 clear: both;
             }
 
-            &:disabled + .a-label {
-                cursor: not-allowed;
+            &:disabled {
 
-                &:before {
+                &:focus + .a-label:before,
+                &:hover + .a-label:before,
+                &.hover + .a-label:before {
                     border-color: @input-border;
-                    background: @input-bg__disabled;
+                    outline: none;
+                    box-shadow: none; // Applies only to radio buttons.
+                }
+
+                & + .a-label {
+                    cursor: not-allowed;
+                    color: @input-text__disabled;
+
+                    &:before {
+                        background: @input-bg__disabled;
+                    }
                 }
             }
         }
@@ -120,10 +131,8 @@
 
         .a-label {
             display: block;
-
             padding: 15px;
-
-            background-color: @input-lg-target;
+            background-color: @input-lg-target-bg;
         }
 
         .a-checkbox,
@@ -134,16 +143,15 @@
             }
 
             &:checked + .a-label {
-                background-color: @input-lg-target__selected;
+                background-color: @input-lg-target-bg__selected;
             }
 
-            &:disabled + .a-label {
+            &:disabled + .a-label,
+            &:hover:disabled + .a-label {
+                color: @input-text__disabled;
 
                 &:before {
-                    border: none;
-                    background-color: transparent;
-                    color: @input-lg-target__disabled;
-                    content: @cf-icon-minus-round;
+                    background-color: @input-lg-target-bg__disabled;
                     font-family: 'CFPB Minicons';
                     font-size: unit( 20px / 18px, em );
                 }
