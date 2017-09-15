@@ -22,19 +22,36 @@ Capital Framework.
     - [Label helper text](#label-helper-text)
 - [Inputs](#inputs)
     - [Basic Text Inputs](#basic-text-inputs)
+        - [Disabled state](#disabled-state)
     - [Full-width inputs](#full-width-inputs)
     - [Basic checkboxes](#basic-checkboxes)
+        - [Default state](#default-state)
+        - [Hover/focus state](#hoverfocus-state)
+        - [Selected state](#selected-state)
+        - [Disabled state](#disabled-state)
     - [Basic radio buttons](#basic-radio-buttons)
+        - [Default state](#default-state)
+        - [Hover/focus state](#hoverfocus-state)
+        - [Selected state](#selected-state)
+        - [Disabled state](#disabled-state)
     - [Large target area checkboxes](#large-target-area-checkboxes)
+        - [Default state](#default-state)
+        - [Hover/focus state](#hoverfocus-state)
+        - [Selected state](#selected-state)
+        - [Disabled state](#disabled-state)
     - [Large target area radio buttons](#large-target-area-radio-buttons)
-    - [Input states](#input-states)
+        - [Default state](#default-state)
+        - [Hover/focus state](#hoverfocus-state)
+        - [Selected state](#selected-state)
+        - [Disabled state](#disabled-state)
 - [Buttons](#buttons)
     - [Simple input with a button](#simple-input-with-a-button)
     - [Button inside an input](#button-inside-an-input)
     - [Button inside an input with a button](#button-inside-an-input-with-a-button)
 - [Select dropdown](#select-dropdown)
-    - [Basic select](#basic-select)
-    - [Disabled select](#disabled-select)
+    - [Default state](#default-state)
+    - [Hover/focus state](#hoverfocus-state)
+    - [Disabled state](#disabled-state)
 - [Basic multiselect](#basic-multiselect)
 - [Form fieldsets](#form-fieldsets)
 
@@ -93,6 +110,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 @select-height:                  30px;
 ```
 
+
 ## Legends
 
 <legend class="a-legend">
@@ -104,6 +122,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
     A basic legend
 </legend>
 ```
+
 
 ## Labels
 
@@ -145,6 +164,7 @@ Used for designating an input as optional for user input.
 </label>
 ```
 
+
 ## Inputs
 
 Inputs should always be paired with a `label` for accessibility reasons.
@@ -169,6 +189,22 @@ Inputs should always be paired with a `label` for accessibility reasons.
 
 <label class="a-label" for="textarea-example">A textarea input</label>
 <textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
+```
+
+#### Disabled state
+
+<input class="a-text-input disabled"
+       disabled="true"
+       autocomplete="off"
+       type="text"
+       value="Disabled input">
+
+```
+<input class="a-text-input disabled"
+       disabled="true"
+       autocomplete="off"
+       type="text"
+       value="Disabled input">
 ```
 
 ### Full-width inputs
@@ -199,11 +235,17 @@ Inputs should always be paired with a `label` for accessibility reasons.
 </div>
 ```
 
+
 ### Basic checkboxes
 
+The default section below demonstrates how a checkbox would normally
+appear in code.
+
+#### Default state
+
 <div class="m-form-field m-form-field__checkbox">
-    <input class="a-checkbox" type="checkbox" id="test_checkbox">
-    <label class="a-label" for="test_checkbox">Label</label>
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_default">
+    <label class="a-label" for="test_checkbox_basic_default">Label</label>
 </div>
 
 ```
@@ -212,69 +254,249 @@ Inputs should always be paired with a `label` for accessibility reasons.
     <label class="a-label" for="test_checkbox">Label</label>
 </div>
 ```
+
+The following sections demonstrate how a particular state of a checkbox
+could be forced to be shown.
+Generally this is only useful for documentation purposes.
+
+#### Hover/focus state
+
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox hover" type="checkbox" id="test_checkbox_basic_hover">
+    <label class="a-label" for="test_checkbox_basic_hover">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox hover" type="checkbox" id="test_checkbox_basic_hover">
+    <label class="a-label" for="test_checkbox_basic_hover">Label</label>
+</div>
+```
+
+#### Selected state
+
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_checked" checked>
+    <label class="a-label" for="test_checkbox_basic_checked">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_checked" checked>
+    <label class="a-label" for="test_checkbox_basic_checked">Label</label>
+</div>
+```
+
+#### Disabled state
+
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_disabled" disabled>
+    <label class="a-label" for="test_checkbox_basic_disabled">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_disabled" disabled>
+    <label class="a-label" for="test_checkbox_basic_disabled">Label</label>
+</div>
+```
+
 
 ### Basic radio buttons
 
+The default section below demonstrates how a radio button would normally
+appear in code.
+
+#### Default state
+
 <div class="m-form-field m-form-field__radio">
-    <input class="a-radio" type="radio" id="test_radio">
-    <label class="a-label" for="test_radio">Label</label>
+    <input class="a-radio" type="radio" id="test_radio_basic_default">
+    <label class="a-label" for="test_radio_basic_default">Label</label>
 </div>
 
 ```
 <div class="m-form-field m-form-field__radio">
-    <input class="a-radio" type="radio" id="test_radio">
-    <label class="a-label" for="test_radio">Label</label>
+    <input class="a-radio" type="radio" id="test_radio_basic_default">
+    <label class="a-label" for="test_radio_basic_default">Label</label>
 </div>
 ```
+
+The following sections demonstrate how a particular state of a radio button
+could be forced to be shown.
+Generally this is only useful for documentation purposes.
+
+#### Hover/focus state
+
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio hover" type="radio" id="test_radio_basic_hover">
+    <label class="a-label" for="test_radio_basic_hover">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio hover" type="radio" id="test_radio_basic_hover">
+    <label class="a-label" for="test_radio_basic_hover">Label</label>
+</div>
+```
+
+#### Selected state
+
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio" type="radio" id="test_radio_basic_checked" checked>
+    <label class="a-label" for="test_radio_basic_checked">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio" type="radio" id="test_radio_basic_checked" checked>
+    <label class="a-label" for="test_radio_basic_checked">Label</label>
+</div>
+```
+
+#### Disabled state
+
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio" type="radio" id="test_radio_basic_disabled" disabled>
+    <label class="a-label" for="test_radio_basic_disabled">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio" type="radio" id="test_radio_basic_disabled" disabled>
+    <label class="a-label" for="test_radio_basic_disabled">Label</label>
+</div>
+```
+
 
 ### Large target area checkboxes
 
+The default section below demonstrates how a checkbox would normally
+appear in code.
+
+#### Default state
+
 <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
-    <input class="a-checkbox" type="checkbox" id="test_checkbox_lg">
-    <label class="a-label" for="test_checkbox_lg">Label</label>
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default">
+    <label class="a-label" for="test_checkbox_lg_default">Label</label>
 </div>
 
 ```
 <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
-    <input class="a-checkbox" type="checkbox" id="test_checkbox_lg">
-    <label class="a-label" for="test_checkbox_lg">Label</label>
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default">
+    <label class="a-label" for="test_checkbox_lg_default">Label</label>
+</div>
+```
+
+The following sections demonstrate how a particular state of a checkbox
+could be forced to be shown.
+Generally this is only useful for documentation purposes.
+
+#### Hover/focus state
+
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox hover" type="checkbox" id="test_checkbox_lg_hover">
+    <label class="a-label" for="test_checkbox_lg_hover">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox hover" type="checkbox" id="test_checkbox_lg_hover">
+    <label class="a-label" for="test_checkbox_lg_hover">Label</label>
+</div>
+```
+
+#### Selected state
+
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_checked" checked>
+    <label class="a-label" for="test_checkbox_lg_checked">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_checked" checked>
+    <label class="a-label" for="test_checkbox_lg_checked">Label</label>
+</div>
+```
+
+#### Disabled state
+
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_disabled" disabled>
+    <label class="a-label" for="test_checkbox_lg_disabled">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_disabled" disabled>
+    <label class="a-label" for="test_checkbox_lg_disabled">Label</label>
 </div>
 ```
 
 
 ### Large target area radio buttons
 
+The default section below demonstrates how a radio button would normally
+appear in code.
+
+#### Default state
+
 <div class="m-form-field m-form-field__radio m-form-field__lg-target">
-    <input class="a-radio" type="radio" id="test_radio_lg">
-    <label class="a-label" for="test_radio_lg">Label</label>
+    <input class="a-radio" type="radio" id="test_radio_lg_default">
+    <label class="a-label" for="test_radio_lg_default">Label</label>
 </div>
 
 ```
 <div class="m-form-field m-form-field__radio m-form-field__lg-target">
-    <input class="a-radio" type="radio" id="test_radio_lg">
-    <label class="a-label" for="test_radio_lg">Label</label>
+    <input class="a-radio" type="radio" id="test_radio_lg_default">
+    <label class="a-label" for="test_radio_lg_default">Label</label>
 </div>
 ```
 
+The following sections demonstrate how a particular state of a radio button
+could be forced to be shown.
+Generally this is only useful for documentation purposes.
 
-### Input states
+#### Hover/focus state
 
-See the 'Form icons' section below for guidance on adding icons to states.
+<div class="m-form-field m-form-field__radio m-form-field__lg-target">
+    <input class="a-radio hover" type="radio" id="test_radio_lg_hover">
+    <label class="a-label" for="test_radio_lg_hover">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__radio m-form-field__lg-target">
+    <input class="a-radio hover" type="radio" id="test_radio_lg_hover">
+    <label class="a-label" for="test_radio_lg_hover">Label</label>
+</div>
+```
+
+#### Selected state
+
+<div class="m-form-field m-form-field__radio m-form-field__lg-target">
+    <input class="a-radio" type="radio" id="test_radio_lg_checked" checked>
+    <label class="a-label" for="test_radio_lg_checked">Label</label>
+</div>
+
+```
+<div class="m-form-field m-form-field__radio m-form-field__lg-target">
+    <input class="a-radio" type="radio" id="test_radio_lg_checked" checked>
+    <label class="a-label" for="test_radio_lg_checked">Label</label>
+</div>
+```
 
 #### Disabled state
 
-<input class="a-text-input disabled"
-       disabled="true"
-       autocomplete="off"
-       type="text"
-       value="Disabled input">
+<div class="m-form-field m-form-field__radio m-form-field__lg-target">
+    <input class="a-radio" type="radio" id="test_radio_lg_disabled" disabled>
+    <label class="a-label" for="test_radio_lg_disabled">Label</label>
+</div>
 
 ```
-<input class="a-text-input disabled"
-       disabled="true"
-       autocomplete="off"
-       type="text"
-       value="Disabled input">
+<div class="m-form-field m-form-field__radio m-form-field__lg-target">
+    <input class="a-radio" type="radio" id="test_radio_lg_disabled" disabled>
+    <label class="a-label" for="test_radio_lg_disabled">Label</label>
+</div>
 ```
 
 ### Inline Form Validation
@@ -307,6 +529,7 @@ See the 'Form icons' section below for guidance on adding icons to states.
 </div>
 ```
 
+
 ## Buttons
 
 ### Simple input with a button
@@ -332,6 +555,7 @@ These are used for simple forms where a full filter isn't necessary.
     </div>
 </div>
 ```
+
 
 ### Button inside an input
 
@@ -365,6 +589,7 @@ typically to clear the input.
     </button>
 </div>
 ```
+
 
 ### Button inside an input with a button
 
@@ -416,12 +641,15 @@ creating a typical site search form.
 
 ## Select dropdown
 
-### Basic select
+The default section below demonstrates how a dropdown would normally
+appear in code.
+
+### Default state
 
 <div class="m-form-field m-form-field__select">
-    <label class="a-label" for="test_select">Label</label>
+    <label class="a-label" for="test_select_default">Label</label>
     <div class="a-select">
-        <select id="test_select">
+        <select id="test_select_default">
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
@@ -432,9 +660,9 @@ creating a typical site search form.
 
 ```
 <div class="m-form-field m-form-field__select">
-    <label class="a-label" for="test_select">Label</label>
+    <label class="a-label" for="test_select_default">Label</label>
     <div class="a-select">
-        <select id="test_select">
+        <select id="test_select_default">
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
@@ -444,7 +672,39 @@ creating a typical site search form.
 </div>
 ```
 
-### Disabled select
+The following sections demonstrate how a particular state of a dropdown
+could be forced to be shown.
+Generally this is only useful for documentation purposes.
+
+### Hover/focus state
+
+<div class="m-form-field m-form-field__select">
+    <label class="a-label" for="test_select__hover">Label</label>
+    <div class="a-select">
+        <select id="test_select__hover" class="hover">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+
+```
+<div class="m-form-field m-form-field__select">
+    <label class="a-label" for="test_select__hover">Label</label>
+    <div class="a-select">
+        <select id="test_select__hover" class="hover">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+```
+
+### Disabled state
 
 <div class="m-form-field m-form-field__select">
     <label class="a-label" for="test_select__disabled">Label</label>
@@ -471,6 +731,7 @@ creating a typical site search form.
     </div>
 </div>
 ```
+
 
 ## Basic multiselect
 
@@ -504,7 +765,7 @@ creating a typical site search form.
 </div>
 ```
 
-### Form fieldsets
+## Form fieldsets
 
 <form class="o-form">
     <div class="o-form_group">
