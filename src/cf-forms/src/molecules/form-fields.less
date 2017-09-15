@@ -31,8 +31,9 @@
                 }
             }
 
-            &:hover:before {
-                border-color: @input-border__focused;
+            &:hover:before,
+            &.hover:before {
+                border-color: @input-border__hover;
             }
         }
 
@@ -51,12 +52,23 @@
                 clear: both;
             }
 
-            &:disabled + .a-label {
-                cursor: not-allowed;
+            &:disabled {
 
-                &:before {
+                &:focus + .a-label:before,
+                &:hover + .a-label:before,
+                &.hover + .a-label:before {
                     border-color: @input-border;
-                    background: @input-bg__disabled;
+                    outline: none;
+                    box-shadow: none; // Applies only to radio buttons.
+                }
+
+                & + .a-label {
+                    cursor: not-allowed;
+                    color: @input-text__disabled;
+
+                    &:before {
+                        background: @input-bg__disabled;
+                    }
                 }
             }
         }
@@ -73,7 +85,8 @@
 
         .a-checkbox {
             &:focus + .a-label:before,
-            &:hover + .a-label:before {
+            &:hover + .a-label:before,
+            &.hover + .a-label:before {
                 border-color: @input-border__focused;
                 outline: 1px solid @input-border__focused;
             }
@@ -93,7 +106,8 @@
 
         .a-radio {
             &:focus + .a-label:before,
-            &:hover + .a-label:before {
+            &:hover + .a-label:before,
+            &.hover + .a-label:before {
                 outline: none;
                 border-color: @input-border__focused;
                 box-shadow: 0 0 0 1px @input-border__focused;
@@ -105,7 +119,8 @@
             }
 
             &:focus:checked + .a-label:before,
-            &:hover:checked + .a-label:before {
+            &:hover:checked + .a-label:before,
+            &.hover:checked + .a-label:before {
                 border-color: @input-border__focused;
                 box-shadow: 0 0 0 1px @input-border__focused, inset 0 0 0 2px #fff;
             }
@@ -116,10 +131,8 @@
 
         .a-label {
             display: block;
-
             padding: 15px;
-
-            background-color: @input-lg-target;
+            background-color: @input-lg-target-bg;
         }
 
         .a-checkbox,
@@ -130,16 +143,15 @@
             }
 
             &:checked + .a-label {
-                background-color: @input-lg-target__selected;
+                background-color: @input-lg-target-bg__selected;
             }
 
-            &:disabled + .a-label {
+            &:disabled + .a-label,
+            &:hover:disabled + .a-label {
+                color: @input-text__disabled;
 
                 &:before {
-                    border: none;
-                    background-color: transparent;
-                    color: @input-lg-target__disabled;
-                    content: @cf-icon-minus-round;
+                    background-color: @input-lg-target-bg__disabled;
                     font-family: 'CFPB Minicons';
                     font-size: unit( 20px / 18px, em );
                 }
