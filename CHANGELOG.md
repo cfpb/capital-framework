@@ -4,9 +4,10 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- **cf-forms:** [PATCH] Add sidecar `.hover` classes to basic inputs,
-  for manually triggering hover/focus state.
+- **cf-forms:** [PATCH] Add sidecar `.hover` classes to basic inputs
+  and drop-down for manually triggering hover/focus state.
 - **cf-forms:** [PATCH] Update disabled state appearance for checkboxes/radio.
+- **cf-core:** [PATCH] Add purple to color variables.
 
 ### Changed
 - **cf-forms:** [PATCH] Adds CSS to target disabled option color in drop-downs.
