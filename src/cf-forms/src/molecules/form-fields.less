@@ -64,6 +64,7 @@
 
                 & + .a-label {
                     cursor: not-allowed;
+                    color: @input-text__disabled;
 
                     &:before {
                         background: @input-bg__disabled;
@@ -131,7 +132,7 @@
         .a-label {
             display: block;
             padding: 15px;
-            background-color: @input-lg-target;
+            background-color: @input-lg-target-bg;
         }
 
         .a-checkbox,
@@ -142,16 +143,15 @@
             }
 
             &:checked + .a-label {
-                background-color: @input-lg-target__selected;
+                background-color: @input-lg-target-bg__selected;
             }
 
             &:disabled + .a-label,
             &:hover:disabled + .a-label {
-                color: @input-lg-target__disabled;
+                color: @input-text__disabled;
 
                 &:before {
-                    border: none;
-                    background-color: @input-lg-target__disabled;
+                    background-color: @input-lg-target-bg__disabled;
                     font-family: 'CFPB Minicons';
                     font-size: unit( 20px / 18px, em );
                 }
