@@ -54,13 +54,15 @@
     }
 
     &_content {
-      max-width: 270px;
       margin: 0 auto;
 
-      @media only all and (min-width:37.5625em) {
-          & {
-              max-width: 630px;
-          }
+      // This is not mobile-first to support a consistent appearance
+      // across browsers that don't support media-querries (IE8).
+      max-width: 630px;
+      & {
+          .respond-to-max( @bp-xs-max, {
+              max-width: 270px;
+          } );
       }
     }
 
