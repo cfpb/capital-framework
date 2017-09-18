@@ -30,7 +30,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 @modal-backdrop:   @black;
 @modal-body:       @white;
 @modal-footer:     @gray-5;
-@modal-border-top: green;
+@modal-border-top: @green;
 ```
 
 
