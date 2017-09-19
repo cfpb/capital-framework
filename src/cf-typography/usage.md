@@ -40,17 +40,20 @@ and has more basic typography patterns.
 Theme variables for setting the color and sizes. Overwrite them in your own
 project by duplicating the variable `@key: value`.
 
+### Font variables
+
+```
+@webfont-regular: 'AvenirNextLTW01-Regular';
+@webfont-italic: 'AvenirNextLTW01-Italic';
+@webfont-medium: 'AvenirNextLTW01-Medium';
+@webfont-demi: 'AvenirNextLTW01-Demi';
+```
+
 ### Color variables
 
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
 ```
-// Font variables
-@webfont-regular: 'AvenirNextLTW01-Regular';
-@webfont-italic: 'AvenirNextLTW01-Italic';
-@webfont-medium: 'AvenirNextLTW01-Medium';
-@webfont-demi: 'AvenirNextLTW01-Demi';
-
 // Running text elements
 
 // .a-micro-copy
