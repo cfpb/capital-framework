@@ -4,13 +4,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+- **cf-typography:** Add Avenir web fonts to override default Arial fonts from cf-core.
 
-### Changed
-- 
-
-### Removed
-- 
 
 ## 4.9.3 - 2017-09-15
 
