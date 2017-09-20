@@ -1,6 +1,7 @@
 The cf-tables component formats tables, and provides an easy way to make
-tables sortable. The [`cf-core`](../core) component is a dependency of
-this component."
+tables sortable.
+
+The [`cf-core`](../core) component is a dependency of this component.
 
 > NOTE: If you use `cf-tables.less` directly,
   be sure to run the file through
@@ -37,7 +38,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
-```
+```less
 @table-head-bg:                 @gray-5;
 @table-cell-bg:                 @white;
 @table-cell-bg_alt:             @gray-5;
@@ -85,7 +86,7 @@ not visible on small screens.
     </tbody>
 </table>
 
-```
+```html
 <table class="o-table o-table__striped">
     <thead>
         <tr>
@@ -147,7 +148,7 @@ right - see the third column above.
     </tbody>
 </table>
 
-```
+```html
 <table class="o-table o-table__stack-on-small">
     <thead>
         <tr>
@@ -203,7 +204,7 @@ highlighting and hyperlinking rows which contain links.
     </tbody>
 </table>
 
-```
+```html
 <table class="o-table o-table__row-links">
     <thead>
         <tr>
@@ -238,10 +239,12 @@ By adding the `.o-table__sortable` class to a `table`, the `table` becomes sorta
 To allow the `table` to be sorted by a column, add a `button` to the `th` of the
 column like so:
 
-```
+```html
+…
 <button class="sortable">
     Column Name
 </button>
+…
 ```
 
 The use of a `button` helps address certain accessibility concerns.
@@ -258,35 +261,35 @@ column by `number` value.
 To sort by `number` value, add the `data-sort_type="number"` attribute
 to the sorting button:
 
-```
+```html
 <table class="o-table o-table__sortable">
-    ...
+    …
         <th>
             <button class="sortable" data-sort_type="number">Column Name</button>
         </th>
-    ...
+    …
 </table>
 ```
 
 ### Sorting table on page load
 
-To sort the table on page load, use the `.sorted-up` and `.sorted-up` classes:
+To sort the table on page load, use the `.sorted-up` and `.sorted-down` classes:
 
-```
+```html
 <table class="o-table o-table__sortable">
-    ...
+    …
         <th>
             <button class="sortable sorted-up">Column Name</button>
         </th>
-    ...
+    …
 </table>
 ```
 
-- `.sorted-up` starts with the column sorted smallest to largest (or
-lowest to highest)
+- `.sorted-up` starts with the column sorted smallest to largest
+  (or lowest to highest)
 
-- `.sorted-down` starts with the column sorted largest to smallest (or
-highest to lowest)
+- `.sorted-down` starts with the column sorted largest to smallest
+  (or highest to lowest)
 
 ### Sample sortable table
 
@@ -389,7 +392,7 @@ highest to lowest)
     </tbody>
 </table>
 
-```
+```html
 <table class="o-table o-table__sortable">
     <thead>
         <tr>
@@ -494,8 +497,8 @@ highest to lowest)
 
 - The class `.sorted-up` refers to a sort from smallest to greatest
   (first to last), and `.sorted-down` refers to a sort from greatest to smallest
-  (last to first). These classes are added to the TH when sorting occurs.
-- Please note the importance of defining a THEAD and TBODY to preserve
+  (last to first). These classes are added to the `th` when sorting occurs.
+- Please note the importance of defining a `thead` and `tbody` to preserve
   the table's header through sorting operations.
 
 
@@ -509,9 +512,9 @@ screens.
 _Please note that tables are not responsive without adding one of the small
 screen classes._
 
-_Also note that the `data-label` attribute is used to label each entry in a `table`
-for small screen responsive views. Always include the `data-label` attribute for
-each cell._
+_Also note that the `data-label` attribute is used to label each entry in a
+`table` for small screen responsive views.
+Always include the `data-label` attribute for each cell._
 
 <table class="o-table o-table__stack-on-small">
     <thead>
@@ -545,7 +548,7 @@ each cell._
     </tbody>
 </table>
 
-```
+```html
 <table class="o-table o-table__stack-on-small">
     <thead>
         <tr>
@@ -625,7 +628,7 @@ Always include the `data-label` attribute for each cell._
     </tbody>
 </table>
 
-```
+```html
 <table class="o-table
               o-table__stack-on-small
               o-table__entry-header-on-small">
@@ -728,7 +731,7 @@ striped on small screens (unlike the `o-table__striped` class, below).
     </table>
 </div>
 
-```
+```html
 <div class="o-table o-table-wrapper__scrolling">
     <table>
         <thead>

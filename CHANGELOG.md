@@ -13,6 +13,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-forms:** [PATCH] Add color variable for text input.
 - **cf-forms:** [PATCH] Add sidecar `.hover` classes to text input.
 - **cf-forms:** [MINOR] Convert `a-text-input__focus` to `.focus` class.
+- **cf-tables:** [PATCH] Separate Table class from initialization code.
 
 ### Removed
 -
