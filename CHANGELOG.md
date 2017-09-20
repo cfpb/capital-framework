@@ -8,6 +8,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Changed
 - **cf-forms:** [PATCH] Changes label helper text to Avenir Regular.
+- **cf-forms:** [PATCH] Lets autoprefixer handle placeholder pseudoselector.
 
 ### Removed
 -
