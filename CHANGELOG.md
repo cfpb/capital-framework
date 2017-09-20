@@ -4,13 +4,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-forms:** [PATCH] Changes label helper text to Avenir Regular.
 
 ### Removed
-- 
+-
 
 ## 4.10.0 - 2017-09-19
 
