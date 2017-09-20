@@ -27,8 +27,20 @@
 
     &:disabled,
     &__disabled {
-        background-color: @input-bg__disabled;
-        cursor: not-allowed;
+
+        &,
+        &:hover,
+        &.hover,
+        &:focus,
+        &.focus {
+            color: @input-text__disabled;
+            background-color: @input-bg__disabled;
+            cursor: not-allowed;
+
+            // Cancel the hover and focus states.
+            border-color: @input-border;
+            outline: none;
+        }
     }
 
     &__error {
