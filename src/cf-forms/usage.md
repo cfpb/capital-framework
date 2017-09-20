@@ -22,8 +22,11 @@ Capital Framework.
     - [Label helper text](#label-helper-text)
 - [Inputs](#inputs)
     - [Basic Text Inputs](#basic-text-inputs)
+        - [Default state](#default-state)
+        - [Hover state](#hover-state)
+        - [Focus state](#focus-state)
         - [Disabled state](#disabled-state)
-    - [Full-width inputs](#full-width-inputs)
+        - [Full-width modifier](#full-width-modifier)
     - [Basic checkboxes](#basic-checkboxes)
         - [Default state](#default-state)
         - [Hover/focus state](#hoverfocus-state)
@@ -65,7 +68,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
-```
+```less
 // .a-text-input borders
 @input-border:                  @gray-60;
 @input-border__hover:           @pacific;
@@ -82,6 +85,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 @input-bg__disabled:            @gray-10;
 
 // .a-text-input text
+@input-text:                    @black;
 @input-text__disabled:          @gray;
 @input-text__placeholder:       @gray;
 
@@ -105,7 +109,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 
 ### Sizing variables
 
-```
+```less
 // .a-select
 @select-height:                  30px;
 ```
@@ -117,7 +121,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
     A basic legend
 </legend>
 
-```
+```html
 <legend class="a-legend">
     A basic legend
 </legend>
@@ -132,7 +136,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
     A basic label
 </label>
 
-```
+```html
 <label class="a-label">
     A basic label
 </label>
@@ -144,7 +148,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
     A label heading
 </label>
 
-```
+```html
 <label class="a-label a-label__heading">
     A label heading
 </label>
@@ -158,7 +162,7 @@ Used for designating an input as optional for user input.
     A label <small class="a-label_helper">(optional)</small>
 </label>
 
-```
+```html
 <label class="a-label a-label__heading">
     A label <small class="a-label_helper">(optional)</small>
 </label>
@@ -171,65 +175,156 @@ Inputs should always be paired with a `label` for accessibility reasons.
 
 ### Basic text inputs
 
-<label class="a-label" for="textinput-example">A text input</label>
+The default section below demonstrates how a text input would normally
+appear in code.
+
+#### Default state
+
+<label class="a-label" for="textinput-example-default">A text input</label>
 <input class="a-text-input"
        type="text"
-       id="textinput-example"
+       id="textinput-example-default"
+       placeholder="Enter text…"
        value="Lorem ipsum">
 
-<label class="a-label" for="full-textarea-example">A textarea input</label>
-<textarea class="a-text-input" id="full-textarea-example">Lorem Ipsum</textarea>
+<label class="a-label" for="textarea-example-default">A textarea input</label>
+<textarea class="a-text-input"
+          id="textarea-example-default"
+          placeholder="Enter text…">Lorem Ipsum</textarea>
 
+```html
+<label class="a-label" for="textinput-example-default">A text input</label>
+<input class="a-text-input"
+       type="text"
+       id="textinput-example-default"
+       placeholder="Enter text…"
+       value="Lorem ipsum">
+
+<label class="a-label" for="textarea-example-default">A textarea input</label>
+<textarea class="a-text-input"
+          id="textarea-example-default"
+          placeholder="Enter text…">Lorem Ipsum</textarea>
 ```
-<label class="a-label" for="textinput-example">A text input</label>
-<input class="a-text-input"
+
+The following sections demonstrate how a particular state of a text input
+could be forced to be shown.
+Generally this is only useful for documentation purposes.
+
+#### Hover state
+
+<label class="a-label" for="textinput-example-hover">A text input</label>
+<input class="a-text-input hover"
        type="text"
-       id="textinput-example"
+       id="textinput-example-hover"
+       placeholder="Enter text…"
        value="Lorem ipsum">
 
-<label class="a-label" for="textarea-example">A textarea input</label>
-<textarea class="a-text-input" id="textarea-example">Lorem Ipsum</textarea>
+<label class="a-label" for="textarea-example-hover">A textarea input</label>
+<textarea class="a-text-input hover"
+          id="textarea-example-hover"
+          placeholder="Enter text…">Lorem Ipsum</textarea>
+```html
+<label class="a-label" for="textinput-example-hover">A text input</label>
+<input class="a-text-input hover"
+       type="text"
+       id="textinput-example-hover"
+       placeholder="Enter text…"
+       value="Lorem ipsum">
+
+<label class="a-label" for="textarea-example-hover">A textarea input</label>
+<textarea class="a-text-input hover"
+          id="textarea-example-hover"
+          placeholder="Enter text…">Lorem Ipsum</textarea>
+```
+
+#### Focus state
+
+<label class="a-label" for="textinput-example-focus">A text input</label>
+<input class="a-text-input focus"
+       type="text"
+       id="textinput-example-focus"
+       placeholder="Enter text…"
+       value="Lorem ipsum">
+
+<label class="a-label" for="textarea-example-focus">A textarea input</label>
+<textarea class="a-text-input focus"
+          id="textarea-example-focus"
+          placeholder="Enter text…">Lorem Ipsum</textarea>
+```html
+<label class="a-label" for="textinput-example-focus">A text input</label>
+<input class="a-text-input focus"
+       type="text"
+       id="textinput-example-focus"
+       placeholder="Enter text…"
+       value="Lorem ipsum">
+
+<label class="a-label" for="textarea-example-focus">A textarea input</label>
+<textarea class="a-text-input focus"
+          id="textarea-example-focus"
+          placeholder="Enter text…">Lorem Ipsum</textarea>
 ```
 
 #### Disabled state
 
-<input class="a-text-input disabled"
-       disabled="true"
-       autocomplete="off"
+<label class="a-label" for="textinput-example-disabled">A text input</label>
+<input class="a-text-input"
        type="text"
-       value="Disabled input">
+       id="textinput-example-focus"
+       placeholder="Enter text…"
+       value="Lorem ipsum"
+       disabled>
 
-```
-<input class="a-text-input disabled"
-       disabled="true"
-       autocomplete="off"
+<label class="a-label" for="textarea-example-disabled">A textarea input</label>
+<textarea class="a-text-input"
+          id="textarea-example-focus"
+          placeholder="Enter text…"
+          disabled>Lorem Ipsum</textarea>
+```html
+<label class="a-label" for="textinput-example-disabled">A text input</label>
+<input class="a-text-input"
        type="text"
-       value="Disabled input">
-```
+       id="textinput-example-disabled"
+       placeholder="Enter text…"
+       value="Lorem ipsum"
+       disabled>
 
-### Full-width inputs
+<label class="a-label" for="textarea-example-disabled">A textarea input</label>
+<textarea class="a-text-input"
+          id="textarea-example-disabled"
+          placeholder="Enter text…"
+          disabled>Lorem Ipsum</textarea>
+```
+### Full-width modifier
 
 <div class="m-form-field">
-    <label class="a-label" for="full-textinput-example">A full-width text input</label>
+    <label class="a-label" for="full-textinput-example">
+        A full-width text input
+    </label>
     <input class="a-text-input a-text-input__full"
            type="text"
            id="full-textinput-example"
            value="Lorem ipsum">
     <br><br>
-    <label class="a-label" for="full-textarea-example">A full-width textarea input</label>
+    <label class="a-label" for="full-textarea-example">
+        A full-width textarea input
+    </label>
     <textarea class="a-text-input a-text-input__full"
               id="full-textarea-example">Lorem Ipsum</textarea>
 </div>
 
-```
+```html
 <div class="m-form-field">
-    <label class="a-label" for="full-textinput-example">A text input</label>
+    <label class="a-label" for="full-textinput-example">
+        A full-width text input
+    </label>
     <input class="a-text-input a-text-input__full"
            type="text"
            id="full-textinput-example"
            value="Lorem ipsum">
-
-    <label class="a-label" for="full-textarea-example">A textarea input</label>
+    <br><br>
+    <label class="a-label" for="full-textarea-example">
+        A full-width textarea input
+    </label>
     <textarea class="a-text-input a-text-input__full"
               id="full-textarea-example">Lorem Ipsum</textarea>
 </div>
@@ -248,7 +343,7 @@ appear in code.
     <label class="a-label" for="test_checkbox_basic_default">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__checkbox">
     <input class="a-checkbox" type="checkbox" id="test_checkbox">
     <label class="a-label" for="test_checkbox">Label</label>
@@ -266,7 +361,7 @@ Generally this is only useful for documentation purposes.
     <label class="a-label" for="test_checkbox_basic_hover">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__checkbox">
     <input class="a-checkbox hover" type="checkbox" id="test_checkbox_basic_hover">
     <label class="a-label" for="test_checkbox_basic_hover">Label</label>
@@ -280,7 +375,7 @@ Generally this is only useful for documentation purposes.
     <label class="a-label" for="test_checkbox_basic_checked">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__checkbox">
     <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_checked" checked>
     <label class="a-label" for="test_checkbox_basic_checked">Label</label>
@@ -294,7 +389,7 @@ Generally this is only useful for documentation purposes.
     <label class="a-label" for="test_checkbox_basic_disabled">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__checkbox">
     <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_disabled" disabled>
     <label class="a-label" for="test_checkbox_basic_disabled">Label</label>
@@ -314,7 +409,7 @@ appear in code.
     <label class="a-label" for="test_radio_basic_default">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__radio">
     <input class="a-radio" type="radio" id="test_radio_basic_default">
     <label class="a-label" for="test_radio_basic_default">Label</label>
@@ -332,7 +427,7 @@ Generally this is only useful for documentation purposes.
     <label class="a-label" for="test_radio_basic_hover">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__radio">
     <input class="a-radio hover" type="radio" id="test_radio_basic_hover">
     <label class="a-label" for="test_radio_basic_hover">Label</label>
@@ -346,7 +441,7 @@ Generally this is only useful for documentation purposes.
     <label class="a-label" for="test_radio_basic_checked">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__radio">
     <input class="a-radio" type="radio" id="test_radio_basic_checked" checked>
     <label class="a-label" for="test_radio_basic_checked">Label</label>
@@ -360,7 +455,7 @@ Generally this is only useful for documentation purposes.
     <label class="a-label" for="test_radio_basic_disabled">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__radio">
     <input class="a-radio" type="radio" id="test_radio_basic_disabled" disabled>
     <label class="a-label" for="test_radio_basic_disabled">Label</label>
@@ -380,7 +475,7 @@ appear in code.
     <label class="a-label" for="test_checkbox_lg_default">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
     <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default">
     <label class="a-label" for="test_checkbox_lg_default">Label</label>
@@ -398,7 +493,7 @@ Generally this is only useful for documentation purposes.
     <label class="a-label" for="test_checkbox_lg_hover">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
     <input class="a-checkbox hover" type="checkbox" id="test_checkbox_lg_hover">
     <label class="a-label" for="test_checkbox_lg_hover">Label</label>
@@ -412,7 +507,7 @@ Generally this is only useful for documentation purposes.
     <label class="a-label" for="test_checkbox_lg_checked">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
     <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_checked" checked>
     <label class="a-label" for="test_checkbox_lg_checked">Label</label>
@@ -426,7 +521,7 @@ Generally this is only useful for documentation purposes.
     <label class="a-label" for="test_checkbox_lg_disabled">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
     <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_disabled" disabled>
     <label class="a-label" for="test_checkbox_lg_disabled">Label</label>
@@ -446,7 +541,7 @@ appear in code.
     <label class="a-label" for="test_radio_lg_default">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__radio m-form-field__lg-target">
     <input class="a-radio" type="radio" id="test_radio_lg_default">
     <label class="a-label" for="test_radio_lg_default">Label</label>
@@ -464,7 +559,7 @@ Generally this is only useful for documentation purposes.
     <label class="a-label" for="test_radio_lg_hover">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__radio m-form-field__lg-target">
     <input class="a-radio hover" type="radio" id="test_radio_lg_hover">
     <label class="a-label" for="test_radio_lg_hover">Label</label>
@@ -478,7 +573,7 @@ Generally this is only useful for documentation purposes.
     <label class="a-label" for="test_radio_lg_checked">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__radio m-form-field__lg-target">
     <input class="a-radio" type="radio" id="test_radio_lg_checked" checked>
     <label class="a-label" for="test_radio_lg_checked">Label</label>
@@ -492,7 +587,7 @@ Generally this is only useful for documentation purposes.
     <label class="a-label" for="test_radio_lg_disabled">Label</label>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__radio m-form-field__lg-target">
     <input class="a-radio" type="radio" id="test_radio_lg_disabled" disabled>
     <label class="a-label" for="test_radio_lg_disabled">Label</label>
@@ -514,7 +609,7 @@ Generally this is only useful for documentation purposes.
     </div>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__error">
     <label class="a-label__heading" for="form-input-error">Label</label>
     <input class="a-text-input a-text-input__error"
@@ -545,7 +640,7 @@ These are used for simple forms where a full filter isn't necessary.
     </div>
 </div>
 
-```
+```html
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
         <input class="a-text-input" type="text" title="Test input">
@@ -575,7 +670,7 @@ typically to clear the input.
     </button>
 </div>
 
-```
+```html
 <div class="m-btn-inside-input">
     <input type="text"
         value="This is some really long text to make sure that the button
@@ -616,7 +711,7 @@ creating a typical site search form.
     </div>
 </div>
 
-```
+```html
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
         <div class="m-btn-inside-input">
@@ -658,7 +753,7 @@ appear in code.
     </div>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__select">
     <label class="a-label" for="test_select_default">Label</label>
     <div class="a-select">
@@ -690,7 +785,7 @@ Generally this is only useful for documentation purposes.
     </div>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__select">
     <label class="a-label" for="test_select__hover">Label</label>
     <div class="a-select">
@@ -718,7 +813,7 @@ Generally this is only useful for documentation purposes.
     </div>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__select">
     <label class="a-label" for="test_select__disabled">Label</label>
     <div class="a-select">
@@ -749,7 +844,7 @@ Generally this is only useful for documentation purposes.
     </select>
 </div>
 
-```
+```html
 <div class="m-form-field m-form-field__select">
     <label class="a-label" for="test_select__multiple">Label</label>
     <select class="a-multiselect" id="test_select__multiple" multiple>
@@ -794,7 +889,7 @@ Generally this is only useful for documentation purposes.
     </div>
 </form>
 
-```
+```html
 <form class="o-form">
     <div class="o-form_group">
         <fieldset class="o-form_fieldset">
