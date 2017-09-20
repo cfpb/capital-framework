@@ -11,16 +11,36 @@
 
     background: @input-bg;
 
+    color: @input-text;
+
+    &:hover,
+    &.hover {
+        border-color: @input-border__hover;
+        outline: 1px solid @input-border__hover;
+    }
+
     &:focus,
-    &__focused {
+    &.focus {
         border-color: @input-border__focused;
         outline: 1px solid @input-border__focused;
     }
 
     &:disabled,
     &__disabled {
-        background-color: @input-bg__disabled;
-        cursor: not-allowed;
+
+        &,
+        &:hover,
+        &.hover,
+        &:focus,
+        &.focus {
+            color: @input-text__disabled;
+            background-color: @input-bg__disabled;
+            cursor: not-allowed;
+
+            // Cancel the hover and focus states.
+            border-color: @input-border;
+            outline: none;
+        }
     }
 
     &__error {
