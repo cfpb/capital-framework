@@ -4,12 +4,12 @@
 
 'use strict';
 
-var config = require( 'atomic-component/src/utilities/config' );
-var Organism = require( 'atomic-component/src/components/Organism' );
-var TableSortable = require( './TableSortable' );
-var TableRowLinks = require( './TableRowLinks' );
+const config = require( 'atomic-component/src/utilities/config' );
+const Organism = require( 'atomic-component/src/components/Organism' );
+const TableSortable = require( './TableSortable' );
+const TableRowLinks = require( './TableRowLinks' );
 
-var TableOrganism = Organism.extend( {
+const TableOrganism = Organism.extend( {
 
   ui: {
     base: '.o-table'

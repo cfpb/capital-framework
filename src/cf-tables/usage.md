@@ -39,13 +39,13 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
 ```less
-@table-head-bg:                 @gray-5;
-@table-cell-bg:                 @white;
-@table-cell-bg_alt:             @gray-5;
-@table-row-link-bg-hover:       @pacific-80;
-@table-row-link-hover-color:    @white;
-@table-scrolling-border:        @gray-40;
-@table-border:                  @gray;
+@table-head-bg:              @gray-5;
+@table-cell-bg:              @white;
+@table-cell-bg_alt:          @gray-5;
+@table-row-link-bg-hover:    @pacific-80;
+@table-row-link-hover-color: @white;
+@table-scrolling-border:     @gray-40;
+@table-border:               @gray;
 ```
 
 
@@ -265,7 +265,9 @@ to the sorting button:
 <table class="o-table o-table__sortable">
     …
         <th>
-            <button class="sortable" data-sort_type="number">Column Name</button>
+            <button class="sortable" data-sort_type="number">
+                Column Name
+            </button>
         </th>
     …
 </table>
@@ -279,7 +281,9 @@ To sort the table on page load, use the `.sorted-up` and `.sorted-down` classes:
 <table class="o-table o-table__sortable">
     …
         <th>
-            <button class="sortable sorted-up">Column Name</button>
+            <button class="sortable sorted-up">
+                Column Name
+            </button>
         </th>
     …
 </table>

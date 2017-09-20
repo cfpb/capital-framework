@@ -9,7 +9,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Changed
 - **cf-forms:** [PATCH] Changes label helper text to Avenir Regular.
 - **cf-forms:** [PATCH] Lets autoprefixer handle placeholder pseudoselector.
-- **cf-tables:** [PATCH] Separate Table class from initialization code.
+- **cf-tables:** [MINOR] Separate Table class from initialization code.
+- **cf-tables:** [PATCH] Rename classes so filenames match output object.
+- **cf-tables:** [PATCH] Re-structure classes so filenames match output object.
 
 ### Removed
 -
