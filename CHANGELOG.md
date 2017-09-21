@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.11.0 - 2017-09-21
+
+### Added
 - **cf-forms:** Add color variable for text input.
 - **cf-forms:** Add sidecar `.hover` classes to text input.
 - **cf-forms:** Add sidecar `.focus` classes to inputs.
