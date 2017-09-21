@@ -1,6 +1,6 @@
 {
   "name": "cf-tables",
-  "version": "4.1.5",
+  "version": "4.1.6",
   "description": "Capital Framework tables",
   "main": "src/cf-tables.js",
   "less": "src/cf-tables.less",
@@ -10,7 +10,7 @@
     "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
   },
   "dependencies": {
-    "atomic-component": "1.3.2",
+    "atomic-component": "1.4.0",
     "cf-core": "^4.0.0"
   },
   "keywords": [
