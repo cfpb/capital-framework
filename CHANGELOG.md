@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.11.1 - 2017-09-21
+
 ### Changed
 - **capital-framework:** Update atomic-component dependency in main package.json.
 - **cf-expandables:** Update atomic-component dependency to 1.4.0.
