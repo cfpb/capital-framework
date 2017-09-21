@@ -157,27 +157,35 @@ appear in code.
 
 #### Default state
 
-<label class="a-label" for="textinput-example-default">A text input</label>
+<label class="a-label a-label__heading" for="textinput-example-default">
+    A text input
+</label>
 <input class="a-text-input"
        type="text"
        id="textinput-example-default"
        placeholder="Enter text…"
        value="Lorem ipsum">
 
-<label class="a-label" for="textarea-example-default">A textarea input</label>
+<label class="a-label a-label__heading" for="textarea-example-default">
+    A textarea input
+</label>
 <textarea class="a-text-input"
           id="textarea-example-default"
           placeholder="Enter text…">Lorem Ipsum</textarea>
 
 ```html
-<label class="a-label" for="textinput-example-default">A text input</label>
+<label class="a-label a-label__heading" for="textinput-example-default">
+    A text input
+</label>
 <input class="a-text-input"
        type="text"
        id="textinput-example-default"
        placeholder="Enter text…"
        value="Lorem ipsum">
 
-<label class="a-label" for="textarea-example-default">A textarea input</label>
+<label class="a-label a-label__heading" for="textarea-example-default">
+    A textarea input
+</label>
 <textarea class="a-text-input"
           id="textarea-example-default"
           placeholder="Enter text…">Lorem Ipsum</textarea>
@@ -189,26 +197,34 @@ Generally this is only useful for documentation purposes.
 
 #### Hover state
 
-<label class="a-label" for="textinput-example-hover">A text input</label>
+<label class="a-label a-label__heading" for="textinput-example-hover">
+    A text input
+</label>
 <input class="a-text-input hover"
        type="text"
        id="textinput-example-hover"
        placeholder="Enter text…"
        value="Lorem ipsum">
 
-<label class="a-label" for="textarea-example-hover">A textarea input</label>
+<label class="a-label a-label__heading" for="textarea-example-hover">
+    A textarea input
+</label>
 <textarea class="a-text-input hover"
           id="textarea-example-hover"
           placeholder="Enter text…">Lorem Ipsum</textarea>
 ```html
-<label class="a-label" for="textinput-example-hover">A text input</label>
+<label class="a-label a-label__heading" for="textinput-example-hover">
+    A text input
+</label>
 <input class="a-text-input hover"
        type="text"
        id="textinput-example-hover"
        placeholder="Enter text…"
        value="Lorem ipsum">
 
-<label class="a-label" for="textarea-example-hover">A textarea input</label>
+<label class="a-label a-label__heading" for="textarea-example-hover">
+    A textarea input
+</label>
 <textarea class="a-text-input hover"
           id="textarea-example-hover"
           placeholder="Enter text…">Lorem Ipsum</textarea>
@@ -216,26 +232,34 @@ Generally this is only useful for documentation purposes.
 
 #### Focus state
 
-<label class="a-label" for="textinput-example-focus">A text input</label>
+<label class="a-label a-label__heading" for="textinput-example-focus">
+    A text input
+</label>
 <input class="a-text-input focus"
        type="text"
        id="textinput-example-focus"
        placeholder="Enter text…"
        value="Lorem ipsum">
 
-<label class="a-label" for="textarea-example-focus">A textarea input</label>
+<label class="a-label a-label__heading" for="textarea-example-focus">
+    A textarea input
+</label>
 <textarea class="a-text-input focus"
           id="textarea-example-focus"
           placeholder="Enter text…">Lorem Ipsum</textarea>
 ```html
-<label class="a-label" for="textinput-example-focus">A text input</label>
+<label class="a-label a-label__heading" for="textinput-example-focus">
+    A text input
+</label>
 <input class="a-text-input focus"
        type="text"
        id="textinput-example-focus"
        placeholder="Enter text…"
        value="Lorem ipsum">
 
-<label class="a-label" for="textarea-example-focus">A textarea input</label>
+<label class="a-label a-label__heading" for="textarea-example-focus">
+    A textarea input
+</label>
 <textarea class="a-text-input focus"
           id="textarea-example-focus"
           placeholder="Enter text…">Lorem Ipsum</textarea>
@@ -243,7 +267,9 @@ Generally this is only useful for documentation purposes.
 
 #### Disabled state
 
-<label class="a-label" for="textinput-example-disabled">A text input</label>
+<label class="a-label a-label__heading" for="textinput-example-disabled">
+    A text input
+</label>
 <input class="a-text-input"
        type="text"
        id="textinput-example-focus"
@@ -251,30 +277,37 @@ Generally this is only useful for documentation purposes.
        value="Lorem ipsum"
        disabled>
 
-<label class="a-label" for="textarea-example-disabled">A textarea input</label>
+<label class="a-label a-label__heading" for="textarea-example-disabled">
+    A textarea input
+</label>
 <textarea class="a-text-input"
           id="textarea-example-focus"
           placeholder="Enter text…"
           disabled>Lorem Ipsum</textarea>
 ```html
-<label class="a-label" for="textinput-example-disabled">A text input</label>
+<label class="a-label a-label__heading" for="textinput-example-disabled">
+    A text input
+</label>
 <input class="a-text-input"
        type="text"
-       id="textinput-example-disabled"
+       id="textinput-example-focus"
        placeholder="Enter text…"
        value="Lorem ipsum"
        disabled>
 
-<label class="a-label" for="textarea-example-disabled">A textarea input</label>
+<label class="a-label a-label__heading" for="textarea-example-disabled">
+    A textarea input
+</label>
 <textarea class="a-text-input"
-          id="textarea-example-disabled"
+          id="textarea-example-focus"
           placeholder="Enter text…"
           disabled>Lorem Ipsum</textarea>
 ```
+
 ### Full-width modifier
 
 <div class="m-form-field">
-    <label class="a-label" for="full-textinput-example">
+    <label class="a-label a-label__heading" for="full-textinput-example">
         A full-width text input
     </label>
     <input class="a-text-input a-text-input__full"
@@ -282,7 +315,7 @@ Generally this is only useful for documentation purposes.
            id="full-textinput-example"
            value="Lorem ipsum">
     <br><br>
-    <label class="a-label" for="full-textarea-example">
+    <label class="a-label a-label__heading" for="full-textarea-example">
         A full-width textarea input
     </label>
     <textarea class="a-text-input a-text-input__full"
@@ -291,7 +324,7 @@ Generally this is only useful for documentation purposes.
 
 ```html
 <div class="m-form-field">
-    <label class="a-label" for="full-textinput-example">
+    <label class="a-label a-label__heading" for="full-textinput-example">
         A full-width text input
     </label>
     <input class="a-text-input a-text-input__full"
@@ -299,7 +332,7 @@ Generally this is only useful for documentation purposes.
            id="full-textinput-example"
            value="Lorem ipsum">
     <br><br>
-    <label class="a-label" for="full-textarea-example">
+    <label class="a-label a-label__heading" for="full-textarea-example">
         A full-width textarea input
     </label>
     <textarea class="a-text-input a-text-input__full"
@@ -775,7 +808,9 @@ appear in code.
 ### Default state
 
 <div class="m-form-field m-form-field__select">
-    <label class="a-label" for="test_select_default">Label</label>
+    <label class="a-label a-label__heading" for="test_select_default">
+        Label
+    </label>
     <div class="a-select">
         <select id="test_select_default">
             <option value="option1">Option 1</option>
@@ -788,7 +823,9 @@ appear in code.
 
 ```html
 <div class="m-form-field m-form-field__select">
-    <label class="a-label" for="test_select_default">Label</label>
+    <label class="a-label a-label__heading" for="test_select_default">
+        Label
+    </label>
     <div class="a-select">
         <select id="test_select_default">
             <option value="option1">Option 1</option>
@@ -807,7 +844,9 @@ Generally this is only useful for documentation purposes.
 ### Hover state
 
 <div class="m-form-field m-form-field__select">
-    <label class="a-label" for="test_select__hover">Label</label>
+    <label class="a-label a-label__heading" for="test_select__hover">
+        Label
+    </label>
     <div class="a-select">
         <select id="test_select__hover" class="hover">
             <option value="option1">Option 1</option>
@@ -820,7 +859,9 @@ Generally this is only useful for documentation purposes.
 
 ```html
 <div class="m-form-field m-form-field__select">
-    <label class="a-label" for="test_select__hover">Label</label>
+    <label class="a-label a-label__heading" for="test_select__hover">
+        Label
+    </label>
     <div class="a-select">
         <select id="test_select__hover" class="hover">
             <option value="option1">Option 1</option>
@@ -835,7 +876,9 @@ Generally this is only useful for documentation purposes.
 ### Focus state
 
 <div class="m-form-field m-form-field__select">
-    <label class="a-label" for="test_select__focus">Label</label>
+    <label class="a-label a-label__heading" for="test_select__focus">
+        Label
+    </label>
     <div class="a-select">
         <select id="test_select__focus" class="focus">
             <option value="option1">Option 1</option>
@@ -848,7 +891,9 @@ Generally this is only useful for documentation purposes.
 
 ```html
 <div class="m-form-field m-form-field__select">
-    <label class="a-label" for="test_select__focus">Label</label>
+    <label class="a-label a-label__heading" for="test_select__focus">
+        Label
+    </label>
     <div class="a-select">
         <select id="test_select__focus" class="focus">
             <option value="option1">Option 1</option>
@@ -863,7 +908,7 @@ Generally this is only useful for documentation purposes.
 ### Disabled state
 
 <div class="m-form-field m-form-field__select">
-    <label class="a-label" for="test_select__disabled">Label</label>
+    <label class="a-label a-label__heading" for="test_select__disabled">Label</label>
     <div class="a-select">
         <select id="test_select__disabled" disabled>
             <option value="option1">Option 1</option>
@@ -876,7 +921,7 @@ Generally this is only useful for documentation purposes.
 
 ```html
 <div class="m-form-field m-form-field__select">
-    <label class="a-label" for="test_select__disabled">Label</label>
+    <label class="a-label a-label__heading" for="test_select__disabled">Label</label>
     <div class="a-select">
         <select id="test_select__disabled" disabled>
             <option value="option1">Option 1</option>
@@ -892,7 +937,9 @@ Generally this is only useful for documentation purposes.
 ## Basic multiselect
 
 <div class="m-form-field m-form-field__select">
-    <label class="a-label" for="test_select__multiple">Label</label>
+    <label class="a-label a-label__heading" for="test_select__multiple">
+        Label
+    </label>
     <select class="a-multiselect" id="test_select__multiple" multiple>
         <option value="option1">Option 1</option>
         <option value="option2">Option 2</option>
@@ -907,7 +954,9 @@ Generally this is only useful for documentation purposes.
 
 ```html
 <div class="m-form-field m-form-field__select">
-    <label class="a-label" for="test_select__multiple">Label</label>
+    <label class="a-label a-label__heading" for="test_select__multiple">
+        Label
+    </label>
     <select class="a-multiselect" id="test_select__multiple" multiple>
         <option value="option1">Option 1</option>
         <option value="option2">Option 2</option>
