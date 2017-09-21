@@ -4,13 +4,21 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+- **cf-forms:** Add color variable for text input.
+- **cf-forms:** Add sidecar `.hover` classes to text input.
+- **cf-forms:** Add sidecar `.focus` classes to inputs.
+- **cf-forms:** Add focus state CSS to inputs.
 
 ### Changed
-- 
+- **cf-forms:** Changes label helper text to Avenir Regular.
+- **cf-forms:** Lets autoprefixer handle placeholder pseudoselector.
+- **cf-forms:** Lighten disabled input gray.
+- **cf-forms:** Convert `a-text-input__focus` to `.focus` class.
+- **cf-tables:** Separate Table class from initialization code.
 
 ### Removed
-- 
+- **cf-forms:** Remove `a-text-input__disabled`.
+
 
 ## 4.10.0 - 2017-09-19
 

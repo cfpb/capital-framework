@@ -52,9 +52,22 @@
                 clear: both;
             }
 
+            &:focus + .a-label,
+            &.focus + .a-label {
+                outline: 1px dotted @input-border__focused;
+                // The outline-offset property is not supported everywhere (e.g. IE)
+                // but it adds a nice touch in browsers where it is.
+                outline-offset: 3px;
+
+                // This is the height of checkbox plus 2 pixels
+                // to accommodate the outline position.
+                height: unit( 20px / @base-font-size-px, em );
+            }
+
             &:disabled {
 
                 &:focus + .a-label:before,
+                &.focus + .a-label:before,
                 &:hover + .a-label:before,
                 &.hover + .a-label:before {
                     border-color: @input-border;
@@ -85,10 +98,15 @@
 
         .a-checkbox {
             &:focus + .a-label:before,
+            &.focus + .a-label:before {
+                border-color: @input-border__focused;
+                box-shadow: 0 0 0 1px @input-border__focused;
+            }
+
             &:hover + .a-label:before,
             &.hover + .a-label:before {
-                border-color: @input-border__focused;
-                outline: 1px solid @input-border__focused;
+                border-color: @input-border__hover;
+                box-shadow: 0 0 0 1px @input-border__hover;
             }
 
             &:checked + .a-label:before {
@@ -106,11 +124,17 @@
 
         .a-radio {
             &:focus + .a-label:before,
-            &:hover + .a-label:before,
-            &.hover + .a-label:before {
+            &.focus + .a-label:before {
                 outline: none;
                 border-color: @input-border__focused;
                 box-shadow: 0 0 0 1px @input-border__focused;
+            }
+
+            &:hover + .a-label:before,
+            &.hover + .a-label:before {
+                outline: none;
+                border-color: @input-border__hover;
+                box-shadow: 0 0 0 1px @input-border__hover;
             }
 
             &:checked + .a-label:before {
@@ -119,10 +143,15 @@
             }
 
             &:focus:checked + .a-label:before,
-            &:hover:checked + .a-label:before,
-            &.hover:checked + .a-label:before {
+            &.focus:checked + .a-label:before {
                 border-color: @input-border__focused;
                 box-shadow: 0 0 0 1px @input-border__focused, inset 0 0 0 2px #fff;
+            }
+
+            &:hover:checked + .a-label:before,
+            &.hover:checked + .a-label:before {
+                border-color: @input-border__hover;
+                box-shadow: 0 0 0 1px @input-border__hover, inset 0 0 0 2px #fff;
             }
         }
     }
@@ -138,8 +167,14 @@
         .a-checkbox,
         .a-radio {
             &:focus + .a-label,
+            &.focus + .a-label,
             &:checked + .a-label {
-                outline: 1px solid @input-border__focused;
+                // The outline-offset property is not supported everywhere (e.g. IE)
+                // but it adds a nice touch in browsers where it is.
+                outline-offset: 0;
+
+                // Reset the height applied to basic checkbox/radio buttons.
+                height: auto;
             }
 
             &:checked + .a-label {
