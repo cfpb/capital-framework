@@ -21,42 +21,19 @@ Capital Framework.
     - [Label heading](#label-heading)
     - [Label helper text](#label-helper-text)
 - [Inputs](#inputs)
-    - [Basic Text Inputs](#basic-text-inputs)
-        - [Default state](#default-state)
-        - [Hover state](#hover-state)
-        - [Focus state](#focus-state)
-        - [Disabled state](#disabled-state)
+    - [Basic text inputs](#basic-text-inputs)
         - [Full-width modifier](#full-width-modifier)
     - [Basic checkboxes](#basic-checkboxes)
-        - [Default state](#default-state)
-        - [Hover/focus state](#hoverfocus-state)
-        - [Selected state](#selected-state)
-        - [Disabled state](#disabled-state)
     - [Basic radio buttons](#basic-radio-buttons)
-        - [Default state](#default-state)
-        - [Hover/focus state](#hoverfocus-state)
-        - [Selected state](#selected-state)
-        - [Disabled state](#disabled-state)
     - [Large target area checkboxes](#large-target-area-checkboxes)
-        - [Default state](#default-state)
-        - [Hover/focus state](#hoverfocus-state)
-        - [Selected state](#selected-state)
-        - [Disabled state](#disabled-state)
     - [Large target area radio buttons](#large-target-area-radio-buttons)
-        - [Default state](#default-state)
-        - [Hover/focus state](#hoverfocus-state)
-        - [Selected state](#selected-state)
-        - [Disabled state](#disabled-state)
 - [Buttons](#buttons)
     - [Simple input with a button](#simple-input-with-a-button)
     - [Button inside an input](#button-inside-an-input)
     - [Button inside an input with a button](#button-inside-an-input-with-a-button)
 - [Select dropdown](#select-dropdown)
-    - [Default state](#default-state)
-    - [Hover/focus state](#hoverfocus-state)
-    - [Disabled state](#disabled-state)
 - [Basic multiselect](#basic-multiselect)
-- [Form fieldsets](#form-fieldsets)
+- [Fieldsets](#form-fieldsets)
 
 
 ## Variables
@@ -354,7 +331,7 @@ The following sections demonstrate how a particular state of a checkbox
 could be forced to be shown.
 Generally this is only useful for documentation purposes.
 
-#### Hover/focus state
+#### Hover state
 
 <div class="m-form-field m-form-field__checkbox">
     <input class="a-checkbox hover" type="checkbox" id="test_checkbox_basic_hover">
@@ -365,6 +342,20 @@ Generally this is only useful for documentation purposes.
 <div class="m-form-field m-form-field__checkbox">
     <input class="a-checkbox hover" type="checkbox" id="test_checkbox_basic_hover">
     <label class="a-label" for="test_checkbox_basic_hover">Label</label>
+</div>
+```
+
+#### Focus state
+
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox focus" type="checkbox" id="test_checkbox_basic_focus">
+    <label class="a-label" for="test_checkbox_basic_focus">Label</label>
+</div>
+
+```html
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox focus" type="checkbox" id="test_checkbox_basic_focus">
+    <label class="a-label" for="test_checkbox_basic_focus">Label</label>
 </div>
 ```
 
@@ -420,7 +411,7 @@ The following sections demonstrate how a particular state of a radio button
 could be forced to be shown.
 Generally this is only useful for documentation purposes.
 
-#### Hover/focus state
+#### Hover state
 
 <div class="m-form-field m-form-field__radio">
     <input class="a-radio hover" type="radio" id="test_radio_basic_hover">
@@ -431,6 +422,20 @@ Generally this is only useful for documentation purposes.
 <div class="m-form-field m-form-field__radio">
     <input class="a-radio hover" type="radio" id="test_radio_basic_hover">
     <label class="a-label" for="test_radio_basic_hover">Label</label>
+</div>
+```
+
+#### Focus state
+
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio focus" type="radio" id="test_radio_basic_focus">
+    <label class="a-label" for="test_radio_basic_focus">Label</label>
+</div>
+
+```html
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio focus" type="radio" id="test_radio_basic_focus">
+    <label class="a-label" for="test_radio_basic_focus">Label</label>
 </div>
 ```
 
@@ -486,7 +491,7 @@ The following sections demonstrate how a particular state of a checkbox
 could be forced to be shown.
 Generally this is only useful for documentation purposes.
 
-#### Hover/focus state
+#### Hover state
 
 <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
     <input class="a-checkbox hover" type="checkbox" id="test_checkbox_lg_hover">
@@ -497,6 +502,20 @@ Generally this is only useful for documentation purposes.
 <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
     <input class="a-checkbox hover" type="checkbox" id="test_checkbox_lg_hover">
     <label class="a-label" for="test_checkbox_lg_hover">Label</label>
+</div>
+```
+
+#### Focus state
+
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox focus" type="checkbox" id="test_checkbox_lg_focus">
+    <label class="a-label" for="test_checkbox_lg_focus">Label</label>
+</div>
+
+```html
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox focus" type="checkbox" id="test_checkbox_lg_focus">
+    <label class="a-label" for="test_checkbox_lg_focus">Label</label>
 </div>
 ```
 
@@ -552,7 +571,7 @@ The following sections demonstrate how a particular state of a radio button
 could be forced to be shown.
 Generally this is only useful for documentation purposes.
 
-#### Hover/focus state
+#### Hover state
 
 <div class="m-form-field m-form-field__radio m-form-field__lg-target">
     <input class="a-radio hover" type="radio" id="test_radio_lg_hover">
@@ -563,6 +582,20 @@ Generally this is only useful for documentation purposes.
 <div class="m-form-field m-form-field__radio m-form-field__lg-target">
     <input class="a-radio hover" type="radio" id="test_radio_lg_hover">
     <label class="a-label" for="test_radio_lg_hover">Label</label>
+</div>
+```
+
+#### Focus state
+
+<div class="m-form-field m-form-field__radio m-form-field__lg-target">
+    <input class="a-radio focus" type="radio" id="test_radio_lg_focus">
+    <label class="a-label" for="test_radio_lg_focus">Label</label>
+</div>
+
+```html
+<div class="m-form-field m-form-field__radio m-form-field__lg-target">
+    <input class="a-radio focus" type="radio" id="test_radio_lg_focus">
+    <label class="a-label" for="test_radio_lg_focus">Label</label>
 </div>
 ```
 
@@ -771,7 +804,7 @@ The following sections demonstrate how a particular state of a dropdown
 could be forced to be shown.
 Generally this is only useful for documentation purposes.
 
-### Hover/focus state
+### Hover state
 
 <div class="m-form-field m-form-field__select">
     <label class="a-label" for="test_select__hover">Label</label>
@@ -790,6 +823,34 @@ Generally this is only useful for documentation purposes.
     <label class="a-label" for="test_select__hover">Label</label>
     <div class="a-select">
         <select id="test_select__hover" class="hover">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+```
+
+### Focus state
+
+<div class="m-form-field m-form-field__select">
+    <label class="a-label" for="test_select__focus">Label</label>
+    <div class="a-select">
+        <select id="test_select__focus" class="focus">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+    </div>
+</div>
+
+```html
+<div class="m-form-field m-form-field__select">
+    <label class="a-label" for="test_select__focus">Label</label>
+    <div class="a-select">
+        <select id="test_select__focus" class="focus">
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
@@ -860,7 +921,7 @@ Generally this is only useful for documentation purposes.
 </div>
 ```
 
-## Form fieldsets
+## Fieldsets
 
 <form class="o-form">
     <div class="o-form_group">
