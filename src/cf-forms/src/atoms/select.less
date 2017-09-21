@@ -15,9 +15,14 @@
         color: @text;
 
         &:hover,
-        &.hover,
+        &.hover {
+            outline: 2px solid @input-border__hover;
+            outline-offset: 0;
+        }
+
         &:active,
-        &:focus {
+        &:focus,
+        &.focus {
             outline: 2px solid @input-border__focused;
             outline-offset: 0;
         }
@@ -28,7 +33,10 @@
         background-color: @input-bg__disabled;
         cursor: not-allowed;
 
-        &:hover {
+        &:hover,
+        &.hover,
+        &:focus,
+        &.focus {
             outline: none;
         }
     }
