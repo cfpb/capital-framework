@@ -16,7 +16,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-tables:** [PATCH] Separate Table class from initialization code.
 
 ### Removed
--
+- **cf-forms:** [MINOR] Remove `a-text-input__disabled`.
 
 ## 4.10.0 - 2017-09-19
 
