@@ -19,7 +19,6 @@
     "capital-framework"
   ],
   "dependencies": {
-    "cf-buttons": "latest",
     "cf-core": "latest",
     "cf-expandables": "latest",
     "cf-forms": "latest",
