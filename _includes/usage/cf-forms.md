@@ -33,7 +33,7 @@ Capital Framework.
     - [Button inside an input with a button](#button-inside-an-input-with-a-button)
 - [Select dropdown](#select-dropdown)
 - [Basic multiselect](#basic-multiselect)
-- [Fieldsets](#form-fieldsets)
+- [Fieldsets](#fieldsets)
 
 
 ## Variables
