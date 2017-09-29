@@ -4,13 +4,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-forms:** [PATCH] Change font size in helper text to use variable.
 
 ### Removed
-- 
+-
 
 ## 4.11.1 - 2017-09-21
 

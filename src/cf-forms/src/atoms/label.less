@@ -4,7 +4,7 @@
     &_helper {
         .u-webfont-regular();
         color: @label-helper;
-        font-size: unit( 16px / @base-font-size-px, em );
+        font-size: unit( @size-v / @base-font-size-px, em );
     }
 
     &__heading {
@@ -14,5 +14,9 @@
 
         // Overwrites heading-4 margin.
         margin-bottom: unit( 10px / @font-size, em );
+
+        .a-label_helper {
+            font-size: unit( @base-font-size-px / @font-size, em );
+        }
     }
 }
