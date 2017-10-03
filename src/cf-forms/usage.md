@@ -314,7 +314,9 @@ Generally this is only useful for documentation purposes.
            type="text"
            id="full-textinput-example"
            value="Lorem ipsum">
-    <br><br>
+</div>
+<br>
+<div class="m-form-field">
     <label class="a-label a-label__heading" for="full-textarea-example">
         A full-width textarea input
     </label>
@@ -331,7 +333,9 @@ Generally this is only useful for documentation purposes.
            type="text"
            id="full-textinput-example"
            value="Lorem ipsum">
-    <br><br>
+</div>
+<br>
+<div class="m-form-field">
     <label class="a-label a-label__heading" for="full-textarea-example">
         A full-width textarea input
     </label>
