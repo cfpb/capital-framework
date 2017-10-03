@@ -4,13 +4,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-forms:** [MINOR] Add multi-line support to checkboxes/radio buttons.
 
 ### Removed
-- 
+-
 
 ## 4.17.0 - 2017-12-04
 

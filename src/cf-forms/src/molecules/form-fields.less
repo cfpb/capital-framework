@@ -11,11 +11,16 @@
     &__checkbox,
     &__radio {
         .a-label {
+            display: inline-grid;
+            // 30px is width of checkbox/radio button plus the needed padding.
+            grid-template-columns: unit( 30px / @base-font-size-px, em ) auto;
             vertical-align: top;
             cursor: pointer;
 
             &:before {
                 display: inline-block;
+                grid-row-start: 1;
+                grid-row-end: 3;
 
                 border: 1px solid @input-border;
                 height: unit( 18px / @base-font-size-px, em );
@@ -25,6 +30,11 @@
                 background-color: @input-bg;
                 content: '';
                 vertical-align: top;
+
+                // Offset position so that checkbox fixes within focus area.
+                position: relative;
+                top: 1px;
+                left: 1px;
 
                 .lt-ie9 & {
                     display: none !important;
@@ -57,11 +67,7 @@
                 outline: 1px dotted @input-border__focused;
                 // The outline-offset property is not supported everywhere (e.g. IE)
                 // but it adds a nice touch in browsers where it is.
-                outline-offset: 3px;
-
-                // This is the height of checkbox plus 2 pixels
-                // to accommodate the outline position.
-                height: unit( 20px / @base-font-size-px, em );
+                outline-offset: 1px;
             }
 
             &:disabled {
@@ -157,9 +163,11 @@
     }
 
     &__lg-target {
+        display: block;
 
         .a-label {
-            display: block;
+            box-sizing: border-box;
+            width: 100%;
             padding: 15px;
             background-color: @input-lg-target-bg;
         }
@@ -172,9 +180,6 @@
                 // The outline-offset property is not supported everywhere (e.g. IE)
                 // but it adds a nice touch in browsers where it is.
                 outline-offset: 0;
-
-                // Reset the height applied to basic checkbox/radio buttons.
-                height: auto;
             }
 
             &:checked + .a-label {
