@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.12.0 - 2017-10-04
+
+### Added
 - **cf-core:** Add `u-hidden` utility class.
 - **cf-forms:** Add block modifier to label helper text.
 
