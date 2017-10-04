@@ -3,14 +3,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
-- 
-
 ### Changed
-- 
+- **cf-forms:** Change font size in block helper text.
 
-### Removed
-- 
 
 ## 4.12.0 - 2017-10-04
 
