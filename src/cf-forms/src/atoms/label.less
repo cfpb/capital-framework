@@ -10,7 +10,7 @@
             display: block;
 
             // Add a gap between the label helper and label.
-            margin-top: unit( 10px / @base-font-size-px, em );
+            margin-top: unit( 10px / @size-vi, em );
         }
     }
 
@@ -24,6 +24,11 @@
 
         .a-label_helper {
             font-size: unit( @base-font-size-px / @font-size, em );
+
+            &__block {
+                // Add a gap between the label helper and label.
+                margin-top: unit( 10px / @base-font-size-px, em );
+            }
         }
     }
 }
