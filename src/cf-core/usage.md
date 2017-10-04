@@ -287,9 +287,9 @@ _More information see: <http://css-tricks.com/snippets/css/clear-fix>_
 
 Hide an element from view while keeping it accessible to screen readers.
 
-For example, to create a link with a social network icon, but allow non-sighted
-users to understand the context, add descriptive text with the
-`u-visually-hidden` class.
+For example, to create a link with a social network icon,
+but allow non-sighted users to understand the context,
+add descriptive text with the `u-visually-hidden` class.
 
 ```
 <h1>
@@ -299,6 +299,15 @@ users to understand the context, add descriptive text with the
     </a>
 </h1>
 ```
+
+#### Totally hidden
+
+Use `u-hidden` to hide an element from everything (including screen readers).
+This is useful for dynamically hiding and showing content.
+It is also useful for progressive enhancement.
+For example, if you want to hide something initially on page load
+but show it after checking for browser support,
+use JavaScript to remove this class from the element after verifying support.
 
 #### Inline block
 

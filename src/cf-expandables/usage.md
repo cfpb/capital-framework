@@ -523,10 +523,10 @@ In this barebones example there are no visual styles.
 ### Accordion-style group
 
 Accordions can only show one open expandable at a time.
-Add the `data-accordion="true"` attribute to the expandable group to activate
-the accordion mode.
+Add the `o-expandable-group__accordion` class to the expandable group
+to activate the accordion mode.
 
-<div class="o-expandable-group o-expandable-group__accordion" >
+<div class="o-expandable-group o-expandable-group__accordion">
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
@@ -611,7 +611,7 @@ the accordion mode.
 </div>
 
 ```
-<div class="o-expandable-group o-expandable-group__accordion" >
+<div class="o-expandable-group o-expandable-group__accordion">
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
@@ -695,4 +695,3 @@ the accordion mode.
     </div>
 </div>
 ```
-
