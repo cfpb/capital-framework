@@ -5,6 +5,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Added
 - **cf-core:** [MINOR] Add `u-hidden` utility class.
+- **cf-forms:** [MINOR] Add block modifier to label helper text.
 
 ### Changed
 - **cf-forms:** [PATCH] Change font size in helper text to use variable.

@@ -133,15 +133,34 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 
 ### Label helper text
 
+#### Inline helper text
+
+Appears with label headings.
 Used for designating an input as optional for user input.
 
 <label class="a-label a-label__heading">
-    A label <small class="a-label_helper">(optional)</small>
+    A label heading <small class="a-label_helper">(optional)</small>
 </label>
 
 ```html
 <label class="a-label a-label__heading">
-    A label <small class="a-label_helper">(optional)</small>
+    A label heading <small class="a-label_helper">(optional)</small>
+</label>
+```
+
+#### Block helper text
+
+Appears with labels and label headings.
+
+<label class="a-label a-label__heading">
+    A label heading
+    <small class="a-label_helper a-label_helper__block">Helper text</small>
+</label>
+
+```html
+<label class="a-label a-label__heading">
+    A label heading
+    <small class="a-label_helper a-label_helper__block">Helper text</small>
 </label>
 ```
 
