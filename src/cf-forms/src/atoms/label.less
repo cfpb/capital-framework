@@ -5,6 +5,13 @@
         .u-webfont-regular();
         color: @label-helper;
         font-size: unit( @size-v / @base-font-size-px, em );
+
+        &__block {
+            display: block;
+
+            // Add a gap between the label helper and label.
+            margin-top: unit( 10px / @base-font-size-px, em );
+        }
     }
 
     &__heading {
