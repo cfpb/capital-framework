@@ -4,7 +4,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-core:** [MINOR] Add `u-hidden` utility class.
 
 ### Changed
 - **cf-forms:** [PATCH] Change font size in helper text to use variable.
