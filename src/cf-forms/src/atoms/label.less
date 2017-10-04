@@ -8,11 +8,10 @@
 
         &__block {
             display: block;
-        }
-    }
 
-    & > &_helper__block {
-        margin-top: unit( 10px / @base-font-size-px, em );
+            // Add a gap between the label helper and label.
+            margin-top: unit( 10px / @base-font-size-px, em );
+        }
     }
 
     &__heading {
