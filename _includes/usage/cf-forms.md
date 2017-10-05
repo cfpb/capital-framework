@@ -33,7 +33,7 @@ Capital Framework.
     - [Button inside an input with a button](#button-inside-an-input-with-a-button)
 - [Select dropdown](#select-dropdown)
 - [Basic multiselect](#basic-multiselect)
-- [Fieldsets](#fieldsets)
+- [Fieldsets](#form-fieldsets)
 
 
 ## Variables
@@ -133,15 +133,34 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 
 ### Label helper text
 
+#### Inline helper text
+
+Appears with label headings.
 Used for designating an input as optional for user input.
 
 <label class="a-label a-label__heading">
-    A label <small class="a-label_helper">(optional)</small>
+    A label heading <small class="a-label_helper">(optional)</small>
 </label>
 
 ```html
 <label class="a-label a-label__heading">
-    A label <small class="a-label_helper">(optional)</small>
+    A label heading <small class="a-label_helper">(optional)</small>
+</label>
+```
+
+#### Block helper text
+
+Appears with labels and label headings.
+
+<label class="a-label a-label__heading">
+    A label heading
+    <small class="a-label_helper a-label_helper__block">Helper text</small>
+</label>
+
+```html
+<label class="a-label a-label__heading">
+    A label heading
+    <small class="a-label_helper a-label_helper__block">Helper text</small>
 </label>
 ```
 
@@ -314,12 +333,6 @@ Generally this is only useful for documentation purposes.
            type="text"
            id="full-textinput-example"
            value="Lorem ipsum">
-    <br><br>
-    <label class="a-label a-label__heading" for="full-textarea-example">
-        A full-width textarea input
-    </label>
-    <textarea class="a-text-input a-text-input__full"
-              id="full-textarea-example">Lorem Ipsum</textarea>
 </div>
 
 ```html
@@ -331,7 +344,19 @@ Generally this is only useful for documentation purposes.
            type="text"
            id="full-textinput-example"
            value="Lorem ipsum">
-    <br><br>
+</div>
+```
+
+<div class="m-form-field">
+    <label class="a-label a-label__heading" for="full-textarea-example">
+        A full-width textarea input
+    </label>
+    <textarea class="a-text-input a-text-input__full"
+              id="full-textarea-example">Lorem Ipsum</textarea>
+</div>
+
+```html
+<div class="m-form-field">
     <label class="a-label a-label__heading" for="full-textarea-example">
         A full-width textarea input
     </label>
