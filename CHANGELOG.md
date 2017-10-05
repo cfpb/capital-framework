@@ -7,7 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
--
+- **cf-core:** [PATCH] Remove inline-block style from inline code.
 
 ### Removed
 -
