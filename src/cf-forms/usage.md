@@ -700,10 +700,6 @@ have helper text that appears below the main label text.
         This is a very long label that wraps to a second line.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur.
         <small class="a-label_helper" data-aura-rendered-by="179:131;a">
             This is helper text.
         </small>
@@ -717,10 +713,6 @@ have helper text that appears below the main label text.
         This is a very long label that wraps to a second line.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur.
         <small class="a-label_helper" data-aura-rendered-by="179:131;a">
             This is helper text.
         </small>
@@ -736,10 +728,6 @@ have helper text that appears below the main label text.
         This is a very long label that wraps to a second line.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur.
         <small class="a-label_helper" data-aura-rendered-by="179:131;a">
             This is helper text.
         </small>
@@ -753,10 +741,6 @@ have helper text that appears below the main label text.
         This is a very long label that wraps to a second line.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur.
         <small class="a-label_helper" data-aura-rendered-by="179:131;a">
             This is helper text.
         </small>
