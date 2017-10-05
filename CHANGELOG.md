@@ -3,14 +3,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
-- **cf-core:** [PATCH] Remove inline-block style from inline code.
-
-### Removed
--
+- **cf-core:** Remove inline-block style from inline code.
 
 
 ## 4.12.1 - 2017-10-04
