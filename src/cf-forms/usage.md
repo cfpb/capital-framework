@@ -698,8 +698,7 @@ have helper text that appears below the main label text.
     <input class="a-checkbox" type="checkbox" id="test_checkbox_helper">
     <label class="a-label" for="test_checkbox_helper">
         This is a very long label that wraps to a second line.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         <small class="a-label_helper" data-aura-rendered-by="179:131;a">
             This is helper text.
         </small>
@@ -711,8 +710,7 @@ have helper text that appears below the main label text.
     <input class="a-checkbox" type="checkbox" id="test_checkbox_helper">
     <label class="a-label" for="test_checkbox_helper">
         This is a very long label that wraps to a second line.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         <small class="a-label_helper" data-aura-rendered-by="179:131;a">
             This is helper text.
         </small>
@@ -726,8 +724,7 @@ have helper text that appears below the main label text.
     <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_helper">
     <label class="a-label" for="test_checkbox_lg_helper">
         This is a very long label that wraps to a second line.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         <small class="a-label_helper" data-aura-rendered-by="179:131;a">
             This is helper text.
         </small>
@@ -739,8 +736,7 @@ have helper text that appears below the main label text.
     <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_helper">
     <label class="a-label" for="test_checkbox_lg_helper">
         This is a very long label that wraps to a second line.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         <small class="a-label_helper" data-aura-rendered-by="179:131;a">
             This is helper text.
         </small>
