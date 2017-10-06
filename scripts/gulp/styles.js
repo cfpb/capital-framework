@@ -21,7 +21,7 @@ function stylesCf() {
     .pipe( gulpAutoprefixer( {
       browsers: BROWSER_LIST.LAST_2_PLUS_IE_8_AND_UP
     } ) )
-    .pipe(gulpCssmin())
+    //.pipe(gulpCssmin())
     .pipe(gulpRename({
       basename: 'capital-framework',
       extname: '.min.css'

@@ -11,14 +11,17 @@
     &__checkbox,
     &__radio {
         .a-label {
+            display: -ms-inline-grid;
             display: inline-grid;
             // 30px is width of checkbox/radio button plus the needed padding.
+            -ms-grid-columns: unit( 30px / @base-font-size-px, em ) 1fr;
             grid-template-columns: unit( 30px / @base-font-size-px, em ) auto;
             vertical-align: top;
             cursor: pointer;
 
             &:before {
                 display: inline-block;
+                -ms-grid-row-span: 3;
                 grid-row-start: 1;
                 grid-row-end: 3;
 
