@@ -1,0 +1,26 @@
+{
+  "name": "@cfpb/function-bind",
+  "version": "1.0.1",
+  "description": "Utility for binding a fuction to a given context.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Run gulp test\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfpb/AtomicComponent.git"
+  },
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "email": "tech@cfpb.gov",
+    "url": "https://consumerfinance.gov"
+  },
+  "license": "CC0-1.0",
+  "keywords": [
+    "Javascript Function bind"
+  ],
+  "bugs": {
+    "url": "https://github.com/cfpb/AtomicComponent/issues"
+  },
+  "homepage": "https://github.com/cfpb/AtomicComponent#readme"
+}
