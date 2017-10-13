@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.13.1 - 2017-10-13
+
 ### Removed
 - **capital-framework:** Remove screenshots.
 - **cf-core:** Remove screenshot.
