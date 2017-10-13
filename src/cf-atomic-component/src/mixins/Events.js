@@ -54,7 +54,6 @@ const Events = {
 
     return this;
   }
-
 };
 
 module.exports = Events;
