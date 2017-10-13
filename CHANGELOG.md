@@ -3,14 +3,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
-- **cf-layout:** [MINOR] Set max-width on top-level elements.
-
-### Removed
--
+- **cf-layout:** Set max-width on top-level elements.
 
 
 ## 4.12.2 - 2017-10-04
