@@ -3,22 +3,16 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
-### Changed
--
-
 ### Removed
-- **capital-framework:** [PATCH] Remove screenshots.
-- **cf-core:** [PATCH] Remove screenshot.
-- **cf-expandables:** [PATCH] Remove screenshot.
-- **cf-forms:** [PATCH] Remove screenshot.
-- **cf-grid:** [PATCH] Remove screenshot.
-- **cf-icons:** [PATCH] Remove screenshot.
-- **cf-layout:** [PATCH] Remove screenshot.
-- **cf-notifications:** [PATCH] Remove screenshot.
-- **cf-pagination:** [PATCH] Remove screenshot.
+- **capital-framework:** Remove screenshots.
+- **cf-core:** Remove screenshot.
+- **cf-expandables:** Remove screenshot.
+- **cf-forms:** Remove screenshot.
+- **cf-grid:** Remove screenshot.
+- **cf-icons:** Remove screenshot.
+- **cf-layout:** Remove screenshot.
+- **cf-notifications:** Remove screenshot.
+- **cf-pagination:** Remove screenshot.
 
 
 ## 4.13.0 - 2017-10-13
