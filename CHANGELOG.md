@@ -7,7 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
--
+- **cf-layout:** [MINOR] Set max-width on top-level elements.
 
 ### Removed
 -
