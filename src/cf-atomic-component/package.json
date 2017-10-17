@@ -1,0 +1,14 @@
+{
+  "name": "cf-atomic-component",
+  "version": "1.5.0",
+  "description": "Capital Framework atomic component micro-framework",
+  "less": "src/cf-atomic-component.less",
+  "style": "cf-atomic-component.css",
+  "scripts": {
+    "//": "This is a convenience script to allow running `npm test` from this dir.",
+    "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
+  },
+  "keywords": [
+    "atomic-component"
+  ]
+}

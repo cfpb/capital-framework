@@ -7,8 +7,8 @@
 
 'use strict';
 
-var config = require( 'atomic-component/src/utilities/config' );
-var closest = require( 'atomic-component/src/utilities/dom-closest' ).closest;
+var config = require( 'cf-atomic-component/src/utilities/config' );
+var closest = require( 'cf-atomic-component/src/utilities/dom-closest' ).closest;
 var DIRECTIONS = config.DIRECTIONS;
 var UNDEFINED = config.UNDEFINED;
 
