@@ -5,6 +5,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Added
 - **cf-atomic-component:** Add cf-atomic-component module.
+
+### Changed
 - **cf-expandables:** Change to internal cf-atomic-component dependency.
 - **cf-tables:** Change to internal cf-atomic-component dependency.
 
