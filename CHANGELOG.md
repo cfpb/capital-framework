@@ -5,6 +5,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Added
 - **cf-atomic-component:** [MINOR] Add cf-atomic-component module.
+- **cf-atomic-component:** [MINOR] Add transition.less CSS.
 
 ### Changed
 - **cf-expandables:** [MINOR] Change to internal cf-atomic-component dependency.
