@@ -5,14 +5,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Added
 - **cf-atomic-component:** [MINOR] Add cf-atomic-component module.
+
+### Changed
 - **cf-expandables:** [MINOR] Change to internal cf-atomic-component dependency.
 - **cf-tables:** [MINOR] Change to internal cf-atomic-component dependency.
 
-### Changed
-- 
-
 ### Removed
-- 
+-
 
 ## 4.13.1 - 2017-10-13
 
