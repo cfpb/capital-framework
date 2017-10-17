@@ -4,8 +4,8 @@
 
 'use strict';
 
-var config = require( 'atomic-component/src/utilities/config' );
-var Organism = require( 'atomic-component/src/components/Organism' );
+var config = require( 'cf-atomic-component/src/utilities/config' );
+var Organism = require( 'cf-atomic-component/src/components/Organism' );
 var TableSortable = require( './TableSortable' );
 var TableRowLinks = require( './TableRowLinks' );
 
