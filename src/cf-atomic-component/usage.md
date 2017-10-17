@@ -51,7 +51,7 @@ const CONSTANTS = { MESSAGE: 'message', EXPLANATION: 'explanation' };
 
 const NotificationMolecule = Molecule.extend( {
       classes: {
-        isVisible:    'm-notification__visible'
+        isVisible:   'm-notification__visible'
       },
 
       ui: {
