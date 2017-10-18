@@ -7,7 +7,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
--
+- **cf-expandables:** [PATCH] Update to ES6 syntax.
+- **cf-tables:** [PATCH] Update to ES6 syntax.
 
 ### Removed
 - **cf-expandables:** [PATCH] Remove on-ready check.
