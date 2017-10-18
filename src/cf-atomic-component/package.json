@@ -8,6 +8,9 @@
     "//": "This is a convenience script to allow running `npm test` from this dir.",
     "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
   },
+  "dependencies": {
+    "dom-delegate": "^2.0.3"
+  },
   "keywords": [
     "atomic-component"
   ]

@@ -4,13 +4,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **cf-atomic-component:** [PATCH] Add dom-delegate dependency.
 
 ### Removed
-- 
+-
 
 ## 4.14.0 - 2017-10-17
 
