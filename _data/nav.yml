@@ -10,6 +10,8 @@
 - title: "Components"
   href: "/components/"
   subcategories:
+    - subtitle: "cf-atomic-component"
+      subhref: "/components/cf-atomic-component/"
     - subtitle: "cf-core"
       subhref: "/components/cf-core/"
     - subtitle: "cf-buttons"

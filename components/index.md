@@ -6,6 +6,11 @@ title:  "Components"
 Capital Framework is divided into a series of components. These components can be used individually, but are designed to work together.
 For information on how to get started using Capital Framework, please read the [Getting Started](../getting-started/) page.
 
+## [cf-atomic-component]({{ site.github.url }}/components/cf-atomic-component/) [![npm](https://img.shields.io/npm/v/cf-atomic-component.svg?style=flat-square)](https://www.npmjs.com/package/cf-atomic-component)
+
+cf-atomic-component contains a micro framework for building Atomic Design
+components that utilize JavaScript.
+
 ## [cf-core]({{ site.github.url }}/components/cf-core/) [![npm](https://img.shields.io/npm/v/cf-core.svg?style=flat-square)](https://www.npmjs.com/package/cf-core)
 
 cf-core contains core styles for starting a Capital Framework project. It includes Normalize.css, variables, media query and utility mixins, class utilities, typography, and standard base styling.
@@ -33,6 +38,10 @@ cf-icons contains a custom icon font and useful CSS styles for working with the 
 ## [cf-layout]({{ site.github.url }}/components/cf-layout/) [![npm](https://img.shields.io/npm/v/cf-layout.svg?style=flat-square)](https://www.npmjs.com/package/cf-layout)
 
 cf-layout contains a set of HTML & CSS layout helpers, such as common layout patterns and dividers.
+
+## [cf-notifications]({{ site.github.url }}/components/cf-notifications/) [![npm](https://img.shields.io/npm/v/cf-notifications.svg?style=flat-square)](https://www.npmjs.com/package/cf-notifications)
+
+cf-notifications contains a block-style notification box.
 
 ## [cf-pagination]({{ site.github.url }}/components/cf-pagination/) [![npm](https://img.shields.io/npm/v/cf-pagination.svg?style=flat-square)](https://www.npmjs.com/package/cf-pagination)
 

@@ -19,6 +19,7 @@
     "capital-framework"
   ],
   "dependencies": {
+    "cf-atomic-component": "latest",
     "cf-buttons": "latest",
     "cf-core": "latest",
     "cf-expandables": "latest",
