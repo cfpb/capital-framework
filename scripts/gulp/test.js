@@ -13,7 +13,10 @@ const gulpMocha = require( 'gulp-mocha' );
  * @param {Function} cb - Callback function to call on completion.
  */
 function unitTest( cb ) {
-  gulp.src( ['./src/**/*.js', '!./src/**/node_modules/**/*.js'] )
+  gulp.src( ['./src/**/*.js',
+             '!./src/**/node_modules/**/*.js',
+             '!./src/**/src/cf-*',
+             '!./src/capital-framework.js'] )
   .pipe( gulpIstanbul( {
     includeUntested: true
   } ) )
