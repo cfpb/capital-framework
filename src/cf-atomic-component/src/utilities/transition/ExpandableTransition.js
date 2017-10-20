@@ -5,7 +5,6 @@ const Events = require( 'cf-atomic-component/src/mixins/Events.js' );
 const BaseTransition = require( 'cf-atomic-component/src/utilities/transition/BaseTransition' );
 const contains = require( 'cf-atomic-component/src/utilities/dom-class-list' ).contains;
 const fnBind = require( 'cf-atomic-component/src/utilities/function-bind' ).bind;
-const onReady = require( 'cf-atomic-component/src/utilities//on-ready' ).onReady;
 
 // Exported constants.
 const CLASSES = {
@@ -41,15 +40,13 @@ function ExpandableTransition( element, classes ) { // eslint-disable-line max-s
     _baseTransition.addEventListener( BaseTransition.END_EVENT,
                                       _transitionCompleteBinded );
 
-    onReady( function() {
-      if ( contains( element, classObject.OPEN_DEFAULT ) ) {
-        _baseTransition.applyClass( classObject.EXPANDED );
-        element.style.maxHeight = element.scrollHeight + 'px';
-      } else {
-        previousHeight = element.scrollHeight;
-        _baseTransition.applyClass( classObject.COLLAPSED );
-      }
-    } );
+    if ( contains( element, classObject.OPEN_DEFAULT ) ) {
+      _baseTransition.applyClass( classObject.EXPANDED );
+      element.style.maxHeight = element.scrollHeight + 'px';
+    } else {
+      previousHeight = element.scrollHeight;
+      _baseTransition.applyClass( classObject.COLLAPSED );
+    }
 
     return this;
   }

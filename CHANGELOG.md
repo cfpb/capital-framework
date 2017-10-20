@@ -10,7 +10,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Removed
--
+- **cf-expandables:** [PATCH] Remove on-ready check.
 
 
 ## 4.14.1 - 2017-10-17
