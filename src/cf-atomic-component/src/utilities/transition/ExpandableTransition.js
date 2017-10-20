@@ -1,10 +1,10 @@
 'use strict';
 
 // Required modules.
-const Events = require( 'cf-atomic-component/src/mixins/Events.js' );
-const BaseTransition = require( 'cf-atomic-component/src/utilities/transition/BaseTransition' );
-const contains = require( 'cf-atomic-component/src/utilities/dom-class-list' ).contains;
-const fnBind = require( 'cf-atomic-component/src/utilities/function-bind' ).bind;
+const Events = require( '../../src/mixins/Events.js' );
+const BaseTransition = require( '../../utilities/transition/BaseTransition' );
+const contains = require( '../../utilities/dom-class-list' ).contains;
+const fnBind = require( '../../utilities/function-bind' ).bind;
 
 // Exported constants.
 const CLASSES = {
