@@ -30,7 +30,7 @@
     "precommit": "lint-staged",
     "process-icon-svgs": "svgo -o src/cf-icons/src/icons --enable=addClassesToSVGElement --enable=removeStyleElement --enable=removeAttrs --config='{ \"plugins\": [ { \"addClassesToSVGElement\": { \"className\": \"cf-icon-svg\" } }, { \"removeAttrs\": { \"attrs\": [ \"fill\", \"path:class\", \"circle:class\" ] } }, { \"cleanupIDs\": { \"force\": \"true\" } } ] }'"
   },
-   "lint-staged": {
+  "lint-staged": {
     "*.{js,less}": [
       "prettier --write",
       "git add"
