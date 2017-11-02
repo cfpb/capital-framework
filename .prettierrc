@@ -1,0 +1,12 @@
+{
+  singleQuote: true,
+  overrides: [
+    {
+      files: "*.less",
+      options: {
+        singleQuote: false,
+        tabWidth: 4
+      }
+    }
+  ]
+}
