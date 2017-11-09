@@ -50,7 +50,7 @@ gulp.task( 'lint:scripts', function() {
 gulp.task('lint:less', function() {
  
   return gulp
-    .src( 'src/**/*.less' )
+    .src( ['!src/cf-grid/src-generated/*.less', 'src/**/*.less'] )
     .pipe( gulpStylelint( {
       reporters: [
         { formatter: 'string', console: true }
