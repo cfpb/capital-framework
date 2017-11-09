@@ -7,7 +7,24 @@ const gulpIgnore = require( 'gulp-ignore' );
 const gulpRename = require( 'gulp-rename' );
 const webpack = require( 'webpack' );
 const webpackStream = require( 'webpack-stream' );
-const vinylNamed = require('vinyl-named');
+const UglifyWebpackPlugin = require( 'uglifyjs-webpack-plugin' );
+const vinylNamed = require( 'vinyl-named' );
+
+ // Set warnings to true to show linter-style warnings.
+ // Set mangle to false and beautify to true to debug the output code.
+const COMMON_UGLIFY_CONFIG = new UglifyWebpackPlugin( {
+  parallel: true,
+  uglifyOptions: {
+    ie8: false,
+    ecma: 5,
+    warnings: false,
+    mangle: true,
+    output: {
+      comments: false,
+      beautify: false
+    }
+  }
+} );
 
 // TODO: Add a webpack-config file to handle sharing of redundant webpack
 //       configurations. Also, add a production and dev flag to generate
@@ -35,18 +52,7 @@ gulp.task( 'scripts:cf', () => {
       output: {
         filename: '[name].js'
       },
-      plugins: [
-        // Change warnings flag to true to view linter-style warnings at runtime.
-        new webpack.optimize.UglifyJsPlugin( {
-          uglifyOptions: {
-            ie8: true,
-            ecma: 8,
-            warnings: false
-          }, compress: {
-            warnings: true
-          }
-        } )
-      ]
+      plugins: [ COMMON_UGLIFY_CONFIG ]
     }, webpack ) )
     .pipe(gulpRename({
       basename: 'capital-framework',
@@ -89,18 +95,7 @@ gulp.task( 'scripts:components', () => {
       output: {
         filename: '[name].js'
       },
-      plugins: [
-        // Change warnings flag to true to view linter-style warnings at runtime.
-        new webpack.optimize.UglifyJsPlugin( {
-          uglifyOptions: {
-            ie8: true,
-            ecma: 8,
-            warnings: false
-          }, compress: {
-            warnings: true
-          }
-        } )
-      ]
+      plugins: [ COMMON_UGLIFY_CONFIG ]
     }, webpack ) )
     .pipe( gulpRename( path => {
       path.dirname = tmp[path.basename].dirname.replace( '/src', '' );
