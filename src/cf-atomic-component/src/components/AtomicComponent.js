@@ -92,7 +92,7 @@ assign( AtomicComponent.prototype, Events, classList, {
       if ( this.className ) attrs['class'] = this.className;
       this.setElement( document.createElement( this.tagName ) );
       this.setElementAttributes( attrs );
-    } else {
+    } else if ( this.element.hasAttribute( 'data-bound' ) === false ) {
       this.setElement( this.element );
     }
     this.element.setAttribute( 'data-bound', true );
@@ -282,21 +282,26 @@ AtomicComponent.extend = function( attributes ) {
 /**
  * Function used to instantiate all instances of the particular
  * atomic component on a page.
- *
+ * @param {HTMLElement} parentElement - The element to set as the base element.
+ * @ param {function} callback - Callback function.
  * @returns {Array} List of AtomicComponent instances.
  */
-AtomicComponent.init = function() {
-  var elements = document.querySelectorAll( this.selector );
-  var element;
-  var components = [];
+AtomicComponent.init = function( parentElement, callback ) {
+  const elements = ( parentElement || document )
+                 .querySelectorAll( this.selector );
+  let element;
+  let components = [];
 
   for ( var i = 0; i < elements.length; ++i ) {
     element = elements[i];
     if ( element.hasAttribute( 'data-bound' ) === false ) {
-      components.push( new this( element ) );
+      var instance = new this( element );
+      components.push( instance );
+      if ( callback ) {
+        callback ( i, instance )
+      }
     }
   }
-
   return components;
 };
 

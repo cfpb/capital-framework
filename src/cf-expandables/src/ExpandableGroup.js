@@ -40,7 +40,7 @@ function initialize() {
   let expandable;
   this.ui.target.forEach( expandableDom => {
     expandable = new Expandable( expandableDom );
-    expandable.on('transitionBegin', function(item) {
+    expandable.transition.addEventListener('transitionEnd', function(item) {
       console.log(item)
     } );
     this.expandables.push( expandable );

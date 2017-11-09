@@ -17,8 +17,8 @@ const Events = {
    * @returns {Object} An instance.
    */
   on: function( eventName, callback ) {
-    const events = this.events = this.events || {};
-    events[eventName] = this.events[eventName] || [];
+    const events = this._events = this._events || {};
+    events[eventName] = this._events[eventName] || [];
     events[eventName].push( callback );
 
     return this;
@@ -32,7 +32,7 @@ const Events = {
    * @returns {Object} An instance.
    */
   off: function( eventName ) {
-    if ( this.events && this.events[eventName] ) delete this.events[eventName];
+    if ( this._events && this._events[eventName] ) delete this._events[eventName];
 
     return this;
   },
@@ -44,12 +44,12 @@ const Events = {
    * @returns {Object} An instance.
    */
   trigger: function( eventName ) {
-    const events = this.events || {};
+    const events = this._events || {};
     if ( events.hasOwnProperty( eventName ) === false ) {
       return this;
     }
     for ( var i = 0, len = events[eventName].length; i < len; i++ ) {
-      this.events[eventName][i].apply( this, arguments );
+      this._events[eventName][i].apply( this, arguments );
     }
 
     return this;
