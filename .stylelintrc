@@ -1,6 +1,5 @@
 {
   "rules": {
-    "at-rule-no-unknown": false,
     "block-no-empty": true,
     "color-hex-case": "lower",
     "color-named": "never",
@@ -35,7 +34,7 @@
     "selector-type-no-unknown": true,
     "shorthand-property-no-redundant-values": true,
     "string-no-newline": true,
-    "string-quotes": "double",
+    "string-quotes": "single",
     "unit-case": "lower",
     "unit-no-unknown": true,
   }
