@@ -23,7 +23,7 @@
     "property-no-unknown": true,
     "rule-empty-line-before": [ "always-multi-line", {
       "except": ["first-nested"],
-      "ignore": ["after-comment"]
+      "ignore": ["after-comment", "inside-block"]
     } ],
     "selector-pseudo-class-no-unknown": true,
     "selector-pseudo-element-no-unknown": true,
