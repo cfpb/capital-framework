@@ -13,6 +13,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Removed
 - **cf-expandables:** [PATCH] Remove on-ready check.
+- **cf-expandables:** [PATCH] Remove unused expandable group variables.
 
 
 ## 4.14.1 - 2017-10-17
