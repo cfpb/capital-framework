@@ -4,9 +4,6 @@
     "color-hex-case": "lower",
     "color-named": "never",
     "color-no-invalid-hex": true,
-    "comment-empty-line-before": [ "always", {
-      "ignore": ["stylelint-commands", "after-comment"]
-    } ],
     "comment-no-empty": true,
     "declaration-block-no-duplicate-properties": [ true, {
       "ignore": ["consecutive-duplicates"]
