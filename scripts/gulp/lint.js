@@ -41,7 +41,7 @@ gulp.task( 'lint:tests', function() {
 } );
 
 /**
- * Lints the source js files for errors.
+ * Lints the source LESS files for errors.
  */
 gulp.task( 'lint:scripts', function() {
   return _genericJSLint( [ 'src/**/src/*.js' ] );
