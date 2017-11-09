@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Capital Framework
+   Expandable Styling
+   ========================================================================== */
+
+.o-expandable {
+    position: relative;
+    margin-bottom: unit( 30px / @base-font-size-px, em );
+
+    &_target {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:focus {
+            outline: 1px dotted @expandable-focus;
+            outline-offset: 1px;
+        }
+
+        &__expanded .o-expandable_cue-open {
+            display: none;
+        }
+
+        &__collapsed .o-expandable_cue-close {
+            display: none;
+        }
+
+        .lt-ie9 & .o-expandable_cue {
+            display: none;
+        }
+
+    }
+
+    &_content {
+        // A clearfix prevents twitchy animations from occurring when margins
+        // collapse and extend past the bounds of the expandable.
+        .u-clearfix();
+        overflow: hidden;
+
+        &__transition {
+            transition: max-height @expandable__transition-speed ease-in-out;
+        }
+
+        &__collapsed {
+            max-height: 0;
+        }
+
+        &__expanded {
+            max-height: 1000px;
+        }
+    }
+
+    //
+    // Expandable text elements
+    //
+
+    &_label {
+        color: @expandable_label-text;
+        .u-webfont-medium();
+    }
+
+    &_link {
+        color: @expandable_link-text;
+        .u-webfont-regular();
+        font-size: unit(@expandable_link-font-size / @base-font-size-px, em);
+        line-height: unit(@base-line-height-px / @expandable_link-font-size);
+    }
+
+    //
+    // Header
+    //
+
+    &_header {
+        display: block;
+        .u-clearfix();
+
+        // Using the button element with .o-expandable_header requires setting
+        // an explicit width.
+        button& {
+            width: 100%;
+            text-align: left;
+        }
+
+        &__spaced {
+            padding-bottom: unit( 15px / @base-font-size-px, em );
+        }
+
+        &-left {
+            float: left;
+        }
+
+        &-right {
+            float: right;
+        }
+
+    }
+
+    //
+    // Padded expandable modifier
+    //
+
+    &__padded {
+        margin-bottom: unit( 30px / @base-font-size-px, em );
+        background: @expandable__padded-bg;
+
+        &:hover,
+        &.o-expandable__expanded {
+            background: @expandable__padded-bg-hover;
+        }
+
+        .o-expandable_header {
+            padding: unit( 10px / @base-font-size-px, em )
+                     unit( 15px / @base-font-size-px, em );
+        }
+
+        .o-expandable_content {
+            // Margin collapsing trick for more consistent bottom padding.
+            margin: 0
+                    unit( 15px / @base-font-size-px, em )
+                    unit( 22px / @base-font-size-px, em );
+
+            // The divider between _header and _content.
+            &:before {
+                content: '';
+                display: block;
+                border-bottom: 1px solid @expandable__padded-divider;
+                margin-bottom: unit( 15px / @base-font-size-px, em );
+            }
+
+            &:after {
+                margin-bottom: unit( 15px / @base-font-size-px, em );
+                width: 100%;
+            }
+        }
+    }
+}

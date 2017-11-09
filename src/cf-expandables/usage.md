@@ -59,8 +59,6 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 @expandable__padded-divider:    @gray-40;
 
 // .o-expandable-group
-@expandable-group_header-text:  @gray;
-@expandable-group_header-bg:    @gray-10;
 @expandable-group-bg:           @white;
 @expandable-group-divider:      @gray-80;
 ```

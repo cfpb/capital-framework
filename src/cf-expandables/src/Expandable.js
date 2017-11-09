@@ -8,9 +8,7 @@ const domClassList = require( 'cf-atomic-component/src/utilities/dom-class-list'
 const addClass = domClassList.addClass;
 const contains = domClassList.contains;
 const removeClass = domClassList.removeClass;
-const closest = require( 'cf-atomic-component/src/utilities/dom-closest' ).closest;
 const ExpandableTransition = require( 'cf-atomic-component/src/utilities/transition/ExpandableTransition' );
-const Events = require( 'cf-atomic-component/src/mixins/Events.js' );
 const Organism = require( 'cf-atomic-component/src/components/Organism' );
 
 const Expandable = Organism.extend( {
@@ -23,23 +21,17 @@ const Expandable = Organism.extend( {
 
   classes: {
     targetExpanded:  'o-expandable_target__expanded',
-    targetCollapsed: 'o-expandable_target__collapsed',
-    groupAccordion:  'o-expandable-group__accordion'
+    targetCollapsed: 'o-expandable_target__collapsed'
   },
 
   events: {
-    'click .o-expandable_target': 'onExpandableClick',
-    'click .o-expandable-group__accordion .o-expandable_target': 'onToggleAccordion'
+    'click .o-expandable_target': 'onExpandableClick'
   },
 
   transition:      null,
-  accordionEvent:  null,
-  activeAccordion: false,
 
   initialize:        initialize,
-  accordionClose:    accordionClose,
   onExpandableClick: onExpandableClick,
-  onToggleAccordion: onToggleAccordion,
   toggleTargetState: toggleTargetState
 } );
 
@@ -57,26 +49,10 @@ function initialize() {
   const transition = new ExpandableTransition( this.ui.content, customClasses );
   this.transition = transition.init();
 
-  const groupElement = closest( this.ui.target, '.' + this.classes.groupAccordion );
-  if ( groupElement !== null ) {
-    const fn = this.accordionClose.bind( this );
-    Events.on( 'CFAccordionClose', fn );
-  }
-
   if ( contains( this.ui.content, customClasses.OPEN_DEFAULT ) ) {
     addClass( this.ui.target, this.classes.targetExpanded );
   } else {
     addClass( this.ui.target, this.classes.targetCollapsed );
-  }
-}
-
-/**
- * Event handler for when an accordion is closed.
- */
-function accordionClose() {
-  if ( this.activeAccordion === true ) {
-    this.activeAccordion = false;
-    this.transition.collapse();
   }
 }
 
@@ -86,14 +62,6 @@ function accordionClose() {
 function onExpandableClick() {
   this.transition.toggleExpandable();
   this.toggleTargetState( this.ui.target );
-}
-
-/**
- * Event handler for when an expandable is clicked as part of an accordion.
- */
-function onToggleAccordion() {
-  Events.trigger( 'CFAccordionClose' );
-  this.activeAccordion = true;
 }
 
 /**

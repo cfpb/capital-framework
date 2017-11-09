@@ -38,7 +38,9 @@ function AtomicComponent( element, attributes ) {
   this.setCachedElements();
   this.initializers.push( this.initialize );
   this.initializers.forEach( function( func ) {
-    if ( isFunction( func ) ) func.apply( this, arguments );
+    if ( isFunction( func ) ) {
+      func.apply( this, arguments );
+    }
   }, this );
   this.trigger( 'component:initialized' );
 }
@@ -179,10 +181,10 @@ assign( AtomicComponent.prototype, Events, classList, {
    * @returns {AtomicComponent} An instance.
    */
   delegateEvents: function( events ) {
-    var key;
-    var method;
-    var match;
-    var delegateEventSplitter = /^(\S+)\s*(.*)$/;
+    let key;
+    let method;
+    let match;
+    const delegateEventSplitter = /^(\S+)\s*(.*)$/;
 
     events = events || ( events = this.events );
     if ( !events ) return this;
