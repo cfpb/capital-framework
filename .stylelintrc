@@ -16,7 +16,6 @@
     "font-family-no-duplicate-names": true,
     "function-calc-no-unspaced-operator": true,
     "max-empty-lines": 2,
-    "max-nesting-depth": 3,
     "no-duplicate-selectors": true,
     "no-empty-source": true,
     "no-extra-semicolons": true,
