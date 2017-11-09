@@ -483,7 +483,7 @@
     }
 
     .respond-to-min( @bp-med-min, {
-        // Prevent pseudo element background from creating horizontal scrollbar.
+        
         overflow: hidden;
 
         .content_sidebar {
@@ -495,8 +495,8 @@
             position: relative;
             z-index: 1;
 
-            // Remove background color from actual sidebar.
-            // It will now be provided by pseudoelement :after sidebar parent.
+            
+            
             background: transparent;
         }
 
@@ -504,7 +504,7 @@
             position: relative;
 
             &:after {
-                // Create faux sidebar background.
+                
                 content: '';
                 display: block;
                 width: 9999px;
@@ -513,8 +513,8 @@
                 position: absolute;
                 top: 0;
                 z-index: 0;
-                // The three in the below calculation is a magic number.
-                // Not entirely sure what to do about it right now.
+                
+                
                 margin-left: ( @grid_gutter-width / 3 );
                 background: @content_sidebar-bg;
             }

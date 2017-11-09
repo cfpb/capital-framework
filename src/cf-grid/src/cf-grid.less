@@ -5,8 +5,8 @@
 
 // Import external dependencies
 
-@import (less) "../../normalize-css/normalize.css";
-@import (less) "../../normalize-legacy-addon/normalize-legacy-addon.css";
+@import (less) '../../normalize-css/normalize.css';
+@import (less) '../../normalize-legacy-addon/normalize-legacy-addon.css';
 
 //
 // Less variables
@@ -101,21 +101,21 @@
 
 .grid_column( @columns; @total: @grid_total-columns; @prefix: 0; @suffix: 0; ) when ( @grid_debug ) {
 
-  border-left-color: #FFB149;
-  border-left-color: fade(#FF9E1B, 25%);
-  border-right-color: #FFB149;
-  border-right-color: fade(#FF9E1B, 25%);
-  background-color: #F6D9D3;
-  background-color: fade(#D12124, 20%);
+  border-left-color: #ffb149;
+  border-left-color: fade(#ff9e1b, 25%);
+  border-right-color: #ffb149;
+  border-right-color: fade(#ff9e1b, 25%);
+  background-color: #f6d9d3;
+  background-color: fade(#d12124, 20%);
 
   &:before,
   &:after {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: @grid_gutter-width * 0.25;
-    background-color: #DA6750;
-    background-color: fade(#DA6750, 75%);
+    background-color: #da6750;
+    background-color: fade(#da6750, 75%);
   }
 
   &:before {
