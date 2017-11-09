@@ -47,7 +47,7 @@ gulp.task( 'lint:scripts', function() {
   return _genericJSLint( [ 'src/**/src/*.js' ] );
 } );
 
-gulp.task('lint:less', function() {
+gulp.task( 'lint:styles', function() {
  
   return gulp
     .src( ['!src/cf-grid/src-generated/*.less', 'src/**/*.less'] )
@@ -65,5 +65,5 @@ gulp.task( 'lint', [
   'lint:build',
   'lint:tests',
   'lint:scripts',
-  'lint:less'
+  'lint:styles'
 ] );
