@@ -39,6 +39,8 @@ function ExpandableTransition( element, classes ) { // eslint-disable-line max-s
     const _transitionCompleteBinded = fnBind( _transitionComplete, this );
     _baseTransition.addEventListener( BaseTransition.END_EVENT,
                                       _transitionCompleteBinded );
+    _baseTransition.addEventListener( BaseTransition.BEGIN_EVENT,
+                                      _transitionBegin );
 
     if ( contains( element, classObject.OPEN_DEFAULT ) ) {
       _baseTransition.applyClass( classObject.EXPANDED );
@@ -49,6 +51,13 @@ function ExpandableTransition( element, classes ) { // eslint-disable-line max-s
     }
 
     return this;
+  }
+
+  /**
+   * Handle the beginning of a transition.
+   */
+  function _transitionBegin() {
+    this.trigger( BaseTransition.BEGIN_EVENT, { target: this } );
   }
 
   /**
