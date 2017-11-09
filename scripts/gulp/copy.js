@@ -11,8 +11,8 @@ const gulpRename = require( 'gulp-rename' );
 
 let baseManifest = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
-gulp.task( 'copy:components:boilerplate', function() {
-  return gulp.src(['./src/' + (component || '*'), '!./src/*.js', '!./src/*.less'])
+gulp.task( 'copy:components:boilerplate', () => {
+  gulp.src(['./src/' + (component || '*'), '!./src/*.js', '!./src/*.less'])
     .pipe(gulpForeach(function(stream, file) {
       var component = file.path.split('/').pop();
       gulp.src( './scripts/templates/component-boilerplate/*' )
@@ -21,8 +21,8 @@ gulp.task( 'copy:components:boilerplate', function() {
     }))
 } );
 
-gulp.task( 'copy:components:source', function() {
-  return gulp.src(['./src/' + (component || '*'), '!./src/*.js', '!./src/*.less'])
+gulp.task( 'copy:components:source', () => {
+  gulp.src(['./src/' + (component || '*'), '!./src/*.js', '!./src/*.less'])
     .pipe(gulpForeach(function(stream, file) {
       var component = file.path.split('/').pop(),
           src = [
@@ -38,8 +38,8 @@ gulp.task( 'copy:components:source', function() {
     }))
 } );
 
-gulp.task( 'copy:components:manifest', function() {
-  return gulp.src('./src/' + (component || '*') + '/package.json')
+gulp.task( 'copy:components:manifest', () => {
+  gulp.src('./src/' + (component || '*') + '/package.json')
     .pipe(gulpData(function(file) {
       // Remove any dependencies from CF's package.json,
       // we don't want components to have them.
