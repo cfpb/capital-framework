@@ -11,8 +11,12 @@ const path = require( 'path' );
 
 let fileName;
 
-gulp.task( 'copy:files', () => {
-  gulp.src( configCopy.files.src )
+// NOTE: Replaced arrow functions, `() => {}`, for standard function
+// declaration due to return being necessary for the generation of large
+// numbers of files
+
+gulp.task( 'copy:files', function() {
+  return gulp.src( configCopy.files.src )
     .pipe( gulpChanged( configCopy.files.dest ) )
     .on( 'error', handleErrors )
     .pipe( gulp.dest( configCopy.files.dest ) )
@@ -21,18 +25,19 @@ gulp.task( 'copy:files', () => {
     } ) );
 } );
 
-gulp.task( 'copy:icons', () => {
-  gulp.src( configCopy.icons.src )
-    .pipe( gulpChanged( configCopy.icons.dest ) )
+gulp.task( 'copy:icons', function() {
+  return gulp.src( configCopy.icons.src )
+    .pipe( gulpChanged( configCopy.icons.destStatic ) )
     .on( 'error', handleErrors )
-    .pipe( gulp.dest( configCopy.icons.dest ) )
+    .pipe( gulp.dest( configCopy.icons.destIncludes ) )
+    .pipe( gulp.dest( configCopy.icons.destStatic ) )
     .pipe( browserSync.reload( {
       stream: true
     } ) );
 } );
 
-gulp.task( 'copy:vendorjs', () => {
-  gulp.src( configCopy.vendorjs.src )
+gulp.task( 'copy:vendorjs', function() {
+  return gulp.src( configCopy.vendorjs.src )
     .pipe( gulpChanged( configCopy.vendorjs.dest ) )
     .on( 'error', handleErrors )
     .pipe( gulp.dest( configCopy.vendorjs.dest ) )
@@ -41,8 +46,8 @@ gulp.task( 'copy:vendorjs', () => {
     } ) );
 } );
 
-gulp.task( 'copy:usage', () => {
-  gulp.src( configCopy.usage.src )
+gulp.task( 'copy:usage', function() {
+  return gulp.src( configCopy.usage.src )
     .pipe( gulpChanged( configCopy.usage.dest ) )
     .pipe( gulpTap( ( file, t ) => {
       fileName = path.dirname( file.path )
