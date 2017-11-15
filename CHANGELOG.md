@@ -11,9 +11,11 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-tables:** [PATCH] Update to ES6 syntax.
 - **cf-atomic-component:** [PATCH] Reference cf-atomic-component locally.
 - **cf-typography:** [MINOR] Change to self-hosting fonts.
+- **capital-framework:** [PATCH] Use uglifyjs-webpack-plugin.
 
 ### Removed
 - **cf-expandables:** [PATCH] Remove on-ready check.
+- **cf-expandables:** [PATCH] Remove unused expandable group variables.
 
 
 ## 4.14.1 - 2017-10-17
