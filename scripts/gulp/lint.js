@@ -22,8 +22,8 @@ function _genericLint( src ) {
 /**
  * Lints the gulpfile for errors.
  */
-gulp.task( 'lint:build', function() {
-  return _genericLint( [
+gulp.task( 'lint:build', () => {
+  _genericLint( [
     'gulpfile.js',
     'gulp/**/*.js'
   ] );
@@ -32,8 +32,8 @@ gulp.task( 'lint:build', function() {
 /**
  * Lints the test js files for errors.
  */
-gulp.task( 'lint:tests', function() {
-  return _genericLint( [
+gulp.task( 'lint:tests', () => {
+  _genericLint( [
     'test/accessibility/*.js',
     'test/*.js'
   ] );
@@ -42,8 +42,8 @@ gulp.task( 'lint:tests', function() {
 /**
  * Lints the source js files for errors.
  */
-gulp.task( 'lint:scripts', function() {
-  return _genericLint( [ 'src/**/src/*.js' ] );
+gulp.task( 'lint:scripts', () => {
+  _genericLint( [ 'src/**/src/*.js' ] );
 } );
 
 /**
