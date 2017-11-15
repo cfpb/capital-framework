@@ -123,7 +123,7 @@ function BaseTransition( element, classes ) { // eslint-disable-line max-stateme
   }
 
   /**
-   * Remove an event listener to the transition.
+   * Remove an event listener from the transition.
    */
   function _removeEventListener() {
     _dom.removeEventListener( _transitionEndEvent, _transitionCompleteBinded );

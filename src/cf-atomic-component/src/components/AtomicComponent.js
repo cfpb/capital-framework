@@ -292,10 +292,10 @@ AtomicComponent.init = function( parentElement, callback ) {
   let element;
   let components = [];
 
-  for ( var i = 0; i < elements.length; ++i ) {
+  for ( let i = 0; i < elements.length; ++i ) {
     element = elements[i];
     if ( element.hasAttribute( 'data-bound' ) === false ) {
-      var instance = new this( element );
+      const instance = new this( element );
       components.push( instance );
       if ( callback ) {
         callback ( i, instance )
