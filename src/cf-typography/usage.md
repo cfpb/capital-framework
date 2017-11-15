@@ -59,6 +59,13 @@ variables are located. Can be either a relative or absolute path.
 @cf-fonts-path: '/fonts'
 ```
 
+If you want to load fonts from fonts.net, you may need a query string attached
+to the font URL. In that case, fill in the following variable as well:
+
+```
+@cf-fonts-path-suffix: '[font.net or other font URL query string]';
+```
+
 ### Color variables
 
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
