@@ -1,13 +1,14 @@
 'use strict';
 
-var gulp = require( 'gulp' );
-var runSequence = require('run-sequence');
+const gulp = require( 'gulp' );
+const runSequence = require( 'run-sequence' );
 
-gulp.task('build', function(callback) {
+gulp.task( 'build', callback => {
   runSequence(
-    ['styles:cf', 'scripts:cf', 'clean:tmp'],
-    ['template:readmes', 'copy:components:boilerplate'],
-    ['copy:components:source', 'template:usage', 'copy:components:manifest'],
-    ['styles:components', 'scripts:components', 'styles:grid']
+    [ 'styles:cf', 'scripts:cf', 'clean:tmp' ],
+    [ 'template:readmes', 'copy:components:boilerplate' ],
+    [ 'copy:components:source', 'template:usage', 'copy:components:manifest' ],
+    [ 'styles:components', 'scripts:components', 'styles:grid' ],
+    callback
   );
-});
+} );
