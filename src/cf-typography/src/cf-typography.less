@@ -13,6 +13,12 @@
 @webfont-medium: 'AvenirNextLTW01-Medium';
 @webfont-demi: 'AvenirNextLTW01-Demi';
 
+// Webfont variables
+// This is the path for self-hosted fonts.
+@cf-fonts-path: '/static/fonts';
+// Whether or not to override the local path and retrieve fonts from fonts.net.
+@use-font-cdn: false;
+
 // Color variables
 
 // Running text elements
@@ -79,4 +85,4 @@
 //
 // Import web fonts
 //
-@import (less) 'licensed-fonts.css';
+@import (less) 'licensed-fonts.less';
