@@ -59,11 +59,12 @@ variables are located. Can be either a relative or absolute path.
 @cf-fonts-path: '/fonts'
 ```
 
-If you want to load fonts from fonts.net, set the following variable to `true`,
+If you want to load fonts from a Fonts.com Web Fonts project,
+set the following variable to `true`,
 otherwise set it to `false` to use the self-hosted font path:
 
 ```
-@use-font-net: true;
+@use-font-cdn: true;
 ```
 
 ### Color variables
