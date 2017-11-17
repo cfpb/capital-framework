@@ -1,7 +1,7 @@
 'use strict';
 
 // Required modules.
-const Events = require( '../../src/mixins/Events.js' );
+const Events = require( '../../mixins/Events.js' );
 const BaseTransition = require( '../../utilities/transition/BaseTransition' );
 const contains = require( '../../utilities/dom-class-list' ).contains;
 const fnBind = require( '../../utilities/function-bind' ).bind;
