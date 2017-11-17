@@ -189,14 +189,14 @@ highlighting and hyperlinking rows which contain links.
     <tbody>
         <tr>
             <td data-label="Column 1">
-                <a href="https://example.com/">Example 1</a>
+                <a href="javascript:alert('Row 1 clicked!');">Example 1</a>
             </td>
             <td data-label="Column 2">Cell A2</td>
             <td data-label="Column 3" >Cell A3</td>
         </tr>
         <tr>
             <td data-label="Column 1">
-                <a href="https://example.com/">Example 2</a>
+                <a href="javascript:alert('Row 2 clicked!');">Example 2</a>
             </td>
             <td data-label="Column 2">Cell B2</td>
             <td data-label="Column 3">Cell B3</td>
@@ -215,12 +215,16 @@ highlighting and hyperlinking rows which contain links.
     </thead>
     <tbody>
         <tr>
-            <td data-label="Column 1">Row A</td>
+            <td data-label="Column 1">
+                <a href="https://example.com/">Example 1</a>
+            </td>
             <td data-label="Column 2">Cell A2</td>
-            <td data-label="Column 3">Cell A3</td>
+            <td data-label="Column 3" >Cell A3</td>
         </tr>
         <tr>
-            <td data-label="Column 1">Row B</td>
+            <td data-label="Column 1">
+                <a href="https://example.com/">Example 2</a>
+            </td>
             <td data-label="Column 2">Cell B2</td>
             <td data-label="Column 3">Cell B3</td>
         </tr>

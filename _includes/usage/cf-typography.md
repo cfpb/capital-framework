@@ -15,6 +15,7 @@ and has more basic typography patterns.
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
+    - [Font source variables](#font-source-variables)
 - [Headings](#headings)
     - [Heading with icon](#heading-with-icon)
 - [Headers](#headers)
@@ -47,6 +48,24 @@ project by duplicating the variable `@key: value`.
 @webfont-italic: 'AvenirNextLTW01-Italic';
 @webfont-medium: 'AvenirNextLTW01-Medium';
 @webfont-demi: 'AvenirNextLTW01-Demi';
+```
+
+### Font source variables
+
+Use this variable to specify where the fonts files used in the `@webfont-*`
+variables are located when self-hosting fonts.
+Can be either a relative or absolute path.
+
+```
+@cf-fonts-path: '/fonts'
+```
+
+If you want to load fonts from a Fonts.com Web Fonts project,
+set the following variable to `true`,
+otherwise set it to `false` to use the self-hosted font path:
+
+```
+@use-font-cdn: true;
 ```
 
 ### Color variables
