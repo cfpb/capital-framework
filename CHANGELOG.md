@@ -3,20 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
-- **cf-expandables:** [PATCH] Update to ES6 syntax.
-- **cf-tables:** [PATCH] Update to ES6 syntax.
-- **cf-atomic-component:** [PATCH] Reference cf-atomic-component locally.
-- **cf-typography:** [MINOR] Change to self-hosting fonts.
-- **capital-framework:** [PATCH] Use uglifyjs-webpack-plugin.
-- **capital-framework:** [PATCH] Fixed the default Gulp task.
+- **cf-expandables:** Update to ES6 syntax.
+- **cf-tables:** Update to ES6 syntax.
+- **cf-atomic-component:** Reference cf-atomic-component locally.
+- **cf-typography:** Change to self-hosting fonts.
+- **capital-framework:** Use uglifyjs-webpack-plugin.
+- **capital-framework:** Fixed the default Gulp task.
 
 ### Removed
-- **cf-expandables:** [PATCH] Remove on-ready check.
-- **cf-expandables:** [PATCH] Remove unused expandable group variables.
+- **cf-expandables:** Remove on-ready check.
+- **cf-expandables:** Remove unused expandable group variables.
 
 
 ## 4.14.1 - 2017-10-17
