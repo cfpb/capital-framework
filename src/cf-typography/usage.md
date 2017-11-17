@@ -53,7 +53,8 @@ project by duplicating the variable `@key: value`.
 ### Font source variables
 
 Use this variable to specify where the fonts files used in the `@webfont-*`
-variables are located. Can be either a relative or absolute path.
+variables are located when self-hosting fonts.
+Can be either a relative or absolute path.
 
 ```
 @cf-fonts-path: '/fonts'
