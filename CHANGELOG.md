@@ -12,6 +12,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-atomic-component:** [PATCH] Reference cf-atomic-component locally.
 - **cf-typography:** [MINOR] Change to self-hosting fonts.
 - **capital-framework:** [PATCH] Use uglifyjs-webpack-plugin.
+- **capital-framework:** [PATCH] Fixed the default Gulp task.
 
 ### Removed
 - **cf-expandables:** [PATCH] Remove on-ready check.

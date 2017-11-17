@@ -2,6 +2,7 @@
 
 const gulp = require( 'gulp' );
 const gulpEslint = require( 'gulp-eslint' );
+const gulpStylelint = require( 'gulp-stylelint' );
 const minimist = require( 'minimist' );
 
 /**
@@ -9,7 +10,7 @@ const minimist = require( 'minimist' );
  * @param {string} src The path to the source JavaScript.
  * @returns {Object} An output stream from gulp.
  */
-function _genericLint( src ) {
+function _genericLintJs( src ) {
   // Pass all command line flags to EsLint.
   const options = minimist( process.argv.slice( 2 ) );
 
@@ -22,8 +23,9 @@ function _genericLint( src ) {
 /**
  * Lints the gulpfile for errors.
  */
+
 gulp.task( 'lint:build', () => {
-  _genericLint( [
+  _genericLintJs( [
     'gulpfile.js',
     'gulp/**/*.js'
   ] );
@@ -33,7 +35,7 @@ gulp.task( 'lint:build', () => {
  * Lints the test js files for errors.
  */
 gulp.task( 'lint:tests', () => {
-  _genericLint( [
+  _genericLintJs( [
     'test/accessibility/*.js',
     'test/*.js'
   ] );
@@ -43,7 +45,22 @@ gulp.task( 'lint:tests', () => {
  * Lints the source js files for errors.
  */
 gulp.task( 'lint:scripts', () => {
-  _genericLint( [ 'src/**/src/*.js' ] );
+  _genericLintJs( [ 'src/**/src/*.js' ] );
+} );
+
+/**
+ * Lints the source LESS files for errors.
+ */
+
+gulp.task( 'lint:styles', () => {
+ 
+  return gulp
+    .src( ['!src/cf-grid/src-generated/*.less', 'src/**/*.less'] )
+    .pipe( gulpStylelint( {
+      reporters: [
+        { formatter: 'string', console: true }
+      ]
+    } ) );
 } );
 
 /**
@@ -52,5 +69,6 @@ gulp.task( 'lint:scripts', () => {
 gulp.task( 'lint', [
   'lint:build',
   'lint:tests',
-  'lint:scripts'
+  'lint:scripts',
+  'lint:styles'
 ] );
