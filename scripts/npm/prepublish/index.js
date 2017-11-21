@@ -253,5 +253,4 @@ function publishComponents(result) {
 function finish(result) {
   if (result && result.stdout) util.printLn.console(result.stdout);
   util.printLn.success('Hooray! All done!');
-  process.exit(0);
 }

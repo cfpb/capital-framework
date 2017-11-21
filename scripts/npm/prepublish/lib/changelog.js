@@ -10,7 +10,7 @@ function updateChangelog(version) {
       latest = '## Unreleased\n\n### Added\n- \n\n### Changed\n- \n\n### Removed\n- \n\n## ' + version + ' - ' + date;
   changelog = fs.readFileSync(file, 'utf8');
   changelog = changelog.replace(/## Unreleased/g, latest);
-  return fs.writeFile(file, changelog, 'utf8');
+  return fs.writeFile(file, changelog, 'utf8', function() { return; });
 }
 
 module.exports = updateChangelog;
