@@ -13,7 +13,7 @@ function getDirectories( srcpath ) {
 }
 
 function npmUnlink( component ) {
-  exec( 'npm unlink ' + component + ' && npm install ' + component,
+  exec( 'npm unlink ' + component + ' --no-save',
     function( err, out ) {
       if ( err instanceof Error ) {
         throw err;
