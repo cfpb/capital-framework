@@ -55,6 +55,7 @@ dependencies of this component.
     - [Standard hero with illustration](standard-hero-with-illustration)
     - [Hero with bleeding illustration](#hero-with-bleeding-illustration)
     - [Hero with photograph](#hero-with-photograph)
+- [Wells](#wells)
 
 
 ## Variables
@@ -1988,4 +1989,31 @@ with a non-white (or light gray) background.
         }
     </style>
 </section>
+```
+
+
+## Wells
+
+Wells are used to highlight specific information within a designated section
+of a page. This breaks up the flow of content on the page and helps to
+emphasize and set apart the content that is included.
+
+<div class="o-well">
+    <h4>Well title</h4>
+    <p>
+        Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+        instructior ex pri. Cu pri inani constituto, cum aeque noster commodo
+        cu.
+    </p>
+</div>
+
+```
+<div class="o-well">
+    <h4>Well title</h4>
+    <p>
+        Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+        instructior ex pri. Cu pri inani constituto, cum aeque noster commodo
+        cu.
+    </p>
+</div>
 ```
