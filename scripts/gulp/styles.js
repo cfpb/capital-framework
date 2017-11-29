@@ -1,7 +1,7 @@
 'use strict';
 
+const BROWSER_LIST = require( '../../config/browser-list-config' );
 const component = require('./parseComponentName');
-const environment = require( '../../config/environment' );
 const gulp = require('gulp');
 const gulpAutoprefixer = require( 'gulp-autoprefixer' );
 const gulpCssmin = require( 'gulp-cssmin' );
@@ -19,7 +19,7 @@ function stylesCf() {
       paths: ['node_modules/cf-*/src/']
     }))
     .pipe( gulpAutoprefixer( {
-      browsers: environment.getSupportedBrowserList( 'css' )
+      browsers: BROWSER_LIST.LAST_2_PLUS_IE_8_AND_UP
     } ) )
     .pipe(gulpCssmin())
     .pipe(gulpRename({
@@ -48,7 +48,7 @@ function stylesComponents() {
       paths: ['node_modules/cf-*/src/']
     }))
     .pipe( gulpAutoprefixer( {
-      browsers: environment.getSupportedBrowserList( 'css' )
+      browsers: BROWSER_LIST.LAST_2_PLUS_IE_8_AND_UP
     } ) )
     .pipe(gulpCssmin())
     .pipe(gulpRename( (path) => {
@@ -69,7 +69,7 @@ function stylesGrid() {
       paths: ['node_modules/cf-*/src/']
     }))
     .pipe( gulpAutoprefixer( {
-      browsers: environment.getSupportedBrowserList( 'css' )
+      browsers: BROWSER_LIST.LAST_2_PLUS_IE_8_AND_UP
     } ) )
     .pipe(gulpCssmin())
     .pipe(gulpRename({
