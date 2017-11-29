@@ -54,6 +54,12 @@ function initialize() {
     OPEN_DEFAULT: 'o-expandable_content__onload-open'
   };
 
+  if ( contains( this.ui.content, customClasses.OPEN_DEFAULT ) ) {
+    addClass( this.ui.target, this.classes.targetExpanded );
+  } else {
+    addClass( this.ui.target, this.classes.targetCollapsed );
+  }
+
   const transition = new ExpandableTransition( this.ui.content, customClasses );
   this.transition = transition.init();
 
@@ -61,12 +67,6 @@ function initialize() {
   if ( groupElement !== null ) {
     const fn = this.accordionClose.bind( this );
     Events.on( 'CFAccordionClose', fn );
-  }
-
-  if ( contains( this.ui.content, customClasses.OPEN_DEFAULT ) ) {
-    addClass( this.ui.target, this.classes.targetExpanded );
-  } else {
-    addClass( this.ui.target, this.classes.targetCollapsed );
   }
 }
 

@@ -8,7 +8,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Changed
 - **cf-atomic-component:** [PATCH] Fix broken path to Events.js.
-
+- **cf-expandables:** [PATCH] Fix a bug in the order of operations.
 ### Removed
 -
 
