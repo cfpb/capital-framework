@@ -5,6 +5,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Changed
 - **cf-atomic-component:** Fix broken path to Events.js.
+- **cf-expandables:** Fix a bug in the order of operations.
 
 
 ## 4.15.0 - 2017-11-17
