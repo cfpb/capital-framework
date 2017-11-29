@@ -47,10 +47,10 @@ cf-notifications contains a block-style notification box.
 
 cf-pagination contains basic pagination styling for working with multipage displays such as search results or blog archives.
 
-## [cf-tables]({{ site.github.url }}/components/cf-tables/) [![npm](https://img.shields.io/npm/v/cf-core.svg?style=flat-square)](https://www.npmjs.com/package/cf-tables)
+## [cf-tables]({{ site.github.url }}/components/cf-tables/) [![npm](https://img.shields.io/npm/v/cf-tables.svg?style=flat-square)](https://www.npmjs.com/package/cf-tables)
 
 cf-tables contains styles and helpers for working with tables.
 
-## [cf-typography]({{ site.github.url }}/components/cf-typography/) [![npm](https://img.shields.io/npm/v/cf-core.svg?style=flat-square)](https://www.npmjs.com/package/cf-typography)
+## [cf-typography]({{ site.github.url }}/components/cf-typography/) [![npm](https://img.shields.io/npm/v/cf-typography.svg?style=flat-square)](https://www.npmjs.com/package/cf-typography)
 
 cf-typography contains advanced typographic patterns, including lists, links, and headers.
