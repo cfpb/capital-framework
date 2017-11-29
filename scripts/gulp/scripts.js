@@ -1,7 +1,7 @@
 'use strict';
 
+const BROWSER_LIST = require( '../../config/browser-list-config' );
 const component = require( './parseComponentName' );
-const environment = require( '../../config/environment' );
 const gulp = require( 'gulp' );
 const gulpIgnore = require( 'gulp-ignore' );
 const gulpRename = require( 'gulp-rename' );
@@ -41,7 +41,7 @@ gulp.task( 'scripts:cf', () => {
             options: {
               presets: [ [ 'env', {
                 targets: {
-                  browsers: environment.getSupportedBrowserList( 'js' )
+                  browsers: BROWSER_LIST.LAST_2_PLUS_IE_9_AND_UP
                 },
                 debug: true
               } ] ]
@@ -84,7 +84,7 @@ gulp.task( 'scripts:components', () => {
             options: {
               presets: [ [ 'env', {
                 targets: {
-                  browsers: environment.getSupportedBrowserList( 'js' )
+                  browsers: BROWSER_LIST.LAST_2_PLUS_IE_9_AND_UP
                 },
                 debug: true
               } ] ]
