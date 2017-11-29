@@ -4,8 +4,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Changed
+- **capital-framework:** Update the browserlist config and testing documentation
 
-- **capital-framework:** [PATCH] Update the browserlist config and testing documentation
 
 ## 4.15.2 - 2017-11-29
 
