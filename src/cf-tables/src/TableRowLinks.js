@@ -6,7 +6,9 @@
 
 'use strict';
 
-const closest = require( 'cf-atomic-component/src/utilities/dom-closest' ).closest;
+const closest = require(
+  'cf-atomic-component/src/utilities/dom-closest'
+).closest;
 
 const TableRowLinks = {
   ui: {
