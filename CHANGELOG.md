@@ -7,7 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - 
 
 ### Changed
-- 
+- **cf-typography**: Add `font-display` property to `@font-face` rules
 
 ### Removed
 - 
