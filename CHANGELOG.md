@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.16.0 - 2017-12-04
+
 ### Removed
 - **cf-typography:** Removed support for all but woff/woff2 webfonts.
 
