@@ -3,14 +3,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
-- **cf-typography:** [MINOR] Move fonts.net tracker to its own file.
+- **cf-typography:** Move fonts.net tracker to its own file.
 
-### Removed
--
 
 ## 4.16.0 - 2017-12-04
 
