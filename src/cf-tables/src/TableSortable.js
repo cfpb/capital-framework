@@ -7,7 +7,9 @@
 'use strict';
 
 const config = require( 'cf-atomic-component/src/utilities/config' );
-const closest = require( 'cf-atomic-component/src/utilities/dom-closest' ).closest;
+const closest = require(
+  'cf-atomic-component/src/utilities/dom-closest'
+).closest;
 const DIRECTIONS = config.DIRECTIONS;
 const UNDEFINED = config.UNDEFINED;
 
@@ -160,7 +162,7 @@ function updateTableDom() {
  */
 function tableDataSorter( direction, sortType ) {
   return function( a, b ) {
-    let sign = 1;
+    const sign = direction === DIRECTIONS.DOWN ? -1 : 1;
     let order = 0;
     const regex = /[^\d.-]/g;
 
@@ -172,10 +174,6 @@ function tableDataSorter( direction, sortType ) {
     if ( sortType === 'number' ) {
       a = Number( a.replace( regex, '' ) );
       b = Number( b.replace( regex, '' ) );
-    }
-
-    if ( direction === DIRECTIONS.DOWN ) {
-      sign = -1;
     }
 
     // Sort the values

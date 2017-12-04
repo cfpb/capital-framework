@@ -45,6 +45,12 @@ function startServer( component, cb ) {
   } );
 }
 
+/**
+ * Test an individual component
+ * @param {string} component  - The Capital Framework compontent to test.
+ * @param {object} server - The server that called this function
+ * @param {string} port - The port the server is listening to
+ */
 function testComponent( component, server, port ) {
   const options = {
     id: process.env.ACHECKER_ID,
@@ -67,6 +73,6 @@ function testComponent( component, server, port ) {
       // all failed components and display them at the end.
       process.exit( 1 );
     }
-    server.close();
+    return server.close();
   } );
 }

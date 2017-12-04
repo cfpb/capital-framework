@@ -4,12 +4,18 @@
 
 'use strict';
 
-const domClassList = require( 'cf-atomic-component/src/utilities/dom-class-list' );
+const domClassList = require(
+  'cf-atomic-component/src/utilities/dom-class-list'
+);
 const addClass = domClassList.addClass;
 const contains = domClassList.contains;
 const removeClass = domClassList.removeClass;
-const closest = require( 'cf-atomic-component/src/utilities/dom-closest' ).closest;
-const ExpandableTransition = require( 'cf-atomic-component/src/utilities/transition/ExpandableTransition' );
+const closest = require(
+  'cf-atomic-component/src/utilities/dom-closest'
+).closest;
+const ExpandableTransition = require(
+  'cf-atomic-component/src/utilities/transition/ExpandableTransition'
+);
 const Events = require( 'cf-atomic-component/src/mixins/Events.js' );
 const Organism = require( 'cf-atomic-component/src/components/Organism' );
 
@@ -60,10 +66,14 @@ function initialize() {
     addClass( this.ui.target, this.classes.targetCollapsed );
   }
 
-  const transition = new ExpandableTransition( this.ui.content, customClasses );
+  const transition = new ExpandableTransition(
+    this.ui.content, customClasses
+  );
   this.transition = transition.init();
 
-  const groupElement = closest( this.ui.target, '.' + this.classes.groupAccordion );
+  const groupElement = closest(
+    this.ui.target, '.' + this.classes.groupAccordion
+  );
   if ( groupElement !== null ) {
     const fn = this.accordionClose.bind( this );
     Events.on( 'CFAccordionClose', fn );
