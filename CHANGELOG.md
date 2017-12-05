@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.18.0 - 2017-12-05
+
+### Added
 - **cf-layout:** Add wells organism to Capital Framework
 
 
