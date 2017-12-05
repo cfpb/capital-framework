@@ -63,7 +63,7 @@
     "pretty-hrtime": "1.0.3",
     "pygmentize-bundled": "2.3.0",
     "require-dir": "0.3.2",
-    "webpack": "^3.5.5",
+    "webpack": "3.10.0",
     "webpack-stream": "^4.0.0"
   }
 }
