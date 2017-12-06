@@ -1,12 +1,14 @@
-var RegClient = require('silent-npm-registry-client'),
-    client = new RegClient(),
-    promisify = require('promisify-node');
+'use strict';
 
-promisify(client);
+var RegClient = require( 'silent-npm-registry-client' );
+var client = new RegClient();
+var promisify = require( 'promisify-node' );
 
-function getVersion(component) {
+promisify( client );
+
+function getVersion( component ) {
   var uri = 'https://registry.npmjs.org/' + component;
-  return client.get(uri, {timeout: 1000});
+  return client.get( uri, { timeout: 1000 } );
 }
 
 module.exports = getVersion;

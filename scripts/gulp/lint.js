@@ -23,7 +23,6 @@ function _genericLintJs( src ) {
 /**
  * Lints the gulpfile for errors.
  */
-
 gulp.task( 'lint:build', () => {
   _genericLintJs( [
     'gulpfile.js',
@@ -51,9 +50,7 @@ gulp.task( 'lint:scripts', () => {
 /**
  * Lints the source LESS files for errors.
  */
-
 gulp.task( 'lint:styles', () => {
- 
   return gulp
     .src( ['!src/cf-grid/src-generated/*.less', 'src/**/*.less'] )
     .pipe( gulpStylelint( {
@@ -64,11 +61,22 @@ gulp.task( 'lint:styles', () => {
 } );
 
 /**
+ * Lints the release js for errors.
+ * TODO: After release files are tested, combine this task with the build one
+ */
+gulp.task( 'lint:release', () => {
+  _genericLintJs( [
+    'scripts/npm/prepublish/**/*.js'
+  ] );
+} );
+
+/**
  * Lints all the js files for errors
  */
 gulp.task( 'lint', [
   'lint:build',
   'lint:tests',
   'lint:scripts',
-  'lint:styles'
+  'lint:styles',
+  'lint:release'
 ] );
