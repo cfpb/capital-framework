@@ -3,14 +3,10 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
-- 
-
 ### Changed
-- 
+- **capital-framework:** Linted the release scripts
+- **cf-typography:** Add `font-display` property to `@font-face` rules
 
-### Removed
-- 
 
 ## 4.18.0 - 2017-12-05
 
