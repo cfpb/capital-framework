@@ -4,13 +4,100 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- 
 
 ### Changed
-- **cf-atomic-component:** [PATCH] Fix broken path to Events.js.
+- 
 
 ### Removed
--
+- 
+
+## 4.19.0 - 2017-12-08
+
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.19.0 - 2017-12-08
+
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.19.0 - 2017-12-08
+
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.19.0 - 2017-12-08
+
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.19.0 - 2017-12-08
+
+### Changed
+- **capital-framework:** Linted the release scripts
+- **cf-typography:** Add `font-display` property to `@font-face` rules
+
+
+## 4.18.0 - 2017-12-05
+
+### Added
+- **cf-layout:** Add wells organism to Capital Framework
+
+
+## 4.17.0 - 2017-12-04
+
+### Changed
+- **cf-typography:** Move fonts.net tracker to its own file.
+
+
+## 4.16.0 - 2017-12-04
+
+### Removed
+- **cf-typography:** Removed support for all but woff/woff2 webfonts.
+
+
+## 4.15.3 - 2017-11-29
+
+### Changed
+- **capital-framework:** Update the browserlist config and testing documentation
+
+
+## 4.15.2 - 2017-11-29
+
+### Changed
+- **capital-framework:** Re-added and updated the deleted CHANGELOG
+
+## 4.15.1 - 2017-11-29
+
+### Changed
+- **cf-atomic-component:** Fix broken path to Events.js.
+- **cf-expandables:** Fix a bug in the order of operations.
+
 
 ## 4.15.0 - 2017-11-17
 
