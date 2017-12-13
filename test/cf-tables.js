@@ -1,16 +1,16 @@
-'use strict';
-
 ( function() {
 
   /*
   ======== A Handy Little QUnit Reference ========
     http://api.qunitjs.com/
+
     Test methods:
       module(name, {[setup][ ,teardown]})
       test(name, callback)
       expect(numberOfAssertions)
       stop(increment)
       start(decrement)
+
     Test assertions:
       ok(value, [message])
       equal(actual, expected, [message])
@@ -36,19 +36,19 @@
     ok(
       getElement( '#test-one tbody tr:nth-child(1) td:nth-child(3)' )
         .innerText.trim() === '1.2 mi',
-        'Row 1 is correct'
+      'Row 1 is correct'
     );
 
     ok(
       getElement( '#test-one tbody tr:nth-child(5) td:nth-child(3)' )
         .innerText.trim() === '2.6 mi',
-        'Row 3 is correct'
+      'Row 3 is correct'
     );
 
     ok(
       getElement( '#test-one tbody tr:nth-child(7) td:nth-child(3)' )
         .innerText.trim() === '11.1 mi',
-        'Row 7 is correct'
+      'Row 7 is correct'
     );
 
   } );
@@ -60,17 +60,17 @@
     ok(
       getElement( '#test-one tbody tr:nth-child(1) td:nth-child(2)' )
         .innerText.trim() === 'English',
-        'Row 1 is correct'
+      'Row 1 is correct'
     );
     ok(
       getElement( '#test-one tbody tr:nth-child(4) td:nth-child(2)' )
         .innerText.trim() === 'English, French, Spanish',
-        'Row 4 is correct'
+      'Row 4 is correct'
     );
     ok(
       getElement( '#test-one tbody tr:nth-child(7) td:nth-child(2)' )
         .innerText.trim() === 'English, Spanish',
-        'Row 7 is correct'
+      'Row 7 is correct'
     );
   } );
 
@@ -80,17 +80,17 @@
     ok(
       getElement( '#test-one tbody tr:nth-child(7) td:nth-child(2)' )
         .innerText.trim() === 'English',
-        'Row 7 is correct'
+      'Row 7 is correct'
     );
     ok(
       getElement( '#test-one tbody tr:nth-child(4) td:nth-child(2)' )
         .innerText.trim() === 'English, French, Spanish',
-        'Row 4 is correct'
+      'Row 4 is correct'
     );
     ok(
       getElement( '#test-one tbody tr:nth-child(1) td:nth-child(2)' )
         .innerText.trim() === 'English, Spanish',
-        'Row 1 is correct'
+      'Row 1 is correct'
     );
   } );
 
@@ -101,17 +101,17 @@
       ok(
         getElement( '#test-one tbody tr:nth-child(1) td:nth-child(3)' )
           .innerText.trim() === '1.2 mi',
-          'Row 1 is correct'
+        'Row 1 is correct'
       );
       ok(
         getElement( '#test-one tbody tr:nth-child(5) td:nth-child(3)' )
           .innerText.trim() === '2.6 mi',
-          'Row 3 is correct'
+        'Row 3 is correct'
       );
       ok(
         getElement( '#test-one tbody tr:nth-child(7) td:nth-child(3)' )
           .innerText.trim() === '11.1 mi',
-          'Row 7 is correct'
+        'Row 7 is correct'
       );
     }
   );

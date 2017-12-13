@@ -2,7 +2,6 @@
    Table Organism
    ========================================================================== */
 
-'use strict';
 
 const config = require( 'cf-atomic-component/src/utilities/config' );
 const Organism = require( 'cf-atomic-component/src/components/Organism' );
