@@ -1,5 +1,3 @@
-'use strict';
-
 const finalhandler = require( 'finalhandler' );
 const fs = require( 'fs' );
 const http = require( 'http' );
@@ -34,8 +32,8 @@ function startServer( component, cb ) {
     serve( req, res, done );
   } );
 
-  // Listen on a random port
-  // TODO: This doesn't verify the port is available. We might get collisions.
+  /* Listen on a random port
+     TODO: This doesn't verify the port is available. We might get collisions. */
 
   server.listen( 0 );
 
@@ -69,8 +67,9 @@ function testComponent( component, server, port ) {
         logSymbols.error, ' ' + options.guide + ': ' + component
       );
       console.error( data.errors );
-      // TODO: Rather than immediately exiting we should collect the names of
-      // all failed components and display them at the end.
+
+      /* TODO: Rather than immediately exiting we should collect the names of
+         all failed components and display them at the end. */
       process.exit( 1 );
     }
     return server.close();

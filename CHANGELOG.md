@@ -7,10 +7,27 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
+- **cf-expandables:** [PATCH] Convert to ES6 variable syntax.
+- **cf-expandables:** [PATCH] Removes 'use strict' from modules.
+- **cf-tables:** [PATCH] Removes 'use strict' from modules.
 - **cf-forms:** [MINOR] Add multi-line support to checkboxes/radio buttons.
 
 ### Removed
 -
+
+
+## 4.19.0 - 2017-12-08
+
+### Changed
+- **capital-framework:** Linted the release scripts
+- **cf-typography:** Add `font-display` property to `@font-face` rules
+
+
+## 4.18.0 - 2017-12-05
+
+### Added
+- **cf-layout:** Add wells organism to Capital Framework
+
 
 ## 4.17.0 - 2017-12-04
 
