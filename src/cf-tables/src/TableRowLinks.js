@@ -4,7 +4,6 @@
    Mixin for adding row link click functionality to Table organism.
    ========================================================================== */
 
-'use strict';
 
 const closest = require(
   'cf-atomic-component/src/utilities/dom-closest'

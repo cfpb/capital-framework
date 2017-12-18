@@ -34,7 +34,7 @@ For example, if you wanted to change `cf-buttons`, here's what you'd do:
 1. `npm install && npm run cf-link`
 1. `git checkout -b button-fix canary`
 1. Edit file(s) in `/src/cf-buttons/` however you want.
-1. `npm run build` This will build every component (compiling Less, bundling JS, processing markdown docs) to `tmp/` in the project's root.
+1. `npm run build` This will build every component (compiling Less, bundling JavaScript, processing markdown docs) to `tmp/` in the project's root.
 1. Inspect and test your modified `cf-buttons` component in `tmp/`. See _Testing components locally_ below.
 1. When you're done hacking, open `/CHANGELOG.md` and add a line item describing your changes in the "Unreleased" section.
 Use the format: `- **cf-component-name:** [MAJOR|MINOR|PATCH] Description of change`.
@@ -167,13 +167,24 @@ features. For more information visit the [Babel documentation site]
 - https://saucelabs.com/beta/dashboard/tests
 - http://developer.samsung.com/remotetestlab/rtlDeviceList.action#
 
+#### Notes
+
+The CSS and JavaScript files that are generated during the build task are only
+used for testing. Because this project doesn't necessarily produce a final
+product it is up to the projects that use it to generate and maintain their own
+browser support config. An example of this is
+[consumerfinance.gov](https://github.com/cfpb/cfgov-refresh), which generates
+specific IE 8 and 9 stylesheets, whereas the Capital Framework build task
+bundles those with the main stylesheet. Despite the differences in delivery,
+the output and support are the same.
 
 ### Updating Documentation
 
 Documentation is maintained in each component's folder's `usage.md` file.
 Changes to documentation are made on the `canary` branch using the workflow above
 and pulled in the `gh-pages` branch using a manual process detailed below.
-The `usage.md` files are then rendered as separated pages on Capital Framework's website [(See this example from cf-core)](https://cfpb.github.io/capital-framework/components/cf-core/).
+The `usage.md` files are then rendered as separated pages on Capital Framework's website
+[(See this example from cf-core)](https://cfpb.github.io/capital-framework/components/cf-core/).
 
 After a release with documentation changes, you can checkout the `gh-pages` branch,
 and `npm install` any new dependencies in Capital Framework.

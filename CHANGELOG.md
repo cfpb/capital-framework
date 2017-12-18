@@ -3,58 +3,12 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
-- 
-
 ### Changed
-- 
+- **cf-expandables:** Convert to ES6 variable syntax.
+- **cf-expandables:** Removes 'use strict' from modules.
+- **cf-tables:** Removes 'use strict' from modules.
+- **cf-typography:** Removes Avenir Next Italic web font to improve performance.
 
-### Removed
-- 
-
-## 4.19.0 - 2017-12-08
-
-### Added
-- 
-
-### Changed
-- 
-
-### Removed
-- 
-
-## 4.19.0 - 2017-12-08
-
-### Added
-- 
-
-### Changed
-- 
-
-### Removed
-- 
-
-## 4.19.0 - 2017-12-08
-
-### Added
-- 
-
-### Changed
-- 
-
-### Removed
-- 
-
-## 4.19.0 - 2017-12-08
-
-### Added
-- 
-
-### Changed
-- 
-
-### Removed
-- 
 
 ## 4.19.0 - 2017-12-08
 

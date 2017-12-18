@@ -4,7 +4,6 @@
    Mixin for sorting table organism.
    ========================================================================== */
 
-'use strict';
 
 const config = require( 'cf-atomic-component/src/utilities/config' );
 const closest = require(
@@ -52,7 +51,7 @@ function initialize() {
     this.sortColumnIndex = this.getColumnIndex();
     this.sortDirection =
       this.contains( this.ui.sortButton, this.classes.sortDown ) ?
-      DIRECTIONS.DOWN : DIRECTIONS.UP;
+        DIRECTIONS.DOWN : DIRECTIONS.UP;
     this.updateTable();
   }
 }
@@ -130,9 +129,9 @@ function updateTableData( columnIndex ) {
 function updateTableDom() {
   const tableBody = this.ui.tableBody;
 
-  // Empty the table body to prepare for sorting the rows
-  // TODO: It might make sense to use innerHTML
-  // from a performance and garbage collection standpoint.
+  /* Empty the table body to prepare for sorting the rows
+     TODO: It might make sense to use innerHTML
+     from a performance and garbage collection standpoint. */
   while ( tableBody.lastChild ) {
     tableBody.removeChild( tableBody.lastChild );
   }

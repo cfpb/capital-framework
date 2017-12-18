@@ -2,7 +2,6 @@
    Expandable Organism
    ========================================================================== */
 
-'use strict';
 
 const domClassList = require(
   'cf-atomic-component/src/utilities/dom-class-list'
