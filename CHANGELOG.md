@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+- 
+
+### Changed
+- 
+
+### Removed
+- 
+
+## 4.20.0 - 2017-12-18
+
 ### Changed
 - **cf-expandables:** Convert to ES6 variable syntax.
 - **cf-expandables:** Removes 'use strict' from modules.
