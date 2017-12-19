@@ -42,7 +42,7 @@ Thumbs.db
 *.swp
 
 # Python #
-#################
+##########
 *.pyc
 *.egg-info/
 __pycache__/
@@ -50,12 +50,12 @@ __pycache__/
 .env
 
 # Django #
-#################
+##########
 *.egg-info
 .installed.cfg
 
-# Unit test / coverage reports
-#################
+# Unit test / coverage reports #
+################################
 htmlcov/
 .tox/
 .coverage
@@ -63,6 +63,7 @@ htmlcov/
 nosetests.xml
 coverage.xml
 test/unit-test-coverage/
+test/build-test-coverage/
 
 # Front-End #
 #############
