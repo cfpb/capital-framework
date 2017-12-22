@@ -699,7 +699,7 @@ have helper text that appears below the main label text.
     <label class="a-label" for="test_checkbox_helper">
         This is a very long label that wraps to a second line.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <small class="a-label_helper" data-aura-rendered-by="179:131;a">
+        <small class="a-label_helper">
             (This is helper text)
         </small>
     </label>
@@ -711,7 +711,7 @@ have helper text that appears below the main label text.
     <label class="a-label" for="test_checkbox_helper">
         This is a very long label that wraps to a second line.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <small class="a-label_helper" data-aura-rendered-by="179:131;a">
+        <small class="a-label_helper">
             (This is helper text)
         </small>
     </label>
@@ -725,7 +725,7 @@ have helper text that appears below the main label text.
     <label class="a-label" for="test_checkbox_lg_helper">
         This is a very long label that wraps to a second line.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <small class="a-label_helper" data-aura-rendered-by="179:131;a">
+        <small class="a-label_helper">
             (This is helper text)
         </small>
     </label>
@@ -737,7 +737,7 @@ have helper text that appears below the main label text.
     <label class="a-label" for="test_checkbox_lg_helper">
         This is a very long label that wraps to a second line.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <small class="a-label_helper" data-aura-rendered-by="179:131;a">
+        <small class="a-label_helper">
             (This is helper text)
         </small>
     </label>
