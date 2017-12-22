@@ -11,7 +11,12 @@
     &__checkbox,
     &__radio {
         .a-label {
-            // We need to turn off autoprefixing
+            /*
+            We need to turn off autoprefixing for the inline-grid because
+            older IE does not handle an inline-grid like other browsers,
+            leading to an extremely narrow column of text for the label.
+             */
+
             /* autoprefixer: off */
             display: inline-grid;
             /* autoprefixer: on */
