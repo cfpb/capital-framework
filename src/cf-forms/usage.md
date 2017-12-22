@@ -700,7 +700,7 @@ have helper text that appears below the main label text.
         This is a very long label that wraps to a second line.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         <small class="a-label_helper" data-aura-rendered-by="179:131;a">
-            This is helper text.
+            (This is helper text)
         </small>
     </label>
 </div>
@@ -712,7 +712,7 @@ have helper text that appears below the main label text.
         This is a very long label that wraps to a second line.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         <small class="a-label_helper" data-aura-rendered-by="179:131;a">
-            This is helper text.
+            (This is helper text)
         </small>
     </label>
 </div>
@@ -726,7 +726,7 @@ have helper text that appears below the main label text.
         This is a very long label that wraps to a second line.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         <small class="a-label_helper" data-aura-rendered-by="179:131;a">
-            This is helper text.
+            (This is helper text)
         </small>
     </label>
 </div>
@@ -738,7 +738,7 @@ have helper text that appears below the main label text.
         This is a very long label that wraps to a second line.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         <small class="a-label_helper" data-aura-rendered-by="179:131;a">
-            This is helper text.
+            (This is helper text)
         </small>
     </label>
 </div>
