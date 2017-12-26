@@ -119,6 +119,9 @@
         .a-label {
             &:before {
                 border-radius: 50%;
+                /* The rotate is needed to fix a bug in Firefox where radio
+                   button was not centered. */
+                transform: rotate(0deg);
             }
         }
 
