@@ -1,3 +1,5 @@
+# cf-expandables
+
 Expandables are components that have additional content that can be
 opened (expanded) and closed (collapsed). They can appear on their own
 or in groups.
@@ -5,11 +7,11 @@ or in groups.
 [`cf-core`](../cf-core) and [`cf-icons`](../cf-icons) components are
 dependencies of this component.
 
-> NOTE: If you use `cf-expandables.less` directly,
+**NOTE: If you use `cf-expandables.less` directly,
   be sure to run the file through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
   or your compiled Capital Framework CSS will
-  not work perfectly in older browsers.
+  not work perfectly in older browsers.**
 
 
 ## Table of contents
@@ -43,38 +45,39 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
 
-```
+```less
 // .o-expandable
-@expandable-focus:              @black;
+@expandable-focus:             @black;
 
 // .o-expandable_label
-@expandable_label-text:         @black;
+@expandable_label-text:        @black;
 
 // .o-expandable_link
-@expandable_link-text:          @pacific;
+@expandable_link-text:         @pacific;
 
 // .o-expandable__padded
-@expandable__padded-bg:         @gray-10;
-@expandable__padded-bg-hover:   @gray-20;
-@expandable__padded-divider:    @gray-40;
+@expandable__padded-bg:        @gray-10;
+@expandable__padded-bg-hover:  @gray-20;
+@expandable__padded-divider:   @gray-40;
 
 // .o-expandable-group
-@expandable-group_header-text:  @gray;
-@expandable-group_header-bg:    @gray-10;
-@expandable-group-bg:           @white;
-@expandable-group-divider:      @gray-80;
+@expandable-group_header-text: @gray;
+@expandable-group_header-bg:   @gray-10;
+@expandable-group-bg:          @white;
+@expandable-group-divider:     @gray-80;
 ```
 
 ### Sizing variables
 
-```
+```less
 @expandable_link-font-size: 14px;
 ```
 
 ### Timing variables
-```
+
+```less
 // Transition timing
-@expandable__transition-speed:  0.25s;
+@expandable__transition-speed: 0.25s;
 ```
 
 
@@ -86,7 +89,7 @@ Sometimes you may want the expandable to be open by default.
 This is as easy as adding the `.o-expandable_content__onload-open` modifier
 to the `.o-expandable_content` block.
 
-```
+```css
 .o-expandable_content__onload-open
 ```
 
@@ -98,7 +101,7 @@ Adds `padding` and a `background` color to `.o-expandable_header` and
 In addition to using the `.o-expandable__padded` modifier you also need to make
 sure you are using `.o-expandable_header`.
 
-```
+```css
 .o-expandable__padded
 ```
 
@@ -106,7 +109,7 @@ sure you are using `.o-expandable_header`.
 
 Allows you to add space between `.o-expandable_header` and `.o-expandable_content`.
 
-```
+```css
 .o-expandable_header__spaced
 ```
 
@@ -132,7 +135,7 @@ Allows you to add some styled text.
 
 Allows you to add some styled text to look like a link.
 
-_Note: only use this in the expandable header_
+**NOTE: only use this in the expandable header.**
 
 <span class="o-expandable_link">
     Lorem ipsum
@@ -156,7 +159,7 @@ Creates a full-width container to house information that is always visible.
 Combine `.o-expandable_header` with `.o-expandable_target` for a full-width
 trigger.
 
-```
+```css
 .o-expandable_header
 ```
 
@@ -164,7 +167,7 @@ trigger.
 
 Allows you to float information left and right.
 
-```
+```css
 .o-expandable_header-left
 .o-expandable_header-right
 ```

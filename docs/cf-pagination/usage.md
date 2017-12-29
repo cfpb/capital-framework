@@ -1,0 +1,1 @@
+../../src/cf-pagination/usage.md

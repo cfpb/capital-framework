@@ -38,6 +38,7 @@
     "deepmerge": "^2.0.1",
     "finalhandler": "^1.1.0",
     "fs-readdir-promise": "^1.0.1",
+    "gitbook-cli": "^2.3.2",
     "gulp": "^3.9.0",
     "gulp-apply-template": "0.0.2",
     "gulp-autoprefixer": "4.0.0",

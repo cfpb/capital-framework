@@ -1,3 +1,5 @@
+# cf-typography
+
 The cf-typography component includes multiple patterns for headings,
 links, lists, and other advanced typographic treatments.
 
@@ -5,11 +7,11 @@ The [`cf-core`](../core) component is a dependency of this component
 and has more basic typography patterns.
 
 
-> NOTE: If you use `cf-typography.less` directly,
+**NOTE: If you use `cf-typography.less` directly,
   be sure to run the file through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
   or your compiled Capital Framework CSS will
-  not work perfectly in older browsers.
+  not work perfectly in older browsers.**
 
 ## Table of contents
 
@@ -43,11 +45,11 @@ project by duplicating the variable `@key: value`.
 
 ### Font variables
 
-```
+```less
 @webfont-regular: 'AvenirNextLTW01-Regular';
-@webfont-italic: @webfont-regular;
-@webfont-medium: 'AvenirNextLTW01-Medium';
-@webfont-demi: 'AvenirNextLTW01-Demi';
+@webfont-italic:  @webfont-regular;
+@webfont-medium:  'AvenirNextLTW01-Medium';
+@webfont-demi:    'AvenirNextLTW01-Demi';
 ```
 
 ### Font source variables
@@ -56,7 +58,7 @@ Use this variable to specify where the fonts files used in the `@webfont-*`
 variables are located when self-hosting fonts.
 Can be either a relative or absolute path.
 
-```
+```less
 @cf-fonts-path: '/fonts'
 ```
 
@@ -64,7 +66,7 @@ If you want to load fonts from a Fonts.com Web Fonts project,
 set the following variable to `true`,
 otherwise set it to `false` to use the self-hosted font path:
 
-```
+```less
 @use-font-cdn: true;
 ```
 
@@ -72,39 +74,39 @@ otherwise set it to `false` to use the self-hosted font path:
 
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
-```
+```less
 // Running text elements
 
 // .a-micro-copy
-@micro-copy:                    @black;
+@micro-copy:                @black;
 
 // .a-date
-@date:                          @gray;
+@date:                      @gray;
 
 // .m-pull-quote
-@pull-quote_body:               @black;
-@pull-quote_citation:           @gray;
+@pull-quote_body:           @black;
+@pull-quote_citation:       @gray;
 
 // Headings
 
 // .a-heading__icon
-@heading__icon:                 @black;
-@heading__icon__hover:          @link-text-hover;
+@heading__icon:             @black;
+@heading__icon__hover:      @link-text-hover;
 
 // Headers
 
 // .m-slug-header
-@slug-header_border__thin:      @gray-10;
-@slug-header_border__thick:     @green;
+@slug-header_border__thin:  @gray-10;
+@slug-header_border__thick: @green;
 
 // .m-meta-header
-@meta-header_border:            @gray-40;
+@meta-header_border:        @gray-40;
 
 // Links
 
 // .a-link__jump
-@jump-link_bg:                  @gray-10;
-@jump-link_border:              @gray-40;
+@jump-link_bg:              @gray-10;
+@jump-link_border:          @gray-40;
 ```
 
 

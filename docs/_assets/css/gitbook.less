@@ -1,0 +1,24 @@
+@import "website/grid-demo.less";
+
+// Override prism code block theming.
+pre {
+    margin-bottom: 2em !important;
+    white-space: pre-wrap !important;
+}
+
+// Import Capital Framework components.
+@import (less) "../src/cf-atomic-component/src/cf-atomic-component.less";
+@import (less) "../src/cf-buttons/src/cf-buttons.less";
+@import (less) "../src/cf-core/src/cf-core.less";
+@import (less) "../src/cf-expandables/src/cf-expandables.less";
+@import (less) "../src/cf-forms/src/cf-forms.less";
+@import (less) "../src/cf-grid/src/cf-grid.less";
+@import (less) "../src/cf-icons/src/cf-icons.less";
+@import (less) "../src/cf-layout/src/cf-layout.less";
+@import (less) "../src/cf-notifications/src/cf-notifications.less";
+@import (less) "../src/cf-pagination/src/cf-pagination.less";
+@import (less) "../src/cf-tables/src/cf-tables.less";
+@import (less) "../src/cf-typography/src/cf-typography.less";
+
+@cf-icon-path: '/_assets/fonts';
+@use-font-cdn: true;

@@ -1,0 +1,40 @@
+{
+  "gitbook": "3.x.x",
+  "title": "Capital Framework",
+  "description": "A modular front end framework",
+  "plugins": [
+    "theme-cfpb",
+    "-theme-default",
+    "-fontsettings",
+    "-highlight",
+    "-sharing",
+    "auto-summary",
+    "styles-less",
+    "edit-link",
+    "prism"
+  ],
+  "pluginsConfig": {
+    "edit-link": {
+      "base": "https://github.com/cfpb/capital-framework/tree/canary/src",
+      "label": "Edit This Page"
+    },
+    "auto-summary": {
+      "parts": {
+        "docs/*.md": "Start here",
+        "cf-*/usage.md": "Components"
+      }
+    }
+  },
+  "links": {
+    "sharing": {
+      "facebook": false,
+      "twitter": false
+    }
+  },
+  "styles": {
+    "website": "_assets/css/gitbook.less"
+  },
+  "variables": {
+    "title": "Capital Framework 4.20.0"
+  }
+}

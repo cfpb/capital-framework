@@ -42,7 +42,7 @@ Thumbs.db
 *.swp
 
 # Python #
-#################
+##########
 *.pyc
 *.egg-info/
 __pycache__/
@@ -50,12 +50,12 @@ __pycache__/
 .env
 
 # Django #
-#################
+##########
 *.egg-info
 .installed.cfg
 
-# Unit test / coverage reports
-#################
+# Unit test / coverage reports #
+################################
 htmlcov/
 .tox/
 .coverage
@@ -77,3 +77,9 @@ util.js
 dist/
 .npmrc
 src/cf-*/package-lock.json
+
+# Documentation #
+#################
+docs/_book/
+docs/node_modules/
+docs/_assets/js/capital-framework.min.js
