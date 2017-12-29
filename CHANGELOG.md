@@ -11,6 +11,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-expandables:** [PATCH] Removes 'use strict' from modules.
 - **cf-tables:** [PATCH] Removes 'use strict' from modules.
 - **cf-typography:** [MINOR] Removes Avenir Next Italic web font to improve performance.
+- **cf-typography:** [MINOR] Removes Avenir Next Demibold web font to improve performance.
+- **cf-core:** [MINOR] Updates u-webfont-demi and heading-5 classes to mimic demibold font weight without loading the demibold web font to improve performance.
+- **cf-table:** [PATCH] Updates th element to use heading-5 class instead of u-webfont-demi for proper font weight and hierarchy on small screens.
 
 ### Removed
 -
