@@ -27,6 +27,7 @@ Capital Framework.
     - [Basic radio buttons](#basic-radio-buttons)
     - [Large target area checkboxes](#large-target-area-checkboxes)
     - [Large target area radio buttons](#large-target-area-radio-buttons)
+    - [Inputs helper text](#inputs-helper-text)
 - [Buttons](#buttons)
     - [Simple input with a button](#simple-input-with-a-button)
     - [Button inside an input](#button-inside-an-input)
@@ -684,6 +685,65 @@ Generally this is only useful for documentation purposes.
     <label class="a-label" for="test_radio_lg_disabled">Label</label>
 </div>
 ```
+
+
+### Inputs helper text
+
+Checkboxes and radio button inputs can have labels that span multiple lines and
+have helper text that appears below the main label text.
+
+#### Basic checkbox/radio button helper text
+
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_helper">
+    <label class="a-label" for="test_checkbox_helper">
+        This is a very long label that wraps to a second line.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <small class="a-label_helper">
+            (This is helper text)
+        </small>
+    </label>
+</div>
+
+```html
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_helper">
+    <label class="a-label" for="test_checkbox_helper">
+        This is a very long label that wraps to a second line.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <small class="a-label_helper">
+            (This is helper text)
+        </small>
+    </label>
+</div>
+```
+
+#### Large target checkbox/radio button helper text
+
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_helper">
+    <label class="a-label" for="test_checkbox_lg_helper">
+        This is a very long label that wraps to a second line.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <small class="a-label_helper">
+            (This is helper text)
+        </small>
+    </label>
+</div>
+
+```html
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_helper">
+    <label class="a-label" for="test_checkbox_lg_helper">
+        This is a very long label that wraps to a second line.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <small class="a-label_helper">
+            (This is helper text)
+        </small>
+    </label>
+</div>
+```
+
 
 ### Inline Form Validation
 
