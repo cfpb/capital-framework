@@ -12,6 +12,9 @@
     We need to turn off autoprefixing for the inline-grid because
     older IE does not handle an inline-grid like other browsers,
     leading to an extremely narrow column of text for the label.
+    This ensures it's only picked up by browsers with standard support.
+    Also, autoprefixer ignores rules on a per block basis so that is why
+    this is placed in its own block. 
      */
     &__checkbox,
     &__radio {
