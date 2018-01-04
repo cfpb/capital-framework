@@ -4,13 +4,14 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
+- **cf-forms:** [PATCH] Add transform to fix radio button Firefox rendering bug.
 - **cf-forms:** [MINOR] Add multi-line support to checkboxes/radio buttons.
 
 ### Removed
-- 
+-
 
 ## 4.20.0 - 2017-12-18
 
