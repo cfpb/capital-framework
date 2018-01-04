@@ -9,6 +9,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Changed
 - **cf-forms:** [PATCH] Add transform to fix radio button Firefox rendering bug.
 - **cf-forms:** [MINOR] Add multi-line support to checkboxes/radio buttons.
+- **cf-forms:** [PATCH] Move autoprefixer ignored rule to its own block.
 
 ### Removed
 -
