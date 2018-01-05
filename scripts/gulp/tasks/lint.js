@@ -85,5 +85,6 @@ gulp.task( 'lint', gulp.parallel(
   'lint:build',
   'lint:tests',
   'lint:scripts',
-  'lint:release'
+  'lint:release',
+  'lint:styles'
 ) );
