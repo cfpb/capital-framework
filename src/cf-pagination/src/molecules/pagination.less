@@ -14,8 +14,6 @@
     }
 
     &_current-page {
-        .u-webfont-medium();
-
         // 45px is a magic number to provide enough room for three digits
         // and the number spinners for type="number" inputs on desktop
         width: unit( 45px / @base-font-size-px, em );
@@ -24,6 +22,7 @@
         margin-right: unit( 10px / @base-font-size-px, em );
         margin-left: unit( 10px / @base-font-size-px, em );
 
+        font-weight: 500;
         text-align: right;
     }
 

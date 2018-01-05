@@ -74,8 +74,11 @@
    }
 
    &_explanation {
-       .u-webfont-regular();
        font-size: 1em;
+       // This is necessary because the standard markup pattern uses an h4
+       // class for, presumably, just sizing.
+       // TODO: Refactor standard markup pattern to stop using h4 classes.
+       font-weight: normal;
        margin-top: unit( 5px / @base-font-size-px, em );
        margin-bottom: 0;
 
