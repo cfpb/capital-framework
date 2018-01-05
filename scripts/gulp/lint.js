@@ -25,9 +25,9 @@ function _genericLintJs( src ) {
 function lintBuild() {
   return _genericLintJs( [
     'gulpfile.js',
-    'gulp/**/*.js'
+    'scripts/gulp/**/*.js'
   ] );
-};
+}
 
 /**
  * Lints the test js files for errors.
@@ -38,7 +38,7 @@ function lintTests() {
     'test/accessibility/*.js',
     'test/*.js'
   ] );
-};
+}
 
 /**
  * Lints the source js files for errors.
@@ -46,7 +46,7 @@ function lintTests() {
  */
 function lintScripts() {
   return _genericLintJs( [ 'src/**/src/*.js' ] );
-};
+}
 
 /**
  * Lints the release js for errors.
@@ -57,21 +57,21 @@ function lintRelease() {
   return _genericLintJs( [
     'scripts/npm/prepublish/**/*.js'
   ] );
-};
+}
 
 
 /**
  * Lints the source LESS files for errors.
  * @returns {Object} An output stream from gulp.
  */
-function lintStyles(){
-  return gulp.src( ['!src/cf-grid/src-generated/*.less', 'src/**/*.less'] )
+function lintStyles() {
+  return gulp.src( [ '!src/cf-grid/src-generated/*.less', 'src/**/*.less' ] )
     .pipe( gulpStylelint( {
       reporters: [
         { formatter: 'string', console: true }
       ]
     } ) );
-};
+}
 
 gulp.task( 'lint:build', lintBuild );
 gulp.task( 'lint:tests', lintTests );
