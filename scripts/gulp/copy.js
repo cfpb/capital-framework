@@ -6,12 +6,16 @@ const fs = require( 'fs' );
 const gulp = require( 'gulp' );
 const gulpData = require( 'gulp-data' );
 const gulpForeach = require( 'gulp-foreach' );
-const gulpJsonFormat = require( 'gulp-json-format' );
+const gulpJSBeautifier = require( 'gulp-jsbeautifier' );
 const gulpRename = require( 'gulp-rename' );
 
 let baseManifest = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
-gulp.task( 'copy:components:boilerplate', () => {
+/**
+ * TODO: Add description of what this task does.
+ * @returns {Object} An output stream from gulp.
+ */
+function copyComponentsBoilerplate(){
   gulp.src(['./src/' + (component || '*'), '!./src/*.js', '!./src/*.less'])
     .pipe(gulpForeach(function(stream, file) {
       var component = file.path.split('/').pop();
@@ -21,7 +25,11 @@ gulp.task( 'copy:components:boilerplate', () => {
     }))
 } );
 
-gulp.task( 'copy:components:source', () => {
+/**
+ * TODO: Add description of what this task does.
+ * @returns {Object} An output stream from gulp.
+ */
+function copyComponentsSource() {
   gulp.src(['./src/' + (component || '*'), '!./src/*.js', '!./src/*.less'])
     .pipe(gulpForeach(function(stream, file) {
       var component = file.path.split('/').pop(),
@@ -38,7 +46,11 @@ gulp.task( 'copy:components:source', () => {
     }))
 } );
 
-gulp.task( 'copy:components:manifest', () => {
+/**
+ * TODO: Add description of what this task does.
+ * @returns {Object} An output stream from gulp.
+ */
+function copyComponentsManifest() {
   gulp.src('./src/' + (component || '*') + '/package.json')
     .pipe(gulpData(function(file) {
       // Remove any dependencies from CF's package.json,
@@ -53,6 +65,13 @@ gulp.task( 'copy:components:manifest', () => {
     .pipe(gulpRename(function(path) {
       path.dirname = component || path.dirname;
     }))
-    .pipe(gulpJsonFormat(2))
+    .pipe( gulpJSBeautifier( {
+       // eslint-disable-next-line camelcase
+       indent_size: 2
+    } ) )
     .pipe(gulp.dest('./tmp'));
 } );
+
+gulp.task( 'copy:components:boilerplate', copyComponentsBoilerplate );
+gulp.task( 'copy:components:source', copyComponentsSource );
+gulp.task( 'copy:components:manifest', copyComponentsManifest );
