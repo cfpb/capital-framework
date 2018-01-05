@@ -8,19 +8,25 @@
         margin-top: unit( 5px / @base-font-size-px, em );
     }
 
+    /*
+    We need to turn off autoprefixing for the inline-grid because
+    older IE does not handle an inline-grid like other browsers,
+    leading to an extremely narrow column of text for the label.
+    This ensures it's only picked up by browsers with standard support.
+    Also, autoprefixer ignores rules on a per block basis so that is why
+    this is placed in its own block. 
+     */
     &__checkbox,
     &__radio {
         .a-label {
-            /*
-            We need to turn off autoprefixing for the inline-grid because
-            older IE does not handle an inline-grid like other browsers,
-            leading to an extremely narrow column of text for the label.
-             */
-
             /* autoprefixer: off */
             display: inline-grid;
-            /* autoprefixer: on */
+        }
+    }
 
+    &__checkbox,
+    &__radio {
+        .a-label {
             // 30px is width of checkbox/radio button plus the needed padding.
             grid-template-columns: unit( 30px / @base-font-size-px, em ) auto;
             vertical-align: top;
@@ -134,6 +140,9 @@
         .a-label {
             &:before {
                 border-radius: 50%;
+                /* The rotate is needed to fix a bug in Firefox where radio
+                   button was not centered. */
+                transform: rotate(0deg);
             }
         }
 
