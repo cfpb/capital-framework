@@ -1,9 +1,7 @@
-'use strict';
-
-var logSymbols = require( 'log-symbols' );
-var chalk = require( 'chalk' );
-var indentString = require( 'indent-string' );
-var options = require( './getArgs' );
+const logSymbols = require( 'log-symbols' );
+const chalk = require( 'chalk' );
+const indentString = require( 'indent-string' );
+const options = require( './getArgs' );
 
 function printMsg( type, msg, indent ) {
   return console.log(
@@ -11,7 +9,7 @@ function printMsg( type, msg, indent ) {
   );
 }
 
-var printLn = {};
+const printLn = {};
 
 [ 'success', 'warning', 'error', 'info' ].forEach( function( type ) {
   printLn[type] = function( msg, indent ) {
@@ -21,7 +19,7 @@ var printLn = {};
 
 printLn.console = function( msg ) {
   options.silent ? function() {} :
-  console.log( chalk.dim( indentString( msg, ' ', 8 ) ) );
+    console.log( chalk.dim( indentString( msg, ' ', 8 ) ) );
 };
 
 module.exports = printLn;

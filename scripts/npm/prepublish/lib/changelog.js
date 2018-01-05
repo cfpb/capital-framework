@@ -1,20 +1,21 @@
 'use script';
 
-var fs = require( 'fs' );
-var path = require( 'path' );
-var promisify = require( 'promisify-node' );
+const fs = require( 'fs' );
+const path = require( 'path' );
+const promisify = require( 'promisify-node' );
 
 promisify( fs.writeFile );
 
 function updateChangelog( version ) {
-  var file = path.join( __dirname, '..', '..', '..', '..', 'CHANGELOG.md' );
-  var date = new Date().toJSON().slice( 0, 10 );
-  var latest = '## Unreleased\n\n### Added\n- \n\n### Changed\n- ' +
+  const file = path.join( __dirname, '..', '..', '..', '..', 'CHANGELOG.md' );
+  const date = new Date().toJSON().slice( 0, 10 );
+  const latest = '## Unreleased\n\n### Added\n- \n\n### Changed\n- ' +
                '\n\n### Removed\n- \n\n## ' + version + ' - ' + date;
-  var changelog = fs.readFileSync( file, 'utf8' );
+  // eslint-disable-next-line no-sync
+  let changelog = fs.readFileSync( file, 'utf8' );
 
   changelog = changelog.replace( /## Unreleased/g, latest );
-  return fs.writeFile( file, changelog, 'utf8', function() { return; } );
+  return fs.writeFile( file, changelog, 'utf8', function() { } );
 }
 
 module.exports = updateChangelog;
