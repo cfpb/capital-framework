@@ -23,7 +23,7 @@ function copyComponentsBoilerplate(){
           .pipe( gulp.dest('./tmp/' + component) );
       return stream;
     }))
-} );
+};
 
 /**
  * TODO: Add description of what this task does.
@@ -44,7 +44,7 @@ function copyComponentsSource() {
           .pipe( gulp.dest('./tmp/' + component) );
       return stream;
     }))
-} );
+};
 
 /**
  * TODO: Add description of what this task does.
@@ -70,7 +70,7 @@ function copyComponentsManifest() {
        indent_size: 2
     } ) )
     .pipe(gulp.dest('./tmp'));
-} );
+};
 
 gulp.task( 'copy:components:boilerplate', copyComponentsBoilerplate );
 gulp.task( 'copy:components:source', copyComponentsSource );
