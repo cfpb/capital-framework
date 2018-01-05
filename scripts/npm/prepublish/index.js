@@ -1,16 +1,14 @@
-'use strict';
-
-var path = require( 'path' );
-var fs = require( 'fs' );
-var readdir = require( 'fs-readdir-promise' );
-var Promise = require( 'bluebird' );
-var semver = require( 'semver' );
-var inPublish = require( 'in-publish' ).inPublish;
-var logSymbols = require( 'log-symbols' );
-var util = require( './lib' );
-var isTravis = require( 'is-travis' );
-var componentsDir = path.join( __dirname, '..', '..', '..', 'src' );
-var componentsToPublish = [];
+const path = require( 'path' );
+const fs = require( 'fs' );
+const readdir = require( 'fs-readdir-promise' );
+const Promise = require( 'bluebird' );
+const semver = require( 'semver' );
+const inPublish = require( 'in-publish' ).inPublish;
+const logSymbols = require( 'log-symbols' );
+const util = require( './lib' );
+const isTravis = require( 'is-travis' );
+const componentsDir = path.join( __dirname, '..', '..', '..', 'src' );
+let componentsToPublish = [];
 
 // Check git's status.
 util.getGitStatus( './' )
@@ -43,7 +41,7 @@ util.getGitStatus( './' )
   // All done.
   .then( finish )
   // Report any errors that happen along the way.
-  ['catch']( handleError );
+  .catch( handleError );
 
 /**
  * Generic error handler
@@ -123,7 +121,7 @@ function getComponents() {
 }
 
 function filterComponents( components ) {
-  var promises = components.map( compareVersionNumber );
+  const promises = components.map( compareVersionNumber );
   promises.push( compareMasterVersionNumber() );
   util.printLn.info(
     'Checking which components need to be published to npm...'
@@ -134,13 +132,13 @@ function filterComponents( components ) {
 function compareVersionNumber( component ) {
   if ( component.indexOf( 'cf-' ) !== 0 ) return;
 
-  var manifest = componentsDir + '/' + component + '/package.json',
+  let manifest = componentsDir + '/' + component + '/package.json',
       localVersion = JSON.parse(
         fs.readFileSync( manifest, 'utf8' )
       ).version;
 
   return util.getNpmVersion( component ).then( function( data ) {
-    var npmVersion = data['dist-tags'].latest;
+    const npmVersion = data['dist-tags'].latest;
     if ( semver.gt( localVersion, npmVersion ) ) {
       util.printLn.success(
         component + ': ' + npmVersion + ' -> ' + localVersion, true
@@ -159,7 +157,7 @@ function compareVersionNumber( component ) {
     } else {
       util.printLn.info( component + ' remains ' + npmVersion, true );
     }
-  } )['catch']( function( err ) {
+  } ).catch( function( err ) {
     if ( /returned 404/.test( err ) ) {
       util.printLn.success( component + ': ' + localVersion, true );
       return {
@@ -183,18 +181,19 @@ function compareMasterVersionNumber() {
 }
 
 function buildComponents( components ) {
-  var newVersion;
-  var diffs = [];
-  var masterComponent = components.pop();
+  let newVersion;
+  const diffs = [];
+  const masterComponent = components.pop();
 
-  // TODO: Fix bug that results in some entries in the components array to be
-  // blank. For now, filter them out.
+  /* TODO: Fix bug that results in some entries in the components array to be
+     blank. For now, filter them out. */
   componentsToPublish = components.filter( function( component ) {
-    var diff;
+    let diff;
     if ( component ) {
-      // While we're iterating, keep track of each component's semver diff.
-      // If there's no old version it means it's a new component and CF should
-      // get a minor bump instead of whatever the actual diff is.
+
+      /* While we're iterating, keep track of each component's semver diff.
+         If there's no old version it means it's a new component and CF should
+         get a minor bump instead of whatever the actual diff is. */
       diff = !component.oldVersion ? 'minor' : semver.diff(
         component.oldVersion, component.newVersion
       );
@@ -206,10 +205,10 @@ function buildComponents( components ) {
   // If no components were updated, check if the master component was updated.
   if ( !componentsToPublish.length ) {
     util.printLn.error( 'No components\' versions were updated.' );
-    if ( semver.gt( masterComponent['new'], masterComponent.old ) ) {
+    if ( semver.gt( masterComponent.new, masterComponent.old ) ) {
       util.printLn.success(
         util.pkg.name + '\'s version was manually updated: ' +
-        masterComponent.old + ' -> ' + masterComponent['new'] + '.'
+        masterComponent.old + ' -> ' + masterComponent.new + '.'
       );
       util.printLn.info( 'Building components now...' );
       return util.build();
@@ -227,8 +226,8 @@ function buildComponents( components ) {
     process.exit( 1 );
   }
 
-  // Sort the diffs and increment CF by whatever the first (largest)
-  // increment is
+  /* Sort the diffs and increment CF by whatever the first (largest)
+     increment is */
   newVersion = semver.inc( masterComponent.old, diffs.sort().shift() );
   util.printLn.success(
     util.pkg.name + ' will be published: ' + masterComponent.old + ' -> ' +
@@ -307,7 +306,7 @@ function publishComponents( result ) {
     );
   }
   if ( !componentsToPublish.length ) return;
-  var components = componentsToPublish.map( function( component ) {
+  const components = componentsToPublish.map( function( component ) {
     return component.name;
   } );
   util.printLn.info( 'Publishing ' + components.join( ', ' ) + ' to npm...' );

@@ -47,7 +47,7 @@
     "gulp-foreach": "^0.1.0",
     "gulp-ignore": "^2.0.1",
     "gulp-istanbul": "^1.1.2",
-    "gulp-json-format": "^1.0.0",
+    "gulp-jsbeautifier": "^2.1.2",
     "gulp-less": "^3.3.2",
     "gulp-markdown": "^1.1.0",
     "gulp-mocha": "^3.0.1",

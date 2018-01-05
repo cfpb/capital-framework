@@ -1,8 +1,6 @@
-'use strict';
+const exec = require( 'child-process-promise' ).exec;
 
-var exec = require( 'child-process-promise' ).exec;
-
-var git = {
+const git = {
   checkoutMaster: function() {
     return exec( 'git checkout ' + process.env.GH_PROD_BRANCH );
   },
@@ -10,7 +8,7 @@ var git = {
     return exec( 'git rev-parse --abbrev-ref HEAD' );
   },
   commit: function( version ) {
-    var msg = version || 'Auto-incrementing version';
+    const msg = version || 'Auto-incrementing version';
     return exec( 'git commit -am "' + msg + '"' );
   },
   tag: function( version ) {
