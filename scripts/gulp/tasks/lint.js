@@ -1,5 +1,3 @@
-'use strict';
-
 const gulp = require( 'gulp' );
 const gulpEslint = require( 'gulp-eslint' );
 const gulpStylelint = require( 'gulp-stylelint' );
@@ -22,61 +20,71 @@ function _genericLintJs( src ) {
 
 /**
  * Lints the gulpfile for errors.
+ * @returns {Object} An output stream from gulp.
  */
-gulp.task( 'lint:build', () => {
-  _genericLintJs( [
+function lintBuild() {
+  return _genericLintJs( [
     'gulpfile.js',
-    'gulp/**/*.js'
+    'scripts/gulp/**/*.js'
   ] );
-} );
+}
 
 /**
  * Lints the test js files for errors.
+ * @returns {Object} An output stream from gulp.
  */
-gulp.task( 'lint:tests', () => {
-  _genericLintJs( [
+function lintTests() {
+  return _genericLintJs( [
     'test/accessibility/*.js',
     'test/*.js'
   ] );
-} );
+}
 
 /**
  * Lints the source js files for errors.
+ * @returns {Object} An output stream from gulp.
  */
-gulp.task( 'lint:scripts', () => {
-  _genericLintJs( [ 'src/**/src/*.js' ] );
-} );
+function lintScripts() {
+  return _genericLintJs( [ 'src/**/src/*.js' ] );
+}
+
+/**
+ * Lints the release js for errors.
+ * TODO: After release files are tested, combine this task with the build one
+ * @returns {Object} An output stream from gulp.
+ */
+function lintRelease() {
+  return _genericLintJs( [
+    'scripts/npm/prepublish/**/*.js'
+  ] );
+}
 
 /**
  * Lints the source LESS files for errors.
+ * @returns {Object} An output stream from gulp.
  */
-gulp.task( 'lint:styles', () => {
-  return gulp
-    .src( ['!src/cf-grid/src-generated/*.less', 'src/**/*.less'] )
+function lintStyles() {
+  return gulp.src( [ '!src/cf-grid/src-generated/*.less', 'src/**/*.less' ] )
     .pipe( gulpStylelint( {
       reporters: [
         { formatter: 'string', console: true }
       ]
     } ) );
-} );
+}
 
-/**
- * Lints the release js for errors.
- * TODO: After release files are tested, combine this task with the build one
- */
-gulp.task( 'lint:release', () => {
-  _genericLintJs( [
-    'scripts/npm/prepublish/**/*.js'
-  ] );
-} );
+gulp.task( 'lint:build', lintBuild );
+gulp.task( 'lint:tests', lintTests );
+gulp.task( 'lint:scripts', lintScripts );
+gulp.task( 'lint:release', lintRelease );
+gulp.task( 'lint:styles', lintStyles );
 
 /**
  * Lints all the js files for errors
  */
-gulp.task( 'lint', [
+gulp.task( 'lint', gulp.parallel(
   'lint:build',
   'lint:tests',
   'lint:scripts',
-  'lint:styles',
-  'lint:release'
-] );
+  'lint:release',
+  'lint:styles'
+) );
