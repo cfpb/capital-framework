@@ -48,13 +48,14 @@ gulp.task( 'lint:scripts', () => {
 /**
  * Lints the source LESS files for errors.
  */
-gulp.task( 'lint:styles', () => gulp
-  .src( [ '!src/cf-grid/src-generated/*.less', 'src/**/*.less' ] )
-  .pipe( gulpStylelint( {
-    reporters: [
-      { formatter: 'string', console: true }
-    ]
-  } ) ) );
+gulp.task( 'lint:styles', () => {
+  gulp.src( [ '!src/cf-grid/src-generated/*.less', 'src/**/*.less' ] )
+    .pipe( gulpStylelint( {
+      reporters: [
+        { formatter: 'string', console: true }
+      ]
+    } ) );
+} );
 
 /**
  * Lints the release js for errors.
