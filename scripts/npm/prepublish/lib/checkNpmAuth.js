@@ -1,24 +1,22 @@
-'use strict';
-
-var RegClient = require( 'silent-npm-registry-client' );
-var client = new RegClient();
-var promisify = require( 'promisify-node' );
-var exec = require( 'child-process-promise' ).exec;
-var printLn = require( './print' );
+const RegClient = require( 'silent-npm-registry-client' );
+const client = new RegClient();
+const promisify = require( 'promisify-node' );
+const exec = require( 'child-process-promise' ).exec;
+const printLn = require( './print' );
 
 promisify( client );
 
 function checkAuth( component ) {
-  var uri = 'https://registry.npmjs.org/' + component;
+  const uri = 'https://registry.npmjs.org/' + component;
 
-  var getOwners = client.get( uri, { timeout: 10000 } ).then( function( data ) {
+  const getOwners = client.get( uri, { timeout: 10000 } ).then( function( data ) {
     return data.maintainers;
   } );
-  var getCurrentUser = exec( 'npm whoami' );
+  const getCurrentUser = exec( 'npm whoami' );
 
   return Promise.all( [ getOwners, getCurrentUser ] ).then( function( data ) {
-    var authorized = false;
-    var currentUser = data[1].stdout.trim();
+    let authorized = false;
+    const currentUser = data[1].stdout.trim();
 
     printLn.info( 'Logged into npm as ' + currentUser );
     data[0].forEach( function( maintainer ) {
@@ -31,7 +29,7 @@ function checkAuth( component ) {
       );
       process.exit( 1 );
     }
-  } )['catch']( function( err ) {
+  } ).catch( function( err ) {
     if ( /ENEEDAUTH/.test( err ) ) {
       printLn.error(
         'You\'re not logged into npm. You need to authorize ' +

@@ -1,6 +1,4 @@
-'use strict';
-
-var exec = require( 'child-process-promise' ).exec;
+const exec = require( 'child-process-promise' ).exec;
 
 function publish( component ) {
   return exec( 'npm publish', {
