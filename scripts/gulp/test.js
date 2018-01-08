@@ -2,7 +2,6 @@ const component = require( './parseComponentName' );
 const gulp = require( 'gulp' );
 const gulpQunit = require( 'gulp-qunit' );
 
-// const configTest = require( '../config' ).tests;
 const gulpIstanbul = require( 'gulp-istanbul' );
 const gulpMocha = require( 'gulp-mocha' );
 

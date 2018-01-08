@@ -27,7 +27,8 @@ gulp.task( 'template:readmes', () => {
     .pipe( gulp.dest( 'tmp' ) );
 } );
 
-gulp.task( 'template:usage', () => gulp.src( './src/' + ( component || '*' ) + '/usage.md' )
+gulp.task( 'template:usage', () => {
+  gulp.src( './src/' + ( component || '*' ) + '/usage.md' )
   .pipe( gulpMarkdown() )
   .pipe( gulpData( file => {
     const content = String( file.contents );
@@ -51,4 +52,5 @@ gulp.task( 'template:usage', () => gulp.src( './src/' + ( component || '*' ) + '
   .pipe( gulpRename( path => {
     path.dirname = component || path.dirname;
   } ) )
-  .pipe( gulp.dest( 'tmp' ) ) );
+  .pipe( gulp.dest( 'tmp' ) )
+} );
