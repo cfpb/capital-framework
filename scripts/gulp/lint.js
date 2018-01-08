@@ -54,7 +54,6 @@ gulp.task( 'lint:styles', () => {
   // Pass all command line flags to Stylelint.
   const options = minimist( process.argv.slice( 2 ) );
   const willFix = options.fix || false;
-  console.log( willFix );
   return gulp
     .src( [
       '!src/cf-*/node_modules/**/*.less',
@@ -62,11 +61,13 @@ gulp.task( 'lint:styles', () => {
       'src/**/*.less'
     ] )
     .pipe( gulpStylelint( {
+      failAfterError: false,
       fix: willFix,
       reporters: [
         { formatter: 'string', console: true }
       ]
-    } ) );
+    } ) )
+    .pipe( gulp.dest( 'src' ) );
 } );
 
 /**
