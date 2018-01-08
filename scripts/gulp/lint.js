@@ -54,8 +54,13 @@ gulp.task( 'lint:styles', () => {
   // Pass all command line flags to Stylelint.
   const options = minimist( process.argv.slice( 2 ) );
   const willFix = options.fix || false;
+  console.log( willFix );
   return gulp
-    .src( ['!src/cf-grid/src-generated/*.less', 'src/**/*.less'] )
+    .src( [
+      '!src/cf-*/node_modules/**/*.less',
+      '!src/cf-grid/src-generated/*.less',
+      'src/**/*.less'
+    ] )
     .pipe( gulpStylelint( {
       fix: willFix,
       reporters: [
