@@ -61,7 +61,7 @@ gulp.task( 'lint:styles', () => {
       'src/**/*.less'
     ] )
     .pipe( gulpStylelint( {
-      failAfterError: false,
+      failAfterError: true,
       fix: willFix,
       reporters: [
         { formatter: 'string', console: true }
