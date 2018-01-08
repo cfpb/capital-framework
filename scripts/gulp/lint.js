@@ -51,9 +51,13 @@ gulp.task( 'lint:scripts', () => {
  * Lints the source LESS files for errors.
  */
 gulp.task( 'lint:styles', () => {
+  // Pass all command line flags to EsLint.
+  const options = minimist( process.argv.slice( 2 ) );
+  const willFix = options.fix || false;
   return gulp
     .src( ['!src/cf-grid/src-generated/*.less', 'src/**/*.less'] )
     .pipe( gulpStylelint( {
+      fix: willFix,
       reporters: [
         { formatter: 'string', console: true }
       ]
