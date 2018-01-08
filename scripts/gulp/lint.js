@@ -11,7 +11,7 @@ const minimist = require( 'minimist' );
  * @returns {Object} An output stream from gulp.
  */
 function _genericLintJs( src ) {
-  // Pass all command line flags to EsLint.
+  // Pass all command line flags to ESLint.
   const options = minimist( process.argv.slice( 2 ) );
 
   return gulp.src( src.concat( '!**/node_modules/**' ), { base: './' } )
@@ -51,7 +51,7 @@ gulp.task( 'lint:scripts', () => {
  * Lints the source LESS files for errors.
  */
 gulp.task( 'lint:styles', () => {
-  // Pass all command line flags to EsLint.
+  // Pass all command line flags to Stylelint.
   const options = minimist( process.argv.slice( 2 ) );
   const willFix = options.fix || false;
   return gulp
