@@ -49,7 +49,7 @@
     "gulp-istanbul": "^1.1.2",
     "gulp-jsbeautifier": "^2.1.2",
     "gulp-less": "^3.3.2",
-    "gulp-markdown": "^1.1.0",
+    "gulp-markdown": "^2.0.1",
     "gulp-mocha": "^3.0.1",
     "gulp-qunit": "^1.5.2",
     "gulp-rename": "^1.2.2",
