@@ -8,22 +8,6 @@
         margin-top: unit( 5px / @base-font-size-px, em );
     }
 
-    /*
-    We need to turn off autoprefixing for the inline-grid because
-    older IE does not handle an inline-grid like other browsers,
-    leading to an extremely narrow column of text for the label.
-    This ensures it's only picked up by browsers with standard support.
-    Also, autoprefixer ignores rules on a per block basis so that is why
-    this is placed in its own block. 
-     */
-    &__checkbox,
-    &__radio {
-        .a-label {
-            /* autoprefixer: off */
-            display: inline-grid;
-        }
-    }
-
     &__checkbox,
     &__radio {
         .a-label {
@@ -105,6 +89,25 @@
                     }
                 }
             }
+        }
+    }
+
+    /*
+    We need to turn off autoprefixing for the inline-grid because
+    older IE does not handle an inline-grid like other browsers,
+    leading to an extremely narrow column of text for the label.
+    This ensures it's only picked up by browsers with standard support.
+    Also, autoprefixer ignores rules on a per block basis so that is why
+    this is placed in its own block.
+    We need to ignore the duplicate selector for stylelint too.
+     */
+     /* stylelint-disable-next-line no-duplicate-selectors */
+    &__checkbox,
+    &__radio {
+        /* stylelint-disable-next-line no-duplicate-selectors */
+        .a-label {
+            /* autoprefixer: off */
+            display: inline-grid;
         }
     }
 
