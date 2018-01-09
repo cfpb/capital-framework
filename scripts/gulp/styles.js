@@ -82,8 +82,8 @@ gulp.task( 'styles:cf', stylesCf );
 gulp.task( 'styles:components', stylesComponents );
 gulp.task( 'styles:grid', stylesGrid );
 
-gulp.task( 'styles', [
+gulp.task( 'styles', gulp.parallel(
   'styles:cf',
   'styles:components',
   'styles:grid'
-] );
+) );

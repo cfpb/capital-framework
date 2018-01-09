@@ -15,7 +15,11 @@ const baseManifest = JSON.parse( fs.readFileSync( './package.json', 'utf8' ) );
  * @returns {Object} An output stream from gulp.
  */
 function copyComponentsBoilerplate() {
-  return gulp.src( [ './src/' + ( parseComponentName || '*' ), '!./src/*.js', '!./src/*.less' ] )
+  return gulp.src( [
+    './src/' + ( parseComponentName || '*' ),
+    '!./src/*.js',
+    '!./src/*.less'
+  ] )
     .pipe( gulpForeach( function( stream, file ) {
       const component = file.path.split( '/' ).pop();
       gulp.src( './scripts/templates/component-boilerplate/*' )
@@ -55,7 +59,7 @@ function copyComponentsSource() {
  */
 function copyComponentsManifest() {
   return gulp.src( './src/' + ( parseComponentName || '*' ) + '/package.json' )
-    .pipe( gulpData( function( file ) {
+    .pipe( gulpData( file => {
 
       /* Remove any dependencies from CF's package.json,
          we don't want components to have them. */
@@ -69,7 +73,7 @@ function copyComponentsManifest() {
       delete manifest.devDependencies;
       file.contents = new Buffer( JSON.stringify( manifest ) );
     } ) )
-    .pipe( gulpRename( function( path ) {
+    .pipe( gulpRename( path => {
       path.dirname = parseComponentName || path.dirname;
     } ) )
     .pipe( gulpJSBeautifier( {

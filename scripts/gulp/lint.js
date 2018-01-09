@@ -81,10 +81,10 @@ gulp.task( 'lint:styles', lintStyles );
 /**
  * Lints all the js files for errors
  */
-gulp.task( 'lint', [
+gulp.task( 'lint', gulp.parallel(
   'lint:build',
   'lint:tests',
   'lint:scripts',
   'lint:release',
   'lint:styles'
-] );
+) );
