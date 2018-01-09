@@ -1,5 +1,3 @@
-'use strict';
-
 const gulp = require( 'gulp' );
 const gulpEslint = require( 'gulp-eslint' );
 const gulpStylelint = require( 'gulp-stylelint' );
@@ -26,7 +24,7 @@ function _genericLintJs( src ) {
 gulp.task( 'lint:build', () => {
   _genericLintJs( [
     'gulpfile.js',
-    'gulp/**/*.js'
+    'scripts/gulp/**/*.js'
   ] );
 } );
 
@@ -51,8 +49,7 @@ gulp.task( 'lint:scripts', () => {
  * Lints the source LESS files for errors.
  */
 gulp.task( 'lint:styles', () => {
-  return gulp
-    .src( ['!src/cf-grid/src-generated/*.less', 'src/**/*.less'] )
+  gulp.src( [ '!src/cf-grid/src-generated/*.less', 'src/**/*.less' ] )
     .pipe( gulpStylelint( {
       reporters: [
         { formatter: 'string', console: true }
