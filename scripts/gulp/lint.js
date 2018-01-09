@@ -1,5 +1,3 @@
-'use strict';
-
 const gulp = require( 'gulp' );
 const gulpEslint = require( 'gulp-eslint' );
 const gulpStylelint = require( 'gulp-stylelint' );
@@ -26,7 +24,7 @@ function _genericLintJs( src ) {
 gulp.task( 'lint:build', () => {
   _genericLintJs( [
     'gulpfile.js',
-    'gulp/**/*.js'
+    'scripts/gulp/**/*.js'
   ] );
 } );
 
@@ -54,8 +52,7 @@ gulp.task( 'lint:styles', () => {
   // Pass all command line flags to Stylelint.
   const options = minimist( process.argv.slice( 2 ) );
   const willFix = options.fix || false;
-  return gulp
-    .src( [
+  return gulp.src( [
       '!src/cf-*/node_modules/**/*.less',
       '!src/cf-grid/src-generated/*.less',
       'src/**/*.less'
