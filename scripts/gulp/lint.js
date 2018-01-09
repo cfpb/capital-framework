@@ -20,35 +20,50 @@ function _genericLintJs( src ) {
 
 /**
  * Lints the gulpfile for errors.
+ * @returns {Object} An output stream from gulp.
  */
-gulp.task( 'lint:build', () => {
-  _genericLintJs( [
+function lintBuild() {
+  return _genericLintJs( [
     'gulpfile.js',
     'scripts/gulp/**/*.js'
   ] );
-} );
+}
 
 /**
  * Lints the test js files for errors.
+ * @returns {Object} An output stream from gulp.
  */
-gulp.task( 'lint:tests', () => {
-  _genericLintJs( [
+function lintTests() {
+  return _genericLintJs( [
     'test/accessibility/*.js',
-    'test/*.js'
+    'test/**/*.js'
   ] );
-} );
+}
 
 /**
  * Lints the source js files for errors.
+ * @returns {Object} An output stream from gulp.
  */
-gulp.task( 'lint:scripts', () => {
-  _genericLintJs( [ 'src/**/src/*.js' ] );
-} );
+function lintScripts() {
+  return _genericLintJs( [ 'src/**/src/*.js' ] );
+}
+
+/**
+ * Lints the release js for errors.
+ * TODO: After release files are tested, combine this task with the build one
+ * @returns {Object} An output stream from gulp.
+ */
+function lintRelease() {
+  return _genericLintJs( [
+    'scripts/npm/prepublish/**/*.js'
+  ] );
+}
 
 /**
  * Lints the source LESS files for errors.
+ * @returns {Object} An output stream from gulp.
  */
-gulp.task( 'lint:styles', () => {
+function lintStyles() {
   // Pass all command line flags to Stylelint.
   const options = minimist( process.argv.slice( 2 ) );
   const willFix = options.fix || false;
@@ -65,17 +80,13 @@ gulp.task( 'lint:styles', () => {
       ]
     } ) )
     .pipe( gulp.dest( 'src' ) );
-} );
+};
 
-/**
- * Lints the release js for errors.
- * TODO: After release files are tested, combine this task with the build one
- */
-gulp.task( 'lint:release', () => {
-  _genericLintJs( [
-    'scripts/npm/prepublish/**/*.js'
-  ] );
-} );
+gulp.task( 'lint:build', lintBuild );
+gulp.task( 'lint:tests', lintTests );
+gulp.task( 'lint:scripts', lintScripts );
+gulp.task( 'lint:release', lintRelease );
+gulp.task( 'lint:styles', lintStyles );
 
 /**
  * Lints all the js files for errors
@@ -84,6 +95,6 @@ gulp.task( 'lint', [
   'lint:build',
   'lint:tests',
   'lint:scripts',
-  'lint:styles',
-  'lint:release'
+  'lint:release',
+  'lint:styles'
 ] );
