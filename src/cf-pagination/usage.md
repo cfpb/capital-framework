@@ -1,14 +1,16 @@
+# cf-pagination
+
 The cf-pagination component provides a responsive approach to multipage page
 navigation for Capital Framework.
 
 [`cf-core`](../cf-core), [`cf-buttons`](../cf-buttons), and
 [`cf-icons`](../cf-icons) components are all dependencies of this component.
 
-> NOTE: If you use `cf-pagination.less` directly,
+**NOTE: If you use `cf-pagination.less` directly,
   be sure to run the file through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
   or your compiled Capital Framework CSS will
-  not work perfectly in older browsers.
+  not work perfectly in older browsers.**
 
 
 ## Table of contents
@@ -29,15 +31,15 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
-```
-@pagination-text:               @gray;
-@pagination-bg:                 @gray-10;
+```less
+@pagination-text: @gray;
+@pagination-bg:   @gray-10;
 ```
 
 ### Sizing variables
 
-```
-@pagination-btn-min-width-px:   130px;
+```less
+@pagination-btn-min-width-px: 130px;
 ```
 
 

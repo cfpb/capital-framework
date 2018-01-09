@@ -1,13 +1,15 @@
+# cf-layout
+
 A set of HTML and CSS layout helpers.
 
 [`cf-core`](../cf-core) and [`cf-grid`](../cf-grid) components are
 dependencies of this component.
 
-> NOTE: If you use `cf-layout.less` directly,
+**NOTE: If you use `cf-layout.less` directly,
   be sure to run the file through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
   or your compiled Capital Framework CSS will
-  not work perfectly in older browsers.
+  not work perfectly in older browsers.**
 
 
 ## Table of contents
@@ -67,7 +69,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
-```
+```less
 // .block
 @block__bg:                     @gray-5;
 @block__border:                 @gray-40;
@@ -481,28 +483,30 @@ left, sidebar on the right, in a ratio of 2:1).
 
 It is assumed that the content is wider than the sidebar.
 
-<main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <aside class="content_sidebar">
-            Section navigation
-        </aside>
-        <section class="content_main">
-            <h2>Main content area</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cum corrupti tempora nam nihil qui mollitia consectetur
-                corporis nemo culpa dolorum! Laborum at eos deleniti
-                consequatur itaque officiis debitis quisquam! Provident!
-            </p>
-        </section>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
+<div>
+    <main class="content content__1-3" role="main">
+        <div class="content_bar"></div>
+        <div class="content_wrapper">
+            <aside class="content_sidebar">
+                Section navigation
+            </aside>
+            <section class="content_main">
+                <h2>Main content area</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Cum corrupti tempora nam nihil qui mollitia consectetur
+                    corporis nemo culpa dolorum! Laborum at eos deleniti
+                    consequatur itaque officiis debitis quisquam! Provident!
+                </p>
+            </section>
+        </div>
+    </main>
+    <footer class="footer" role="contentinfo">
+        <div class="wrapper">
+            Footer
+        </div>
+    </footer>
+</div>
 
 ```
 <main class="content content__1-3" role="main">
@@ -543,28 +547,30 @@ It is assumed that the content is wider than the sidebar.
 _Inline styling is for demonstration purposes only; do not include it in your
 markup._
 
-<main class="content content__2-1" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <section class="content_main">
-            <h2>Main content area</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cum corrupti tempora nam nihil qui mollitia consectetur
-                corporis nemo culpa dolorum! Laborum at eos deleniti
-                consequatur itaque officiis debitis quisquam! Provident!
-            </p>
-        </section>
-        <aside class="content_sidebar" style="background: #F1F2F2">
-            Sidebar
-        </aside>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
+<div>
+    <main class="content content__2-1" role="main">
+        <div class="content_bar"></div>
+        <div class="content_wrapper">
+            <section class="content_main">
+                <h2>Main content area</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Cum corrupti tempora nam nihil qui mollitia consectetur
+                    corporis nemo culpa dolorum! Laborum at eos deleniti
+                    consequatur itaque officiis debitis quisquam! Provident!
+                </p>
+            </section>
+            <aside class="content_sidebar" style="background: #F1F2F2">
+                Sidebar
+            </aside>
+        </div>
+    </main>
+    <footer class="footer" role="contentinfo">
+        <div class="wrapper">
+            Footer
+        </div>
+    </footer>
+</div>
 
 ```
 <main class="content content__2-1" role="main">
@@ -600,28 +606,30 @@ Add a class of `.content_main__narrow` to `.content_main` to get a one-column
 _Inline styling is for demonstration purposes only; do not include it in your
 markup._
 
-<main class="content content__2-1" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <section class="content_main content_main__narrow">
-            <h2>Main content area</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cum corrupti tempora nam nihil qui mollitia consectetur
-                corporis nemo culpa dolorum! Laborum at eos deleniti
-                consequatur itaque officiis debitis quisquam! Provident!
-            </p>
-        </section>
-        <aside class="content_sidebar" style="background: #F1F2F2">
-            Sidebar
-        </aside>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
+<div>
+    <main class="content content__2-1" role="main">
+        <div class="content_bar"></div>
+        <div class="content_wrapper">
+            <section class="content_main content_main__narrow">
+                <h2>Main content area</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Cum corrupti tempora nam nihil qui mollitia consectetur
+                    corporis nemo culpa dolorum! Laborum at eos deleniti
+                    consequatur itaque officiis debitis quisquam! Provident!
+                </p>
+            </section>
+            <aside class="content_sidebar" style="background: #F1F2F2">
+                Sidebar
+            </aside>
+        </div>
+    </main>
+    <footer class="footer" role="contentinfo">
+        <div class="wrapper">
+            Footer
+        </div>
+    </footer>
+</div>
 
 ```
 <main class="content content__2-1" role="main">
@@ -654,30 +662,32 @@ markup._
 Add a class of `.content__flush-bottom` to `.content_main` or
 `.content_sidebar` to remove bottom padding.
 
-<main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <aside class="content_sidebar content__flush-bottom">
-            Side with no bottom padding...
-        </aside>
-        <section class="content_main content__flush-bottom">
-            Main content with no bottom padding...
-            <div class="block
-                        block__flush-bottom
-                        block__flush-sides
-                        block__bg">
-                .content__flush-bottom is very useful when you have a
-                content block inside of .content_main with a background
-                and flush sides.
-            </div>
-        </section>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
+<div>
+    <main class="content content__1-3" role="main">
+        <div class="content_bar"></div>
+        <div class="content_wrapper">
+            <aside class="content_sidebar content__flush-bottom">
+                Side with no bottom padding...
+            </aside>
+            <section class="content_main content__flush-bottom">
+                Main content with no bottom padding...
+                <div class="block
+                            block__flush-bottom
+                            block__flush-sides
+                            block__bg">
+                    .content__flush-bottom is very useful when you have a
+                    content block inside of .content_main with a background
+                    and flush sides.
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer" role="contentinfo">
+        <div class="wrapper">
+            Footer
+        </div>
+    </footer>
+</div>
 
 ```
 <main class="content content__1-3" role="main">
@@ -714,22 +724,24 @@ Add a class of `.content__flush-top-on-small` to `.content_main` or
 screens in this case refers to the breakpoint where `.content_main` and
 `.content_sidebar` single column layout.
 
-<main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <aside class="content_sidebar content__flush-top-on-small">
-            Side with no top padding on small screens...
-        </aside>
-        <section class="content_main">
-            Main content
-        </section>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
+<div>
+    <main class="content content__1-3" role="main">
+        <div class="content_bar"></div>
+        <div class="content_wrapper">
+            <aside class="content_sidebar content__flush-top-on-small">
+                Side with no top padding on small screens...
+            </aside>
+            <section class="content_main">
+                Main content
+            </section>
+        </div>
+    </main>
+    <footer class="footer" role="contentinfo">
+        <div class="wrapper">
+            Footer
+        </div>
+    </footer>
+</div>
 
 ```
 <main class="content content__1-3" role="main">
@@ -758,22 +770,24 @@ Add a class of `.content__flush-all-on-small` to `.content_main` or
 screens only. 'Small' screens in this case refers to the breakpoint where
 `.content_main` and `.content_sidebar` single column layout.
 
-<main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <aside class="content_sidebar content__flush-all-on-small">
-            Side with no padding or border-based gutters on small screens...
-        </aside>
-        <section class="content_main">
-            Main content
-        </section>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
+<div>
+    <main class="content content__1-3" role="main">
+        <div class="content_bar"></div>
+        <div class="content_wrapper">
+            <aside class="content_sidebar content__flush-all-on-small">
+                Side with no padding or border-based gutters on small screens...
+            </aside>
+            <section class="content_main">
+                Main content
+            </section>
+        </div>
+    </main>
+    <footer class="footer" role="contentinfo">
+        <div class="wrapper">
+            Footer
+        </div>
+    </footer>
+</div>
 
 ```
 <main class="content content__1-3" role="main">

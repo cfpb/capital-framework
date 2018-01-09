@@ -1,14 +1,14 @@
+# cf-core
+
 The cf-core component acts as the backbone for Capital Framework.
 It's made up of four child components `cf-vars`, `cf-media-queries`,
 `cf-utilities`, and `cf-base`.
 
-> NOTE: If you use any cf-core Less file directly,
+**NOTE: If you use any cf-core Less file directly,
   be sure to run the files through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
   or your compiled Capital Framework CSS will
-  not work perfectly in older browsers.
-
-[//]: # (NOTE: The markdown adds a `p` element inside the `blockquote`, we need to explore a style fix so this is more obviously a `blockquote`.)
+  not work perfectly in older browsers.**
 
 ## Table of contents
 
@@ -48,7 +48,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 Color variables referenced in comments are from [cf-core brand-palette.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
-```
+```less
 // body
 @text:                   @black;
 
@@ -80,7 +80,7 @@ Color variables referenced in comments are from [cf-core brand-palette.less](htt
 
 ### Sizing variables
 
-```
+```less
 @base-font-size-px:   16px;
 @base-line-height-px: 22px;
 @base-line-height:    unit(@base-line-height-px / @base-font-size-px);
@@ -98,20 +98,20 @@ Color variables referenced in comments are from [cf-core brand-palette.less](htt
 
 ### Breakpoint variables
 
-```
-@bp-xs-max:           600px;
-@bp-sm-min:           @bp-xs-max + 1px;
-@bp-sm-max:           900px;
-@bp-med-min:          @bp-sm-max + 1px;
-@bp-med-max:          1020px;
-@bp-lg-min:           @bp-med-max + 1px;
-@bp-lg-max:           1230px;
-@bp-xl-min:           @bp-lg-max + 1px;
+```less
+@bp-xs-max:  600px;
+@bp-sm-min:  @bp-xs-max + 1px;
+@bp-sm-max:  900px;
+@bp-med-min: @bp-sm-max + 1px;
+@bp-med-max: 1020px;
+@bp-lg-min:  @bp-med-max + 1px;
+@bp-lg-max:  1230px;
+@bp-xl-min:  @bp-lg-max + 1px;
 ```
 
 ### Webfont variables
 
-```
+```less
 @webfont-regular: Arial;
 @webfont-italic:  Arial;
 @webfont-medium:  Arial;
@@ -122,14 +122,14 @@ Color variables referenced in comments are from [cf-core brand-palette.less](htt
 ## Media queries
 
 Mixins for consistent media queries that take `px` values and convert them
-to `em`s.
+to `em` values.
 
 ### Respond to min and max width mixins
 
 These mixins take a `px` value breakpoint and set of style rules and converts
 them to the corresponding min or max width media query.
 
-```
+```less
 .respond-to-min(@bp, @rules);
 
 .respond-to-max(@bp, @rules);
@@ -137,15 +137,14 @@ them to the corresponding min or max width media query.
 
 Ex.
 
-```
+```less
 .respond-to-min( @bp-sm-min, {
     .title {
         font-size: 2em;
     }
 } );
 
-// Compiles to
-
+// Compiles to…
 @media only all and (min-width: 37.5625em) {
     .title {
         font-size: 2em;
@@ -158,21 +157,20 @@ Ex.
 This mixin takes both min and max `px` values and a set of style rules and
 converts them to the corresponding min and max media query.
 
-```
+```less
 .respond-to-range(@bp1, @bp2, @rules);
 ```
 
 Ex.
 
-```
+```less
 .respond-to-range( @bp-sm-min, @bp-sm-max, {
     .title {
         font-size: 2em;
     }
 } );
 
-// Compiles to
-
+// Compiles to…
 @media only all and (min-width: 37.5625em) and (max-width: 56.25em) {
     .title {
         font-size: 2em;
@@ -184,10 +182,10 @@ Ex.
 
 This mixin allows us to easily write styles
 that target high-resolution screens,
-such as Apple retina screens
+such as Apple retina screens.
 
 ```less
-// The following LESS...
+// The following LESS…
 .example {
     background: url(regular-resolution-image.png);
     .respond-to-dpi(2, {
@@ -195,7 +193,7 @@ such as Apple retina screens
     });
 }
 
-// ...Exports to
+// …Exports to
 .example {
     background: url(regular-resolution-image.png);
 }
@@ -212,7 +210,7 @@ This mixin allows us to easily write styles that target both
 `@media print` and `.print`.
 
 ```less
-// The following LESS...
+// The following LESS…
 .example {
     color: @gray;
     .respond-to-print({
@@ -220,7 +218,7 @@ This mixin allows us to easily write styles that target both
     });
 }
 
-// ...Exports to
+// …Exports to
 .example {
     color: #75787B;
 }
@@ -244,23 +242,24 @@ This mixin allows us to easily write styles that target both
 Hide an element when JavaScript isn't available. Requires a small script in the
 `<head>` of your `<html>` document that removes a `.no-js` class.
 
-1. Add a `no-js` class added to the `html`
+1. Add a `no-js` class to the `html`:
 
   ```
   <html class="no-js">
   ```
 
-2. Add a script to remove the `no-js` class after confirming JavaScript is available
+2. Add a script to remove the `no-js`
+   class after confirming JavaScript is available:
 
   ```
   <script>
-      // Confirm availability of JavaScript and remove no-js class from html
+      // Confirm availability of JavaScript and remove no-js class from html.
       var docElement = document.documentElement;
       docElement.className = docElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2');
   </script>
   ```
 
-3. Add the utility class to the element you want to hide
+3. Add the utility class to the element you want to hide:
 
   ```
   <div class="u-js-only"></div>
@@ -268,13 +267,11 @@ Hide an element when JavaScript isn't available. Requires a small script in the
 
 #### Clearfix
 
-Clear floated elements to avoid following elements from flowing into the
-previous one.
+Clear the floated elements to avoid having floated elements
+flow around later ones.
 
 For example, to float an element to the left, but prevent the following text
-from flowing into it.
-
-_More information see: <http://css-tricks.com/snippets/css/clear-fix>_
+from flowing into it, use:
 
 ```
 <div class="u-clearfix">
@@ -283,13 +280,16 @@ _More information see: <http://css-tricks.com/snippets/css/clear-fix>_
 <em>This text would normally flow up into the black box if the box above</em>
 ```
 
+**NOTE: For more information see
+[this article](http://css-tricks.com/snippets/css/clear-fix).**
+
 #### Visually hidden
 
 Hide an element from view while keeping it accessible to screen readers.
 
 For example, to create a link with a social network icon,
-but allow non-sighted users to understand the context,
-add descriptive text with the `u-visually-hidden` class.
+but allow sight-impaired users to understand the context,
+add descriptive text with the `u-visually-hidden` class:
 
 ```
 <h1>
@@ -311,13 +311,16 @@ use JavaScript to remove this class from the element after verifying support.
 
 #### Inline block
 
-*DEPRECATED*. Identical to `display: inline-block`.
+**NOTE: DEPRECATED. Identical to `display: inline-block`.**
 
 ```
 <div class="u-inline-block"></div>
 ```
 
 #### Float right
+
+Adds `float: right` to the element. Can be used as a mixin with `.u-right()`
+to add right floating behavior to an element.
 
 ```
 <div class="u-right"></div>
@@ -328,24 +331,23 @@ use JavaScript to remove this class from the element after verifying support.
 Force word breaks within an element. Useful for small containers where text may
 over-run the width of the container.
 
-_This only works in Internet Explorer 8 when the element with the
+**NOTE: This only works in Internet Explorer 8 when the element with the
 `.u-break-word` class has layout. See
-<http://stackoverflow.com/questions/3997223/word-wrapbreak-word-not-working-in-ie8>
-for more information._
+[this stackoverflow](http://stackoverflow.com/questions/3997223/word-wrapbreak-word-not-working-in-ie8)
+for more information.**
 
 <div class="u-break-word u-mb30"
      style="width: 100px; padding: 0.5em; border: 1px solid silver;">
     This link should break:
     <a href="#">
-        something@something.com
+        something@example.com
     </a>
 </div>
-
 <div class="u-mb30"
      style="width: 100px; padding: 0.5em; border: 1px solid silver;">
     This link should not:
     <a href="#">
-        something@something.com
+        something@example.com
     </a>
 </div>
 
@@ -353,14 +355,14 @@ for more information._
 <div class="u-break-word">
     This link should break:
     <a href="#">
-        something@something.com
+        something@example.com
     </a>
 </div>
 
 <div>
     This link should not:
     <a href="#">
-        something@something.com
+        something@example.com
     </a>
 </div>
 ```
@@ -369,7 +371,9 @@ for more information._
 
 Force a `margin` top or bottom on an element in pixels.
 
-`.u-m[p][#]`
+```less
+.u-m[p][#]
+```
 
 _`[p]` is the position, use `t` for top or `b` for bottom. `[#]` is the pixel
 value, available options are 0, 5, 10, 15, 20, 30, 45, 60_
@@ -382,8 +386,7 @@ value, available options are 0, 5, 10, 15, 20, 30, 45, 60_
 
 Set the `width` of an element in percentages.
 
-**NOTE: Inline style properties for demonstration only.**
-
+<!-- NOTE: Inline style properties for demonstration only. -->
 <div class="u-w100pct" style="background: #f4edf3; margin-bottom: 1px;">
     <code>.u-w100pct</code>
 </div>
@@ -476,34 +479,30 @@ Set the `width` of an element in percentages.
 
 Show or hide content based on the current display size.
 
-__NOTE: Inline style properties for demonstration only__
-
 ##### Show on mobile
 
-Displays content on screen widths under `601px`.
+Displays content on a screen width under `601px`.
 
-<div style="border: 1px solid black; height: 22px; padding: 5px;">
+<!-- NOTE: Inline style properties for demonstration only. -->
+<div style="border: 1px solid black; min-height: 22px; padding: 5px;">
     <p class="u-show-on-mobile">Visible on mobile</p>
 </div>
 
 ```
-<div style="border: 1px solid black; height: 22px; padding: 5px;">
-    <p class="u-show-on-mobile">Visible on mobile</p>
-</div>
+<p class="u-show-on-mobile">Visible on mobile</p>
 ```
 
 ##### Hide on mobile
 
-Hides content on screens widths under `601px`.
+Hides content on a screen width under `601px`.
 
-<div style="border: 1px solid black; height: 22px; padding: 5px;">
+<!-- NOTE: Inline style properties for demonstration only. -->
+<div style="border: 1px solid black; min-height: 22px; padding: 5px;">
     <p class="u-hide-on-mobile">Hidden on mobile</p>
 </div>
 
 ```
-<div style="border: 1px solid black; height: 22px; padding: 5px;">
-    <p class="u-hide-on-mobile">Hidden on mobile</p>
-</div>
+<p class="u-hide-on-mobile">Hidden on mobile</p>
 ```
 
 ### Mixins
@@ -516,7 +515,7 @@ side.
 _Pass `font-size` as the argument for calculating spacing, default value is
 `@base-font-size-px`._
 
-```
+```less
 .u-align-with-btn(@font-size: @base-font-size-px);
 ```
 
@@ -529,7 +528,7 @@ a flexible video you will need to use this mixin.
 _Read more about intrinsic ratios:
 <http://alistapart.com/article/creating-intrinsic-ratios-for-video>_
 
-```
+```less
 .u-flexible-container-mixin(@width: 16, @height: 9);
 ```
 
@@ -541,12 +540,11 @@ as the second argument. Default values are `16, 9`._
 
 _Original mixin credit: <https://gist.github.com/craigmdennis/6655047>_
 
-__NOTE: Inline style properties for demonstration only__
-
 To create a 16:9 flexible video player, wrap the video element in an element
 with `u-flexible-container` and add the `u-flexible-container_inner` to the
 video element.
 
+<!-- NOTE: Inline style properties for demonstration only. -->
 <div class="u-flexible-container">
     <video class="u-flexible-container_inner"
            style="background:#75787B;"
@@ -606,64 +604,82 @@ Calling the mixin without arguments will set the following states:
 default - `#0071bc`, `:hover` - `#205493`, `focus:` - `#0071bc`,
 `:visited` - `#4c2c92`, `:active` - `#046b99`.
 
-[//]: # (NOTE: These aren't the default colors within this project, only once the brand theme has been applied.)
-
-`u-link__colors()`
+```less
+u-link__colors()
+```
 
 Passing a single argument into the mixin will set the color for the
 default, `:visited`, `:hover`, `:focus`, `:active` states.
 
-`u-link__colors(@c)`
+```less
+u-link__colors(@c)
+```
 
 Passing two arguments into the mixin will set the color for the default,
 `:visited`, and `:active` states as the first argument, and `:hover` and
 `:focus` as the second argument.
 
-`u-link__colors(@c, @h)`
+```less
+u-link__colors(@c, @h)
+```
 
 Passing five arguments will set the color for the default, `:visited`,
 `:hover`, `:focus`, and `:active` states respectively.
 
-`u-link__colors(@c, @v, @h, @f, @a)`
+```less
+u-link__colors(@c, @v, @h, @f, @a)
+```
 
 Passing ten arguments will set the text (default, `:visited`, `:hover`,
 `:focus`, and `:active` states in the first five arguments) and border colors
 (default, `:visited`, `:hover`, `:focus`, and `:active` states in the
 following five arguments) separately.
 
-`u-link__colors(@c, @v, @h, @f, @a, @bc, @bv, @bh, @bf, @ba)`
+```less
+u-link__colors(@c, @v, @h, @f, @a, @bc, @bv, @bh, @bf, @ba)
+```
 
-__A base mixin of `u-link__colors-base()` exists, but please refrain from
+**NOTE: A base mixin of `u-link__colors-base()` exists, but please refrain from
 using this mixin directly in order to promote consistent naming throughout
 this project. If you need to set colors for all states of a link, use
-`.u-link__colors(@c, @v, @h, @f, @a)`.__
+`.u-link__colors(@c, @v, @h, @f, @a)`.**
 
 ##### Link borders
 
 Force the default bottom `border` on the default and `:hover` states.
 
-`.u-link__border()`
+```less
+.u-link__border()
+```
 
 Turn off the default bottom `border` on the default and `:hover` states.
 
-`.u-link__no-border()`
+```less
+.u-link__no-border()
+```
 
 Turn off the default bottom `border` on the default state but force a bottom
 `border` on the `:hover` state.
 
-`.u-link__hover-border()`
+```less
+.u-link__hover-border()
+```
 
 ##### Link children
 
 Calling this mixin without arguments will set the default color for the
 `:hover` state of a child within a link, without affecting the link itself.
 
-`.u-link__hover-child()`
+```less
+.u-link__hover-child()
+```
 
 Passing a single argument into the mixin will set a custom color for the
 `:hover` state of a child within a link, without affecting the link itself.
 
-`.u-link__hover-child(@c)`
+```less
+.u-link__hover-child(@c)
+```
 
 #### Small text utility
 
@@ -674,16 +690,20 @@ Sets the element to `14px` (in `em`s).
 _To be used on default `16px` text only. To use on text set to another size,
 use the mixin below._
 
-`.u-small-text`
+```less
+.u-small-text
+```
 
 ##### Mixin
 
 Sets the element to `14px` (in `em`s) based on the text size passed as
 `@context`.
 
-`.u-small-text(@context)`
-
+```less
+.u-small-text(@context)
 ```
+
+```less
 // Ex.
 .example {
   font-size: unit(20px / @base-font-size-px, em);
@@ -693,7 +713,7 @@ Sets the element to `14px` (in `em`s) based on the text size passed as
   }
 }
 
-// Compiles to
+// Compiles to…
 .example {
   font-size: 1.25em;
 }
@@ -710,7 +730,7 @@ Sets the element to `14px` (in `em`s) based on the text size passed as
 
 Sets the font-stack, weight, and style of an element.
 
-```
+```less
 .u-webfont-regular();
 .u-webfont-italic();
 .u-webfont-medium();
@@ -721,12 +741,12 @@ To use your own fonts in the webfont mixins, set your own font with the
 `@webfont-regular/italic/medium/demi` variables in your `cf-theme-overrides.less`
 file.
 
-_These mixins also add the appropriate `.lt-ie9` overrides. `.lt-ie9`
+**NOTE: These mixins also add the appropriate `.lt-ie9` overrides. `.lt-ie9`
 overrides are necessary to override `font-style` and `font-weight` each time
 the webfont is used. These overrides are built into the webfont mixins so you
 get them automatically. Note that this requires you to use conditional
 classes on the `html` element:
-<https://github.com/h5bp/html5-boilerplate/blob/v4.3.0/doc/html.md#conditional-html-classes.>_
+<https://github.com/h5bp/html5-boilerplate/blob/v4.3.0/doc/html.md#conditional-html-classes.>**
 
 ### Type hierarchy
 
@@ -748,8 +768,10 @@ aliquip ex ea commodo consequat.</p>
 
 _Responsive heading. At small screen sizes, displays as heading level 2._
 
-<h1>Example heading element</h1>
-<p class="h1">A non-heading element</p>
+<div>
+    <h1>Example heading element</h1>
+    <p class="h1">A non-heading element</p>
+</div>
 
 ```
 <h1>Example heading element</h1>
@@ -760,8 +782,10 @@ _Responsive heading. At small screen sizes, displays as heading level 2._
 
 _Responsive heading. At small screen sizes, displays as heading level 3._
 
-<h2>Example heading element</h2>
-<p class="h2">A non-heading element</p>
+<div>
+    <h2>Example heading element</h2>
+    <p class="h2">A non-heading element</p>
+</div>
 
 ```
 <h2>Example heading element</h2>
@@ -772,8 +796,10 @@ _Responsive heading. At small screen sizes, displays as heading level 3._
 
 _Responsive heading. At small screen sizes, displays as heading level 4._
 
-<h3>Example heading element</h3>
-<p class="h3">A non-heading element</p>
+<div>
+    <h3>Example heading element</h3>
+    <p class="h3">A non-heading element</p>
+</div>
 
 ```
 <h3>Example heading element</h3>
@@ -784,8 +810,10 @@ _Responsive heading. At small screen sizes, displays as heading level 4._
 
 _Not a responsive heading._
 
-<h4>Example heading element</h4>
-<p class="h4">A non-heading element</p>
+<div>
+    <h4>Example heading element</h4>
+    <p class="h4">A non-heading element</p>
+</div>
 
 ```
 <h4>Example heading element</h4>
@@ -796,8 +824,10 @@ _Not a responsive heading._
 
 _Not a responsive heading._
 
-<h5>Example heading element</h5>
-<p class="h5">A non-heading element</p>
+<div>
+    <h5>Example heading element</h5>
+    <p class="h5">A non-heading element</p>
+</div>
 
 ```
 <h5>Example heading element</h5>
@@ -808,8 +838,10 @@ _Not a responsive heading._
 
 _Not a responsive heading._
 
-<h6>Example heading element</h6>
-<p class="h6">A non-heading element</p>
+<div>
+    <h6>Example heading element</h6>
+    <p class="h6">A non-heading element</p>
+</div>
 
 ```
 <h6>Example heading element</h6>
@@ -943,22 +975,24 @@ demonstration purposes only and should not be used in production._
 
 #### Underline conditions
 
-<p>
-    <a href="#">A child of a paragraph</a>
-</p>
-<ul>
-    <li>
-        <a href="#">A child of a list item</a>
-    </li>
-</ul>
-<dl>
-    <dt>
-        Definition list term
-    </dt>
-    <dd>
-        <a href="#">A child of a definition list description</a>
-    </dd>
-</dl>
+<div>
+    <p>
+        <a href="#">A child of a paragraph</a>
+    </p>
+    <ul>
+        <li>
+            <a href="#">A child of a list item</a>
+        </li>
+    </ul>
+    <dl>
+        <dt>
+            Definition list term
+        </dt>
+        <dd>
+            <a href="#">A child of a definition list description</a>
+        </dd>
+    </dl>
+</div>
 
 ```
 <p>
@@ -1027,12 +1061,14 @@ Links within a `nav` element are not underlined.
 
 #### Unordered list
 
-<p> Paragraph example for visual reference</p>
-<ul>
-    <li>List item 1</li>
-    <li>List item 2</li>
-    <li>List item 3</li>
-</ul>
+<div>
+    <p> Paragraph example for visual reference</p>
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ul>
+</div>
 
 ```
 <p> Paragraph example for visual reference</p>
@@ -1045,12 +1081,14 @@ Links within a `nav` element are not underlined.
 
 #### Ordered list
 
-<p>Paragraph example for visual reference</p>
-<ol>
-    <li>List item 1</li>
-    <li>List item 2</li>
-    <li>List item 3</li>
-</ol>
+<div>
+    <p>Paragraph example for visual reference</p>
+    <ol>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+</div>
 
 ```
 <p>Paragraph example for visual reference</p>
@@ -1123,11 +1161,11 @@ Links within a `nav` element are not underlined.
 
 ### Block quote
 
-_Note that the use of a `blockquote` is to quote an external work. See
-`.pull-quote` if you need to highlight an excerpt from the current work._
+The use of a `blockquote` is to quote an external work. See
+`.pull-quote` if you need to highlight an excerpt from the current work.
 
-_Note that it is best practice to document the URL of a quoted work using
-the `cite` attribute._
+**NOTE: It is best practice to document the URL of a quoted work using
+the `cite` attribute.**
 
 <blockquote cite="link-to-source">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
@@ -1211,4 +1249,4 @@ This is an example of a fenced code block following some paragraph text.
 </pre>
 ```
 
-_Do not include indentation or white space within the `<code>` tags unless you want it to be rendered._
+**NOTE: Do not include indentation or white space within the `<code>` tags unless you want it to be rendered.**

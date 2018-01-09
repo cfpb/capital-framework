@@ -1,3 +1,5 @@
+# cf-forms
+
 The cf-forms component provides extensions to the basic form styles for
 Capital Framework.
 
@@ -177,21 +179,25 @@ appear in code.
 
 #### Default state
 
-<label class="a-label a-label__heading" for="textinput-example-default">
-    A text input
-</label>
-<input class="a-text-input"
-       type="text"
-       id="textinput-example-default"
-       placeholder="Enter text…"
-       value="Lorem ipsum">
+<p>
+    <label class="a-label a-label__heading" for="textinput-example-default">
+        A text input
+    </label>
+    <input class="a-text-input"
+           type="text"
+           id="textinput-example-default"
+           placeholder="Enter text…"
+           value="Lorem ipsum">
+</p>
 
-<label class="a-label a-label__heading" for="textarea-example-default">
-    A textarea input
-</label>
-<textarea class="a-text-input"
-          id="textarea-example-default"
-          placeholder="Enter text…">Lorem Ipsum</textarea>
+<p>
+    <label class="a-label a-label__heading" for="textarea-example-default">
+        A textarea input
+    </label>
+    <textarea class="a-text-input"
+              id="textarea-example-default"
+              placeholder="Enter text…">Lorem Ipsum</textarea>
+</p>
 
 ```html
 <label class="a-label a-label__heading" for="textinput-example-default">
@@ -217,21 +223,26 @@ Generally this is only useful for documentation purposes.
 
 #### Hover state
 
-<label class="a-label a-label__heading" for="textinput-example-hover">
-    A text input
-</label>
-<input class="a-text-input hover"
-       type="text"
-       id="textinput-example-hover"
-       placeholder="Enter text…"
-       value="Lorem ipsum">
+<p>
+    <label class="a-label a-label__heading" for="textinput-example-hover">
+        A text input
+    </label>
+    <input class="a-text-input hover"
+           type="text"
+           id="textinput-example-hover"
+           placeholder="Enter text…"
+           value="Lorem ipsum">
+</p>
 
-<label class="a-label a-label__heading" for="textarea-example-hover">
-    A textarea input
-</label>
-<textarea class="a-text-input hover"
-          id="textarea-example-hover"
-          placeholder="Enter text…">Lorem Ipsum</textarea>
+<p>
+    <label class="a-label a-label__heading" for="textarea-example-hover">
+        A textarea input
+    </label>
+    <textarea class="a-text-input hover"
+              id="textarea-example-hover"
+              placeholder="Enter text…">Lorem Ipsum</textarea>
+</p>
+
 ```html
 <label class="a-label a-label__heading" for="textinput-example-hover">
     A text input
@@ -252,21 +263,26 @@ Generally this is only useful for documentation purposes.
 
 #### Focus state
 
-<label class="a-label a-label__heading" for="textinput-example-focus">
-    A text input
-</label>
-<input class="a-text-input focus"
-       type="text"
-       id="textinput-example-focus"
-       placeholder="Enter text…"
-       value="Lorem ipsum">
+<p>
+    <label class="a-label a-label__heading" for="textinput-example-focus">
+        A text input
+    </label>
+    <input class="a-text-input focus"
+           type="text"
+           id="textinput-example-focus"
+           placeholder="Enter text…"
+           value="Lorem ipsum">
+</p>
 
-<label class="a-label a-label__heading" for="textarea-example-focus">
-    A textarea input
-</label>
-<textarea class="a-text-input focus"
-          id="textarea-example-focus"
-          placeholder="Enter text…">Lorem Ipsum</textarea>
+<p>
+    <label class="a-label a-label__heading" for="textarea-example-focus">
+        A textarea input
+    </label>
+    <textarea class="a-text-input focus"
+              id="textarea-example-focus"
+              placeholder="Enter text…">Lorem Ipsum</textarea>
+</p>
+
 ```html
 <label class="a-label a-label__heading" for="textinput-example-focus">
     A text input
@@ -287,23 +303,28 @@ Generally this is only useful for documentation purposes.
 
 #### Disabled state
 
-<label class="a-label a-label__heading" for="textinput-example-disabled">
-    A text input
-</label>
-<input class="a-text-input"
-       type="text"
-       id="textinput-example-focus"
-       placeholder="Enter text…"
-       value="Lorem ipsum"
-       disabled>
+<p>
+    <label class="a-label a-label__heading" for="textinput-example-disabled">
+        A text input
+    </label>
+    <input class="a-text-input"
+           type="text"
+           id="textinput-example-focus"
+           placeholder="Enter text…"
+           value="Lorem ipsum"
+           disabled>
+</p>
 
-<label class="a-label a-label__heading" for="textarea-example-disabled">
-    A textarea input
-</label>
-<textarea class="a-text-input"
-          id="textarea-example-focus"
-          placeholder="Enter text…"
-          disabled>Lorem Ipsum</textarea>
+<p>
+    <label class="a-label a-label__heading" for="textarea-example-disabled">
+        A textarea input
+    </label>
+    <textarea class="a-text-input"
+              id="textarea-example-focus"
+              placeholder="Enter text…"
+              disabled>Lorem Ipsum</textarea>
+</p>
+
 ```html
 <label class="a-label a-label__heading" for="textinput-example-disabled">
     A text input
@@ -810,9 +831,7 @@ typically to clear the input.
 
 <div class="m-btn-inside-input">
     <input type="text"
-        value="This is some really long text to make sure that the button
-               doesn't overlap the content in such a way that this input
-               becomes unusable."
+        value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
         title="Test input"
         class="a-text-input">
     <button class="a-btn a-btn__link">
@@ -846,9 +865,7 @@ creating a typical site search form.
     <div class="o-form__input-w-btn_input-container">
         <div class="m-btn-inside-input">
             <input type="text"
-                value="This is some really long text to make sure that the
-                       button doesn't overlap the content in such a way
-                       that this input becomes unusable."
+                value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
                 title="Test input"
                 class="a-text-input">
             <button class="a-btn a-btn__link">

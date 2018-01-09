@@ -1,3 +1,5 @@
+# cf-grid
+
 The grid component is a suite of Less variable and mixins that enables you to
 lay out a flexible 12-column grid with fixed-size gutters.
 (Column widths will expand and contract with the width of the page,
@@ -21,7 +23,7 @@ and apply the mixins to those semantic classes, like this:
 <div class="illustration"> … </div>
 ```
 
-```
+```less
 .description,
 .illustration {
     .grid_column(1, 2);
@@ -30,11 +32,11 @@ and apply the mixins to those semantic classes, like this:
 
 Read on for more details on the variables and mixins this component provides.
 
-> NOTE: If you use `cf-grid.less` directly,
+**NOTE: If you use `cf-grid.less` directly,
   be sure to run the file through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
   or your compiled Capital Framework CSS will
-  not work perfectly in older browsers.
+  not work perfectly in older browsers.**
 
 ## Table of contents
 
@@ -51,27 +53,27 @@ Read on for more details on the variables and mixins this component provides.
 The following Less variables are exposed,
 allowing you to easily override them before compiling.
 
-```
+```less
 @grid_wrapper-width: 1200px;
 ```
 
 The grid's maximum width in px.
 This value can be overridden in the `grid_wrapper()` mixin.
 
-```
+```less
 @grid_gutter-width: 30px;
 ```
 
 The fixed width between columns.
 
-```
+```less
 @grid_total-columns: 12;
 ```
 
 The total number of columns used in calculating column widths.
 This value can be overridden in the `grid_column()` mixin.
 
-```
+```less
 @grid_debug: false;
 ```
 
@@ -85,7 +87,7 @@ and outside left/right padding of ½ the gutter width on each side.
 
 ### Less mixin
 
-```
+```less
 .grid_wrapper( @grid_wrapper-width: @grid_wrapper-width )
 ```
 
@@ -94,7 +96,7 @@ by passing a pixel value into the mixin.
 
 ### Example
 
-```
+```less
 .main-wrapper {
     .grid_wrapper();
 }
@@ -103,7 +105,7 @@ by passing a pixel value into the mixin.
 }
 ```
 
-```
+```html
 <div class="main-wrapper">
     This container now has left and right padding and a centered max width.
 </div>
@@ -117,7 +119,7 @@ by passing a pixel value into the mixin.
 
 ### Less mixin
 
-```
+```less
 .grid_column( @columns: 1; @total: @grid_total-columns; @prefix: 0; @suffix: 0 )
 ```
 
@@ -132,7 +134,7 @@ add a wrapper just inside the column to be styled that way.
 
 ### Usage
 
-```
+```less
 .main-wrapper {
     .grid_wrapper();
 }
@@ -145,7 +147,7 @@ add a wrapper just inside the column to be styled that way.
 }
 ```
 
-```
+```html
 <div class="main-wrapper">
     <div class="half">I am half of my parent.</div>
     <div class="half">
@@ -156,9 +158,9 @@ add a wrapper just inside the column to be styled that way.
 </div>
 ```
 
-**NOTE:** cf-grid does not have a "row" concept.
+**NOTE: cf-grid does not have a "row" concept.
 If you have a 12-column grid and place 24 columns inside a wrapper,
-cf-grid columns will automatically stack into two rows of 12.
+cf-grid columns will automatically stack into two rows of 12.**
 
 
 ## Nested columns
@@ -179,13 +181,13 @@ without having to deal with the first and last columns of each row.
 
 ### Less mixin
 
-```
+```less
 .grid_nested-col-group()
 ```
 
 ### Usage
 
-```
+```less
 .main-wrapper {
     .grid_wrapper();
 }
@@ -197,7 +199,7 @@ without having to deal with the first and last columns of each row.
 }
 ```
 
-```
+```html
 <div class="main-wrapper">
     <div class="half">
         <div class="nested">
@@ -217,23 +219,23 @@ without having to deal with the first and last columns of each row.
 
 ## Push and pull mixins for source ordering
 
-**NOTE:** Using these is not advised, because the disadvantages for users
+**NOTE: Using these is not advised, because the disadvantages for users
 of assistive technology outweigh the advantages of putting your most important
-content first in the source order, but it's here if you absolutely need it.
+content first in the source order, but it's here if you absolutely need it.**
 
 ### Less mixin
 
-```
+```less
 .push( @offset: 1, @grid_total-columns: @grid_total-columns )
 ```
 
-```
+```less
 .pull( @offset: 1, @grid_total-columns: @grid_total-columns )
 ```
 
 ### Usage
 
-```
+```less
 .first {
     .grid_column(1, 2);
     .grid_pull(1);
@@ -244,7 +246,7 @@ content first in the source order, but it's here if you absolutely need it.
 }
 ```
 
-```
+```html
 <div>
     <div class="second">I am first in the markup but appear after .first.</div>
     <div class="first">I am second in the markup but appear before .second.</div>
@@ -420,7 +422,6 @@ content first in the source order, but it's here if you absolutely need it.
                 <div class="col col-4"><p>four</p></div>
             </section>
         </div>
-
         <div class="col col-6">
             <p>six</p>
             <section class="nested">
@@ -430,7 +431,6 @@ content first in the source order, but it's here if you absolutely need it.
             </section>
         </div>
     </section>
-
     <section>
         <div class="col col-3">
             <p>three</p>
@@ -439,7 +439,6 @@ content first in the source order, but it's here if you absolutely need it.
                 <div class="col col-6"><p>six</p></div>
             </section>
         </div>
-
         <div class="col col-6">
             <p>six</p>
             <section class="nested">
@@ -448,7 +447,6 @@ content first in the source order, but it's here if you absolutely need it.
                 <div class="col col-4"><p>four</p></div>
             </section>
         </div>
-
         <div class="col col-3">
             <p>three</p>
             <section class="nested">

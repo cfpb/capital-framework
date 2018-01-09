@@ -1,14 +1,16 @@
+# cf-notifications
+
 The cf-notifications component provides notification boxes
 for Capital Framework.
 
 [`cf-core`](../cf-core) and
 [`cf-icons`](../cf-icons) components are dependencies of this component.
 
-> NOTE: If you use `cf-notifications.less` directly,
+**NOTE: If you use `cf-notifications.less` directly,
   be sure to run the file through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
   or your compiled Capital Framework CSS will
-  not work perfectly in older browsers.
+  not work perfectly in older browsers.**
 
 
 ## Table of contents
@@ -34,7 +36,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-```
+```less
 @notification-bg:             #d2d3d5;
 @notification-bg-success:     #e2efd8;
 @notification-bg-warning:     #fff0dd;

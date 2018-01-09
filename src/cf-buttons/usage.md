@@ -1,3 +1,5 @@
+# cf-buttons
+
 The cf-buttons component provides extensions to the basic button styles for
 Capital Framework.
 
@@ -36,7 +38,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
-```
+```less
 // .btn
 @btn-text:                      @white;
 @btn-bg:                        @pacific;
@@ -63,7 +65,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 
 ### Sizing variables
 
-```
+```less
 // .btn
 @btn-font-size:                 @base-font-size-px;
 @btn-border-radius-size:        4px;
@@ -87,9 +89,11 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Default state
 
-<a href="#" class="a-btn" title="Test button">Anchor Tag</a>
-<button class="a-btn" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="a-btn">
+<p>
+    <a href="#" class="a-btn" title="Test button">Anchor Tag</a>
+    <button class="a-btn" title="Test button">Button Tag</button>
+    <input type="submit" value="Input Tag" class="a-btn">
+</p>
 
 ```
 <a href="#" class="a-btn" title="Test button">Anchor Tag</a>
@@ -99,9 +103,11 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Hovered state
 
-<a href="#" class="a-btn hover" title="Test button">Anchor Tag</a>
-<button class="a-btn hover" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="a-btn hover">
+<p>
+    <a href="#" class="a-btn hover" title="Test button">Anchor Tag</a>
+    <button class="a-btn hover" title="Test button">Button Tag</button>
+    <input type="submit" value="Input Tag" class="a-btn hover">
+</p>
 
 ```
 <a href="#" class="a-btn hover" title="Test button">Anchor Tag</a>
@@ -111,9 +117,11 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Focused state
 
-<a href="#" class="a-btn focus" title="Test button">Anchor Tag</a>
-<button class="a-btn focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="a-btn focus">
+<p>
+    <a href="#" class="a-btn focus" title="Test button">Anchor Tag</a>
+    <button class="a-btn focus" title="Test button">Button Tag</button>
+    <input type="submit" value="Input Tag" class="a-btn focus">
+</p>
 
 ```
 <a href="#" class="a-btn focus" title="Test button">Anchor Tag</a>
@@ -123,9 +131,11 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Active state
 
-<a href="#" class="a-btn active" title="Test button">Anchor Tag</a>
-<button class="a-btn active" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="a-btn active">
+<p>
+    <a href="#" class="a-btn active" title="Test button">Anchor Tag</a>
+    <button class="a-btn active" title="Test button">Button Tag</button>
+    <input type="submit" value="Input Tag" class="a-btn active">
+</p>
 
 ```
 <a href="#" class="a-btn active" title="Test button">Anchor Tag</a>
@@ -137,9 +147,11 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Default state
 
-<a href="#" class="a-btn a-btn__secondary">Anchor Tag</a>
-<button class="a-btn a-btn__secondary" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__secondary">
+<p>
+    <a href="#" class="a-btn a-btn__secondary">Anchor Tag</a>
+    <button class="a-btn a-btn__secondary" title="Test button">Button Tag</button>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__secondary">
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__secondary">Anchor Tag</a>
@@ -149,11 +161,13 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Hovered state
 
-<a href="#" class="a-btn a-btn__secondary hover">Anchor Tag</a>
-<button class="a-btn a-btn__secondary hover" title="Test button">
-    Button Tag
-</button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__secondary hover">
+<p>
+    <a href="#" class="a-btn a-btn__secondary hover">Anchor Tag</a>
+    <button class="a-btn a-btn__secondary hover" title="Test button">
+        Button Tag
+    </button>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__secondary hover">
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__secondary hover">Anchor Tag</a>
@@ -165,11 +179,13 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Focused state
 
-<a href="#" class="a-btn a-btn__secondary focus">Anchor Tag</a>
-<button class="a-btn a-btn__secondary focus" title="Test button">
-    Button Tag
-</button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__secondary focus">
+<p>
+    <a href="#" class="a-btn a-btn__secondary focus">Anchor Tag</a>
+    <button class="a-btn a-btn__secondary focus" title="Test button">
+        Button Tag
+    </button>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__secondary focus">
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__secondary focus">Anchor Tag</a>
@@ -181,11 +197,13 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Active state
 
-<a href="#" class="a-btn a-btn__secondary active">Anchor Tag</a>
-<button class="a-btn a-btn__secondary active" title="Test button">
-    Button Tag
-</button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__secondary active">
+<p>
+    <a href="#" class="a-btn a-btn__secondary active">Anchor Tag</a>
+    <button class="a-btn a-btn__secondary active" title="Test button">
+        Button Tag
+    </button>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__secondary active">
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__secondary active">Anchor Tag</a>
@@ -199,11 +217,13 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Default state
 
-<a href="#" class="a-btn a-btn__warning">Anchor Tag</a>
-<button class="a-btn a-btn__warning" title="Test button">
-    Button Tag
-</button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__warning">
+<p>
+    <a href="#" class="a-btn a-btn__warning">Anchor Tag</a>
+    <button class="a-btn a-btn__warning" title="Test button">
+        Button Tag
+    </button>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__warning">
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__warning">Anchor Tag</a>
@@ -215,11 +235,13 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Hovered state
 
-<a href="#" class="a-btn a-btn__warning hover">Anchor Tag</a>
-<button class="a-btn a-btn__warning hover" title="Test button">
-    Button Tag
-</button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__warning hover">
+<p>
+    <a href="#" class="a-btn a-btn__warning hover">Anchor Tag</a>
+    <button class="a-btn a-btn__warning hover" title="Test button">
+        Button Tag
+    </button>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__warning hover">
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__warning hover">Anchor Tag</a>
@@ -231,11 +253,13 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Focused state
 
-<a href="#" class="a-btn a-btn__warning focus">Anchor Tag</a>
-<button class="a-btn a-btn__warning focus" title="Test button">
-    Button Tag
-</button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__warning focus">
+<p>
+    <a href="#" class="a-btn a-btn__warning focus">Anchor Tag</a>
+    <button class="a-btn a-btn__warning focus" title="Test button">
+        Button Tag
+    </button>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__warning focus">
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__warning focus">Anchor Tag</a>
@@ -247,11 +271,13 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Active state
 
-<a href="#" class="a-btn a-btn__warning active">Anchor Tag</a>
-<button class="a-btn a-btn__warning active" title="Test button">
-    Button Tag
-</button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__warning active">
+<p>
+    <a href="#" class="a-btn a-btn__warning active">Anchor Tag</a>
+    <button class="a-btn a-btn__warning active" title="Test button">
+        Button Tag
+    </button>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__warning active">
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__warning active">Anchor Tag</a>
@@ -265,12 +291,14 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Default/hovered/active state
 
-<a href="#" class="a-btn a-btn__disabled">Anchor Tag</a>
-<button class="a-btn a-btn__disabled" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__disabled">
-<button class="a-btn" disabled title="Test button">
-    Button Tag w/ disabled attr
-</button>
+<p>
+    <a href="#" class="a-btn a-btn__disabled">Anchor Tag</a>
+    <button class="a-btn a-btn__disabled" title="Test button">Button Tag</button>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__disabled">
+    <button class="a-btn" disabled title="Test button">
+        Button Tag w/ disabled attr
+    </button>
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__disabled">Anchor Tag</a>
@@ -283,12 +311,14 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Focused state
 
-<a href="#" class="a-btn a-btn__disabled focus">Anchor Tag</a>
-<button class="a-btn a-btn__disabled focus" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__disabled focus">
-<button class="a-btn focus" disabled title="Test button">
-    Button Tag w/ disabled attr
-</button>
+<p>
+    <a href="#" class="a-btn a-btn__disabled focus">Anchor Tag</a>
+    <button class="a-btn a-btn__disabled focus" title="Test button">Button Tag</button>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__disabled focus">
+    <button class="a-btn focus" disabled title="Test button">
+        Button Tag w/ disabled attr
+    </button>
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__disabled focus">Anchor Tag</a>
@@ -303,9 +333,11 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Default state
 
-<a href="#" class="a-btn a-btn__super">Anchor Tag</a>
-<button class="a-btn a-btn__super" title="Test button">Button Tag</button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__super">
+<p>
+    <a href="#" class="a-btn a-btn__super">Anchor Tag</a>
+    <button class="a-btn a-btn__super" title="Test button">Button Tag</button>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__super">
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__super">Anchor Tag</a>
@@ -315,11 +347,13 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Hovered state
 
-<a href="#" class="a-btn a-btn__super hover">Anchor Tag</a>
-<button class="a-btn a-btn__super hover" title="Test button">
-    Button Tag
-</button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__super hover">
+<p>
+    <a href="#" class="a-btn a-btn__super hover">Anchor Tag</a>
+    <button class="a-btn a-btn__super hover" title="Test button">
+        Button Tag
+    </button>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__super hover">
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__super hover">Anchor Tag</a>
@@ -331,11 +365,13 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Focused state
 
-<a href="#" class="a-btn a-btn__super focus">Anchor Tag</a>
-<button class="a-btn a-btn__super focus" title="Test button">
-    Button Tag
-</button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__super focus">
+<p>
+    <a href="#" class="a-btn a-btn__super focus">Anchor Tag</a>
+    <button class="a-btn a-btn__super focus" title="Test button">
+        Button Tag
+    </button>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__super focus">
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__super focus">Anchor Tag</a>
@@ -347,11 +383,13 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 #### Active state
 
-<a href="#" class="a-btn a-btn__super active">Anchor Tag</a>
-<button class="a-btn a-btn__super active" title="Test button">
-    Button Tag
-</button>
-<input type="submit" value="Input Tag" class="a-btn a-btn__super active">
+<p>
+    <a href="#" class="a-btn a-btn__super active">Anchor Tag</a>
+    <button class="a-btn a-btn__super active" title="Test button">
+        Button Tag
+    </button>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__super active">
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__super active">Anchor Tag</a>
@@ -365,13 +403,19 @@ For accessibility reasons, use the semantic `<button>` instead of a link when po
 
 _Reduce screen size to see these in action_
 
-<a href="#" class="a-btn a-btn__full-on-xs">Anchor Tag</a>
+<p>
+    <a href="#" class="a-btn a-btn__full-on-xs">Anchor Tag</a>
+</p>
 
-<button class="a-btn a-btn__full-on-xs" title="Test button">
-    Button Tag
-</button>
+<p>
+    <button class="a-btn a-btn__full-on-xs" title="Test button">
+        Button Tag
+    </button>
+</p>
 
-<input type="submit" value="Input Tag" class="a-btn a-btn__full-on-xs">
+<p>
+    <input type="submit" value="Input Tag" class="a-btn a-btn__full-on-xs">
+</p>
 
 ```
 <a href="#" class="a-btn a-btn__full-on-xs">Anchor Tag</a>
@@ -385,11 +429,21 @@ _Reduce screen size to see these in action_
 
 #### Default state
 
-<button href="#" class="a-btn a-btn__link">Button Link</button>
-<button href="#" class="a-btn a-btn__link a-btn__secondary">
-    Secondary Button Link
-</button>
-<button href="#" class="a-btn a-btn__link a-btn__warning">Warning Button Link</button>
+<p>
+    <button href="#" class="a-btn a-btn__link">Button Link</button>
+</p>
+
+<p>
+    <button href="#" class="a-btn a-btn__link a-btn__secondary">
+        Secondary Button Link
+    </button>
+</p>
+
+<p>
+    <button href="#" class="a-btn a-btn__link a-btn__warning">
+        Warning Button Link
+    </button>
+</p>
 
 ```
 <button href="#" class="a-btn a-btn__link">Button Link</button>
@@ -401,11 +455,21 @@ _Reduce screen size to see these in action_
 
 #### Hovered state
 
-<button href="#" class="a-btn a-btn__link hover">Button Link</button>
-<button href="#" class="a-btn a-btn__link a-btn__secondary hover">
-    Secondary Button Link
-</button>
-<button href="#" class="a-btn a-btn__link a-btn__warning hover">Warning Button Link</button>
+<p>
+    <button href="#" class="a-btn a-btn__link hover">Button Link</button>
+</p>
+
+<p>
+    <button href="#" class="a-btn a-btn__link a-btn__secondary hover">
+        Secondary Button Link
+    </button>
+</p>
+
+<p>
+    <button href="#" class="a-btn a-btn__link a-btn__warning hover">
+        Warning Button Link
+    </button>
+</p>
 
 ```
 <button href="#" class="a-btn a-btn__link hover">Button Link</button>
@@ -417,11 +481,21 @@ _Reduce screen size to see these in action_
 
 #### Focus state
 
-<button href="#" class="a-btn a-btn__link focus">Button Link</button>
-<button href="#" class="a-btn a-btn__link a-btn__secondary focus">
-    Secondary Button Link
-</button>
-<button href="#" class="a-btn a-btn__link a-btn__warning focus">Warning Button Link</button>
+<p>
+    <button href="#" class="a-btn a-btn__link focus">Button Link</button>
+</p>
+
+<p>
+    <button href="#" class="a-btn a-btn__link a-btn__secondary focus">
+        Secondary Button Link
+    </button>
+</p>
+
+<p>
+    <button href="#" class="a-btn a-btn__link a-btn__warning focus">
+        Warning Button Link
+    </button>
+</p>
 
 ```
 <button href="#" class="a-btn a-btn__link focus">Button Link</button>
@@ -433,11 +507,21 @@ _Reduce screen size to see these in action_
 
 #### Active state
 
-<button href="#" class="a-btn a-btn__link active">Button Link</button>
-<button href="#" class="a-btn a-btn__link a-btn__secondary active">
-    Secondary Button Link
-</button>
-<button href="#" class="a-btn a-btn__link a-btn__warning active">Warning Button Link</button>
+<p>
+    <button href="#" class="a-btn a-btn__link active">Button Link</button>
+</p>
+
+<p>
+    <button href="#" class="a-btn a-btn__link a-btn__secondary active">
+        Secondary Button Link
+    </button>
+</p>
+
+<p>
+    <button href="#" class="a-btn a-btn__link a-btn__warning active">
+        Warning Button Link
+    </button>
+</p>
 
 ```
 <button href="#" class="a-btn a-btn__link active">Button Link</button>
@@ -451,41 +535,49 @@ _Reduce screen size to see these in action_
 
 #### Button with icon on the left
 
-<button class="a-btn">
-    <span class="a-btn_icon
-                 a-btn_icon__on-left
-                 cf-icon
-                 cf-icon__before
-                 cf-icon-delete"></span>
-    Close
-</button>
+<p>
+    <button class="a-btn">
+        <span class="a-btn_icon
+                     a-btn_icon__on-left
+                     cf-icon
+                     cf-icon__before
+                     cf-icon-delete"></span>
+        Close
+    </button>
+</p>
 
-<button class="a-btn a-btn__secondary">
-    <span class="a-btn_icon
-                 a-btn_icon__on-left
-                 cf-icon
-                 cf-icon__before
-                 cf-icon-delete"></span>
-    Close
-</button> - Secondary button
+<p>
+    <button class="a-btn a-btn__secondary">
+        <span class="a-btn_icon
+                     a-btn_icon__on-left
+                     cf-icon
+                     cf-icon__before
+                     cf-icon-delete"></span>
+        Close
+    </button> - Secondary button
+</p>
 
-<button class="a-btn a-btn__warning">
-    <span class="a-btn_icon
-                 a-btn_icon__on-left
-                 cf-icon
-                 cf-icon__before
-                 cf-icon-delete"></span>
-    Close
-</button> - Warning button
+<p>
+    <button class="a-btn a-btn__warning">
+        <span class="a-btn_icon
+                     a-btn_icon__on-left
+                     cf-icon
+                     cf-icon__before
+                     cf-icon-delete"></span>
+        Close
+    </button> - Warning button
+</p>
 
-<button class="a-btn a-btn__disabled">
-    <span class="a-btn_icon
-                 a-btn_icon__on-left
-                 cf-icon
-                 cf-icon__before
-                 cf-icon-delete"></span>
-    Close
-</button> - Disabled button
+<p>
+    <button class="a-btn a-btn__disabled">
+        <span class="a-btn_icon
+                     a-btn_icon__on-left
+                     cf-icon
+                     cf-icon__before
+                     cf-icon-delete"></span>
+        Close
+    </button> - Disabled button
+</p>
 
 ```
 <button class="a-btn">
@@ -527,41 +619,49 @@ _Reduce screen size to see these in action_
 
 #### Button with icon on the right
 
-<button class="a-btn">
-    Close
-    <span class="a-btn_icon
-                 a-btn_icon__on-right
-                 cf-icon
-                 cf-icon__after
-                 cf-icon-delete"></span>
-</button>
+<p>
+    <button class="a-btn">
+        Close
+        <span class="a-btn_icon
+                     a-btn_icon__on-right
+                     cf-icon
+                     cf-icon__after
+                     cf-icon-delete"></span>
+    </button>
+</p>
 
-<button class="a-btn a-btn__secondary">
-    Close
-    <span class="a-btn_icon
-                 a-btn_icon__on-right
-                 cf-icon
-                 cf-icon__after
-                 cf-icon-delete"></span>
-</button> - Secondary button
+<p>
+    <button class="a-btn a-btn__secondary">
+        Close
+        <span class="a-btn_icon
+                     a-btn_icon__on-right
+                     cf-icon
+                     cf-icon__after
+                     cf-icon-delete"></span>
+    </button> - Secondary button
+</p>
 
-<button class="a-btn a-btn__warning">
-    Close
-    <span class="a-btn_icon
-                 a-btn_icon__on-right
-                 cf-icon
-                 cf-icon__after
-                 cf-icon-delete"></span>
-</button> - Warning button
+<p>
+    <button class="a-btn a-btn__warning">
+        Close
+        <span class="a-btn_icon
+                     a-btn_icon__on-right
+                     cf-icon
+                     cf-icon__after
+                     cf-icon-delete"></span>
+    </button> - Warning button
+</p>
 
-<button class="a-btn a-btn__disabled">
-    Close
-    <span class="a-btn_icon
-                 a-btn_icon__on-right
-                 cf-icon
-                 cf-icon__after
-                 cf-icon-delete"></span>
-</button> - Disabled button
+<p>
+    <button class="a-btn a-btn__disabled">
+        Close
+        <span class="a-btn_icon
+                     a-btn_icon__on-right
+                     cf-icon
+                     cf-icon__after
+                     cf-icon-delete"></span>
+    </button> - Disabled button
+</p>
 
 ```
 <button class="a-btn">
@@ -603,15 +703,17 @@ _Reduce screen size to see these in action_
 
 #### Button with an animated icon
 
-<button class="a-btn a-btn__disabled">
-    Submit your complaint
-    <span class="a-btn_icon
-                 a-btn_icon__on-right
-                 cf-icon
-                 cf-icon__after
-                 cf-icon-update
-                 cf-icon__spin"></span>
-</button>
+<p>
+    <button class="a-btn a-btn__disabled">
+        Submit your complaint
+        <span class="a-btn_icon
+                     a-btn_icon__on-right
+                     cf-icon
+                     cf-icon__after
+                     cf-icon-update
+                     cf-icon__spin"></span>
+    </button>
+</p>
 
 ```
 <button class="a-btn">
@@ -631,11 +733,13 @@ _Reduce screen size to see these in action_
 
 #### With default buttons
 
-<div class="m-btn-group">
-    <button class="a-btn">Yes</button>
-    <button class="a-btn">No</button>
-    <button class="a-btn">Maybe So</button>
-</div>
+<p>
+    <div class="m-btn-group">
+        <button class="a-btn">Yes</button>
+        <button class="a-btn">No</button>
+        <button class="a-btn">Maybe So</button>
+    </div>
+</p>
 
 ```
 <div class="m-btn-group">
@@ -647,11 +751,13 @@ _Reduce screen size to see these in action_
 
 #### With super buttons
 
-<div class="m-btn-group">
-    <button class="a-btn a-btn__super">Yes</button>
-    <button class="a-btn a-btn__super">No</button>
-    <button class="a-btn a-btn__super">Maybe So</button>
-</div>
+<p>
+    <div class="m-btn-group">
+        <button class="a-btn a-btn__super">Yes</button>
+        <button class="a-btn a-btn__super">No</button>
+        <button class="a-btn a-btn__super">Maybe So</button>
+    </div>
+</p>
 
 ```
 <div class="m-btn-group">
