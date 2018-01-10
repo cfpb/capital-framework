@@ -4,13 +4,22 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-typography:** [MINOR] New `@font-face` rules for family-linked webfonts
 
 ### Changed
 - **cf-forms:** [PATCH] Add transform to fix radio button Firefox rendering bug.
 - **cf-forms:** [MINOR] Add multi-line support to checkboxes/radio buttons.
 - **cf-forms:** [PATCH] Move autoprefixer ignored rule to its own block.
 - **capital-framework:** [MINOR] Update build process to use Gulp 4.
+- **cf-core:** [MINOR] Replace use of `u-webfont-` mixins with standard properties.
+- **cf-buttons:** [MINOR] Replace use of `u-webfont-` mixins with standard properties.
+- **cf-expandables:** [MINOR] Replace use of `u-webfont-` mixins with standard properties.
+- **cf-forms:** [MINOR] Replace use of `u-webfont-` mixins with standard properties.
+- **cf-layout:** [MINOR] Replace use of `u-webfont-` mixins with standard properties.
+- **cf-notifications:** [MINOR] Replace use of `u-webfont-` mixins with standard properties.
+- **cf-pagination:** [MINOR] Replace use of `u-webfont-` mixins with standard properties.
+- **cf-tables:** [MINOR] Replace use of `u-webfont-` mixins with standard properties.
+- **cf-typography:** [MINOR] Replace use of `u-webfont-` mixins with standard properties.
 
 ### Removed
 -

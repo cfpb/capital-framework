@@ -4,7 +4,14 @@
    ========================================================================== */
 
 //
-// Webfonts
+// Webfont mixins
+//
+// WARNING: These mixins are deprecated and will be removed in CFv5 due to
+// the implementation of family-linked webfonts in licensed-fonts.less.
+// Projects should update themselves to use standard CSS font-style and
+// font-weight properties from now on.
+//
+// TODO: Remove in CFv5.
 //
 
 .u-webfont-regular() {
@@ -58,55 +65,63 @@
 //
 
 body {
-    .u-webfont-regular();
-
     color: @text;
+    font-family: 'Avenir Next', Arial, sans-serif;
     font-size: unit( @base-font-size-px / 16 * 100, % );
     line-height: @base-line-height;
 }
 
+button,
+input,
+select,
+textarea {
+    // Must set these explicitly to override Normalize.css's provided default
+    // of `font-family: sans-serif;`
+    font-family: 'Avenir Next', Arial, sans-serif;
+}
+
 .heading-1( @fs: @size-i ) {
     @font-size: @fs;
-    .u-webfont-regular();
 
     margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
+    font-weight: normal;
     line-height: 1.25;
 }
 
 .heading-2( @fs: @size-ii ) {
     @font-size: @fs;
-    .u-webfont-regular();
 
     margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
+    font-weight: normal;
     line-height: 1.25;
 }
 
 .heading-3( @fs: @size-iii )  {
     @font-size: @fs;
-    .u-webfont-regular();
 
     margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
+    font-weight: normal;
     line-height: 1.25;
 }
 
 .heading-4( @fs: @size-iv )  {
     @font-size: @fs;
-    .u-webfont-medium();
 
     margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
+    font-weight: 500;
     line-height: 1.25;
 }
 
 .heading-5( @fs: @size-v )  {
     @font-size: @fs;
-    .u-webfont-demi();
 
     margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
+    font-weight: bold;
     letter-spacing: 1px;
     line-height: 1.25;
     text-transform: uppercase;
@@ -114,10 +129,10 @@ body {
 
 .heading-6( @fs: @size-vi )  {
     @font-size: @fs;
-    .u-webfont-demi();
 
     margin-bottom: unit( 15px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
+    font-weight: bold;
     letter-spacing: 1px;
     line-height: 1.25;
     text-transform: uppercase;
@@ -345,10 +360,10 @@ h6,
 .superheading {
     // For when you want a heading that's bigger than a normal H1
     @font-size: @size-xl;
-    .u-webfont-regular();
 
     margin-bottom: unit( 20px / @font-size, em );
     font-size: unit( @font-size / @base-font-size-px, em );
+    font-weight: normal;
     line-height: 1.25;
 }
 
@@ -491,8 +506,7 @@ tbody tr {
 }
 
 th {
-    .u-webfont-demi();
-
+    font-weight: bold;
     text-align: left;
 }
 

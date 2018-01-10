@@ -8,9 +8,9 @@
   "author": {
     "name": "Consumer Financial Protection Bureau",
     "email": "tech@cfpb.gov",
-    "url": "https://consumerfinance.gov"
+    "url": "https://cfpb.github.io/"
   },
-  "license": "CC0-1.0",
+  "license": "SEE LICENSE IN TERMS.md",
   "keywords": [
     "capital-framework"
   ],
