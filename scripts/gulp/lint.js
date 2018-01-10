@@ -68,16 +68,14 @@ function lintStyles() {
   const options = minimist( process.argv.slice( 2 ) );
   const willFix = options.fix || false;
   return gulp.src( [
-      '!src/cf-*/node_modules/**/*.less',
-      '!src/cf-grid/src-generated/*.less',
-      'src/**/*.less'
-    ] )
+    'src/**/*.less',
+    '!src/cf-*/node_modules/**/*.less',
+    '!src/cf-grid/src-generated/*.less'
+  ] )
     .pipe( gulpStylelint( {
       failAfterError: true,
       fix: willFix,
-      reporters: [
-        { formatter: 'string', console: true }
-      ]
+      reporters: [ { formatter: 'string', console: true } ]
     } ) )
     .pipe( gulp.dest( 'src' ) );
 };
@@ -91,10 +89,10 @@ gulp.task( 'lint:styles', lintStyles );
 /**
  * Lints all the js files for errors
  */
-gulp.task( 'lint', [
+gulp.task( 'lint', gulp.parallel(
   'lint:build',
   'lint:tests',
   'lint:scripts',
   'lint:release',
   'lint:styles'
-] );
+) );

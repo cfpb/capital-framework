@@ -6,7 +6,12 @@ const gulpData = require( 'gulp-data' );
 const gulpRename = require( 'gulp-rename' );
 const gulpMarkdown = require( 'gulp-markdown' );
 
-gulp.task( 'template:readmes', () => {
+/**
+ * Copy a readme template into tmp/cf-* by replacing the name variable
+ * with the component's name.
+ * @returns {Object} An output stream from gulp.
+ */
+function templateReadmes() {
   const pkgs = './src/' + ( parseComponentName || '*' ) + '/package.json';
   return gulp.src( pkgs )
     .pipe( gulpData( function( file ) {
@@ -25,10 +30,14 @@ gulp.task( 'template:readmes', () => {
       path.extname = '.md';
     } ) )
     .pipe( gulp.dest( 'tmp' ) );
-} );
+}
 
-gulp.task( 'template:usage', () => {
-  gulp.src( './src/' + ( parseComponentName || '*' ) + '/usage.md' )
+/**
+ * Copy the files that are the same for every component into tmp/cf-*.
+ * @returns {Object} An output stream from gulp.
+ */
+function templateUsage() {
+  return gulp.src( './src/' + ( parseComponentName || '*' ) + '/usage.md' )
     .pipe( gulpMarkdown() )
     .pipe( gulpData( file => {
       const content = String( file.contents );
@@ -53,4 +62,7 @@ gulp.task( 'template:usage', () => {
       path.dirname = parseComponentName || path.dirname;
     } ) )
     .pipe( gulp.dest( 'tmp' ) );
-} );
+}
+
+gulp.task( 'template:readmes', templateReadmes );
+gulp.task( 'template:usage', templateUsage );

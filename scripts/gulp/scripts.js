@@ -28,42 +28,49 @@ const COMMON_UGLIFY_CONFIG = new UglifyWebpackPlugin( {
    configurations. Also, add a production and dev flag to generate
    a minified and un-minified version of the assets. */
 
-// Compile the master capital-framework.less file.
-gulp.task( 'scripts:cf', () => gulp.src( './src/capital-framework.js' )
-  .pipe( webpackStream( {
-    module: {
-      rules: [ {
-        use: [ {
-          loader: 'babel-loader?cacheDirectory=true',
-          options: {
-            presets: [ [ 'env', {
-              targets: {
-                browsers: BROWSER_LIST.LAST_2_PLUS_IE_9_AND_UP
-              },
-              debug: true
-            } ] ]
-          }
+/**
+ * Compile the master capital-framework.less file.
+ * @returns {Object} An output stream from gulp.
+ */
+function scriptsCf() {
+  return gulp.src( './src/capital-framework.js' )
+    .pipe( webpackStream( {
+      module: {
+        rules: [ {
+          use: [ {
+            loader: 'babel-loader?cacheDirectory=true',
+            options: {
+              presets: [ [ 'env', {
+                targets: {
+                  browsers: BROWSER_LIST.LAST_2_PLUS_IE_9_AND_UP
+                },
+                debug: true
+              } ] ]
+            }
+          } ]
         } ]
-      } ]
-    },
-    output: {
-      filename: '[name].js'
-    },
-    plugins: [ COMMON_UGLIFY_CONFIG ]
-  }, webpack ) )
-  .pipe( gulpRename( {
-    basename: 'capital-framework',
-    extname: '.min.js'
-  } ) )
-  .pipe( gulp.dest( './dist' ) ) );
+      },
+      output: {
+        filename: '[name].js'
+      },
+      plugins: [ COMMON_UGLIFY_CONFIG ]
+    }, webpack ) )
+    .pipe( gulpRename( {
+      basename: 'capital-framework',
+      extname: '.min.js'
+    } ) )
+    .pipe( gulp.dest( './dist' ) );
+}
 
-/* Compile all the individual component files so that users can `npm install`
-   a single component if they desire. */
-gulp.task( 'scripts:components', () => {
+/**
+ * Compile all the individual component files so that users can `npm install`
+ * a single component if they desire.
+ * @returns {Object} An output stream from gulp.
+ */
+function scriptsComponents() {
   const tmp = {};
   return gulp.src( './src/' + ( component || '*' ) + '/src/*.js' )
     .pipe( gulpIgnore.exclude( vf => {
-
       /* Exclude JS files that don't share the same name as the directory
          they're in. This filters out utility files. */
       const matches = vf.path.match( /\/([\w-]*)\/src\/([\w-]*)\.js/ );
@@ -99,9 +106,12 @@ gulp.task( 'scripts:components', () => {
       path.extname = '.min.js';
     } ) )
     .pipe( gulp.dest( './tmp' ) );
-} );
+}
 
-gulp.task( 'scripts', [
+gulp.task( 'scripts:cf', scriptsCf );
+gulp.task( 'scripts:components', scriptsComponents );
+
+gulp.task( 'scripts', gulp.parallel(
   'scripts:cf',
   'scripts:components'
-] );
+) );
