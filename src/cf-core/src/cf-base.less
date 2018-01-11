@@ -100,7 +100,7 @@ body {
     line-height: 1.25;
 }
 
-.heading-5( @fs: @size-v )  {
+.heading-5( @fs: @size-v, @text-shadow: @text )  {
     @font-size: @fs;
     .u-webfont-medium();
 
@@ -109,7 +109,7 @@ body {
     font-weight: bold;
     letter-spacing: 1px;
     line-height: 1.25;
-    text-shadow: 0px 0px @text;
+    text-shadow: 0px 0px @text-shadow;
     text-transform: uppercase;
 }
 
