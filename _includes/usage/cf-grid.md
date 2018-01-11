@@ -36,16 +36,6 @@ Read on for more details on the variables and mixins this component provides.
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
-## Table of contents
-
-- [Variables](#variables)
-- [Wrappers](#wrappers)
-- [Columns](#columns)
-- [Nested columns](#nested-columns)
-- [Push and pull mixins for source ordering](#push-and-pull-mixins-for-source-ordering)
-- [Example grid layouts](#example-grid-layouts)
-
-
 ## Variables
 
 The following Less variables are exposed,

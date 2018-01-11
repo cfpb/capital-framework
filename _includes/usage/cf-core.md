@@ -711,7 +711,7 @@ Sets the element to `14px` (in `em`s) based on the text size passed as
 #### :warning: These mixins are deprecated and will be removed in CFv5 :warning:
 
 Our
-[`@font-face` syntax](https://github.com/cfpb/capital-framework/blob/canary/src/cf-typography/src/licensed-fonts.less)
+[`@font-face` syntax](https://github.com/cfpb/capital-framework/blob/master/src/cf-typography/src/licensed-fonts.less)
 is transitioning to a family-linked model,
 which eliminates the need for these old mixins.
 Style and weight should now be set with the traditional CSS properties.
