@@ -7,17 +7,19 @@ const gulpMocha = require( 'gulp-mocha' );
 
 /**
  * Test the JS components with qUnit
+ * @param {Function} cb - Callback function to call on completion
  */
-function qunitTest() {
+function testQUnit( cb ) {
   gulp.src( './test/' + ( component || '*' ) + '.html' )
-    .pipe( gulpQunit( { timeout: 20 } ) );
+    .pipe( gulpQunit( { timeout: 20 } ) )
+    .on( 'finish', cb );
 }
 
 /**
  * Run Mocha JavaScript unit tests.
  * @param {Function} cb - Callback function to call on completion.
  */
-function unitTest( cb ) {
+function testUnit( cb ) {
   gulp.src( [ './src/**/*.js',
     '!./src/**/node_modules/**/*.js',
     '!./src/**/src/cf-*',
@@ -43,7 +45,7 @@ function unitTest( cb ) {
  * Run Mocha JavaScript build tests.
  * @param {Function} cb - Callback function to call on completion.
  */
-function buildTest( cb ) {
+function testBuild( cb ) {
   gulp.src( [ './scripts/npm/prepublish/lib/**/*.js' ] )
     .pipe( gulpIstanbul( {
       includeUntested: true
@@ -62,11 +64,11 @@ function buildTest( cb ) {
 }
 
 // TODO: Add test commands to repo documentation.
-gulp.task( 'test:unit', unitTest );
-gulp.task( 'test:build', buildTest );
-gulp.task( 'test:qunit', qunitTest );
+gulp.task( 'test:qunit', testQUnit );
+gulp.task( 'test:unit', testUnit );
+gulp.task( 'test:build', testBuild );
 
-gulp.task( 'test', gulp.parallel(
+gulp.task( 'test', gulp.series(
   'test:unit',
   'test:build',
   'test:qunit'
