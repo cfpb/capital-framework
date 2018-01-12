@@ -3,6 +3,11 @@ const readline = require( 'readline' );
 const options = require( './getArgs' );
 const printLn = require( './print' );
 
+/**
+ * Confirm that the user wants to publish the components to NPM.
+ * @param {Object} opts Options passed to the function.
+ * @returns {Function} The user's reply to the prompt.
+ */
 function confirm( opts ) {
   opts = opts || {};
   const prompt = opts.prompt + ' [Y/n] ';
