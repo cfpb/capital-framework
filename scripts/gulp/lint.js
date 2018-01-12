@@ -25,7 +25,8 @@ function _genericLintJs( src ) {
 function lintBuild() {
   return _genericLintJs( [
     'gulpfile.js',
-    'scripts/gulp/**/*.js'
+    'scripts/gulp/**/*.js',
+    'scripts/npm/prepublish/**/*.js'
   ] );
 }
 
@@ -46,17 +47,6 @@ function lintTests() {
  */
 function lintScripts() {
   return _genericLintJs( [ 'src/**/src/*.js' ] );
-}
-
-/**
- * Lints the release js for errors.
- * TODO: After release files are tested, combine this task with the build one
- * @returns {Object} An output stream from gulp.
- */
-function lintRelease() {
-  return _genericLintJs( [
-    'scripts/npm/prepublish/**/*.js'
-  ] );
 }
 
 /**
@@ -83,7 +73,6 @@ function lintStyles() {
 gulp.task( 'lint:build', lintBuild );
 gulp.task( 'lint:tests', lintTests );
 gulp.task( 'lint:scripts', lintScripts );
-gulp.task( 'lint:release', lintRelease );
 gulp.task( 'lint:styles', lintStyles );
 
 /**
@@ -93,6 +82,5 @@ gulp.task( 'lint', gulp.parallel(
   'lint:build',
   'lint:tests',
   'lint:scripts',
-  'lint:release',
   'lint:styles'
 ) );
