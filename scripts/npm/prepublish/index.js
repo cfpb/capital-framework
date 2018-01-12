@@ -263,7 +263,7 @@ function updateChangelog() {
     );
   }
   return util.changelog(
-    __dirname, '..', '..', '..', 'CHANGELOG.md',
+    path.join( __dirname, '..', '..', '..', 'CHANGELOG.md' ),
     new Date().toJSON().slice( 0, 10 ),
     util.pkg.version
   );
