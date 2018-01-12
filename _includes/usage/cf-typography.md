@@ -45,7 +45,7 @@ project by duplicating the variable `@key: value`.
 
 ```
 @webfont-regular: 'AvenirNextLTW01-Regular';
-@webfont-italic: 'AvenirNextLTW01-Italic';
+@webfont-italic: @webfont-regular;
 @webfont-medium: 'AvenirNextLTW01-Medium';
 @webfont-demi: 'AvenirNextLTW01-Demi';
 ```

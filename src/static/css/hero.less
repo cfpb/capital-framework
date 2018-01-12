@@ -3,13 +3,18 @@
    ========================================================================== */
 
 .hero {
+    padding: unit( 60 / @base-font-size-px, em ) 0;
     background: @green-20;
 }
 
+.hero_content {
+    .grid_column( 1, 1 );
+}
+
 .hero_heading {
-    .u-webfont-demi();
-    font-size: 3.5em;
     margin: 0;
+    font-size: 3.5em;
+    font-weight: bold;
 }
 
 .hero_code {
@@ -29,39 +34,9 @@
 .hero_p {
     margin-bottom: .2em;
     font-size: 1.25em;
-}
 
-.jump-link {
-    position: relative;
-    // Right margin gives the absolutely positioned icon somewhere to go without
-    // inheriting the bottom border.
-    margin-right: 1.5em;
-    border-bottom-width: 1px;
-    .u-webfont-medium();
-    &:after {
-        // Inserts the cf-icon-right (arrow) glyph.
-        content: "\e002";
-        right: -1.25em;
-    }
-    &__download {
-        &:after {
-            // Inserts the cf-icon-download glyph.
-            content: "\e406";
-        }
-    }
-
-    &__external-link {
-        &:after {
-            // Inserts the cf-icon-external-link glyph.
-            content: "\e610";
-        }
-    }
-
-    &:after {
-        .cf-icon();
-        position: absolute;
-        bottom: 0;
-        border-bottom: none;
+    .a-link_text {
+        font-weight: 500;
     }
 }
 
