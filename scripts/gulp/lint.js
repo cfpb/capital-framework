@@ -68,7 +68,7 @@ function lintStyles() {
       reporters: [ { formatter: 'string', console: true } ]
     } ) )
     .pipe( gulp.dest( 'src' ) );
-};
+}
 
 gulp.task( 'lint:build', lintBuild );
 gulp.task( 'lint:tests', lintTests );
