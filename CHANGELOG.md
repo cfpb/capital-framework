@@ -4,13 +4,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- 
+-
 
 ### Changed
-- 
+- **capital-framework:** [PATCH] Added tests and update the release scripts
 
 ### Removed
-- 
+-
 
 ## 4.21.0 - 2018-01-11
 
@@ -40,7 +40,6 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-expandables:** Removes 'use strict' from modules.
 - **cf-tables:** Removes 'use strict' from modules.
 - **cf-typography:** Removes Avenir Next Italic web font to improve performance.
-
 
 ## 4.19.0 - 2017-12-08
 
