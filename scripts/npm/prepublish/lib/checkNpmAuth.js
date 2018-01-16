@@ -1,18 +1,25 @@
 const RegClient = require( 'silent-npm-registry-client' );
 const client = new RegClient();
 const promisify = require( 'promisify-node' );
-const exec = require( 'child-process-promise' ).exec;
+const childProcess = require( 'child-process-promise' );
 const printLn = require( './print' );
 
 promisify( client );
 
+/**
+ * Checks with NPM to ensure you are a maintainer of the package.
+ * @param {Object} component The name to test.
+ * @returns {Object} The process that initialized the function.
+ */
 function checkAuth( component ) {
   const uri = 'https://registry.npmjs.org/' + component;
 
-  const getOwners = client.get( uri, { timeout: 10000 } ).then( function( data ) {
-    return data.maintainers;
-  } );
-  const getCurrentUser = exec( 'npm whoami' );
+  const getOwners = client
+    .get( uri, { timeout: 10000 } )
+    .then( function( data ) {
+      return data.maintainers;
+    } );
+  const getCurrentUser = childProcess.exec( 'npm whoami' );
 
   return Promise.all( [ getOwners, getCurrentUser ] ).then( function( data ) {
     let authorized = false;
@@ -20,8 +27,11 @@ function checkAuth( component ) {
 
     printLn.info( 'Logged into npm as ' + currentUser );
     data[0].forEach( function( maintainer ) {
-      authorized = maintainer.name === currentUser;
+      if ( maintainer.name === currentUser ) {
+        authorized = true;
+      }
     } );
+
     if ( !authorized ) {
       printLn.error(
         'You\'re not listed as a maintainer in npm. ' +

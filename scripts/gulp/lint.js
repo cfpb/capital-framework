@@ -25,7 +25,8 @@ function _genericLintJs( src ) {
 function lintBuild() {
   return _genericLintJs( [
     'gulpfile.js',
-    'scripts/gulp/**/*.js'
+    'scripts/gulp/**/*.js',
+    'scripts/npm/prepublish/**/*.js'
   ] );
 }
 
@@ -49,17 +50,6 @@ function lintScripts() {
 }
 
 /**
- * Lints the release js for errors.
- * TODO: After release files are tested, combine this task with the build one
- * @returns {Object} An output stream from gulp.
- */
-function lintRelease() {
-  return _genericLintJs( [
-    'scripts/npm/prepublish/**/*.js'
-  ] );
-}
-
-/**
  * Lints the source LESS files for errors.
  * @returns {Object} An output stream from gulp.
  */
@@ -78,12 +68,11 @@ function lintStyles() {
       reporters: [ { formatter: 'string', console: true } ]
     } ) )
     .pipe( gulp.dest( 'src' ) );
-};
+}
 
 gulp.task( 'lint:build', lintBuild );
 gulp.task( 'lint:tests', lintTests );
 gulp.task( 'lint:scripts', lintScripts );
-gulp.task( 'lint:release', lintRelease );
 gulp.task( 'lint:styles', lintStyles );
 
 /**
@@ -93,6 +82,5 @@ gulp.task( 'lint', gulp.parallel(
   'lint:build',
   'lint:tests',
   'lint:scripts',
-  'lint:release',
   'lint:styles'
 ) );

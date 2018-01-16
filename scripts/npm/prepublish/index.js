@@ -3,7 +3,6 @@ const fs = require( 'fs' );
 const readdir = require( 'fs-readdir-promise' );
 const Promise = require( 'bluebird' );
 const semver = require( 'semver' );
-const inPublish = require( 'in-publish' ).inPublish;
 const logSymbols = require( 'log-symbols' );
 const util = require( './lib' );
 const isTravis = require( 'is-travis' );
@@ -132,7 +131,7 @@ function filterComponents( components ) {
 function compareVersionNumber( component ) {
   if ( component.indexOf( 'cf-' ) !== 0 ) return;
 
-  let manifest = componentsDir + '/' + component + '/package.json',
+  const manifest = componentsDir + '/' + component + '/package.json',
       localVersion = JSON.parse(
         fs.readFileSync( manifest, 'utf8' )
       ).version;
@@ -263,7 +262,11 @@ function updateChangelog() {
       'I did not update the changelog because this is a dry run.'
     );
   }
-  return util.changelog( util.pkg.version );
+  return util.changelog(
+    path.join( __dirname, '..', '..', '..', 'CHANGELOG.md' ),
+    new Date().toJSON().slice( 0, 10 ),
+    util.pkg.version
+  );
 }
 
 function commit() {
