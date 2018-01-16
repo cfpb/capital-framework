@@ -1,5 +1,3 @@
-'use strict';
-
 const gulp = require( 'gulp' );
 const gulpEslint = require( 'gulp-eslint' );
 const gulpStylelint = require( 'gulp-stylelint' );
@@ -11,7 +9,7 @@ const minimist = require( 'minimist' );
  * @returns {Object} An output stream from gulp.
  */
 function _genericLintJs( src ) {
-  // Pass all command line flags to EsLint.
+  // Pass all command line flags to ESLint.
   const options = minimist( process.argv.slice( 2 ) );
 
   return gulp.src( src.concat( '!**/node_modules/**' ), { base: './' } )
@@ -22,61 +20,79 @@ function _genericLintJs( src ) {
 
 /**
  * Lints the gulpfile for errors.
+ * @returns {Object} An output stream from gulp.
  */
-gulp.task( 'lint:build', () => {
-  _genericLintJs( [
+function lintBuild() {
+  return _genericLintJs( [
     'gulpfile.js',
-    'gulp/**/*.js'
+    'scripts/gulp/**/*.js'
   ] );
-} );
+}
 
 /**
  * Lints the test js files for errors.
+ * @returns {Object} An output stream from gulp.
  */
-gulp.task( 'lint:tests', () => {
-  _genericLintJs( [
+function lintTests() {
+  return _genericLintJs( [
     'test/accessibility/*.js',
-    'test/*.js'
+    'test/**/*.js'
   ] );
-} );
+}
 
 /**
  * Lints the source js files for errors.
+ * @returns {Object} An output stream from gulp.
  */
-gulp.task( 'lint:scripts', () => {
-  _genericLintJs( [ 'src/**/src/*.js' ] );
-} );
-
-/**
- * Lints the source LESS files for errors.
- */
-gulp.task( 'lint:styles', () => {
-  return gulp
-    .src( ['!src/cf-grid/src-generated/*.less', 'src/**/*.less'] )
-    .pipe( gulpStylelint( {
-      reporters: [
-        { formatter: 'string', console: true }
-      ]
-    } ) );
-} );
+function lintScripts() {
+  return _genericLintJs( [ 'src/**/src/*.js' ] );
+}
 
 /**
  * Lints the release js for errors.
  * TODO: After release files are tested, combine this task with the build one
+ * @returns {Object} An output stream from gulp.
  */
-gulp.task( 'lint:release', () => {
-  _genericLintJs( [
+function lintRelease() {
+  return _genericLintJs( [
     'scripts/npm/prepublish/**/*.js'
   ] );
-} );
+}
+
+/**
+ * Lints the source LESS files for errors.
+ * @returns {Object} An output stream from gulp.
+ */
+function lintStyles() {
+  // Pass all command line flags to Stylelint.
+  const options = minimist( process.argv.slice( 2 ) );
+  const willFix = options.fix || false;
+  return gulp.src( [
+    'src/**/*.less',
+    '!src/cf-*/node_modules/**/*.less',
+    '!src/cf-grid/src-generated/*.less'
+  ] )
+    .pipe( gulpStylelint( {
+      failAfterError: true,
+      fix: willFix,
+      reporters: [ { formatter: 'string', console: true } ]
+    } ) )
+    .pipe( gulp.dest( 'src' ) );
+};
+
+gulp.task( 'lint:build', lintBuild );
+gulp.task( 'lint:tests', lintTests );
+gulp.task( 'lint:scripts', lintScripts );
+gulp.task( 'lint:release', lintRelease );
+gulp.task( 'lint:styles', lintStyles );
 
 /**
  * Lints all the js files for errors
  */
-gulp.task( 'lint', [
+gulp.task( 'lint', gulp.parallel(
   'lint:build',
   'lint:tests',
   'lint:scripts',
-  'lint:styles',
-  'lint:release'
-] );
+  'lint:release',
+  'lint:styles'
+) );

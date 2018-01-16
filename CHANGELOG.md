@@ -4,63 +4,45 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- 
 
 ### Changed
-- **cf-expandables:** [PATCH] Convert to ES6 variable syntax.
-- **cf-expandables:** [PATCH] Removes 'use strict' from modules.
-- **cf-tables:** [PATCH] Removes 'use strict' from modules.
-- **cf-typography:** [MINOR] Removes Avenir Next Italic web font to improve performance.
-- **cf-typography:** [MINOR] Removes Avenir Next Demibold web font to improve performance.
 - **cf-core:** [MINOR] Updates u-webfont-demi and heading-5 classes to mimic demibold font weight without loading the demibold web font to improve performance.
 - **cf-table:** [PATCH] Updates th element to use heading-5 class instead of u-webfont-demi for proper font weight and hierarchy on small screens.
 
 ### Removed
--
+- **cf-typography:** [MINOR] Removes Avenir Next Italic web font to improve performance.
+- **cf-typography:** [MINOR] Removes Avenir Next Demibold web font to improve performance.
 
-## 4.19.0 - 2017-12-08
-
-### Added
-- 
-
-### Changed
-- 
-
-### Removed
-- 
-
-## 4.19.0 - 2017-12-08
+## 4.21.0 - 2018-01-11
 
 ### Added
-- 
+- **cf-typography:** New `@font-face` rules for family-linked webfonts
 
 ### Changed
-- 
+- **cf-forms:** Add transform to fix radio button Firefox rendering bug.
+- **cf-forms:** Add multi-line support to checkboxes/radio buttons.
+- **cf-forms:** Move autoprefixer ignored rule to its own block.
+- **capital-framework:** Update build process to use Gulp 4.
+- **cf-core:** Replace use of `u-webfont-` mixins with standard properties.
+- **cf-buttons:** Replace use of `u-webfont-` mixins with standard properties.
+- **cf-expandables:** Replace use of `u-webfont-` mixins with standard properties.
+- **cf-forms:** Replace use of `u-webfont-` mixins with standard properties.
+- **cf-layout:** Replace use of `u-webfont-` mixins with standard properties.
+- **cf-notifications:** Replace use of `u-webfont-` mixins with standard properties.
+- **cf-pagination:** Replace use of `u-webfont-` mixins with standard properties.
+- **cf-tables:** Replace use of `u-webfont-` mixins with standard properties.
+- **cf-typography:** Replace use of `u-webfont-` mixins with standard properties.
 
-### Removed
-- 
 
-## 4.19.0 - 2017-12-08
-
-### Added
-- 
-
-### Changed
-- 
-
-### Removed
-- 
-
-## 4.19.0 - 2017-12-08
-
-### Added
-- 
+## 4.20.0 - 2017-12-18
 
 ### Changed
-- 
+- **cf-expandables:** Convert to ES6 variable syntax.
+- **cf-expandables:** Removes 'use strict' from modules.
+- **cf-tables:** Removes 'use strict' from modules.
+- **cf-typography:** Removes Avenir Next Italic web font to improve performance.
 
-### Removed
-- 
 
 ## 4.19.0 - 2017-12-08
 

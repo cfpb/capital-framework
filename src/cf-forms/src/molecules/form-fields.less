@@ -11,11 +11,15 @@
     &__checkbox,
     &__radio {
         .a-label {
+            // 30px is width of checkbox/radio button plus the needed padding.
+            grid-template-columns: unit( 30px / @base-font-size-px, em ) auto;
             vertical-align: top;
             cursor: pointer;
 
             &:before {
                 display: inline-block;
+                grid-row-start: 1;
+                grid-row-end: 3;
 
                 border: 1px solid @input-border;
                 height: unit( 18px / @base-font-size-px, em );
@@ -25,6 +29,11 @@
                 background-color: @input-bg;
                 content: '';
                 vertical-align: top;
+
+                // Offset so that the checkbox/radio fits within focused area.
+                position: relative;
+                top: 1px;
+                left: 1px;
 
                 .lt-ie9 & {
                     display: none !important;
@@ -57,11 +66,7 @@
                 outline: 1px dotted @input-border__focused;
                 // The outline-offset property is not supported everywhere (e.g. IE)
                 // but it adds a nice touch in browsers where it is.
-                outline-offset: 3px;
-
-                // This is the height of checkbox plus 2 pixels
-                // to accommodate the outline position.
-                height: unit( 20px / @base-font-size-px, em );
+                outline-offset: 1px;
             }
 
             &:disabled {
@@ -87,12 +92,31 @@
         }
     }
 
+    /*
+    We need to turn off autoprefixing for the inline-grid because
+    older IE does not handle an inline-grid like other browsers,
+    leading to an extremely narrow column of text for the label.
+    This ensures it's only picked up by browsers with standard support.
+    Also, autoprefixer ignores rules on a per block basis so that is why
+    this is placed in its own block.
+    We need to ignore the duplicate selector for stylelint too.
+     */
+     /* stylelint-disable-next-line no-duplicate-selectors */
+    &__checkbox,
+    &__radio {
+        /* stylelint-disable-next-line no-duplicate-selectors */
+        .a-label {
+            /* autoprefixer: off */
+            display: inline-grid;
+        }
+    }
+
     &__checkbox {
         .a-label {
             &:before {
                 font-family: 'CFPB Minicons';
                 text-align: center;
-                line-height: unit( 18px / @base-font-size-px, em );
+                line-height: unit( 20px / @base-font-size-px, em );
             }
         }
 
@@ -119,6 +143,9 @@
         .a-label {
             &:before {
                 border-radius: 50%;
+                /* The rotate is needed to fix a bug in Firefox where radio
+                   button was not centered. */
+                transform: rotate(0deg);
             }
         }
 
@@ -157,9 +184,11 @@
     }
 
     &__lg-target {
+        display: block;
 
         .a-label {
-            display: block;
+            box-sizing: border-box;
+            width: 100%;
             padding: 15px;
             background-color: @input-lg-target-bg;
         }
@@ -172,9 +201,6 @@
                 // The outline-offset property is not supported everywhere (e.g. IE)
                 // but it adds a nice touch in browsers where it is.
                 outline-offset: 0;
-
-                // Reset the height applied to basic checkbox/radio buttons.
-                height: auto;
             }
 
             &:checked + .a-label {

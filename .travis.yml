@@ -9,6 +9,7 @@ before_script:
   - npm config set package-lock false
   - npm install -g gulp
   - npm run cf-link
+  - gulp lint
   - gulp build
 after_success:
   - git checkout package-lock.json package.json
