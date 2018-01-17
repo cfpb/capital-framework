@@ -7,16 +7,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
--
+- **cf-core:** [MINOR] Updates u-webfont-demi and heading-5 classes to mimic demibold font weight without loading the demibold web font to improve performance.
+- **cf-table:** [PATCH] Updates th element to use heading-5 class instead of u-webfont-demi for proper font weight and hierarchy on small screens.
 
 ### Removed
--
+- **cf-typography:** [MINOR] Removes Avenir Next Italic web font to improve performance.
+- **cf-typography:** [MINOR] Removes Avenir Next Demibold web font to improve performance.
 
 ## 4.21.1 - 2018-01-12
 
 ### Changed
 - **capital-framework:** Added tests and update the release scripts
-
 
 ## 4.21.0 - 2018-01-11
 
