@@ -25,7 +25,8 @@
     "release": "./scripts/travis/release.sh",
     "build": "gulp build",
     "test": "gulp test",
-    "cf-link": "node scripts/npm/link"
+    "cf-link": "node scripts/npm/link",
+    "postinstall": "npm run cf-link"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
