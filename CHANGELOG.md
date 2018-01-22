@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 4.22.0 - 2018-01-22
+
+### Added
 - **capital-framework:** Add cf-link to postinstall to keep component deps up to date
 
 ### Changed
