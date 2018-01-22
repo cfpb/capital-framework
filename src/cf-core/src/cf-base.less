@@ -51,10 +51,9 @@
 }
 
 .u-webfont-demi() {
-    font-family: @webfont-demi, Arial, sans-serif;
+    font-family: @webfont-medium, Arial, sans-serif;
     font-style: normal;
     font-weight: bold;
-
     .lt-ie9 & {
         font-weight: normal !important;
     }
@@ -116,7 +115,7 @@ textarea {
     line-height: 1.25;
 }
 
-.heading-5( @fs: @size-v )  {
+.heading-5( @fs: @size-v, @text-shadow: @text )  {
     @font-size: @fs;
 
     margin-bottom: unit( 15px / @font-size, em );
@@ -124,10 +123,11 @@ textarea {
     font-weight: bold;
     letter-spacing: 1px;
     line-height: 1.25;
+    text-shadow: 0px 0px @text-shadow;
     text-transform: uppercase;
 }
 
-.heading-6( @fs: @size-vi )  {
+.heading-6( @fs: @size-vi, @text-shadow: @text )  {
     @font-size: @fs;
 
     margin-bottom: unit( 15px / @font-size, em );
@@ -135,6 +135,7 @@ textarea {
     font-weight: bold;
     letter-spacing: 1px;
     line-height: 1.25;
+    text-shadow: 0px 0px @text-shadow;
     text-transform: uppercase;
 }
 
