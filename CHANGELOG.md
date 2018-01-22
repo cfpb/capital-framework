@@ -4,18 +4,19 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- **capital-framework:** [PATCH] Add cf-link to postinstall to keep component deps up to date
+- **capital-framework:** Add cf-link to postinstall to keep component deps up to date
 
 ### Changed
-- **cf-core:** [MINOR] Updates u-webfont-demi and heading-5 classes to mimic demibold font weight without loading the demibold web font to improve performance.
-- **cf-table:** [PATCH] Updates th element to use heading-5 class instead of u-webfont-demi for proper font weight and hierarchy on small screens.
-- **cf-core:** [PATCH] Fixes missing text-shadow property on heading-6 mixin needed to apply demibold type style to h6 elements.
-- **cf-grid:** [PATCH] Release the update to the cf-grid docs
+- **cf-core:** Updates u-webfont-demi and heading-5 classes to mimic demibold font weight without loading the demibold web font to improve performance.
+- **cf-table:** Updates th element to use heading-5 class instead of u-webfont-demi for proper font weight and hierarchy on small screens.
+- **cf-core:** Fixes missing text-shadow property on heading-6 mixin needed to apply demibold type style to h6 elements.
+- **cf-grid:** Release the update to the cf-grid docs
 
 ### Removed
-- **cf-typography:** [MINOR] Removes Avenir Next Italic web font to improve performance.
-- **cf-typography:** [MINOR] Removes Avenir Next Demibold web font to improve performance.
-- **cf-table:** [PATCH] Removes duplicate CSS properties based on heading-5 class from the stacked table header element.
+- **cf-typography:** Removes Avenir Next Italic web font to improve performance.
+- **cf-typography:** Removes Avenir Next Demibold web font to improve performance.
+- **cf-table:** Removes duplicate CSS properties based on heading-5 class from the stacked table header element.
+
 
 ## 4.21.1 - 2018-01-12
 
