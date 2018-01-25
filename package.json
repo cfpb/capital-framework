@@ -83,7 +83,6 @@
     "classlist-polyfill": "^1.0.3",
     "dom-delegate": "^2.0.3",
     "jquery": "^3.3.1",
-    "jquery.easing": "^1.4.1",
     "normalize-css": "^2.0.0",
     "normalize-legacy-addon": "0.1.0",
     "sinon-chai": "^2.14.0"
