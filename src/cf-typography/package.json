@@ -1,6 +1,6 @@
 {
   "name": "cf-typography",
-  "version": "4.10.0",
+  "version": "4.10.1",
   "description": "Capital Framework typography",
   "less": "src/cf-typography.less",
   "style": "cf-typography.css",
