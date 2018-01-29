@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 4.22.1 - 2018-01-29
+
+### Added
 - **cf-typography:** Add rule to make link lists be medium weight
 
 ### Changed
