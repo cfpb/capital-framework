@@ -4,13 +4,11 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- **cf-typography:** [PATCH] Add rule to make link lists be medium weight
+- **cf-typography:** Add rule to make link lists be medium weight
 
 ### Changed
-- **cf-expandables:** [PATCH] Update color of divider in groups to Gray 40
+- **cf-expandables:** Update color of divider in groups to Gray 40
 
-### Removed
--
 
 ## 4.22.0 - 2018-01-22
 
