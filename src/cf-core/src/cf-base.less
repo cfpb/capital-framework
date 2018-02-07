@@ -291,6 +291,14 @@ h4,
     .h6 + & {
         margin-top: unit( 30px / @font-size, em );
     }
+
+    .respond-to-max( @bp-xs-max, {
+        @h4-font-size-on-xs: @base-font-size-px;
+
+        margin-bottom: unit( 10px / @h4-font-size-on-xs, em );
+        font-size: unit( @h4-font-size-on-xs / @base-font-size-px, em );
+        line-height: unit( 18px / @h4-font-size-on-xs );
+    } );
 }
 
 h5,
