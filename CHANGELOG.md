@@ -3,14 +3,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
--
+- **cf-core:** Reduce size of `h4` and `.h4` on extra-small screens.
 
-### Removed
--
 
 ## 4.22.1 - 2018-01-29
 
