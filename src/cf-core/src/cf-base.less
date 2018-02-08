@@ -70,11 +70,6 @@ body {
     line-height: @base-line-height;
 }
 
-strong,
-b {
-    font-weight: 600;
-}
-
 button,
 input,
 select,
@@ -82,6 +77,11 @@ textarea {
     // Must set these explicitly to override Normalize.css's provided default
     // of `font-family: sans-serif;`
     font-family: 'Avenir Next', Arial, sans-serif;
+}
+
+strong,
+b {
+    font-weight: 600;
 }
 
 .heading-1( @fs: @size-i ) {
@@ -520,7 +520,7 @@ tbody tr {
 }
 
 th {
-    font-weight: bold;
+    font-weight: 600;
     text-align: left;
 }
 
