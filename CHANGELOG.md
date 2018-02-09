@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 4.22.2 - 2018-02-09
+
 ### Changed
 - **cf-core:** Reduce size of `h4` and `.h4` on extra-small screens.
 - **cf-core:** Fix demibold font-weight styles for h5, strong, and other demibold elements to fix appearance in Safari.
