@@ -1,18 +1,7 @@
 .m-meta-header {
     padding-bottom: unit( 10px / @base-font-size-px, em );
     border-bottom: 1px solid @meta-header_border;
-    // TODO: Move margin to o-post-preview and other parent containers
-    margin-bottom: unit( 15px / @base-font-size-px, em );
     overflow: auto;
-
-    .respond-to-max(@bp-xs-max, {
-
-        &_right {
-            display: block;
-            margin-bottom: unit( 5px / 14px, em );
-        }
-
-    });
 
     .respond-to-min( @bp-sm-min, {
         .u-clearfix();
