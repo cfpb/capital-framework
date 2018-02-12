@@ -8,10 +8,26 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-typography:** [PATCH] Fix whitespace under m-meta-header elements to match vertical grid standards.
 
 ### Changed
-- **cf-expandables:** [PATCH] Update color of divider in groups to Gray 40
+-
 
 ### Removed
 -
+
+## 4.22.2 - 2018-02-09
+
+### Changed
+- **cf-core:** Reduce size of `h4` and `.h4` on extra-small screens.
+- **cf-core:** Fix demibold font-weight styles for h5, strong, and other demibold elements to fix appearance in Safari.
+
+
+## 4.22.1 - 2018-01-29
+
+### Added
+- **cf-typography:** Add rule to make link lists be medium weight
+
+### Changed
+- **cf-expandables:** Update color of divider in groups to Gray 40
+
 
 ## 4.22.0 - 2018-01-22
 
