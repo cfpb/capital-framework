@@ -4,13 +4,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-typography:** Fix whitespace under m-meta-header elements to match vertical grid standards.
 
-### Changed
--
-
-### Removed
--
 
 ## 4.22.2 - 2018-02-09
 
