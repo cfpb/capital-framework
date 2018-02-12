@@ -4,7 +4,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-typography:** [PATCH] Add rule to make link lists be medium weight
+- **cf-typography:** [PATCH] Fix whitespace under m-meta-header elements to match vertical grid standards.
 
 ### Changed
 -
