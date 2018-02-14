@@ -2,6 +2,8 @@
 // Button link
 //
 
+// TODO: Refactor the rule combos for simplicity
+
 .a-btn__link {
   padding: 0;
 
@@ -11,15 +13,15 @@
   &,
   &:link,
   &:visited {
+    border-bottom-color: @link-underline;
     background-color: transparent;
-    border-bottom-color: @link-underline-visited;
-    color: @link-text-visited;
+    color: @link-text;
   }
 
   &:hover,
   &.hover {
-    background-color: transparent;
     border-bottom: 1px solid @link-underline-hover;
+    background-color: transparent;
     color: @link-text-hover;
   }
 

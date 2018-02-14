@@ -112,14 +112,6 @@
     }
 
     &__checkbox {
-        .a-label {
-            &:before {
-                font-family: 'CFPB Minicons';
-                text-align: center;
-                line-height: unit( 20px / @base-font-size-px, em );
-            }
-        }
-
         .a-checkbox {
             &:focus + .a-label:before,
             &.focus + .a-label:before {
@@ -134,7 +126,10 @@
             }
 
             &:checked + .a-label:before {
-                content: @cf-icon-approved;
+                background-image: url( '../icons/approved.svg' );
+                background-size: auto @cf-icon-height;
+                background-repeat: no-repeat;
+                background-position: center 0;
             }
         }
     }
@@ -227,12 +222,6 @@
     }
 }
 
-.a-error-message .cf-icon-delete-round {
+.a-error-message .cf-icon-svg {
     color: @input-icon__error;
-
-    &__select {
-        .a-label + .a-select {
-            margin-top: 0.5em;
-        }
-    }
 }

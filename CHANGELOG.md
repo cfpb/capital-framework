@@ -7,7 +7,14 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
--
+- **cf-icons:** [MINOR] Update cf-icons to use inline svgs rather than an icon font
+- **cf-buttons:** [MAJOR] Update code and examples for cf-icons change
+- **cf-expandables:** [MAJOR] Update code and examples for cf-icons change
+- **cf-forms:** [MAJOR] Update code and examples for cf-icons change
+- **cf-layout:** [MAJOR] Update code and examples for cf-icons change
+- **cf-notifications:** [MAJOR] Update code and examples for cf-icons change
+- **cf-pagination:** [MAJOR] Update code and examples for cf-icons change
+- **cf-typography:** [MAJOR] Update code and examples for cf-icons change
 
 ### Removed
 -
