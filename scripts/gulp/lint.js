@@ -36,8 +36,8 @@ function lintBuild() {
  */
 function lintTests() {
   return _genericLintJs( [
-    'test/accessibility/*.js',
-    'test/**/*.js'
+    'test/**/*.js',
+    '!test/lib/**/*.js'
   ] );
 }
 

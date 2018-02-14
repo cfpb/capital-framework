@@ -3,14 +3,16 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
--
+- **cf-icons:** Update cf-icons to use inline svgs rather than an icon font
+- **cf-buttons:** Update code and examples for cf-icons change
+- **cf-expandables:** Update code and examples for cf-icons change
+- **cf-forms:** Update code and examples for cf-icons change
+- **cf-layout:** Update code and examples for cf-icons change
+- **cf-notifications:** Update code and examples for cf-icons change
+- **cf-pagination:** Update code and examples for cf-icons change
+- **cf-typography:** Update code and examples for cf-icons change
 
-### Removed
--
 
 ## 4.22.3 - 2018-02-12
 

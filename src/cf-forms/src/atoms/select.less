@@ -52,18 +52,20 @@
     }
 
     &:after {
-        width: unit( @select-height / @base-font-size-px, em );
+        // Arrow box width must be odd size to properly center the bg image
+        width: unit( ( @select-height + 1px ) / @base-font-size-px, em );
         border-left: 1px solid @select-border;
         position: absolute;
         top: 0;
         right: 0;
+        bottom: 0;
         background-color: @select-icon-bg;
-        color: @select-icon;
-        content: @cf-icon-down;
-        font-family: 'CFPB Minicons';
-        line-height: unit( @select-height / @base-font-size-px, em );
-        text-align: center;
+        content: '';
         pointer-events: none;
+        background-image: url( '../icons/down.svg' );
+        background-size: auto @cf-icon-height;
+        background-repeat: no-repeat;
+        background-position: center center;
     }
 }
 
