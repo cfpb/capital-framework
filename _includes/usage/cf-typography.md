@@ -116,13 +116,13 @@ header. Since categories can be repetitive, we suggest placing a label with
 readers (see Meta Header below).
 
 <a href="#" class="a-heading a-heading__icon">
-    <span class="cf-icon cf-icon-dialogue"></span>
+    {% include icons/dialogue.svg %}
     Consumer finance
 </a>
 
 ```
 <a href="#" class="a-heading a-heading__icon">
-    <span class="cf-icon cf-icon-dialogue"></span>
+    {% raw %}{% include icons/dialogue.svg %}{% endraw %}
     Consumer finance
 </a>
 ```
@@ -165,16 +165,38 @@ attached to `.m-meta-header_left` and `.a-heading.a-heading__icon` is attached t
     <div class="m-meta-header_left">
         <span class="u-visually-hidden">Categories: </span>
         <a href="#" class="a-heading a-heading__icon">
-            <span class="cf-icon cf-icon-credit-card"></span>
+            {% include icons/credit-card.svg %}
             Consumer finance
         </a>
         |
         <a href="#" class="a-heading a-heading__icon">
-            <span class="cf-icon cf-icon-credit-card"></span>
-            Consumer finance
+            {% include icons/bullhorn.svg %}
+            At the CFPB
         </a>
     </div>
 </header>
+
+```
+<header class="m-meta-header">
+    <div class="m-meta-header_right">
+        <span class="a-date">
+            Nov 4, 2013
+        </span>
+    </div>
+    <div class="m-meta-header_left">
+        <span class="u-visually-hidden">Categories: </span>
+        <a href="#" class="a-heading a-heading__icon">
+            {% raw %}{% include icons/credit-card.svg %}{% endraw %}
+            Consumer finance
+        </a>
+        |
+        <a href="#" class="a-heading a-heading__icon">
+            {% raw %}{% include icons/bullhorn.svg %}{% endraw %}
+            At the CFPB
+        </a>
+    </div>
+</header>
+```
 
 
 ## Link patterns
@@ -186,39 +208,30 @@ attached to `.m-meta-header_left` and `.a-heading.a-heading__icon` is attached t
 - For the underlined icon prevention to work, you must wrap the link text with
   a `span.icon-link_text`. There can be no whitespace between the text and the
   opening and closing `span` tags.
-
-#### Default pattern
-
-- The modifier names match the cf-icon names of commonly-used icons.
-- Icons appear to the right of a link, by default.
+- Include the icon either prior to or after the `a-link_text`. It is important the
+  text and icon are siblings to correctly handle underlines.
 
 <p>
     For more information, email
     <a class="a-link
-              a-link__icon
-              cf-icon
-              cf-icon__after
-              cf-icon-mail"
+              a-link__icon"
        href="#">
+        {% include icons/mail.svg %}
         <span class="a-link_text">john.smith@cfpb.gov</span>
     </a>.
     Alternatively, you can
     <a class="a-link
-              a-link__icon
-              cf-icon
-              cf-icon__after
-              cf-icon-download"
+              a-link__icon"
        href="#">
         <span class="a-link_text">download the info sheet</span>
+        {% include icons/download.svg %}
     </a>.
     Oh, you might also want to visit this
     <a class="a-link
-              a-link__icon
-              cf-icon
-              cf-icon__after
-              cf-icon-external-link"
+              a-link__icon"
        href="#">
         <span class="a-link_text">other organization's website</span>
+        {% include icons/external-link.svg %}
     </a> for further details.
 </p>
 
@@ -227,91 +240,43 @@ attached to `.m-meta-header_left` and `.a-heading.a-heading__icon` is attached t
 <p>
    For more information, email
     <a class="a-link
-              a-link__icon
-              cf-icon
-              cf-icon__after
-              cf-icon-mail"
+              a-link__icon"
        href="#">
+        {% raw %}{% include icons/mail.svg %}{% endraw %}
         <span class="a-link_text">john.smith@cfpb.gov</span>
     </a>.
     Alternatively, you can
     <a class="a-link
-              a-link__icon
-              cf-icon
-              cf-icon__after
-              cf-icon-download"
+              a-link__icon"
        href="#">
         <span class="a-link_text">download the info sheet</span>
+        {% raw %}{% include icons/download.svg %}{% endraw %}
     </a>.
     Oh, you might also want to visit this
     <a class="a-link
-              a-link__icon
-              cf-icon
-              cf-icon__after
-              cf-icon-external-link"
+              a-link__icon"
        href="#">
         <span class="a-link_text">other organization's website</span>
+        {% raw %}{% include icons/external-link.svg %}{% endraw %}
     </a> for further details.
 </p>
 ```
 
-#### Links with icons on the left
-
-- Simply add the `.icon-link__before` modifier to place the icon before the
-  link text.
-- You can omit the `span.icon-link_text` wrapper if you do not need an
-  underline on a particular link.
-
-<a class="a-link a-link__icon
-          cf-icon
-          cf-icon__before
-          cf-icon-mail"
-    href="#">
-    <span class="a-link_text">john.smith@cfpb.gov</span>
-</a><br>
-<a class="a-link
-          a-link__icon
-          cf-icon
-          cf-icon__before
-          cf-icon-phone"
-   href="#">
-    <span class="a-link_text">(123) 456-7890</span>
-</a>
-
-```
-<a class="a-link a-link__icon
-          cf-icon
-          cf-icon__before
-          cf-icon-mail"
-    href="#">
-    <span class="a-link_text">john.smith@cfpb.gov</span>
-</a><br>
-<a class="a-link
-          a-link__icon
-          cf-icon
-          cf-icon__before
-          cf-icon-phone"
-   href="#">
-    <span class="a-link_text">(123) 456-7890</span>
-</a>
-```
 
 #### Non-wrapping icon links
 
 - Warning: Icons added to inline links can sometimes break onto the next line.
   If you want to prevent this, you can add the `__no-wrap` modifier to
-  `.icon-link`.
+  `.a-link__icon`.
 
 
 For more information, email
 <a class="a-link
           a-link__icon
-          a-link__no-wrap
-          cf-icon
-          cf-icon__after
-          cf-icon-mail"
+          a-link__no-wrap"
    href="#">
     <span class="a-link_text">john.smith@cfpb.gov</span>
+    {% include icons/mail.svg %}
 </a>.
 
 ```
@@ -319,12 +284,10 @@ For more information, email
 For more information, email
 <a class="a-link
           a-link__icon
-          a-link__no-wrap
-          cf-icon
-          cf-icon__after
-          cf-icon-mail"
+          a-link__no-wrap"
    href="#">
     <span class="a-link_text">john.smith@cfpb.gov</span>
+    {% raw %}{% include icons/mail.svg %}{% endraw %}
 </a>.
 ```
 
@@ -332,21 +295,18 @@ For more information, email
 
 <a class="a-link
           a-link__jump
-          cf-icon
-          cf-icon__after
-          cf-icon-right"
+          a-link__icon-after-text"
    href="#">
     <span class="a-link_text">Default jump link</span>
+    {% include icons/right.svg %}
 </a>
 
 ```
 <a class="a-link
           a-link__jump
-          cf-icon
-          cf-icon__after
-          cf-icon-right"
+          a-link__icon-after-text"
    href="#">
-    <span class="a-link_text">Default jump link</span>
+    {% raw %}{% include icons/right.svg %}{% endraw %}
 </a>
 ```
 
@@ -356,46 +316,42 @@ The large jump link has an `18px` `font-size`, compared to the default of `16px`
 
 <a class="a-link
           a-link__jump
-          a-link__large
-          cf-icon
-          cf-icon__after
-          cf-icon-right"
+          a-link__icon-after-text
+          a-link__large"
    href="#">
     <span class="a-link_text">Large jump link</span>
+    {% include icons/right.svg %}
 </a>
 
 ```
 <a class="a-link
           a-link__jump
-          a-link__large
-          cf-icon
-          cf-icon__after
-          cf-icon-right"
+          a-link__icon-after-text
+          a-link__large"
    href="#">
     <span class="a-link_text">Large jump link</span>
+    {% raw %}{% include icons/right.svg %}{% endraw %}
 </a>
 ```
 
-#### Jump link with before link modifier
+#### Jump link with icon on the left
 
 Jump links can also have icons before the text, like icon links.
 
 <a class="a-link
           a-link__jump
-          cf-icon
-          cf-icon__before
-          cf-icon-left"
+          a-link__icon-before-text"
    href="#">
+    {% include icons/left.svg %}
     <span class="a-link_text">Jump link with icon on left</span>
 </a>
 
 ```
 <a class="a-link
           a-link__jump
-          cf-icon
-          cf-icon__before
-          cf-icon-left"
+          a-link__icon-before-text"
    href="#">
+    {% raw %}{% include icons/left.svg %}{% endraw %}
     <span class="a-link_text">Jump link with icon on left</span>
 </a>
 ```
@@ -404,25 +360,23 @@ Jump links can also have icons before the text, like icon links.
 
 <a class="a-link
           a-link__jump
-          a-link__bg
-          cf-icon
-          cf-icon__after
-          cf-icon-right"
+          a-link__icon-after-text
+          a-link__bg"
    href="#">
     <span class="a-link_text">Jump link with grey background and
         solid borders on small screens</span>
+    {% include icons/right.svg %}
 </a>
 
 ```
 <a class="a-link
           a-link__jump
-          a-link__bg
-          cf-icon
-          cf-icon__after
-          cf-icon-right"
+          a-link__icon-after-text
+          a-link__bg"
    href="#">
     <span class="a-link_text">Jump link with grey background and
         solid borders on small screens</span>
+    {% raw %}{% include icons/right.svg %}{% endraw %}
 </a>
 ```
 

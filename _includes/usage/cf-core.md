@@ -792,7 +792,7 @@ _Responsive heading. At small screen sizes, displays as heading level 4._
 
 #### Heading level 4
 
-_Not a responsive heading._
+_Responsive heading. At small screen sizes, displays at same size as body copy._
 
 <h4>Example heading element</h4>
 <p class="h4">A non-heading element</p>

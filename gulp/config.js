@@ -72,8 +72,9 @@ module.exports = {
       dest: loc.dist
     },
     icons: {
-      src:  loc.lib + '/cf-icons/src/fonts/*',
-      dest: loc.dist + '/static/css/fonts/'
+      src:  loc.lib + '/cf-icons/src/icons/*.svg',
+      destIncludes: '_includes/icons/',
+      destStatic: loc.dist + '/static/icons'
     },
     vendorjs: {
       src: [
@@ -84,6 +85,7 @@ module.exports = {
     },
     usage: {
       src: [
+        loc.lib + '/cf-atomic-component/usage.md',
         loc.lib + '/cf-buttons/usage.md',
         loc.lib + '/cf-core/usage.md',
         loc.lib + '/cf-expandables/usage.md',
@@ -91,6 +93,7 @@ module.exports = {
         loc.lib + '/cf-grid/usage.md',
         loc.lib + '/cf-icons/usage.md',
         loc.lib + '/cf-layout/usage.md',
+        loc.lib + '/cf-notifications/usage.md',
         loc.lib + '/cf-pagination/usage.md',
         loc.lib + '/cf-typography/usage.md',
         loc.lib + '/cf-tables/usage.md'
