@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 5.0.1 - 2018-02-15
+
 ### Changed
 - **capital-framework:** Prevent release scripts from being triggered by CFPBot.
 
