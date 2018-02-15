@@ -7,7 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
--
+- **capital-framework:** [PATCH] Prevent release scripts from being triggered by CFPBot.
 
 ### Removed
 -
