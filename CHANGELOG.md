@@ -7,7 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
--
+- **cf-core:** [PATCH] Fixed list style type for nested ordered lists
 
 ### Removed
 -
