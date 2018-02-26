@@ -1040,17 +1040,33 @@ Links within a `nav` element are not underlined.
 <p> Paragraph example for visual reference</p>
 <ul>
     <li>List item 1</li>
-    <li>List item 2</li>
+    <li>
+        List item 2
+        <ul>
+              <li>Nested item 2-1</li>
+              <li>Nested item 2-2</li>
+              <li>Nested item 2-3</li>
+        </ul>
+    </li>
     <li>List item 3</li>
 </ul>
+<p> Paragraph example for visual reference</p>
 
 ```
 <p> Paragraph example for visual reference</p>
 <ul>
     <li>List item 1</li>
-    <li>List item 2</li>
+    <li>
+        List item 2
+        <ul>
+              <li>Nested item 2-1</li>
+              <li>Nested item 2-2</li>
+              <li>Nested item 2-3</li>
+        </ul>
+    </li>
     <li>List item 3</li>
 </ul>
+<p> Paragraph example for visual reference</p>
 ```
 
 #### Ordered list
@@ -1058,18 +1074,35 @@ Links within a `nav` element are not underlined.
 <p>Paragraph example for visual reference</p>
 <ol>
     <li>List item 1</li>
-    <li>List item 2</li>
+    <li>
+        List item 2
+        <ol>
+              <li>Nested item 2-1</li>
+              <li>Nested item 2-2</li>
+              <li>Nested item 2-3</li>
+        </ol>
+    </li>
     <li>List item 3</li>
 </ol>
+<p>Paragraph example for visual reference</p>
 
 ```
 <p>Paragraph example for visual reference</p>
 <ol>
     <li>List item 1</li>
-    <li>List item 2</li>
+    <li>
+        List item 2
+        <ol>
+              <li>Nested item 2-1</li>
+              <li>Nested item 2-2</li>
+              <li>Nested item 2-3</li>
+        </ol>
+    </li>
     <li>List item 3</li>
 </ol>
+<p>Paragraph example for visual reference</p>
 ```
+
 
 ### Tables
 

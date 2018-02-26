@@ -3,14 +3,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
--
+- **cf-core:** Fixed list style type for nested ordered lists
 
-### Removed
--
 
 ## 5.0.1 - 2018-02-15
 
