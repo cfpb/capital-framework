@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "cf-core": "^4.0.0",
-    "cf-buttons": "^4.0.0",
+    "cf-buttons": "^5.0.0",
     "cf-icons": "^4.0.0"
   },
   "keywords": [
