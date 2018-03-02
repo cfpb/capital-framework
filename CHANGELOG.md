@@ -7,7 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-typography:** [PATCH] Note in usage docs about unused italic and demi fonts.
 
 ### Changed
--
+- **cf-core:** [PATCH] Fix OL `padding-left` so numbers aren't cut off in IE
 
 ### Removed
 -
