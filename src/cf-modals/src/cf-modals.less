@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Capital Framework
+   Modal Styling
+   ========================================================================== */
+
+//
+// Theme variables
+//
+
+// .o-modal
+@modal-backdrop:   @gray-80;
+@modal-body:       @white;
+@modal-footer:     @gray-5;
+@modal-border-top: @green;
+
+// Import external dependencies
+
+@import (less) '../../cf-core/src/cf-core.less';
+@import (less) '../../cf-icons/src/cf-icons.less';
+
+.o-modal {
+    z-index: 99999;
+    display: none;
+
+    &__visible {
+        display:block;
+    }
+
+    &_instructions {
+        .u-visually-hidden();
+    }
+
+    &_backdrop {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: @modal-backdrop;
+        opacity: 0.7;
+        z-index: 1;
+    }
+
+    &_container {
+        position: fixed;
+        display: table;
+        top: 5%;
+        left: 0;
+        z-index: 2;
+        padding-left: 5%;
+        padding-right: 5%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    &_content {
+      margin: 0 auto;
+
+      // This is not mobile-first to support a consistent appearance
+      // across browsers that don't support media-querries (IE8).
+      max-width: 630px;
+      & {
+          .respond-to-max( @bp-xs-max, {
+              max-width: 270px;
+          } );
+      }
+    }
+
+    &_body {
+       border-top: 3px solid @modal-border-top;
+       background-color: @modal-body;
+       padding: 30px;
+    }
+
+    &_footer {
+       background: @modal-footer;
+       padding: 10px 30px;
+    }
+
+    &_close {
+       float: right;
+       margin-left: unit( 10px / @base-font-size-px, em );
+
+       // Hide link underline before and after hover and focus.
+       &,
+       &:hover,
+       &:focus {
+           border-bottom: none;
+       }
+    }
+}
