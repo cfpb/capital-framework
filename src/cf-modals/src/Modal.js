@@ -2,10 +2,8 @@
    Modal Organism
    ========================================================================== */
 
-'use strict';
-
-const UNDEFINED = require( 'atomic-component/src/utilities/config' ).UNDEFINED;
-const Organism = require( 'atomic-component/src/components/Organism' );
+const UNDEFINED = require( 'cf-atomic-component/src/utilities/config' ).UNDEFINED;
+const Organism = require( 'cf-atomic-component/src/components/Organism' );
 
 const ModalOrganism = Organism.extend( {
 
