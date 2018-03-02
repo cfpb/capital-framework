@@ -4,7 +4,6 @@
 
 'use strict';
 
-const bind = require( 'atomic-component/src/utilities/function-bind' ).bind;
 const UNDEFINED = require( 'atomic-component/src/utilities/config' ).UNDEFINED;
 const Organism = require( 'atomic-component/src/components/Organism' );
 
@@ -51,7 +50,7 @@ function initialize() {
   this.ui.base = this.element;
 
   // Bind the event handler function for the window to this modal.
-  this.onWindowKeyPressed = bind( _onWindowKeyPressed, this );
+  this.onWindowKeyPressed = _onWindowKeyPressed.bind(this );
 
   // Check the dialog role (either 'dialog' or 'alertdialog').
   // Set it to 'dialog' if the role is not found.
