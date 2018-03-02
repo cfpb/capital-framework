@@ -15,6 +15,7 @@ Capital Framework.
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
+    - [Sizing variables](#sizing-variables)
 - [Legends](#legends)
 - [Labels](#labels)
     - [Basic label](#basic-label)
@@ -32,10 +33,10 @@ Capital Framework.
 - [Buttons](#buttons)
     - [Simple input with a button](#simple-input-with-a-button)
     - [Button inside an input](#button-inside-an-input)
-    - [Button inside an input with a button](#button-inside-an-input-with-a-button)
+    - [Button inside an input with another button](#button-inside-an-input-with-another-button)
 - [Select dropdown](#select-dropdown)
 - [Basic multiselect](#basic-multiselect)
-- [Fieldsets](#form-fieldsets)
+- [Fieldsets](#fieldsets)
 
 
 ## Variables
@@ -79,7 +80,6 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 // .m-form-field
 @form-field-border:                 @input-border;
 @form-field-border__focused:        @input-border;
-@form-field-border__selected:       @pacific;
 @form-field-border__disabled:       @gray-60;
 
 // .m-form-field__lg-target
@@ -1188,6 +1188,52 @@ Generally this is only useful for documentation purposes.
             </div>
         </fieldset>
     </div>
+    <div class="o-form_group">
+        <fieldset class="o-form_fieldset">
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_1">
+                <label class="a-label" for="test_checkbox_lg_default_1">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_2">
+                <label class="a-label" for="test_checkbox_lg_default_2">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_3">
+                <label class="a-label" for="test_checkbox_lg_default_3">
+                    This is a very long label that wraps to a second line.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <small class="a-label_helper">
+                        (This is helper text)
+                    </small>
+                </label>
+            </div>
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_4">
+                <label class="a-label" for="test_checkbox_lg_default_4">Label</label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="o-form_group">
+        <fieldset class="o-form_fieldset">
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_1" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_1">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_2" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_2">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_3" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_3">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_4" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_4">Label</label>
+            </div>
+        </fieldset>
+    </div>
 </form>
 
 ```html
@@ -1213,6 +1259,46 @@ Generally this is only useful for documentation purposes.
             <div class="m-form-field m-form-field__radio">
                 <input class="a-radio" type="radio" id="test_radio_2" name="test_radio">
                 <label class="a-label" for="test_radio_2">Label</label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="o-form_group">
+        <fieldset class="o-form_fieldset">
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_1">
+                <label class="a-label" for="test_checkbox_lg_default_1">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_2">
+                <label class="a-label" for="test_checkbox_lg_default_2">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_3">
+                <label class="a-label" for="test_checkbox_lg_default_3">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_4">
+                <label class="a-label" for="test_checkbox_lg_default_4">Label</label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="o-form_group">
+        <fieldset class="o-form_fieldset">
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_1" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_1">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_2" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_2">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_3" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_3">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_4" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_4">Label</label>
             </div>
         </fieldset>
     </div>
