@@ -4,13 +4,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-typography:** Note in usage docs about unused italic and demi fonts.
 
 ### Changed
--
+- **cf-core:** Fix OL `padding-left` so numbers aren't cut off in IE
+- **cf-forms:** Updated cf-buttons dependency to v5.0.0
+- **cf-pagination:** Updated cf-buttons dependency to v5.0.0
 
-### Removed
--
 
 ## 5.0.2 - 2018-02-26
 
