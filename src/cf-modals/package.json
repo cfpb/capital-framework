@@ -10,7 +10,7 @@
     "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
   },
   "dependencies": {
-    "atomic-component": "^1.4.0",
+    "cf-atomic-component": "^1.4.0",
     "cf-core": "^4.0.0",
     "cf-icons": "^4.0.0"
   },
