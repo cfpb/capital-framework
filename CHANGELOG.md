@@ -9,6 +9,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Changed
 - **cf-core:** [PATCH] Fix OL `padding-left` so numbers aren't cut off in IE
 - **cf-forms:** [PATCH] Updated cf-buttons dependency to v5.0.0
+- **cf-icons:** [PATCH] Make minor improvements to usage doc
 - **cf-pagination:** [PATCH] Updated cf-buttons dependency to v5.0.0
 
 ### Removed
