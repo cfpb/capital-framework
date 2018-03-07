@@ -10,7 +10,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Removed
--
+- **cf-core:** [PATCH] Removed text-shadow hack to fix inconsistent demibold font weight in Chrome and other browsers.
 
 ## 5.0.2 - 2018-02-26
 
