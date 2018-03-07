@@ -7,7 +7,9 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-typography:** [PATCH] Note in usage docs about unused italic and demi fonts.
 
 ### Changed
--
+- **cf-core:** [PATCH] Fix OL `padding-left` so numbers aren't cut off in IE
+- **cf-forms:** [PATCH] Updated cf-buttons dependency to v5.0.0
+- **cf-pagination:** [PATCH] Updated cf-buttons dependency to v5.0.0
 
 ### Removed
 - **cf-core:** [PATCH] Removed text-shadow hack to fix inconsistent demibold font weight in Chrome and other browsers.
