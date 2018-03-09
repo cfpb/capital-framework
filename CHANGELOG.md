@@ -11,6 +11,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-forms:** [PATCH] Updated cf-buttons dependency to v5.0.0
 - **cf-icons:** [PATCH] Make minor improvements to usage doc
 - **cf-pagination:** [PATCH] Updated cf-buttons dependency to v5.0.0
+- **capital-framework:** [PATCH] Updates `babel-loader` to `^7.1.4`,
+  `uglifyjs-webpack-plugin` to `^1.2.2`, `webpack-stream` to `^4.0.2`.
 
 ### Removed
 - **cf-core:** [PATCH] Removed text-shadow hack to fix inconsistent demibold font weight in Chrome and other browsers.
