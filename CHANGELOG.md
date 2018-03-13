@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 5.0.3 - 2018-03-13
+
+### Added
 - **cf-typography:** Note in usage docs about unused italic and demi fonts.
 
 ### Changed
