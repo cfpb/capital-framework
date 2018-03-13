@@ -50,6 +50,14 @@ project by duplicating the variable `@key: value`.
 @webfont-demi: @webfont-medium;
 ```
 
+**Note:** We decided to stop serving the font file for Avenir Next Italic
+because we found Avenir Next Regular with browser-created faux italics
+was an acceptable substitute, and it saves a lot of bytes not to serve it.
+
+Similarly, we're trying out Avenir Next Medium with faux bolding
+in place of Avenir Next Demi, though the results of that experiment
+have been less predictable, so we may yet revert that decision.
+
 ### Font source variables
 
 Use this variable to specify where the fonts files used in the `@webfont-*`

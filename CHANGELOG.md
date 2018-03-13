@@ -4,13 +4,19 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-typography:** Note in usage docs about unused italic and demi fonts.
 
 ### Changed
--
+- **cf-core:** Fix OL `padding-left` so numbers aren't cut off in IE
+- **cf-forms:** Updated cf-buttons dependency to v5.0.0
+- **cf-icons:** Make minor improvements to usage doc
+- **cf-pagination:** Updated cf-buttons dependency to v5.0.0
+- **capital-framework:** Updates `babel-loader` to `^7.1.4`,
+  `uglifyjs-webpack-plugin` to `^1.2.2`, `webpack-stream` to `^4.0.2`.
 
 ### Removed
--
+- **cf-core:** Removed text-shadow hack to fix inconsistent demibold font weight in Chrome and other browsers.
+
 
 ## 5.0.2 - 2018-02-26
 

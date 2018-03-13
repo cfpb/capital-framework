@@ -128,7 +128,6 @@ b {
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 1.25;
-    text-shadow: 0px 0px @text-shadow;
     text-transform: uppercase;
 }
 
@@ -140,7 +139,6 @@ b {
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 1.25;
-    text-shadow: 0px 0px @text-shadow;
     text-transform: uppercase;
 }
 
@@ -493,16 +491,19 @@ nav a {
 // Lists
 //
 
-ul, ol {
-    padding-left: unit( 18px / @base-font-size-px, em );
-}
-
 ul {
+    padding-left: unit( 18px / @base-font-size-px, em );
     list-style: square;
 }
 
 ul ul {
     list-style-type: circle;
+}
+
+ol {
+    // Slightly larger than necessary, but this is the minimum value
+    // for numbers to not be partially in the margin in Internet Explorer.
+    padding-left: unit( 21px / @base-font-size-px, em );
 }
 
 //
