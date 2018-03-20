@@ -17,14 +17,9 @@
 // .o-expandable_link
 @expandable_link-text:          @pacific;
 
-// .o-expandable__padded
-@expandable__padded-bg:         @gray-10;
-@expandable__padded-bg-hover:   @gray-20;
-@expandable__padded-divider:    @gray-40;
-
-// .o-expandable-group
-@expandable-group-bg:           @white;
-@expandable-group-divider:      @gray-40;
+// .o-expandable modifiers
+@expandable__background:        @gray-5;
+@expandable__border:            @gray-40;
 
 // Sizing variables
 
@@ -50,7 +45,7 @@
 
 .o-expandable {
     position: relative;
-    margin-bottom: unit( 30px / @base-font-size-px, em );
+    //margin-bottom: unit( 30px / @base-font-size-px, em );
 
     &_target {
         padding: 0;
@@ -145,13 +140,7 @@
     //
 
     &__padded {
-        margin-bottom: unit( 30px / @base-font-size-px, em );
-        background: @expandable__padded-bg;
-
-        &:hover,
-        &.o-expandable__expanded {
-            background: @expandable__padded-bg-hover;
-        }
+        //margin-bottom: unit( 30px / @base-font-size-px, em );
 
         .o-expandable_header {
             padding: unit( 10px / @base-font-size-px, em )
@@ -159,24 +148,35 @@
         }
 
         .o-expandable_content {
-            // Margin collapsing trick for more consistent bottom padding.
-            margin: 0
-                    unit( 15px / @base-font-size-px, em )
-                    unit( 22px / @base-font-size-px, em );
+            padding: 0 unit( 15px / @base-font-size-px, em );
 
             // The divider between _header and _content.
             &:before {
                 content: '';
                 display: block;
-                border-bottom: 1px solid @expandable__padded-divider;
-                margin-bottom: unit( 15px / @base-font-size-px, em );
+                border-top: 1px solid @expandable__border;
+                padding-top: unit( 15px / @base-font-size-px, em );
             }
 
             &:after {
-                margin-bottom: unit( 15px / @base-font-size-px, em );
+                padding-bottom: unit( 15px / @base-font-size-px, em );
                 width: 100%;
             }
         }
+    }
+
+    //
+    // Expandable with a background color modifier
+    //
+    &__background {
+        background: @expandable__background;
+    }
+
+    //
+    // Expandable with a border modifier
+    //
+    &__border {
+        border: 1px solid @expandable__border;
     }
 
     //
@@ -184,27 +184,19 @@
     //
 
     &-group {
-        margin-bottom: unit( 30px / @base-font-size-px, em );
+        //margin-bottom: unit( 30px / @base-font-size-px, em );
 
-        .o-expandable {
-            border-bottom: 1px solid @expandable-group-divider;
-            margin-bottom: 0;
-            background: @expandable-group-bg;
+        .o-expandable__padded {
+            border-bottom: 1px solid @expandable__border;
+            //margin-bottom: 0;
 
             &:first-child {
-                border-top: 1px solid @expandable-group-divider;
+                border-top: 1px solid @expandable__border;
             }
         }
 
         .o-expandable_label {
-            .heading-4();
             margin-bottom: 0;
         }
-
-        .o-expandable_content {
-            margin-bottom: 0;
-        }
-
     }
-
 }

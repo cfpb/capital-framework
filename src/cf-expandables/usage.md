@@ -180,7 +180,10 @@ and modifiers described throughout.
 
 The following combination is our recommended go-to expandable pattern.
 
-<div class="o-expandable o-expandable__padded">
+<div class="o-expandable
+            o-expandable__padded
+            o-expandable__background
+            o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
         <span class="o-expandable_header-left o-expandable_label">
@@ -209,7 +212,10 @@ The following combination is our recommended go-to expandable pattern.
 </div>
 
 ```
-<div class="o-expandable o-expandable__padded">
+<div class="o-expandable
+            o-expandable__padded
+            o-expandable__background
+            o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
         <span class="o-expandable_header-left o-expandable_label">
@@ -240,7 +246,10 @@ The following combination is our recommended go-to expandable pattern.
 
 ### Default state (open on load)
 
-<div class="o-expandable o-expandable__padded">
+<div class="o-expandable
+            o-expandable__padded
+            o-expandable__background
+            o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
         <span class="o-expandable_header-left o-expandable_label">
@@ -269,7 +278,10 @@ The following combination is our recommended go-to expandable pattern.
 </div>
 
 ```
-<div class="o-expandable o-expandable__padded">
+<div class="o-expandable
+            o-expandable__padded
+            o-expandable__background
+            o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
         <span class="o-expandable_header-left o-expandable_label">
@@ -354,7 +366,7 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <span class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 1
             </span>
             <span class="o-expandable_header-right o-expandable_link">
@@ -381,7 +393,7 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <span class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 2
             </span>
             <span class="o-expandable_header-right o-expandable_link">
@@ -408,7 +420,7 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <span class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 3
             </span>
             <span class="o-expandable_header-right o-expandable_link">
@@ -439,7 +451,7 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <span class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 1
             </span>
             <span class="o-expandable_header-right o-expandable_link">
@@ -466,7 +478,7 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <span class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 2
             </span>
             <span class="o-expandable_header-right o-expandable_link">
@@ -493,7 +505,7 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <span class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 3
             </span>
             <span class="o-expandable_header-right o-expandable_link">
@@ -530,7 +542,7 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <span class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 1
             </span>
             <span class="o-expandable_header-right o-expandable_link">
@@ -557,7 +569,7 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <span class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 2
             </span>
             <span class="o-expandable_header-right o-expandable_link">
@@ -584,7 +596,7 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <span class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 3
             </span>
             <span class="o-expandable_header-right o-expandable_link">
@@ -615,7 +627,7 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <span class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 1
             </span>
             <span class="o-expandable_header-right o-expandable_link">
@@ -642,7 +654,7 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <span class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 2
             </span>
             <span class="o-expandable_header-right o-expandable_link">
@@ -669,7 +681,7 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <span class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 3
             </span>
             <span class="o-expandable_header-right o-expandable_link">
