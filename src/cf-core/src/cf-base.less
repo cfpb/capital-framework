@@ -1,7 +1,11 @@
-/* ==========================================================================
-   Capital Framework
-   Base styles
-   ========================================================================== */
+/**
+ *    ==========================================================================
+ *    Capital Framework
+ *    Base styles
+ *    ==========================================================================
+ *
+ * @format
+ */
 
 //
 // Webfont mixins
@@ -66,7 +70,7 @@
 body {
     color: @text;
     font-family: 'Avenir Next', Arial, sans-serif;
-    font-size: unit( @base-font-size-px / 16 * 100, % );
+    font-size: unit(@base-font-size-px / 16 * 100, %);
     line-height: @base-line-height;
 }
 
@@ -84,66 +88,66 @@ b {
     font-weight: 600;
 }
 
-.heading-1( @fs: @size-i ) {
+.heading-1(@fs: @size-i) {
     @font-size: @fs;
 
-    margin-bottom: unit( 15px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
+    margin-bottom: unit(15px / @font-size, em);
+    font-size: unit(@font-size / @base-font-size-px, em);
     font-weight: normal;
     letter-spacing: initial;
     line-height: 1.25;
     text-transform: initial;
 }
 
-.heading-2( @fs: @size-ii ) {
+.heading-2(@fs: @size-ii) {
     @font-size: @fs;
 
-    margin-bottom: unit( 15px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
+    margin-bottom: unit(15px / @font-size, em);
+    font-size: unit(@font-size / @base-font-size-px, em);
     font-weight: normal;
     letter-spacing: initial;
     line-height: 1.25;
     text-transform: initial;
 }
 
-.heading-3( @fs: @size-iii )  {
+.heading-3(@fs: @size-iii) {
     @font-size: @fs;
 
-    margin-bottom: unit( 15px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
+    margin-bottom: unit(15px / @font-size, em);
+    font-size: unit(@font-size / @base-font-size-px, em);
     font-weight: normal;
     letter-spacing: initial;
     line-height: 1.25;
     text-transform: initial;
 }
 
-.heading-4( @fs: @size-iv )  {
+.heading-4(@fs: @size-iv) {
     @font-size: @fs;
 
-    margin-bottom: unit( 15px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
+    margin-bottom: unit(15px / @font-size, em);
+    font-size: unit(@font-size / @base-font-size-px, em);
     font-weight: 500;
     letter-spacing: initial;
     line-height: 1.25;
     text-transform: initial;
 }
 
-.heading-5( @fs: @size-v, @text-shadow: @text )  {
+.heading-5(@fs: @size-v, @text-shadow: @text) {
     @font-size: @fs;
 
-    margin-bottom: unit( 15px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
+    margin-bottom: unit(15px / @font-size, em);
+    font-size: unit(@font-size / @base-font-size-px, em);
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 1.25;
     text-transform: uppercase;
 }
 
-.heading-6( @fs: @size-vi, @text-shadow: @text )  {
+.heading-6(@fs: @size-vi, @text-shadow: @text) {
     @font-size: @fs;
 
-    margin-bottom: unit( 15px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
+    margin-bottom: unit(15px / @font-size, em);
+    font-size: unit(@font-size / @base-font-size-px, em);
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 1.25;
@@ -172,10 +176,10 @@ h1,
     img + &,
     table + &,
     blockquote + & {
-        margin-top: unit( 60px / @font-size, em );
+        margin-top: unit(60px / @font-size, em);
     }
 
-    .respond-to-max( @bp-xs-max, {
+    .respond-to-max(@bp-xs-max, {
         .heading-2();
 
         p + &,
@@ -186,7 +190,7 @@ h1,
         img + &,
         table + &,
         blockquote + & {
-            margin-top: unit( 45px / @font-size, em );
+            margin-top: unit(45px / @font-size, em);
         }
 
         h2 + &,
@@ -199,9 +203,9 @@ h1,
         .h5 + &,
         h6 + &,
         .h6 + & {
-            margin-top: unit( 30px / @font-size, em );
+            margin-top: unit(30px / @font-size, em);
         }
-    } );
+    });
 }
 
 h2,
@@ -216,7 +220,7 @@ h2,
     img + &,
     table + &,
     blockquote + & {
-        margin-top: unit( 45px / @font-size, em );
+        margin-top: unit(45px / @font-size, em);
     }
 
     h1 + &,
@@ -229,10 +233,10 @@ h2,
     .h5 + &,
     h6 + &,
     .h6 + & {
-        margin-top: unit( 30px / @font-size, em );
+        margin-top: unit(30px / @font-size, em);
     }
 
-    .respond-to-max( @bp-xs-max, {
+    .respond-to-max(@bp-xs-max, {
         .heading-3();
 
         p + &,
@@ -243,9 +247,9 @@ h2,
         img + &,
         table + &,
         blockquote + & {
-            margin-top: unit( 30px / @font-size, em );
+            margin-top: unit(30px / @font-size, em);
         }
-    } );
+    });
 }
 
 h3,
@@ -270,12 +274,12 @@ h3,
     .h5 + &,
     h6 + &,
     .h6 + & {
-        margin-top: unit( 30px / @font-size, em );
+        margin-top: unit(30px / @font-size, em);
     }
 
-    .respond-to-max( @bp-xs-max, {
+    .respond-to-max(@bp-xs-max, {
         .heading-4();
-    } );
+    });
 }
 
 h4,
@@ -300,16 +304,16 @@ h4,
     .h5 + &,
     h6 + &,
     .h6 + & {
-        margin-top: unit( 30px / @font-size, em );
+        margin-top: unit(30px / @font-size, em);
     }
 
-    .respond-to-max( @bp-xs-max, {
+    .respond-to-max(@bp-xs-max, {
         @h4-font-size-on-xs: @base-font-size-px;
 
-        margin-bottom: unit( 10px / @h4-font-size-on-xs, em );
-        font-size: unit( @h4-font-size-on-xs / @base-font-size-px, em );
-        line-height: unit( 18px / @h4-font-size-on-xs );
-    } );
+        margin-bottom: unit(10px / @h4-font-size-on-xs, em);
+        font-size: unit(@h4-font-size-on-xs / @base-font-size-px, em);
+        line-height: unit(18px / @h4-font-size-on-xs);
+    });
 }
 
 h5,
@@ -334,7 +338,7 @@ h5,
     .h4 + &,
     h6 + &,
     .h6 + & {
-        margin-top: unit( 30px / @font-size, em );
+        margin-top: unit(30px / @font-size, em);
     }
 }
 
@@ -360,20 +364,23 @@ h6,
     .h4 + &,
     h5 + &,
     .h5 + & {
-        margin-top: unit( 30px / @font-size, em );
+        margin-top: unit(30px / @font-size, em);
     }
 }
 
 .lead-paragraph {
     .heading-3();
 
-    margin-top: unit( 30px / @font-size, em );
-    margin-bottom: unit( 15px / 18px, em );
+    margin-top: unit(30px / @font-size, em);
+    margin-bottom: unit(15px / 18px, em);
 
+    // Prettier keeps trying to add an extra `;` on the mixin
+    // ignore this block for the time being
+    /* prettier-ignore */
     .respond-to-max(@bp-xs-max, {
         // Use the same regular weight but reduce the sizes to h4 size
-        margin-top: unit( 30px / 18px, em );
-        font-size: unit( 18px / @base-font-size-px, em );
+        margin-top: unit(30px / 18px, em);
+        font-size: unit(18px / @base-font-size-px, em);
     });
 }
 
@@ -381,8 +388,8 @@ h6,
     // For when you want a heading that's bigger than a normal H1
     @font-size: @size-xl;
 
-    margin-bottom: unit( 20px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
+    margin-bottom: unit(20px / @font-size, em);
+    font-size: unit(@font-size / @base-font-size-px, em);
     font-weight: normal;
     line-height: 1.25;
 }
@@ -399,7 +406,7 @@ figure,
 table,
 blockquote {
     margin-top: 0;
-    margin-bottom: unit( 15px / @base-font-size-px, em );
+    margin-bottom: unit(15px / @base-font-size-px, em);
 
     &:last-child {
         margin-bottom: 0;
@@ -408,18 +415,18 @@ blockquote {
 
 p + ul,
 p + ol {
-    margin-top: unit( -5px / @base-font-size-px, em );
+    margin-top: unit(-5px / @base-font-size-px, em);
 }
 
 ul ul,
 ol ol,
 ul ol,
 ol ul {
-    margin-top: unit( 8px / @base-font-size-px, em );
+    margin-top: unit(8px / @base-font-size-px, em);
 }
 
 li {
-    margin-bottom: unit( 8px / @base-font-size-px, em );
+    margin-bottom: unit(8px / @base-font-size-px, em);
 
     &:last-child,
     nav & {
@@ -500,7 +507,7 @@ nav a {
 //
 
 ul {
-    padding-left: unit( 18px / @base-font-size-px, em );
+    padding-left: unit(18px / @base-font-size-px, em);
     list-style: square;
 }
 
@@ -511,7 +518,7 @@ ul ul {
 ol {
     // Slightly larger than necessary, but this is the minimum value
     // for numbers to not be partially in the margin in Internet Explorer.
-    padding-left: unit( 21px / @base-font-size-px, em );
+    padding-left: unit(21px / @base-font-size-px, em);
 }
 
 //
@@ -520,12 +527,12 @@ ol {
 
 th,
 td {
-    padding: unit( 10px / @base-font-size-px, em );
+    padding: unit(10px / @base-font-size-px, em);
 
     thead & {
         .h5();
 
-        padding: unit( 10px / @font-size, em );
+        padding: unit(10px / @font-size, em);
         background: @thead-bg;
         color: @thead-text;
     }
@@ -546,13 +553,13 @@ th {
 //
 
 blockquote {
-    margin-right: unit( 15px / @base-font-size-px, em );
-    margin-left: unit( 15px / @base-font-size-px, em );
+    margin-right: unit(15px / @base-font-size-px, em);
+    margin-left: unit(15px / @base-font-size-px, em);
 
-    .respond-to-min( @bp-sm-min, {
-        margin-right: unit( 30px / @base-font-size-px, em );
-        margin-left: unit( 30px / @base-font-size-px, em );
-    } );
+    .respond-to-min(@bp-sm-min, {
+        margin-right: unit(30px / @base-font-size-px, em);
+        margin-left: unit(30px / @base-font-size-px, em);
+    });
 }
 
 //
@@ -596,16 +603,14 @@ code {
 }
 
 code {
-    padding: unit( 3px / @size-code, em )
-             unit( 3px / @size-code, em )
-             0;
-    font-size: unit( @size-code / @base-font-size-px, em );
+    padding: unit(3px / @size-code, em) unit(3px / @size-code, em) 0;
+    font-size: unit(@size-code / @base-font-size-px, em);
 }
 
 pre {
     display: block;
-    padding: unit( 10px / @base-font-size-px, em)
-             unit( 15px / @base-font-size-px, em );
+    padding: unit(10px / @base-font-size-px, em)
+        unit(15px / @base-font-size-px, em);
     white-space: pre-wrap;
     overflow-wrap: break-word;
 

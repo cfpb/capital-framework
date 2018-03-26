@@ -1,6 +1,8 @@
+/** @format */
+
 .o-form {
     &_group {
-        margin-bottom: unit( 30px / @base-font-size-px, em );
+        margin-bottom: unit(30px / @base-font-size-px, em);
     }
 
     &_fieldset {
@@ -10,7 +12,7 @@
         padding: 0;
 
         .m-form-field + .m-form-field {
-            margin-top: unit( 10px / @base-font-size-px, em );
+            margin-top: unit(10px / @base-font-size-px, em);
         }
     }
 
@@ -19,24 +21,24 @@
     //
 
     &__input-w-btn {
-        .respond-to-min( 480px, {
+        .respond-to-min(480px, {
             .grid_nested-col-group();
-        } );
+        });
 
         &_input-container {
-            margin-bottom: unit( 15px / @base-font-size-px, em );
+            margin-bottom: unit(15px / @base-font-size-px, em);
 
-            .respond-to-min( 480px, {
-                .grid_column( 9 );
-
-                border-right-width: 0;
-            } );
-
-            .respond-to-min( 960px, {
-                .grid_column( 10 );
+            .respond-to-min(480px, {
+                .grid_column(9);
 
                 border-right-width: 0;
-            } );
+            });
+
+            .respond-to-min(960px, {
+                .grid_column(10);
+
+                border-right-width: 0;
+            });
 
             .a-text-input {
                 box-sizing: border-box;
@@ -45,15 +47,15 @@
         }
 
         &_btn-container {
-            margin-bottom: unit( 15px / @base-font-size-px, em );
+            margin-bottom: unit(15px / @base-font-size-px, em);
 
-            .respond-to-min( 480px, {
-                .grid_column( 3 );
-            } );
+            .respond-to-min(480px, {
+                .grid_column(3);
+            });
 
-            .respond-to-min( 960px, {
-                .grid_column( 2 );
-            } );
+            .respond-to-min(960px, {
+                .grid_column(2);
+            });
 
             .a-btn {
                 box-sizing: border-box;

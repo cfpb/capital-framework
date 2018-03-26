@@ -1,3 +1,5 @@
+/** @format */
+
 //
 // Pagination
 //
@@ -6,8 +8,8 @@
     position: relative;
 
     &_form {
-        padding: unit( 5px / @base-font-size-px, em );
-        border-radius: unit( 4px / @base-font-size-px, em );
+        padding: unit(5px / @base-font-size-px, em);
+        border-radius: unit(4px / @base-font-size-px, em);
         background: @pagination-bg;
         color: @pagination-text;
         text-align: center;
@@ -16,11 +18,11 @@
     &_current-page {
         // 45px is a magic number to provide enough room for three digits
         // and the number spinners for type="number" inputs on desktop
-        width: unit( 45px / @base-font-size-px, em );
+        width: unit(45px / @base-font-size-px, em);
 
         // 10px + a normal inline single space ~= spec'ed value of 15px
-        margin-right: unit( 10px / @base-font-size-px, em );
-        margin-left: unit( 10px / @base-font-size-px, em );
+        margin-right: unit(10px / @base-font-size-px, em);
+        margin-left: unit(10px / @base-font-size-px, em);
 
         font-weight: 500;
         text-align: right;
@@ -30,7 +32,7 @@
         display: inline-block;
 
         // 10px + a normal inline single space ~= spec'ed value of 15px
-        margin-right: unit( 10px / @base-font-size-px, em );
+        margin-right: unit(10px / @base-font-size-px, em);
 
         vertical-align: middle;
     }
@@ -61,14 +63,14 @@
         right: 0;
     }
 
-    .respond-to-max( @bp-xs-max, {
+    .respond-to-max(@bp-xs-max, {
         &_btn-prev,
         &_btn-next {
-            margin-bottom: unit( 15px / @base-font-size-px, em );
+            margin-bottom: unit(15px / @base-font-size-px, em);
         }
-    } );
+    });
 
-    .respond-to-min( @bp-sm-min, {
+    .respond-to-min(@bp-sm-min, {
         &_btn-prev,
         &_btn-next {
             height: 100%;
@@ -85,5 +87,5 @@
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
-    } );
+    });
 }

@@ -1,88 +1,92 @@
+/** @format */
+
 .o-featured-content-module {
-  .u-clearfix();
+    .u-clearfix();
 
-  position: relative;
+    position: relative;
 
-  min-height: 320px;
+    min-height: 320px;
 
-  background-color: @block__bg;
+    background-color: @block__bg;
 
-  .respond-to-max( @bp-xs-max, {
-    padding-right: unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em);
-    padding-left: unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em);
-  } );
+    .respond-to-max(@bp-xs-max, {
+        padding-right: unit((@grid_gutter-width / 2) / @base-font-size-px, em);
+        padding-left: unit((@grid_gutter-width / 2) / @base-font-size-px, em);
+    });
 
-  .respond-to-range( @bp-sm-min, @fcm-bp-max, {
-    padding-right: unit( @grid_gutter-width / @base-font-size-px, em);
-    padding-left: unit( @grid_gutter-width / @base-font-size-px, em);
-  } );
+    .respond-to-range(@bp-sm-min, @fcm-bp-max, {
+        padding-right: unit(@grid_gutter-width / @base-font-size-px, em);
+        padding-left: unit(@grid_gutter-width / @base-font-size-px, em);
+    });
 
-  &_text {
-    padding-top: unit( @grid_gutter-width / @base-font-size-px, em);
-    padding-bottom: unit( @grid_gutter-width / @base-font-size-px, em);
+    &_text {
+        padding-top: unit(@grid_gutter-width / @base-font-size-px, em);
+        padding-bottom: unit(@grid_gutter-width / @base-font-size-px, em);
 
-    .respond-to-min( @fcm-bp-min, {
-      padding-right: unit( @grid_gutter-width / @base-font-size-px, em);
-      padding-left: unit( @grid_gutter-width / @base-font-size-px, em);
-      width: 300px; // Width of 5 of 12 cols at lg size
+        /* prettier-ignore */
+        .respond-to-min(@fcm-bp-min, {
+            padding-right: unit(@grid_gutter-width / @base-font-size-px, em);
+            padding-left: unit(@grid_gutter-width / @base-font-size-px, em);
+            width: 300px; // Width of 5 of 12 cols at lg size
 
-      float: left;
-    } );
-  }
-
-  &_visual {
-    .respond-to-min( @fcm-bp-min, {
-      overflow: hidden;
-
-      .lt-ie10 & {
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 360px; // Width of 5 of 12 cols at lg size + grid gutters
-        bottom: 0;
-      }
-    } );
-  }
-
-  &_img {
-    display: block;
-
-    .respond-to-max( @bp-sm-max, {
-      margin-right: auto;
-      margin-left: auto;
-    } );
-
-    .respond-to-min( @fcm-bp-min, {
-      height: 320px;
-      max-width: none;
-    } );
-  }
-
-  // Modifiers
-  &__right {
-    .o-featured-content-module_img {
-      .respond-to-min( @fcm-bp-min, {
-        float: right;
-      } );
+            float: left;
+        });
     }
-  }
 
-  &__center {
-    .o-featured-content-module_img {
-      .respond-to-min( @fcm-bp-min, {
-        position: relative;
-        left: 50%;
+    &_visual {
+        /* prettier-ignore */
+        .respond-to-min(@fcm-bp-min, {
+            overflow: hidden;
 
-        transform: translateX( -50% );
+            .lt-ie10 & {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 360px; // Width of 5 of 12 cols at lg size + grid gutters
+                bottom: 0;
+            }
+        });
+    }
 
-        .lt-ie9 & {
-          position: absolute;
-          right: -100%;
-          left: -100%;
+    &_img {
+        display: block;
 
-          margin: auto;
+        .respond-to-max(@bp-sm-max, {
+            margin-right: auto;
+            margin-left: auto;
+        });
+
+        .respond-to-min(@fcm-bp-min, {
+            height: 320px;
+            max-width: none;
+        });
+    }
+
+    // Modifiers
+    &__right {
+        .o-featured-content-module_img {
+            .respond-to-min(@fcm-bp-min, {
+                float: right;
+            });
         }
-      } );
     }
-  }
+
+    &__center {
+        .o-featured-content-module_img {
+            .respond-to-min(@fcm-bp-min, {
+                position: relative;
+                left: 50%;
+
+                transform: translateX(-50%);
+
+                .lt-ie9 & {
+                    position: absolute;
+                    right: -100%;
+                    left: -100%;
+
+                    margin: auto;
+                }
+            });
+        }
+    }
 }

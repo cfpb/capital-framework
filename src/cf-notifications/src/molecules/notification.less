@@ -1,76 +1,78 @@
+/** @format */
+
 //
 // Notification
 //
 
 .m-notification {
-   display: none;
-   position: relative;
+    display: none;
+    position: relative;
 
-   padding: @notification-padding__px;
+    padding: @notification-padding__px;
 
-   background: @notification-bg;
-   border: 1px solid @notification-border;
+    background: @notification-bg;
+    border: 1px solid @notification-border;
 
-   .cf-icon-svg {
-      position: absolute;
-      top: @notification-padding__px;
-      left: @notification-padding__px;
-      font-size: unit( 18px / 16px, em );
-      float: left;
-      fill: @notification-icon;
-   }
+    .cf-icon-svg {
+        position: absolute;
+        top: @notification-padding__px;
+        left: @notification-padding__px;
+        font-size: unit(18px / 16px, em);
+        float: left;
+        fill: @notification-icon;
+    }
 
-   &__success {
-      background: @notification-bg-success;
-      border-color: @notification-border-success;
+    &__success {
+        background: @notification-bg-success;
+        border-color: @notification-border-success;
 
-      .cf-icon-svg {
-         fill: @notification-icon-success;
-      }
-   }
+        .cf-icon-svg {
+            fill: @notification-icon-success;
+        }
+    }
 
-   &__warning {
-       background: @notification-bg-warning;
-       border-color: @notification-border-warning;
+    &__warning {
+        background: @notification-bg-warning;
+        border-color: @notification-border-warning;
 
-      .cf-icon-svg {
-         fill: @notification-icon-warning;
-      }
-   }
+        .cf-icon-svg {
+            fill: @notification-icon-warning;
+        }
+    }
 
-   &__error {
-       background: @notification-bg-error;
-       border-color: @notification-border-error;
+    &__error {
+        background: @notification-bg-error;
+        border-color: @notification-border-error;
 
-      .cf-icon-svg {
-         fill: @notification-icon-error;
-      }
-   }
+        .cf-icon-svg {
+            fill: @notification-icon-error;
+        }
+    }
 
-   &__visible {
-       display: block;
-   }
+    &__visible {
+        display: block;
+    }
 
-   // Only adding left padding if an icon is present.
-   .cf-icon-svg + &_content {
-       padding-left: 25px;
-   }
+    // Only adding left padding if an icon is present.
+    .cf-icon-svg + &_content {
+        padding-left: 25px;
+    }
 
-   &_message {
-     margin-bottom: 0;
-   }
+    &_message {
+        margin-bottom: 0;
+    }
 
-   &_explanation {
-       font-size: 1em;
-       // This is necessary because the standard markup pattern uses an h4
-       // class for, presumably, just sizing.
-       // TODO: Refactor standard markup pattern to stop using h4 classes.
-       font-weight: normal;
-       margin-top: unit( 5px / @base-font-size-px, em );
-       margin-bottom: 0;
+    &_explanation {
+        font-size: 1em;
+        // This is necessary because the standard markup pattern uses an h4
+        // class for, presumably, just sizing.
+        // TODO: Refactor standard markup pattern to stop using h4 classes.
+        font-weight: normal;
+        margin-top: unit(5px / @base-font-size-px, em);
+        margin-bottom: 0;
 
-       a {
-           border-bottom-width: 1px;
-       }
-   }
+        a {
+            border-bottom-width: 1px;
+        }
+    }
 }

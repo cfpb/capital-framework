@@ -1,13 +1,14 @@
-.a-select {
+/** @format */
 
+.a-select {
     position: relative;
     border: 1px solid @select-border;
 
     select {
-        height: unit( @select-height / @base-font-size-px, em );
+        height: unit(@select-height / @base-font-size-px, em);
         width: 100%;
-        padding: unit( 4px / @base-font-size-px, em )
-                 unit( 6px / @base-font-size-px, em );
+        padding: unit(4px / @base-font-size-px, em)
+            unit(6px / @base-font-size-px, em);
         border: 0;
         appearance: none;
         background-color: @input-bg;
@@ -33,7 +34,7 @@
     }
 
     select[disabled] {
-        color: @select-text__disabled ;
+        color: @select-text__disabled;
         background-color: @input-bg__disabled;
         cursor: not-allowed;
 
@@ -53,7 +54,7 @@
 
     &:after {
         // Arrow box width must be odd size to properly center the bg image
-        width: unit( ( @select-height + 1px ) / @base-font-size-px, em );
+        width: unit((@select-height + 1px) / @base-font-size-px, em);
         border-left: 1px solid @select-border;
         position: absolute;
         top: 0;
@@ -62,13 +63,12 @@
         background-color: @select-icon-bg;
         content: '';
         pointer-events: none;
-        background-image: url( '../icons/down.svg' );
+        background-image: url('../icons/down.svg');
         background-size: auto @cf-icon-height;
         background-repeat: no-repeat;
         background-position: center center;
     }
 }
-
 
 // TODO: Add modernizr to CF so this works.
 // IE10 and below doesn't support pointer events

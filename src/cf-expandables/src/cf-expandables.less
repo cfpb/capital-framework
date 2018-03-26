@@ -1,41 +1,43 @@
-/* ==========================================================================
-   Capital Framework
-   Expandable Styling
-   ========================================================================== */
+/**
+ * /* ==========================================================================
+ *    Capital Framework
+ *    Expandable Styling
+ *    ==========================================================================
+ *
+ * @format
+ */
 
 //
 // Theme variables
 //
 
 // .o-expandable
-@expandable-focus:              @black;
-
+@expandable-focus: @black;
 
 // .o-expandable_label
-@expandable_label-text:         @black;
+@expandable_label-text: @black;
 
 // .o-expandable_link
-@expandable_link-text:          @pacific;
+@expandable_link-text: @pacific;
 
 // .o-expandable__padded
-@expandable__padded-bg:         @gray-10;
-@expandable__padded-bg-hover:   @gray-20;
-@expandable__padded-divider:    @gray-40;
+@expandable__padded-bg: @gray-10;
+@expandable__padded-bg-hover: @gray-20;
+@expandable__padded-divider: @gray-40;
 
 // .o-expandable-group
-@expandable-group-bg:           @white;
-@expandable-group-divider:      @gray-40;
+@expandable-group-bg: @white;
+@expandable-group-divider: @gray-40;
 
 // Sizing variables
 
 // .o-expandable_link
-@expandable_link-font-size:     @btn-font-size;
+@expandable_link-font-size: @btn-font-size;
 
 // Timing variables
 
 // .o-expandable_content__transition
-@expandable__transition-speed:  0.25s;
-
+@expandable__transition-speed: 0.25s;
 
 // Import external dependencies
 
@@ -43,14 +45,13 @@
 @import (less) '../../cf-buttons/src/cf-buttons.less';
 @import (less) '../../cf-icons/src/cf-icons.less';
 
-
 //
 // Recommended expandable pattern
 //
 
 .o-expandable {
     position: relative;
-    margin-bottom: unit( 30px / @base-font-size-px, em );
+    margin-bottom: unit(30px / @base-font-size-px, em);
 
     &_target {
         padding: 0;
@@ -74,7 +75,6 @@
         .lt-ie9 & .o-expandable_cue {
             display: none;
         }
-
     }
 
     &_content {
@@ -127,7 +127,7 @@
         }
 
         &__spaced {
-            padding-bottom: unit( 15px / @base-font-size-px, em );
+            padding-bottom: unit(15px / @base-font-size-px, em);
         }
 
         &-left {
@@ -137,7 +137,6 @@
         &-right {
             float: right;
         }
-
     }
 
     //
@@ -145,7 +144,7 @@
     //
 
     &__padded {
-        margin-bottom: unit( 30px / @base-font-size-px, em );
+        margin-bottom: unit(30px / @base-font-size-px, em);
         background: @expandable__padded-bg;
 
         &:hover,
@@ -154,26 +153,25 @@
         }
 
         .o-expandable_header {
-            padding: unit( 10px / @base-font-size-px, em )
-                     unit( 15px / @base-font-size-px, em );
+            padding: unit(10px / @base-font-size-px, em)
+                unit(15px / @base-font-size-px, em);
         }
 
         .o-expandable_content {
             // Margin collapsing trick for more consistent bottom padding.
-            margin: 0
-                    unit( 15px / @base-font-size-px, em )
-                    unit( 22px / @base-font-size-px, em );
+            margin: 0 unit(15px / @base-font-size-px, em)
+                unit(22px / @base-font-size-px, em);
 
             // The divider between _header and _content.
             &:before {
                 content: '';
                 display: block;
                 border-bottom: 1px solid @expandable__padded-divider;
-                margin-bottom: unit( 15px / @base-font-size-px, em );
+                margin-bottom: unit(15px / @base-font-size-px, em);
             }
 
             &:after {
-                margin-bottom: unit( 15px / @base-font-size-px, em );
+                margin-bottom: unit(15px / @base-font-size-px, em);
                 width: 100%;
             }
         }
@@ -184,7 +182,7 @@
     //
 
     &-group {
-        margin-bottom: unit( 30px / @base-font-size-px, em );
+        margin-bottom: unit(30px / @base-font-size-px, em);
 
         .o-expandable {
             border-bottom: 1px solid @expandable-group-divider;
@@ -204,7 +202,5 @@
         .o-expandable_content {
             margin-bottom: 0;
         }
-
     }
-
 }

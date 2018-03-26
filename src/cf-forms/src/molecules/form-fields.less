@@ -1,3 +1,5 @@
+/** @format */
+
 .m-form-field {
     .a-text-input__full {
         box-sizing: border-box;
@@ -5,14 +7,14 @@
     }
 
     .a-label + .a-text-input {
-        margin-top: unit( 5px / @base-font-size-px, em );
+        margin-top: unit(5px / @base-font-size-px, em);
     }
 
     &__checkbox,
     &__radio {
         .a-label {
             // 30px is width of checkbox/radio button plus the needed padding.
-            grid-template-columns: unit( 30px / @base-font-size-px, em ) auto;
+            grid-template-columns: unit(30px / @base-font-size-px, em) auto;
             vertical-align: top;
             cursor: pointer;
 
@@ -22,8 +24,8 @@
                 grid-row-end: 3;
 
                 border: 1px solid @input-border;
-                height: unit( 18px / @base-font-size-px, em );
-                width: unit( 18px / @base-font-size-px, em );
+                height: unit(18px / @base-font-size-px, em);
+                width: unit(18px / @base-font-size-px, em);
                 margin-right: 10px;
 
                 background-color: @input-bg;
@@ -51,8 +53,8 @@
             .u-visually-hidden();
 
             .lt-ie9 & {
-                height: unit( 20px / @base-font-size-px, em );
-                width: unit( 20px / @base-font-size-px, em );
+                height: unit(20px / @base-font-size-px, em);
+                width: unit(20px / @base-font-size-px, em);
                 width: auto;
                 border: 0;
                 float: left;
@@ -70,7 +72,6 @@
             }
 
             &:disabled {
-
                 &:focus + .a-label:before,
                 &.focus + .a-label:before,
                 &:hover + .a-label:before,
@@ -101,7 +102,7 @@
     this is placed in its own block.
     We need to ignore the duplicate selector for stylelint too.
      */
-     /* stylelint-disable-next-line no-duplicate-selectors */
+    /* stylelint-disable-next-line no-duplicate-selectors */
     &__checkbox,
     &__radio {
         /* stylelint-disable-next-line no-duplicate-selectors */
@@ -126,7 +127,7 @@
             }
 
             &:checked + .a-label:before {
-                background-image: url( '../icons/approved.svg' );
+                background-image: url('../icons/approved.svg');
                 background-size: auto @cf-icon-height;
                 background-repeat: no-repeat;
                 background-position: center 0;
@@ -167,7 +168,8 @@
             &:focus:checked + .a-label:before,
             &.focus:checked + .a-label:before {
                 border-color: @input-border__focused;
-                box-shadow: 0 0 0 1px @input-border__focused, inset 0 0 0 2px #fff;
+                box-shadow: 0 0 0 1px @input-border__focused,
+                    inset 0 0 0 2px #fff;
             }
 
             &:hover:checked + .a-label:before,
@@ -209,7 +211,7 @@
                 &:before {
                     background-color: @input-lg-target-bg__disabled;
                     font-family: 'CFPB Minicons';
-                    font-size: unit( 20px / 18px, em );
+                    font-size: unit(20px / 18px, em);
                 }
             }
         }
@@ -217,7 +219,7 @@
 
     &__error {
         .a-error-message {
-            margin-top: unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em );
+            margin-top: unit((@grid_gutter-width / 2) / @base-font-size-px, em);
         }
     }
 }

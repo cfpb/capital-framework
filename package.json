@@ -24,7 +24,7 @@
   "scripts": {
     "build": "gulp build",
     "cf-link": "node scripts/npm/link",
-    "format": "prettier --write --require-pragma src/**/*.js",
+    "format": "prettier --write --require-pragma src/**/*.js, src/**/*.less",
     "postinstall": "npm run cf-link",
     "precommit": "lint-staged",
     "process-icon-svgs": "svgo -o src/cf-icons/src/icons --enable=addClassesToSVGElement --enable=removeStyleElement --enable=removeAttrs --config='{ \"plugins\": [ { \"addClassesToSVGElement\": { \"className\": \"cf-icon-svg\" } }, { \"removeAttrs\": { \"attrs\": [ \"fill\", \"path:class\", \"circle:class\" ] } }, { \"cleanupIDs\": { \"force\": \"true\" } } ] }'",

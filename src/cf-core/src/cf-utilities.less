@@ -1,7 +1,11 @@
-/* ==========================================================================
-   Capital Framework
-   Utilities
-   ========================================================================== */
+/**
+ *    ==========================================================================
+ *    Capital Framework
+ *    Utilities
+ *    ==========================================================================
+ *
+ * @format
+ */
 
 //
 // JS-only
@@ -81,7 +85,7 @@
 // Align with button
 //
 
-.u-align-with-btn( @font-size: @base-font-size-px ) {
+.u-align-with-btn(@font-size: @base-font-size-px) {
     display: inline-block;
     line-height: normal;
     vertical-align: middle;
@@ -91,8 +95,8 @@
 // Flexible proportional containers
 //
 
-.u-flexible-container-mixin( @width: 16, @height: 9 ) {
-    @ratio: ( @height / @width ) * 100;
+.u-flexible-container-mixin(@width: 16, @height: 9) {
+    @ratio: (@height / @width) * 100;
 
     position: relative;
     padding-bottom: ~'@{ratio}%';
@@ -111,7 +115,7 @@
     }
 
     &__4-3 {
-        .u-flexible-container-mixin( 4, 3 );
+        .u-flexible-container-mixin(4, 3);
     }
 }
 
@@ -123,28 +127,28 @@
     .u-link__colors-base();
 }
 
-.u-link__colors( @c ) {
-    .u-link__colors-base( @c, @c, @c, @c, @c,
-                          @c, @c, @c, @c, @c );
+.u-link__colors(@c) {
+    .u-link__colors-base(@c, @c, @c, @c, @c,
+                          @c, @c, @c, @c, @c);
 }
 
-.u-link__colors( @c, @h ) {
-    .u-link__colors-base( @c, @c, @h, @h, @c,
-                          @c, @c, @h, @h, @c );
+.u-link__colors(@c, @h) {
+    .u-link__colors-base(@c, @c, @h, @h, @c,
+                          @c, @c, @h, @h, @c);
 }
 
-.u-link__colors( @c, @v, @h, @f, @a ) {
-    .u-link__colors-base( @c, @v, @h, @f, @a,
-                          @c, @v, @h, @f, @a );
+.u-link__colors(@c, @v, @h, @f, @a) {
+    .u-link__colors-base(@c, @v, @h, @f, @a,
+                          @c, @v, @h, @f, @a);
 }
 
-.u-link__colors( @c, @v, @h, @f, @a,
-                 @bc, @bv, @bh, @bf, @ba ) {
-    .u-link__colors-base( @c, @v, @h, @f, @a,
-                          @bc, @bv, @bh, @bf, @ba );
+.u-link__colors(@c, @v, @h, @f, @a,
+                 @bc, @bv, @bh, @bf, @ba) {
+    .u-link__colors-base(@c, @v, @h, @f, @a,
+                          @bc, @bv, @bh, @bf, @ba);
 }
 
-.u-link__colors-base( @c:  @link-text,
+.u-link__colors-base(@c:  @link-text,
                       @v:  @link-text-visited,
                       @h:  @link-text-hover,
                       @f:  @link-text,
@@ -153,7 +157,7 @@
                       @bv: @link-underline-visited,
                       @bh: @link-underline-hover,
                       @bf: @link-underline,
-                      @ba: @link-underline-active ) {
+                      @ba: @link-underline-active) {
     color: @c;
     border-color: @bc;
 
@@ -205,66 +209,126 @@
 // Margin utilities
 //
 
-.u-mt0  { margin-top:    0 !important; }
-.u-mb0  { margin-bottom: 0 !important; }
-.u-mt5  { margin-top:    5px !important; }
-.u-mb5  { margin-bottom: 5px !important; }
-.u-mt10 { margin-top:    10px !important; }
-.u-mb10 { margin-bottom: 10px !important; }
-.u-mt15 { margin-top:    15px !important; }
-.u-mb15 { margin-bottom: 15px !important; }
-.u-mt20 { margin-top:    20px !important; }
-.u-mb20 { margin-bottom: 20px !important; }
-.u-mt30 { margin-top:    30px !important; }
-.u-mb30 { margin-bottom: 30px !important; }
-.u-mt45 { margin-top:    45px !important; }
-.u-mb45 { margin-bottom: 45px !important; }
-.u-mt60 { margin-top:    60px !important; }
-.u-mb60 { margin-bottom: 60px !important; }
+.u-mt0 {
+    margin-top: 0 !important;
+}
+.u-mb0 {
+    margin-bottom: 0 !important;
+}
+.u-mt5 {
+    margin-top: 5px !important;
+}
+.u-mb5 {
+    margin-bottom: 5px !important;
+}
+.u-mt10 {
+    margin-top: 10px !important;
+}
+.u-mb10 {
+    margin-bottom: 10px !important;
+}
+.u-mt15 {
+    margin-top: 15px !important;
+}
+.u-mb15 {
+    margin-bottom: 15px !important;
+}
+.u-mt20 {
+    margin-top: 20px !important;
+}
+.u-mb20 {
+    margin-bottom: 20px !important;
+}
+.u-mt30 {
+    margin-top: 30px !important;
+}
+.u-mb30 {
+    margin-bottom: 30px !important;
+}
+.u-mt45 {
+    margin-top: 45px !important;
+}
+.u-mb45 {
+    margin-bottom: 45px !important;
+}
+.u-mt60 {
+    margin-top: 60px !important;
+}
+.u-mb60 {
+    margin-bottom: 60px !important;
+}
 
 //
 // Width utilities
 //
 
-.u-w100pct { width: 100%; }
-.u-w90pct  { width: 90%; }
-.u-w80pct  { width: 80%; }
-.u-w70pct  { width: 70%; }
-.u-w60pct  { width: 60%; }
-.u-w50pct  { width: 50%; }
-.u-w40pct  { width: 40%; }
-.u-w30pct  { width: 30%; }
-.u-w20pct  { width: 20%; }
-.u-w10pct  { width: 10%; }
-.u-w75pct  { width: 75%; }
-.u-w25pct  { width: 25%; }
-.u-w66pct  { width: unit( ( 2 / 3 ) * 100, % ); }
-.u-w33pct  { width: unit( ( 1 / 3 ) * 100, % ); }
+.u-w100pct {
+    width: 100%;
+}
+.u-w90pct {
+    width: 90%;
+}
+.u-w80pct {
+    width: 80%;
+}
+.u-w70pct {
+    width: 70%;
+}
+.u-w60pct {
+    width: 60%;
+}
+.u-w50pct {
+    width: 50%;
+}
+.u-w40pct {
+    width: 40%;
+}
+.u-w30pct {
+    width: 30%;
+}
+.u-w20pct {
+    width: 20%;
+}
+.u-w10pct {
+    width: 10%;
+}
+.u-w75pct {
+    width: 75%;
+}
+.u-w25pct {
+    width: 25%;
+}
+.u-w66pct {
+    width: unit((2 / 3) * 100, %);
+}
+.u-w33pct {
+    width: unit((1 / 3) * 100, %);
+}
 
 //
 // Width-specific display
 //
 
 .u-hide-on-mobile {
-    .respond-to-max( @bp-xs-max {
+    .respond-to-max(@bp-xs-max {
         display: none;
-    } );
+    });
 }
 
 .u-show-on-mobile {
     display: none;
 
-    .respond-to-max( @bp-xs-max {
+    .respond-to-max(@bp-xs-max {
         display: block;
-    } );
+    });
 }
 
 //
 // Small text utility
 //
 
-.u-small-text( @context: @base-font-size-px ) {
-    font-size: unit( 14px / @context, em );
+.u-small-text(@context: @base-font-size-px) {
+    font-size: unit(14px / @context, em);
 }
 
 small,
