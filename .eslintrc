@@ -40,6 +40,11 @@ env:
   webextensions: false
   greasemonkey: false
 
+plugins:
+  - prettier
+extends:
+  - prettier
+
 # globals:
 # No globals outside of env settings.
 
@@ -586,7 +591,7 @@ rules:
 
   # Enforce spacing inside array brackets.
   array-bracket-spacing:
-    - 1
+    - 0
     - always
 
   # Enforce line breaks after each array element.
@@ -751,17 +756,6 @@ rules:
   linebreak-style:
     - 2
     - unix
-
-  # Enforces empty lines around comments.
-  lines-around-comment:
-    - 1
-    -
-      beforeBlockComment: true
-      afterBlockComment: false
-      beforeLineComment: false
-      afterLineComment: false
-      allowBlockStart: false
-      allowBlockEnd: false
 
   # Require or disallow an empty line between class members.
   lines-between-class-members:
@@ -1056,7 +1050,7 @@ rules:
 
   # Requires spaces inside parentheses.
   space-in-parens:
-    - 1
+    - 0
     - always
 
   # Requires spaces around operators.

@@ -54,9 +54,9 @@ function initialize() {
     this.sortDirection = this.contains(
       this.ui.sortButton,
       this.classes.sortDown
-    )
-      ? DIRECTIONS.DOWN
-      : DIRECTIONS.UP;
+    ) ?
+      DIRECTIONS.DOWN :
+      DIRECTIONS.UP;
     this.updateTable();
   }
 }

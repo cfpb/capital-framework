@@ -47,6 +47,8 @@
     "chalk": "^2.3.0",
     "child-process-promise": "^1.1.0",
     "deepmerge": "^2.0.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "finalhandler": "^1.1.0",
     "fs-readdir-promise": "^1.0.1",
     "gulp": "^4.0.0",
