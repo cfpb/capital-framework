@@ -1,4 +1,4 @@
-const del = require( 'del' );
-const gulp = require( 'gulp' );
+const del = require('del');
+const gulp = require('gulp');
 
-gulp.task( 'clean:tmp', () => del( [ './tmp/*' ] ) );
+gulp.task('clean:tmp', () => del(['./tmp/*']));

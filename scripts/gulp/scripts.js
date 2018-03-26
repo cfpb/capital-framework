@@ -1,16 +1,16 @@
-const BROWSER_LIST = require( '../../config/browser-list-config' );
-const component = require( './parseComponentName' );
-const gulp = require( 'gulp' );
-const gulpIgnore = require( 'gulp-ignore' );
-const gulpRename = require( 'gulp-rename' );
-const webpack = require( 'webpack' );
-const webpackStream = require( 'webpack-stream' );
-const UglifyWebpackPlugin = require( 'uglifyjs-webpack-plugin' );
-const vinylNamed = require( 'vinyl-named' );
+const BROWSER_LIST = require('../../config/browser-list-config');
+const component = require('./parseComponentName');
+const gulp = require('gulp');
+const gulpIgnore = require('gulp-ignore');
+const gulpRename = require('gulp-rename');
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
+const UglifyWebpackPlugin = require('uglifyjs-webpack-plugin');
+const vinylNamed = require('vinyl-named');
 
 /* Set warnings to true to show linter-style warnings.
    Set mangle to false and beautify to true to debug the output code. */
-const COMMON_UGLIFY_CONFIG = new UglifyWebpackPlugin( {
+const COMMON_UGLIFY_CONFIG = new UglifyWebpackPlugin({
   parallel: true,
   uglifyOptions: {
     ie8: false,
@@ -22,7 +22,7 @@ const COMMON_UGLIFY_CONFIG = new UglifyWebpackPlugin( {
       beautify: false
     }
   }
-} );
+});
 
 /* TODO: Add a webpack-config file to handle sharing of redundant webpack
    configurations. Also, add a production and dev flag to generate
@@ -33,33 +33,50 @@ const COMMON_UGLIFY_CONFIG = new UglifyWebpackPlugin( {
  * @returns {Object} An output stream from gulp.
  */
 function scriptsCf() {
-  return gulp.src( './src/capital-framework.js' )
-    .pipe( webpackStream( {
-      module: {
-        rules: [ {
-          use: [ {
-            loader: 'babel-loader?cacheDirectory=true',
-            options: {
-              presets: [ [ 'env', {
-                targets: {
-                  browsers: BROWSER_LIST.LAST_2_PLUS_IE_9_AND_UP
-                },
-                debug: true
-              } ] ]
-            }
-          } ]
-        } ]
-      },
-      output: {
-        filename: '[name].js'
-      },
-      plugins: [ COMMON_UGLIFY_CONFIG ]
-    }, webpack ) )
-    .pipe( gulpRename( {
-      basename: 'capital-framework',
-      extname: '.min.js'
-    } ) )
-    .pipe( gulp.dest( './dist' ) );
+  return gulp
+    .src('./src/capital-framework.js')
+    .pipe(
+      webpackStream(
+        {
+          module: {
+            rules: [
+              {
+                use: [
+                  {
+                    loader: 'babel-loader?cacheDirectory=true',
+                    options: {
+                      presets: [
+                        [
+                          'env',
+                          {
+                            targets: {
+                              browsers: BROWSER_LIST.LAST_2_PLUS_IE_9_AND_UP
+                            },
+                            debug: true
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          output: {
+            filename: '[name].js'
+          },
+          plugins: [COMMON_UGLIFY_CONFIG]
+        },
+        webpack
+      )
+    )
+    .pipe(
+      gulpRename({
+        basename: 'capital-framework',
+        extname: '.min.js'
+      })
+    )
+    .pipe(gulp.dest('./dist'));
 }
 
 /**
@@ -69,49 +86,67 @@ function scriptsCf() {
  */
 function scriptsComponents() {
   const tmp = {};
-  return gulp.src( './src/' + ( component || '*' ) + '/src/*.js' )
-    .pipe( gulpIgnore.exclude( vf => {
-      /* Exclude JS files that don't share the same name as the directory
+  return gulp
+    .src('./src/' + (component || '*') + '/src/*.js')
+    .pipe(
+      gulpIgnore.exclude(vf => {
+        /* Exclude JS files that don't share the same name as the directory
          they're in. This filters out utility files. */
-      const matches = vf.path.match( /\/([\w-]*)\/src\/([\w-]*)\.js/ );
-      return matches[1] !== matches[2];
-    } ) )
-    .pipe( vinylNamed() )
-    .pipe( gulpRename( path => {
-      tmp[path.basename] = path;
-    } ) )
-    .pipe( webpackStream( {
-      module: {
-        rules: [ {
-          use: [ {
-            loader: 'babel-loader?cacheDirectory=true',
-            options: {
-              presets: [ [ 'env', {
-                targets: {
-                  browsers: BROWSER_LIST.LAST_2_PLUS_IE_9_AND_UP
-                },
-                debug: true
-              } ] ]
-            }
-          } ]
-        } ]
-      },
-      output: {
-        filename: '[name].js'
-      },
-      plugins: [ COMMON_UGLIFY_CONFIG ]
-    }, webpack ) )
-    .pipe( gulpRename( path => {
-      path.dirname = tmp[path.basename].dirname.replace( '/src', '' );
-      path.extname = '.min.js';
-    } ) )
-    .pipe( gulp.dest( './tmp' ) );
+        const matches = vf.path.match(/\/([\w-]*)\/src\/([\w-]*)\.js/);
+        return matches[1] !== matches[2];
+      })
+    )
+    .pipe(vinylNamed())
+    .pipe(
+      gulpRename(path => {
+        tmp[path.basename] = path;
+      })
+    )
+    .pipe(
+      webpackStream(
+        {
+          module: {
+            rules: [
+              {
+                use: [
+                  {
+                    loader: 'babel-loader?cacheDirectory=true',
+                    options: {
+                      presets: [
+                        [
+                          'env',
+                          {
+                            targets: {
+                              browsers: BROWSER_LIST.LAST_2_PLUS_IE_9_AND_UP
+                            },
+                            debug: true
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          output: {
+            filename: '[name].js'
+          },
+          plugins: [COMMON_UGLIFY_CONFIG]
+        },
+        webpack
+      )
+    )
+    .pipe(
+      gulpRename(path => {
+        path.dirname = tmp[path.basename].dirname.replace('/src', '');
+        path.extname = '.min.js';
+      })
+    )
+    .pipe(gulp.dest('./tmp'));
 }
 
-gulp.task( 'scripts:cf', scriptsCf );
-gulp.task( 'scripts:components', scriptsComponents );
+gulp.task('scripts:cf', scriptsCf);
+gulp.task('scripts:components', scriptsComponents);
 
-gulp.task( 'scripts', gulp.parallel(
-  'scripts:cf',
-  'scripts:components'
-) );
+gulp.task('scripts', gulp.parallel('scripts:cf', 'scripts:components'));
