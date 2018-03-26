@@ -1,12 +1,16 @@
-/* ==========================================================================
-   Assign
-
-   Contains code copied from the following with major modifications :
-
-   - https://github.com/maslennikov/shallow-extend
-     Copyright (c) 2014 Alexey Maslennikov
-
-   ========================================================================== */
+/**
+ * /* ==========================================================================
+ *    Assign
+ *
+ *    Contains code copied from the following with major modifications :
+ *
+ *    - https://github.com/maslennikov/shallow-extend
+ *      Copyright (c) 2014 Alexey Maslennikov
+ *
+ *    ==========================================================================
+ *
+ * @format
+ */
 
 'use strict';
 

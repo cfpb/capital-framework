@@ -4,7 +4,6 @@
     {
       files: "*.less",
       options: {
-        singleQuote: false,
         tabWidth: 4
       }
     }

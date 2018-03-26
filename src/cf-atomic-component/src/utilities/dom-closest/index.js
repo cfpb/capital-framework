@@ -1,10 +1,14 @@
-/* ==========================================================================
-   Dom closest
-
-   Utility for retrieving the closest DOM element that
-   matches a give selector.
-
-   ========================================================================== */
+/**
+ * /* ==========================================================================
+ *    Dom closest
+ *
+ *    Utility for retrieving the closest DOM element that
+ *    matches a give selector.
+ *
+ *    ==========================================================================
+ *
+ * @format
+ */
 
 'use strict';
 

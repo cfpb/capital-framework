@@ -1,12 +1,16 @@
-/* ==========================================================================
-   Function bind
-
-   Contains code copied from the following with minimal modifications:
-
-   - https://raw.githubusercontent.com/Modernizr/Modernizr/
-     74655c45ad2cd05c002e4802cdd74cba70310f08/src/fnBind.js
-
-   ========================================================================== */
+/**
+ * /* ==========================================================================
+ *    Function bind
+ *
+ *    Contains code copied from the following with minimal modifications:
+ *
+ *    - https://raw.githubusercontent.com/Modernizr/Modernizr/
+ *      74655c45ad2cd05c002e4802cdd74cba70310f08/src/fnBind.js
+ *
+ *    ==========================================================================
+ *
+ * @format
+ */
 
 'use strict';
 

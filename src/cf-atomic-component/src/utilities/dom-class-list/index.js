@@ -1,14 +1,18 @@
-/* ==========================================================================
-   Dom class list
-
-   Contains code copied from the following with major modifications :
-
-   - http://stackoverflow.com/posts/18492076/revisions
-   - https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
-
-   TODO: Integrate with https://github.com/wilsonpage/fastdom.  Refactor to
-         eliminate redudant code.
-   ========================================================================== */
+/**
+ * /* ==========================================================================
+ *    Dom class list
+ *
+ *    Contains code copied from the following with major modifications :
+ *
+ *    - http://stackoverflow.com/posts/18492076/revisions
+ *    - https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+ *
+ *    TODO: Integrate with https://github.com/wilsonpage/fastdom.  Refactor to
+ *          eliminate redudant code.
+ *    ==========================================================================
+ *
+ * @format
+ */
 
 'use strict';
 

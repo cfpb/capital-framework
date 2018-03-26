@@ -22,13 +22,14 @@
     "url": "https://github.com/cfpb/capital-framework/issues"
   },
   "scripts": {
-    "release": "./scripts/travis/release.sh",
     "build": "gulp build",
-    "test": "gulp test",
     "cf-link": "node scripts/npm/link",
+    "format": "prettier --write --require-pragma src/**/*.js",
     "postinstall": "npm run cf-link",
     "precommit": "lint-staged",
-    "process-icon-svgs": "svgo -o src/cf-icons/src/icons --enable=addClassesToSVGElement --enable=removeStyleElement --enable=removeAttrs --config='{ \"plugins\": [ { \"addClassesToSVGElement\": { \"className\": \"cf-icon-svg\" } }, { \"removeAttrs\": { \"attrs\": [ \"fill\", \"path:class\", \"circle:class\" ] } }, { \"cleanupIDs\": { \"force\": \"true\" } } ] }'"
+    "process-icon-svgs": "svgo -o src/cf-icons/src/icons --enable=addClassesToSVGElement --enable=removeStyleElement --enable=removeAttrs --config='{ \"plugins\": [ { \"addClassesToSVGElement\": { \"className\": \"cf-icon-svg\" } }, { \"removeAttrs\": { \"attrs\": [ \"fill\", \"path:class\", \"circle:class\" ] } }, { \"cleanupIDs\": { \"force\": \"true\" } } ] }'",
+    "release": "./scripts/travis/release.sh",
+    "test": "gulp test"
   },
   "lint-staged": {
     "*.{js,less}": [

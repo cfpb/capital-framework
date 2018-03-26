@@ -1,8 +1,12 @@
-/* ==========================================================================
-   Table Sortablle
-
-   Mixin for sorting table organism.
-   ========================================================================== */
+/**
+ * /* ==========================================================================
+ *    Table Sortablle
+ *
+ *    Mixin for sorting table organism.
+ *    ==========================================================================
+ *
+ * @format
+ */
 
 const config = require('cf-atomic-component/src/utilities/config');
 const closest = require('cf-atomic-component/src/utilities/dom-closest')

@@ -1,14 +1,18 @@
-/* ==========================================================================
-   AtomicComponent
-
-   Base Atomic Component
-
-   Contains code copied from the following with major modifications :
-
-   - Backbone.js ( http://backbonejs.org/docs/backbone.html ).
-   - Marionette ( http://marionettejs.com/ ).
-
-   ========================================================================== */
+/**
+ * /* ==========================================================================
+ *    AtomicComponent
+ *
+ *    Base Atomic Component
+ *
+ *    Contains code copied from the following with major modifications :
+ *
+ *    - Backbone.js ( http://backbonejs.org/docs/backbone.html ).
+ *    - Marionette ( http://marionettejs.com/ ).
+ *
+ *    ==========================================================================
+ *
+ * @format
+ */
 
 'use strict';
 

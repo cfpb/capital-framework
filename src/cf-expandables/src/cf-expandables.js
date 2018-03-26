@@ -1,3 +1,5 @@
+/** @format */
+
 const Expandable = require('./Expandable');
 
 // polyfill for ie9 compatibility
