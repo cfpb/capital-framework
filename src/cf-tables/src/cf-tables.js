@@ -2,7 +2,6 @@
    Table initialization code.
    ========================================================================== */
 
-
-const Table = require( './Table' );
+const Table = require('./Table');
 
 Table.init();

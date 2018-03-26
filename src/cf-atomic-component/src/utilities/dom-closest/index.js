@@ -15,25 +15,28 @@
  * @param {string} selector - CSS selector.
  * @returns {HTMLNode} Nearest parent node that matches the selector.
  */
-function closest( element, selector ) {
-  if ( 'closest' in element ) {
-    return element.closest( selector );
+function closest(element, selector) {
+  if ('closest' in element) {
+    return element.closest(selector);
   }
 
-  const matchesSelector = element.matches ||
-                          element.webkitMatchesSelector ||
-                          element.mozMatchesSelector ||
-                          element.msMatchesSelector;
+  const matchesSelector =
+    element.matches ||
+    element.webkitMatchesSelector ||
+    element.mozMatchesSelector ||
+    element.msMatchesSelector;
   let match;
 
-  while ( element ) {
-    if ( matchesSelector.bind( element )( selector ) ) {
+  while (element) {
+    if (matchesSelector.bind(element)(selector)) {
       match = element;
     } else {
       element = element.parentElement;
     }
 
-    if ( match ) { return element; }
+    if (match) {
+      return element;
+    }
   }
 
   return null;

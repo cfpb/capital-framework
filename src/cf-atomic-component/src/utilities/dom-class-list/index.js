@@ -12,7 +12,7 @@
 
 'use strict';
 
-const hasClassList = 'classList' in document.createElement( '_' );
+const hasClassList = 'classList' in document.createElement('_');
 
 /**
  * Slice first element from passed arguments.
@@ -20,8 +20,8 @@ const hasClassList = 'classList' in document.createElement( '_' );
  * @param {Arguments} args - Function arguments.
  * @returns {Array} List of arguments.
  */
-function _sliceArgs( args ) {
-  return Array.prototype.slice.call( args, 1 );
+function _sliceArgs(args) {
+  return Array.prototype.slice.call(args, 1);
 }
 
 /**
@@ -31,18 +31,18 @@ function _sliceArgs( args ) {
  * @param {string} className - CSS selector.
  * @returns {HTMLNode} element - A DOM element.
  */
-function addClass( element ) {
-  const addClassNamesArray = _sliceArgs( arguments );
-  if ( hasClassList ) {
-    element.classList.add.apply( element.classList, addClassNamesArray );
+function addClass(element) {
+  const addClassNamesArray = _sliceArgs(arguments);
+  if (hasClassList) {
+    element.classList.add.apply(element.classList, addClassNamesArray);
   } else {
-    var classes = element.className.split( ' ' );
-    addClassNamesArray.forEach( function( name ) {
-      if ( classes.indexOf( name ) === -1 ) {
-        classes.push( name );
+    var classes = element.className.split(' ');
+    addClassNamesArray.forEach(function(name) {
+      if (classes.indexOf(name) === -1) {
+        classes.push(name);
       }
-    } );
-    element.className = classes.join( ' ' );
+    });
+    element.className = classes.join(' ');
   }
 
   return element;
@@ -55,13 +55,13 @@ function addClass( element ) {
  * @param {string} className - CSS selector.
  * @returns {boolean} True if `element` contains class `className`.
  */
-function contains( element, className ) {
-  className = className.replace( '.', '' );
-  if ( hasClassList ) {
-    return element.classList.contains( className );
+function contains(element, className) {
+  className = className.replace('.', '');
+  if (hasClassList) {
+    return element.classList.contains(className);
   }
 
-  return element.className.indexOf( className ) > -1;
+  return element.className.indexOf(className) > -1;
 }
 
 /**
@@ -70,19 +70,18 @@ function contains( element, className ) {
  * @param {HTMLNode} element - A DOM element.
  * @param {string} className - CSS selector.
  */
-function removeClass( element ) {
-  const removeClassNamesArray = _sliceArgs( arguments );
-  if ( hasClassList ) {
-    element.classList.remove
-    .apply( element.classList, removeClassNamesArray );
+function removeClass(element) {
+  const removeClassNamesArray = _sliceArgs(arguments);
+  if (hasClassList) {
+    element.classList.remove.apply(element.classList, removeClassNamesArray);
   } else {
-    var classes = element.className.split( ' ' );
-    removeClassNamesArray.forEach( function( className ) {
-      if ( className ) {
-        classes.splice( classes.indexOf( className ), 1 );
+    var classes = element.className.split(' ');
+    removeClassNamesArray.forEach(function(className) {
+      if (className) {
+        classes.splice(classes.indexOf(className), 1);
       }
-    } );
-    element.className = classes.join( ' ' );
+    });
+    element.className = classes.join(' ');
   }
 }
 
@@ -95,14 +94,14 @@ function removeClass( element ) {
                                 should be forcibly removed.
  * @returns {boolean} True if the flag existed, false otherwise.
  */
-function toggleClass( element, className, forceFlag ) {
+function toggleClass(element, className, forceFlag) {
   let hasClass = false;
-  if ( hasClassList ) {
-    hasClass = element.classList.toggle( className );
-  } else if ( forceFlag === false || contains( element, className ) ) {
-    removeClass( element, forceFlag );
+  if (hasClassList) {
+    hasClass = element.classList.toggle(className);
+  } else if (forceFlag === false || contains(element, className)) {
+    removeClass(element, forceFlag);
   } else {
-    addClass( element, className );
+    addClass(element, className);
     hasClass = true;
   }
 

@@ -19,13 +19,13 @@
  * @param {Object} context - The `this` you want to call the function with.
  * @returns {Function} The wrapped version of the supplied function.
  */
-function bind( fn, context ) {
-  if ( Function.prototype.bind ) {
-    return fn.bind.apply( fn, Array.prototype.slice.call( arguments, 1 ) );
+function bind(fn, context) {
+  if (Function.prototype.bind) {
+    return fn.bind.apply(fn, Array.prototype.slice.call(arguments, 1));
   }
 
   return function() {
-    return fn.apply( context, arguments );
+    return fn.apply(context, arguments);
   };
 }
 

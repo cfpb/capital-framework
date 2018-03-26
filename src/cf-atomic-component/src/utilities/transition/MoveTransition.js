@@ -1,19 +1,19 @@
 'use strict';
 
 // Required modules.
-const Events = require( '../../mixins/Events.js' );
-const BaseTransition = require( './BaseTransition' );
-const fnBind = require( '../function-bind' ).bind;
+const Events = require('../../mixins/Events.js');
+const BaseTransition = require('./BaseTransition');
+const fnBind = require('../function-bind').bind;
 
 // Exported constants.
 const CLASSES = {
-  BASE_CLASS:     'u-move-transition',
+  BASE_CLASS: 'u-move-transition',
   MOVE_TO_ORIGIN: 'u-move-to-origin',
-  MOVE_LEFT:      'u-move-left',
-  MOVE_LEFT_2X:   'u-move-left-2x',
-  MOVE_LEFT_3X:   'u-move-left-3x',
-  MOVE_RIGHT:     'u-move-right',
-  MOVE_UP:        'u-move-up'
+  MOVE_LEFT: 'u-move-left',
+  MOVE_LEFT_2X: 'u-move-left-2x',
+  MOVE_LEFT_3X: 'u-move-left-3x',
+  MOVE_RIGHT: 'u-move-right',
+  MOVE_UP: 'u-move-up'
 };
 
 /**
@@ -26,18 +26,21 @@ const CLASSES = {
  *   DOM element to apply move transition to.
  * @returns {MoveTransition} An instance.
  */
-function MoveTransition( element ) { // eslint-disable-line max-statements, no-inline-comments, max-len
+function MoveTransition(element) {
+  // eslint-disable-line max-statements, no-inline-comments, max-len
 
-  const _baseTransition = new BaseTransition( element, CLASSES );
+  const _baseTransition = new BaseTransition(element, CLASSES);
 
   /**
    * @returns {MoveTransition} An instance.
    */
   function init() {
     _baseTransition.init();
-    const _transitionCompleteBinded = fnBind( _transitionComplete, this );
-    _baseTransition.addEventListener( BaseTransition.END_EVENT,
-                                      _transitionCompleteBinded );
+    const _transitionCompleteBinded = fnBind(_transitionComplete, this);
+    _baseTransition.addEventListener(
+      BaseTransition.END_EVENT,
+      _transitionCompleteBinded
+    );
     return this;
   }
 
@@ -45,7 +48,7 @@ function MoveTransition( element ) { // eslint-disable-line max-statements, no-i
    * Handle the end of a transition.
    */
   function _transitionComplete() {
-    this.trigger( BaseTransition.END_EVENT, { target: this } );
+    this.trigger(BaseTransition.END_EVENT, { target: this });
   }
 
   /**
@@ -53,7 +56,7 @@ function MoveTransition( element ) { // eslint-disable-line max-statements, no-i
    * @returns {MoveTransition} An instance.
    */
   function moveToOrigin() {
-    _baseTransition.applyClass( CLASSES.MOVE_TO_ORIGIN );
+    _baseTransition.applyClass(CLASSES.MOVE_TO_ORIGIN);
 
     return this;
   }
@@ -64,7 +67,7 @@ function MoveTransition( element ) { // eslint-disable-line max-statements, no-i
    *   How many times to move left as a multiplication of the element's width.
    * @returns {MoveTransition} An instance.
    */
-  function moveLeft( count ) {
+  function moveLeft(count) {
     count = count || 1;
     const moveClasses = [
       CLASSES.MOVE_LEFT,
@@ -72,11 +75,11 @@ function MoveTransition( element ) { // eslint-disable-line max-statements, no-i
       CLASSES.MOVE_LEFT_3X
     ];
 
-    if ( count < 1 || count > moveClasses.length ) {
-      throw new Error( 'MoveTransition: moveLeft count is out of range!' );
+    if (count < 1 || count > moveClasses.length) {
+      throw new Error('MoveTransition: moveLeft count is out of range!');
     }
 
-    _baseTransition.applyClass( moveClasses[count - 1] );
+    _baseTransition.applyClass(moveClasses[count - 1]);
 
     return this;
   }
@@ -86,7 +89,7 @@ function MoveTransition( element ) { // eslint-disable-line max-statements, no-i
    * @returns {MoveTransition} An instance.
    */
   function moveRight() {
-    _baseTransition.applyClass( CLASSES.MOVE_RIGHT );
+    _baseTransition.applyClass(CLASSES.MOVE_RIGHT);
 
     return this;
   }
@@ -96,7 +99,7 @@ function MoveTransition( element ) { // eslint-disable-line max-statements, no-i
    * @returns {MoveTransition} An instance.
    */
   function moveUp() {
-    _baseTransition.applyClass( CLASSES.MOVE_UP );
+    _baseTransition.applyClass(CLASSES.MOVE_UP);
 
     return this;
   }

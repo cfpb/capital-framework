@@ -12,13 +12,12 @@
 
 'use strict';
 
-const assign = require( '../utilities/object-assign' ).assign;
-const bind = require( '../utilities/function-bind' ).bind;
-const classList = require( '../utilities/dom-class-list' );
-const Delegate = require( 'dom-delegate' ).Delegate;
-const Events = require( '../mixins/Events' );
-const isFunction = require( '../utilities/type-checkers' ).isFunction;
-
+const assign = require('../utilities/object-assign').assign;
+const bind = require('../utilities/function-bind').bind;
+const classList = require('../utilities/dom-class-list');
+const Delegate = require('dom-delegate').Delegate;
+const Events = require('../mixins/Events');
+const isFunction = require('../utilities/type-checkers').isFunction;
 
 /**
  * Function as the constrcutor for the AtomicComponent.
@@ -28,24 +27,23 @@ const isFunction = require( '../utilities/type-checkers' ).isFunction;
  * @param {HTMLElement} element - The element to set as the base element.
  * @param {Object} attributes -  Hash of attributes to set on base element.
  */
-function AtomicComponent( element, attributes ) {
+function AtomicComponent(element, attributes) {
   this.element = element;
   this.initializers = [];
-  this.uId = this.uniqueId( 'ac' );
-  assign( this, attributes );
+  this.uId = this.uniqueId('ac');
+  assign(this, attributes);
   this.processModifiers();
   this.ensureElement();
   this.setCachedElements();
-  this.initializers.push( this.initialize );
-  this.initializers.forEach( function( func ) {
-    if ( isFunction( func ) ) func.apply( this, arguments );
-  }, this );
-  this.trigger( 'component:initialized' );
+  this.initializers.push(this.initialize);
+  this.initializers.forEach(function(func) {
+    if (isFunction(func)) func.apply(this, arguments);
+  }, this);
+  this.trigger('component:initialized');
 }
 
 // Public instance Methods and properties.
-assign( AtomicComponent.prototype, Events, classList, {
-
+assign(AtomicComponent.prototype, Events, classList, {
   tagName: 'div',
 
   /**
@@ -56,19 +54,19 @@ assign( AtomicComponent.prototype, Events, classList, {
    * @param {Object} atomicComponent -  Base component.
    */
   processModifiers: function() {
-    if ( !this.modifiers ) {
+    if (!this.modifiers) {
       return;
     }
 
-    this.modifiers.forEach( function( modifier ) {
-      if ( classList.contains( this.element, modifier.ui.base ) ) {
-        if ( modifier.initialize ) {
-          this.initializers.push( modifier.initialize );
+    this.modifiers.forEach(function(modifier) {
+      if (classList.contains(this.element, modifier.ui.base)) {
+        if (modifier.initialize) {
+          this.initializers.push(modifier.initialize);
           delete modifier.initialize;
         }
-        assign( this, modifier );
+        assign(this, modifier);
       }
-    }, this );
+    }, this);
   },
 
   /**
@@ -84,16 +82,17 @@ assign( AtomicComponent.prototype, Events, classList, {
    * Function used to ensure and set / create the base DOM element.
    */
   ensureElement: function() {
-    if ( !this.element ) { // eslint-disable-line no-negated-condition, inline-comments, max-len
-      var attrs = assign( {}, this.attributes );
+    if (!this.element) {
+      // eslint-disable-line no-negated-condition, inline-comments, max-len
+      var attrs = assign({}, this.attributes);
       attrs.id = this.id || this.u_id;
-      if ( this.className ) attrs['class'] = this.className;
-      this.setElement( document.createElement( this.tagName ) );
-      this.setElementAttributes( attrs );
+      if (this.className) attrs['class'] = this.className;
+      this.setElement(document.createElement(this.tagName));
+      this.setElementAttributes(attrs);
     } else {
-      this.setElement( this.element );
+      this.setElement(this.element);
     }
-    this.element.setAttribute( 'data-bound', true );
+    this.element.setAttribute('data-bound', true);
   },
 
   /**
@@ -102,8 +101,8 @@ assign( AtomicComponent.prototype, Events, classList, {
    * @param {HTMLElement} element - The element to set as the base element.
    * @returns {AtomicComponent} An instance.
    */
-  setElement: function( element ) {
-    if ( this.element ) {
+  setElement: function(element) {
+    if (this.element) {
       this.undelegateEvents();
     }
     this.element = element;
@@ -119,14 +118,14 @@ assign( AtomicComponent.prototype, Events, classList, {
    */
   setCachedElements: function() {
     var key;
-    var ui = assign( {}, this.ui );
+    var ui = assign({}, this.ui);
     var element;
-    for ( key in ui ) {
-      if ( ui.hasOwnProperty( key ) ) {
-        element = this.element.querySelectorAll( ui[key] );
-        if ( element.length === 1 ) {
+    for (key in ui) {
+      if (ui.hasOwnProperty(key)) {
+        element = this.element.querySelectorAll(ui[key]);
+        if (element.length === 1) {
           ui[key] = element[0];
-        } else if ( element.length > 1 ) {
+        } else if (element.length > 1) {
           ui[key] = element;
         } else {
           ui[key] = null;
@@ -145,13 +144,13 @@ assign( AtomicComponent.prototype, Events, classList, {
    * @returns {boolean} True if successful in tearing down component.
    */
   destroy: function() {
-    if ( this.element ) {
-      this.element.parentNode.removeChild( this.element );
-      if ( this.element.view ) delete this.element.view;
+    if (this.element) {
+      this.element.parentNode.removeChild(this.element);
+      if (this.element.view) delete this.element.view;
       delete this.element;
     }
     this.undelegateEvents();
-    this.trigger( 'component:destroyed' );
+    this.trigger('component:destroyed');
 
     return true;
   },
@@ -161,12 +160,12 @@ assign( AtomicComponent.prototype, Events, classList, {
    *
    * @param {Object} attributes -  Hash of attributes to set on base element.
    */
-  setElementAttributes: function( attributes ) {
+  setElementAttributes: function(attributes) {
     let property;
 
-    for ( property in attributes ) {
-      if ( attributes.hasOwnProperty( property ) ) {
-        this.element.setAttribute( property, attributes[property] );
+    for (property in attributes) {
+      if (attributes.hasOwnProperty(property)) {
+        this.element.setAttribute(property, attributes[property]);
       }
     }
   },
@@ -178,24 +177,24 @@ assign( AtomicComponent.prototype, Events, classList, {
    * @param {Object} events - Hash of events to bind to the dom element.
    * @returns {AtomicComponent} An instance.
    */
-  delegateEvents: function( events ) {
+  delegateEvents: function(events) {
     var key;
     var method;
     var match;
     var delegateEventSplitter = /^(\S+)\s*(.*)$/;
 
-    events = events || ( events = this.events );
-    if ( !events ) return this;
+    events = events || (events = this.events);
+    if (!events) return this;
     this.undelegateEvents();
-    this._delegate = new Delegate( this.element );
-    for ( key in events ) {
+    this._delegate = new Delegate(this.element);
+    for (key in events) {
       method = events[key];
-      if ( isFunction( this[method] ) ) method = this[method];
-      if ( !method ) continue;
-      match = key.match( delegateEventSplitter );
-      this.delegate( match[1], match[2], bind( method, this ) );
+      if (isFunction(this[method])) method = this[method];
+      if (!method) continue;
+      match = key.match(delegateEventSplitter);
+      this.delegate(match[1], match[2], bind(method, this));
     }
-    this.trigger( 'component:bound' );
+    this.trigger('component:bound');
 
     return this;
   },
@@ -208,8 +207,8 @@ assign( AtomicComponent.prototype, Events, classList, {
    * @param {Function} listener - Callback for event.
    * @returns {AtomicComponent} An instance.
    */
-  delegate: function( eventName, selector, listener ) {
-    this._delegate.on( eventName, selector, listener );
+  delegate: function(eventName, selector, listener) {
+    this._delegate.on(eventName, selector, listener);
 
     return this;
   },
@@ -220,10 +219,10 @@ assign( AtomicComponent.prototype, Events, classList, {
    * @returns {AtomicComponent} An instance.
    */
   undelegateEvents: function() {
-    if ( this._delegate ) {
+    if (this._delegate) {
       this._delegate.destroy();
     }
-    this.element.removeAttribute( 'data-bound' );
+    this.element.removeAttribute('data-bound');
 
     return this;
   },
@@ -234,14 +233,18 @@ assign( AtomicComponent.prototype, Events, classList, {
    * @param {string} prefix - String to use a prefix.
    * @returns {string} Prefixed unique id string.
    */
-  uniqueId: function( prefix ) {
-    return prefix + '_' + Math.random().toString( 36 ).substr( 2, 9 );
+  uniqueId: function(prefix) {
+    return (
+      prefix +
+      '_' +
+      Math.random()
+        .toString(36)
+        .substr(2, 9)
+    );
   }
-
-} );
+});
 
 // Static Methods
-
 
 /**
  * Function used to set the attributes on an element.
@@ -250,24 +253,22 @@ assign( AtomicComponent.prototype, Events, classList, {
  * @param {Object} attributes -  Hash of attributes to set on base element.
  * @returns {Function} Extended child constructor function.
  */
-AtomicComponent.extend = function( attributes ) {
-
- /**
- * Function used as constructor in order to establish inheritance
- * chain.
- * @returns {AtomicComponent} An instance.
- */
+AtomicComponent.extend = function(attributes) {
+  /**
+   * Function used as constructor in order to establish inheritance
+   * chain.
+   * @returns {AtomicComponent} An instance.
+   */
   function child() {
     this._super = AtomicComponent.prototype;
-    return AtomicComponent.apply( this, arguments );
+    return AtomicComponent.apply(this, arguments);
   }
 
-  child.prototype = Object.create( AtomicComponent.prototype );
-  assign( child.prototype, attributes );
-  assign( child, AtomicComponent );
+  child.prototype = Object.create(AtomicComponent.prototype);
+  assign(child.prototype, attributes);
+  assign(child, AtomicComponent);
 
-  if ( attributes.hasOwnProperty( 'ui' ) &&
-  attributes.ui.hasOwnProperty( 'base' ) ) {
+  if (attributes.hasOwnProperty('ui') && attributes.ui.hasOwnProperty('base')) {
     child.selector = attributes.ui.base;
   }
 
@@ -276,7 +277,6 @@ AtomicComponent.extend = function( attributes ) {
   return child;
 };
 
-
 /**
  * Function used to instantiate all instances of the particular
  * atomic component on a page.
@@ -284,14 +284,14 @@ AtomicComponent.extend = function( attributes ) {
  * @returns {Array} List of AtomicComponent instances.
  */
 AtomicComponent.init = function() {
-  var elements = document.querySelectorAll( this.selector );
+  var elements = document.querySelectorAll(this.selector);
   var element;
   var components = [];
 
-  for ( var i = 0; i < elements.length; ++i ) {
+  for (var i = 0; i < elements.length; ++i) {
     element = elements[i];
-    if ( element.hasAttribute( 'data-bound' ) === false ) {
-      components.push( new this( element ) );
+    if (element.hasAttribute('data-bound') === false) {
+      components.push(new this(element));
     }
   }
 

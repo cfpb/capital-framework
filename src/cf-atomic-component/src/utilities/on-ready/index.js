@@ -17,24 +17,24 @@ const _readyFunctions = [];
  *   Function to run only after the DOM has completely loaded.
  * @returns {Array} List of functions to run after the DOM has loaded.
  */
-function onReady( fn ) {
+function onReady(fn) {
   // Ensure we passed a function as the argument
-  if ( typeof fn !== 'function' ) {
+  if (typeof fn !== 'function') {
     return [];
   }
 
   // If the ready state is already complete, run the passed function,
   // otherwise add it to our saved array.
-  if ( document.readyState === 'complete' ) {
+  if (document.readyState === 'complete') {
     fn();
   } else {
-    _readyFunctions.push( fn );
+    _readyFunctions.push(fn);
   }
 
   // When the ready state changes to complete, run the passed function
   document.onreadystatechange = function() {
-    if ( document.readyState === 'complete' ) {
-      for ( let i = 0, l = _readyFunctions.length; i < l; i++ ) {
+    if (document.readyState === 'complete') {
+      for (let i = 0, l = _readyFunctions.length; i < l; i++) {
         _readyFunctions[i]();
       }
       _readyFunctions.length = 0;

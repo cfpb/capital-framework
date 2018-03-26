@@ -1,16 +1,16 @@
 'use strict';
 
 // Required modules.
-const Events = require( '../../mixins/Events.js' );
-const BaseTransition = require( '../../utilities/transition/BaseTransition' );
-const contains = require( '../../utilities/dom-class-list' ).contains;
-const fnBind = require( '../../utilities/function-bind' ).bind;
+const Events = require('../../mixins/Events.js');
+const BaseTransition = require('../../utilities/transition/BaseTransition');
+const contains = require('../../utilities/dom-class-list').contains;
+const fnBind = require('../../utilities/function-bind').bind;
 
 // Exported constants.
 const CLASSES = {
-  BASE_CLASS:   'u-expandable-transition',
-  EXPANDED:     'u-expandable-expanded',
-  COLLAPSED:    'u-expandable-collapsed',
+  BASE_CLASS: 'u-expandable-transition',
+  EXPANDED: 'u-expandable-expanded',
+  COLLAPSED: 'u-expandable-collapsed',
   OPEN_DEFAULT: 'u-expandable-content__onload-open'
 };
 
@@ -26,9 +26,10 @@ const CLASSES = {
  *   An Object of custom classes to override the base classes Object
  * @returns {ExpandableTransition} An instance.
  */
-function ExpandableTransition( element, classes ) { // eslint-disable-line max-statements, no-inline-comments, max-len
+function ExpandableTransition(element, classes) {
+  // eslint-disable-line max-statements, no-inline-comments, max-len
   const classObject = classes || CLASSES;
-  const _baseTransition = new BaseTransition( element, classObject );
+  const _baseTransition = new BaseTransition(element, classObject);
   let previousHeight;
 
   /**
@@ -36,16 +37,18 @@ function ExpandableTransition( element, classes ) { // eslint-disable-line max-s
    */
   function init() {
     _baseTransition.init();
-    const _transitionCompleteBinded = fnBind( _transitionComplete, this );
-    _baseTransition.addEventListener( BaseTransition.END_EVENT,
-                                      _transitionCompleteBinded );
+    const _transitionCompleteBinded = fnBind(_transitionComplete, this);
+    _baseTransition.addEventListener(
+      BaseTransition.END_EVENT,
+      _transitionCompleteBinded
+    );
 
-    if ( contains( element, classObject.OPEN_DEFAULT ) ) {
-      _baseTransition.applyClass( classObject.EXPANDED );
+    if (contains(element, classObject.OPEN_DEFAULT)) {
+      _baseTransition.applyClass(classObject.EXPANDED);
       element.style.maxHeight = element.scrollHeight + 'px';
     } else {
       previousHeight = element.scrollHeight;
-      _baseTransition.applyClass( classObject.COLLAPSED );
+      _baseTransition.applyClass(classObject.COLLAPSED);
     }
 
     return this;
@@ -55,9 +58,11 @@ function ExpandableTransition( element, classes ) { // eslint-disable-line max-s
    * Handle the end of a transition.
    */
   function _transitionComplete() {
-    this.trigger( BaseTransition.END_EVENT, { target: this } );
-    if ( contains( element, classObject.EXPANDED ) &&
-         element.scrollHeight > previousHeight ) {
+    this.trigger(BaseTransition.END_EVENT, { target: this });
+    if (
+      contains(element, classObject.EXPANDED) &&
+      element.scrollHeight > previousHeight
+    ) {
       element.style.maxHeight = element.scrollHeight + 'px';
     }
   }
@@ -67,7 +72,7 @@ function ExpandableTransition( element, classes ) { // eslint-disable-line max-s
    * @returns {ExpandableTransition} An instance.
    */
   function toggleExpandable() {
-    if ( contains( element, classObject.COLLAPSED ) ) {
+    if (contains(element, classObject.COLLAPSED)) {
       expand();
     } else {
       collapse();
@@ -83,7 +88,7 @@ function ExpandableTransition( element, classes ) { // eslint-disable-line max-s
   function collapse() {
     previousHeight = element.scrollHeight;
     element.style.maxHeight = '0';
-    _baseTransition.applyClass( classObject.COLLAPSED );
+    _baseTransition.applyClass(classObject.COLLAPSED);
 
     return this;
   }
@@ -94,7 +99,7 @@ function ExpandableTransition( element, classes ) { // eslint-disable-line max-s
    */
   function expand() {
     element.style.maxHeight = previousHeight + 'px';
-    _baseTransition.applyClass( classObject.EXPANDED );
+    _baseTransition.applyClass(classObject.EXPANDED);
 
     return this;
   }

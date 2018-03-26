@@ -1,8 +1,8 @@
 'use strict';
 
 // Required modules.
-const Events = require( '../../mixins/Events.js' );
-const fnBind = require( '../function-bind' ).bind;
+const Events = require('../../mixins/Events.js');
+const fnBind = require('../function-bind').bind;
 
 /**
  * BaseTransition
@@ -18,7 +18,8 @@ const fnBind = require( '../function-bind' ).bind;
  *   The classes to apply to this transition.
  * @returns {BaseTransition} An instance.
  */
-function BaseTransition( element, classes ) { // eslint-disable-line max-statements, no-inline-comments, max-len
+function BaseTransition(element, classes) {
+  // eslint-disable-line max-statements, no-inline-comments, max-len
   const _classes = classes;
   let _dom;
 
@@ -33,9 +34,9 @@ function BaseTransition( element, classes ) { // eslint-disable-line max-stateme
    * @returns {BaseTransition} An instance.
    */
   function init() {
-    _transitionCompleteBinded = fnBind( _transitionComplete, this );
-    _addEventListenerBinded = fnBind( _addEventListener, this );
-    setElement( element );
+    _transitionCompleteBinded = fnBind(_transitionComplete, this);
+    _addEventListenerBinded = fnBind(_addEventListener, this);
+    setElement(element);
 
     return this;
   }
@@ -44,16 +45,16 @@ function BaseTransition( element, classes ) { // eslint-disable-line max-stateme
    * Set the HTML element target of this transition.
    * @param {HTMLNode} targetElement - The target of the transition.
    */
-  function setElement( targetElement ) {
+  function setElement(targetElement) {
     // If the element has already been set,
     // clear the transition classes from the old element.
-    if ( _dom ) {
+    if (_dom) {
       remove();
       animateOn();
     }
     _dom = targetElement;
-    _dom.classList.add( _classes.BASE_CLASS );
-    _transitionEndEvent = _getTransitionEndEvent( _dom );
+    _dom.classList.add(_classes.BASE_CLASS);
+    _transitionEndEvent = _getTransitionEndEvent(_dom);
   }
 
   /**
@@ -61,8 +62,10 @@ function BaseTransition( element, classes ) { // eslint-disable-line max-stateme
    * @returns {BaseTransition} An instance.
    */
   function animateOn() {
-    if ( !_dom ) { return this; }
-    _dom.classList.remove( BaseTransition.NO_ANIMATION_CLASS );
+    if (!_dom) {
+      return this;
+    }
+    _dom.classList.remove(BaseTransition.NO_ANIMATION_CLASS);
 
     return this;
   }
@@ -72,8 +75,10 @@ function BaseTransition( element, classes ) { // eslint-disable-line max-stateme
    * @returns {BaseTransition} An instance.
    */
   function animateOff() {
-    if ( !_dom ) { return this; }
-    _dom.classList.add( BaseTransition.NO_ANIMATION_CLASS );
+    if (!_dom) {
+      return this;
+    }
+    _dom.classList.add(BaseTransition.NO_ANIMATION_CLASS);
 
     return this;
   }
@@ -83,21 +88,24 @@ function BaseTransition( element, classes ) { // eslint-disable-line max-stateme
    *   Returns false if this transition has not been initialized.
    */
   function isAnimated() {
-    if ( !_dom ) { return false; }
-    return !_dom.classList.contains( BaseTransition.NO_ANIMATION_CLASS );
+    if (!_dom) {
+      return false;
+    }
+    return !_dom.classList.contains(BaseTransition.NO_ANIMATION_CLASS);
   }
 
   /**
    * Halt an in-progress animation and call the complete event immediately.
    */
   function halt() {
-    if ( !_isAnimating ) { return; }
+    if (!_isAnimating) {
+      return;
+    }
     _dom.style.webkitTransitionDuration = '0';
     _dom.style.mozTransitionDuration = '0';
     _dom.style.oTransitionDuration = '0';
     _dom.style.transitionDuration = '0';
-    _dom.removeEventListener( _transitionEndEvent,
-                              _transitionCompleteBinded );
+    _dom.removeEventListener(_transitionEndEvent, _transitionCompleteBinded);
     _transitionCompleteBinded();
     _dom.style.webkitTransitionDuration = '';
     _dom.style.mozTransitionDuration = '';
@@ -112,12 +120,11 @@ function BaseTransition( element, classes ) { // eslint-disable-line max-stateme
   function _addEventListener() {
     _isAnimating = true;
     // If transition is not supported, call handler directly (IE9/OperaMini).
-    if ( _transitionEndEvent ) {
-      _dom.addEventListener( _transitionEndEvent,
-                             _transitionCompleteBinded );
-      this.trigger( BaseTransition.BEGIN_EVENT, { target: this } );
+    if (_transitionEndEvent) {
+      _dom.addEventListener(_transitionEndEvent, _transitionCompleteBinded);
+      this.trigger(BaseTransition.BEGIN_EVENT, { target: this });
     } else {
-      this.trigger( BaseTransition.BEGIN_EVENT, { target: this } );
+      this.trigger(BaseTransition.BEGIN_EVENT, { target: this });
       _transitionCompleteBinded();
     }
   }
@@ -126,7 +133,7 @@ function BaseTransition( element, classes ) { // eslint-disable-line max-stateme
    * Remove an event listener to the transition.
    */
   function _removeEventListener() {
-    _dom.removeEventListener( _transitionEndEvent, _transitionCompleteBinded );
+    _dom.removeEventListener(_transitionEndEvent, _transitionCompleteBinded);
   }
 
   /**
@@ -134,7 +141,7 @@ function BaseTransition( element, classes ) { // eslint-disable-line max-stateme
    */
   function _transitionComplete() {
     _removeEventListener();
-    this.trigger( BaseTransition.END_EVENT, { target: this } );
+    this.trigger(BaseTransition.END_EVENT, { target: this });
     _isAnimating = false;
   }
 
@@ -143,11 +150,13 @@ function BaseTransition( element, classes ) { // eslint-disable-line max-stateme
    * already been applied to this BaseTransition's target element.
    */
   function _flush() {
-    for ( const prop in _classes ) {
-      if ( _classes.hasOwnProperty( prop ) &&
-           _classes[prop] !== _classes.BASE_CLASS &&
-           _dom.classList.contains( _classes[prop] ) ) {
-        _dom.classList.remove( _classes[prop] );
+    for (const prop in _classes) {
+      if (
+        _classes.hasOwnProperty(prop) &&
+        _classes[prop] !== _classes.BASE_CLASS &&
+        _dom.classList.contains(_classes[prop])
+      ) {
+        _dom.classList.remove(_classes[prop]);
       }
     }
   }
@@ -158,9 +167,9 @@ function BaseTransition( element, classes ) { // eslint-disable-line max-stateme
    *   True, if the element's CSS classes were touched, false otherwise.
    */
   function remove() {
-    if ( _dom ) {
+    if (_dom) {
       halt();
-      _dom.classList.remove( _classes.BASE_CLASS );
+      _dom.classList.remove(_classes.BASE_CLASS);
       _flush();
       return true;
     }
@@ -174,22 +183,24 @@ function BaseTransition( element, classes ) { // eslint-disable-line max-stateme
    *   or the transition is not initialized,
    *   otherwise true if the class was applied.
    */
-  function applyClass( className ) {
-    if ( !_dom ) { return false; }
-    if ( !_isFlushed ) {
+  function applyClass(className) {
+    if (!_dom) {
+      return false;
+    }
+    if (!_isFlushed) {
       _flush();
       _isFlushed = true;
     }
 
-    if ( _dom.classList.contains( className ) ) {
+    if (_dom.classList.contains(className)) {
       return false;
     }
 
     _removeEventListener();
-    _dom.classList.remove( _lastClass );
+    _dom.classList.remove(_lastClass);
     _lastClass = className;
     _addEventListenerBinded();
-    _dom.classList.add( _lastClass );
+    _dom.classList.add(_lastClass);
 
     return true;
   }
@@ -199,23 +210,25 @@ function BaseTransition( element, classes ) { // eslint-disable-line max-stateme
    *   The element to check for support of transition end event.
    * @returns {string} The browser-prefixed transition end event.
    */
-  function _getTransitionEndEvent( elem ) {
-    if ( !elem ) {
+  function _getTransitionEndEvent(elem) {
+    if (!elem) {
       const msg = 'Element does not have TransitionEnd event. It may be null!';
-      throw new Error( msg );
+      throw new Error(msg);
     }
 
     let transition;
     const transitions = {
       WebkitTransition: 'webkitTransitionEnd',
-      MozTransition:    'transitionend',
-      OTransition:      'oTransitionEnd otransitionend',
-      transition:       'transitionend'
+      MozTransition: 'transitionend',
+      OTransition: 'oTransitionEnd otransitionend',
+      transition: 'transitionend'
     };
 
-    for ( const transitionEnd in transitions ) {
-      if ( transitions.hasOwnProperty( transitionEnd ) &&
-           typeof elem.style[transitionEnd] !== 'undefined' ) {
+    for (const transitionEnd in transitions) {
+      if (
+        transitions.hasOwnProperty(transitionEnd) &&
+        typeof elem.style[transitionEnd] !== 'undefined'
+      ) {
         transition = transitions[transitionEnd];
         break;
       }

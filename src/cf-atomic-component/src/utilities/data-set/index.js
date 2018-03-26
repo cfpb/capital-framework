@@ -7,17 +7,17 @@
 
 'use strict';
 
-const _assign = require( '../object-assign' ).assign;
+const _assign = require('../object-assign').assign;
 
 /**
  * Converts a string from selector-case to camelCase.
  * @param {string} str - The string in selector-case form.
  * @returns {string} The string in camelCase form.
  */
-function _toCamelCase( str ) {
-  return str.replace( /\-([a-z])/g, function( all, match ) {
+function _toCamelCase(str) {
+  return str.replace(/\-([a-z])/g, function(all, match) {
     return match.toUpperCase();
-  } );
+  });
 }
 
 /**
@@ -27,20 +27,20 @@ function _toCamelCase( str ) {
  * @param {HTMLElement} element - The element to check for dataset support.
  * @returns {Object} The data set.
  */
-function dataSet( element ) {
-  if ( document.documentElement.dataset ) {
-    return _assign( {}, element.dataset );
+function dataSet(element) {
+  if (document.documentElement.dataset) {
+    return _assign({}, element.dataset);
   }
   const dataset = {};
   const regex = /^data-(.+)/;
   let attr;
   let match;
 
-  for ( var i = 0; i < element.attributes.length; i++ ) {
+  for (var i = 0; i < element.attributes.length; i++) {
     attr = element.attributes[i];
-    match = attr.name.match( regex );
-    if ( match ) {
-      dataset[_toCamelCase( match[1] )] = attr.value;
+    match = attr.name.match(regex);
+    if (match) {
+      dataset[_toCamelCase(match[1])] = attr.value;
     }
   }
 

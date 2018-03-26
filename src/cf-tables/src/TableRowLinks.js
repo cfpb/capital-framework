@@ -4,10 +4,8 @@
    Mixin for adding row link click functionality to Table organism.
    ========================================================================== */
 
-
-const closest = require(
-  'cf-atomic-component/src/utilities/dom-closest'
-).closest;
+const closest = require('cf-atomic-component/src/utilities/dom-closest')
+  .closest;
 
 const TableRowLinks = {
   ui: {
@@ -26,15 +24,15 @@ const TableRowLinks = {
  *
  * @param {MouseEvent} event - Mouse event for click on the table.
  */
-function onRowLinkClick( event ) {
+function onRowLinkClick(event) {
   let target = event.target;
-  if ( target && target.tagName === 'A' ) {
+  if (target && target.tagName === 'A') {
     return;
   }
-  target = closest( event.target, 'tr' );
-  const link = target.querySelector( 'a' );
-  if ( link ) {
-    window.location = link.getAttribute( 'href' );
+  target = closest(event.target, 'tr');
+  const link = target.querySelector('a');
+  if (link) {
+    window.location = link.getAttribute('href');
   }
 }
 

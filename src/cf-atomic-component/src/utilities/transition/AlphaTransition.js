@@ -1,15 +1,15 @@
 'use strict';
 
 // Required modules.
-const Events = require( '../../mixins/Events.js' );
-const BaseTransition = require( './BaseTransition' );
-const fnBind = require( '../function-bind' ).bind;
+const Events = require('../../mixins/Events.js');
+const BaseTransition = require('./BaseTransition');
+const fnBind = require('../function-bind').bind;
 
 // Exported constants.
 const CLASSES = {
   BASE_CLASS: 'u-alpha-transition',
-  ALPHA_100:  'u-alpha-100',
-  ALPHA_0:    'u-alpha-0'
+  ALPHA_100: 'u-alpha-100',
+  ALPHA_0: 'u-alpha-0'
 };
 
 /**
@@ -22,18 +22,19 @@ const CLASSES = {
  *   DOM element to apply opacity transition to.
  * @returns {AlphaTransition} An instance.
  */
-function AlphaTransition( element ) {
-
-  const _baseTransition = new BaseTransition( element, CLASSES );
+function AlphaTransition(element) {
+  const _baseTransition = new BaseTransition(element, CLASSES);
 
   /**
    * @returns {AlphaTransition} An instance.
    */
   function init() {
     _baseTransition.init();
-    const _transitionCompleteBinded = fnBind( _transitionComplete, this );
-    _baseTransition.addEventListener( BaseTransition.END_EVENT,
-                                      _transitionCompleteBinded );
+    const _transitionCompleteBinded = fnBind(_transitionComplete, this);
+    _baseTransition.addEventListener(
+      BaseTransition.END_EVENT,
+      _transitionCompleteBinded
+    );
     return this;
   }
 
@@ -41,7 +42,7 @@ function AlphaTransition( element ) {
    * Handle the end of a transition.
    */
   function _transitionComplete() {
-    this.trigger( BaseTransition.END_EVENT, { target: this } );
+    this.trigger(BaseTransition.END_EVENT, { target: this });
   }
 
   /**
@@ -49,7 +50,7 @@ function AlphaTransition( element ) {
    * @returns {AlphaTransition} An instance.
    */
   function fadeIn() {
-    _baseTransition.applyClass( CLASSES.ALPHA_100 );
+    _baseTransition.applyClass(CLASSES.ALPHA_100);
 
     return this;
   }
@@ -59,7 +60,7 @@ function AlphaTransition( element ) {
    * @returns {AlphaTransition} An instance.
    */
   function fadeOut() {
-    _baseTransition.applyClass( CLASSES.ALPHA_0 );
+    _baseTransition.applyClass(CLASSES.ALPHA_0);
 
     return this;
   }
