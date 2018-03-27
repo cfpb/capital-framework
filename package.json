@@ -26,6 +26,7 @@
     "cf-link": "node scripts/npm/link",
     "format:build": "prettier --write scripts/**/*.js",
     "format:scripts": "prettier --write --require-pragma src/**/*.js, src/**/*.less",
+    "format:test" : "prettier --write 'test/**/*.js' '!test/lib/**/*.js'",
     "format": "npm run format:build && npm run format:scripts",
     "postinstall": "npm run cf-link",
     "precommit": "lint-staged",
