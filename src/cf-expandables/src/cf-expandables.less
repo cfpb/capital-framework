@@ -96,6 +96,9 @@
     //
 
     &_label {
+        // Remove default h4 margin style
+        margin-bottom: 0;
+
         color: @expandable_label-text;
         font-weight: 500;
     }
@@ -193,10 +196,6 @@
             &:first-child {
                 border-top: 1px solid @expandable__border;
             }
-        }
-
-        .o-expandable_label {
-            margin-bottom: 0;
         }
     }
 }

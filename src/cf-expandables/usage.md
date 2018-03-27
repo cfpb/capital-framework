@@ -186,7 +186,7 @@ The following combination is our recommended go-to expandable pattern.
             o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
-        <span class="o-expandable_header-left o-expandable_label">
+        <span class="h4 o-expandable_header-left o-expandable_label">
             Expandable Header
         </span>
         <span class="o-expandable_header-right o-expandable_link">
@@ -218,7 +218,7 @@ The following combination is our recommended go-to expandable pattern.
             o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
-        <span class="o-expandable_header-left o-expandable_label">
+        <span class="h4 o-expandable_header-left o-expandable_label">
             Expandable Header
         </span>
         <span class="o-expandable_header-right o-expandable_link">
@@ -252,7 +252,7 @@ The following combination is our recommended go-to expandable pattern.
             o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
-        <span class="o-expandable_header-left o-expandable_label">
+        <span class="h4 o-expandable_header-left o-expandable_label">
             Expandable Header
         </span>
         <span class="o-expandable_header-right o-expandable_link">
@@ -284,7 +284,7 @@ The following combination is our recommended go-to expandable pattern.
             o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
-        <span class="o-expandable_header-left o-expandable_label">
+        <span class="h4 o-expandable_header-left o-expandable_label">
             Expandable Header
         </span>
         <span class="o-expandable_header-right o-expandable_link">
