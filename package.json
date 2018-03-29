@@ -26,16 +26,17 @@
     "cf-link": "node scripts/npm/link",
     "format": "npm-run-all format:*",
     "format:build": "prettier --write scripts/**/*.js",
-    "format:scripts": "prettier --write --require-pragma src/**/*.js, src/**/*.less",
+    "format:scripts": "prettier --write src/**/*.js",
+    "format:styles": "prettier --write --require-pragma src/**/*.less",
     "format:test": "prettier --write 'test/**/*.js' '!test/lib/**/*.js'",
     "postinstall": "npm run cf-link",
-    "precommit": "lint-staged",
+    "prepush": "npm run format && gulp lint && gulp test",
     "process-icon-svgs": "svgo -o src/cf-icons/src/icons --enable=addClassesToSVGElement --enable=removeStyleElement --enable=removeAttrs --config='{ \"plugins\": [ { \"addClassesToSVGElement\": { \"className\": \"cf-icon-svg\" } }, { \"removeAttrs\": { \"attrs\": [ \"fill\", \"path:class\", \"circle:class\" ] } }, { \"cleanupIDs\": { \"force\": \"true\" } } ] }'",
     "release": "./scripts/travis/release.sh",
     "test": "gulp test"
   },
   "lint-staged": {
-    "*.{js,less}": [
+    "*.js": [
       "prettier --write",
       "git add"
     ]
