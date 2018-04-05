@@ -755,7 +755,7 @@ have helper text that appears below the main label text.
            id="form-input-error"
            aria-describedby="form-input-error_message">
     <div class="a-error-message" id="form-input-error_message" role="alert">
-        {% include icons/error-round.svg %}
+        <span class="cf-icon cf-icon-delete-round" aria-hidden="true"></span>
         This is a required question, please answer.
     </div>
 </div>
@@ -769,7 +769,7 @@ have helper text that appears below the main label text.
            id="form-input-error"
            aria-describedby="form-input-error_message">
     <div class="a-error-message" id="form-input-error_message" role="alert">
-        {% raw %}{% include icons/error-round.svg %}{% endraw %}
+        <span class="cf-icon cf-icon-delete-round" aria-hidden="true"></span>
         This is a required question, please answer.
     </div>
 </div>
@@ -810,30 +810,34 @@ typically to clear the input.
 
 <div class="m-btn-inside-input">
     <input type="text"
-        value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+        value="This is some really long text to make sure that the button
+               doesn't overlap the content in such a way that this input
+               becomes unusable."
         title="Test input"
         class="a-text-input">
     <button class="a-btn a-btn__link">
-        {% include icons/error.svg %}
-        <span class="u-visually-hidden">Clear</span>
+        Clear
+        <span class="cf-icon cf-icon-delete"></span>
     </button>
 </div>
 
 ```html
 <div class="m-btn-inside-input">
     <input type="text"
-        value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+        value="This is some really long text to make sure that the button
+               doesn't overlap the content in such a way that this input
+               becomes unusable."
         title="Test input"
         class="a-text-input">
     <button class="a-btn a-btn__link">
-        {% raw %}{% include icons/error.svg %}{% endraw %}
-        <span class="u-visually-hidden">Clear</span>
+        Clear
+        <span class="cf-icon cf-icon-delete"></span>
     </button>
 </div>
 ```
 
 
-### Button inside an input with another button
+### Button inside an input with a button
 
 This example combines both of the previous patterns,
 creating a typical site search form.
@@ -842,12 +846,14 @@ creating a typical site search form.
     <div class="o-form__input-w-btn_input-container">
         <div class="m-btn-inside-input">
             <input type="text"
-                value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+                value="This is some really long text to make sure that the
+                       button doesn't overlap the content in such a way
+                       that this input becomes unusable."
                 title="Test input"
                 class="a-text-input">
             <button class="a-btn a-btn__link">
-                {% include icons/error.svg %}
-                <span class="u-visually-hidden">Clear</span>
+                Clear
+                <span class="cf-icon cf-icon-delete"></span>
             </button>
         </div>
     </div>
@@ -861,12 +867,14 @@ creating a typical site search form.
     <div class="o-form__input-w-btn_input-container">
         <div class="m-btn-inside-input">
             <input type="text"
-                value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+                value="This is some really long text to make sure that the
+                       button doesn't overlap the content in such a way
+                       that this input becomes unusable."
                 title="Test input"
                 class="a-text-input">
             <button class="a-btn a-btn__link">
-                {% raw %}{% include icons/error.svg %}{% endraw %}
-                <span class="u-visually-hidden">Clear</span>
+                Clear
+                <span class="cf-icon cf-icon-delete"></span>
             </button>
         </div>
     </div>

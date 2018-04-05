@@ -68,7 +68,6 @@ This is the default notification appearance without additional CSS modifiers.
 
 <div class="m-notification
             m-notification__visible">
-    {% include icons/update.svg %}
     <div class="m-notification_content">
         <div class="h4 m-notification_message">The page is loading…</div>
     </div>
@@ -77,7 +76,6 @@ This is the default notification appearance without additional CSS modifiers.
 ```
 <div class="m-notification
             m-notification__visible">
-    {% raw %}{% include icons/update.svg %}{% endraw %}
     <div class="m-notification_content">
         <div class="h4 m-notification_message">The page is loading…</div>
     </div>
@@ -92,7 +90,7 @@ expected, such as returning the number of results in a search.
 <div class="m-notification
             m-notification__visible
             m-notification__success">
-    {% include icons/approved-round.svg %}
+    <span class="m-notification_icon cf-icon"></span>
     <div class="m-notification_content">
         <div class="h4 m-notification_message">11 results</div>
     </div>
@@ -102,7 +100,7 @@ expected, such as returning the number of results in a search.
 <div class="m-notification
             m-notification__visible
             m-notification__success">
-    {% raw %}{% include icons/approved-round.svg %}{% endraw %}
+    <span class="m-notification_icon cf-icon"></span>
     <div class="m-notification_content">
         <div class="h4 m-notification_message">11 results</div>
     </div>
@@ -118,7 +116,7 @@ such as a search that returned no results.
 <div class="m-notification
             m-notification__visible
             m-notification__warning">
-    {% include icons/error-round.svg %}
+    <span class="m-notification_icon cf-icon"></span>
     <div class="m-notification_content">
         <div class="h4 m-notification_message">No results found.</div>
     </div>
@@ -128,7 +126,7 @@ such as a search that returned no results.
 <div class="m-notification
             m-notification__visible
             m-notification__warning">
-    {% raw %}{% include icons/error-round.svg %}{% endraw %}
+    <span class="m-notification_icon cf-icon"></span>
     <div class="m-notification_content">
         <div class="h4 m-notification_message">No results found.</div>
     </div>
@@ -143,7 +141,7 @@ expected and encountered an error.
 <div class="m-notification
             m-notification__visible
             m-notification__error">
-    {% include icons/error-round.svg %}
+    <span class="m-notification_icon cf-icon"></span>
     <div class="m-notification_content">
         <div class="h4 m-notification_message">Page not found.</div>
     </div>
@@ -153,7 +151,7 @@ expected and encountered an error.
 <div class="m-notification
             m-notification__visible
             m-notification__error">
-    {% raw %}{% include icons/error-round.svg %}{% endraw %}
+    <span class="m-notification_icon cf-icon"></span>
     <div class="m-notification_content">
         <div class="h4 m-notification_message">Page not found.</div>
     </div>
@@ -164,5 +162,62 @@ expected and encountered an error.
 
 ### Visibility
 
-Notifications are hidden by default; you can toggle their visibility by adding
-or removing the `m-notification__visible` class to the base element.
+You can show and hide a notification
+by adding or removing the `m-notification__visible` class to the base element.
+
+### Explanation
+
+<div class="m-notification
+            m-notification__visible
+            m-notification__error">
+    <span class="m-notification_icon cf-icon"></span>
+    <div class="m-notification_content">
+        <div class="h4 m-notification_message">Page not found.</div>
+        <p class="h4 m-notification_explanation">
+          Please check the URL and try again.
+        </p>
+    </div>
+</div>
+
+```
+<div class="m-notification
+            m-notification__visible
+            m-notification__error">
+    <span class="m-notification_icon cf-icon"></span>
+    <div class="m-notification_content">
+        <div class="h4 m-notification_message">message</div>
+        <p class="h4 m-notification_explanation">
+          Please check the URL and try again.
+        </p>
+    </div>
+</div>
+```
+
+### Custom icons
+
+Custom icons can be added to the action notification by supplying any icons
+from the cf-icons package.
+
+<div class="m-notification
+            m-notification__visible">
+    <span class="m-notification_icon
+                 cf-icon
+                 cf-icon-update
+                 cf-icon__spin"></span>
+    <div class="m-notification_content">
+        <div class="h4 m-notification_message">The page is loading…</div>
+    </div>
+</div>
+
+```
+<div class="m-notification
+            m-notification__visible">
+    <span class="m-notification_icon
+                 cf-icon
+                 cf-icon-update
+                 cf-icon__spin"></span>
+    <div class="m-notification_content">
+        <div class="h4 m-notification_message">The page is loading…</div>
+    </div>
+</div>
+```
