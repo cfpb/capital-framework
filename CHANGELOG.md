@@ -8,6 +8,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Changed
 - **cf-core:** [PATCH] Changed heading mixins to prevent heading element styles from leaking into classes.
+- **cf-notifications:** [PATCH] Removed unnecessary icon positioning; fix mistake in usage file.
 
 ### Removed
 -
