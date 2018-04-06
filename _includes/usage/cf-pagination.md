@@ -58,22 +58,16 @@ include an `id` on a wrapper of the paginated content
 
 <nav class="m-pagination" role="navigation" aria-label="Pagination">
     <a class="a-btn
-              a-btn_icon__on-left
-              cf-icon
-              cf-icon-left
-              cf-icon__before
               m-pagination_btn-prev"
        href="?page=21#pagination_content">
+        <span class="a-btn_icon a-btn_icon__on-left">{% include icons/left.svg %}</span>
         Newer
     </a>
     <a class="a-btn
-              a-btn_icon__on-right
-              cf-icon
-              cf-icon-right
-              cf-icon__after
               m-pagination_btn-next"
        href="?page=23#pagination_content">
         Older
+        <span class="a-btn_icon a-btn_icon__on-right">{% include icons/right.svg %}</span>
     </a>
     <form class="m-pagination_form"
           action="#pagination_content">
@@ -109,21 +103,15 @@ include an `id` on a wrapper of the paginated content
 
 <nav class="m-pagination" role="navigation" aria-label="Pagination">
     <a class="a-btn
-              a-btn_icon__on-left
-              cf-icon
-              cf-icon-left
-              cf-icon__before
               m-pagination_btn-prev"
        href="?page=21#pagination_content">
+        <span class="a-btn_icon a-btn_icon__on-left">{% raw %}{% include icons/left.svg %}{% endraw %}</span>
         Newer
     </a>
     <a class="a-btn
-              a-btn_icon__on-right
-              cf-icon
-              cf-icon-right
-              cf-icon__after
               m-pagination_btn-next"
        href="?page=23#pagination_content">
+        <span class="a-btn_icon a-btn_icon__on-right">{% raw %}{% include icons/right.svg %}{% endraw %}</span>
         Older
     </a>
     <form class="m-pagination_form"
@@ -165,22 +153,16 @@ For example:
 
 <nav class="m-pagination" role="navigation" aria-label="Pagination">
     <a class="a-btn
-              a-btn_icon__on-left
               a-btn__disabled
-              cf-icon
-              cf-icon-left
-              cf-icon__before
               m-pagination_btn-prev">
+        <span class="a-btn_icon a-btn_icon__on-left">{% include icons/left.svg %}</span>
         Newer
     </a>
     <a class="a-btn
-              a-btn_icon__on-right
-              cf-icon
-              cf-icon-right
-              cf-icon__after
               m-pagination_btn-next"
        href="?page=2#pagination_content">
         Older
+        <span class="a-btn_icon a-btn_icon__on-right">{% include icons/right.svg %}</span>
     </a>
     <form class="m-pagination_form"
           action="#pagination_content">
@@ -212,22 +194,16 @@ For example:
 ```
 <nav class="m-pagination" role="navigation" aria-label="Pagination">
     <a class="a-btn
-              a-btn_icon__on-left
               a-btn__disabled
-              cf-icon
-              cf-icon-left
-              cf-icon__before
               m-pagination_btn-prev">
+        <span class="a-btn_icon a-btn_icon__on-left">{% raw %}{% include icons/left.svg %}{% endraw %}</span>
         Newer
     </a>
     <a class="a-btn
-              a-btn_icon__on-right
-              cf-icon
-              cf-icon-right
-              cf-icon__after
               m-pagination_btn-next"
        href="?page=2#pagination_content">
         Older
+        <span class="a-btn_icon a-btn_icon__on-right">{% raw %}{% include icons/right.svg %}{% endraw %}</span>
     </a>
     <form class="m-pagination_form"
           action="#pagination_content">

@@ -1290,6 +1290,10 @@ height of the next parent using `position: relative;`. This means that the
 
 
 ## Featured content module
+{% comment %}
+TODO: Revist the naming of these three modules. The layouts are more about
+positioning the image and less about the type of content they host.
+{% endcomment %}
 
 Featured content module, like a hero, consists of headline/text/optional call
 to action along with a visual. It is intended to be used in a main content
@@ -1307,9 +1311,7 @@ the available space.
     <section class="o-featured-content-module">
         <div class="o-featured-content-module_text">
             <div class="a-heading a-heading__icon">
-                <span class="o-featured-content-module_icon
-                             cf-icon
-                             cf-icon-speech-bubble"></span>
+                {% include icons/speech-bubble.svg %}
                 Featured
             </div>
             <h2>Feature title</h2>
@@ -1320,10 +1322,9 @@ the available space.
             </p>
             <a class="a-link
                       a-link__jump
-                      cf-icon
-                      cf-icon__after
-                      cf-icon-right">
+                      a-link__icon-after-text">
                 <span class="a-link_text">Read more about the feature</span>
+                {% include icons/right.svg %}
             </a>
         </div>
         <div class="o-featured-content-module_visual">
@@ -1338,9 +1339,7 @@ the available space.
     <section class="o-featured-content-module">
         <div class="o-featured-content-module_text">
             <div class="a-heading a-heading__icon">
-                <span class="o-featured-content-module_icon
-                             cf-icon
-                             cf-icon-speech-bubble"></span>
+                {% raw %}{% include icons/speech-bubble.svg %}{% endraw %}
                 Featured
             </div>
             <h2>Feature title</h2>
@@ -1351,10 +1350,9 @@ the available space.
             </p>
             <a class="a-link
                       a-link__jump
-                      cf-icon
-                      cf-icon__after
-                      cf-icon-right">
+                      a-link__icon-after-text">
                 <span class="a-link_text">Read more about the feature</span>
+                {% raw %}{% include icons/right.svg %}{% endraw %}
             </a>
         </div>
         <div class="o-featured-content-module_visual">
@@ -1377,10 +1375,8 @@ side so that the copyright information is displayed.
                     o-featured-content-module__right">
         <div class="o-featured-content-module_text">
             <div class="a-heading a-heading__icon">
-                <span class="o-featured-content-module_icon
-                             cf-icon
-                             cf-icon-speech-bubble"></span>
-                Featured (Map)
+                {% include icons/speech-bubble.svg %}
+                Featured map
             </div>
             <h2>Feature title</h2>
             <p>
@@ -1390,10 +1386,9 @@ side so that the copyright information is displayed.
             </p>
             <a class="a-link
                       a-link__jump
-                      cf-icon
-                      cf-icon__after
-                      cf-icon-right">
+                      a-link__icon-after-text">
                 <span class="a-link_text">Read more about the feature</span>
+                {% include icons/right.svg %}
             </a>
         </div>
         <div class="o-featured-content-module_visual">
@@ -1409,10 +1404,8 @@ side so that the copyright information is displayed.
                     o-featured-content-module__right">
         <div class="o-featured-content-module_text">
             <div class="a-heading a-heading__icon">
-                <span class="o-featured-content-module_icon
-                             cf-icon
-                             cf-icon-speech-bubble"></span>
-                Featured (Map)
+                {% raw %}{% include icons/speech-bubble.svg %}{% endraw %}
+                Featured map
             </div>
             <h2>Feature title</h2>
             <p>
@@ -1422,10 +1415,9 @@ side so that the copyright information is displayed.
             </p>
             <a class="a-link
                       a-link__jump
-                      cf-icon
-                      cf-icon__after
-                      cf-icon-right">
+                      a-link__icon-after-text">
                 <span class="a-link_text">Read more about the feature</span>
+                {% raw %}{% include icons/right.svg %}{% endraw %}
             </a>
         </div>
         <div class="o-featured-content-module_visual">
@@ -1449,10 +1441,8 @@ generally remains centered.
                     o-featured-content-module__center">
         <div class="o-featured-content-module_text">
             <div class="a-heading a-heading__icon">
-                <span class="o-featured-content-module_icon
-                             cf-icon
-                             cf-icon-speech-bubble"></span>
-                Featured (Video)
+                {% include icons/play-round.svg %}
+                Featured video
             </div>
             <h2>Feature title</h2>
             <p>
@@ -1462,10 +1452,9 @@ generally remains centered.
             </p>
             <a class="a-link
                       a-link__jump
-                      cf-icon
-                      cf-icon__after
-                      cf-icon-right">
+                      a-link__icon-after-text">
                 <span class="a-link_text">Read more about the feature</span>
+                {% include icons/right.svg %}
             </a>
         </div>
         <div class="o-featured-content-module_visual">
@@ -1481,10 +1470,8 @@ generally remains centered.
                     o-featured-content-module__center">
         <div class="o-featured-content-module_text">
             <div class="a-heading a-heading__icon">
-                <span class="o-featured-content-module_icon
-                             cf-icon
-                             cf-icon-speech-bubble"></span>
-                Featured (Video)
+                {% raw %}{% include icons/play-round.svg %}{% endraw %}
+                Featured video
             </div>
             <h2>Feature title</h2>
             <p>
@@ -1494,10 +1481,9 @@ generally remains centered.
             </p>
             <a class="a-link
                       a-link__jump
-                      cf-icon
-                      cf-icon__after
-                      cf-icon-right">
+                      a-link__icon-after-text">
                 <span class="a-link_text">Read more about the feature</span>
+                {% raw %}{% include icons/right.svg %}{% endraw %}
             </a>
         </div>
         <div class="o-featured-content-module_visual">
