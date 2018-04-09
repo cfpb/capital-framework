@@ -118,7 +118,7 @@ such as a search that returned no results.
 <div class="m-notification
             m-notification__visible
             m-notification__warning">
-    {% include icons/error-round.svg %}
+    {% include icons/warning-round.svg %}
     <div class="m-notification_content">
         <div class="h4 m-notification_message">No results found.</div>
     </div>
@@ -128,7 +128,7 @@ such as a search that returned no results.
 <div class="m-notification
             m-notification__visible
             m-notification__warning">
-    {% raw %}{% include icons/error-round.svg %}{% endraw %}
+    {% raw %}{% include icons/warning-round.svg %}{% endraw %}
     <div class="m-notification_content">
         <div class="h4 m-notification_message">No results found.</div>
     </div>
