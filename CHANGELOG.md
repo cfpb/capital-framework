@@ -3,15 +3,10 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
-- **cf-core:** [PATCH] Changed heading mixins to prevent heading element styles from leaking into classes.
-- **cf-notifications:** [PATCH] Removed unnecessary icon positioning; fix mistake in usage file.
+- **cf-core:** Changed heading mixins to prevent heading element styles from leaking into classes.
+- **cf-notifications:** Removed unnecessary icon positioning; fix mistake in usage file.
 
-### Removed
--
 
 ## 5.0.3 - 2018-03-13
 
