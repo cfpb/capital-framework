@@ -1,6 +1,6 @@
 {
-  "name": "capital-framework",
-  "version": "4.21.0",
+  "name": "capital-framework-docs",
+  "version": "0.0.0",
   "description": "Project-wide documentation for Capital Framework.",
   "homepage": "https://cfpb.github.io/capital-framework/",
   "author": {
@@ -8,13 +8,14 @@
     "email": "tech@cfpb.gov",
     "url": "http://consumerfinance.gov"
   },
+  "repository": "cfpb/capital-framework",
   "scripts": {
     "start": "parallelshell 'bundle exec jekyll serve --watch' 'gulp watch'",
     "build": "gulp build",
     "cf-link": "node scripts/npm/link",
     "cf-unlink": "node scripts/npm/unlink"
   },
-  "license": "CC0",
+  "license": "SEE LICENSE IN TERMS.md",
   "keywords": [
     "capital-framework"
   ],
