@@ -5,6 +5,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Added
 - **capital-framework:** [PATCH] Add webpack-config file.
+- **cf-icons:** [MINOR] Added animated update icon
 
 ### Changed
 - **capital-framework:** [MINOR] Converts mocha tests
