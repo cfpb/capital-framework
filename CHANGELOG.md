@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 5.0.5 - 2018-05-17
+
 ### Changed
 - **cf-notifications:** Updated recommended markup pattern and related styles to match.
 
