@@ -59,6 +59,65 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ## Recommended notification patterns
 
+### Default notification
+
+The default notification creates the base for the message that is often hidden
+and empty, but is modified by scripting in production to update the state and
+message based on user input.
+
+<div class="m-notification
+            m-notification__visible
+            m-notification__default">
+    {% include icons/information-round.svg %}
+    <div class="m-notification_content">
+        <div class="h4 m-notification_message">A default notification</div>
+    </div>
+</div>
+
+```
+<div class="m-notification
+            m-notification__visible
+            m-notification__default">
+    {% raw %}{% include icons/information-round.svg %}{% endraw %}
+    <div class="m-notification_content">
+        <div class="h4 m-notification_message">A default notification</div>
+    </div>
+</div>
+```
+
+#### Notification Explanation - Optional
+
+If your notification requires further explanation, include it in a paragraph
+following the main message.
+
+<div class="m-notification
+            m-notification__visible
+            m-notification__default">
+    {% include icons/information-round.svg %}
+    <div class="m-notification_content">
+        <div class="h4 m-notification_message">A default notification</div>
+        <p class="m-notification_explanation">
+            This is the explanation of the notification.
+            <a href="#">This is a link in the explanation</a>
+        </p>
+    </div>
+</div>
+
+```
+<div class="m-notification
+            m-notification__visible
+            m-notification__default">
+    {% raw %}{% include icons/information-round.svg %}{% endraw %}
+    <div class="m-notification_content">
+        <div class="h4 m-notification_message">A default notification</div>
+        <p class="m-notification_explanation">
+            This is the explanation of the notification.
+            <a href="#">This is a link in the explanation</a>
+        </p>
+    </div>
+</div>
+```
+
 ### Action notification
 
 The action notification is for displaying when something
