@@ -18,7 +18,7 @@ const webpackStream = require( 'webpack-stream' );
  */
 function scriptsCf() {
   return gulp.src( './src/capital-framework.js' )
-    .pipe( webpackStream( webpackConfig, webpack ) )
+    .pipe( webpackStream( webpackConfig.commonConf, webpack ) )
     .pipe( gulpRename( {
       basename: 'capital-framework',
       extname: '.min.js'
@@ -44,7 +44,7 @@ function scriptsComponents() {
     .pipe( gulpRename( path => {
       tmp[path.basename] = path;
     } ) )
-    .pipe( webpackStream( webpackConfig, webpack ) )
+    .pipe( webpackStream( webpackConfig.commonConf, webpack ) )
     .pipe( gulpRename( path => {
       path.dirname = tmp[path.basename].dirname.replace( '/src', '' );
       path.extname = '.min.js';
