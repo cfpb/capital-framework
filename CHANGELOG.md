@@ -4,10 +4,12 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **capital-framework:** Add webpack-config file.
 
 ### Changed
--
+- **capital-framework:** Update `webpack` to `4.8.3`,
+  `webpack-stream` to `4.0.3`, `uglifyjs-webpack-plugin` to `1.2.5`,
+  `babel-core` to `6.26.3`, and `babel-preset-env` to `1.7.0`.
 
 ### Removed
 -
