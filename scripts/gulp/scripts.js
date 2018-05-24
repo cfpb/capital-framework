@@ -9,8 +9,7 @@ const webpack = require( 'webpack' );
 const webpackConfig = require( '../../config/webpack-config.js' );
 const webpackStream = require( 'webpack-stream' );
 
-/* TODO: Add a webpack-config file to handle sharing of redundant webpack
-   configurations. Also, add a production and dev flag to generate
+/* TODO: Add a production and dev flag via NODE_ENV to generate
    a minified and un-minified version of the assets. */
 
 /**
