@@ -43,10 +43,6 @@ const COMMON_UGLIFY_CONFIG = new UglifyWebpackPlugin( {
   }
 } );
 
-const COMMON_CHUNK_CONFIG = new webpack.optimize.SplitChunksPlugin( {
-  name: COMMON_BUNDLE_NAME
-} );
-
 const STATS_CONFIG = {
   stats: {
     entrypoints: false
