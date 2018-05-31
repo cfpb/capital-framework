@@ -3,29 +3,13 @@ const component = require( './parseComponentName' );
 const gulp = require( 'gulp' );
 const gulpIgnore = require( 'gulp-ignore' );
 const gulpRename = require( 'gulp-rename' );
-const webpack = require( 'webpack' );
-const webpackStream = require( 'webpack-stream' );
 const UglifyWebpackPlugin = require( 'uglifyjs-webpack-plugin' );
 const vinylNamed = require( 'vinyl-named' );
+const webpack = require( 'webpack' );
+const webpackConfig = require( '../../config/webpack-config.js' );
+const webpackStream = require( 'webpack-stream' );
 
-/* Set warnings to true to show linter-style warnings.
-   Set mangle to false and beautify to true to debug the output code. */
-const COMMON_UGLIFY_CONFIG = new UglifyWebpackPlugin( {
-  parallel: true,
-  uglifyOptions: {
-    ie8: false,
-    ecma: 5,
-    warnings: false,
-    mangle: true,
-    output: {
-      comments: false,
-      beautify: false
-    }
-  }
-} );
-
-/* TODO: Add a webpack-config file to handle sharing of redundant webpack
-   configurations. Also, add a production and dev flag to generate
+/* TODO: Add a production and dev flag via NODE_ENV to generate
    a minified and un-minified version of the assets. */
 
 /**
@@ -34,27 +18,7 @@ const COMMON_UGLIFY_CONFIG = new UglifyWebpackPlugin( {
  */
 function scriptsCf() {
   return gulp.src( './src/capital-framework.js' )
-    .pipe( webpackStream( {
-      module: {
-        rules: [ {
-          use: [ {
-            loader: 'babel-loader?cacheDirectory=true',
-            options: {
-              presets: [ [ 'env', {
-                targets: {
-                  browsers: BROWSER_LIST.LAST_2_PLUS_IE_9_AND_UP
-                },
-                debug: true
-              } ] ]
-            }
-          } ]
-        } ]
-      },
-      output: {
-        filename: '[name].js'
-      },
-      plugins: [ COMMON_UGLIFY_CONFIG ]
-    }, webpack ) )
+    .pipe( webpackStream( webpackConfig.commonConf, webpack ) )
     .pipe( gulpRename( {
       basename: 'capital-framework',
       extname: '.min.js'
@@ -80,27 +44,7 @@ function scriptsComponents() {
     .pipe( gulpRename( path => {
       tmp[path.basename] = path;
     } ) )
-    .pipe( webpackStream( {
-      module: {
-        rules: [ {
-          use: [ {
-            loader: 'babel-loader?cacheDirectory=true',
-            options: {
-              presets: [ [ 'env', {
-                targets: {
-                  browsers: BROWSER_LIST.LAST_2_PLUS_IE_9_AND_UP
-                },
-                debug: true
-              } ] ]
-            }
-          } ]
-        } ]
-      },
-      output: {
-        filename: '[name].js'
-      },
-      plugins: [ COMMON_UGLIFY_CONFIG ]
-    }, webpack ) )
+    .pipe( webpackStream( webpackConfig.commonConf, webpack ) )
     .pipe( gulpRename( path => {
       path.dirname = tmp[path.basename].dirname.replace( '/src', '' );
       path.extname = '.min.js';
