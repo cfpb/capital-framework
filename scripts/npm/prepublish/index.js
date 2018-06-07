@@ -132,9 +132,9 @@ function compareVersionNumber( component ) {
   if ( component.indexOf( 'cf-' ) !== 0 ) return;
 
   const manifest = componentsDir + '/' + component + '/package.json',
-      localVersion = JSON.parse(
-        fs.readFileSync( manifest, 'utf8' )
-      ).version;
+        localVersion = JSON.parse(
+          fs.readFileSync( manifest, 'utf8' )
+        ).version;
 
   return util.getNpmVersion( component ).then( function( data ) {
     const npmVersion = data['dist-tags'].latest;

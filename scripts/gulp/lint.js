@@ -37,7 +37,8 @@ function lintBuild() {
 function lintTests() {
   return _genericLintJs( [
     'test/**/*.js',
-    '!test/lib/**/*.js'
+    '!test/lib/**/*.js',
+    '!test/unit-test-coverage/**/*.js'
   ] );
 }
 
