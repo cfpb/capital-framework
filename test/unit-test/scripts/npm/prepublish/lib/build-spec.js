@@ -14,7 +14,7 @@ describe( 'build', () => {
     execStub.mockRestore();
   } );
 
-  xit( 'should trigger a build of all CF components', () => {
+  it( 'should trigger a build of all CF components', () => {
     util.build();
 
     expect( execStub ).toHaveBeenCalledWith( 'gulp build' );
