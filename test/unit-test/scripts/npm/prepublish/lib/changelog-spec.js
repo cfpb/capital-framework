@@ -1,5 +1,7 @@
 const path = require( 'path' );
-const util = require( '../../../../../../scripts/npm/prepublish/lib/' );
+const rootPath = require( '../root-path' );
+const libPath = path.join( rootPath, 'scripts', 'npm', 'prepublish', 'lib' );
+const util = require( libPath );
 const fs = require( 'fs' );
 
 const FIXTURE_PATH = path.join( __dirname, '/../fixtures/' );
