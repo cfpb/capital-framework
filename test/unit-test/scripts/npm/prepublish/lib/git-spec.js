@@ -101,23 +101,16 @@ describe( 'push', () => {
     const repoURL = 'git+ssh://git@github.com/cfpb/capital-framework.git';
     return util.git.push( repoURL ).then( () => {
       expect( execStub ).toHaveBeenCalledTimes( 3 );
-
-      /*
-      TODO:
-      The jest mocked function doesn't have a "firstCall", "secondCall", etc.
-      so we have to just check how many times exec has been called versus
-      what it was actually called. Investigate enabling these expectations:
-
-      expect( execStub.firstCall ).toBeCalledWith(
+      expect( execStub.mock.calls[0][0] ).toBe(
         'git push git+ssh://git@github.com/cfpb/capital-framework.git master'
       );
-      expect( execStub.secondCall ).toBeCalledWith(
+      expect( execStub.mock.calls[1][0] ).toBe(
         'git push git+ssh://git@github.com/cfpb/capital-framework.git ' +
         'master:canary'
       );
-      expect( execStub.thirdCall ).toBeCalledWith(
+      expect( execStub.mock.calls[2][0] ).toBe(
         'git push git+ssh://git@github.com/cfpb/capital-framework.git --tags'
-      ); */
+      );
     } );
   } );
 
@@ -128,27 +121,19 @@ describe( 'push', () => {
       const repoURL = 'git+ssh://git@github.com/cfpb/capital-framework.git';
       return util.git.push( repoURL ).then( () => {
         expect( execStub ).toHaveBeenCalledTimes( 3 );
-
-        /*
-        TODO:
-        The jest mocked function doesn't have a "firstCall", "secondCall", etc.
-        so we have to just check how many times exec has been called versus
-        what it was actually called. Investigate enabling these expectations:
-
-        expect( execStub.firstCall ).toBeCalledWith(
+        expect( execStub.mock.calls[0][0] ).toBe(
           'git push ' +
           '"https://testToken@github.com/cfpb/capital-framework.git" master'
         );
-        expect( execStub.secondCall ).toBeCalledWith(
+        expect( execStub.mock.calls[1][0] ).toBe(
           'git push ' +
           '"https://testToken@github.com/cfpb/capital-framework.git" ' +
           'master:canary'
         );
-        expect( execStub.thirdCall ).toBeCalledWith(
+        expect( execStub.mock.calls[2][0] ).toBe(
           'git push ' +
           '"https://testToken@github.com/cfpb/capital-framework.git" --tags'
         );
-        */
       } );
     }
   );
