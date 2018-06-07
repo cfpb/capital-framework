@@ -7,7 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **capital-framework:** [PATCH] Add webpack-config file.
 
 ### Changed
-- **capital-framework:** [PATCH] Converts mocha tests
+- **capital-framework:** [MINOR] Converts mocha tests
   and istanbul test coverage to use Jest.
 - **capital-framework:** [PATCH] Update `webpack` to `4.11.1`,
   `webpack-stream` to `4.0.3`, `uglifyjs-webpack-plugin` to `1.2.5`,
