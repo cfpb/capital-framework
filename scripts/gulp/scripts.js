@@ -35,6 +35,7 @@ function scriptsComponents() {
   const tmp = {};
   return gulp.src( './src/' + ( component || '*' ) + '/src/*.js' )
     .pipe( gulpIgnore.exclude( vf => {
+
       /* Exclude JS files that don't share the same name as the directory
          they're in. This filters out utility files. */
       const matches = vf.path.match( /\/([\w-]*)\/src\/([\w-]*)\.js/ );

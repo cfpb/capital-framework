@@ -1,6 +1,6 @@
 env:
   qunit: true
-  browser: true
+  jest: true
   jquery: true
 rules:
   wrap-iife: 0
