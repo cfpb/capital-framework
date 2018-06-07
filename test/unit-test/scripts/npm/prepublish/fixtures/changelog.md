@@ -12,3 +12,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Removed
 -
+
+## 1.0.0 - 2018-01-01
+
+### Changed
+- **capital-framework:** Eat tortellini till your lungs explode.
