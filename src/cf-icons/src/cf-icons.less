@@ -38,6 +38,20 @@
         // text stand on its own
         display: none;
     }
+
+    &__updating {
+        animation: updating-animation 1.25s infinite linear;
+        transform-origin: 50% 50%;
+    }
+}
+
+@keyframes updating-animation {
+    0% {
+        transform: rotate( 0deg );
+    }
+    100% {
+        transform: rotate( 359deg );
+    }
 }
 
 // TODO: Everything from here down is deprecated and should be removed with
