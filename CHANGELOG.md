@@ -4,19 +4,20 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- **capital-framework:** [PATCH] Add webpack-config file.
-- **cf-icons:** [MINOR] Added animated update icon
+- **capital-framework:** Add webpack-config file.
+- **cf-icons:** Added animated update icon
 
 ### Changed
-- **capital-framework:** [MINOR] Converts mocha tests
+- **capital-framework:** Converts mocha tests
   and istanbul test coverage to use Jest.
-- **capital-framework:** [PATCH] Update `webpack` to `4.11.1`,
+- **capital-framework:** Update `webpack` to `4.11.1`,
   `webpack-stream` to `4.0.3`, `uglifyjs-webpack-plugin` to `1.2.5`,
   `babel-core` to `6.26.3`, `babel-preset-env` to `1.7.0`,
   `promisify-node` to `0.5.0`, `require-dir` to `1.0.0`.
 
 ### Removed
-- **capital-framework:** [PATCH] Removes `jsdom-global`, `sinon`, `sinon-chai`.
+- **capital-framework:** Removes `jsdom-global`, `sinon`, `sinon-chai`.
+
 
 ## 5.0.5 - 2018-05-17
 
