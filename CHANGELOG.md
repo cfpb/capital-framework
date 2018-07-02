@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 5.1.0 - 2018-07-02
+
+### Added
 - **capital-framework:** Add webpack-config file.
 - **cf-icons:** Added animated update icon
 
