@@ -26,7 +26,7 @@
     "cf-expandables": "latest",
     "cf-forms": "latest",
     "cf-grid": "latest",
-    "cf-icons": "latest",
+    "cf-icons": "4.4.0",
     "cf-layout": "latest",
     "cf-notifications": "latest",
     "cf-pagination": "latest",
@@ -36,9 +36,9 @@
     "html5shiv": "latest"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.4",
+    "babel-preset-env": "1.7.0",
     "browser-sync": "2.18.13",
     "child-process-promise": "2.2.1",
     "del": "3.0.0",
@@ -65,6 +65,6 @@
     "pygmentize-bundled": "2.3.0",
     "require-dir": "0.3.2",
     "webpack": "3.10.0",
-    "webpack-stream": "^4.0.0"
+    "webpack-stream": "4.0.3"
   }
 }
