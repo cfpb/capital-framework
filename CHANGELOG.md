@@ -7,7 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
--
+- **cf-forms:** [PATCH] Fixed the height of select elements to match the DM spec
 
 ### Removed
 -
