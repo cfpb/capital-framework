@@ -7,7 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-forms:** [MINOR] Added styles for error message atom to ensure the proper indentation.
 
 ### Changed
--
+- **cf-expandables:** [MAJOR] Update the expandables to fix style bugs and follow Atomic Design principles
 
 ### Removed
 -
