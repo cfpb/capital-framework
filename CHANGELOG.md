@@ -9,6 +9,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Changed
 - **capital-framework:** [MINOR] Updated to ESLint 5.
 - **cf-forms:** [PATCH] Fixed the height of select elements to match the DM spec
+- **cf-forms:** [PATCH] Fix the line-height, padding, and arrow box width of select ems
 - **cf-icons:** [PATCH] Update the language around the animated updating icon
 
 ### Removed
