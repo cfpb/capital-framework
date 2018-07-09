@@ -186,9 +186,9 @@ The following combination is our recommended go-to expandable pattern.
             o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
-        <span class="h4 o-expandable_header-left o-expandable_label">
+        <h3 class="h4 o-expandable_header-left o-expandable_label">
             Expandable Header
-        </span>
+        </h3>
         <span class="o-expandable_header-right o-expandable_link">
             <span class="o-expandable_cue o-expandable_cue-open">
                 Show
@@ -218,9 +218,9 @@ The following combination is our recommended go-to expandable pattern.
             o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
-        <span class="h4 o-expandable_header-left o-expandable_label">
+        <h3 class="h4 o-expandable_header-left o-expandable_label">
             Expandable Header
-        </span>
+        </h3>
         <span class="o-expandable_header-right o-expandable_link">
             <span class="o-expandable_cue o-expandable_cue-open">
                 Show
@@ -252,9 +252,9 @@ The following combination is our recommended go-to expandable pattern.
             o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
-        <span class="h4 o-expandable_header-left o-expandable_label">
+        <h3 class="h4 o-expandable_header-left o-expandable_label">
             Expandable Header
-        </span>
+        </h3>
         <span class="o-expandable_header-right o-expandable_link">
             <span class="o-expandable_cue o-expandable_cue-open">
                 Show
@@ -284,9 +284,9 @@ The following combination is our recommended go-to expandable pattern.
             o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
-        <span class="h4 o-expandable_header-left o-expandable_label">
+        <h3 class="h4 o-expandable_header-left o-expandable_label">
             Expandable Header
-        </span>
+        </h3>
         <span class="o-expandable_header-right o-expandable_link">
             <span class="o-expandable_cue o-expandable_cue-open">
                 Show
@@ -366,9 +366,9 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="h4 o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 1
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
@@ -393,9 +393,9 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="h4 o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 2
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
@@ -420,9 +420,9 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="h4 o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 3
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
@@ -451,9 +451,9 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="h4 o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 1
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
@@ -478,9 +478,9 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="h4 o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 2
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
@@ -505,9 +505,9 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="h4 o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 3
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
@@ -542,9 +542,9 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="h4 o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 1
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
@@ -569,9 +569,9 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="h4 o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 2
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
@@ -596,9 +596,9 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="h4 o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 3
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
@@ -627,9 +627,9 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="h4 o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 1
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
@@ -654,9 +654,9 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="h4 o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 2
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
@@ -681,9 +681,9 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="h4 o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 3
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
                     Show
