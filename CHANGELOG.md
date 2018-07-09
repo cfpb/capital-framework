@@ -10,7 +10,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Removed
--
+- **cf-icons:** [MAJOR] Removed the deprecated font-icon system from cf-icons
 
 ## 7.0.0 - 2018-07-27
 
