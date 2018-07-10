@@ -7,6 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-forms:** [MINOR] Added styles for error message atom to ensure the proper indentation.
 
 ### Changed
+- **capital-framework:** [MINOR] Updated to ESLint 5.
 - **cf-forms:** [PATCH] Fixed the height of select elements to match the DM spec
 
 ### Removed
