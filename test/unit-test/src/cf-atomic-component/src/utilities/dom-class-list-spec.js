@@ -5,8 +5,6 @@ let classListPath;
 let testBlockA;
 let testBlockB;
 let testBlockC;
-let testBlockD;
-let sandbox;
 
 const HTML_SNIPPET = `
   <div id="test-block-a" class="test-class test-class-a">

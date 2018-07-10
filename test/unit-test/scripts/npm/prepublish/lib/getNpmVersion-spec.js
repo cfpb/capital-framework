@@ -1,4 +1,3 @@
-const childProcess = require( 'child-process-promise' );
 const path = require( 'path' );
 const rootPath = require( '../root-path' );
 const libPath = path.join( rootPath, 'scripts', 'npm', 'prepublish', 'lib' );

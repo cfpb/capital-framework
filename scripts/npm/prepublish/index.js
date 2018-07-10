@@ -8,6 +8,7 @@ const util = require( './lib' );
 const isTravis = require( 'is-travis' );
 const componentsDir = path.join( __dirname, '..', '..', '..', 'src' );
 let componentsToPublish = [];
+let UNDEFINED;
 
 // Check git's status.
 util.getGitStatus( './' )
@@ -157,12 +158,12 @@ function compareVersionNumber( component ) {
       util.printLn.info( component + ' remains ' + npmVersion, true );
     }
   } ).catch( function( err ) {
-    if ( /returned 404/.test( err ) ) {
+    if ( ( /returned 404/ ).test( err ) ) {
       util.printLn.success( component + ': ' + localVersion, true );
       return {
         name:       component,
         newVersion: localVersion,
-        oldVersion: undefined
+        oldVersion: UNDEFINED
       };
     }
     util.printLn.error( err );
@@ -180,7 +181,6 @@ function compareMasterVersionNumber() {
 }
 
 function buildComponents( components ) {
-  let newVersion;
   const diffs = [];
   const masterComponent = components.pop();
 
@@ -193,11 +193,11 @@ function buildComponents( components ) {
       /* While we're iterating, keep track of each component's semver diff.
          If there's no old version it means it's a new component and CF should
          get a minor bump instead of whatever the actual diff is. */
-      diff = !component.oldVersion ? 'minor' : semver.diff(
+      diff = component.oldVersion ? semver.diff(
         component.oldVersion, component.newVersion
-      );
+      ) : 'minor';
       diffs.push( diff );
-      return component.name !== undefined;
+      return component.name !== UNDEFINED;
     }
   } );
 
@@ -225,9 +225,9 @@ function buildComponents( components ) {
     process.exit( 1 );
   }
 
-  /* Sort the diffs and increment CF by whatever the first (largest)
-     increment is */
-  newVersion = semver.inc( masterComponent.old, diffs.sort().shift() );
+  // Sort the diffs and increment CF by the first (largest) increment.
+  const newVersion = semver.inc( masterComponent.old, diffs.sort().shift() );
+
   util.printLn.success(
     util.pkg.name + ' will be published: ' + masterComponent.old + ' -> ' +
     newVersion + '. See https://goo.gl/cZvnnL.'
@@ -253,6 +253,7 @@ function updateManifest() {
       'I did not update package.json because this is a dry run.'
     );
   }
+  // eslint-disable-next-line no-sync
   fs.writeFileSync( 'package.json', JSON.stringify( util.pkg, null, 2 ) );
 }
 

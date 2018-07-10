@@ -3,7 +3,6 @@ const Events = require( srcPath + '/mixins/Events' );
 
 const HTML_SNIPPET = '<!DOCTYPE html>';
 
-let dom;
 let mockEvent;
 let spy1;
 let spy2;
