@@ -45,13 +45,12 @@ describe( 'on-ready', function() {
   it( 'should add a function to the saved array and trigger it' +
       'when readyState completes', () => {
     let readyReturn;
-    let _readyFunctions;
 
     onReady( function() {
       readyReturn = 'foo';
     } );
 
-    _readyFunctions = onReady( function() {
+    const _readyFunctions = onReady( function() {
       readyReturn = 'foo';
     } );
 

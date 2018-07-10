@@ -20,6 +20,7 @@ function testQUnit( cb ) {
 /**
  * Run JavaScript unit tests.
  * @param {Function} cb - Callback function to call on completion.
+ * @returns {ChildProcess} - Process to hand back to the gulp stream.
  */
 function testUnit( cb ) {
   const params = minimist( process.argv.slice( 3 ) ) || {};

@@ -20,13 +20,16 @@ const printLn = {};
 
 [ 'success', 'warning', 'error', 'info' ].forEach( function( type ) {
   printLn[type] = function( msg, indent ) {
-    options.silent ? function() {} : printMsg( type, msg, indent );
+    if ( !options.silent ) {
+      printMsg( type, msg, indent );
+    }
   };
 } );
 
 printLn.console = function( msg ) {
-  options.silent ? function() {} :
+  if ( !options.silent ) {
     console.log( chalk.dim( indentString( msg, 8 ) ) );
+  }
 };
 
 module.exports = printLn;

@@ -8,6 +8,7 @@ describe( 'config', () => {
     expect( config.PREFIXES ).toBeInstanceOf( Object );
     expect( config.UNDEFINED ).toBeUndefined();
     expect( config.NO_OP_FUNCTION ).toBeInstanceOf( Function );
+    // eslint-disable-next-line new-cap
     expect( config.NO_OP_FUNCTION() ).toBeUndefined();
   } );
 } );

@@ -1,7 +1,6 @@
 const srcPath = require( '../src-path' );
 
 let domClosest;
-let sandbox;
 
 let testBlockA;
 let testBlockB;
@@ -57,7 +56,7 @@ describe( 'dom-closest', () => {
 
   it( 'should use the native closest method if it exists', () => {
     const spy = testBlockD.closest = jest.fn();
-    const element = domClosest( testBlockD, 'section' );
+    domClosest( testBlockD, 'section' );
     expect( spy ).toHaveBeenCalled();
   }
   );

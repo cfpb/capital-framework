@@ -1,9 +1,7 @@
-const BROWSER_LIST = require( '../../config/browser-list-config' );
 const component = require( './parseComponentName' );
 const gulp = require( 'gulp' );
 const gulpIgnore = require( 'gulp-ignore' );
 const gulpRename = require( 'gulp-rename' );
-const UglifyWebpackPlugin = require( 'uglifyjs-webpack-plugin' );
 const vinylNamed = require( 'vinyl-named' );
 const webpack = require( 'webpack' );
 const webpackConfig = require( '../../config/webpack-config.js' );

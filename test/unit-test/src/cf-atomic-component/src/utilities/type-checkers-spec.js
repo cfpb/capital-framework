@@ -6,9 +6,9 @@ const aString = 'bar';
 const aNum = 42;
 const aDate = new Date( 2011, 7, 21 );
 
-const aFunction = function aFunction() {
+function aFunction() {
   return true;
-};
+}
 
 const anObject = {
   a: '1',
