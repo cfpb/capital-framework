@@ -12,7 +12,7 @@ const options = require( './getArgs' );
  */
 function printMsg( type, msg, indent ) {
   return console.log(
-    indentString( logSymbols[type] + ' ' + msg, ' ', indent ? 4 : 2 )
+    indentString( logSymbols[type] + ' ' + msg, indent ? 4 : 2 )
   );
 }
 
@@ -26,7 +26,7 @@ const printLn = {};
 
 printLn.console = function( msg ) {
   options.silent ? function() {} :
-    console.log( chalk.dim( indentString( msg, ' ', 8 ) ) );
+    console.log( chalk.dim( indentString( msg, 8 ) ) );
 };
 
 module.exports = printLn;
