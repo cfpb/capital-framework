@@ -6,7 +6,7 @@
 #
 # These are the default owners for everything in the repo.
 #
-* @anselmbradford @cfarm @contolini @jimmynotjim @Scotchester @sebworks
+* @anselmbradford @cfarm @contolini @jimmynotjim @Scotchester @wpears
 
 # To add owners of a specific file type or directory, prepend the line with
 # the pattern to match. The last matching pattern takes the most precedence.
