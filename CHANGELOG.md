@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 5.2.0 - 2018-07-11
+
+### Added
 - **cf-forms:** Added styles for error message atom to ensure the proper indentation.
 
 ### Changed
