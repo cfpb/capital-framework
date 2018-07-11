@@ -40,7 +40,7 @@ function checkAuth( component ) {
       process.exit( 1 );
     }
   } ).catch( err => {
-    if ( /ENEEDAUTH/.test( err ) ) {
+    if ( ( /ENEEDAUTH/ ).test( err ) ) {
       printLn.error(
         'You\'re not logged into npm. You need to authorize ' +
         'this machine using `npm login`.'

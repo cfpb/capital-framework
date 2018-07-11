@@ -4,13 +4,14 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-forms:** Added styles for error message atom to ensure the proper indentation.
 
 ### Changed
--
+- **capital-framework:** Updated to ESLint 5.
+- **cf-forms:** Fixed the height of select elements to match the DM spec
+- **cf-forms:** Fix the line-height, padding, and arrow box width of select ems
+- **cf-icons:** Update the language around the animated updating icon
 
-### Removed
--
 
 ## 5.1.0 - 2018-07-02
 
