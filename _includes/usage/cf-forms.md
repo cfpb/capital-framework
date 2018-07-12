@@ -28,6 +28,7 @@ Capital Framework.
     - [Large target area checkboxes](#large-target-area-checkboxes)
     - [Large target area radio buttons](#large-target-area-radio-buttons)
     - [Inputs helper text](#inputs-helper-text)
+    - [Inline Form Validation](#inline-form-validation)
 - [Buttons](#buttons)
     - [Simple input with a button](#simple-input-with-a-button)
     - [Button inside an input](#button-inside-an-input)
@@ -756,7 +757,9 @@ have helper text that appears below the main label text.
            aria-describedby="form-input-error_message">
     <div class="a-error-message" id="form-input-error_message" role="alert">
         {% include icons/error-round.svg %}
-        This is a required question, please answer.
+        <span class="a-error-message_text">
+            This is a required question, please answer.
+        </span>
     </div>
 </div>
 
