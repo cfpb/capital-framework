@@ -30,8 +30,7 @@ describe( 'dom-class-list', () => {
 
   it( 'should determine if the browser supports class list', () => {
     expect( classList.hasClassList ).toBe( true );
-  }
-  );
+  } );
 
   it( 'should determine if an element has a particular class', () => {
     const _createElement = global.document.createElement;
@@ -48,8 +47,7 @@ describe( 'dom-class-list', () => {
     expect( classList.contains( testBlockA, 'test-class-a' ) ).toBe( true );
     expect( classList.contains( testBlockA, 'test-class' ) ).toBe( true );
     document.createElement = _createElement;
-  }
-  );
+  } );
 
   it( 'should correctly add classes to the class list', () => {
     document.body.innerHTML = HTML_SNIPPET;
@@ -61,8 +59,7 @@ describe( 'dom-class-list', () => {
     classList.addClass( testBlockB, 'test-class', 'test-class-new' );
     expect( testBlockB.className.indexOf( 'test-class-new' ) > -1 )
       .toBe( true );
-  }
-  );
+  } );
 
   it( 'should correctly remove classes to the class list', () => {
     expect( testBlockC.className.indexOf( 'test-class-c' ) > -1 )
@@ -73,8 +70,7 @@ describe( 'dom-class-list', () => {
     testBlockC.className = 'test-class-c test-class';
     classList.removeClass( testBlockC, 'test-class-c', 'test-class' );
     expect( testBlockC.className === '' ).toBe( true );
-  }
-  );
+  } );
 
   it( 'should correctly toggle classes', () => {
     expect( testBlockA.className.indexOf( 'test-class-a' ) > -1 )
@@ -86,6 +82,5 @@ describe( 'dom-class-list', () => {
     classList.toggleClass( testBlockC, 'test-class-c', true );
     expect( testBlockC.className === 'test-class-a test-class-c' )
       .toBe( true );
-  }
-  );
+  } );
 } );

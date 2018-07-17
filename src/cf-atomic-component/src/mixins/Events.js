@@ -4,8 +4,6 @@
    Mixin to add basic event callback functionality.
    ========================================================================== */
 
-'use strict';
-
 const Events = {
 
   /**

@@ -10,8 +10,6 @@
 
    ========================================================================== */
 
-'use strict';
-
 const assign = require( '../utilities/object-assign' ).assign;
 const bind = require( '../utilities/function-bind' ).bind;
 const classList = require( '../utilities/dom-class-list' );
@@ -26,7 +24,7 @@ const isFunction = require( '../utilities/type-checkers' ).isFunction;
  * necessary methods to properly instantiatie component.
  *
  * @param {HTMLElement} element - The element to set as the base element.
- * @param {Object} attributes -  Hash of attributes to set on base element.
+ * @param {Object} attributes - Hash of attributes to set on base element.
  */
 function AtomicComponent( element, attributes ) {
   this.element = element;
@@ -52,8 +50,8 @@ assign( AtomicComponent.prototype, Events, classList, {
    * Function used to process class modifiers. These should
    * correspond with BEM modifiers.
    *
-   * @param {Object} attributes -  Hash of attributes to set on base element.
-   * @param {Object} atomicComponent -  Base component.
+   * @param {Object} attributes - Hash of attributes to set on base element.
+   * @param {Object} atomicComponent - Base component.
    */
   processModifiers: function() {
     if ( !this.modifiers ) {
@@ -159,7 +157,7 @@ assign( AtomicComponent.prototype, Events, classList, {
   /**
    * Function used to set the attributes on an element.
    *
-   * @param {Object} attributes -  Hash of attributes to set on base element.
+   * @param {Object} attributes - Hash of attributes to set on base element.
    */
   setElementAttributes: function( attributes ) {
     let property;
@@ -203,7 +201,7 @@ assign( AtomicComponent.prototype, Events, classList, {
   /**
    * Function used to set the attributes on an element.
    *
-   * @param {string} eventName -  Event in which to listen for.
+   * @param {string} eventName - Event in which to listen for.
    * @param {string} selector - CSS selector.
    * @param {Function} listener - Callback for event.
    * @returns {AtomicComponent} An instance.
@@ -247,7 +245,7 @@ assign( AtomicComponent.prototype, Events, classList, {
  * Function used to set the attributes on an element.
  * and unbind events.
  *
- * @param {Object} attributes -  Hash of attributes to set on base element.
+ * @param {Object} attributes - Hash of attributes to set on base element.
  * @returns {Function} Extended child constructor function.
  */
 AtomicComponent.extend = function( attributes ) {
