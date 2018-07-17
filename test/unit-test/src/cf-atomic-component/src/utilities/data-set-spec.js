@@ -32,6 +32,5 @@ describe( 'data-set', () => {
     const dataset = dataSet( baseDom );
     expect( JSON.stringify( dataset ) === JSON.stringify( datasetLookup ) )
       .toBe( true );
-  }
-  );
+  } );
 } );

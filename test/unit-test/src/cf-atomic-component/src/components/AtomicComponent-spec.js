@@ -33,8 +33,7 @@ describe( 'AtomicComponent', () => {
     expect( initialize ).toHaveBeenCalledTimes( 1 );
     expect( atomicComponent.uId.indexOf( 'ac' ) > -1 ).toBe( true );
     expect( atomicComponent.render() === atomicComponent ).toBe( true );
-  }
-  );
+  } );
 
   it( 'should correctly attach an element', () => {
     let atomicComponent = new AtomicComponent();
@@ -47,20 +46,17 @@ describe( 'AtomicComponent', () => {
     );
     expect( atomicComponent.element.id === 'test_id' ).toBe( true );
     expect( atomicComponent.element.className === 'test_class_name' ).toBe( true );
-  }
-  );
+  } );
 
   it( 'should correctly create sub classes', () => {
     const subComponent = new ( AtomicComponent.extend( {} ) )();
     expect( subComponent._super === AtomicComponent.prototype ).toBe( true );
     expect( subComponent instanceof AtomicComponent ).toBe( true );
-  }
-  );
+  } );
 
   it( 'should add the bound attribute to passed elements', () => {
     const element = document.getElementById( 'test-block-a' );
     const atomicComponent = new AtomicComponent( element );
     expect( element.hasAttribute( 'data-bound' ) ).toBe( true );
-  }
-  );
+  } );
 } );

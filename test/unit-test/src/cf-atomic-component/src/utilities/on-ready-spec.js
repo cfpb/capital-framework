@@ -61,8 +61,7 @@ describe( 'on-ready', function() {
         expect( _readyFunctions ).toBeInstanceOf( Object );
         expect( _readyFunctions.length ).toBe( 0 );
       } );
-  }
-  );
+  } );
 
   it( 'should add a function to the saved array but not trigger it' +
       'if state is loading', () => {
@@ -84,8 +83,7 @@ describe( 'on-ready', function() {
         expect( _readyFunctions ).toBeInstanceOf( Object );
         expect( _readyFunctions.length ).toBe( 2 );
       } );
-  }
-  );
+  } );
 
   it( 'should run the function if the page readyState has already completed',
     () => {
