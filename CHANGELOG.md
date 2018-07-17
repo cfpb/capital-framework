@@ -7,7 +7,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
--
+- **capital-framework:** [PATCH]
+  Updates `babel-jest`, `jest`, `jest-cli`, `webpack`, and `webpack-stream`.
 
 ### Removed
 -
