@@ -108,8 +108,6 @@ const selector1 = '#test-one tbody tr:nth-child(1)';
 const selector2 = '#test-one tbody tr:nth-child(4)';
 const selector3 = '#test-one tbody tr:nth-child(7)';
 
-let testID = 0;
-
 describe( 'Table', () => {
 
   beforeEach( () => {
