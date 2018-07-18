@@ -5,8 +5,6 @@
 
    ========================================================================== */
 
-'use strict';
-
 const AtomicComponent = require( './AtomicComponent' );
 const TYPES = require( '../utilities/config' ).TYPES;
 

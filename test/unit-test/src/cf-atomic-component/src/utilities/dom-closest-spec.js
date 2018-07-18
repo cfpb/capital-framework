@@ -43,23 +43,20 @@ describe( 'dom-closest', () => {
     expect( element === null ).toBe( true );
     element = domClosest( testBlockA, 'div.test' );
     expect( element === null ).toBe( true );
-  }
-  );
+  } );
 
   it( 'should return the correct parent node', () => {
     let element = domClosest( testBlockD, 'section' );
     expect( element === testBlockA ).toBe( true );
     element = domClosest( testBlockC, 'section > div' );
     expect( element === testBlockB ).toBe( true );
-  }
-  );
+  } );
 
   it( 'should use the native closest method if it exists', () => {
     const spy = testBlockD.closest = jest.fn();
     domClosest( testBlockD, 'section' );
     expect( spy ).toHaveBeenCalled();
-  }
-  );
+  } );
 
   it( 'should use the correct matches method', () => {
     const spy = jest.fn();
@@ -80,6 +77,5 @@ describe( 'dom-closest', () => {
     testBlockD.msMatchesSelector = spy;
     domClosest( testBlockD, 'section' );
     expect( spy ).toHaveBeenCalled();
-  }
-  );
+  } );
 } );
