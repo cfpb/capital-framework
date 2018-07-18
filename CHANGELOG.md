@@ -3,16 +3,10 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
-- **capital-framework:** [PATCH]
-  Updates `babel-jest`, `jest`, `jest-cli`, `webpack`, and `webpack-stream`.
-- **cf-atomic-component:** [PATCH] Remove "use strict" from modules.
+- **capital-framework:** Updates `babel-jest`, `jest`, `jest-cli`, `webpack`, and `webpack-stream`.
+- **cf-atomic-component:** Remove "use strict" from modules.
 
-### Removed
--
 
 ## 5.3.0 - 2018-07-17
 
