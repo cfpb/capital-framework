@@ -17,6 +17,8 @@ module.exports = {
     '<rootDir>/scripts/gulp/',
     '<rootDir>/src/.?/node_modules/',
     '<rootDir>/src/capital-framework.js',
+    '<rootDir>/src/cf-expandables/src/cf-expandables.js',
+    '<rootDir>/src/cf-tables/src/cf-tables.js',
     '<rootDir>/test/',
     '<rootDir>/tmp/'
   ],
