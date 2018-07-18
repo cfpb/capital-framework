@@ -57,18 +57,18 @@
             outline-offset: 1px;
         }
 
-        &__expanded .o-expandable_cue-open {
+        .o-expandable_cue-close,
+        .o-expandable_cue-open {
             display: none;
         }
 
-        &__collapsed .o-expandable_cue-close {
-            display: none;
+        &__expanded .o-expandable_cue-close {
+            display: block;
         }
 
-        .lt-ie9 & .o-expandable_cue {
-            display: none;
+        &__collapsed .o-expandable_cue-open {
+            display: block;
         }
-
     }
 
     &_content {
