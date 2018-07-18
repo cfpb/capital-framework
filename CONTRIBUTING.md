@@ -51,6 +51,10 @@ by first clicking the fork button on top of the repository and cloning your fork
 
 ### Testing components locally
 
+#### Automated tests
+
+Automated tests can be run with the command `gulp test`.
+
 #### Testing in the documentation site
 
 If you're hacking on a component and want to test it in the documentation site follow the following steps.

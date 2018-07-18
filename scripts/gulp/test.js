@@ -2,20 +2,8 @@ const component = require( './parseComponentName' );
 const fancyLog = require( 'fancy-log' );
 const fsHelper = require( '../utils/fs-helper' );
 const gulp = require( 'gulp' );
-const gulpQunit = require( 'gulp-qunit' );
 const minimist = require( 'minimist' );
 const spawn = require( 'child_process' ).spawn;
-
-// TODO: Remove QUnit tests and migrate them to Jest.
-/**
- * Test the JS components with qUnit
- * @param {Function} cb - Callback function to call on completion
- */
-function testQUnit( cb ) {
-  gulp.src( './test/' + ( component || '*' ) + '.html' )
-    .pipe( gulpQunit( { timeout: 20 } ) )
-    .on( 'finish', cb );
-}
 
 /**
  * Run JavaScript unit tests.
@@ -80,11 +68,8 @@ function testUnit( cb ) {
   return testProcess;
 }
 
-// TODO: Add test commands to repo documentation.
-gulp.task( 'test:qunit', testQUnit );
 gulp.task( 'test:unit', testUnit );
 
 gulp.task( 'test', gulp.parallel(
-  'test:unit',
-  'test:qunit'
+  'test:unit'
 ) );
