@@ -42,7 +42,6 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
 
-
 ```
 // .o-expandable
 @expandable-focus:              @black;
@@ -53,16 +52,9 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 // .o-expandable_link
 @expandable_link-text:          @pacific;
 
-// .o-expandable__padded
-@expandable__padded-bg:         @gray-10;
-@expandable__padded-bg-hover:   @gray-20;
-@expandable__padded-divider:    @gray-40;
-
-// .o-expandable-group
-@expandable-group_header-text:  @gray;
-@expandable-group_header-bg:    @gray-10;
-@expandable-group-bg:           @white;
-@expandable-group-divider:      @gray-80;
+// .o-expandable modifiers
+@expandable__background:        @gray-5;
+@expandable__border:            @gray-40;
 ```
 
 ### Sizing variables
@@ -92,14 +84,35 @@ to the `.o-expandable_content` block.
 
 ### Padded
 
-Adds `padding` and a `background` color to `.o-expandable_header` and
-`.o-expandable_content`.
+Adds `padding` to `.o-expandable_header` and `.o-expandable_content`.
 
 In addition to using the `.o-expandable__padded` modifier you also need to make
 sure you are using `.o-expandable_header`.
 
 ```
 .o-expandable__padded
+```
+
+### Background
+
+Adds `background` color to `.o-expandable_header` and `.o-expandable_content`.
+
+In addition to using the `.o-expandable__background` modifier you also need to make
+sure you are using `.o-expandable_header`.
+
+```
+.o-expandable__background
+```
+
+### Border
+
+Adds 1px `border` to `.o-expandable_header` and `.o-expandable_content`.
+
+In addition to using the `.o-expandable__border` modifier you also need to make
+sure you are using `.o-expandable_header`.
+
+```
+.o-expandable__border
 ```
 
 ### Spaced header

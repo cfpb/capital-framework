@@ -7,7 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
--
+- **cf-expandables:** [PATCH] Replace selector to add top border to first expandable in a group
 
 ### Removed
 -
