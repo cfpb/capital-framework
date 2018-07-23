@@ -4,10 +4,11 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **capital-framework:** [PATCH] Adds `environment.js` for environment vars.
 
 ### Changed
--
+- **capital-framework:** [PATCH] Updates `webpack`.
+- **capital-framework:** [MINOR] Fixes linter errors in release npm scripts.
 
 ### Removed
 -
