@@ -1,11 +1,13 @@
-const path = require( 'path' );
+const envvars = require( '../../../../config/environment' ).envvars;
 const fs = require( 'fs' );
-const readdir = require( 'fs-readdir-promise' );
-const Promise = require( 'bluebird' );
-const semver = require( 'semver' );
-const logSymbols = require( 'log-symbols' );
-const util = require( './lib' );
 const isTravis = require( 'is-travis' );
+const logSymbols = require( 'log-symbols' );
+const path = require( 'path' );
+const Promise = require( 'bluebird' );
+const readdir = require( 'fs-readdir-promise' );
+const semver = require( 'semver' );
+const util = require( './lib' );
+
 const componentsDir = path.join( __dirname, '..', '..', '..', 'src' );
 let componentsToPublish = [];
 let UNDEFINED;
@@ -55,13 +57,12 @@ function handleError( msg ) {
 function handleGitStatus( result ) {
   if ( !result.stdout && !result.stderr ) {
     util.printLn.info( 'Git working directory is clean.' );
-  } else {
-    if ( util.option.dryrun ) {
-      return util.printLn.warning(
-        'Your working directory isn\'t clean but this is a dry ' +
+  } else if ( util.option.dryrun ) {
+    util.printLn.warning(
+      'Your working directory isn\'t clean but this is a dry ' +
         'run so I’ll continue...'
-      );
-    }
+    );
+  } else {
     util.printLn.error(
       'Git working directory is not clean. Commit your work before publishing.'
     );
@@ -71,7 +72,7 @@ function handleGitStatus( result ) {
 
 function checkCredentials( result ) {
   // Travis gets its credentials from .travis.yml
-  if ( isTravis ) return;
+  if ( isTravis ) return '';
   if ( util.option.dryrun ) {
     return util.printLn.warning(
       'I\'m not verifying your npm permissions because this is a dry run.'
@@ -85,7 +86,7 @@ function checkoutMaster() {
   // Travis operates in a detached head state so checkout the master branch.
   if ( isTravis ) {
     util.printLn.info(
-      'Checking out ' + process.env.GH_PROD_BRANCH + ' branch...'
+      'Checking out ' + envvars.GH_PROD_BRANCH + ' branch...'
     );
     return util.git.checkoutMaster();
   }
@@ -96,7 +97,7 @@ function checkoutMaster() {
     );
   }
   return util.git.checkBranch().then( function( result ) {
-    if ( !process.env.GH_PROD_BRANCH || !process.env.GH_DEV_BRANCH ) {
+    if ( !envvars.GH_PROD_BRANCH || !envvars.GH_DEV_BRANCH ) {
       util.printLn.error(
         'Publishing to npm from you local machine isn’t recommended but if ' +
         'you’d like to do it anyway, define GH_PROD_BRANCH and ' +
@@ -104,10 +105,10 @@ function checkoutMaster() {
       );
       process.exit( 1 );
     }
-    if ( result.stdout.trim() !== process.env.GH_PROD_BRANCH ) {
+    if ( result.stdout.trim() !== envvars.GH_PROD_BRANCH ) {
       util.printLn.error(
-        'You’re not on the ' + process.env.GH_PROD_BRANCH +
-        ' branch. Merge your changes into ' + process.env.GH_PROD_BRANCH +
+        'You’re not on the ' + envvars.GH_PROD_BRANCH +
+        ' branch. Merge your changes into ' + envvars.GH_PROD_BRANCH +
         ' before publishing.'
       );
       process.exit( 1 );
@@ -130,14 +131,14 @@ function filterComponents( components ) {
 }
 
 function compareVersionNumber( component ) {
-  if ( component.indexOf( 'cf-' ) !== 0 ) return;
+  if ( component.indexOf( 'cf-' ) !== 0 ) return '';
 
-  const manifest = componentsDir + '/' + component + '/package.json',
-        localVersion = JSON.parse(
-          fs.readFileSync( manifest, 'utf8' )
-        ).version;
+  const manifest = componentsDir + '/' + component + '/package.json';
+  // eslint-disable-next-line no-sync
+  const manifestFile = fs.readFileSync( manifest, 'utf8' );
+  const localVersion = JSON.parse( manifestFile ).version;
 
-  return util.getNpmVersion( component ).then( function( data ) {
+  return util.getNpmVersion( component ).then( data => {
     const npmVersion = data['dist-tags'].latest;
     if ( semver.gt( localVersion, npmVersion ) ) {
       util.printLn.success(
@@ -157,7 +158,8 @@ function compareVersionNumber( component ) {
     } else {
       util.printLn.info( component + ' remains ' + npmVersion, true );
     }
-  } ).catch( function( err ) {
+    return {};
+  } ).catch( err => {
     if ( ( /returned 404/ ).test( err ) ) {
       util.printLn.success( component + ': ' + localVersion, true );
       return {
@@ -168,6 +170,7 @@ function compareVersionNumber( component ) {
     }
     util.printLn.error( err );
     process.exit( 1 );
+    return {};
   } );
 }
 
@@ -186,7 +189,7 @@ function buildComponents( components ) {
 
   /* TODO: Fix bug that results in some entries in the components array to be
      blank. For now, filter them out. */
-  componentsToPublish = components.filter( function( component ) {
+  componentsToPublish = components.filter( component => {
     let diff;
     if ( component ) {
 
@@ -199,6 +202,7 @@ function buildComponents( components ) {
       diffs.push( diff );
       return component.name !== UNDEFINED;
     }
+    return false;
   } );
 
   // If no components were updated, check if the master component was updated.
@@ -255,6 +259,7 @@ function updateManifest() {
   }
   // eslint-disable-next-line no-sync
   fs.writeFileSync( 'package.json', JSON.stringify( util.pkg, null, 2 ) );
+  return '';
 }
 
 function updateChangelog() {
@@ -305,16 +310,16 @@ function push( result ) {
 function publishComponents( result ) {
   if ( result && result.stdout ) util.printLn.console( result.stdout );
   if ( util.option.dryrun ) {
-    return util.printLn.warning(
+    util.printLn.warning(
       'I did not publish anything to npm because this is a dry run.'
     );
+  } else {
+    if ( !componentsToPublish.length ) return UNDEFINED;
+    const components = componentsToPublish.map( component => component.name );
+    util.printLn.info( 'Publishing ' + components.join( ', ' ) + ' to npm...' );
+    return Promise.all( components.map( util.publish ) );
   }
-  if ( !componentsToPublish.length ) return;
-  const components = componentsToPublish.map( function( component ) {
-    return component.name;
-  } );
-  util.printLn.info( 'Publishing ' + components.join( ', ' ) + ' to npm...' );
-  return Promise.all( components.map( util.publish ) );
+  return UNDEFINED;
 }
 
 function finish( result ) {
