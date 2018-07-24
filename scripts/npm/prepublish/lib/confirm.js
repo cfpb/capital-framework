@@ -1,7 +1,8 @@
-const Promise = require( 'bluebird' );
-const readline = require( 'readline' );
+const envvars = require( '../../../../config/environment' ).envvars;
 const options = require( './getArgs' );
 const printLn = require( './print' );
+const Promise = require( 'bluebird' );
+const readline = require( 'readline' );
 
 /**
  * Confirm that the user wants to publish the components to NPM.
@@ -11,21 +12,24 @@ const printLn = require( './print' );
 function confirm( opts ) {
   opts = opts || {};
   const prompt = opts.prompt + ' [Y/n] ';
-  return new Promise( function( resolve, reject ) {
+  return new Promise( ( resolve, reject ) => {
 
     /* If the silent or dryrun option is passed or we're in a CI,
        don't prompt the user. */
     if ( options.silent ||
          options.dryrun ||
-         process.env.CONTINUOUS_INTEGRATION
+         envvars.CONTINUOUS_INTEGRATION
     ) {
-      return resolve( opts.data );
+      resolve( opts.data );
+      return;
     }
+
     const rl = readline.createInterface( {
       input:  process.stdin,
       output: process.stdout
     } );
-    rl.question( prompt, function( answer ) {
+
+    rl.question( prompt, answer => {
       if ( !answer || ( /^y$|^yes$/ ).test( answer.trim().toLowerCase() ) ) {
         printLn.info( opts.yes );
         resolve( opts.data );
@@ -34,10 +38,13 @@ function confirm( opts ) {
       }
       rl.close();
     } );
-    rl.on( 'SIGINT', function() {
-      printLn.error( 'OMG ABORT EVERYTHING.' );
+
+    rl.on( 'SIGINT', () => {
+      printLn.error( 'ABORT EVERYTHING.' );
       process.exit( 1 );
     } );
+
+
   } );
 }
 
