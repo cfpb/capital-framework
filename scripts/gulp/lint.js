@@ -1,7 +1,9 @@
 const gulp = require( 'gulp' );
 const gulpEslint = require( 'gulp-eslint' );
+const handleErrors = require( '../utils/handle-errors' );
 const gulpStylelint = require( 'gulp-stylelint' );
 const minimist = require( 'minimist' );
+const through2 = require( 'through2' );
 
 /**
  * Generic lint a script source.
@@ -11,6 +13,7 @@ const minimist = require( 'minimist' );
 function _genericLintJs( src ) {
   // Pass all command line flags to ESLint.
   const options = minimist( process.argv.slice( 2 ) );
+  let errorHandler = through2.obj();
 
   if ( options.travis ) {
     options.quiet = true;
@@ -20,7 +23,9 @@ function _genericLintJs( src ) {
   return gulp.src( src.concat( '!**/node_modules/**' ), { base: './' } )
     .pipe( gulpEslint( options ) )
     .pipe( gulpEslint.format() )
-    .pipe( gulp.dest( './' ) );
+    .pipe( errorHandler )
+    .pipe( gulp.dest( './' ) )
+    .on( 'error', handleErrors );
 }
 
 /**
