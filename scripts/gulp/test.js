@@ -50,7 +50,7 @@ function testUnit( cb ) {
     [
       '--config=jest.config.js',
       `--collectCoverageFrom=${ fileSrcPath }`,
-      `--coveragePathIgnorePatterns=<rootDir>/tmp/`,
+      '--coveragePathIgnorePatterns=<rootDir>/tmp/',
       `--testRegex=${ fileTestRegex }`,
       '--detectOpenHandles'
     ],
