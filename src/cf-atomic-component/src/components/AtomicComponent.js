@@ -193,11 +193,14 @@ assign( AtomicComponent.prototype, Events, classList, {
     this.undelegateEvents();
     this._delegate = new Delegate( this.element );
     for ( key in events ) {
-      method = events[key];
-      if ( isFunction( this[method] ) ) method = this[method];
-      if ( !method ) continue;
-      match = key.match( delegateEventSplitter );
-      this.delegate( match[1], match[2], bind( method, this ) );
+      if ( {}.hasOwnProperty.call( events, key ) ) {
+        method = events[key];
+        if ( isFunction( this[method] ) ) method = this[method];
+        if ( method ) {
+          match = key.match( delegateEventSplitter );
+          this.delegate( match[1], match[2], bind( method, this ) );
+        }
+      }
     }
     this.trigger( 'component:bound' );
 
