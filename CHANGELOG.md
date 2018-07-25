@@ -10,6 +10,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **capital-framework:** [PATCH] Updates `webpack`, `gulp-rename`, and
   `silent-npm-registry-client`.
 - **capital-framework:** [MINOR] Fixes linter errors in release npm scripts.
+- **capital-framework:** [PATCH] Fixes globing in lint:scripts task
+- **cf-atomic-component:** [PATCH] Fixes or silences linter errors in Atomic Component
 
 ### Removed
 -

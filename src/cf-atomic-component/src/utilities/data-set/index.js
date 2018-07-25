@@ -5,8 +5,6 @@
 
    ========================================================================== */
 
-'use strict';
-
 const _assign = require( '../object-assign' ).assign;
 
 /**
@@ -15,7 +13,7 @@ const _assign = require( '../object-assign' ).assign;
  * @returns {string} The string in camelCase form.
  */
 function _toCamelCase( str ) {
-  return str.replace( /\-([a-z])/g, function( all, match ) {
+  return str.replace( /-([a-z])/g, function( all, match ) {
     return match.toUpperCase();
   } );
 }
@@ -36,7 +34,7 @@ function dataSet( element ) {
   let attr;
   let match;
 
-  for ( var i = 0; i < element.attributes.length; i++ ) {
+  for ( let i = 0; i < element.attributes.length; i++ ) {
     attr = element.attributes[i];
     match = attr.name.match( regex );
     if ( match ) {

@@ -10,8 +10,6 @@
 
    ========================================================================== */
 
-'use strict';
-
 const _toString = Object.prototype.toString;
 
 /**
@@ -124,7 +122,7 @@ function isDate( value ) {
  * @param {*} value Reference to check.
  * @returns {boolean} True if `value` is an `Array`.
  */
-var isArray = Array.isArray || function isArray( value ) {
+const isArray = Array.isArray || function isArray( value ) {
   return _toString.call( value ) === '[object Array]';
 };
 
@@ -143,6 +141,8 @@ function isFunction( value ) {
   return _toString.call( value ) === '[object Function]';
 }
 
+// TODO Fix complexity issue
+/* eslint-disable complexity, no-mixed-operators */
 /**
  * @name isEmpty
  * @kind function
@@ -160,7 +160,7 @@ function isEmpty( value ) {
          value.length <= 0 ||
          ( /^\s*$/ ).test( value );
 }
-
+/* eslint-enable complexity, no-mixed-operators */
 
 // Expose public methods.
 module.exports = {

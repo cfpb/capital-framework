@@ -6,8 +6,8 @@
 
    ========================================================================== */
 
-'use strict';
-
+// TODO Fix complexity issue
+/* eslint-disable complexity */
 /**
  * Get the nearest parent node of an elementent.
  *
@@ -38,6 +38,7 @@ function closest( element, selector ) {
 
   return null;
 }
+/* eslint-enable complexity */
 
 // Expose public methods.
 module.exports = {

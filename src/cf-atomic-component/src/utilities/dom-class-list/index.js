@@ -10,8 +10,6 @@
          eliminate redudant code.
    ========================================================================== */
 
-'use strict';
-
 const hasClassList = 'classList' in document.createElement( '_' );
 
 /**
@@ -36,7 +34,7 @@ function addClass( element ) {
   if ( hasClassList ) {
     element.classList.add.apply( element.classList, addClassNamesArray );
   } else {
-    var classes = element.className.split( ' ' );
+    const classes = element.className.split( ' ' );
     addClassNamesArray.forEach( function( name ) {
       if ( classes.indexOf( name ) === -1 ) {
         classes.push( name );
@@ -74,9 +72,9 @@ function removeClass( element ) {
   const removeClassNamesArray = _sliceArgs( arguments );
   if ( hasClassList ) {
     element.classList.remove
-    .apply( element.classList, removeClassNamesArray );
+      .apply( element.classList, removeClassNamesArray );
   } else {
-    var classes = element.className.split( ' ' );
+    const classes = element.className.split( ' ' );
     removeClassNamesArray.forEach( function( className ) {
       if ( className ) {
         classes.splice( classes.indexOf( className ), 1 );
