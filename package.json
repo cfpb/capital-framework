@@ -72,6 +72,7 @@
     "silent-npm-registry-client": "^3.0.1",
     "stylelint": "^9.3.0",
     "svgo": "^1.0.3",
+    "through2": "2.0.3",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "vinyl-named": "^1.1.0",
     "wcag": "^0.3.0",
