@@ -3,8 +3,6 @@
 
    ========================================================================== */
 
-'use strict';
-
 // Bit values intended to be used for bit inversion.
 const DIRECTIONS = {
   UP:    0,
@@ -22,8 +20,10 @@ const TYPES = {
   ATOM:     5
 };
 
-// Atomic Prefixes used for standardizing naming conventions
-// across HTML, CSS, and Javascript.
+/*
+  Atomic Prefixes used for standardizing naming conventions
+  across HTML, CSS, and Javascript.
+*/
 const PREFIXES = {
   PAGE:     'p-',
   TEMPLATE: 't-',
@@ -32,6 +32,7 @@ const PREFIXES = {
   ATOM:     'a-'
 };
 
+/* eslint-disable no-useless-return */
 /**
  * Function used as a non-operational method that
  * is intended to be overriden.
@@ -39,6 +40,7 @@ const PREFIXES = {
  * @returns {undefined}.
  */
 function NO_OP_FUNCTION() { return; }
+/* eslint-enable no-useless-return */
 
 let UNDEFINED;
 

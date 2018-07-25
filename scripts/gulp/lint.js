@@ -47,7 +47,7 @@ function lintTests() {
  * @returns {Object} An output stream from gulp.
  */
 function lintScripts() {
-  return _genericLintJs( [ 'src/**/src/*.js' ] );
+  return _genericLintJs( [ 'src/**/*.js' ] );
 }
 
 /**

@@ -5,8 +5,6 @@
 
    ========================================================================== */
 
-'use strict';
-
 const _readyFunctions = [];
 
 /**
@@ -23,8 +21,10 @@ function onReady( fn ) {
     return [];
   }
 
-  // If the ready state is already complete, run the passed function,
-  // otherwise add it to our saved array.
+  /*
+    If the ready state is already complete, run the passed function,
+    otherwise add it to our saved array.
+  */
   if ( document.readyState === 'complete' ) {
     fn();
   } else {
