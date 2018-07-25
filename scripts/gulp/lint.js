@@ -12,6 +12,11 @@ function _genericLintJs( src ) {
   // Pass all command line flags to ESLint.
   const options = minimist( process.argv.slice( 2 ) );
 
+  if ( options.travis ) {
+    options.quiet = true;
+    errorHandler = gulpEslint.failAfterError();
+  }
+
   return gulp.src( src.concat( '!**/node_modules/**' ), { base: './' } )
     .pipe( gulpEslint( options ) )
     .pipe( gulpEslint.format() )
