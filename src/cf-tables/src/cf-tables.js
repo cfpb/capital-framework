@@ -5,4 +5,9 @@
 
 const Table = require( './Table' );
 
-Table.init();
+// TODO: Don't init within cf-tables, init where cf-tables is used
+const components = Table.init();
+
+module.exports = {
+  components
+};
