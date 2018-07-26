@@ -1,14 +1,15 @@
-const envvars = require( '../../../../config/environment' ).envvars;
+const path = require( 'path' );
+const rootDir = path.join( __dirname, '..', '..', '..' );
+const envvars = require( path.join( rootDir, 'config/environment' ) ).envvars;
 const fs = require( 'fs' );
 const isTravis = require( 'is-travis' );
 const logSymbols = require( 'log-symbols' );
-const path = require( 'path' );
 const Promise = require( 'bluebird' );
 const readdir = require( 'fs-readdir-promise' );
 const semver = require( 'semver' );
 const util = require( './lib' );
 
-const componentsDir = path.join( __dirname, '..', '..', '..', 'src' );
+const componentsDir = path.join( rootDir, 'src' );
 let componentsToPublish = [];
 let UNDEFINED;
 
