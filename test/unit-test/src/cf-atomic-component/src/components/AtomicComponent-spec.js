@@ -57,6 +57,6 @@ describe( 'AtomicComponent', () => {
   it( 'should add the bound attribute to passed elements', () => {
     const element = document.getElementById( 'test-block-a' );
     const atomicComponent = new AtomicComponent( element );
-    expect( element.hasAttribute( 'data-bound' ) ).toBe( true );
+    expect( atomicComponent.element.hasAttribute( 'data-bound' ) ).toBe( true );
   } );
 } );

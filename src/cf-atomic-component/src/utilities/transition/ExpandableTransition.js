@@ -1,5 +1,3 @@
-'use strict';
-
 // Required modules.
 const Events = require( '../../mixins/Events.js' );
 const BaseTransition = require( '../../utilities/transition/BaseTransition' );
@@ -14,6 +12,7 @@ const CLASSES = {
   OPEN_DEFAULT: 'u-expandable-content__onload-open'
 };
 
+/* eslint-disable max-lines-per-function */
 /**
  * ExpandableTransition
  * @class
@@ -26,7 +25,7 @@ const CLASSES = {
  *   An Object of custom classes to override the base classes Object
  * @returns {ExpandableTransition} An instance.
  */
-function ExpandableTransition( element, classes ) { // eslint-disable-line max-statements, no-inline-comments, max-len
+function ExpandableTransition( element, classes ) {
   const classObject = classes || CLASSES;
   const _baseTransition = new BaseTransition( element, classObject );
   let previousHeight;
@@ -37,8 +36,10 @@ function ExpandableTransition( element, classes ) { // eslint-disable-line max-s
   function init() {
     _baseTransition.init();
     const _transitionCompleteBinded = fnBind( _transitionComplete, this );
-    _baseTransition.addEventListener( BaseTransition.END_EVENT,
-                                      _transitionCompleteBinded );
+    _baseTransition.addEventListener(
+      BaseTransition.END_EVENT,
+      _transitionCompleteBinded
+    );
 
     if ( contains( element, classObject.OPEN_DEFAULT ) ) {
       _baseTransition.applyClass( classObject.EXPANDED );
@@ -118,6 +119,7 @@ function ExpandableTransition( element, classes ) { // eslint-disable-line max-s
 
   return this;
 }
+/* eslint-enable max-lines-per-function */
 
 // Public static properties.
 ExpandableTransition.CLASSES = CLASSES;

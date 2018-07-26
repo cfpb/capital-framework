@@ -1,5 +1,3 @@
-'use strict';
-
 // Required modules.
 const Events = require( '../../mixins/Events.js' );
 const BaseTransition = require( './BaseTransition' );
@@ -16,6 +14,7 @@ const CLASSES = {
   MOVE_UP:        'u-move-up'
 };
 
+/* eslint-disable max-lines-per-function */
 /**
  * MoveTransition
  * @class
@@ -26,7 +25,7 @@ const CLASSES = {
  *   DOM element to apply move transition to.
  * @returns {MoveTransition} An instance.
  */
-function MoveTransition( element ) { // eslint-disable-line max-statements, no-inline-comments, max-len
+function MoveTransition( element ) {
 
   const _baseTransition = new BaseTransition( element, CLASSES );
 
@@ -36,8 +35,10 @@ function MoveTransition( element ) { // eslint-disable-line max-statements, no-i
   function init() {
     _baseTransition.init();
     const _transitionCompleteBinded = fnBind( _transitionComplete, this );
-    _baseTransition.addEventListener( BaseTransition.END_EVENT,
-                                      _transitionCompleteBinded );
+    _baseTransition.addEventListener(
+      BaseTransition.END_EVENT,
+      _transitionCompleteBinded
+    );
     return this;
   }
 
@@ -121,6 +122,7 @@ function MoveTransition( element ) { // eslint-disable-line max-statements, no-i
 
   return this;
 }
+/* eslint-enable max-lines-per-function */
 
 // Public static properties.
 MoveTransition.CLASSES = CLASSES;

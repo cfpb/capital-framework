@@ -1,7 +1,5 @@
 env:
-  qunit: true
   jest: true
-  jquery: true
 rules:
   wrap-iife: 0
   no-process-env: 0

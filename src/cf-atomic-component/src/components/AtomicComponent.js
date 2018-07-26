@@ -83,9 +83,9 @@ assign( AtomicComponent.prototype, Events, classList, {
    */
   ensureElement: function() {
     if ( !this.element ) { // eslint-disable-line no-negated-condition, inline-comments, max-len
-      var attrs = assign( {}, this.attributes );
+      const attrs = assign( {}, this.attributes );
       attrs.id = this.id || this.u_id;
-      if ( this.className ) attrs['class'] = this.className;
+      if ( this.className ) attrs.class = this.className;
       this.setElement( document.createElement( this.tagName ) );
       this.setElementAttributes( attrs );
     } else {
@@ -110,15 +110,18 @@ assign( AtomicComponent.prototype, Events, classList, {
     return this;
   },
 
+  // TODO Fix complexity issue
+  /* eslint-disable complexity */
   /**
    * Function used to set the cached DOM elements.
    *
    * @returns {Object} Hash of event names and cached elements.
    */
   setCachedElements: function() {
-    var key;
-    var ui = assign( {}, this.ui );
-    var element;
+    const ui = assign( {}, this.ui );
+    let key;
+    let element;
+
     for ( key in ui ) {
       if ( ui.hasOwnProperty( key ) ) {
         element = this.element.querySelectorAll( ui[key] );
@@ -135,6 +138,7 @@ assign( AtomicComponent.prototype, Events, classList, {
 
     return ui;
   },
+  /* eslint-enable complexity */
 
   /**
    * Function used to remove the base element from the DOM
@@ -169,6 +173,8 @@ assign( AtomicComponent.prototype, Events, classList, {
     }
   },
 
+  // TODO Fix complexity issue
+  /* eslint-disable complexity */
   /**
    * Function used to up event delegation on the base element.
    * Using Dom-delegate library to enable this functionality.
@@ -177,26 +183,30 @@ assign( AtomicComponent.prototype, Events, classList, {
    * @returns {AtomicComponent} An instance.
    */
   delegateEvents: function( events ) {
-    var key;
-    var method;
-    var match;
-    var delegateEventSplitter = /^(\S+)\s*(.*)$/;
+    const delegateEventSplitter = /^(\S+)\s*(.*)$/;
+    let key;
+    let method;
+    let match;
 
     events = events || ( events = this.events );
     if ( !events ) return this;
     this.undelegateEvents();
     this._delegate = new Delegate( this.element );
     for ( key in events ) {
-      method = events[key];
-      if ( isFunction( this[method] ) ) method = this[method];
-      if ( !method ) continue;
-      match = key.match( delegateEventSplitter );
-      this.delegate( match[1], match[2], bind( method, this ) );
+      if ( {}.hasOwnProperty.call( events, key ) ) {
+        method = events[key];
+        if ( isFunction( this[method] ) ) method = this[method];
+        if ( method ) {
+          match = key.match( delegateEventSplitter );
+          this.delegate( match[1], match[2], bind( method, this ) );
+        }
+      }
     }
     this.trigger( 'component:bound' );
 
     return this;
   },
+  /* eslint-enable complexity */
 
   /**
    * Function used to set the attributes on an element.
@@ -250,7 +260,7 @@ assign( AtomicComponent.prototype, Events, classList, {
  */
 AtomicComponent.extend = function( attributes ) {
 
- /**
+/**
  * Function used as constructor in order to establish inheritance
  * chain.
  * @returns {AtomicComponent} An instance.
@@ -282,11 +292,11 @@ AtomicComponent.extend = function( attributes ) {
  * @returns {Array} List of AtomicComponent instances.
  */
 AtomicComponent.init = function() {
-  var elements = document.querySelectorAll( this.selector );
-  var element;
-  var components = [];
+  const elements = document.querySelectorAll( this.selector );
+  const components = [];
+  let element;
 
-  for ( var i = 0; i < elements.length; ++i ) {
+  for ( let i = 0; i < elements.length; ++i ) {
     element = elements[i];
     if ( element.hasAttribute( 'data-bound' ) === false ) {
       components.push( new this( element ) );

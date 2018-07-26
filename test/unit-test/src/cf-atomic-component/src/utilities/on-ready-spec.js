@@ -14,6 +14,7 @@ function setDocumentState( state ) {
 
 function triggerReadyState( state, time = 100 ) {
 
+  // eslint-disable-next-line no-unused-vars
   return new Promise( function readyStateChange( resolve, reject ) {
     window.setTimeout( () => {
       setDocumentState( state );
@@ -44,14 +45,12 @@ describe( 'on-ready', function() {
 
   it( 'should add a function to the saved array and trigger it' +
       'when readyState completes', () => {
-    let readyReturn;
-
     onReady( function() {
-      readyReturn = 'foo';
+      // Placeholder function.
     } );
 
     const _readyFunctions = onReady( function() {
-      readyReturn = 'foo';
+      // Placeholder function.
     } );
 
     expect( _readyFunctions.length ).toBe( 2 );
@@ -65,15 +64,12 @@ describe( 'on-ready', function() {
 
   it( 'should add a function to the saved array but not trigger it' +
       'if state is loading', () => {
-    let readyReturn;
-    let _readyFunctions;
-
     onReady( function() {
-      readyReturn = 'foo';
+      // Placeholder function.
     } );
 
-    _readyFunctions = onReady( function() {
-      readyReturn = 'foo';
+    const _readyFunctions = onReady( function() {
+      // Placeholder function.
     } );
 
     expect( _readyFunctions.length ).toBe( 2 );

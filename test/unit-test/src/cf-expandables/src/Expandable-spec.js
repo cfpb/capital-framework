@@ -61,7 +61,6 @@ const HTML_SNIPPET = `
 </div>
 `;
 
-let expandableGroupDom1;
 let expandableDom1;
 let expandableDom2;
 
@@ -70,7 +69,6 @@ describe( 'Expandable', () => {
   beforeEach( () => {
     document.body.innerHTML = HTML_SNIPPET;
     Expandable.init();
-    expandableGroupDom1 = document.querySelector( 'test-group-one' );
     expandableDom1 = document.querySelector( '#test-subject-one' );
     expandableDom2 = document.querySelector( '#test-subject-two' );
   } );
