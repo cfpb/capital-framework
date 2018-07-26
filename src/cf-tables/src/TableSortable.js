@@ -148,6 +148,8 @@ function updateTableDom() {
   return tableBody;
 }
 
+// TODO Fix complexity issue
+/* eslint-disable complexity */
 /**
  * Function used to create a function for sorting table data.
  * Passed to Array.sort method.
@@ -186,6 +188,7 @@ function tableDataSorter( direction, sortType ) {
     return order;
   };
 }
+/* eslint-enable complexity */
 
 /**
  * Function used as callback for the sortable click event.
