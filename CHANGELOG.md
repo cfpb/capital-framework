@@ -13,7 +13,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **capital-framework:** [PATCH] Fixes globing in lint:scripts task
 - **cf-atomic-component:** [PATCH] Fixes or silences linter errors in Atomic Component
 - **cf-expandables:** [MINOR] Export the cf-expandables component
-- **cf-expandables:** [MINOR] Export the cf-tables component
+- **cf-tables:** [MINOR] Export the cf-tables component
 
 ### Removed
 -
