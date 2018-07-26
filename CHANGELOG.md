@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 6.1.0 - 2018-07-26
+
+### Added
 - **capital-framework:** Adds `environment.js` for environment vars.
 
 ### Changed
