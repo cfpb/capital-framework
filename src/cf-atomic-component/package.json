@@ -1,6 +1,6 @@
 {
   "name": "cf-atomic-component",
-  "version": "1.5.5",
+  "version": "1.5.6",
   "description": "Capital Framework atomic component micro-framework",
   "less": "src/cf-atomic-component.less",
   "style": "cf-atomic-component.css",

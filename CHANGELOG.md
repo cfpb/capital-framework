@@ -4,19 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- **capital-framework:** [PATCH] Adds `environment.js` for environment vars.
+- **capital-framework:** Adds `environment.js` for environment vars.
 
 ### Changed
-- **capital-framework:** [PATCH] Updates `webpack`, `gulp-rename`, and
+- **capital-framework:** Updates `webpack`, `gulp-rename`, and
   `silent-npm-registry-client`.
-- **capital-framework:** [MINOR] Fixes linter errors in release npm scripts.
-- **capital-framework:** [PATCH] Fixes globing in lint:scripts task
-- **cf-atomic-component:** [PATCH] Fixes or silences linter errors in Atomic Component
-- **cf-expandables:** [MINOR] Export the cf-expandables component
-- **cf-expandables:** [MINOR] Export the cf-tables component
+- **capital-framework:** Fixes linter errors in release npm scripts.
+- **capital-framework:** Fixes globing in lint:scripts task
+- **cf-atomic-component:** Fixes or silences linter errors in Atomic Component
+- **cf-expandables:** Export the cf-expandables component
+- **cf-expandables:** Export the cf-tables component
 
-### Removed
--
 
 ## 6.0.0 - 2018-07-19
 
