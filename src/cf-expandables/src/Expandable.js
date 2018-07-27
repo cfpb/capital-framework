@@ -1,7 +1,8 @@
 /* ==========================================================================
    Expandable Organism
    ========================================================================== */
-
+// polyfill for ie9 compatibility
+require( 'classlist-polyfill' );
 
 const domClassList = require(
   'cf-atomic-component/src/utilities/dom-class-list'
@@ -12,11 +13,9 @@ const removeClass = domClassList.removeClass;
 const closest = require(
   'cf-atomic-component/src/utilities/dom-closest'
 ).closest;
-const ExpandableTransition = require(
-  'cf-atomic-component/src/utilities/transition/ExpandableTransition'
-);
 const Events = require( 'cf-atomic-component/src/mixins/Events.js' );
 const Organism = require( 'cf-atomic-component/src/components/Organism' );
+const ExpandableTransition = require( './ExpandableTransition' );
 
 const Expandable = Organism.extend( {
   ui: {
@@ -29,80 +28,79 @@ const Expandable = Organism.extend( {
   classes: {
     targetExpanded:  'o-expandable_target__expanded',
     targetCollapsed: 'o-expandable_target__collapsed',
+    group:           'o-expandable-group',
     groupAccordion:  'o-expandable-group__accordion'
   },
 
   events: {
-    'click .o-expandable_target': 'onExpandableClick',
-    'click .o-expandable-group__accordion .o-expandable_target': 'onToggleAccordion'
+    'click .o-expandable_target': 'expandableClickHandler'
   },
 
-  transition:      null,
-  accordionEvent:  null,
-  activeAccordion: false,
+  transition:       null,
+  isAccordionGroup: false,
+  activeAccordion:  false,
 
-  initialize:        initialize,
-  accordionClose:    accordionClose,
-  onExpandableClick: onExpandableClick,
-  onToggleAccordion: onToggleAccordion,
-  toggleTargetState: toggleTargetState
+  initialize:             initialize,
+  expandableClickHandler: expandableClickHandler,
+  toggleTargetState:      toggleTargetState
 } );
 
 /**
  * Initialize a new expandable.
  */
 function initialize() {
-  const customClasses = {
-    BASE_CLASS:   'o-expandable_content__transition',
-    EXPANDED:     'o-expandable_content__expanded',
-    COLLAPSED:    'o-expandable_content__collapsed',
-    OPEN_DEFAULT: 'o-expandable_content__onload-open'
-  };
+  const transition = new ExpandableTransition(
+    this.ui.content
+  );
+  this.transition = transition.init();
 
-  if ( contains( this.ui.content, customClasses.OPEN_DEFAULT ) ) {
+  if ( contains( this.ui.content, ExpandableTransition.CLASSES.EXPANDED ) ) {
     addClass( this.ui.target, this.classes.targetExpanded );
   } else {
     addClass( this.ui.target, this.classes.targetCollapsed );
   }
 
-  const transition = new ExpandableTransition(
-    this.ui.content, customClasses
+  const expandableGroup = closest(
+    this.ui.target, '.' + this.classes.group
   );
-  this.transition = transition.init();
 
-  const groupElement = closest(
-    this.ui.target, '.' + this.classes.groupAccordion
-  );
-  if ( groupElement !== null ) {
-    const fn = this.accordionClose.bind( this );
-    Events.on( 'CFAccordionClose', fn );
+  this.isAccordionGroup = expandableGroup !== null &&
+    contains( expandableGroup, this.classes.groupAccordion );
+
+  if ( this.isAccordionGroup ) {
+    Events.on(
+      'accordionActivated',
+      _accordionActivatedHandler.bind( this )
+    );
   }
 }
 
 /**
- * Event handler for when an accordion is closed.
+ * Event handler for when an accordion is activated
  */
-function accordionClose() {
-  if ( this.activeAccordion === true ) {
+function _accordionActivatedHandler() {
+  if ( this.activeAccordion ) {
+    this.transition.toggleExpandable();
+    this.toggleTargetState( this.ui.target );
     this.activeAccordion = false;
-    this.transition.collapse();
   }
 }
 
 /**
  * Event handler for when an expandable is clicked.
  */
-function onExpandableClick() {
+function expandableClickHandler() {
   this.transition.toggleExpandable();
   this.toggleTargetState( this.ui.target );
-}
 
-/**
- * Event handler for when an expandable is clicked as part of an accordion.
- */
-function onToggleAccordion() {
-  Events.trigger( 'CFAccordionClose' );
-  this.activeAccordion = true;
+  if ( this.isAccordionGroup ) {
+    if ( this.activeAccordion ) {
+      this.activeAccordion = false;
+    } else {
+      Events.trigger( 'accordionActivated', { target: this } );
+      this.activeAccordion = true;
+    }
+  }
 }
 
 /**

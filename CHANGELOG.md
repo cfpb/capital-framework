@@ -7,7 +7,12 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
--
+- **cf-expandables:** [MAJOR] Stop self-initializing
+- **cf-tables:** [MAJOR] Stop self-initializing
+- **cf-expandables:** [MINOR] Add expand/collapse event dispatchers
+- **cf-atomic-component:** [MAJOR] Move ExpandableTransition to cf-expandables
+- **cf-expandables:** [MAJOR] Move ExpandableTransition from cf-atomic-component
+- **cf-expandables:** [MINOR] Fix the accordion feature
 
 ### Removed
 -
