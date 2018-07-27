@@ -68,7 +68,6 @@ test/build-test-coverage/
 # Front-End #
 #############
 node_modules/
-bower_components/
 .grunt/
 vendor/
 static/vendor/
