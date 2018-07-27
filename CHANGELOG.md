@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 7.0.0 - 2018-07-27
+
 ### Changed
 - **cf-expandables:** Stop self-initializing
 - **cf-tables:** Stop self-initializing
