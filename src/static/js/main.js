@@ -2,8 +2,11 @@
 
 global.$ = require( 'jquery' );
 
-require( 'cf-expandables' );
-require( 'cf-tables' );
+const cfExpandables = require( 'cf-expandables/src/Expandable' );
+const cfTables = require( 'cf-tables/src/Table' );
+
+cfExpandables.init();
+cfTables.init();
 
 if ( $( '.cf-download' ).length ) {
   $.get( 'https://npmcdn.com/capital-framework/package.json', data => {
