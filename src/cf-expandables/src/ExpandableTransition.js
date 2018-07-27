@@ -1,15 +1,14 @@
 // Required modules.
-const Events = require( '../../mixins/Events.js' );
-const BaseTransition = require( '../../utilities/transition/BaseTransition' );
-const contains = require( '../../utilities/dom-class-list' ).contains;
-const fnBind = require( '../../utilities/function-bind' ).bind;
+const Events = require( 'cf-atomic-component/src/mixins/Events.js' );
+const BaseTransition = require( 'cf-atomic-component/src/utilities/transition/BaseTransition' );
+const contains = require( 'cf-atomic-component/src/utilities/dom-class-list' ).contains;
 
 // Exported constants.
 const CLASSES = {
-  BASE_CLASS:   'u-expandable-transition',
-  EXPANDED:     'u-expandable-expanded',
-  COLLAPSED:    'u-expandable-collapsed',
-  OPEN_DEFAULT: 'u-expandable-content__onload-open'
+  BASE_CLASS:   'o-expandable_content__transition',
+  EXPANDED:     'o-expandable_content__expanded',
+  COLLAPSED:    'o-expandable_content__collapsed',
+  OPEN_DEFAULT: 'o-expandable_content__onload-open'
 };
 
 /* eslint-disable max-lines-per-function */
@@ -25,9 +24,8 @@ const CLASSES = {
  *   An Object of custom classes to override the base classes Object
  * @returns {ExpandableTransition} An instance.
  */
-function ExpandableTransition( element, classes ) {
-  const classObject = classes || CLASSES;
-  const _baseTransition = new BaseTransition( element, classObject );
+function ExpandableTransition( element ) {
+  const _baseTransition = new BaseTransition( element, CLASSES );
   let previousHeight;
 
   /**
@@ -35,31 +33,33 @@ function ExpandableTransition( element, classes ) {
    */
   function init() {
     _baseTransition.init();
-    const _transitionCompleteBinded = fnBind( _transitionComplete, this );
     _baseTransition.addEventListener(
       BaseTransition.END_EVENT,
-      _transitionCompleteBinded
+      _transitionComplete.bind( this )
     );
 
-    if ( contains( element, classObject.OPEN_DEFAULT ) ) {
-      _baseTransition.applyClass( classObject.EXPANDED );
-      element.style.maxHeight = element.scrollHeight + 'px';
+    if ( contains( element, CLASSES.OPEN_DEFAULT ) ) {
+      this.expand();
     } else {
-      previousHeight = element.scrollHeight;
-      _baseTransition.applyClass( classObject.COLLAPSED );
+      this.collapse();
     }
 
     return this;
   }
 
+  /* istanbul ignore next */
   /**
    * Handle the end of a transition.
    */
   function _transitionComplete() {
-    this.trigger( BaseTransition.END_EVENT, { target: this } );
-    if ( contains( element, classObject.EXPANDED ) &&
-         element.scrollHeight > previousHeight ) {
-      element.style.maxHeight = element.scrollHeight + 'px';
+    if ( contains( element, CLASSES.EXPANDED ) ) {
+      this.dispatchEvent( 'expandEnd', { target: this } );
+
+      if ( element.scrollHeight > previousHeight ) {
+        element.style.maxHeight = element.scrollHeight + 'px';
+      }
+    } else if ( contains( element, CLASSES.COLLAPSED ) ) {
+      this.dispatchEvent( 'collapseEnd', { target: this } );
     }
   }
 
@@ -68,10 +68,10 @@ function ExpandableTransition( element, classes ) {
    * @returns {ExpandableTransition} An instance.
    */
   function toggleExpandable() {
-    if ( contains( element, classObject.COLLAPSED ) ) {
-      expand();
+    if ( contains( element, CLASSES.COLLAPSED ) ) {
+      this.expand();
     } else {
-      collapse();
+      this.collapse();
     }
 
     return this;
@@ -82,9 +82,11 @@ function ExpandableTransition( element, classes ) {
    * @returns {ExpandableTransition} An instance.
    */
   function collapse() {
+    this.dispatchEvent( 'collapseBegin', { target: this } );
+
     previousHeight = element.scrollHeight;
     element.style.maxHeight = '0';
-    _baseTransition.applyClass( classObject.COLLAPSED );
+    _baseTransition.applyClass( CLASSES.COLLAPSED );
 
     return this;
   }
@@ -94,15 +96,21 @@ function ExpandableTransition( element, classes ) {
    * @returns {ExpandableTransition} An instance.
    */
   function expand() {
+    this.dispatchEvent( 'expandBegin', { target: this } );
+
+    if ( !previousHeight || element.scrollHeight > previousHeight ) {
+      previousHeight = element.scrollHeight;
+    }
+
     element.style.maxHeight = previousHeight + 'px';
-    _baseTransition.applyClass( classObject.EXPANDED );
+    _baseTransition.applyClass( CLASSES.EXPANDED );
 
     return this;
   }
 
   // Attach public events.
   this.addEventListener = Events.on;
-  this.trigger = Events.trigger;
+  this.dispatchEvent = Events.trigger;
   this.removeEventListener = Events.off;
 
   this.animateOff = _baseTransition.animateOff;

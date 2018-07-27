@@ -3,14 +3,14 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
--
+- **cf-expandables:** Stop self-initializing
+- **cf-tables:** Stop self-initializing
+- **cf-expandables:** Add expand/collapse event dispatchers
+- **cf-atomic-component:** Move ExpandableTransition to cf-expandables
+- **cf-expandables:** Move ExpandableTransition from cf-atomic-component
+- **cf-expandables:** Fix the accordion feature
 
-### Removed
--
 
 ## 6.1.0 - 2018-07-26
 
