@@ -44,6 +44,30 @@
     clip: rect(0 0 0 0);
 }
 
+.u-visually-hidden-on-mobile {
+    .respond-to-max( @bp-xs-max, {
+        .u-visually-hidden();
+    } );
+}
+
+//
+// Width-specific display
+//
+
+.u-hide-on-mobile {
+    .respond-to-max( @bp-xs-max {
+        display: none;
+    } );
+}
+
+.u-show-on-mobile {
+    display: none;
+
+    .respond-to-max( @bp-xs-max {
+        display: block;
+    } );
+}
+
 //
 // Hide an element.
 //
@@ -240,24 +264,6 @@
 .u-w25pct  { width: 25%; }
 .u-w66pct  { width: unit( ( 2 / 3 ) * 100, % ); }
 .u-w33pct  { width: unit( ( 1 / 3 ) * 100, % ); }
-
-//
-// Width-specific display
-//
-
-.u-hide-on-mobile {
-    .respond-to-max( @bp-xs-max {
-        display: none;
-    } );
-}
-
-.u-show-on-mobile {
-    display: none;
-
-    .respond-to-max( @bp-xs-max {
-        display: block;
-    } );
-}
 
 //
 // Small text utility
