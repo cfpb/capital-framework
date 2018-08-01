@@ -4,10 +4,10 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-core:** [MINOR] Add JavaScript breakpoint variables.
 
 ### Changed
--
+- **cf-core:** [MINOR] Move less breakpoint variables to their own file.
 
 ### Removed
 -
