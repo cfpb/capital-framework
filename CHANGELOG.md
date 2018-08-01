@@ -4,13 +4,11 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-core:** Added `u-visually-hidden-on-mobile` utility
 
 ### Changed
--
+- **cf-expandables:** Updated expandable docs to use new visually hidden utility
 
-### Removed
--
 
 ## 7.0.0 - 2018-07-27
 
