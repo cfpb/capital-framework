@@ -38,7 +38,7 @@ For example, if you wanted to change `cf-buttons`, here's what you'd do:
 1. Inspect and test your modified `cf-buttons` component in `tmp/`. See _Testing components locally_ below.
 1. When you're done hacking, open `/CHANGELOG.md` and add a line item describing your changes in the "Unreleased" section.
 Use the format: `- **cf-component-name:** [MAJOR|MINOR|PATCH] Description of change`.
-[Here's an example](https://github.com/cfpb/capital-framework/pull/291/files#diff-4ac32a78649ca5bdd8e0ba38b7006a1eR12).
+[Here's an example](https://github.com/cfpb/capital-framework/pull/840/files#diff-4ac32a78649ca5bdd8e0ba38b7006a1eR12).
   - If the change affects *all* components, put `**all components:**` as the name.
   - If the change affects CF and not any components (e.g. if you're just updating [README.md](README.md)), put `**capital-framework**`.
   - **Note:** Don't bump components' versions in their `package.json` files. CFPBot will take care of that.
