@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 7.1.0 - 2018-08-01
+
+### Added
 - **cf-core:** Added `u-visually-hidden-on-mobile` utility
 
 ### Changed
