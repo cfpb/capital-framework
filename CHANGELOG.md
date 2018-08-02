@@ -4,7 +4,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- **cf-icons:** Add piggy-bank-check and split icons
+- **cf-icons:** [MINOR] Add piggy-bank-check and split icons.
 
 ### Changed
 -
