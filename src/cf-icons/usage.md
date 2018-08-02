@@ -264,6 +264,8 @@ the cancanonical name or any of its aliases.
 | {% include icons/prepaid-cards.svg %} | {% include icons/prepaid-cards-round.svg %} | prepaid-cards | prepaid |
 | {% include icons/quick-cash.svg %} | {% include icons/quick-cash-round.svg %} | quick-cash |  |
 | {% include icons/piggy-bank.svg %} | {% include icons/piggy-bank-round.svg %} | piggy-bank | retirement |
+| {% include icons/piggy-bank-check.svg %} | {% include icons/piggy-bank-check-round.svg %} | piggy-bank-check |  |
+| {% include icons/split.svg %} | {% include icons/split-round.svg %} | split |  |
 {: class="icon-table"}
 
 #### Web application icons
