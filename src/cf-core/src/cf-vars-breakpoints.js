@@ -1,9 +1,10 @@
 /* ==========================================================================
    Capital Framework
    Breakpoint JavaScript variables.
-   Matched to values for use in JavaScript matched
-   to CSS breakpoints in cf-vars-breakpoints.less
    All values are pixel based.
+
+   NOTE: If any of the values in this file are adjusted,
+         they need to be adjusted in cf-vars-breakpoints.less as well.
    ========================================================================== */
 
 module.exports = {
