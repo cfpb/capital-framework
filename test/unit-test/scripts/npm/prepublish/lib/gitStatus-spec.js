@@ -7,7 +7,7 @@ let execStub;
 
 describe( 'gitStatus', () => {
   beforeEach( () => {
-    execStub = jest.spyOn( childProcess, 'exec' );
+    execStub = jest.spyOn( childProcess, 'exec' ).mockImplementation();
   } );
 
   afterEach( () => {

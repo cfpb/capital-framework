@@ -15,7 +15,7 @@ let execStub;
 describe( 'checkoutMaster', () => {
   beforeEach( () => {
     childProcess.exec = jest.fn();
-    execStub = jest.spyOn( childProcess, 'exec' );
+    execStub = jest.spyOn( childProcess, 'exec' ).mockImplementation();
   } );
 
   afterEach( () => {
@@ -32,7 +32,7 @@ describe( 'checkoutMaster', () => {
 describe( 'checkBranch', () => {
   beforeEach( () => {
     childProcess.exec = jest.fn();
-    execStub = jest.spyOn( childProcess, 'exec' );
+    execStub = jest.spyOn( childProcess, 'exec' ).mockImplementation();
   } );
 
   afterEach( () => {
@@ -49,7 +49,7 @@ describe( 'checkBranch', () => {
 describe( 'commit', () => {
   beforeEach( () => {
     childProcess.exec = jest.fn();
-    execStub = jest.spyOn( childProcess, 'exec' );
+    execStub = jest.spyOn( childProcess, 'exec' ).mockImplementation();
   } );
 
   afterEach( () => {
@@ -74,7 +74,7 @@ describe( 'commit', () => {
 describe( 'tag', () => {
   beforeEach( () => {
     childProcess.exec = jest.fn();
-    execStub = jest.spyOn( childProcess, 'exec' );
+    execStub = jest.spyOn( childProcess, 'exec' ).mockImplementation();
   } );
 
   afterEach( () => {
@@ -91,7 +91,7 @@ describe( 'tag', () => {
 describe( 'push', () => {
   beforeEach( () => {
     childProcess.exec = jest.fn();
-    execStub = jest.spyOn( childProcess, 'exec' );
+    execStub = jest.spyOn( childProcess, 'exec' ).mockImplementation();
   } );
 
   afterEach( () => {
