@@ -55,7 +55,7 @@
 //
 
 .u-hide-on-mobile {
-    .respond-to-max( @bp-xs-max {
+    .respond-to-max( @bp-xs-max, {
         display: none;
     } );
 }
@@ -63,7 +63,7 @@
 .u-show-on-mobile {
     display: none;
 
-    .respond-to-max( @bp-xs-max {
+    .respond-to-max( @bp-xs-max, {
         display: block;
     } );
 }
