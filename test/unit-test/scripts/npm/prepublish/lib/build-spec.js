@@ -7,7 +7,7 @@ let execStub;
 
 describe( 'build', () => {
   beforeEach( () => {
-    execStub = jest.spyOn( childProcess, 'exec' );
+    execStub = jest.spyOn( childProcess, 'exec' ).mockImplementation();
   } );
 
   afterEach( () => {

@@ -9,7 +9,7 @@ let consoleStub;
 
 describe( 'print', () => {
   beforeEach( () => {
-    consoleStub = jest.spyOn( console, 'log' );
+    consoleStub = jest.spyOn( console, 'log' ).mockImplementation();
   } );
 
   afterEach( () => {
