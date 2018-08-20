@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 7.2.0 - 2018-08-20
+
+### Added
 - **cf-core:** Add JavaScript breakpoint variables.
 
 ### Changed
