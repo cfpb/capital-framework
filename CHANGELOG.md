@@ -8,7 +8,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Changed
 - **cf-core:** [MINOR] Move less breakpoint variables to their own file.
-- **cf-core:** [MINOR] Fixed missing comma in cf-utilities media queries.
+- **cf-core:** [PATCH] Fixed missing comma in cf-utilities media queries.
 
 ### Removed
 -
