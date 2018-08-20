@@ -4,15 +4,13 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- **cf-core:** [MINOR] Add JavaScript breakpoint variables.
+- **cf-core:** Add JavaScript breakpoint variables.
 
 ### Changed
-- **cf-core:** [MINOR] Move less breakpoint variables to their own file.
-- **cf-core:** [PATCH] Fixed missing comma in cf-utilities media queries.
-- **capital-framework:** [PATCH] Mock child process methods in script unit tests to prevent erroneous package publishing.
+- **cf-core:** Move less breakpoint variables to their own file.
+- **cf-core:** Fixed missing comma in cf-utilities media queries.
+- **capital-framework:** Mock child process methods in script unit tests to prevent erroneous package publishing.
 
-### Removed
--
 
 ## 7.1.0 - 2018-08-01
 
