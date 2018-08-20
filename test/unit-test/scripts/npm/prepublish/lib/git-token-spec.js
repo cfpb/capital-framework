@@ -16,7 +16,7 @@ let execStub;
 describe( 'push', () => {
   beforeEach( () => {
     childProcess.exec = jest.fn();
-    execStub = jest.spyOn( childProcess, 'exec' );
+    execStub = jest.spyOn( childProcess, 'exec' ).mockImplementation();
   } );
 
   afterEach( () => {

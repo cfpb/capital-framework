@@ -26,7 +26,7 @@ describe( 'confirm', () => {
   } );
 
   it( 'should continue if we’re in a CLI environment', () => {
-    const processSpy = jest.spyOn( process, 'exit' );
+    const processSpy = jest.spyOn( process, 'exit' ).mockImplementation();
     process.env.CONTINUOUS_INTEGRATION = true;
     return util.confirm( opts ).then( () => {
       expect( processSpy ).not.toHaveBeenCalledWith( 1 );

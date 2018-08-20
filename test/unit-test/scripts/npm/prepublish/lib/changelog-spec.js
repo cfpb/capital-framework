@@ -15,7 +15,7 @@ const changelogExpected = fs.readFileSync( changelogExpectPath, 'utf8' );
 describe( 'changelog', () => {
   beforeEach( () => {
     fs.writeFile = jest.fn();
-    writeStub = jest.spyOn( fs, 'writeFile' );
+    writeStub = jest.spyOn( fs, 'writeFile' ).mockImplementation();
   } );
 
   afterEach( () => {
