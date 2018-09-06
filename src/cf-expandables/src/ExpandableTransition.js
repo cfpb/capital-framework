@@ -98,8 +98,14 @@ function ExpandableTransition( element ) {
   function expand() {
     this.dispatchEvent( 'expandBegin', { target: this } );
 
-    if ( !previousHeight || element.scrollHeight > previousHeight ) {
-      previousHeight = element.scrollHeight;
+    let childrenHeight = 0;
+    for ( const child of element.children ) {
+      childrenHeight += child.scrollHeight;
+    }
+
+    if ( !previousHeight || childrenHeight !== previousHeight ) {
+      // Magic number of 30 accounts for vertical padding
+      previousHeight = childrenHeight + 30;
     }
 
     element.style.maxHeight = previousHeight + 'px';

@@ -7,7 +7,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Changed
--
+- **cf-expandables:** [PATCH] Replace scrollHeight with children height in ExpandableTransition.expand
 
 ### Removed
 -
