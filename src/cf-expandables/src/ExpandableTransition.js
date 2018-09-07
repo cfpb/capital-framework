@@ -99,9 +99,10 @@ function ExpandableTransition( element ) {
     this.dispatchEvent( 'expandBegin', { target: this } );
 
     let childrenHeight = 0;
-    for ( const child of element.children ) {
+
+    Array.prototype.forEach.call( element.children, function( child ) {
       childrenHeight += child.scrollHeight;
-    }
+    } );
 
     if ( !previousHeight || childrenHeight !== previousHeight ) {
       // Magic number of 30 accounts for vertical padding
