@@ -8,6 +8,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Changed
 - **cf-pagination:** [PATCH] Fixed color contrast for "Go" link on gray background for cf-pagination module.
+- **cf-buttons:** [PATCH] Update button hover and active colors for accessible contrast.
 
 ### Removed
 -

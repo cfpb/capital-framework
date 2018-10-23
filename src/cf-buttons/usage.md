@@ -40,8 +40,8 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 // .btn
 @btn-text:                      @white;
 @btn-bg:                        @pacific;
-@btn-bg-hover:                  @pacific-80;
-@btn-bg-active:                 @navy-80;
+@btn-bg-hover:                  @dark-pacific;
+@btn-bg-active:                 @dark-gray;
 
 // .btn__secondary
 @btn__secondary-text:           @white;
@@ -52,8 +52,8 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 // .btn__warning
 @btn__warning-text:             @white;
 @btn__warning-bg:               @red;
-@btn__warning-bg-hover:         @red-80;
-@btn__warning-bg-active:        @dark-red;
+@btn__warning-bg-hover:         @dark-red;
+@btn__warning-bg-active:        @dark-gray;
 
 // .btn__disabled
 @btn__disabled-text:            @gray;
