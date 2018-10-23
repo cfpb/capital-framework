@@ -41,7 +41,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 @btn-text:                      @white;
 @btn-bg:                        @pacific;
 @btn-bg-hover:                  @dark-pacific;
-@btn-bg-active:                 @dark-gray;
+@btn-bg-active:                 @navy;
 
 // .btn__secondary
 @btn__secondary-text:           @white;
