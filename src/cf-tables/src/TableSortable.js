@@ -100,7 +100,8 @@ function updateTable() {
  * Function used to get, sort, and update the table data array.
  *
  * @param {number} columnIndex - The index of the column used for sorting.
- * @returns {Array} TODO: Add description.
+ * @returns {Array} Multidimensional array of column's cell value
+ * and corresponding row element.
  */
 function updateTableData( columnIndex ) {
   let cell;
@@ -124,7 +125,7 @@ function updateTableData( columnIndex ) {
 
 /**
  * Function used to update the table DOM.
- * @returns {HTMLNode} TODO: Add description.
+ * @returns {HTMLNode} The table's <tbody> element.
  */
 function updateTableDom() {
   const tableBody = this.ui.tableBody;
@@ -147,6 +148,8 @@ function updateTableDom() {
   return tableBody;
 }
 
+// TODO Fix complexity issue
+/* eslint-disable complexity */
 /**
  * Function used to create a function for sorting table data.
  * Passed to Array.sort method.
@@ -185,6 +188,7 @@ function tableDataSorter( direction, sortType ) {
     return order;
   };
 }
+/* eslint-enable complexity */
 
 /**
  * Function used as callback for the sortable click event.

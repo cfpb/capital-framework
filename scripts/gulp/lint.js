@@ -1,7 +1,9 @@
 const gulp = require( 'gulp' );
 const gulpEslint = require( 'gulp-eslint' );
+const handleErrors = require( '../utils/handle-errors' );
 const gulpStylelint = require( 'gulp-stylelint' );
 const minimist = require( 'minimist' );
+const through2 = require( 'through2' );
 
 /**
  * Generic lint a script source.
@@ -11,11 +13,19 @@ const minimist = require( 'minimist' );
 function _genericLintJs( src ) {
   // Pass all command line flags to ESLint.
   const options = minimist( process.argv.slice( 2 ) );
+  let errorHandler = through2.obj();
+
+  if ( options.travis ) {
+    options.quiet = true;
+    errorHandler = gulpEslint.failAfterError();
+  }
 
   return gulp.src( src.concat( '!**/node_modules/**' ), { base: './' } )
     .pipe( gulpEslint( options ) )
     .pipe( gulpEslint.format() )
-    .pipe( gulp.dest( './' ) );
+    .pipe( errorHandler )
+    .pipe( gulp.dest( './' ) )
+    .on( 'error', handleErrors );
 }
 
 /**
@@ -37,7 +47,8 @@ function lintBuild() {
 function lintTests() {
   return _genericLintJs( [
     'test/**/*.js',
-    '!test/lib/**/*.js'
+    '!test/lib/**/*.js',
+    '!test/unit-test-coverage/**/*.js'
   ] );
 }
 
@@ -46,7 +57,7 @@ function lintTests() {
  * @returns {Object} An output stream from gulp.
  */
 function lintScripts() {
-  return _genericLintJs( [ 'src/**/src/*.js' ] );
+  return _genericLintJs( [ 'src/**/*.js' ] );
 }
 
 /**

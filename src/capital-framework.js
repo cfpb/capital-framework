@@ -1,3 +1,6 @@
 // List yer JS modules
-require('./cf-expandables/src/cf-expandables');
-require('./cf-tables/src/cf-tables');
+const Expandable = require( './cf-expandables/src/Expandable' );
+const Table = require( './cf-tables/src/Table' );
+
+Expandable.init();
+Table.init();

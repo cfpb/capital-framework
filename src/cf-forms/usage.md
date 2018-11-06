@@ -29,6 +29,7 @@ Capital Framework.
     - [Large target area checkboxes](#large-target-area-checkboxes)
     - [Large target area radio buttons](#large-target-area-radio-buttons)
     - [Inputs helper text](#inputs-helper-text)
+    - [Form alerts](#form-alerts)
 - [Buttons](#buttons)
     - [Simple input with a button](#simple-input-with-a-button)
     - [Button inside an input](#button-inside-an-input)
@@ -751,32 +752,139 @@ have helper text that appears below the main label text.
 ```
 
 
-### Inline Form Validation
+### Form alerts
 
-<div class="m-form-field m-form-field__error">
-    <label class="a-label__heading" for="form-input-error">Label</label>
-    <input class="a-text-input a-text-input__error"
-           type="text"
-           value="Invalid input"
-           id="form-input-error"
-           aria-describedby="form-input-error_message">
-    <div class="a-error-message" id="form-input-error_message" role="alert">
-        {% include icons/error-round.svg %}
-        This is a required question, please answer.
+Form alerts provide a light-touch alternative to notifications for inline
+form validation or feedback to a user's input.
+
+<div class="o-form_group">
+    <div class="m-form-field">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input"
+               type="text"
+               value="Standard input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert" role="alert">
+            {% include icons/info-round.svg %}
+            <span class="a-form-alert_text">
+                This is an inline alert with a default state.
+            </span>
+        </div>
+    </div>
+</div>
+<div class="o-form_group">
+    <div class="m-form-field m-form-field__success">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input a-text-input__success"
+               type="text"
+               value="Valid input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert a-form-alert__success" role="alert">
+            {% include icons/check-round.svg %}
+            <span class="a-form-alert_text">
+                This is an inline alert with a success state.
+            </span>
+        </div>
+    </div>
+</div>
+<div class="o-form_group">
+    <div class="m-form-field m-form-field__error">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input a-text-input__error"
+               type="text"
+               value="Invalid input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert a-form-alert__error" role="alert">
+            {% include icons/error-round.svg %}
+            <span class="a-form-alert_text">
+                This is an inline alert with an error state.
+            </span>
+        </div>
+    </div>
+</div>
+<div class="o-form_group">
+    <div class="m-form-field m-form-field__warning">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input a-text-input__warning"
+               type="text"
+               value="Semi-valid input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert a-form-alert__warning" role="alert">
+            {% include icons/warning-round.svg %}
+            <span class="a-form-alert_text">
+                This is an inline alert with a warning state.
+            </span>
+        </div>
     </div>
 </div>
 
 ```html
-<div class="m-form-field m-form-field__error">
-    <label class="a-label__heading" for="form-input-error">Label</label>
-    <input class="a-text-input a-text-input__error"
-           type="text"
-           value="Invalid input"
-           id="form-input-error"
-           aria-describedby="form-input-error_message">
-    <div class="a-error-message" id="form-input-error_message" role="alert">
-        {% raw %}{% include icons/error-round.svg %}{% endraw %}
-        This is a required question, please answer.
+<div class="o-form_group">
+    <div class="m-form-field">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input"
+               type="text"
+               value="Standard input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert" role="alert">
+            {% raw %}{% include icons/info-round.svg %}{% endraw %}
+            <span class="a-form-alert_text">
+                This is an inline alert with a default state.
+            </span>
+        </div>
+    </div>
+</div>
+<div class="o-form_group">
+    <div class="m-form-field m-form-field__success">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input a-text-input__success"
+               type="text"
+               value="Valid input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert a-form-alert__success" role="alert">
+            {% raw %}{% include icons/check-round.svg %}{% endraw %}
+            <span class="a-form-alert_text">
+                This is an inline alert with a success state.
+            </span>
+        </div>
+    </div>
+</div>
+<div class="o-form_group">
+    <div class="m-form-field m-form-field__error">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input a-text-input__error"
+               type="text"
+               value="Invalid input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert a-form-alert__error" role="alert">
+            {% raw %}{% include icons/error-round.svg %}{% endraw %}
+            <span class="a-form-alert_text">
+                This is an inline alert with an error state.
+            </span>
+        </div>
+    </div>
+</div>
+<div class="o-form_group">
+    <div class="m-form-field m-form-field__warning">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input a-text-input__warning"
+               type="text"
+               value="Semi-valid input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert a-form-alert__warning" role="alert">
+            {% raw %}{% include icons/warning-round.svg %}{% endraw %}
+            <span class="a-form-alert_text">
+                This is an inline alert with a warning state.
+            </span>
+        </div>
     </div>
 </div>
 ```

@@ -21,12 +21,12 @@ function checkAuth( component ) {
     } );
   const getCurrentUser = childProcess.exec( 'npm whoami' );
 
-  return Promise.all( [ getOwners, getCurrentUser ] ).then( function( data ) {
+  return Promise.all( [ getOwners, getCurrentUser ] ).then( data => {
     let authorized = false;
     const currentUser = data[1].stdout.trim();
 
     printLn.info( 'Logged into npm as ' + currentUser );
-    data[0].forEach( function( maintainer ) {
+    data[0].forEach( maintainer => {
       if ( maintainer.name === currentUser ) {
         authorized = true;
       }
@@ -39,8 +39,8 @@ function checkAuth( component ) {
       );
       process.exit( 1 );
     }
-  } ).catch( function( err ) {
-    if ( /ENEEDAUTH/.test( err ) ) {
+  } ).catch( err => {
+    if ( ( /ENEEDAUTH/ ).test( err ) ) {
       printLn.error(
         'You\'re not logged into npm. You need to authorize ' +
         'this machine using `npm login`.'

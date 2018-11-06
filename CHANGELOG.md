@@ -4,13 +4,139 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- **cf-typography:** [PATCH] Note in usage docs about unused italic and demi fonts.
+-
 
 ### Changed
--
+- **cf-pagination:** [PATCH] Fixed color contrast for "Go" link on gray background for cf-pagination module.
+- **cf-buttons:** [PATCH] Update button hover and active colors for accessible contrast.
 
 ### Removed
 -
+
+## 7.2.0 - 2018-08-20
+
+### Added
+- **cf-core:** Add JavaScript breakpoint variables.
+
+### Changed
+- **cf-core:** Move less breakpoint variables to their own file.
+- **cf-core:** Fixed missing comma in cf-utilities media queries.
+- **capital-framework:** Mock child process methods in script unit tests to prevent erroneous package publishing.
+
+
+## 7.1.0 - 2018-08-01
+
+### Added
+- **cf-core:** Added `u-visually-hidden-on-mobile` utility
+
+### Changed
+- **cf-expandables:** Updated expandable docs to use new visually hidden utility
+
+
+## 7.0.0 - 2018-07-27
+
+### Changed
+- **cf-expandables:** Stop self-initializing
+- **cf-tables:** Stop self-initializing
+- **cf-expandables:** Add expand/collapse event dispatchers
+- **cf-atomic-component:** Move ExpandableTransition to cf-expandables
+- **cf-expandables:** Move ExpandableTransition from cf-atomic-component
+- **cf-expandables:** Fix the accordion feature
+
+
+## 6.1.0 - 2018-07-26
+
+### Added
+- **capital-framework:** Adds `environment.js` for environment vars.
+
+### Changed
+- **capital-framework:** Updates `webpack`, `gulp-rename`, and
+  `silent-npm-registry-client`.
+- **capital-framework:** Fixes linter errors in release npm scripts.
+- **capital-framework:** Fixes globing in lint:scripts task
+- **cf-atomic-component:** Fixes or silences linter errors in Atomic Component
+- **cf-expandables:** Export the cf-expandables component
+- **cf-tables:** Export the cf-tables component
+
+
+## 6.0.0 - 2018-07-19
+
+### Changed
+- **cf-expandables:** Update the expandables to fix style bugs and follow Atomic Design principles
+
+
+## 5.3.1 - 2018-07-18
+
+### Changed
+- **capital-framework:** Updates `babel-jest`, `jest`, `jest-cli`, `webpack`, and `webpack-stream`.
+- **cf-atomic-component:** Remove "use strict" from modules.
+
+
+## 5.3.0 - 2018-07-17
+
+### Added
+- **cf-forms:** Add form alert atom to cf-forms
+
+
+## 5.2.0 - 2018-07-11
+
+### Added
+- **cf-forms:** Added styles for error message atom to ensure the proper indentation.
+
+### Changed
+- **capital-framework:** Updated to ESLint 5.
+- **cf-forms:** Fixed the height of select elements to match the DM spec
+- **cf-forms:** Fix the line-height, padding, and arrow box width of select ems
+- **cf-icons:** Update the language around the animated updating icon
+
+
+## 5.1.0 - 2018-07-02
+
+### Added
+- **capital-framework:** Add webpack-config file.
+- **cf-icons:** Added animated update icon
+
+### Changed
+- **capital-framework:** Converts mocha tests
+  and istanbul test coverage to use Jest.
+- **capital-framework:** Update `webpack` to `4.11.1`,
+  `webpack-stream` to `4.0.3`, `uglifyjs-webpack-plugin` to `1.2.5`,
+  `babel-core` to `6.26.3`, `babel-preset-env` to `1.7.0`,
+  `promisify-node` to `0.5.0`, `require-dir` to `1.0.0`.
+
+### Removed
+- **capital-framework:** Removes `jsdom-global`, `sinon`, `sinon-chai`.
+
+
+## 5.0.5 - 2018-05-17
+
+### Changed
+- **cf-notifications:** Updated recommended markup pattern and related styles to match.
+
+
+## 5.0.4 - 2018-04-10
+
+### Changed
+- **cf-core:** Changed heading mixins to prevent heading element styles from leaking into classes.
+- **cf-notifications:** Removed unnecessary icon positioning; fix mistake in usage file.
+
+
+## 5.0.3 - 2018-03-13
+
+### Added
+- **cf-typography:** Note in usage docs about unused italic and demi fonts.
+
+### Changed
+- **cf-core:** Fix OL `padding-left` so numbers aren't cut off in IE
+- **cf-forms:** Updated cf-buttons dependency to v5.0.0
+- **cf-icons:** Make minor improvements to usage doc
+- **cf-pagination:** Updated cf-buttons dependency to v5.0.0
+- **capital-framework:** Updates `babel-loader` to `^7.1.4`,
+  `uglifyjs-webpack-plugin` to `^1.2.2`, `webpack-stream` to `^4.0.2`.
+
+### Removed
+- **cf-core:** Removed text-shadow hack to fix inconsistent demibold font weight in Chrome and other browsers.
+
 
 ## 5.0.2 - 2018-02-26
 

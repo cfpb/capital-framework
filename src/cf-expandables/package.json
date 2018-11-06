@@ -1,6 +1,6 @@
 {
   "name": "cf-expandables",
-  "version": "5.0.0",
+  "version": "7.0.1",
   "description": "Capital Framework expandables",
   "main": "src/cf-expandables.js",
   "less": "src/cf-expandables.less",

@@ -180,19 +180,22 @@ and modifiers described throughout.
 
 The following combination is our recommended go-to expandable pattern.
 
-<div class="o-expandable o-expandable__padded">
+<div class="o-expandable
+            o-expandable__padded
+            o-expandable__background
+            o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
-        <span class="o-expandable_header-left o-expandable_label">
+        <h3 class="h4 o-expandable_header-left o-expandable_label">
             Expandable Header
-        </span>
+        </h3>
         <span class="o-expandable_header-right o-expandable_link">
             <span class="o-expandable_cue o-expandable_cue-open">
-                Show
+                <span class="u-visually-hidden-on-mobile">Show</span>
                 {% include icons/plus-round.svg %}
             </span>
             <span class="o-expandable_cue o-expandable_cue-close">
-                Hide
+                <span class="u-visually-hidden-on-mobile">Hide</span>
                 {% include icons/minus-round.svg %}
             </span>
         </span>
@@ -209,19 +212,22 @@ The following combination is our recommended go-to expandable pattern.
 </div>
 
 ```
-<div class="o-expandable o-expandable__padded">
+<div class="o-expandable
+            o-expandable__padded
+            o-expandable__background
+            o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
-        <span class="o-expandable_header-left o-expandable_label">
+        <h3 class="h4 o-expandable_header-left o-expandable_label">
             Expandable Header
-        </span>
+        </h3>
         <span class="o-expandable_header-right o-expandable_link">
             <span class="o-expandable_cue o-expandable_cue-open">
-                Show
+                <span class="u-visually-hidden-on-mobile">Show</span>
                 {% raw %}{% include icons/plus-round.svg %}{% endraw %}
             </span>
             <span class="o-expandable_cue o-expandable_cue-close">
-                Hide
+                <span class="u-visually-hidden-on-mobile">Hide</span>
                 {% raw %}{% include icons/minus-round.svg %}{% endraw %}
             </span>
         </span>
@@ -240,19 +246,22 @@ The following combination is our recommended go-to expandable pattern.
 
 ### Default state (open on load)
 
-<div class="o-expandable o-expandable__padded">
+<div class="o-expandable
+            o-expandable__padded
+            o-expandable__background
+            o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
-        <span class="o-expandable_header-left o-expandable_label">
+        <h3 class="h4 o-expandable_header-left o-expandable_label">
             Expandable Header
-        </span>
+        </h3>
         <span class="o-expandable_header-right o-expandable_link">
             <span class="o-expandable_cue o-expandable_cue-open">
-                Show
+                <span class="u-visually-hidden-on-mobile">Show</span>
                 {% include icons/plus-round.svg %}
             </span>
             <span class="o-expandable_cue o-expandable_cue-close">
-                Hide
+                <span class="u-visually-hidden-on-mobile">Hide</span>
                 {% include icons/minus-round.svg %}
             </span>
         </span>
@@ -269,19 +278,22 @@ The following combination is our recommended go-to expandable pattern.
 </div>
 
 ```
-<div class="o-expandable o-expandable__padded">
+<div class="o-expandable
+            o-expandable__padded
+            o-expandable__background
+            o-expandable__border">
     <button class="o-expandable_header o-expandable_target"
             title="Expand content">
-        <span class="o-expandable_header-left o-expandable_label">
+        <h3 class="h4 o-expandable_header-left o-expandable_label">
             Expandable Header
-        </span>
+        </h3>
         <span class="o-expandable_header-right o-expandable_link">
             <span class="o-expandable_cue o-expandable_cue-open">
-                Show
+                <span class="u-visually-hidden-on-mobile">Show</span>
                 {% raw %}{% include icons/plus-round.svg %}{% endraw %}
             </span>
             <span class="o-expandable_cue o-expandable_cue-close">
-                Hide
+                <span class="u-visually-hidden-on-mobile">Hide</span>
                 {% raw %}{% include icons/minus-round.svg %}{% endraw %}
             </span>
         </span>
@@ -308,10 +320,10 @@ In this barebones example there are no visual styles.
 <div class="o-expandable">
     <button class="o-expandable_target" title="Expand content">
         <span class="o-expandable_cue o-expandable_cue-open">
-            Show
+            <span class="u-visually-hidden-on-mobile">Show</span>
         </span>
         <span class="o-expandable_cue o-expandable_cue-close">
-            Hide
+            <span class="u-visually-hidden-on-mobile">Hide</span>
         </span>
     </button>
     <div class="o-expandable_content">
@@ -329,10 +341,10 @@ In this barebones example there are no visual styles.
 <div class="o-expandable">
     <button class="o-expandable_target" title="Expand content">
         <span class="o-expandable_cue o-expandable_cue-open">
-            Show
+            <span class="u-visually-hidden-on-mobile">Show</span>
         </span>
         <span class="o-expandable_cue o-expandable_cue-close">
-            Hide
+            <span class="u-visually-hidden-on-mobile">Hide</span>
         </span>
     </button>
     <div class="o-expandable_content">
@@ -354,16 +366,16 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 1
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
-                    Show
+                    <span class="u-visually-hidden-on-mobile">Show</span>
                     {% include icons/plus-round.svg %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
-                    Hide
+                    <span class="u-visually-hidden-on-mobile">Hide</span>
                     {% include icons/minus-round.svg %}
                 </span>
             </span>
@@ -381,16 +393,16 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 2
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
-                    Show
+                    <span class="u-visually-hidden-on-mobile">Show</span>
                     {% include icons/plus-round.svg %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
-                    Hide
+                    <span class="u-visually-hidden-on-mobile">Hide</span>
                     {% include icons/minus-round.svg %}
                 </span>
             </span>
@@ -408,16 +420,16 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 3
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
-                    Show
+                    <span class="u-visually-hidden-on-mobile">Show</span>
                     {% include icons/plus-round.svg %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
-                    Hide
+                    <span class="u-visually-hidden-on-mobile">Hide</span>
                     {% include icons/minus-round.svg %}
                 </span>
             </span>
@@ -439,16 +451,16 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 1
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
-                    Show
+                    <span class="u-visually-hidden-on-mobile">Show</span>
                     {% raw %}{% include icons/plus-round.svg %}{% endraw %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
-                    Hide
+                    <span class="u-visually-hidden-on-mobile">Hide</span>
                     {% raw %}{% include icons/minus-round.svg %}{% endraw %}
                 </span>
             </span>
@@ -466,16 +478,16 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 2
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
-                    Show
+                    <span class="u-visually-hidden-on-mobile">Show</span>
                     {% raw %}{% include icons/plus-round.svg %}{% endraw %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
-                    Hide
+                    <span class="u-visually-hidden-on-mobile">Hide</span>
                     {% raw %}{% include icons/minus-round.svg %}{% endraw %}
                 </span>
             </span>
@@ -493,16 +505,16 @@ In this barebones example there are no visual styles.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 3
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
-                    Show
+                    <span class="u-visually-hidden-on-mobile">Show</span>
                     {% raw %}{% include icons/plus-round.svg %}{% endraw %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
-                    Hide
+                    <span class="u-visually-hidden-on-mobile">Hide</span>
                     {% raw %}{% include icons/minus-round.svg %}{% endraw %}
                 </span>
             </span>
@@ -530,16 +542,16 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 1
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
-                    Show
+                    <span class="u-visually-hidden-on-mobile">Show</span>
                     {% include icons/plus-round.svg %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
-                    Hide
+                    <span class="u-visually-hidden-on-mobile">Hide</span>
                     {% include icons/minus-round.svg %}
                 </span>
             </span>
@@ -557,16 +569,16 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 2
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
-                    Show
+                    <span class="u-visually-hidden-on-mobile">Show</span>
                     {% include icons/plus-round.svg %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
-                    Hide
+                    <span class="u-visually-hidden-on-mobile">Hide</span>
                     {% include icons/minus-round.svg %}
                 </span>
             </span>
@@ -584,16 +596,16 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 3
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
-                    Show
+                    <span class="u-visually-hidden-on-mobile">Show</span>
                     {% include icons/plus-round.svg %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
-                    Hide
+                    <span class="u-visually-hidden-on-mobile">Hide</span>
                     {% include icons/minus-round.svg %}
                 </span>
             </span>
@@ -615,16 +627,16 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 1
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
-                    Show
+                    <span class="u-visually-hidden-on-mobile">Show</span>
                     {% raw %}{% include icons/plus-round.svg %}{% endraw %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
-                    Hide
+                    <span class="u-visually-hidden-on-mobile">Hide</span>
                     {% raw %}{% include icons/minus-round.svg %}{% endraw %}
                 </span>
             </span>
@@ -642,16 +654,16 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 2
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
-                    Show
+                    <span class="u-visually-hidden-on-mobile">Show</span>
                     {% raw %}{% include icons/plus-round.svg %}{% endraw %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
-                    Hide
+                    <span class="u-visually-hidden-on-mobile">Hide</span>
                     {% raw %}{% include icons/minus-round.svg %}{% endraw %}
                 </span>
             </span>
@@ -669,16 +681,16 @@ to activate the accordion mode.
     <div class="o-expandable o-expandable__padded">
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
-            <span class="o-expandable_header-left o-expandable_label">
+            <h3 class="h4 o-expandable_header-left o-expandable_label">
                 Expandable Header 3
-            </span>
+            </h3>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
-                    Show
+                    <span class="u-visually-hidden-on-mobile">Show</span>
                     {% raw %}{% include icons/plus-round.svg %}{% endraw %}
                 </span>
                 <span class="o-expandable_cue o-expandable_cue-close">
-                    Hide
+                    <span class="u-visually-hidden-on-mobile">Hide</span>
                     {% raw %}{% include icons/minus-round.svg %}{% endraw %}
                 </span>
             </span>

@@ -4,8 +4,6 @@
    Mixin to add basic event callback functionality.
    ========================================================================== */
 
-'use strict';
-
 const Events = {
 
   /**
@@ -37,7 +35,7 @@ const Events = {
     return this;
   },
 
-   /**
+  /**
    * Function used to trigger events that exist on the event stack.
    *
    * @param {string} eventName - The name of the event to trigger.
@@ -48,7 +46,7 @@ const Events = {
     if ( events.hasOwnProperty( eventName ) === false ) {
       return this;
     }
-    for ( var i = 0, len = events[eventName].length; i < len; i++ ) {
+    for ( let i = 0, len = events[eventName].length; i < len; i++ ) {
       this.events[eventName][i].apply( this, arguments );
     }
 

@@ -92,6 +92,18 @@ has a near-identical syntax for includes, but it requires that the path
 be enclosed in quotation marks, like so:
 `{% raw %}{% include 'icons/download.svg' %}{% endraw %}`._
 
+The filenames of the SVGs included with cf-icons
+match the names in [the tables below](#the-icons).
+There are duplicate SVG files for each alias, as well.
+
+_Note to contributors: If any icon is ever updated,
+you must be sure to also update each of the alias SVGs._
+
+{% comment %}
+TODO: Provide better contributing docs for SVG icons,
+including how to run the Node script for processing the source SVGs.
+{% endcomment %}
+
 #### What the Less is doing
 
 If you look in `cf-icons.less`, below the afore-mentioned sizing variable,
@@ -150,6 +162,11 @@ unless a future need requires it.
 
 ### The icons
 
+Each icon has a circled variant shown in the second column
+(or square, in the case of the social media icons)
+that can be accessed by appending `-round` (or `-square`) to
+the cancanonical name or any of its aliases.
+
 #### Navigation icons
 
 | icon | icon-round | canonical name | aliases |
@@ -172,7 +189,7 @@ unless a future need requires it.
 | {% include icons/error.svg %} | {% include icons/error-round.svg %} | error | delete, close, remove, multiply, multiplication, x |
 | {% include icons/warning.svg %} | {% include icons/warning-round.svg %} | warning | alert, exclamation-mark |
 | {% include icons/help.svg %} | {% include icons/help-round.svg %} | help | question, question-mark |
-| {% include icons/update.svg %} | {% include icons/update-round.svg %} | update |  |
+| {% include icons/update.svg %} | {% include icons/update-round.svg %} | update | updating _(used for animated state)_ |
 | {% include icons/dollar.svg %} | {% include icons/dollar-round.svg %} | dollar |  |
 | {% include icons/plus.svg %} | {% include icons/plus-round.svg %} | plus | add, addition, expand |
 | {% include icons/minus.svg %} | {% include icons/minus-round.svg %} | minus | subtract, subtraction, collapse |
@@ -185,7 +202,7 @@ unless a future need requires it.
 
 | icon | icon-square | canonical name | aliases |
 | ---- | ---------- | -------------- | ------- |
-| {% include icons/email.svg %} | {% include icons/email-square.svg %} | email | envaelope, envelope-back |
+| {% include icons/email.svg %} | {% include icons/email-square.svg %} | email | envelope, envelope-back |
 | {% include icons/facebook.svg %} | {% include icons/facebook-square.svg %} | facebook |  |
 | {% include icons/flickr.svg %} | {% include icons/flickr-square.svg %} | flickr |  |
 | {% include icons/github.svg %} | {% include icons/github-square.svg %} | github |  |

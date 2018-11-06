@@ -49,18 +49,12 @@ __pycache__/
 *.py[cod]
 .env
 
-# Django #
-##########
-*.egg-info
-.installed.cfg
-
 # Unit test / coverage reports #
 ################################
 htmlcov/
 .tox/
 .coverage
 .cache
-nosetests.xml
 coverage.xml
 test/unit-test-coverage/
 test/build-test-coverage/
@@ -68,8 +62,6 @@ test/build-test-coverage/
 # Front-End #
 #############
 node_modules/
-bower_components/
-.grunt/
 vendor/
 static/vendor/
 src/vendor/

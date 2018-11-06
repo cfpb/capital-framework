@@ -1,75 +1,76 @@
 const component = require( './parseComponentName' );
+const fancyLog = require( 'fancy-log' );
+const fsHelper = require( '../utils/fs-helper' );
 const gulp = require( 'gulp' );
-const gulpQunit = require( 'gulp-qunit' );
-
-const gulpIstanbul = require( 'gulp-istanbul' );
-const gulpMocha = require( 'gulp-mocha' );
+const minimist = require( 'minimist' );
+const spawn = require( 'child_process' ).spawn;
 
 /**
- * Test the JS components with qUnit
- * @param {Function} cb - Callback function to call on completion
- */
-function testQUnit( cb ) {
-  gulp.src( './test/' + ( component || '*' ) + '.html' )
-    .pipe( gulpQunit( { timeout: 20 } ) )
-    .on( 'finish', cb );
-}
-
-/**
- * Run Mocha JavaScript unit tests.
+ * Run JavaScript unit tests.
  * @param {Function} cb - Callback function to call on completion.
+ * @returns {ChildProcess} - Process to hand back to the gulp stream.
  */
 function testUnit( cb ) {
-  gulp.src( [ './src/**/*.js',
-    '!./src/**/node_modules/**/*.js',
-    '!./src/**/src/cf-*',
-    '!./src/capital-framework.js' ] )
-    .pipe( gulpIstanbul( {
-      includeUntested: true
-    } ) )
-    .pipe( gulpIstanbul.hookRequire() )
-    .on( 'finish', () => {
-      gulp.src( 'test/unit-test/**/*.js' )
-        .pipe( gulpMocha( {
-          reporter: 'nyan'
-        } ) )
-        .pipe( gulpIstanbul.writeReports( {
-          dir: 'test/unit-test-coverage'
-        } ) )
-        .on( 'end', cb );
-    } );
+  const params = minimist( process.argv.slice( 3 ) ) || {};
+
+  /* If --specs=path/to/js/spec flag is added on the command-line,
+     pass the value to mocha to test individual unit test files. */
+  let specs = params.specs;
+
+  // Set regex defaults.
+  let fileTestRegex = 'unit-test/';
+  let fileSrcPath = '';
+
+  // If --specs flag is passed, adjust regex defaults.
+  if ( specs ) {
+    fileSrcPath += specs;
+    // If the --specs argument is a file, strip it off.
+    if ( specs.slice( -3 ) === '.js' ) {
+      // TODO: Perform a more robust replacement here.
+      fileSrcPath = fileSrcPath.replace( '-spec', '' );
+      fileTestRegex += specs;
+    } else {
+
+      // Ensure there's a trailing slash.
+      if ( specs.slice( -1 ) !== '/' ) {
+        specs += '/';
+        fileSrcPath += '/';
+      }
+
+      fileSrcPath += '**/*.js';
+      fileTestRegex += specs + '.*-spec.js';
+    }
+  } else {
+    fileSrcPath += '**/*.js';
+    fileTestRegex += '.*-spec.js';
+  }
+
+  const testProcess = spawn(
+    fsHelper.getBinary( 'jest-cli', 'jest.js', '../bin' ),
+    [
+      '--config=jest.config.js',
+      `--collectCoverageFrom=${ fileSrcPath }`,
+      '--coveragePathIgnorePatterns=<rootDir>/tmp/',
+      `--testRegex=${ fileTestRegex }`,
+      '--detectOpenHandles'
+    ],
+    { stdio: 'inherit' }
+  );
+
+  testProcess.once( 'close', code => {
+    if ( code ) {
+      fancyLog( 'Unit tests exited with code ' + code );
+      process.exit( 1 );
+    }
+    fancyLog( 'Unit tests done!' );
+    cb();
+  } );
+
+  return testProcess;
 }
 
-
-/**
- * Run Mocha JavaScript build tests.
- * @param {Function} cb - Callback function to call on completion.
- */
-function testBuild( cb ) {
-  gulp.src( [ './scripts/npm/prepublish/lib/**/*.js' ] )
-    .pipe( gulpIstanbul( {
-      includeUntested: true
-    } ) )
-    .pipe( gulpIstanbul.hookRequire() )
-    .on( 'finish', () => {
-      gulp.src( 'test/build-test/**/*.js' )
-        .pipe( gulpMocha( {
-          reporter: 'nyan'
-        } ) )
-        .pipe( gulpIstanbul.writeReports( {
-          dir: 'test/build-test-coverage'
-        } ) )
-        .on( 'end', cb );
-    } );
-}
-
-// TODO: Add test commands to repo documentation.
-gulp.task( 'test:qunit', testQUnit );
 gulp.task( 'test:unit', testUnit );
-gulp.task( 'test:build', testBuild );
 
-gulp.task( 'test', gulp.series(
-  'test:unit',
-  'test:build',
-  'test:qunit'
+gulp.task( 'test', gulp.parallel(
+  'test:unit'
 ) );

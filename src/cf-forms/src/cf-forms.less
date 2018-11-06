@@ -29,6 +29,9 @@
 @input-text__placeholder:           @gray;
 
 // .a-text-input icons
+@input-icon:                        @gray;
+@input-icon__success:               @green;
+@input-icon__warning:               @gold;
 @input-icon__error:                 @red;
 
 // .a-select
@@ -52,7 +55,7 @@
 // Sizing variables
 
 // .a-select
-@select-height:                     30px;
+@select-height:                     35px;
 
 
 //
@@ -69,6 +72,7 @@
 // Import atoms
 //
 
+@import (less) 'atoms/form-alert.less';
 @import (less) 'atoms/label.less';
 @import (less) 'atoms/legend.less';
 @import (less) 'atoms/multiselect.less';

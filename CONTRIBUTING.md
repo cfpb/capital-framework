@@ -38,7 +38,7 @@ For example, if you wanted to change `cf-buttons`, here's what you'd do:
 1. Inspect and test your modified `cf-buttons` component in `tmp/`. See _Testing components locally_ below.
 1. When you're done hacking, open `/CHANGELOG.md` and add a line item describing your changes in the "Unreleased" section.
 Use the format: `- **cf-component-name:** [MAJOR|MINOR|PATCH] Description of change`.
-[Here's an example](https://github.com/cfpb/capital-framework/pull/291/files#diff-4ac32a78649ca5bdd8e0ba38b7006a1eR12).
+[Here's an example](https://github.com/cfpb/capital-framework/pull/840/files#diff-4ac32a78649ca5bdd8e0ba38b7006a1eR12).
   - If the change affects *all* components, put `**all components:**` as the name.
   - If the change affects CF and not any components (e.g. if you're just updating [README.md](README.md)), put `**capital-framework**`.
   - **Note:** Don't bump components' versions in their `package.json` files. CFPBot will take care of that.
@@ -50,6 +50,10 @@ If you are not a current contributor to Capital Framework, continue using forks
 by first clicking the fork button on top of the repository and cloning your fork in step 1. In the final step, go to https://github.com/cfpb/capital-framework and file a pull request by clicking the link to compare changes across forks.
 
 ### Testing components locally
+
+#### Automated tests
+
+Automated tests can be run with the command `gulp test`.
 
 #### Testing in the documentation site
 
@@ -74,13 +78,13 @@ In a second local clone of this repo in a different folder:
 If you're hacking on a component and want to test it in a local project, use npm linking. For example:
 
 ```sh
-cd ~/Projects/capital-framework/ 	# wherever you cloned this repo
-npm run cf-link 					# this makes all the components linkable
-git checkout [branch] 				# make your edits on a branch
+cd ~/Projects/capital-framework/  # wherever you cloned this repo
+npm run cf-link                   # this makes all the components linkable
+git checkout [branch]             # make your edits on a branch
 
-cd ~/Projects/owning-a-home
-npm link cf-buttons 				# or whatever component you're working on
-gulp build 							# or whatever build process your project uses
+cd ~/Projects/cfgov-refresh       # or whatever project you're working on
+npm link cf-buttons               # or whatever component you're working on
+gulp build                        # or whatever build process your project uses
 ```
 
 Now `~/Projects/owning-a-home/node_modules/cf-buttons` will be a symlink pointing to the `~/Projects/capital-framework/src/cf-buttons` directory. Whenever you make changes in the Capital Framework repo run the build task in your project to see your changes.
