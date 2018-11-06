@@ -78,13 +78,13 @@ In a second local clone of this repo in a different folder:
 If you're hacking on a component and want to test it in a local project, use npm linking. For example:
 
 ```sh
-cd ~/Projects/capital-framework/ 	# wherever you cloned this repo
-npm run cf-link 					# this makes all the components linkable
-git checkout [branch] 				# make your edits on a branch
+cd ~/Projects/capital-framework/  # wherever you cloned this repo
+npm run cf-link                   # this makes all the components linkable
+git checkout [branch]             # make your edits on a branch
 
-cd ~/Projects/owning-a-home
-npm link cf-buttons 				# or whatever component you're working on
-gulp build 							# or whatever build process your project uses
+cd ~/Projects/cfgov-refresh       # or whatever project you're working on
+npm link cf-buttons               # or whatever component you're working on
+gulp build                        # or whatever build process your project uses
 ```
 
 Now `~/Projects/owning-a-home/node_modules/cf-buttons` will be a symlink pointing to the `~/Projects/capital-framework/src/cf-buttons` directory. Whenever you make changes in the Capital Framework repo run the build task in your project to see your changes.
