@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "Getting started"
+title:  "Getting Started"
 ---
 
 Capital Framework provides a set of modular HTML, CSS, and JavaScript patterns that can be used both collectively and individually.

@@ -46,7 +46,7 @@ JavaScript tests can be run with the `npm test` command. Before making a pull
 request please publicly track that all tests have passed using the testing
 checklist in the pull request description.
 
-New unit tests should be written using [QUnit](https://qunitjs.com/) for any functionality added.
+New unit tests should be written using [Jest](https://jestjs.io/) for any functionality added.
 
 
 ### Accessibility testing

@@ -25,6 +25,16 @@ gulp.task( 'copy:files', function() {
     } ) );
 } );
 
+gulp.task( 'copy:iconfont', function() {
+  return gulp.src( configCopy.iconfont.src )
+    .pipe( gulpChanged( configCopy.iconfont.dest ) )
+    .on( 'error', handleErrors )
+    .pipe( gulp.dest( configCopy.iconfont.dest ) )
+    .pipe( browserSync.reload( {
+      stream: true
+    } ) );
+} );
+
 gulp.task( 'copy:icons', function() {
   return gulp.src( configCopy.icons.src )
     .pipe( gulpChanged( configCopy.icons.destStatic ) )
@@ -68,6 +78,7 @@ gulp.task( 'copy:usage', function() {
 gulp.task( 'copy',
   [
     'copy:files',
+    'copy:iconfont',
     'copy:icons',
     'copy:vendorjs',
     'copy:usage'

@@ -1,35 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="{{ site.github.url }}/dist/static/css/main.min.css">
-  </head>
-  <body>
-  <div class="body-wrapper">
-    {% include header.html %}
+{% include page-top.html %}
 
-    <main class="content content__1-3" id="main" role="main">
-      <div class="content_bar"></div>
-      <div class="content_wrapper">
-        {% include section-nav.html %}
-        <section class="content_main">
-          {% include content-header.html %}
-          {{ content }}
-        </section>
-      </div>
-    </main>
+{% include header.html %}
 
-      {% include footer.html %}
+<main class="content content__1-3" id="main" role="main">
+  <div class="content_bar"></div>
+  <div class="content_wrapper">
+    {% include section-nav.html %}
+    <section class="content_main">
+      {% include content-header.html %}
+      {{ content }}
+    </section>
+  </div>
+</main>
 
-  </div><!-- /.body-wrapper -->
-  <script src="{{ site.github.url }}/dist/static/js/main.min.js"></script>
+{% include footer.html %}
 
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="//fast.fonts.net/t/1.css?apiType=css&projectid=44e8c964-4684-44c6-a6e3-3f3da8787b50">
-  <!--<![endif]-->
-
-  </body>
-</html>
+{% include page-bottom.html %}

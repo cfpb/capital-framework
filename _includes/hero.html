@@ -12,25 +12,19 @@ $ yo cf
 
       <p class="hero_p sans">
         Not into the command line?
-        <a class="a-link
-                  a-link__icon
-                  cf-icon
-                  cf-icon__after
-                  cf-icon-download"
+        <a class="a-link a-link__icon"
            href="https://npmcdn.com/capital-framework/dist/">
           <span class="a-link_text">Download the compiled source</span>
+          {% include icons/download.svg %}
         </a>
       </p>
 
       <p class="hero_p sans">
         Need more detailed instructons?
-        <a class="a-link
-                  a-link__icon
-                  cf-icon
-                  cf-icon__after
-                  cf-icon-right"
-           href="{{ site.github.url }}/getting-started/">
+        <a class="a-link a-link__icon"
+           href="{{ '/getting-started/' | relative_url }}">
           <span class="a-link_text">Read the Getting Started guide</span>
+          {% include icons/right.svg %}
         </a>
       </p>
 
