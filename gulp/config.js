@@ -71,6 +71,10 @@ module.exports = {
       ],
       dest: loc.dist
     },
+    iconfont: {
+      src:  loc.lib + '/cf-icons/src/fonts/*.*',
+      dest: loc.dist + '/static/css/fonts/'
+    },
     icons: {
       src:  loc.lib + '/cf-icons/src/icons/*.svg',
       destIncludes: '_includes/icons/',

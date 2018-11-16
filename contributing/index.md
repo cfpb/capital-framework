@@ -5,12 +5,12 @@ title:  "Contributing"
 
 ## Building components locally
 
-{% highlight sh %}
+```sh
 git clone git@github.com:cfpb/capital-framework.git
 cd capital-framework
 npm install
 npm run build
-{% endhighlight %}
+```
 
 This will build every component (compiling Less, bundling JS, processing markdown docs) to `tmp/` in the project's root.
 
@@ -20,14 +20,14 @@ This will build every component (compiling Less, bundling JS, processing markdow
 If you're hacking on a component and want to test it in a local project, use `npm link`.
 For example:
 
-{% highlight sh %}
+```sh
 cd ~/Projects/capital-framework/ # wherever you cloned this repo
 npm run build
 cd tmp/cf-buttons
 npm link
 cd ~/Projects/owning-a-home # whatever project you want to test the component in
 npm link cf-buttons
-{% endhighlight %}
+```
 
 Now `~/Projects/owning-a-home/node_modules/cf-buttons` will be a symlink pointing
 to the `~/Projects/capital-framework/tmp/cf-buttons` directory.
@@ -46,7 +46,7 @@ JavaScript tests can be run with the `npm test` command. Before making a pull
 request please publicly track that all tests have passed using the testing
 checklist in the pull request description.
 
-New unit tests should be written using [QUnit](https://qunitjs.com/) for any functionality added.
+New unit tests should be written using [Jest](https://jestjs.io/) for any functionality added.
 
 
 ### Accessibility testing
@@ -85,12 +85,12 @@ or warnings using the testing checklist in the pull request description.
 
 **We are using a customized BEM format**
 
-{% highlight css %}
+```css
 .block-name
 .block-name_element-name
 .block-name__block-modifier
 .block-name_element-name__element-modifier
-{% endhighlight %}
+```
 
 **Avoid creating elements of modifiers**
 
@@ -104,32 +104,6 @@ Avoid this in favor of using a descendant, like this: `.list__spaced .list_item`
 In most cases styles should be declared mobile first,
 then enhanced with `min-width` media queries. By doing this we create a base
 experience that all devices can use and one that does not require media query support.
-
-
-### Automatically create an alternate stylesheet for older IE
-
-Use [grunt-legacssy](https://github.com/robinpokorny/grunt-legacssy) to
-automatically create an alternate version of your stylesheet.
-The alternate version will be stripped of media query rules matching your
-specified criteria while leaving the contents of those rules intact.
-
-Use conditional comments to serve this alternate stylesheet to older versions
-of Internet Explorer.
-
-Our recommended configuration for grunt-legacssy:
-
-{% highlight js %}
-legacssy: {
-  demo: {
-    options: {
-      legacyWidth: 960
-    },
-    files: {
-      'main.lt-ie9.css': 'main.css'
-    }
-  }
-}
-{% endhighlight %}
 
 
 ## Licensing
