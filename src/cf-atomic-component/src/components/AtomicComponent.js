@@ -260,7 +260,7 @@ assign( AtomicComponent.prototype, Events, classList, {
  */
 AtomicComponent.extend = function( attributes ) {
 
-/**
+  /**
  * Function used as constructor in order to establish inheritance
  * chain.
  * @returns {AtomicComponent} An instance.
