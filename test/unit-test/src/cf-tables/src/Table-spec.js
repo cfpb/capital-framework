@@ -1,4 +1,4 @@
-import { simulateEvent } from '../../../../util/simulate-event';
+import simulateEvent from '../../../../util/simulate-event';
 const Table = require( '../../../../../src/cf-tables/src/Table' );
 
 const HTML_SNIPPET = `

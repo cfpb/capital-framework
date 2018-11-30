@@ -1,4 +1,4 @@
-import { simulateEvent } from '../../../../util/simulate-event';
+import simulateEvent from '../../../../util/simulate-event';
 const Expandable = require(
   '../../../../../src/cf-expandables/src/Expandable'
 );

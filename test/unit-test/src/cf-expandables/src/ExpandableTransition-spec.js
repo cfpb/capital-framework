@@ -1,4 +1,3 @@
-import { simulateEvent } from '../../../../util/simulate-event';
 const ExpandableTransition = require(
   '../../../../../src/cf-expandables/src/ExpandableTransition'
 );

@@ -5,9 +5,16 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Added
 - **cf-icons:** [MINOR] Add piggy-bank-check and split icons.
+- **capital-framework:** [PATCH] Adds missing `del` dependency.
 
 ### Changed
--
+- **capital-framework:** [MINOR] Updates `babel-jest`, `babel-loader`,
+  `gulp-less`, `jest`, `jest-cli`, `jest-when`, `jsdom`, `require-dir`,
+  and `through2`.
+- **capital-framework:** [PATCH] .babelrc updated to babel.config.js.
+- **cf-atomic-component:** [PATCH] Updates test to import dom-closest.
+- **cf-expandables:** [PATCH] Updates test simulate event syntax to es6 modules.
+- **cf-tables:** [PATCH] Updates test simulate event syntax to es6 modules.
 
 ### Removed
 -
