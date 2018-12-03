@@ -11,7 +11,7 @@ const HTML_SNIPPET = `
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
             <span class="o-expandable_header-left o-expandable_label">
-                Expandable Header
+                Expandable Header 1
             </span>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
@@ -37,7 +37,7 @@ const HTML_SNIPPET = `
         <button class="o-expandable_header o-expandable_target"
                 title="Expand content">
             <span class="o-expandable_header-left o-expandable_label">
-                Expandable Header
+                Expandable Header 2
             </span>
             <span class="o-expandable_header-right o-expandable_link">
                 <span class="o-expandable_cue o-expandable_cue-open">
@@ -61,6 +61,7 @@ const HTML_SNIPPET = `
 </div>
 `;
 
+let expandable;
 let expandableGroup;
 let expandableDom1;
 let expandableDom2;
@@ -68,6 +69,7 @@ let targetDom1;
 let targetDom2;
 let contentDom1;
 let contentDom2;
+let label1;
 
 describe( 'standard Expandable', () => {
 
@@ -80,8 +82,10 @@ describe( 'standard Expandable', () => {
     contentDom1 = expandableDom1.querySelector( '.o-expandable_content' );
     contentDom2 = expandableDom2.querySelector( '.o-expandable_content' );
     contentDom2.classList.add( 'o-expandable_content__onload-open' );
+    const labelDom1 = expandableDom1.querySelector( '.o-expandable_label' );
+    label1 = labelDom1.textContent.trim();
 
-    Expandable.init();
+    expandable = Expandable.init()[0];
   } );
 
   describe( 'initialized state', () => {
@@ -110,6 +114,10 @@ describe( 'standard Expandable', () => {
       expect( targetDom2.classList.contains(
         'o-expandable_target__collapsed'
       ) ).toBe( false );
+    } );
+
+    it( 'should return label text', () => {
+      expect( expandable.getLabelText() === 'Expandable Header 1' );
     } );
   } );
 
@@ -154,7 +162,7 @@ describe( 'accordion Expandables', () => {
     targetDom1 = expandableDom1.querySelector( '.o-expandable_target' );
     targetDom2 = expandableDom2.querySelector( '.o-expandable_target' );
 
-    Expandable.init();
+    expandable = Expandable.init()[1];
   } );
 
   describe( 'initialized state', () => {
