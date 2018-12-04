@@ -1,8 +1,6 @@
 /* ==========================================================================
    Expandable Organism
    ========================================================================== */
-// polyfill for ie9 compatibility
-require( 'classlist-polyfill' );
 
 const domClassList = require(
   'cf-atomic-component/src/utilities/dom-class-list'
