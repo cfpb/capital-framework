@@ -17,7 +17,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-tables:** [PATCH] Updates test simulate event syntax to es6 modules.
 
 ### Removed
--
+- **cf-atomic-component:** [PATCH] Removes unused data-set utility.
 
 ## 7.3.0 - 2018-11-06
 
