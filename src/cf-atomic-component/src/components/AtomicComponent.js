@@ -11,7 +11,6 @@
    ========================================================================== */
 
 const assign = require( '../utilities/object-assign' ).assign;
-const classList = require( '../utilities/dom-class-list' );
 const Delegate = require( 'dom-delegate' ).Delegate;
 const Events = require( '../mixins/Events' );
 const isFunction = require( '../utilities/type-checkers' ).isFunction;
@@ -41,7 +40,7 @@ function AtomicComponent( element, attributes ) {
 }
 
 // Public instance Methods and properties.
-assign( AtomicComponent.prototype, Events, classList, {
+assign( AtomicComponent.prototype, Events, {
 
   tagName: 'div',
 
@@ -58,7 +57,7 @@ assign( AtomicComponent.prototype, Events, classList, {
     }
 
     this.modifiers.forEach( function( modifier ) {
-      if ( classList.contains( this.element, modifier.ui.base ) ) {
+      if ( this.element.contains( modifier.ui.base ) ) {
         if ( modifier.initialize ) {
           this.initializers.push( modifier.initialize );
           delete modifier.initialize;
