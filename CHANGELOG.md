@@ -6,6 +6,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Added
 - **cf-icons:** [MINOR] Add piggy-bank-check and split icons.
 - **capital-framework:** [PATCH] Adds missing `del` dependency.
+- **cf-expandables:** [MINOR] Add getLabelText method.
 
 ### Changed
 - **capital-framework:** [MINOR] Updates `babel-jest`, `babel-loader`,
