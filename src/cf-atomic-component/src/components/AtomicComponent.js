@@ -11,7 +11,6 @@
    ========================================================================== */
 
 const assign = require( '../utilities/object-assign' ).assign;
-const bind = require( '../utilities/function-bind' ).bind;
 const Delegate = require( 'dom-delegate' ).Delegate;
 const Events = require( '../mixins/Events' );
 const isFunction = require( '../utilities/type-checkers' ).isFunction;
@@ -197,7 +196,7 @@ assign( AtomicComponent.prototype, Events, {
         if ( isFunction( this[method] ) ) method = this[method];
         if ( method ) {
           match = key.match( delegateEventSplitter );
-          this.delegate( match[1], match[2], bind( method, this ) );
+          this.delegate( match[1], match[2], method.bind( this ) );
         }
       }
     }
