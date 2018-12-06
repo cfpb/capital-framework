@@ -9,6 +9,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-expandables:** [MINOR] Add getLabelText method.
 
 ### Changed
+- **cf-atomic-component:** [PATCH] Allow scoping of DOM query in
+  AtomicComponent.init method.
 - **capital-framework:** [MINOR] Updates `babel-jest`, `babel-loader`,
   `gulp-less`, `jest`, `jest-cli`, `jest-when`, `jsdom`, `require-dir`,
   and `through2`.
