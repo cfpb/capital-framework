@@ -58,7 +58,7 @@ assign( AtomicComponent.prototype, Events, {
     }
 
     this.modifiers.forEach( function( modifier ) {
-      if ( this.element.contains( modifier.ui.base ) ) {
+      if ( this.element.classList.contains( modifier.ui.base ) ) {
         if ( modifier.initialize ) {
           this.initializers.push( modifier.initialize );
           delete modifier.initialize;
