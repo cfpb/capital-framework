@@ -6,8 +6,15 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Added
 - **cf-icons:** [MINOR] Add piggy-bank-check and split icons.
 - **capital-framework:** [PATCH] Adds missing `del` dependency.
+- **cf-expandables:** [MINOR] Adds variables
+  `@form-field-border`, `@form-field-border__disabled`, and `@form-field-lg-target-border`
 
 ### Changed
+- **cf-expandables:** [PATCH] Adjusts radio button/checkbox border color.
+- **cf-expandables:** [PATCH] Adds border (box-shadow)
+  to large target input's hover state.
+- **cf-expandables:** [MINOR] Changes radio button/checkbox variables to
+  `@form-field-lg-…` from `@input-lg-…` prefix.
 - **capital-framework:** [MINOR] Updates `babel-jest`, `babel-loader`,
   `gulp-less`, `jest`, `jest-cli`, `jest-when`, `jsdom`, `require-dir`,
   and `through2`.
