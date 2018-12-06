@@ -17,7 +17,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-tables:** [PATCH] Updates test simulate event syntax to es6 modules.
 
 ### Removed
--
+- **cf-expandables:** [MINOR] Remove classlist-polyfill for IE9.
+- **cf-atomic-component:** [MINOR] Remove dom-class-list module for IE9.
 
 ## 7.3.0 - 2018-11-06
 

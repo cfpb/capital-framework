@@ -1,15 +1,7 @@
 /* ==========================================================================
    Expandable Organism
    ========================================================================== */
-// polyfill for ie9 compatibility
-require( 'classlist-polyfill' );
 
-const domClassList = require(
-  'cf-atomic-component/src/utilities/dom-class-list'
-);
-const addClass = domClassList.addClass;
-const contains = domClassList.contains;
-const removeClass = domClassList.removeClass;
 const closest = require(
   'cf-atomic-component/src/utilities/dom-closest'
 ).closest;
@@ -54,18 +46,16 @@ function initialize() {
   );
   this.transition = transition.init();
 
-  if ( contains( this.ui.content, ExpandableTransition.CLASSES.EXPANDED ) ) {
-    addClass( this.ui.target, this.classes.targetExpanded );
+  if ( this.ui.content.classList.contains( ExpandableTransition.CLASSES.EXPANDED ) ) {
+    this.ui.target.classList.add( this.classes.targetExpanded );
   } else {
-    addClass( this.ui.target, this.classes.targetCollapsed );
+    this.ui.target.classList.add( this.classes.targetCollapsed );
   }
 
-  const expandableGroup = closest(
-    this.ui.target, '.' + this.classes.group
-  );
+  const expandableGroup = closest( this.ui.target, '.' + this.classes.group );
 
   this.isAccordionGroup = expandableGroup !== null &&
-    contains( expandableGroup, this.classes.groupAccordion );
+    expandableGroup.classList.contains( this.classes.groupAccordion );
 
   if ( this.isAccordionGroup ) {
     Events.on(
@@ -108,12 +98,12 @@ function expandableClickHandler() {
  * @param {HTMLNode} element - The expandable target HTML DOM element.
  */
 function toggleTargetState( element ) {
-  if ( contains( element, this.classes.targetExpanded ) ) {
-    addClass( this.ui.target, this.classes.targetCollapsed );
-    removeClass( this.ui.target, this.classes.targetExpanded );
+  if ( element.classList.contains( this.classes.targetExpanded ) ) {
+    this.ui.target.classList.add( this.classes.targetCollapsed );
+    this.ui.target.classList.remove( this.classes.targetExpanded );
   } else {
-    addClass( this.ui.target, this.classes.targetExpanded );
-    removeClass( this.ui.target, this.classes.targetCollapsed );
+    this.ui.target.classList.add( this.classes.targetExpanded );
+    this.ui.target.classList.remove( this.classes.targetCollapsed );
   }
 }
 
