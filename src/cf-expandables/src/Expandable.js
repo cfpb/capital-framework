@@ -14,7 +14,8 @@ const Expandable = Organism.extend( {
     base:    '.o-expandable',
     target:  '.o-expandable_target',
     content: '.o-expandable_content',
-    header:  '.o-expandable_header'
+    header:  '.o-expandable_header',
+    label:   '.o-expandable_label'
   },
 
   classes: {
@@ -34,7 +35,8 @@ const Expandable = Organism.extend( {
 
   initialize:             initialize,
   expandableClickHandler: expandableClickHandler,
-  toggleTargetState:      toggleTargetState
+  toggleTargetState:      toggleTargetState,
+  getLabelText:           getLabelText
 } );
 
 /**
@@ -105,6 +107,14 @@ function toggleTargetState( element ) {
     this.ui.target.classList.add( this.classes.targetExpanded );
     this.ui.target.classList.remove( this.classes.targetCollapsed );
   }
+}
+
+/**
+ * Retrieve the label text of the expandable header.
+ * @returns {string} The text of the expandable's label.
+ */
+function getLabelText() {
+  return this.ui.label.textContent.trim();
 }
 
 module.exports = Expandable;

@@ -8,6 +8,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **capital-framework:** [PATCH] Adds missing `del` dependency.
 - **cf-expandables:** [MINOR] Adds variables
   `@form-field-border`, `@form-field-border__disabled`, and `@form-field-lg-target-border`
+- **cf-expandables:** [MINOR] Add getLabelText method.
 
 ### Changed
 - **cf-expandables:** [PATCH] Adjusts radio button/checkbox border color.
@@ -24,6 +25,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-tables:** [PATCH] Updates test simulate event syntax to es6 modules.
 
 ### Removed
+- **cf-atomic-component:** [PATCH] Removes deprecated function bind polyfill.
 - **cf-expandables:** [MINOR] Remove classlist-polyfill for IE9.
 - **cf-atomic-component:** [MINOR] Remove dom-class-list module for IE9.
 
