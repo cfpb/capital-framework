@@ -3,14 +3,12 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
-### Added
--
-
 ### Changed
--
+- **cf-atomic-component:** Fixes issue where leading period was
+  not removed in class name when passed to classList.contains.
+- **cf-tables:** Fixes issue where TableSortable was using
+  classList API incorrectly.
 
-### Removed
--
 
 ## 7.4.0 - 2018-12-10
 
