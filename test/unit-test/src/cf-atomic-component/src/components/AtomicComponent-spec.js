@@ -2,11 +2,16 @@ const srcPath = require( '../src-path' );
 let AtomicComponent = require( srcPath + '/components/AtomicComponent' );
 
 const HTML_SNIPPET = `
-  <div id="test-block-a" class="test-class test-class-a">
-    <div id="test-block-b" class="test-class-b">
-      <div id="test-block-c" class="test-class-c"></div>
-   </div>
-  </div>
+<div id="test-block-a" class="test-class">
+  <div id="test-block-b" class="test-class">
+    <div id="test-block-c" class="test-class"></div>
+ </div>
+</div>
+<div id="test-block-d" class="test-class">
+  <div id="test-block-e" class="test-class">
+    <div id="test-block-f" class="test-class"></div>
+ </div>
+</div>
 `;
 
 describe( 'AtomicComponent', () => {
@@ -58,5 +63,37 @@ describe( 'AtomicComponent', () => {
     const element = document.getElementById( 'test-block-a' );
     const atomicComponent = new AtomicComponent( element );
     expect( atomicComponent.element.hasAttribute( 'data-bound' ) ).toBe( true );
+  } );
+
+  it( 'should initialize all instances in the DOM', () => {
+    const TestComponent = AtomicComponent.extend( {
+      ui: {
+        base: '.test-class'
+      }
+    } );
+
+    const testComponents = TestComponent.init();
+    expect( testComponents.length ).toBe( 6 );
+    expect( testComponents[0].element.id ).toBe( 'test-block-a' );
+    expect( testComponents[1].element.id ).toBe( 'test-block-b' );
+    expect( testComponents[2].element.id ).toBe( 'test-block-c' );
+    expect( testComponents[3].element.id ).toBe( 'test-block-d' );
+    expect( testComponents[4].element.id ).toBe( 'test-block-e' );
+    expect( testComponents[5].element.id ).toBe( 'test-block-f' );
+  } );
+
+  it( 'should initialize scoped instances in the DOM', () => {
+    const TestComponent = AtomicComponent.extend( {
+      ui: {
+        base: '.test-class'
+      }
+    } );
+
+    const testComponents = TestComponent.init(
+      document.querySelector( '#test-block-d' )
+    );
+    expect( testComponents.length ).toBe( 2 );
+    expect( testComponents[0].element.id ).toBe( 'test-block-e' );
+    expect( testComponents[1].element.id ).toBe( 'test-block-f' );
   } );
 } );
