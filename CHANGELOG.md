@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 7.4.0 - 2018-12-10
+
+### Added
 - **cf-icons:** Add piggy-bank-check and split icons.
 - **capital-framework:** Adds missing `del` dependency.
 - **cf-expandables:** Add getLabelText method.
