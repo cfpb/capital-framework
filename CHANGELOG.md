@@ -16,6 +16,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   to large target input's hover state.
 - **cf-expandables:** [MINOR] Changes radio button/checkbox variables to
   `@form-field-lg-…` from `@input-lg-…` prefix.
+- **cf-atomic-component:** [PATCH] Allow scoping of DOM query in
+  AtomicComponent.init method.
 - **capital-framework:** [MINOR] Updates `babel-jest`, `babel-loader`,
   `gulp-less`, `jest`, `jest-cli`, `jest-when`, `jsdom`, `require-dir`,
   and `through2`.

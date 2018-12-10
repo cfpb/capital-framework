@@ -273,7 +273,7 @@ AtomicComponent.extend = function( attributes ) {
   assign( child, AtomicComponent );
 
   if ( attributes.hasOwnProperty( 'ui' ) &&
-  attributes.ui.hasOwnProperty( 'base' ) ) {
+       attributes.ui.hasOwnProperty( 'base' ) ) {
     child.selector = attributes.ui.base;
   }
 
@@ -286,15 +286,17 @@ AtomicComponent.extend = function( attributes ) {
 /**
  * Function used to instantiate all instances of the particular
  * atomic component on a page.
+ * @param {HTMLNode} scope - Where to search for components within.
  *
  * @returns {Array} List of AtomicComponent instances.
  */
-AtomicComponent.init = function() {
-  const elements = document.querySelectorAll( this.selector );
+AtomicComponent.init = function( scope ) {
+  const base = scope || document;
+  const elements = base.querySelectorAll( this.selector );
   const components = [];
   let element;
 
-  for ( let i = 0; i < elements.length; ++i ) {
+  for ( let i = 0, len = elements.length; i < len; i++ ) {
     element = elements[i];
     if ( element.hasAttribute( 'data-bound' ) === false ) {
       components.push( new this( element ) );
