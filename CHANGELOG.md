@@ -4,26 +4,36 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
-- **cf-icons:** [MINOR] Add piggy-bank-check and split icons.
-- **capital-framework:** [PATCH] Adds missing `del` dependency.
-- **cf-expandables:** [MINOR] Add getLabelText method.
+-
 
 ### Changed
-- **cf-atomic-component:** [PATCH] Allow scoping of DOM query in
-  AtomicComponent.init method.
-- **capital-framework:** [MINOR] Updates `babel-jest`, `babel-loader`,
-  `gulp-less`, `jest`, `jest-cli`, `jest-when`, `jsdom`, `require-dir`,
-  and `through2`.
-- **capital-framework:** [PATCH] .babelrc updated to babel.config.js.
-- **cf-atomic-component:** [PATCH] Updates test to import dom-closest.
-- **cf-expandables:** [PATCH] Updates test simulate event syntax to es6 modules.
-- **cf-tables:** [PATCH] Updates test simulate event syntax to es6 modules.
+-
 
 ### Removed
 - **cf-atomic-component:** [PATCH] Removes unused data-set utility.
-- **cf-atomic-component:** [PATCH] Removes deprecated function bind polyfill.
-- **cf-expandables:** [MINOR] Remove classlist-polyfill for IE9.
-- **cf-atomic-component:** [MINOR] Remove dom-class-list module for IE9.
+
+## 7.4.0 - 2018-12-10
+
+### Added
+- **cf-icons:** Add piggy-bank-check and split icons.
+- **capital-framework:** Adds missing `del` dependency.
+- **cf-expandables:** Add getLabelText method.
+
+### Changed
+- **cf-atomic-component:** Allow scoping of DOM query in
+  AtomicComponent.init method.
+- **capital-framework:** Updates `babel-jest`, `babel-loader`,
+  `gulp-less`, `jest`, `jest-cli`, `jest-when`, `jsdom`, `require-dir`,
+  and `through2`.
+- **capital-framework:** .babelrc updated to babel.config.js.
+- **cf-atomic-component:** Updates test to import dom-closest.
+- **cf-expandables:** Updates test simulate event syntax to es6 modules.
+- **cf-tables:** Updates test simulate event syntax to es6 modules.
+
+### Removed
+- **cf-atomic-component:** Removes deprecated function bind polyfill.
+- **cf-expandables:** Remove classlist-polyfill for IE9.
+- **cf-atomic-component:** Remove dom-class-list module for IE9.
 
 ## 7.3.0 - 2018-11-06
 
