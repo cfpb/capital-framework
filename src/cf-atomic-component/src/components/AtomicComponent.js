@@ -11,7 +11,6 @@
    ========================================================================== */
 
 const assign = require( '../utilities/object-assign' ).assign;
-const bind = require( '../utilities/function-bind' ).bind;
 const Delegate = require( 'dom-delegate' ).Delegate;
 const Events = require( '../mixins/Events' );
 const isFunction = require( '../utilities/type-checkers' ).isFunction;
@@ -58,7 +57,7 @@ assign( AtomicComponent.prototype, Events, {
     }
 
     this.modifiers.forEach( function( modifier ) {
-      if ( this.element.contains( modifier.ui.base ) ) {
+      if ( this.element.classList.contains( modifier.ui.base ) ) {
         if ( modifier.initialize ) {
           this.initializers.push( modifier.initialize );
           delete modifier.initialize;
@@ -197,7 +196,7 @@ assign( AtomicComponent.prototype, Events, {
         if ( isFunction( this[method] ) ) method = this[method];
         if ( method ) {
           match = key.match( delegateEventSplitter );
-          this.delegate( match[1], match[2], bind( method, this ) );
+          this.delegate( match[1], match[2], method.bind( this ) );
         }
       }
     }
@@ -274,7 +273,7 @@ AtomicComponent.extend = function( attributes ) {
   assign( child, AtomicComponent );
 
   if ( attributes.hasOwnProperty( 'ui' ) &&
-  attributes.ui.hasOwnProperty( 'base' ) ) {
+       attributes.ui.hasOwnProperty( 'base' ) ) {
     child.selector = attributes.ui.base;
   }
 
@@ -287,15 +286,17 @@ AtomicComponent.extend = function( attributes ) {
 /**
  * Function used to instantiate all instances of the particular
  * atomic component on a page.
+ * @param {HTMLNode} scope - Where to search for components within.
  *
  * @returns {Array} List of AtomicComponent instances.
  */
-AtomicComponent.init = function() {
-  const elements = document.querySelectorAll( this.selector );
+AtomicComponent.init = function( scope ) {
+  const base = scope || document;
+  const elements = base.querySelectorAll( this.selector );
   const components = [];
   let element;
 
-  for ( let i = 0; i < elements.length; ++i ) {
+  for ( let i = 0, len = elements.length; i < len; i++ ) {
     element = elements[i];
     if ( element.hasAttribute( 'data-bound' ) === false ) {
       components.push( new this( element ) );

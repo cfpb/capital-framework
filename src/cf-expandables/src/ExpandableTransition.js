@@ -17,10 +17,7 @@ const CLASSES = {
  *
  * @classdesc Initializes new ExpandableTransition behavior.
  *
- * @param {HTMLNode} element
- *   DOM element to apply move transition to.
- * @param {Object} classes
- *   An Object of custom classes to override the base classes Object
+ * @param {HTMLNode} element - DOM element to apply move transition to.
  * @returns {ExpandableTransition} An instance.
  */
 function ExpandableTransition( element ) {
@@ -46,7 +43,6 @@ function ExpandableTransition( element ) {
     return this;
   }
 
-  /* istanbul ignore next */
   /**
    * Handle the end of a transition.
    */

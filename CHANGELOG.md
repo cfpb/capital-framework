@@ -6,8 +6,11 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ### Added
 - **cf-icons:** [MINOR] Add piggy-bank-check and split icons.
 - **capital-framework:** [PATCH] Adds missing `del` dependency.
+- **cf-expandables:** [MINOR] Add getLabelText method.
 
 ### Changed
+- **cf-atomic-component:** [PATCH] Allow scoping of DOM query in
+  AtomicComponent.init method.
 - **capital-framework:** [MINOR] Updates `babel-jest`, `babel-loader`,
   `gulp-less`, `jest`, `jest-cli`, `jest-when`, `jsdom`, `require-dir`,
   and `through2`.
@@ -18,6 +21,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Removed
 - **cf-atomic-component:** [PATCH] Removes unused data-set utility.
+- **cf-atomic-component:** [PATCH] Removes deprecated function bind polyfill.
 - **cf-expandables:** [MINOR] Remove classlist-polyfill for IE9.
 - **cf-atomic-component:** [MINOR] Remove dom-class-list module for IE9.
 

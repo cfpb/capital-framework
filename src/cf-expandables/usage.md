@@ -31,6 +31,7 @@ dependencies of this component.
     - [Barebones example](#barebones-expandable)
 - [Expandable groups](#expandable-groups)
     - [Accordion style group](#accordion-style-group)
+- [JavaScript API](#javascript-api)
 
 
 ## Variables
@@ -707,3 +708,32 @@ to activate the accordion mode.
     </div>
 </div>
 ```
+
+## JavaScript API
+
+A new array of Expandable instances can be created with
+`const expandables = Expandable().init();`.
+Each instance has the following methods for public consumption:
+
+### toggleTargetState( element )
+
+```js
+const element = document.querySelector( '.o-expandable_target' );
+expandables[0].toggleTargetState( element );
+```
+
+Toggle an expandable to open or closed.
+
+Parameters:
+ - element {HTMLNode} The expandable target HTML DOM element.
+
+### getLabelText()
+
+```js
+expandables[0].getLabelText();
+```
+
+Retrieve the label text of the expandable header.
+
+Return:
+ - {string} The text of the expandable's label.

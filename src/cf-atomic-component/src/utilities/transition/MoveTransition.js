@@ -1,7 +1,6 @@
 // Required modules.
 const Events = require( '../../mixins/Events.js' );
 const BaseTransition = require( './BaseTransition' );
-const fnBind = require( '../function-bind' ).bind;
 
 // Exported constants.
 const CLASSES = {
@@ -34,7 +33,7 @@ function MoveTransition( element ) {
    */
   function init() {
     _baseTransition.init();
-    const _transitionCompleteBinded = fnBind( _transitionComplete, this );
+    const _transitionCompleteBinded = _transitionComplete.bind( this );
     _baseTransition.addEventListener(
       BaseTransition.END_EVENT,
       _transitionCompleteBinded
