@@ -35,6 +35,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-expandables:** Remove classlist-polyfill for IE9.
 - **cf-atomic-component:** Remove dom-class-list module for IE9.
 
+
 ## 7.3.0 - 2018-11-06
 
 ### Changed
