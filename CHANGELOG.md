@@ -4,13 +4,26 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-icons:** Add piggy-bank-check and split icons.
+- **capital-framework:** Adds missing `del` dependency.
+- **cf-expandables:** Add getLabelText method.
 
 ### Changed
--
+- **cf-atomic-component:** Allow scoping of DOM query in
+  AtomicComponent.init method.
+- **capital-framework:** Updates `babel-jest`, `babel-loader`,
+  `gulp-less`, `jest`, `jest-cli`, `jest-when`, `jsdom`, `require-dir`,
+  and `through2`.
+- **capital-framework:** .babelrc updated to babel.config.js.
+- **cf-atomic-component:** Updates test to import dom-closest.
+- **cf-expandables:** Updates test simulate event syntax to es6 modules.
+- **cf-tables:** Updates test simulate event syntax to es6 modules.
 
 ### Removed
--
+- **cf-atomic-component:** Removes deprecated function bind polyfill.
+- **cf-expandables:** Remove classlist-polyfill for IE9.
+- **cf-atomic-component:** Remove dom-class-list module for IE9.
+
 
 ## 7.3.0 - 2018-11-06
 

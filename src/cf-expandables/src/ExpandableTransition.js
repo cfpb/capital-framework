@@ -1,7 +1,6 @@
 // Required modules.
 const Events = require( 'cf-atomic-component/src/mixins/Events.js' );
 const BaseTransition = require( 'cf-atomic-component/src/utilities/transition/BaseTransition' );
-const contains = require( 'cf-atomic-component/src/utilities/dom-class-list' ).contains;
 
 // Exported constants.
 const CLASSES = {
@@ -18,10 +17,7 @@ const CLASSES = {
  *
  * @classdesc Initializes new ExpandableTransition behavior.
  *
- * @param {HTMLNode} element
- *   DOM element to apply move transition to.
- * @param {Object} classes
- *   An Object of custom classes to override the base classes Object
+ * @param {HTMLNode} element - DOM element to apply move transition to.
  * @returns {ExpandableTransition} An instance.
  */
 function ExpandableTransition( element ) {
@@ -38,7 +34,7 @@ function ExpandableTransition( element ) {
       _transitionComplete.bind( this )
     );
 
-    if ( contains( element, CLASSES.OPEN_DEFAULT ) ) {
+    if ( element.classList.contains( CLASSES.OPEN_DEFAULT ) ) {
       this.expand();
     } else {
       this.collapse();
@@ -47,18 +43,17 @@ function ExpandableTransition( element ) {
     return this;
   }
 
-  /* istanbul ignore next */
   /**
    * Handle the end of a transition.
    */
   function _transitionComplete() {
-    if ( contains( element, CLASSES.EXPANDED ) ) {
+    if ( element.classList.contains( CLASSES.EXPANDED ) ) {
       this.dispatchEvent( 'expandEnd', { target: this } );
 
       if ( element.scrollHeight > previousHeight ) {
         element.style.maxHeight = element.scrollHeight + 'px';
       }
-    } else if ( contains( element, CLASSES.COLLAPSED ) ) {
+    } else if ( element.classList.contains( CLASSES.COLLAPSED ) ) {
       this.dispatchEvent( 'collapseEnd', { target: this } );
     }
   }
@@ -68,7 +63,7 @@ function ExpandableTransition( element ) {
    * @returns {ExpandableTransition} An instance.
    */
   function toggleExpandable() {
-    if ( contains( element, CLASSES.COLLAPSED ) ) {
+    if ( element.classList.contains( CLASSES.COLLAPSED ) ) {
       this.expand();
     } else {
       this.collapse();
