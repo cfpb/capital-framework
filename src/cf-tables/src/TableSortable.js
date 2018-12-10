@@ -49,9 +49,12 @@ function initialize() {
   this.bindProperties();
   if ( this.ui.sortButton ) {
     this.sortColumnIndex = this.getColumnIndex();
-    this.sortDirection =
-      this.contains( this.ui.sortButton, this.classes.sortDown ) ?
-        DIRECTIONS.DOWN : DIRECTIONS.UP;
+
+    this.sortDirection = DIRECTIONS.UP;
+    if ( this.ui.sortButton.classList.contains( this.classes.sortDown ) ) {
+      this.sortDirection = DIRECTIONS.DOWN;
+    }
+
     this.updateTable();
   }
 }
@@ -198,7 +201,7 @@ function tableDataSorter( direction, sortType ) {
  */
 function onSortableClick( event ) {
   if ( this.ui.sortButton ) {
-    this.removeClass( this.ui.sortButton, this.sortClass );
+    this.ui.sortButton.classList.remove( this.sortClass );
   }
   if ( this.ui.sortButton === event.target ) {
     this.sortDirection = ~this.sortDirection;
@@ -208,7 +211,7 @@ function onSortableClick( event ) {
     this.sortDirection = DIRECTIONS.UP;
   }
   // The active sort class is changing when the sort direction changes.
-  this.addClass( this.ui.sortButton, this.sortClass );
+  this.ui.sortButton.classList.add( this.sortClass );
   this.updateTable();
 
   return this;
