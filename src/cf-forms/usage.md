@@ -15,6 +15,7 @@ Capital Framework.
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
+    - [Sizing variables](#sizing-variables)
 - [Legends](#legends)
 - [Labels](#labels)
     - [Basic label](#basic-label)
@@ -32,10 +33,10 @@ Capital Framework.
 - [Buttons](#buttons)
     - [Simple input with a button](#simple-input-with-a-button)
     - [Button inside an input](#button-inside-an-input)
-    - [Button inside an input with a button](#button-inside-an-input-with-a-button)
+    - [Button inside an input with another button](#button-inside-an-input-with-another-button)
 - [Select dropdown](#select-dropdown)
 - [Basic multiselect](#basic-multiselect)
-- [Fieldsets](#form-fieldsets)
+- [Fieldsets](#fieldsets)
 
 
 ## Variables
@@ -49,48 +50,53 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 
 ```less
 // .a-text-input borders
-@input-border:                  @gray-60;
-@input-border__hover:           @pacific;
-@input-border__focused:         @pacific;
-@input-border__active:          @pacific;
-@input-border__error:           @red;
-@input-border__warning:         @gold;
-@input-border__success:         @green;
-@input-border__selected:        @pacific;
+@input-border:                            @gray-60;
+@input-border__hover:                     @pacific;
+@input-border__focused:                   @pacific;
+@input-border__active:                    @pacific;
+@input-border__error:                     @red;
+@input-border__warning:                   @gold;
+@input-border__success:                   @green;
+@input-border__selected:                  @pacific;
 
 // .a-text-input backgrounds
-@input-bg:                      @white;
-@input-bg__selected:            @pacific;
-@input-bg__disabled:            @gray-10;
+@input-bg:                                @white;
+@input-bg__selected:                      @pacific;
+@input-bg__disabled:                      @gray-10;
 
 // .a-text-input text
-@input-text:                    @black;
-@input-text__disabled:          @gray;
-@input-text__placeholder:       @gray;
+@input-text:                              @black;
+@input-text__disabled:                    @gray;
+@input-text__placeholder:                 @gray;
 
 // .a-text-input icons
-@input-icon__error:             @red;
+@input-icon__error:                       @red;
 
 // .a-select
-@select-border:                 @input-border;
-@select-icon:                   @gray-80;
-@select-icon-bg:                @gray-10;
-@select-text__disabled:         @input-text__disabled;
+@select-border:                           @input-border;
+@select-icon-bg:                          @gray-10;
+@select-text__disabled:                   @input-text__disabled;
+
+// .m-form-field
+@form-field-input-border:                 @input-border;
+@form-field-input-border__focused:        @input-border;
+@form-field-input-border__disabled:       @gray-60;
 
 // .m-form-field__lg-target
-@input-lg-target:               @gray-10;
-@input-lg-target__selected:     @pacific-20;
-@input-lg-target__disabled:     @input-lg-target;
+@form-field-input-lg-target-bg:           @gray-10;
+@form-field-input-lg-target-bg__selected: @pacific-20;
+@form-field-input-lg-target-bg__disabled: @gray-20;
+@form-field-input-lg-target-border:       @pacific;
 
 // .a-label_helper
-@label-helper:                  @gray;
+@label-helper:                            @gray;
 ```
 
 ### Sizing variables
 
 ```less
 // .a-select
-@select-height:                  30px;
+@select-height:                           30px;
 ```
 
 
@@ -1182,6 +1188,52 @@ Generally this is only useful for documentation purposes.
             </div>
         </fieldset>
     </div>
+    <div class="o-form_group">
+        <fieldset class="o-form_fieldset">
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_1">
+                <label class="a-label" for="test_checkbox_lg_default_1">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_2">
+                <label class="a-label" for="test_checkbox_lg_default_2">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_3">
+                <label class="a-label" for="test_checkbox_lg_default_3">
+                    This is a very long label that wraps to a second line.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <small class="a-label_helper">
+                        (This is helper text)
+                    </small>
+                </label>
+            </div>
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_4">
+                <label class="a-label" for="test_checkbox_lg_default_4">Label</label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="o-form_group">
+        <fieldset class="o-form_fieldset">
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_1" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_1">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_2" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_2">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_3" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_3">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_4" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_4">Label</label>
+            </div>
+        </fieldset>
+    </div>
 </form>
 
 ```html
@@ -1207,6 +1259,46 @@ Generally this is only useful for documentation purposes.
             <div class="m-form-field m-form-field__radio">
                 <input class="a-radio" type="radio" id="test_radio_2" name="test_radio">
                 <label class="a-label" for="test_radio_2">Label</label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="o-form_group">
+        <fieldset class="o-form_fieldset">
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_1">
+                <label class="a-label" for="test_checkbox_lg_default_1">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_2">
+                <label class="a-label" for="test_checkbox_lg_default_2">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_3">
+                <label class="a-label" for="test_checkbox_lg_default_3">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+                <input class="a-checkbox" type="checkbox" id="test_checkbox_lg_default_4">
+                <label class="a-label" for="test_checkbox_lg_default_4">Label</label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="o-form_group">
+        <fieldset class="o-form_fieldset">
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_1" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_1">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_2" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_2">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_3" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_3">Label</label>
+            </div>
+            <div class="m-form-field m-form-field__radio m-form-field__lg-target">
+                <input class="a-radio" type="radio" id="test_radio_lg_default_4" name="radio-fieldset">
+                <label class="a-label" for="test_radio_lg_default_4">Label</label>
             </div>
         </fieldset>
     </div>

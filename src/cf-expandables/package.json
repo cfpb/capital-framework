@@ -1,6 +1,6 @@
 {
   "name": "cf-expandables",
-  "version": "7.1.0",
+  "version": "7.1.1",
   "description": "Capital Framework expandables",
   "main": "src/cf-expandables.js",
   "less": "src/cf-expandables.less",
@@ -10,10 +10,9 @@
     "test": "case $(pwd) in */capital-framework/src/*) cd ../.. && npm test;; esac"
   },
   "dependencies": {
-    "cf-atomic-component": "^1.4.0",
+    "cf-atomic-component": "^2.1.1",
     "cf-core": "^4.0.0",
-    "cf-icons": "^4.0.0",
-    "classlist-polyfill": "1.0.3"
+    "cf-icons": "^4.0.0"
   },
   "keywords": [
     "expandable"

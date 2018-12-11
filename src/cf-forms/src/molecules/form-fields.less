@@ -21,7 +21,7 @@
                 grid-row-start: 1;
                 grid-row-end: 3;
 
-                border: 1px solid @input-border;
+                border: 1px solid @form-field-input-border;
                 height: unit( 18px / @base-font-size-px, em );
                 width: unit( 18px / @base-font-size-px, em );
                 margin-right: 10px;
@@ -64,8 +64,7 @@
             &:focus + .a-label,
             &.focus + .a-label {
                 outline: 1px dotted @input-border__focused;
-                // The outline-offset property is not supported everywhere (e.g. IE)
-                // but it adds a nice touch in browsers where it is.
+                // The outline-offset property is not supported in IE.
                 outline-offset: 1px;
             }
 
@@ -86,6 +85,7 @@
 
                     &:before {
                         background: @input-bg__disabled;
+                        border-color: @form-field-input-border__disabled;
                     }
                 }
             }
@@ -185,29 +185,38 @@
             box-sizing: border-box;
             width: 100%;
             padding: 15px;
-            background-color: @input-lg-target-bg;
+            background-color: @form-field-input-lg-target-bg;
         }
 
         .a-checkbox,
         .a-radio {
+
+            &:checked + .a-label {
+                background-color: @form-field-input-lg-target-bg__selected;
+                box-shadow: inset 0 0 0 1px @form-field-input-lg-target-border;
+            }
+
+            &:hover + .a-label,
+            &.hover + .a-label,
+            &:focus + .a-label,
+            &.focus + .a-label {
+                box-shadow: inset 0 0 0 2px @form-field-input-lg-target-border;
+            }
+
             &:focus + .a-label,
             &.focus + .a-label,
             &:checked + .a-label {
-                // The outline-offset property is not supported everywhere (e.g. IE)
-                // but it adds a nice touch in browsers where it is.
-                outline-offset: 0;
-            }
-
-            &:checked + .a-label {
-                background-color: @input-lg-target-bg__selected;
+                // The outline-offset property is not supported in IE.
+                outline-offset: 1px;
             }
 
             &:disabled + .a-label,
             &:hover:disabled + .a-label {
                 color: @input-text__disabled;
+                box-shadow: none;
 
                 &:before {
-                    background-color: @input-lg-target-bg__disabled;
+                    background-color: @form-field-input-lg-target-bg__disabled;
                     font-family: 'CFPB Minicons';
                     font-size: unit( 20px / 18px, em );
                 }
