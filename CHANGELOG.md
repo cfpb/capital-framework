@@ -11,7 +11,8 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - **cf-tables:** [PATCH] Bump cf-atomic-component dependency to `2.1.0`.
 
 ### Removed
--
+- **cf-expandables:** [PATCH] Remove classlist-polyfill within cf-expandables
+  package.json.
 
 ## 7.5.0 - 2018-12-10
 
