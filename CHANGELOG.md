@@ -4,6 +4,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 7.6.0 - 2018-12-11
+
+### Added
 - **cf-forms:** Adds variables
   `@form-field-input-border`, `@form-field-input-border__disabled`,
    and `@form-field-input-lg-target-border`
