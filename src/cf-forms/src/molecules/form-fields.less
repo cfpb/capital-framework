@@ -21,7 +21,7 @@
                 grid-row-start: 1;
                 grid-row-end: 3;
 
-                border: 1px solid @form-field-border;
+                border: 1px solid @form-field-input-border;
                 height: unit( 18px / @base-font-size-px, em );
                 width: unit( 18px / @base-font-size-px, em );
                 margin-right: 10px;
@@ -85,7 +85,7 @@
 
                     &:before {
                         background: @input-bg__disabled;
-                        border-color: @form-field-border__disabled;
+                        border-color: @form-field-input-border__disabled;
                     }
                 }
             }
@@ -185,22 +185,22 @@
             box-sizing: border-box;
             width: 100%;
             padding: 15px;
-            background-color: @form-field-lg-target-bg;
+            background-color: @form-field-input-lg-target-bg;
         }
 
         .a-checkbox,
         .a-radio {
 
             &:checked + .a-label {
-                background-color: @form-field-lg-target-bg__selected;
-                box-shadow: inset 0 0 0 1px @form-field-lg-target-border;
+                background-color: @form-field-input-lg-target-bg__selected;
+                box-shadow: inset 0 0 0 1px @form-field-input-lg-target-border;
             }
 
             &:hover + .a-label,
             &.hover + .a-label,
             &:focus + .a-label,
             &.focus + .a-label {
-                box-shadow: inset 0 0 0 2px @form-field-lg-target-border;
+                box-shadow: inset 0 0 0 2px @form-field-input-lg-target-border;
             }
 
             &:focus + .a-label,
@@ -216,7 +216,7 @@
                 box-shadow: none;
 
                 &:before {
-                    background-color: @form-field-lg-target-bg__disabled;
+                    background-color: @form-field-input-lg-target-bg__disabled;
                     font-family: 'CFPB Minicons';
                     font-size: unit( 20px / 18px, em );
                 }
