@@ -14,9 +14,21 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
   to large target input's hover state.
 - **cf-forms:** [MINOR] Changes radio button/checkbox variables to
   `@form-field-input-lg-…` from `@input-lg-…` prefix.
+- **cf-expandables:** [PATCH] Bump cf-atomic-component dependency to `2.1.0`.
+- **cf-tables:** [PATCH] Bump cf-atomic-component dependency to `2.1.0`.
 
 ### Removed
--
+- **cf-expandables:** [PATCH] Remove classlist-polyfill within cf-expandables
+  package.json.
+
+## 7.5.0 - 2018-12-10
+
+### Changed
+- **cf-atomic-component:** Fixes issue where leading period was
+  not removed in class name when passed to classList.contains.
+- **cf-tables:** Fixes issue where TableSortable was using
+  classList API incorrectly.
+
 
 ## 7.4.0 - 2018-12-10
 
