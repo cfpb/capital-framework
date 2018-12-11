@@ -4,9 +4,16 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 ## Unreleased
 
 ### Added
--
+- **cf-forms:** [MINOR] Adds variables
+  `@form-field-input-border`, `@form-field-input-border__disabled`,
+   and `@form-field-input-lg-target-border`
 
 ### Changed
+- **cf-forms:** [PATCH] Adjusts radio button/checkbox border color.
+- **cf-forms:** [PATCH] Adds border (box-shadow)
+  to large target input's hover state.
+- **cf-forms:** [MINOR] Changes radio button/checkbox variables to
+  `@form-field-input-lg-…` from `@input-lg-…` prefix.
 - **cf-expandables:** [PATCH] Bump cf-atomic-component dependency to `2.1.0`.
 - **cf-tables:** [PATCH] Bump cf-atomic-component dependency to `2.1.0`.
 
