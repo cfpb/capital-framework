@@ -10,7 +10,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 -
 
 ### Removed
--
+- **cf-atomic-component:** [PATCH] Remove unused on-ready utility.
 
 ## 7.6.0 - 2018-12-11
 
