@@ -71,6 +71,8 @@ vendor/
 static/vendor/
 tmp/
 src/*/package-lock.json
+dist/capital-framework.min.css
+dist/capital-framework.min.js
 
 # Jekyll stuff #
 ################
