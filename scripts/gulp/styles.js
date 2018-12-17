@@ -8,34 +8,13 @@ const gulpLess = require( 'gulp-less' );
 const gulpRename = require( 'gulp-rename' );
 
 /**
- * Compile the master capital-framework.less file.
- * @returns {PassThrough} A source stream.
- */
-function stylesCf() {
-  return gulp.src( './src/capital-framework-with-grid.less' )
-    .pipe( gulpLess( {
-      paths: [ 'node_modules/cf-*/src/' ]
-    } ) )
-    .pipe( gulpAutoprefixer( {
-      browsers: BROWSER_LIST.LAST_2_PLUS_IE_8_AND_UP
-    } ) )
-    .pipe( gulpCssmin() )
-    .pipe( gulpRename( {
-      basename: 'capital-framework',
-      extname: '.min.css'
-    } ) )
-    .pipe( gulp.dest( './dist' ) );
-}
-
-/**
  * Compile all the individual component files so that users can `npm install`
  * a single component if they desire.
  * @returns {PassThrough} A source stream.
  */
 function stylesComponents() {
-  return gulp.src( './src/' + ( component || '*' ) + '/src/*.less' )
+  return gulp.src( 'packages/' + ( component || '*' ) + '/src/*.less' )
     .pipe( gulpIgnore.exclude( vf => {
-
       /* Exclude Less files that don't share the same name as the directory
          they're in. This filters out things like cf-vars.less but still
          includes cf-core.less. */
@@ -55,7 +34,7 @@ function stylesComponents() {
       path.dirname = path.dirname.replace( '/src', '' );
       path.extname = '.min.css';
     } ) )
-    .pipe( gulp.dest( './tmp' ) );
+    .pipe( gulp.dest( 'packages' ) );
 }
 
 /**
@@ -63,7 +42,7 @@ function stylesComponents() {
  * @returns {PassThrough} A source stream.
  */
 function stylesGrid() {
-  return gulp.src( './src/cf-grid/src-generated/*.less' )
+  return gulp.src( 'packages/cf-grid/src-generated/*.less' )
     .pipe( gulpLess( {
       paths: [ 'node_modules/cf-*/src/' ]
     } ) )
@@ -75,15 +54,13 @@ function stylesGrid() {
       basename: 'cf-grid',
       extname: '.min.css'
     } ) )
-    .pipe( gulp.dest( './tmp/cf-grid' ) );
+    .pipe( gulp.dest( 'packages/cf-grid' ) );
 }
 
-gulp.task( 'styles:cf', stylesCf );
 gulp.task( 'styles:components', stylesComponents );
 gulp.task( 'styles:grid', stylesGrid );
 
 gulp.task( 'styles', gulp.parallel(
-  'styles:cf',
   'styles:components',
   'styles:grid'
 ) );

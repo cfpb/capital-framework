@@ -1,10 +1,10 @@
 {
   "name": "capital-framework",
-  "version": "7.7.0",
+  "private": "true",
+  "workspaces": [
+    "packages/*"
+  ],
   "description": "CFPB's UI framework",
-  "main": "src/capital-framework.js",
-  "less": "src/capital-framework.less",
-  "style": "dist/capital-framework.css",
   "author": {
     "name": "Consumer Financial Protection Bureau",
     "email": "tech@cfpb.gov",
@@ -22,17 +22,17 @@
     "url": "https://github.com/cfpb/capital-framework/issues"
   },
   "scripts": {
-    "release": "./scripts/travis/release.sh",
     "build": "gulp build",
+    "cf-link": "lerna exec -- yarn link",
+    "cf-unlink": "lerna exec -- yarn unlink",
     "test": "gulp test",
-    "cf-link": "node scripts/npm/link",
-    "postinstall": "npm run cf-link",
-    "process-icon-svgs": "svgo -o src/cf-icons/src/icons --enable=addClassesToSVGElement --enable=removeStyleElement --enable=removeAttrs --config='{ \"plugins\": [ { \"addClassesToSVGElement\": { \"className\": \"cf-icon-svg\" } }, { \"removeAttrs\": { \"attrs\": [ \"fill\", \"path:class\", \"circle:class\" ] } }, { \"cleanupIDs\": { \"force\": \"true\" } } ] }'"
+    "changelog": "lerna-changelog --from v1.0.0 > CHANGELOG.md && git add CHANGELOG.md",
+    "publish": "yarn run build && lerna publish",
+    "process-icon-svgs": "svgo -o packages/cf-icons/src/icons --enable=addClassesToSVGElement --enable=removeStyleElement --enable=removeAttrs --config='{ \"plugins\": [ { \"addClassesToSVGElement\": { \"className\": \"cf-icon-svg\" } }, { \"removeAttrs\": { \"attrs\": [ \"fill\", \"path:class\", \"circle:class\" ] } }, { \"cleanupIDs\": { \"force\": \"true\" } } ] }'"
   },
   "devDependencies": {
     "@babel/core": "7.1.6",
     "@babel/preset-env": "7.1.6",
-    "babel-core": "7.0.0-bridge.0",
     "babel-loader": "^8.0.4",
     "bluebird": "^3.0.5",
     "chalk": "^2.4.1",
@@ -61,6 +61,8 @@
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "jest-when": "^2.0.0",
+    "lerna": "^3.6.0",
+    "lerna-changelog": "^0.8.2",
     "lodash": "^4.17.10",
     "log-symbols": "^2.2.0",
     "minimist": "^1.2.0",
@@ -83,5 +85,9 @@
     "dom-delegate": "^2.0.3",
     "normalize-css": "^2.0.0",
     "normalize-legacy-addon": "0.1.0"
+  },
+  "resolutions": {
+    "jest": "^23.6.0",
+    "@babel/core": "7.1.6"
   }
 }

@@ -11,27 +11,13 @@ const webpackStream = require( 'webpack-stream' );
    a minified and un-minified version of the assets. */
 
 /**
- * Compile the master capital-framework.less file.
- * @returns {Object} An output stream from gulp.
- */
-function scriptsCf() {
-  return gulp.src( './src/capital-framework.js' )
-    .pipe( webpackStream( webpackConfig.commonConf, webpack ) )
-    .pipe( gulpRename( {
-      basename: 'capital-framework',
-      extname: '.min.js'
-    } ) )
-    .pipe( gulp.dest( './dist' ) );
-}
-
-/**
  * Compile all the individual component files so that users can `npm install`
  * a single component if they desire.
  * @returns {Object} An output stream from gulp.
  */
 function scriptsComponents() {
   const tmp = {};
-  return gulp.src( './src/' + ( component || '*' ) + '/src/*.js' )
+  return gulp.src( 'packages/' + ( component || '*' ) + '/src/*.js' )
     .pipe( gulpIgnore.exclude( vf => {
 
       /* Exclude JS files that don't share the same name as the directory
@@ -48,13 +34,11 @@ function scriptsComponents() {
       path.dirname = tmp[path.basename].dirname.replace( '/src', '' );
       path.extname = '.min.js';
     } ) )
-    .pipe( gulp.dest( './tmp' ) );
+    .pipe( gulp.dest( 'packages' ) );
 }
 
-gulp.task( 'scripts:cf', scriptsCf );
 gulp.task( 'scripts:components', scriptsComponents );
 
 gulp.task( 'scripts', gulp.parallel(
-  'scripts:cf',
   'scripts:components'
 ) );

@@ -65,8 +65,10 @@ node_modules/
 vendor/
 static/vendor/
 src/vendor/
-tmp/
 util.js
 dist/
 .npmrc
-src/cf-*/package-lock.json
+.changelog/
+yarn-error.log
+packages/**/*.css
+packages/**/*.min.js

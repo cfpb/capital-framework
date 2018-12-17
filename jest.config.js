@@ -5,8 +5,7 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: [
-    '<rootDir>/src/**/*.js',
-    '<rootDir>/scripts/npm/prepublish/lib/**/*.js'
+    '<rootDir>/packages/**/*.js'
   ],
   coveragePathIgnorePatterns: [
     '<rootDir>/gulpfile.js',
@@ -15,12 +14,13 @@ module.exports = {
     '<rootDir>/config/',
     '<rootDir>/dist/',
     '<rootDir>/scripts/gulp/',
-    '<rootDir>/src/.?/node_modules/',
-    '<rootDir>/src/capital-framework.js',
-    '<rootDir>/src/cf-expandables/src/cf-expandables.js',
-    '<rootDir>/src/cf-tables/src/cf-tables.js',
+    '<rootDir>/packages/.?/node_modules/',
+    '<rootDir>/packages/capital-framework.js',
+    '<rootDir>/packages/cf-expandables/src/cf-expandables.js',
+    '<rootDir>/packages/cf-tables/src/cf-tables.js',
     '<rootDir>/test/',
     '<rootDir>/tmp/'
   ],
-  coverageDirectory: '<rootDir>/test/unit-test-coverage'
+  coverageDirectory: '<rootDir>/test/unit-test-coverage',
+  testURL: 'http://localhost'
 };

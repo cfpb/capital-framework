@@ -69,16 +69,16 @@ function lintStyles() {
   const options = minimist( process.argv.slice( 2 ) );
   const willFix = options.fix || false;
   return gulp.src( [
-    'src/**/*.less',
-    '!src/cf-*/node_modules/**/*.less',
-    '!src/cf-grid/src-generated/*.less'
+    'packages/**/*.less',
+    '!packages/cf-*/node_modules/**/*.less',
+    '!packages/cf-grid/src-generated/*.less'
   ] )
     .pipe( gulpStylelint( {
       failAfterError: true,
       fix: willFix,
       reporters: [ { formatter: 'string', console: true } ]
     } ) )
-    .pipe( gulp.dest( 'src' ) );
+    .pipe( gulp.dest( 'packages' ) );
 }
 
 gulp.task( 'lint:build', lintBuild );

@@ -1,4 +1,4 @@
-import { closest } from '../../../../../../src/cf-atomic-component/src/utilities/dom-closest';
+import { closest } from '../../../../../../packages/cf-atomic-component/src/utilities/dom-closest';
 
 let testBlockA;
 let testBlockB;
@@ -57,6 +57,7 @@ describe( 'dom-closest', () => {
 
   it( 'should use the correct matches method', () => {
     const spy = jest.fn();
+
     /* Set the prototype to a generic object as deleting the "closest" method
     with `delete testBlockD.closest` does not work for some reason. */
     Object.setPrototypeOf( testBlockD, Object );

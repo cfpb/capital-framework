@@ -1,6 +1,6 @@
 import simulateEvent from '../../../../util/simulate-event';
 const Expandable = require(
-  '../../../../../src/cf-expandables/src/Expandable'
+  '../../../../../packages/cf-expandables/src/Expandable'
 );
 
 const HTML_SNIPPET = `

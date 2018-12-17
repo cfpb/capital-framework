@@ -1,23 +1,9 @@
 language: node_js
 node_js:
-  - "8"
+  - "10"
 before_install:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > ~/.npmrc
   - npm whoami
-before_script:
-  - npm config set spin false --global
-  - npm config set package-lock false
-  - npm install -g gulp
-  - gulp lint --travis
-  - gulp build
-after_success:
-  - git checkout package-lock.json package.json
-  - git status && git diff
-  - ./scripts/travis/release.sh
-  - npm whoami
 env:
-  global:
-  - GH_PROD_BRANCH=master
-  - GH_DEV_BRANCH=canary
   - secure: OXCVx+umyxvsBBAdDnliKggeeDI6+MJnH01DRz3MSwcG2WMUxtzxKtPL4t03t+wfTmCoGmEMFa8OO1UgwfOoAMNwrEQHPG/AfEnV5A67FKoKY56vUD3rkNcWV5V/IfmQzrYzQSjyjgs19RY+1sD7CKK75bQWYuAQOoNrIpb84gc=
 sudo: false
