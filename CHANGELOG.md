@@ -11,6 +11,37 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Removed
 - **cf-atomic-component:** [PATCH] Removes unused data-set utility.
+- **cf-atomic-component:** [PATCH] Remove unused on-ready utility.
+
+## 7.6.0 - 2018-12-11
+
+### Added
+- **cf-forms:** Adds variables
+  `@form-field-input-border`, `@form-field-input-border__disabled`,
+   and `@form-field-input-lg-target-border`
+
+### Changed
+- **cf-forms:** Adjusts radio button/checkbox border color.
+- **cf-forms:** Adds border (box-shadow)
+  to large target input's hover state.
+- **cf-forms:** Changes radio button/checkbox variables to
+  `@form-field-input-lg-…` from `@input-lg-…` prefix.
+- **cf-expandables:** Bump cf-atomic-component dependency to `2.1.0`.
+- **cf-tables:** Bump cf-atomic-component dependency to `2.1.0`.
+
+### Removed
+- **cf-expandables:** Remove classlist-polyfill within cf-expandables
+  package.json.
+
+
+## 7.5.0 - 2018-12-10
+
+### Changed
+- **cf-atomic-component:** Fixes issue where leading period was
+  not removed in class name when passed to classList.contains.
+- **cf-tables:** Fixes issue where TableSortable was using
+  classList API incorrectly.
+
 
 ## 7.4.0 - 2018-12-10
 
