@@ -83,7 +83,7 @@
         text-transform: inherit;
     }
 
-    .sortable::after {
+    .sortable:after {
         display: inline-block;
         position: relative;
         top: -1px;
@@ -91,18 +91,18 @@
         visibility: hidden;
     }
 
-    .sortable:hover::after,
-    .sortable.sorted-up::after,
-    .sortable.sorted-down::after {
+    .sortable:hover:after,
+    .sortable.sorted-up:after,
+    .sortable.sorted-down:after {
         visibility: visible;
     }
 
-    .sortable.sorted-down::after,
-    .sortable.sorted-up:hover::after {
+    .sortable.sorted-down:after,
+    .sortable.sorted-up:hover:after {
         transform: rotate( 180deg );
     }
 
-    .sortable.sorted-down:hover::after {
+    .sortable.sorted-down:hover:after {
         transform: rotate( 0deg );
     }
 }

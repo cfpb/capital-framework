@@ -123,16 +123,16 @@
 }
 
 .cf-icon-pseudo-elem( @rules ) {
-    &.@{cf-icon-prefix}::before,
-    &.@{cf-icon-prefix}__before::before,
-    &.@{cf-icon-prefix}__after::after {
+    &.@{cf-icon-prefix}:before,
+    &.@{cf-icon-prefix}__before:before,
+    &.@{cf-icon-prefix}__after:after {
         @rules();
     }
 }
 
-.@{cf-icon-prefix}::before,
-.@{cf-icon-prefix}__before::before,
-.@{cf-icon-prefix}__after::after {
+.@{cf-icon-prefix}:before,
+.@{cf-icon-prefix}__before:before,
+.@{cf-icon-prefix}__after:after {
     .cf-icon();
 }
 
@@ -1668,7 +1668,7 @@
 // This must come last to avoid displaying the icon both before and after.
 //
 
-.@{cf-icon-prefix}__after::before {
+.@{cf-icon-prefix}__after:before {
     display: none;
     content: '';
 }

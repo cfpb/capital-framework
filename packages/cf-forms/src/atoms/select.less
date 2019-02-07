@@ -52,7 +52,7 @@
         color: @select-text__disabled;
     }
 
-    &::after {
+    &:after {
         // Arrow box width must be odd size to properly center the bg image
         width: unit( @select-height / @base-font-size-px, em );
         box-sizing: border-box;
@@ -75,7 +75,7 @@
 // IE10 and below doesn't support pointer events
 // causing nothing to happen when you click on the dropdown arrow.
 .no-csspointerevents .a-select {
-    &::after {
+    &:after {
         height: 0;
         width: 0;
         border: 0;

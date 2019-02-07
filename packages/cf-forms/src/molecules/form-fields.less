@@ -16,7 +16,7 @@
             vertical-align: top;
             cursor: pointer;
 
-            &::before {
+            &:before {
                 display: inline-block;
                 grid-row-start: 1;
                 grid-row-end: 3;
@@ -38,8 +38,8 @@
                 }
             }
 
-            &:hover::before,
-            &.hover::before {
+            &:hover:before,
+            &.hover:before {
                 border-color: @input-border__hover;
             }
         }
@@ -68,10 +68,10 @@
 
             &:disabled {
 
-                &:focus + .a-label::before,
-                &.focus + .a-label::before,
-                &:hover + .a-label::before,
-                &.hover + .a-label::before {
+                &:focus + .a-label:before,
+                &.focus + .a-label:before,
+                &:hover + .a-label:before,
+                &.hover + .a-label:before {
                     border-color: @input-border;
                     outline: none;
                     box-shadow: none; // Applies only to radio buttons.
@@ -81,7 +81,7 @@
                     cursor: not-allowed;
                     color: @input-text__disabled;
 
-                    &::before {
+                    &:before {
                         background: @input-bg__disabled;
                         border-color: @form-field-input-border__disabled;
                     }
@@ -111,19 +111,19 @@
 
     &__checkbox {
         .a-checkbox {
-            &:focus + .a-label::before,
-            &.focus + .a-label::before {
+            &:focus + .a-label:before,
+            &.focus + .a-label:before {
                 border-color: @input-border__focused;
                 box-shadow: 0 0 0 1px @input-border__focused;
             }
 
-            &:hover + .a-label::before,
-            &.hover + .a-label::before {
+            &:hover + .a-label:before,
+            &.hover + .a-label:before {
                 border-color: @input-border__hover;
                 box-shadow: 0 0 0 1px @input-border__hover;
             }
 
-            &:checked + .a-label::before {
+            &:checked + .a-label:before {
                 background-image: url( '../icons/approved.svg' );
                 background-size: auto @cf-icon-height;
                 background-repeat: no-repeat;
@@ -134,7 +134,7 @@
 
     &__radio {
         .a-label {
-            &::before {
+            &:before {
                 border-radius: 50%;
 
                 /* The rotate is needed to fix a bug in Firefox where radio
@@ -144,33 +144,33 @@
         }
 
         .a-radio {
-            &:focus + .a-label::before,
-            &.focus + .a-label::before {
+            &:focus + .a-label:before,
+            &.focus + .a-label:before {
                 outline: none;
                 border-color: @input-border__focused;
                 box-shadow: 0 0 0 1px @input-border__focused;
             }
 
-            &:hover + .a-label::before,
-            &.hover + .a-label::before {
+            &:hover + .a-label:before,
+            &.hover + .a-label:before {
                 outline: none;
                 border-color: @input-border__hover;
                 box-shadow: 0 0 0 1px @input-border__hover;
             }
 
-            &:checked + .a-label::before {
+            &:checked + .a-label:before {
                 background-color: @input-bg__selected;
                 box-shadow: inset 0 0 0 2px #fff;
             }
 
-            &:focus:checked + .a-label::before,
-            &.focus:checked + .a-label::before {
+            &:focus:checked + .a-label:before,
+            &.focus:checked + .a-label:before {
                 border-color: @input-border__focused;
                 box-shadow: 0 0 0 1px @input-border__focused, inset 0 0 0 2px #fff;
             }
 
-            &:hover:checked + .a-label::before,
-            &.hover:checked + .a-label::before {
+            &:hover:checked + .a-label:before,
+            &.hover:checked + .a-label:before {
                 border-color: @input-border__hover;
                 box-shadow: 0 0 0 1px @input-border__hover, inset 0 0 0 2px #fff;
             }
@@ -214,7 +214,7 @@
                 color: @input-text__disabled;
                 box-shadow: none;
 
-                &::before {
+                &:before {
                     background-color: @form-field-input-lg-target-bg__disabled;
                     font-family: 'CFPB Minicons';
                     font-size: unit( 20px / 18px, em );

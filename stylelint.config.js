@@ -17,6 +17,10 @@ no-descending-specificity -
 
 selector-list-comma-newline-after -
   Turned off because it wraps arguments less mixin declarations.
+
+selector-pseudo-element-colon-notation -
+  Set to 'single' to support IE8.
+  Remove this rule after dropping IE8 CSS support.
 */
 module.exports = {
   extends: 'stylelint-config-standard',
@@ -34,6 +38,7 @@ module.exports = {
     'indentation': [ 4 ],
     'max-empty-lines': 2,
     'no-descending-specificity': null,
-    'selector-list-comma-newline-after': null
+    'selector-list-comma-newline-after': null,
+    'selector-pseudo-element-colon-notation': 'single'
   }
 }
