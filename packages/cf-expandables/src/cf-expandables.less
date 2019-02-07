@@ -75,6 +75,7 @@
         // A clearfix prevents twitchy animations from occurring when margins
         // collapse and extend past the bounds of the expandable.
         .u-clearfix();
+
         overflow: hidden;
 
         &__transition {
@@ -97,15 +98,14 @@
     &_label {
         // Remove default h4 margin style
         margin-bottom: 0;
-
         color: @expandable_label-text;
         font-weight: 500;
     }
 
     &_link {
         color: @expandable_link-text;
-        font-size: unit(@expandable_link-font-size / @base-font-size-px, em);
-        line-height: unit(@base-line-height-px / @expandable_link-font-size);
+        font-size: unit( @expandable_link-font-size / @base-font-size-px, em );
+        line-height: unit( @base-line-height-px / @expandable_link-font-size );
     }
 
     //
@@ -137,7 +137,6 @@
         &-right {
             float: right;
         }
-
     }
 
     //
@@ -146,22 +145,23 @@
 
     &__padded {
         .o-expandable_header {
-            padding: unit( 10px / @base-font-size-px, em )
-                     unit( 15px / @base-font-size-px, em );
+            padding:
+                unit( 10px / @base-font-size-px, em )
+                unit( 15px / @base-font-size-px, em );
         }
 
         .o-expandable_content {
             padding: 0 unit( 15px / @base-font-size-px, em );
 
             // The divider between _header and _content.
-            &:before {
+            &::before {
                 content: '';
                 display: block;
                 border-top: 1px solid @expandable__border;
                 padding-top: unit( 15px / @base-font-size-px, em );
             }
 
-            &:after {
+            &::after {
                 padding-bottom: unit( 15px / @base-font-size-px, em );
                 width: 100%;
             }

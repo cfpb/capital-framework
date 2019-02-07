@@ -90,10 +90,11 @@
 @font-face {
     font-family: 'CFPB Minicons';
     src: url( '@{cf-icon-path}/cf-icons.eot' );
-    src: url( '@{cf-icon-path}/cf-icons.eot?#iefix' ) format( 'embedded-opentype' ),
-         url( '@{cf-icon-path}/cf-icons.woff' ) format( 'woff' ),
-         url( '@{cf-icon-path}/cf-icons.ttf' ) format( 'truetype' ),
-         url( '@{cf-icon-path}/cf-icons.svg' ) format( 'svg' );
+    src:
+        url( '@{cf-icon-path}/cf-icons.eot?#iefix' ) format( 'embedded-opentype' ),
+        url( '@{cf-icon-path}/cf-icons.woff' ) format( 'woff' ),
+        url( '@{cf-icon-path}/cf-icons.ttf' ) format( 'truetype' ),
+        url( '@{cf-icon-path}/cf-icons.svg' ) format( 'svg' );
     font-weight: normal;
     font-style: normal;
 }
@@ -122,16 +123,16 @@
 }
 
 .cf-icon-pseudo-elem( @rules ) {
-    &.@{cf-icon-prefix}:before,
-    &.@{cf-icon-prefix}__before:before,
-    &.@{cf-icon-prefix}__after:after {
+    &.@{cf-icon-prefix}::before,
+    &.@{cf-icon-prefix}__before::before,
+    &.@{cf-icon-prefix}__after::after {
         @rules();
     }
 }
 
-.@{cf-icon-prefix}:before,
-.@{cf-icon-prefix}__before:before,
-.@{cf-icon-prefix}__after:after {
+.@{cf-icon-prefix}::before,
+.@{cf-icon-prefix}__before::before,
+.@{cf-icon-prefix}__after::after {
     .cf-icon();
 }
 
@@ -396,12 +397,14 @@
 .cf-icon__rotate( @degrees, @rotation ) {
     // TOOD: Check whether `filter` can be replaced
     //       by `-ms-transform` for CF supported browsers.
-    filter: progid:DXImageTransform.Microsoft.BasicImage( rotation=@rotation );
+    /* stylelint-disable-next-line function-name-case */
+    filter: progid:dximagetransform.microsoft.basicimage( rotation=@rotation );
     transform: rotate( @degrees );
 }
 
 .cf-icon__flip( @horiz, @vert, @rotation ) {
-    filter: progid:DXImageTransform.Microsoft.BasicImage( rotation=@rotation, mirror=1 );
+    /* stylelint-disable-next-line function-name-case */
+    filter: progid:dximagetransform.microsoft.basicimage( rotation=@rotation, mirror=1 );
     transform: scale( @horiz, @vert );
 }
 //
@@ -410,9 +413,9 @@
 
 .@{cf-icon-prefix}__border {
     .cf-icon-pseudo-elem( {
-        padding: .2em .25em .15em;
-        border: solid .08em @cf-icon-border-color;
-        border-radius: .1em;
+        padding: 0.2em 0.25em 0.15em;
+        border: solid 0.08em @cf-icon-border-color;
+        border-radius: 0.1em;
     } );
 }
 
@@ -1665,8 +1668,7 @@
 // This must come last to avoid displaying the icon both before and after.
 //
 
-.@{cf-icon-prefix}__after:before {
+.@{cf-icon-prefix}__after::before {
     display: none;
-
     content: '';
 }

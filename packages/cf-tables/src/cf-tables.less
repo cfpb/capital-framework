@@ -23,7 +23,6 @@
 
 @import '../../cf-core/src/cf-core.less';
 
-
 // Mixins
 .striped-table() {
     & > tbody > tr:nth-child(even) {
@@ -84,27 +83,27 @@
         text-transform: inherit;
     }
 
-    .sortable:after {
+    .sortable::after {
         display: inline-block;
         position: relative;
         top: -1px;
-        content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAJCAYAAAACTR1pAAAAXUlEQVR4AWPABZw9/C4A8Qlscvg0LQXi/1A8k1hNjXBNCFxNSFMcXDEmjsOlyQakgAB2RNckD8S/idD4D4jVYZq4gfgJXJIwfgPEIiCNt0ECJOKXII13gPgTifgaAHk0kQqUakHYAAAAAElFTkSuQmCC);
+        content: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAJCAYAAAACTR1pAAAAXUlEQVR4AWPABZw9/C4A8Qlscvg0LQXi/1A8k1hNjXBNCFxNSFMcXDEmjsOlyQakgAB2RNckD8S/idD4D4jVYZq4gfgJXJIwfgPEIiCNt0ECJOKXII13gPgTifgaAHk0kQqUakHYAAAAAElFTkSuQmCC );
         visibility: hidden;
     }
 
-    .sortable:hover:after,
-    .sortable.sorted-up:after,
-    .sortable.sorted-down:after {
+    .sortable:hover::after,
+    .sortable.sorted-up::after,
+    .sortable.sorted-down::after {
         visibility: visible;
     }
 
-    .sortable.sorted-down:after,
-    .sortable.sorted-up:hover:after {
-        transform: rotate(180deg);
+    .sortable.sorted-down::after,
+    .sortable.sorted-up:hover::after {
+        transform: rotate( 180deg );
     }
 
-    .sortable.sorted-down:hover:after {
-        transform: rotate(0deg);
+    .sortable.sorted-down:hover::after {
+        transform: rotate( 0deg );
     }
 }
 
@@ -138,14 +137,14 @@
         }
 
         & > thead {
-          display: none
+            display: none
         }
 
         td[data-label]:before {
             .heading-5();
             display: block;
             margin-top: 0;
-            margin-bottom: .41666667em;
+            margin-bottom: 0.41666667em;
             content: attr(data-label);
             line-height: 1.83333333;
         }
@@ -157,7 +156,7 @@
 
     .o-table__entry-header-on-small {
         & > tbody td:first-child {
-            padding-bottom: .75em;
+            padding-bottom: 0.75em;
             border-bottom: 1px solid @table-border;
             margin-bottom: unit( 10px / @base-font-size-px, em);
             margin-top: 0;

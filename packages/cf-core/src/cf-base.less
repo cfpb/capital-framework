@@ -106,7 +106,7 @@ b {
     text-transform: initial;
 }
 
-.heading-3( @fs: @size-iii )  {
+.heading-3( @fs: @size-iii ) {
     @font-size: @fs;
 
     margin-bottom: unit( 15px / @font-size, em );
@@ -117,7 +117,7 @@ b {
     text-transform: initial;
 }
 
-.heading-4( @fs: @size-iv )  {
+.heading-4( @fs: @size-iv ) {
     @font-size: @fs;
 
     margin-bottom: unit( 15px / @font-size, em );
@@ -128,7 +128,7 @@ b {
     text-transform: initial;
 }
 
-.heading-5( @fs: @size-v, @text-shadow: @text )  {
+.heading-5( @fs: @size-v, @text-shadow: @text ) {
     @font-size: @fs;
 
     margin-bottom: unit( 15px / @font-size, em );
@@ -139,7 +139,7 @@ b {
     text-transform: uppercase;
 }
 
-.heading-6( @fs: @size-vi, @text-shadow: @text )  {
+.heading-6( @fs: @size-vi, @text-shadow: @text ) {
     @font-size: @fs;
 
     margin-bottom: unit( 15px / @font-size, em );
@@ -596,16 +596,18 @@ code {
 }
 
 code {
-    padding: unit( 3px / @size-code, em )
-             unit( 3px / @size-code, em )
-             0;
+    padding:
+        unit( 3px / @size-code, em )
+        unit( 3px / @size-code, em )
+        0;
     font-size: unit( @size-code / @base-font-size-px, em );
 }
 
 pre {
     display: block;
-    padding: unit( 10px / @base-font-size-px, em)
-             unit( 15px / @base-font-size-px, em );
+    padding:
+        unit( 10px / @base-font-size-px, em )
+        unit( 15px / @base-font-size-px, em );
     white-space: pre-wrap;
     overflow-wrap: break-word;
 

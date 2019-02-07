@@ -62,7 +62,6 @@
 @import (less) '../../cf-core/src/cf-core.less';
 @import (less) '../../cf-grid/src/cf-grid.less';
 
-
 //
 // Content layouts
 //
@@ -160,7 +159,6 @@
     }
 } );
 
-
 //
 // Content layout column dividers
 //
@@ -257,18 +255,22 @@
 .content_intro,
 .content_main,
 .content_sidebar {
-    padding: unit( @grid_gutter-width / @base-font-size-px, em )
-             unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em );
+    padding:
+        unit( @grid_gutter-width / @base-font-size-px, em )
+        unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em );
 
     .respond-to-min( @bp-sm-min, {
         .grid_column( 12 );
-        padding: unit( ( @grid_gutter-width * 1.5 ) / @base-font-size-px, em )
-                 unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em );
+
+        padding:
+            unit( ( @grid_gutter-width * 1.5 ) / @base-font-size-px, em )
+            unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em );
     } );
 
     .respond-to-min( @bp-med-min, {
-        padding: unit( ( @grid_gutter-width * 1.5 ) / @base-font-size-px, em )
-                 0;
+        padding:
+            unit( ( @grid_gutter-width * 1.5 ) / @base-font-size-px, em )
+            0;
     } );
 }
 
@@ -398,8 +400,8 @@
             &.block__border,
             &.block__border-right,
             &.block__border-left {
-              border-right: none;
-              border-left: none;
+                border-right: none;
+                border-left: none;
             }
         } );
 
@@ -438,14 +440,15 @@
     }
 
     &__bg {
-        padding: unit( @grid_gutter-width / @base-font-size-px, em )
-                 unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em );
+        padding:
+            unit( @grid_gutter-width / @base-font-size-px, em )
+            unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em );
         padding-bottom: unit( ( @grid_gutter-width * 2 ) / @base-font-size-px, em );
         background: @block__bg;
 
         .respond-to-min( @bp-sm-min, {
             padding: unit( 45 / @base-font-size-px, em )
-                     unit( @grid_gutter-width / @base-font-size-px, em );
+            unit( @grid_gutter-width / @base-font-size-px, em );
         } );
     }
 
@@ -479,13 +482,14 @@
 
 .content__bleedbar {
     // Overrides the border between main and sidebar, because bleedbar makes its own.
-    .content_main:after {
+    .content_main::after {
         content: none;
     }
 
     .content_sidebar {
-        padding: unit( @grid_gutter-width / @base-font-size-px, em )
-                 unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em );
+        padding:
+            unit( @grid_gutter-width / @base-font-size-px, em )
+            unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em );
         background: @content_sidebar-bg;
     }
 
@@ -494,10 +498,10 @@
         overflow: hidden;
 
         .content_sidebar {
-            padding: unit( ( @grid_gutter-width * 1.5 ) / @base-font-size-px, em )
-                     0
-                     unit( ( @grid_gutter-width / 2) / @base-font-size-px, em )
-                     unit( @grid_gutter-width / @base-font-size-px, em );
+            padding-top: unit( ( @grid_gutter-width * 1.5 ) / @base-font-size-px, em );
+            padding-right: 0;
+            padding-bottom: unit( ( @grid_gutter-width / 2) / @base-font-size-px, em );
+            padding-left: unit( @grid_gutter-width / @base-font-size-px, em );
             margin-left: 0;
             position: relative;
             z-index: 1;
@@ -572,7 +576,7 @@
     margin-top: unit( ( @grid_gutter-width * 2 ) / @base-font-size-px, em );
     border-left-width: @grid_gutter-width / 2;
 
-    &:before {
+    &::before {
         display: block;
         height: 1px;
         width: 100%;
@@ -587,7 +591,7 @@
 .grid_column__left-divider {
     border-left-width: @grid_gutter-width;
 
-    &:before {
+    &::before {
         display: block;
         width: 1px;
         margin-left: -@grid_gutter-width;
