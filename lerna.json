@@ -3,7 +3,6 @@
   "version": "7.6.0",
   "useWorkspaces": true,
   "changelog": {
-    "cacheDir": ".changelog",
-    "nextVersion": "Changelog"
+    "cacheDir": ".changelog"
   }
 }

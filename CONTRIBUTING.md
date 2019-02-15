@@ -32,17 +32,15 @@ For example, if you wanted to change `cf-buttons`, here's what you'd do:
 1. `git clone git@github.com:cfpb/capital-framework.git`
 1. `cd capital-framework`
 1. `yarn` to install dependencies and set up [workspaces](https://yarnpkg.com/lang/en/docs/workspaces/)
-1. `git checkout -b button-fix`
-1. [Link](https://yarnpkg.com/lang/en/docs/cli/link/) cf-buttons to a live project to test any modifications. For example, with [cfgov-refresh](https://github.com/cfpb/cfgov-refresh):
-    1. `cd ~/wherever/capital-framework/packages/cf-buttons/ && yarn link`
-    1. `cd ~/wherever/cfgov-refresh/ && yarn link cf-buttons`
-    1. You can verify it is linked by viewing all symlinks in the `cfgov-refresh/node_modules/` directory: `ls -l node_modules/ | grep ^l`
-    1. Pro-Tip: Run `yarn run cf-link` to automatically execute `yarn link` in every component directory.
+1. `git checkout -b button-fix` to create a new branch for your changes.
 1. Edit file(s) in `/packages/cf-buttons/` however you want.
-1. `gulp build` in cfgov-refresh.
-1. Preview your changes in a browser.
-1. Commit your changes to capital-framework when you're ready: `git commit -am "Fix button border radius"`
-1. `git push origin button-fix`
+1. `yarn run cf-link` to [link](https://yarnpkg.com/lang/en/docs/cli/link/) your local CF components.
+1. `cd ~/wherever/cfgov-refresh/` to navigate to another project where you'd like to test your buttons changes (in this case, cfgov-refresh).
+1. `yarn link cf-buttons` to link cf-buttons to cfgov-refresh.
+1. `gulp build` in cfgov-refresh to compile your stylesheets.
+1. [Start cfgov-refresh](https://cfpb.github.io/cfgov-refresh/usage/) and navigate to a page with buttons to view your cf-buttons changes.
+1. When you're pleased with your changes, `cd` back to your `capital-framework` repo and commit your changes: `git commit -am "Fix button border radius"`
+1. `git push origin button-fix` to push your branch up to GitHub.
 1. Go to https://github.com/cfpb/capital-framework and open a pull request to merge `button-fix` into `master`.
 
 If you are not a current contributor to Capital Framework, continue using forks
@@ -59,17 +57,17 @@ Automated tests can be run with the command `yarn test`.
 If you're hacking on a component and want to test it in the documentation site follow the following steps.
 
 In this repo:
-- check out a working branch
-- run `yarn run cf-link`
+- Check out a working branch
+- Run `yarn run cf-link`
 
 In a second local clone of this repo in a different folder:
 
-- make sure you're on the gh-pages branch
-- [run all the install steps for the project](https://github.com/cfpb/capital-framework/tree/gh-pages#installation)
-- run `yarn run cf-link`
-- run `yarn start`
-- open a browser at http://localhost:3000/ and navigate to the component you've changed
-- when you've finished testing run `yarn run cf-unlink` to reset your components to the published releases
+- Make sure you're on the gh-pages branch
+- [Run all the install steps for the project](https://github.com/cfpb/capital-framework/tree/gh-pages#installation)
+- Run `yarn run cf-link`
+- Run `yarn start`
+- Open a browser at http://localhost:3000/ and navigate to the component you've changed
+- When you've finished testing run `yarn run cf-unlink` to reset your components to the published releases
 
 
 ### Browser support

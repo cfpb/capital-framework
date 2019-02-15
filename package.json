@@ -26,7 +26,7 @@
     "cf-link": "lerna exec -- yarn link",
     "cf-unlink": "lerna exec -- yarn unlink",
     "test": "gulp test",
-    "changelog": "lerna-changelog --from v1.0.0 > CHANGELOG.md && git add CHANGELOG.md",
+    "changelog": "./scripts/generate-changelog.sh",
     "publish": "yarn run build && lerna publish",
     "process-icon-svgs": "svgo -o packages/cf-icons/src/icons --enable=addClassesToSVGElement --enable=removeStyleElement --enable=removeAttrs --config='{ \"plugins\": [ { \"addClassesToSVGElement\": { \"className\": \"cf-icon-svg\" } }, { \"removeAttrs\": { \"attrs\": [ \"fill\", \"path:class\", \"circle:class\" ] } }, { \"cleanupIDs\": { \"force\": \"true\" } } ] }'"
   },
