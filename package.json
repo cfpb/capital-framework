@@ -58,8 +58,8 @@
     "in-publish": "^2.0.0",
     "indent-string": "^3.2.0",
     "is-travis": "^2.0.0",
-    "jest": "^23.6.0",
-    "jest-cli": "^23.6.0",
+    "jest": "^24.1.0",
+    "jest-cli": "^24.1.0",
     "jest-when": "^2.0.0",
     "lerna": "^3.6.0",
     "lerna-changelog": "^0.8.2",
@@ -85,9 +85,5 @@
     "dom-delegate": "^2.0.3",
     "normalize-css": "^2.0.0",
     "normalize-legacy-addon": "0.1.0"
-  },
-  "resolutions": {
-    "jest": "^23.6.0",
-    "@babel/core": "7.1.6"
   }
 }
