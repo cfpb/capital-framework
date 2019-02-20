@@ -149,7 +149,8 @@ function BaseTransition( element, classes ) {
    * already been applied to this BaseTransition's target element.
    */
   function _flush() {
-    for ( const prop in _classes ) {
+    let prop;
+    for ( prop in _classes ) {
       if ( _classes.hasOwnProperty( prop ) &&
            _classes[prop] !== _classes.BASE_CLASS &&
            _dom.classList.contains( _classes[prop] ) ) {
@@ -222,7 +223,8 @@ function BaseTransition( element, classes ) {
       transition:       'transitionend'
     };
 
-    for ( const transitionEnd in transitions ) {
+    let transitionEnd;
+    for ( transitionEnd in transitions ) {
       if ( transitions.hasOwnProperty( transitionEnd ) &&
            typeof elem.style[transitionEnd] !== 'undefined' ) {
         transition = transitions[transitionEnd];
