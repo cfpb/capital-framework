@@ -30,7 +30,8 @@ function assign( destination ) {
   destination = destination || {};
   for ( let i = 1, len = arguments.length; i < len; i++ ) {
     const source = arguments[i] || {};
-    for ( const key in source ) {
+    let key;
+    for ( key in source ) {
       if ( Object.prototype.hasOwnProperty.call( source, key ) ) {
         const value = source[key];
         if ( _isPlainObject( value ) ) {

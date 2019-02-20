@@ -712,7 +712,7 @@ to activate the accordion mode.
 ## JavaScript API
 
 A new array of Expandable instances can be created with
-`const expandables = Expandable().init();`.
+`const expandables = Expandable.init();`.
 Each instance has the following methods for public consumption:
 
 ### toggleTargetState( element )
