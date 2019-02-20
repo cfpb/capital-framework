@@ -3,6 +3,17 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ## Unreleased
 
+### Added
+-
+
+### Changed
+-
+
+### Removed
+-
+
+## 7.7.0 - 2019-02-20
+
 ### Changed
 - **cf-atomic-component:** Remove const from for loop for IE11.
 
