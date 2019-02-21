@@ -6,7 +6,7 @@
   "less": "src/cf-expandables.less",
   "style": "cf-expandables.css",
   "dependencies": {
-    "cf-atomic-component": "2.1.1",
+    "cf-atomic-component": "2.1.2",
     "cf-core": "4.10.0",
     "cf-icons": "4.5.0"
   },

@@ -1,6 +1,6 @@
 {
   "name": "capital-framework",
-  "version": "7.6.0",
+  "version": "7.7.0",
   "description": "CFPB's UI framework",
   "main": "src/cf-framework.js",
   "less": "src/cf-framework.less",
@@ -12,13 +12,13 @@
   "license": "SEE LICENSE IN TERMS.md",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/cfpb/cf-framework.git"
+    "url": "git+ssh://git@github.com/cfpb/capital-framework.git"
   },
   "bugs": {
-    "url": "https://github.com/cfpb/cf-framework/issues"
+    "url": "https://github.com/cfpb/capital-framework/issues"
   },
   "dependencies": {
-    "cf-atomic-component": "2.1.1",
+    "cf-atomic-component": "2.1.2",
     "cf-buttons": "5.0.1",
     "cf-core": "4.10.0",
     "cf-expandables": "7.1.1",
