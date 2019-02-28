@@ -1,5 +1,5 @@
 const ExpandableTransition = require(
-  '../../../../../src/cf-expandables/src/ExpandableTransition'
+  '../../../../../packages/cf-expandables/src/ExpandableTransition'
 );
 
 const HTML_SNIPPET = `

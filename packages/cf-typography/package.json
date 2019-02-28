@@ -1,0 +1,14 @@
+{
+  "name": "cf-typography",
+  "version": "5.0.1",
+  "description": "Capital Framework typography",
+  "less": "src/cf-typography.less",
+  "style": "cf-typography.css",
+  "dependencies": {
+    "cf-core": "4.10.0",
+    "cf-icons": "4.5.0"
+  },
+  "keywords": [
+    "typography"
+  ]
+}
