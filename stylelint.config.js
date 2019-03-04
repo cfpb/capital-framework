@@ -16,7 +16,7 @@ no-descending-specificity -
   TODO: Turn on this rule and see if issues can be fixed.
 
 selector-list-comma-newline-after -
-  Turned off because it wraps arguments less mixin declarations.
+  Turned off because it wraps arguments in Less mixin declarations.
 
 selector-pseudo-element-colon-notation -
   Set to 'single' to support IE8.
