@@ -398,13 +398,13 @@
     // TOOD: Check whether `filter` can be replaced
     //       by `-ms-transform` for CF supported browsers.
     /* stylelint-disable-next-line function-name-case */
-    filter: progid:dximagetransform.microsoft.basicimage( rotation=@rotation );
+    filter: progid:DXImageTransform.Microsoft.BasicImage( rotation=@rotation );
     transform: rotate( @degrees );
 }
 
 .cf-icon__flip( @horiz, @vert, @rotation ) {
     /* stylelint-disable-next-line function-name-case */
-    filter: progid:dximagetransform.microsoft.basicimage( rotation=@rotation, mirror=1 );
+    filter: progid:DXImageTransform.Microsoft.BasicImage( rotation=@rotation, mirror=1 );
     transform: scale( @horiz, @vert );
 }
 //
