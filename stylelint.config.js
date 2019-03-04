@@ -37,6 +37,7 @@ module.exports = {
     ],
     'indentation': [ 4 ],
     'max-empty-lines': 2,
+    'media-feature-parentheses-space-inside': 'always',
     'no-descending-specificity': null,
     'selector-list-comma-newline-after': null,
     'selector-pseudo-element-colon-notation': 'single'
