@@ -27,6 +27,10 @@ module.exports = {
   syntax: 'less',
   rules: {
     'font-family-no-missing-generic-family-keyword': null,
+    'function-name-case': [
+      'lower',
+      { ignoreFunctions: [ 'filter' ] }
+    ],
     'function-parentheses-space-inside': 'always',
     'rule-empty-line-before': [
       'always-multi-line',
