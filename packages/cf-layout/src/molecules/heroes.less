@@ -6,7 +6,7 @@
         padding-bottom: unit( @grid_gutter-width / @base-font-size-px, em );
 
         .respond-to-min( @bp-sm-min, {
-            // IE specific fix
+            // IE specific fix.
             display: table;
 
             @supports( display: flex ) {
@@ -67,8 +67,7 @@
         .respond-to-min( @bp-sm-min, {
             .grid_column( 5, 12 );
 
-
-            // IE specific fix
+            // IE specific fix.
             display: table-cell;
             vertical-align: middle;
 
@@ -107,7 +106,7 @@
                 margin-top: unit( @grid_gutter-width / @base-font-size-px, em ) * -1;
                 margin-bottom: unit( @grid_gutter-width / @base-font-size-px, em ) * -1;
 
-                // IE specific fix
+                // IE specific fix.
                 position: absolute;
                 height: 100%;
 
@@ -118,7 +117,7 @@
             }
 
             .m-hero_image {
-                // Remove the flexible container padding so that the image is a consistent width
+                // Remove the flexible container padding so that the image is a consistent width.
                 padding-bottom: 0 !important;
                 height: 100%;
                 width: 100%;
@@ -146,10 +145,10 @@
 
             .m-hero_wrapper {
                 // Overwrite the image that is set in the markup because
-                // we're showing the image container below instead
+                // we are showing the image container below instead.
                 background-image: none !important;
 
-                // Remove wrapper bottom padding
+                // Remove wrapper bottom padding.
                 padding-bottom: 0;
             }
 

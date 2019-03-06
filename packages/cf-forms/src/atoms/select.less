@@ -1,14 +1,14 @@
 .a-select {
-
     position: relative;
     border: 1px solid @select-border;
 
     select {
         width: 100%;
         line-height: @base-line-height;
-        padding: unit( 7px / @base-font-size-px, em )
-                 unit( 6px / @base-font-size-px, em )
-                 unit( 6px / @base-font-size-px, em );
+        padding:
+            unit( 7px / @base-font-size-px, em )
+            unit( 6px / @base-font-size-px, em )
+            unit( 6px / @base-font-size-px, em );
         border: 0;
         appearance: none;
         background-color: @input-bg;
@@ -34,7 +34,7 @@
     }
 
     select[disabled] {
-        color: @select-text__disabled ;
+        color: @select-text__disabled;
         background-color: @input-bg__disabled;
         cursor: not-allowed;
 
@@ -71,11 +71,9 @@
     }
 }
 
-
 // TODO: Add modernizr to CF so this works.
 // IE10 and below doesn't support pointer events
 // causing nothing to happen when you click on the dropdown arrow.
-
 .no-csspointerevents .a-select {
     &:after {
         height: 0;

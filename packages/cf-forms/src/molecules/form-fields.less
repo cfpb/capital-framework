@@ -20,12 +20,10 @@
                 display: inline-block;
                 grid-row-start: 1;
                 grid-row-end: 3;
-
                 border: 1px solid @form-field-input-border;
                 height: unit( 18px / @base-font-size-px, em );
                 width: unit( 18px / @base-font-size-px, em );
                 margin-right: 10px;
-
                 background-color: @input-bg;
                 content: '';
                 vertical-align: top;
@@ -101,7 +99,7 @@
     this is placed in its own block.
     We need to ignore the duplicate selector for stylelint too.
      */
-     /* stylelint-disable-next-line no-duplicate-selectors */
+    /* stylelint-disable-next-line no-duplicate-selectors */
     &__checkbox,
     &__radio {
         /* stylelint-disable-next-line no-duplicate-selectors */
@@ -138,9 +136,10 @@
         .a-label {
             &:before {
                 border-radius: 50%;
+
                 /* The rotate is needed to fix a bug in Firefox where radio
                    button was not centered. */
-                transform: rotate(0deg);
+                transform: rotate( 0deg );
             }
         }
 
