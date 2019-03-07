@@ -1,12 +1,12 @@
 {
   "name": "cf-buttons",
-  "version": "5.0.1",
+  "version": "8.0.0",
   "description": "Capital Framework buttons",
   "less": "src/cf-buttons.less",
   "style": "cf-buttons.css",
   "dependencies": {
-    "cf-core": "4.10.0",
-    "cf-icons": "4.5.0"
+    "cf-core": "^8.0.0",
+    "cf-icons": "^8.0.0"
   },
   "keywords": [
     "buttons"

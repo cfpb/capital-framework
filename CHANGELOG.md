@@ -1,4 +1,20 @@
 
+## v8.0.0 (2019-03-06)
+
+#### :boom: Breaking Change
+* [#894](https://github.com/cfpb/capital-framework/pull/894) Finish transition to Lerna by clarifying release management steps, updating release script ([@contolini](https://github.com/contolini))
+
+#### :bug: Bug Fix
+* [#893](https://github.com/cfpb/capital-framework/pull/893) Fix lerna-changelog command ([@contolini](https://github.com/contolini))
+
+#### :house: Internal
+* `cf-buttons`, `cf-core`, `cf-expandables`, `cf-forms`, `cf-grid`, `cf-icons`, `cf-layout`, `cf-notifications`, `cf-pagination`, `cf-tables`, `cf-typography`
+  * [#887](https://github.com/cfpb/capital-framework/pull/887) Stylelint update + update dependencies ([@anselmbradford](https://github.com/anselmbradford))
+
+#### Committers: 2
+- Ans ([@anselmbradford](https://github.com/anselmbradford))
+- Chris Contolini ([@contolini](https://github.com/contolini))
+
 
 ## 7.7.0 - 2019-02-20
 
