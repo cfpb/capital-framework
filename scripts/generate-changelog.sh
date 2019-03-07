@@ -6,3 +6,6 @@ lerna-changelog --from 7.7.0 --next-release-from-metadata > CHANGELOG.md
 
 # Add the pre-Lerna changelog to the bottom of the generated one.
 cat ./scripts/templates/CHANGELOG.legacy.md >> ./CHANGELOG.md
+
+# Add the modified changelog to the staging area
+git add CHANGELOG.md
