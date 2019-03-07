@@ -189,10 +189,11 @@ Once you've completed these steps, file a pull request against `gh-pages`.
 
 ## Release management
 
-After changes have been made to components,
-a FEWD can publish the changes to npm by running the following commands locally:
+Ready to publish changes to npm?
+Ensure you're on `master` and `git pull` to confirm you're up-to-date.
+Then run `yarn run release`.
+Lerna will update the changelog, ask for a new version number, create a git tag,
+push to GitHub and publish to npm.
 
-```sh
-yarn run changelog # This will update the changelog, feel free to manually tweak it afterward
-yarn run publish # This will ask for a version level, create a git tag, push to GitHub and publish to npm
-```
+If you'd like to preview the changelog before publishing anything,
+run `yarn run changelog` and open `CHANGELOG.md`.
