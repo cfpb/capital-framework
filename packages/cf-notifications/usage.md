@@ -100,11 +100,13 @@ Links, if present, appear in their own block below the explanation.
         <p class="m-notification_explanation">
             This is the explanation of the notification.
         </p>
-        <li class="m-list_item">
-            <a class="m-list_link" href="/">
-                This is a link below the explanation.
-            </a>
-        </li>
+        <ul class="m-list m-list__links">
+            <li class="m-list_item">
+                <a class="m-list_link" href="/">
+                    This is a link below the explanation.
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
 
@@ -118,11 +120,13 @@ Links, if present, appear in their own block below the explanation.
         <p class="m-notification_explanation">
             This is the explanation of the notification.
         </p>
-        <li class="m-list_item">
-            <a class="m-list_link" href="/">
-                This is a link below the explanation.
-            </a>
-        </li>
+        <ul class="m-list m-list__links">
+            <li class="m-list_item">
+                <a class="m-list_link" href="/">
+                    This is a link below the explanation.
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
 ```
