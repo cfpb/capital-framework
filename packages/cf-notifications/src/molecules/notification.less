@@ -61,4 +61,9 @@
     &_explanation {
         margin-top: unit( 5px / @base-font-size-px, em );
     }
+
+    // We need to provide a margin for links if an explanation is absent.
+    &_message + .m-list {
+        margin-top: unit( 15px / @base-font-size-px, em );
+    }
 }
