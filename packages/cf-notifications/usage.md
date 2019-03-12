@@ -89,6 +89,7 @@ message based on user input.
 
 If your notification requires further explanation, include it in a paragraph
 following the main message.
+Links, if present, appear in their own block below the explanation.
 
 <div class="m-notification
             m-notification__visible
@@ -98,8 +99,14 @@ following the main message.
         <div class="h4 m-notification_message">A default notification</div>
         <p class="m-notification_explanation">
             This is the explanation of the notification.
-            <a href="#">This is a link in the explanation</a>
         </p>
+        <ul class="m-list m-list__links">
+            <li class="m-list_item">
+                <a class="m-list_link" href="/">
+                    This is a link below the explanation.
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
 
@@ -112,8 +119,14 @@ following the main message.
         <div class="h4 m-notification_message">A default notification</div>
         <p class="m-notification_explanation">
             This is the explanation of the notification.
-            <a href="#">This is a link in the explanation</a>
         </p>
+        <ul class="m-list m-list__links">
+            <li class="m-list_item">
+                <a class="m-list_link" href="/">
+                    This is a link below the explanation.
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
 ```
