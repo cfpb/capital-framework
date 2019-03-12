@@ -20,7 +20,7 @@ This site is powered by Jekyll a Ruby based static site generator. For front-end
 $ brew install ruby
 $ brew install node
 $ gem install jekyll
-$ npm install --global gulp-cli
+$ yarn install --global gulp-cli
 ```
 
 
@@ -28,13 +28,13 @@ To install the site's dependencies, navigate to the project directory and run:
 
 ```shell
 $ bundle install
-$ npm install
+$ yarn install
 ```
 
 To launch the site, enter:
 
 ```shell
-$ npm start
+$ yarn start
 ```
 
 This will start the Jekyll server and the Gulp watch task. BrowserSync should launch a new browser window displaying the site at http://localhost:3000.
