@@ -64,10 +64,10 @@ In a second local clone of this repo in a different folder:
 
 - Make sure you're on the gh-pages branch
 - [Run all the install steps for the project](https://github.com/cfpb/capital-framework/tree/gh-pages#installation)
-- Run `yarn run cf-link`
-- Run `yarn start`
+- Run `npm run cf-link` (the gh-pages branch still uses npm, we will eventually move it to yarn)
+- Run `npm start`
 - Open a browser at http://localhost:3000/ and navigate to the component you've changed
-- When you've finished testing run `yarn run cf-unlink` to reset your components to the published releases
+- When you've finished testing run `npm run cf-unlink` to reset your components to the published releases
 
 
 ### Browser support
