@@ -18,13 +18,14 @@ for Capital Framework.
     - [Sizing variables](#sizing-variables)
 - [Recommended notification patterns](#recommended-notification-pattern)
     - [Action notification](#action-notification)
-    - [Error notification](#error-notification)
-    - [Warning notification](#warning-notification)
     - [Success notification](#success-notification)
-- [Modifiers](#recommended-notification-pattern)
-    - [Visibility](#visibility)
+    - [Warning notification](#warning-notification)
+    - [Error notification](#error-notification)
+- [Optional elements](#optional-elements)
     - [Explanation](#explanation)
-    - [Custom icons](#custom-icons)
+    - [Links](#links)
+- [Modifiers](#modifiers)
+    - [Visibility](#visibility)
 
 
 ## Variables
@@ -85,11 +86,87 @@ message based on user input.
 </div>
 ```
 
-#### Notification Explanation - Optional
+### Optional elements
+
+#### Explanation
 
 If your notification requires further explanation, include it in a paragraph
 following the main message.
-Links, if present, appear in their own block below the explanation.
+
+<div class="m-notification
+            m-notification__visible
+            m-notification__default">
+    {% include icons/information-round.svg %}
+    <div class="m-notification_content">
+        <div class="h4 m-notification_message">A default notification</div>
+        <p class="m-notification_explanation">
+            This is the explanation of the notification.
+        </p>
+    </div>
+</div>
+
+```
+<div class="m-notification
+            m-notification__visible
+            m-notification__default">
+    {% raw %}{% include icons/information-round.svg %}{% endraw %}
+    <div class="m-notification_content">
+        <div class="h4 m-notification_message">A default notification</div>
+        <p class="m-notification_explanation">
+            This is the explanation of the notification.
+        </p>
+    </div>
+</div>
+```
+
+#### Links
+
+If your notification requires links,
+include them below the message or explanation as a `m-list` unordered list.
+
+<div class="m-notification
+            m-notification__visible
+            m-notification__default">
+    {% include icons/information-round.svg %}
+    <div class="m-notification_content">
+        <div class="h4 m-notification_message">A default notification</div>
+        <ul class="m-list m-list__links">
+            <li class="m-list_item">
+                <a class="m-list_link" href="/">
+                    This is a link below the message.
+                </a>
+            </li>
+            <li class="m-list_item">
+                <a class="m-list_link" href="/">
+                    This is another link.
+                </a>
+            </li>
+         </ul>
+    </div>
+</div>
+
+```
+<div class="m-notification
+            m-notification__visible
+            m-notification__default">
+    {% raw %}{% include icons/information-round.svg %}{% endraw %}
+    <div class="m-notification_content">
+        <div class="h4 m-notification_message">A default notification</div>
+        <ul class="m-list m-list__links">
+            <li class="m-list_item">
+                <a class="m-list_link" href="/">
+                    This is a link below the message.
+                </a>
+            </li>
+            <li class="m-list_item">
+                <a class="m-list_link" href="/">
+                    This is another link.
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+```
 
 <div class="m-notification
             m-notification__visible
@@ -106,7 +183,12 @@ Links, if present, appear in their own block below the explanation.
                     This is a link below the explanation.
                 </a>
             </li>
-        </ul>
+            <li class="m-list_item">
+                <a class="m-list_link" href="/">
+                    This is another link.
+                </a>
+            </li>
+         </ul>
     </div>
 </div>
 
@@ -124,6 +206,11 @@ Links, if present, appear in their own block below the explanation.
             <li class="m-list_item">
                 <a class="m-list_link" href="/">
                     This is a link below the explanation.
+                </a>
+            </li>
+            <li class="m-list_item">
+                <a class="m-list_link" href="/">
+                    This is another link.
                 </a>
             </li>
         </ul>
