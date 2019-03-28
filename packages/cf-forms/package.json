@@ -1,14 +1,14 @@
 {
   "name": "cf-forms",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "Capital Framework form fields",
   "less": "src/cf-forms.less",
   "style": "cf-forms.css",
   "dependencies": {
-    "cf-buttons": "^8.0.0",
-    "cf-core": "^8.0.0",
-    "cf-grid": "^8.0.0",
-    "cf-icons": "^8.0.0"
+    "cf-buttons": "^8.0.1",
+    "cf-core": "^8.0.1",
+    "cf-grid": "^8.0.1",
+    "cf-icons": "^8.0.1"
   },
   "keywords": [
     "forms"

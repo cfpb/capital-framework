@@ -1,6 +1,6 @@
 {
   "npmClient": "yarn",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "useWorkspaces": true,
   "changelog": {
     "cacheDir": ".changelog"
