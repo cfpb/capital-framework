@@ -11,6 +11,16 @@
     &__checkbox,
     &__radio {
         .a-label {
+            // We need to turn off autoprefixing for the inline-grid because
+            // IE does not handle an inline-grid like other browsers,
+            // leading to an extremely narrow column of text for the label
+            // and the checkbox or radio widget covering the first part of it.
+            // The Autoprefixer ontrol comment below ensures that the following
+            // property is only picked up by browsers with standard support.
+            // The excalamation mark is necessary for Less to preserve the
+            // comment so that Autoprefixer will see it.
+            /*! autoprefixer: ignore next */
+            display: inline-grid;
             // 30px is width of checkbox/radio button plus the needed padding.
             grid-template-columns: unit( 30px / @base-font-size-px, em ) auto;
             vertical-align: top;
@@ -87,25 +97,6 @@
                     }
                 }
             }
-        }
-    }
-
-    /*
-    We need to turn off autoprefixing for the inline-grid because
-    older IE does not handle an inline-grid like other browsers,
-    leading to an extremely narrow column of text for the label.
-    This ensures it's only picked up by browsers with standard support.
-    Also, autoprefixer ignores rules on a per block basis so that is why
-    this is placed in its own block.
-    We need to ignore the duplicate selector for stylelint too.
-     */
-    /* stylelint-disable-next-line no-duplicate-selectors */
-    &__checkbox,
-    &__radio {
-        /* stylelint-disable-next-line no-duplicate-selectors */
-        .a-label {
-            /* autoprefixer: off */
-            display: inline-grid;
         }
     }
 
