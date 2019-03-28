@@ -13,7 +13,7 @@ function getDirectories( srcpath ) {
 }
 
 function npmLink( component ) {
-  exec( 'npm link ' + component,
+  exec( 'yarn link ' + component,
     function( err, out ) {
       if ( err instanceof Error ) {
         throw err;
