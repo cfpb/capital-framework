@@ -1,3 +1,18 @@
+## v8.0.1 (2019-03-28)
+
+#### :bug: Bug Fix
+* `cf-layout`
+  * [#897](https://github.com/cfpb/capital-framework/pull/897) Convert hardcoded values to use grid_gutter-width variable. ([@anselmbradford](https://github.com/anselmbradford))
+* `cf-notifications`
+  * [#898](https://github.com/cfpb/capital-framework/pull/898) cf-notifications: Set proper margin on notification links and fix TOC ([@anselmbradford](https://github.com/anselmbradford))
+
+#### :memo: Documentation
+* `cf-notifications`
+  * [#892](https://github.com/cfpb/capital-framework/pull/892) cf-notifications: Update links documentation ([@anselmbradford](https://github.com/anselmbradford))
+
+#### Committers: 1
+- Ans ([@anselmbradford](https://github.com/anselmbradford))
+
 
 ## v8.0.0 (2019-03-06)
 

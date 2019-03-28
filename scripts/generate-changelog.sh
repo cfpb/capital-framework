@@ -1,8 +1,14 @@
 #!/bin/sh
 
-# Generate a changelog for all PRs after the Lerna migration (git tag v7.7.0)
-# See docs at https://github.com/lerna/lerna-changelog
-lerna-changelog --from 7.7.0 --next-release-from-metadata > CHANGELOG.md
+# First, back up the current changelog
+mv CHANGELOG.md /tmp/cf-changelog.md
 
-# Add the pre-Lerna changelog to the bottom of the generated one.
-cat ./scripts/templates/CHANGELOG.legacy.md >> ./CHANGELOG.md
+# Generate the latest changelog entries
+# See docs at https://github.com/lerna/lerna-changelog
+lerna-changelog --next-release-from-metadata > CHANGELOG.md
+
+# Combine the two
+cat /tmp/cf-changelog.md >> CHANGELOG.md
+
+# Delete the temporary file for good measure
+rm /tmp/cf-changelog.md
