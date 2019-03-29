@@ -7,6 +7,9 @@ mv CHANGELOG.md /tmp/cf-changelog.md
 # See docs at https://github.com/lerna/lerna-changelog
 lerna-changelog --next-release-from-metadata > CHANGELOG.md
 
+# Add a new line to keep releases spaced nicely
+echo "\n" >> CHANGELOG.md
+
 # Combine the two
 cat /tmp/cf-changelog.md >> CHANGELOG.md
 
