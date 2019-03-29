@@ -29,6 +29,7 @@
 
 ## Checklist
 
+- [ ] PR has been tagged with the type of change it includes (breaking, enhancement, bug, documentation or internal)
 - [ ] PR has an informative and human-readable title
 - [ ] Changes are limited to a single goal (no scope creep)
 - [ ] Code can be automatically merged (no conflicts)
