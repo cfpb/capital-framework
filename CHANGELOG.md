@@ -1,5 +1,4 @@
-
-## Unreleased (2019-03-29)
+## v8.0.2 (2019-03-29)
 
 #### :bug: Bug Fix
 * `cf-forms`
