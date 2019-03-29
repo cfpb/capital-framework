@@ -1,6 +1,6 @@
 {
   "name": "capital-framework",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "description": "CFPB's UI framework",
   "main": "src/cf-framework.js",
   "less": "src/cf-framework.less",
@@ -22,7 +22,7 @@
     "cf-buttons": "^8.0.1",
     "cf-core": "^8.0.1",
     "cf-expandables": "^8.0.1",
-    "cf-forms": "^8.0.1",
+    "cf-forms": "^8.0.2",
     "cf-grid": "^8.0.1",
     "cf-icons": "^8.0.1",
     "cf-layout": "^8.0.1",

@@ -1,6 +1,6 @@
 {
   "name": "cf-forms",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "description": "Capital Framework form fields",
   "less": "src/cf-forms.less",
   "style": "cf-forms.css",
