@@ -190,8 +190,11 @@ Once you've completed these steps, file a pull request against `gh-pages`.
 ## Release management
 
 Ready to publish changes to npm?
-Ensure you're on `master` and `git pull` to confirm you're up-to-date.
-Then run `yarn run release`.
+
+1. Ensure you're on `master` and `git pull` to confirm you're up-to-date.
+1. Export a personal access token called [`GITHUB_AUTH`](https://github.com/lerna/lerna-changelog#github-token).
+1. Run `yarn run release` to start the release.
+
 Lerna will update the changelog, ask for a new version number, create a git tag,
 push to GitHub and publish to npm.
 
