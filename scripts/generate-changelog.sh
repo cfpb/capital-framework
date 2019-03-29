@@ -1,6 +1,10 @@
 #!/bin/sh
 
-# First, back up the current changelog
+# Undo any temporary changelog entries that might have been added if the user
+# recently ran `yarn run changelog`
+git checkout CHANGELOG.md
+
+# Back up the current changelog
 mv CHANGELOG.md /tmp/cf-changelog.md
 
 # Generate the latest changelog entries

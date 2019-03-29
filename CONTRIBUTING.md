@@ -193,10 +193,8 @@ Ready to publish changes to npm?
 
 1. Ensure you're on `master` and `git pull` to confirm you're up-to-date.
 1. Export a personal access token called [`GITHUB_AUTH`](https://github.com/lerna/lerna-changelog#github-token).
+1. Run `yarn run changelog` and open `CHANGELOG.md` to see a preview of new changelog entries. We use a [tool](https://github.com/lerna/lerna-changelog#usage) that scans our PRs for specific labels so if you see a PR missing from the changelog, ensure it has been labeled `breaking`, `enhancement`, `bug`, `documentation` or `internal`.
 1. Run `yarn run release` to start the release.
 
 Lerna will update the changelog, ask for a new version number, create a git tag,
 push to GitHub and publish to npm.
-
-If you'd like to preview the changelog before publishing anything,
-run `yarn run changelog` and open `CHANGELOG.md`.
