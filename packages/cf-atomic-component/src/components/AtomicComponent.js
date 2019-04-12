@@ -11,7 +11,7 @@
    ========================================================================== */
 
 const assign = require( '../utilities/object-assign' ).assign;
-const Delegate = require( 'dom-delegate' ).Delegate;
+const Delegate = require( 'ftdomdelegate' ).Delegate;
 const Events = require( '../mixins/Events' );
 const isFunction = require( '../utilities/type-checkers' ).isFunction;
 
