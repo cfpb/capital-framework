@@ -1,8 +1,8 @@
+const autoprefixer = require( 'autoprefixer' );
 const BROWSER_LIST = require( '../../config/browser-list-config' );
 const component = require( './parseComponentName' );
 const gulp = require( 'gulp' );
-const gulpAutoprefixer = require( 'gulp-autoprefixer' );
-const gulpCssmin = require( 'gulp-cssmin' );
+const gulpPostcss = require( 'gulp-postcss' );
 const gulpIgnore = require( 'gulp-ignore' );
 const gulpLess = require( 'gulp-less' );
 const gulpRename = require( 'gulp-rename' );
@@ -23,12 +23,14 @@ function stylesComponents() {
       return matches[2] === 'cf-grid' || matches[1] !== matches[2];
     } ) )
     .pipe( gulpLess( {
-      paths: [ 'node_modules/cf-*/src/' ]
+      paths: [ 'node_modules/cf-*/src/' ],
+      compress: true
     } ) )
-    .pipe( gulpAutoprefixer( {
-      browsers: BROWSER_LIST.LAST_2_PLUS_IE_8_AND_UP
-    } ) )
-    .pipe( gulpCssmin() )
+    .pipe( gulpPostcss( [
+      autoprefixer( {
+        browsers: BROWSER_LIST.LAST_2_PLUS_IE_8_AND_UP
+      } )
+    ] ) )
     .pipe( gulpRename( path => {
       path.dirname = component || path.dirname;
       path.dirname = path.dirname.replace( '/src', '' );
@@ -44,12 +46,15 @@ function stylesComponents() {
 function stylesGrid() {
   return gulp.src( 'packages/cf-grid/src-generated/*.less' )
     .pipe( gulpLess( {
-      paths: [ 'node_modules/cf-*/src/' ]
+      paths: [ 'node_modules/cf-*/src/' ],
+      compress: true
     } ) )
-    .pipe( gulpAutoprefixer( {
-      browsers: BROWSER_LIST.LAST_2_PLUS_IE_8_AND_UP
-    } ) )
-    .pipe( gulpCssmin() )
+    .pipe( gulpPostcss( [
+      autoprefixer( {
+        grid: true,
+        browsers: BROWSER_LIST.LAST_2_PLUS_IE_8_AND_UP
+      } )
+    ] ) )
     .pipe( gulpRename( {
       basename: 'cf-grid',
       extname: '.min.css'
