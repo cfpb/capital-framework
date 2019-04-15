@@ -389,14 +389,18 @@ _Reduce screen size to see these in action_
 <button href="#" class="a-btn a-btn__link a-btn__secondary">
     Secondary Button Link
 </button>
-<button href="#" class="a-btn a-btn__link a-btn__warning">Warning Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning">
+    Warning Button Link
+</button>
 
 ```
 <button href="#" class="a-btn a-btn__link">Button Link</button>
 <button href="#" class="a-btn a-btn__link a-btn__secondary">
     Secondary Button Link
 </button>
-<button href="#" class="a-btn a-btn__link a-btn__warning">Warning Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning">
+    Warning Button Link
+</button>
 ```
 
 #### Hovered state
@@ -405,14 +409,18 @@ _Reduce screen size to see these in action_
 <button href="#" class="a-btn a-btn__link a-btn__secondary hover">
     Secondary Button Link
 </button>
-<button href="#" class="a-btn a-btn__link a-btn__warning hover">Warning Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning hover">
+    Warning Button Link
+</button>
 
 ```
 <button href="#" class="a-btn a-btn__link hover">Button Link</button>
 <button href="#" class="a-btn a-btn__link a-btn__secondary hover">
     Secondary Button Link
 </button>
-<button href="#" class="a-btn a-btn__link a-btn__warning hover">Warning Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning hover">
+    Warning Button Link
+</button>
 ```
 
 #### Focus state
@@ -421,14 +429,18 @@ _Reduce screen size to see these in action_
 <button href="#" class="a-btn a-btn__link a-btn__secondary focus">
     Secondary Button Link
 </button>
-<button href="#" class="a-btn a-btn__link a-btn__warning focus">Warning Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning focus">
+    Warning Button Link
+</button>
 
 ```
 <button href="#" class="a-btn a-btn__link focus">Button Link</button>
 <button href="#" class="a-btn a-btn__link a-btn__secondary focus">
     Secondary Button Link
 </button>
-<button href="#" class="a-btn a-btn__link a-btn__warning focus">Warning Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning focus">
+    Warning Button Link
+</button>
 ```
 
 #### Active state
@@ -437,20 +449,24 @@ _Reduce screen size to see these in action_
 <button href="#" class="a-btn a-btn__link a-btn__secondary active">
     Secondary Button Link
 </button>
-<button href="#" class="a-btn a-btn__link a-btn__warning active">Warning Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning active">
+    Warning Button Link
+</button>
 
 ```
 <button href="#" class="a-btn a-btn__link active">Button Link</button>
 <button href="#" class="a-btn a-btn__link a-btn__secondary active">
     Secondary Button Link
 </button>
-<button href="#" class="a-btn a-btn__link a-btn__warning active">Warning Button Link</button>
+<button href="#" class="a-btn a-btn__link a-btn__warning active">
+    Warning Button Link
+</button>
 ```
 
 ### Icon buttons
 
-_Due to inherent whitespace created between inline elements, whitespace must be
-removed between the icon and its wrapping span element._
+> **Note:** Due to inherent whitespace created between inline elements,
+whitespace must be removed between the icon and its wrapping span element.
 
 #### Button with icon on the left
 
@@ -474,8 +490,7 @@ removed between the icon and its wrapping span element._
 
 <button class="a-btn a-btn__disabled">
     <span class="a-btn_icon
-                 a-btn_icon__on-left">
-    {% include icons/error.svg %}</span>
+                 a-btn_icon__on-left">{% include icons/error.svg %}</span>
     Close
 </button> Disabled button
 
@@ -559,28 +574,17 @@ removed between the icon and its wrapping span element._
 
 #### Button with an animated icon
 
-_Icon font is being deprecated. This pattern needs to be reworked, but is
-outside the scope of the initial svg icon work._
-
 <button class="a-btn a-btn__disabled">
     Submit your complaint
     <span class="a-btn_icon
-                 a-btn_icon__on-right
-                 cf-icon
-                 cf-icon__after
-                 cf-icon-update
-                 cf-icon__spin"></span>
+                 a-btn_icon__on-right">{% include icons/updating.svg %}</span>
 </button>
 
 ```
 <button class="a-btn">
     Submit your complaint
     <span class="a-btn_icon
-                 a-btn_icon__on-right
-                 cf-icon
-                 cf-icon__after
-                 cf-icon-update
-                 cf-icon__spin"></span>
+                 a-btn_icon__on-right">{% raw %}{% include icons/updating.svg %}{% endraw %}</span>
 </button>
 ```
 
