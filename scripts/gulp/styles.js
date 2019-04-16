@@ -57,10 +57,28 @@ function stylesGrid() {
     .pipe( gulp.dest( 'packages/cf-grid' ) );
 }
 
+/**
+ * Process CSS for the docs.
+ * @returns {PassThrough} A source stream.
+ */
+function stylesDocs() {
+  return gulp.src( 'docs/src/css/main.less' )
+    .pipe( gulpLess( {
+      paths: [ 'node_modules/cf-*/src/' ]
+    } ) )
+    .pipe( gulpAutoprefixer( {
+      browsers: BROWSER_LIST.LAST_2_PLUS_IE_8_AND_UP
+    } ) )
+    .pipe( gulpCssmin() )
+    .pipe( gulp.dest( 'docs/dist/css/' ) );
+}
+
 gulp.task( 'styles:components', stylesComponents );
 gulp.task( 'styles:grid', stylesGrid );
+gulp.task( 'styles:docs', stylesDocs );
 
 gulp.task( 'styles', gulp.parallel(
   'styles:components',
-  'styles:grid'
+  'styles:grid',
+  'styles:docs'
 ) );
