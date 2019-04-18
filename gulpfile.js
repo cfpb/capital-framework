@@ -27,9 +27,18 @@ gulp.task( 'build',
   )
 );
 
+// Define the default documentation task sequence.
+gulp.task( 'docs',
+  gulp.parallel(
+    'styles:docs',
+    'docs:copy'
+  )
+);
+
 gulp.task( 'default',
   gulp.series(
     'build',
-    'test'
+    'test',
+    'docs'
   )
 );

@@ -36,9 +36,9 @@ function _copyIcons() {
  * Move documentation files into /docs.
  * @returns {ChildProcess} A spawned process.
  */
-function docs() {
+function docsCopy() {
   const streams = [ _copyUsageDocs(), _copyCFJs(), _copyIcons() ];
   return mergeStream( ...streams );
 }
 
-gulp.task( 'docs', docs );
+gulp.task( 'docs:copy', docsCopy );
