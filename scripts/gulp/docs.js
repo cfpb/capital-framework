@@ -13,8 +13,8 @@ function _copyUsageDocs() {
 /**
  * Copies the compiled Capital Framework (CF) JS into the doc site structure.
  * TODO: This is different from how the CSS is handled,
- * which includes CF source less files and compiles the docs CSS.
- * The JavaScript should probably work this way to, to ensure that CF
+ * which includes CF source Less files and compiles the docs' CSS.
+ * The JavaScript should probably work this way, too, to ensure that CF
  * works when it is initialized via another project's entry file.
  * @returns {PassThrough} A source stream.
  */

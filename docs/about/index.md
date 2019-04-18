@@ -12,7 +12,7 @@ and support a wide range of browsers.
 
 As a work of the United States government, all code is open source and
 in the public domain (excluding any exceptions listed within in the project's
-[`TERMS.md` file](https://github.com/cfpb/capital-framework/blob/canary/TERMS.md#exceptions)).
+[`TERMS.md` file](https://github.com/cfpb/capital-framework/blob/master/TERMS.md#exceptions)).
 We encourage you to use this framework in your own projects
 and to contribute back.
 
