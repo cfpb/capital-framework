@@ -72,3 +72,7 @@ dist/
 yarn-error.log
 packages/**/*.css
 packages/**/*.min.js
+
+# Documentation #
+#################
+docs/Gemfile.lock
