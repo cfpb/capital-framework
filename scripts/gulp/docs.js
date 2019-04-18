@@ -1,5 +1,4 @@
 const gulp = require( 'gulp' );
-const gulpRename = require( 'gulp-rename' );
 const mergeStream = require( 'merge-stream' );
 
 /**
@@ -8,10 +7,7 @@ const mergeStream = require( 'merge-stream' );
  */
 function _copyUsageDocs() {
   return gulp.src( './packages/**/usage.md' )
-    .pipe( gulpRename( path => {
-      path.basename = 'index';
-    } ) )
-    .pipe( gulp.dest( './docs/components/' ) );
+    .pipe( gulp.dest( './docs/_includes/usage/' ) );
 }
 
 /**

@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "Getting started"
+title:  "Getting Started"
 ---
 
 Capital Framework provides a set of modular HTML, CSS, and JavaScript patterns that can be used both collectively and individually.
@@ -15,26 +15,27 @@ This allows you to pick and choose your modules as well as providing a solid fro
 
 ## Using the generator
 
-To use the generator, you will need [Node.js](http://nodejs.org/), [Yeoman](http://yeoman.io/), [Grunt](http://gruntjs.com/), and [Gulp](http://gulpjs.com/).
+To use the generator, you will need [Node.js](http://nodejs.org/),
+[Yeoman](http://yeoman.io/), and [Gulp](http://gulpjs.com/).
 
 ### Installing dependencies
 
 [Node.js](http://nodejs.org/) can be downloaded and installed directly from the Node website, or by using a package manager for your system. At the CFPB we use Homebrew. To install the dependencies:
 
-{% highlight bash %}
-$ brew install node #if installing node with homebrew
-$ npm install --global grunt-cli gulp yo generator-cf
-{% endhighlight %}
+```sh
+brew install node  # if installing node with Homebrew
+npm install --global gulp yo generator-cf
+```
 
 ### Scaffolding out a project
 
 To create a new project, create a directory, cd into that directory, and run the `yo cf` command:
 
-{% highlight bash %}
-$ mkdir my-awesome-projet
-$ cd my-awesome-project
-$ yo cf
-{% endhighlight %}
+```sh
+mkdir my-awesome-project
+cd my-awesome-project
+yo cf
+```
 
 The generator will prompt you to complete information about the project and choose the Capital Framework modules you would like to use.
 
@@ -83,25 +84,25 @@ Run `npm install capital-framework`. This will download Capital Framework to you
 project's `node_modules` directory. You can then import the framework into
 your application's primary Less file:
 
-{% highlight css %}
+```css
 @import (less) "node_modules/capital-framework/src/capital-framework.less";
 
-// the rest of your stylesheet...
-{% endhighlight %}
+/* the rest of your stylesheet… */
+```
 
 Just want one or two CF components and not the entire framework?
 Simply install and `@import` only the components you need.
 
-{% highlight sh %}
-$ npm install cf-buttons cf-icons
-{% endhighlight %}
+```sh
+npm install cf-buttons cf-icons
+```
 
-{% highlight css %}
+```css
 @import (less) "node_modules/cf-buttons/src/cf-buttons.less";
 @import (less) "node_modules/cf-icons/src/cf-icons.less";
 
-// the rest of your stylesheet...
-{% endhighlight %}
+/* the rest of your stylesheet… */
+```
 
 ## Downloading the compiled CSS
 
@@ -109,7 +110,7 @@ Capital Framework's compiled CSS can be <a class="cf-download" href="https://npm
 Download it and copy the files found in the `dist/` directory to your project.
 Use standard `<link>` and `<script>` tags.
 
-{% highlight html %}
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -121,4 +122,4 @@ Use standard `<link>` and `<script>` tags.
     <script src="capital-framework.min.js"></script>
 </body>
 </html>
-{% endhighlight %}
+```
