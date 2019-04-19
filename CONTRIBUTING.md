@@ -1,7 +1,9 @@
-> All contributions to this project will be released under the CC0 public domain
-> dedication. By submitting a pull request or filing a bug, issue, or
-> feature request, you are agreeing to comply with this waiver of copyright interest.
-> Details can be found in our [TERMS](https://github.com/cfpb/capital-framework/blob/master/TERMS.md) and [LICENSE](https://github.com/cfpb/capital-framework/blob/master/LICENSE).
+All contributions to this project will be released under the CC0 public domain
+dedication. By submitting a pull request or filing a bug, issue, or
+feature request, you are agreeing to comply with this waiver of copyright interest.
+Details can be found in our [TERMS](https://github.com/cfpb/capital-framework/blob/master/TERMS.md) and [LICENSE](https://github.com/cfpb/capital-framework/blob/master/LICENSE).
+
+--------------------------------------------------------------------------------
 
 There are two primary ways to help:
  - Using the issue tracker, and
@@ -71,11 +73,13 @@ Automated tests can be run with the command `yarn test`.
 If you're hacking on a component and want to test it in the documentation site
 follow the following steps.
 
-1. [Set up Jekyll to run the docs site locally](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll),
-if it's not already set up.
+1. Ensure that you have the Bundler Ruby gem installed
+   by running `gem install bundler`.
+   ([more info](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll#requirements)).
 1. Check out a working branch.
 1. Run `gulp docs`.
 1. Go into the documentation directory with `cd docs`.
+1. Run `bundle install` if you haven't before.
 1. Run `bundle exec jekyll serve watch` and visit http://localhost:4000/.
 
 ### Browser support
@@ -166,13 +170,14 @@ features. For more information visit the [Babel documentation site]
 Ready to publish changes to npm?
 
 1. Ensure you're on `master` and `git pull` to confirm you're up-to-date.
-1. Export a personal access token called [`GITHUB_AUTH`](https://github.com/lerna/lerna-changelog#github-token).
+1. Export a personal access token called
+   [`GITHUB_AUTH`](https://github.com/lerna/lerna-changelog#github-token).
 1. Run `yarn run changelog` and open `CHANGELOG.md` to see a preview
-of new changelog entries.
-We use a [tool](https://github.com/lerna/lerna-changelog#usage) that scans our
-Pull Requests for specific labels so if you see a PR missing from the changelog,
-ensure it has been labeled `breaking`, `enhancement`, `bug`,
-`documentation` or `internal`.
+   of new changelog entries.
+   We use a [tool](https://github.com/lerna/lerna-changelog#usage) that scans our
+   Pull Requests for specific labels so if you see a PR missing from the changelog,
+   ensure it has been labeled `breaking`, `enhancement`, `bug`,
+   `documentation` or `internal`.
 1. Run `yarn run release` to start the release.
 
 Lerna will update the changelog, ask for a new version number, create a git tag,
