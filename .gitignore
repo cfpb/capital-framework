@@ -66,9 +66,13 @@ vendor/
 static/vendor/
 src/vendor/
 util.js
-dist/
+/dist/ # docs/dist/ checked in so GitHub Pages can serve built static assets.
 .npmrc
 .changelog/
 yarn-error.log
 packages/**/*.css
 packages/**/*.min.js
+
+# Documentation #
+#################
+docs/Gemfile.lock

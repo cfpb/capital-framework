@@ -51,6 +51,7 @@
     "lerna": "3.13.2",
     "lerna-changelog": "0.8.2",
     "log-symbols": "^2.2.0",
+    "merge-stream": "^1.0.1",
     "minimist": "^1.2.0",
     "require-dir": "^1.2.0",
     "serve-static": "^1.13.1",
