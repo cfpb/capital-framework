@@ -76,7 +76,7 @@ if it's not already set up.
 1. Check out a working branch.
 1. Run `gulp docs`.
 1. Go into the documentation directory with `cd docs`.
-1. Run `bundle exec jekyll serve` and visit http://127.0.0.1:4000.
+1. Run `bundle exec jekyll serve watch` and visit http://localhost:4000/.
 
 ### Browser support
 
