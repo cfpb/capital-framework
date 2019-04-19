@@ -1,7 +1,7 @@
 > All contributions to this project will be released under the CC0 public domain
 > dedication. By submitting a pull request or filing a bug, issue, or
 > feature request, you are agreeing to comply with this waiver of copyright interest.
-> Details can be found in our [TERMS](https://github.com/cfpb/capital-framework/blob/master/TERMS.md) and [LICENSE](https://github.com/cfpb/capital-framework/blob/master/LICENSE).
+> Details can be found in our [TERMS](https://github.com/cfpb/capital-framework/TERMS.md) and [LICENSE](https://github.com/cfpb/capital-framework/LICENSE).
 
 There are two primary ways to help:
  - Using the issue tracker, and
