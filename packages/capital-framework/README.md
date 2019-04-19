@@ -20,7 +20,7 @@ Detailed instructions can be found at the Capital Framework
 
 We welcome your feedback and contributions.
 
-- [Find out about contributing](CONTRIBUTING.md)
+- [Find out about contributing](https://github.com/cfpb/capital-framework/blob/master/CONTRIBUTING.md)
 - [File a bug](https://github.com/cfpb/capital-framework/issues/new?labels=bug)
 
 ---
