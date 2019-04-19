@@ -29,10 +29,10 @@ For example, if you wanted to change `cf-buttons` and use it in
 [cfgov-refresh](https://github.com/cfpb/cfgov-refresh),
 here's what you'd do:
 
-1. `git clone git@github.com:cfpb/capital-framework.git`
+1. `git clone git@github.com:cfpb/capital-framework.git`, if you haven't already.
 1. `cd capital-framework`
+1. `git checkout master && git pull` to ensure you're on the latest changes (this step is not necessary when cloning for the first time).
 1. `yarn` to install dependencies and set up [workspaces](https://yarnpkg.com/lang/en/docs/workspaces/)
-1. `git checkout master && git pull` to ensure you're on the latest changes.
 1. `git checkout -b button-fix` to create a new branch for your changes.
 1. Edit file(s) in `/packages/cf-buttons/` however you want.
 1. Run `gulp docs` to update the documentation.
