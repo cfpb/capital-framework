@@ -23,7 +23,7 @@ for Capital Framework.
     - [Error notification](#error-notification)
 - [Optional elements](#optional-elements)
     - [Explanation](#explanation)
-    - [Links](#links)
+    - [Link](#link)
 - [Modifiers](#modifiers)
     - [Visibility](#visibility)
 
@@ -119,10 +119,10 @@ following the main message.
 </div>
 ```
 
-#### Links
+#### Link
 
-If your notification requires links,
-include them below the message or explanation as a `m-list` unordered list.
+If your notification requires a link,
+include it below the message or explanation.
 
 <div class="m-notification
             m-notification__visible
@@ -130,18 +130,11 @@ include them below the message or explanation as a `m-list` unordered list.
     {% include icons/information-round.svg %}
     <div class="m-notification_content">
         <div class="h4 m-notification_message">A default notification</div>
-        <ul class="m-list m-list__links">
-            <li class="m-list_item">
-                <a class="m-list_link" href="/">
-                    This is a link below the message.
-                </a>
-            </li>
-            <li class="m-list_item">
-                <a class="m-list_link" href="/">
-                    This is another link.
-                </a>
-            </li>
-         </ul>
+        <p>
+            <a href="/">
+                This is a link below the message
+            </a>
+        </p>
     </div>
 </div>
 
@@ -152,18 +145,11 @@ include them below the message or explanation as a `m-list` unordered list.
     {% raw %}{% include icons/information-round.svg %}{% endraw %}
     <div class="m-notification_content">
         <div class="h4 m-notification_message">A default notification</div>
-        <ul class="m-list m-list__links">
-            <li class="m-list_item">
-                <a class="m-list_link" href="/">
-                    This is a link below the message.
-                </a>
-            </li>
-            <li class="m-list_item">
-                <a class="m-list_link" href="/">
-                    This is another link.
-                </a>
-            </li>
-        </ul>
+        <p>
+            <a href="/">
+                This is a link below the message
+            </a>
+        </p>
     </div>
 </div>
 ```
@@ -177,18 +163,11 @@ include them below the message or explanation as a `m-list` unordered list.
         <p class="m-notification_explanation">
             This is the explanation of the notification.
         </p>
-        <ul class="m-list m-list__links">
-            <li class="m-list_item">
-                <a class="m-list_link" href="/">
-                    This is a link below the explanation.
-                </a>
-            </li>
-            <li class="m-list_item">
-                <a class="m-list_link" href="/">
-                    This is another link.
-                </a>
-            </li>
-         </ul>
+        <p>
+            <a href="/">
+                This is a link below the explanation
+            </a>
+        </p>
     </div>
 </div>
 
@@ -202,18 +181,11 @@ include them below the message or explanation as a `m-list` unordered list.
         <p class="m-notification_explanation">
             This is the explanation of the notification.
         </p>
-        <ul class="m-list m-list__links">
-            <li class="m-list_item">
-                <a class="m-list_link" href="/">
-                    This is a link below the explanation.
-                </a>
-            </li>
-            <li class="m-list_item">
-                <a class="m-list_link" href="/">
-                    This is another link.
-                </a>
-            </li>
-        </ul>
+        <p>
+            <a href="/">
+                This is a link below the explanation
+            </a>
+        </p>
     </div>
 </div>
 ```
