@@ -1,7 +1,9 @@
-> All contributions to this project will be released under the CC0 public domain
-> dedication. By submitting a pull request or filing a bug, issue, or
-> feature request, you are agreeing to comply with this waiver of copyright interest.
-> Details can be found in our [TERMS](https://github.com/cfpb/capital-framework/TERMS.md) and [LICENSE](https://github.com/cfpb/capital-framework/LICENSE).
+All contributions to this project will be released under the CC0 public domain
+dedication. By submitting a pull request or filing a bug, issue, or
+feature request, you are agreeing to comply with this waiver of copyright interest.
+Details can be found in our [TERMS](https://github.com/cfpb/capital-framework/blob/master/TERMS.md) and [LICENSE](https://github.com/cfpb/capital-framework/blob/master/LICENSE).
+
+--------------------------------------------------------------------------------
 
 There are two primary ways to help:
  - Using the issue tracker, and
@@ -29,10 +31,10 @@ For example, if you wanted to change `cf-buttons` and use it in
 [cfgov-refresh](https://github.com/cfpb/cfgov-refresh),
 here's what you'd do:
 
-1. `git clone git@github.com:cfpb/capital-framework.git`
+1. `git clone git@github.com:cfpb/capital-framework.git`, if you haven't already.
 1. `cd capital-framework`
+1. `git checkout master && git pull` to ensure you're on the latest changes (this step is not necessary when cloning for the first time).
 1. `yarn` to install dependencies and set up [workspaces](https://yarnpkg.com/lang/en/docs/workspaces/)
-1. `git checkout master && git pull` to ensure you'll on the latest changes.
 1. `git checkout -b button-fix` to create a new branch for your changes.
 1. Edit file(s) in `/packages/cf-buttons/` however you want.
 1. Run `gulp docs` to update the documentation.
@@ -71,12 +73,14 @@ Automated tests can be run with the command `yarn test`.
 If you're hacking on a component and want to test it in the documentation site
 follow the following steps.
 
-1. [Set up Jekyll to run the docs site locally](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll),
-if it's not already set up.
+1. Ensure that you have the Bundler Ruby gem installed
+   by running `gem install bundler`.
+   ([more info](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll#requirements)).
 1. Check out a working branch.
 1. Run `gulp docs`.
 1. Go into the documentation directory with `cd docs`.
-1. Run `bundle exec jekyll serve` and visit http://127.0.0.1:4000.
+1. Run `bundle install` if you haven't before.
+1. Run `bundle exec jekyll serve watch` and visit http://localhost:4000/.
 
 ### Browser support
 
@@ -166,13 +170,14 @@ features. For more information visit the [Babel documentation site]
 Ready to publish changes to npm?
 
 1. Ensure you're on `master` and `git pull` to confirm you're up-to-date.
-1. Export a personal access token called [`GITHUB_AUTH`](https://github.com/lerna/lerna-changelog#github-token).
+1. Export a personal access token called
+   [`GITHUB_AUTH`](https://github.com/lerna/lerna-changelog#github-token).
 1. Run `yarn run changelog` and open `CHANGELOG.md` to see a preview
-of new changelog entries.
-We use a [tool](https://github.com/lerna/lerna-changelog#usage) that scans our
-Pull Requests for specific labels so if you see a PR missing from the changelog,
-ensure it has been labeled `breaking`, `enhancement`, `bug`,
-`documentation` or `internal`.
+   of new changelog entries.
+   We use a [tool](https://github.com/lerna/lerna-changelog#usage) that scans our
+   Pull Requests for specific labels so if you see a PR missing from the changelog,
+   ensure it has been labeled `breaking`, `enhancement`, `bug`,
+   `documentation` or `internal`.
 1. Run `yarn run release` to start the release.
 
 Lerna will update the changelog, ask for a new version number, create a git tag,
@@ -192,7 +197,7 @@ the output and support are the same.
 
 ### Adhere to any linting errors or warnings
 
-The `gulp lint` linting tasks that are set up within component build processes
+The `gulp lint` linting tasks that are set up within the build processes
 are there to promote consistency.
 When contributing code please publicly track that there are no linting errors
 or warnings using the testing checklist in the pull request description.
