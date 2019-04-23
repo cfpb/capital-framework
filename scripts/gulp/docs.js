@@ -33,11 +33,25 @@ function _copyIcons() {
 }
 
 /**
+ * Copies the contributing documentation.
+ * @returns {PassThrough} A source stream.
+ */
+function _copyContributing() {
+  return gulp.src( './CONTRIBUTING.md' )
+    .pipe( gulp.dest( './docs/_includes/' ) );
+}
+
+/**
  * Move documentation files into /docs.
  * @returns {ChildProcess} A spawned process.
  */
 function docsCopy() {
-  const streams = [ _copyUsageDocs(), _copyCFJs(), _copyIcons() ];
+  const streams = [
+    _copyUsageDocs(),
+    _copyCFJs(),
+    _copyIcons(),
+    _copyContributing()
+  ];
   return mergeStream( ...streams );
 }
 

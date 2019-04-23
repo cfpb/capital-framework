@@ -79,8 +79,7 @@ follow the following steps.
 1. Check out a working branch.
 1. Run `gulp docs`.
 1. Go into the documentation directory with `cd docs`.
-1. Run `bundle install` if you haven't before
-   (also run `bundle update` periodically).
+1. Run `bundle install` if you haven't before.
 1. Run `bundle exec jekyll serve watch` and visit http://localhost:4000/.
 
 ### Browser support
