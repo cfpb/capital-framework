@@ -19,6 +19,7 @@
             // property is only picked up by browsers with standard support.
             // The exclamation mark is necessary for Less to preserve the
             // comment so that Autoprefixer will see it.
+
             /*! autoprefixer: ignore next */
             display: inline-grid;
             // 30px is width of checkbox/radio button plus the needed padding.
@@ -52,6 +53,11 @@
             &.hover:before {
                 border-color: @input-border__hover;
             }
+        }
+
+        // Ensure the helper text appears on its own line below the label.
+        .a-label_helper {
+            display: block;
         }
 
         .a-checkbox,
