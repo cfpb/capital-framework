@@ -69,12 +69,14 @@ function stylesGrid() {
 function stylesDocs() {
   return gulp.src( 'docs/src/css/main.less' )
     .pipe( gulpLess( {
-      paths: [ 'node_modules/cf-*/src/' ]
+      paths: [ 'node_modules/cf-*/src/' ],
+      compress: true
     } ) )
-    .pipe( gulpAutoprefixer( {
-      browsers: BROWSER_LIST.LAST_2_PLUS_IE_8_AND_UP
-    } ) )
-    .pipe( gulpCssmin() )
+    .pipe( gulpPostcss( [
+      autoprefixer( {
+        browsers: BROWSER_LIST.LAST_2_PLUS_IE_8_AND_UP
+      } )
+    ] ) )
     .pipe( gulp.dest( 'docs/dist/css/' ) );
 }
 
