@@ -26,7 +26,6 @@ It's made up of four child components `cf-vars`, `cf-media-queries`,
     - [Helper classes](#helper-classes)
     - [Mixins](#mixins)
 - [Base typography](#base-typography)
-    - [Webfonts](#webfonts)
     - [Type hierarchy](#type-hierarchy)
     - [Body copy vertical margins](#body-copy-vertical-margins)
     - [Default links](#default-links)
@@ -705,38 +704,6 @@ Sets the element to `14px` (in `em`s) based on the text size passed as
 
 
 ## Base typography
-
-### Webfont mixins
-
-#### :warning: These mixins are deprecated and will be removed in CFv5 :warning:
-
-Our
-[`@font-face` syntax](https://github.com/cfpb/capital-framework/blob/master/src/cf-typography/src/licensed-fonts.less)
-is transitioning to a family-linked model,
-which eliminates the need for these old mixins.
-Style and weight should now be set with the traditional CSS properties.
-
----
-
-Sets the font-stack, weight, and style of an element.
-
-```
-.u-webfont-regular();
-.u-webfont-italic();
-.u-webfont-medium();
-.u-webfont-demi();
-```
-
-To use your own fonts in the webfont mixins, set your own font with the
-`@webfont-regular/italic/medium/demi` variables in your `cf-theme-overrides.less`
-file.
-
-_These mixins also add the appropriate `.lt-ie9` overrides. `.lt-ie9`
-overrides are necessary to override `font-style` and `font-weight` each time
-the webfont is used. These overrides are built into the webfont mixins so you
-get them automatically. Note that this requires you to use conditional
-classes on the `html` element:
-<https://github.com/h5bp/html5-boilerplate/blob/v4.3.0/doc/html.md#conditional-html-classes.>_
 
 ### Type hierarchy
 
