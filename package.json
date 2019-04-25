@@ -57,11 +57,11 @@
     "stylelint": "10.0.1",
     "stylelint-config-standard": "18.3.0",
     "svgo": "^1.2.1",
+    "terser-webpack-plugin": "^1.2.3",
     "through2": "^3.0.0",
-    "uglifyjs-webpack-plugin": "^1.2.7",
     "vinyl-named": "^1.1.0",
     "wcag": "^0.3.0",
-    "webpack": "^4.16.2",
+    "webpack": "^4.30.0",
     "webpack-stream": "^5.0.0"
   },
   "dependencies": {
