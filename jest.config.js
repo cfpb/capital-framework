@@ -9,7 +9,8 @@ module.exports = {
   ],
   coveragePathIgnorePatterns: [
     '<rootDir>/gulpfile.js',
-    '<rootDir>/jest.config.js',
+    '<rootDir>/.*.config.js',
+    '<rootDir>/.*.min.js',
     '<rootDir>/node_modules/',
     '<rootDir>/config/',
     '<rootDir>/dist/',
@@ -19,7 +20,8 @@ module.exports = {
     '<rootDir>/packages/cf-expandables/src/cf-expandables.js',
     '<rootDir>/packages/cf-tables/src/cf-tables.js',
     '<rootDir>/test/',
-    '<rootDir>/tmp/'
+    '<rootDir>/tmp/',
+    '<rootDir>/scripts/'
   ],
   coverageDirectory: '<rootDir>/test/unit-test-coverage',
   testURL: 'http://localhost'

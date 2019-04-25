@@ -20,7 +20,7 @@ function _copyUsageDocs() {
  */
 function _copyCFJs() {
   return gulp.src( './packages/capital-framework/capital-framework.min.js' )
-  .pipe( gulp.dest( './docs/dist/js/' ) );
+    .pipe( gulp.dest( './docs/dist/js/' ) );
 }
 
 /**
