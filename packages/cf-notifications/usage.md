@@ -67,8 +67,7 @@ and empty, but is modified by scripting in production to update the state and
 message based on user input.
 
 <div class="m-notification
-            m-notification__visible
-            m-notification__default">
+            m-notification__visible">
     {% include icons/information-round.svg %}
     <div class="m-notification_content">
         <div class="h4 m-notification_message">A default notification</div>
@@ -77,8 +76,7 @@ message based on user input.
 
 ```
 <div class="m-notification
-            m-notification__visible
-            m-notification__default">
+            m-notification__visible">
     {% raw %}{% include icons/information-round.svg %}{% endraw %}
     <div class="m-notification_content">
         <div class="h4 m-notification_message">A default notification</div>
@@ -94,8 +92,7 @@ If your notification requires further explanation, include it in a paragraph
 following the main message.
 
 <div class="m-notification
-            m-notification__visible
-            m-notification__default">
+            m-notification__visible">
     {% include icons/information-round.svg %}
     <div class="m-notification_content">
         <div class="h4 m-notification_message">A default notification</div>
@@ -107,8 +104,7 @@ following the main message.
 
 ```
 <div class="m-notification
-            m-notification__visible
-            m-notification__default">
+            m-notification__visible">
     {% raw %}{% include icons/information-round.svg %}{% endraw %}
     <div class="m-notification_content">
         <div class="h4 m-notification_message">A default notification</div>
@@ -125,8 +121,7 @@ If your notification requires links,
 include them below the message or explanation as a `m-list` unordered list.
 
 <div class="m-notification
-            m-notification__visible
-            m-notification__default">
+            m-notification__visible">
     {% include icons/information-round.svg %}
     <div class="m-notification_content">
         <div class="h4 m-notification_message">A default notification</div>
@@ -147,8 +142,7 @@ include them below the message or explanation as a `m-list` unordered list.
 
 ```
 <div class="m-notification
-            m-notification__visible
-            m-notification__default">
+            m-notification__visible">
     {% raw %}{% include icons/information-round.svg %}{% endraw %}
     <div class="m-notification_content">
         <div class="h4 m-notification_message">A default notification</div>
@@ -169,8 +163,7 @@ include them below the message or explanation as a `m-list` unordered list.
 ```
 
 <div class="m-notification
-            m-notification__visible
-            m-notification__default">
+            m-notification__visible">
     {% include icons/information-round.svg %}
     <div class="m-notification_content">
         <div class="h4 m-notification_message">A default notification</div>
@@ -194,8 +187,7 @@ include them below the message or explanation as a `m-list` unordered list.
 
 ```
 <div class="m-notification
-            m-notification__visible
-            m-notification__default">
+            m-notification__visible">
     {% raw %}{% include icons/information-round.svg %}{% endraw %}
     <div class="m-notification_content">
         <div class="h4 m-notification_message">A default notification</div>
