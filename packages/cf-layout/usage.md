@@ -1310,11 +1310,7 @@ the available space.
 <div class="block block__border block__flush-sides">
     <section class="o-featured-content-module">
         <div class="o-featured-content-module_text">
-            <div class="a-heading a-heading__icon">
-                {% include icons/speech-bubble.svg %}
-                Featured
-            </div>
-            <h2>Feature title</h2>
+            <h2>Featured content</h2>
             <p>
                 Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
                 instructior ex pri. Cu pri inani constituto, cum aeque noster
@@ -1338,11 +1334,7 @@ the available space.
 <div class="block block__border block__flush-sides">
     <section class="o-featured-content-module">
         <div class="o-featured-content-module_text">
-            <div class="a-heading a-heading__icon">
-                {% raw %}{% include icons/speech-bubble.svg %}{% endraw %}
-                Featured
-            </div>
-            <h2>Feature title</h2>
+            <h2>Featured content</h2>
             <p>
                 Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
                 instructior ex pri. Cu pri inani constituto, cum aeque noster
@@ -1374,11 +1366,7 @@ side so that the copyright information is displayed.
     <section class="o-featured-content-module
                     o-featured-content-module__right">
         <div class="o-featured-content-module_text">
-            <div class="a-heading a-heading__icon">
-                {% include icons/speech-bubble.svg %}
-                Featured map
-            </div>
-            <h2>Feature title</h2>
+            <h2>Featured map</h2>
             <p>
                 Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
                 instructior ex pri. Cu pri inani constituto, cum aeque noster
@@ -1403,11 +1391,7 @@ side so that the copyright information is displayed.
     <section class="o-featured-content-module
                     o-featured-content-module__right">
         <div class="o-featured-content-module_text">
-            <div class="a-heading a-heading__icon">
-                {% raw %}{% include icons/speech-bubble.svg %}{% endraw %}
-                Featured map
-            </div>
-            <h2>Feature title</h2>
+            <h2>Featured map</h2>
             <p>
                 Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
                 instructior ex pri. Cu pri inani constituto, cum aeque noster
@@ -1440,11 +1424,7 @@ generally remains centered.
     <section class="o-featured-content-module
                     o-featured-content-module__center">
         <div class="o-featured-content-module_text">
-            <div class="a-heading a-heading__icon">
-                {% include icons/play-round.svg %}
-                Featured video
-            </div>
-            <h2>Feature title</h2>
+            <h2>Featured video</h2>
             <p>
                 Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
                 instructior ex pri. Cu pri inani constituto, cum aeque noster
@@ -1469,11 +1449,7 @@ generally remains centered.
     <section class="o-featured-content-module
                     o-featured-content-module__center">
         <div class="o-featured-content-module_text">
-            <div class="a-heading a-heading__icon">
-                {% raw %}{% include icons/play-round.svg %}{% endraw %}
-                Featured video
-            </div>
-            <h2>Feature title</h2>
+            <h2>Featured video</h2>
             <p>
                 Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
                 instructior ex pri. Cu pri inani constituto, cum aeque noster
