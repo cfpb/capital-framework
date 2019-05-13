@@ -1,6 +1,6 @@
 const autoprefixer = require( 'autoprefixer' );
 const BROWSER_LIST = require( '../../config/browser-list-config' );
-const component = require( './parseComponentName' );
+const component = require( '../utils/parseComponentName' );
 const gulp = require( 'gulp' );
 const gulpPostcss = require( 'gulp-postcss' );
 const gulpIgnore = require( 'gulp-ignore' );

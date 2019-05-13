@@ -1,4 +1,4 @@
-const component = require( './parseComponentName' );
+const component = require( '../utils/parseComponentName' );
 const gulp = require( 'gulp' );
 const gulpIgnore = require( 'gulp-ignore' );
 const gulpRename = require( 'gulp-rename' );
