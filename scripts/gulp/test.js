@@ -1,4 +1,3 @@
-const component = require( './parseComponentName' );
 const fancyLog = require( 'fancy-log' );
 const fsHelper = require( '../utils/fs-helper' );
 const gulp = require( 'gulp' );
