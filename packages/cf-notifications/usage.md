@@ -16,7 +16,7 @@ for Capital Framework.
 - [Variables](#variables)
     - [Color variables](#color-variables)
     - [Sizing variables](#sizing-variables)
-- [Recommended notification patterns](#recommended-notification-pattern)
+- [Recommended notification patterns](#recommended-notification-patterns)
     - [Action notification](#action-notification)
     - [Success notification](#success-notification)
     - [Warning notification](#warning-notification)
