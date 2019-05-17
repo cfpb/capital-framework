@@ -1,3 +1,45 @@
+## v9.0.0 (2019-05-17)
+
+#### :boom: Breaking Change
+* `cf-core`
+  * [#907](https://github.com/cfpb/capital-framework/pull/907) Removes webfont mixins ([@anselmbradford](https://github.com/anselmbradford))
+
+#### :rocket: Enhancement
+* `cf-forms`
+  * [#912](https://github.com/cfpb/capital-framework/pull/912) cf-forms: Ensure the helper text appears on its own line below the label. ([@anselmbradford](https://github.com/anselmbradford))
+
+#### :bug: Bug Fix
+* `cf-notifications`
+  * [#921](https://github.com/cfpb/capital-framework/pull/921) cf-notifications: Target only notification icon ([@anselmbradford](https://github.com/anselmbradford))
+  * [#915](https://github.com/cfpb/capital-framework/pull/915) cf-notifications: Adjust message/explanation and links margins ([@anselmbradford](https://github.com/anselmbradford))
+
+#### :memo: Documentation
+* Other
+  * [#919](https://github.com/cfpb/capital-framework/pull/919) Add missing icons ([@anselmbradford](https://github.com/anselmbradford))
+* `cf-notifications`
+  * [#916](https://github.com/cfpb/capital-framework/pull/916) cf-notifications: Remove unused classes ([@anselmbradford](https://github.com/anselmbradford))
+
+#### :house: Internal
+* Other
+  * [#923](https://github.com/cfpb/capital-framework/pull/923) Rename temporary changelog file ([@contolini](https://github.com/contolini))
+  * [#918](https://github.com/cfpb/capital-framework/pull/918) Minor dependency updates ([@anselmbradford](https://github.com/anselmbradford))
+  * [#920](https://github.com/cfpb/capital-framework/pull/920) Delete some unneded things, move parseComponentName to utils ([@Scotchester](https://github.com/Scotchester))
+  * [#917](https://github.com/cfpb/capital-framework/pull/917) Change minification config variable name ([@anselmbradford](https://github.com/anselmbradford))
+  * [#914](https://github.com/cfpb/capital-framework/pull/914) Replace uglifyjs-webpack-plugin with terser-webpack-plugin ([@anselmbradford](https://github.com/anselmbradford))
+  * [#909](https://github.com/cfpb/capital-framework/pull/909) Update stylelint to version 10 ([@anselmbradford](https://github.com/anselmbradford))
+  * [#905](https://github.com/cfpb/capital-framework/pull/905) Cleanup  fix coverage  CSS build tweaks ([@anselmbradford](https://github.com/anselmbradford))
+  * [#908](https://github.com/cfpb/capital-framework/pull/908) Add docs site to /docs directory on master branch ([@anselmbradford](https://github.com/anselmbradford))
+* `capital-framework`, `cf-atomic-component`, `cf-buttons`, `cf-core`, `cf-expandables`, `cf-forms`, `cf-grid`, `cf-icons`, `cf-layout`, `cf-notifications`, `cf-pagination`, `cf-tables`, `cf-typography`
+  * [#910](https://github.com/cfpb/capital-framework/pull/910) Updates CONTRIBUTING.md architecture ([@anselmbradford](https://github.com/anselmbradford))
+* `cf-atomic-component`, `cf-forms`
+  * [#903](https://github.com/cfpb/capital-framework/pull/903) Updates outdated dependencies  remove unused dependencies ([@anselmbradford](https://github.com/anselmbradford))
+
+#### Committers: 3
+- Ans ([@anselmbradford](https://github.com/anselmbradford))
+- Chris Contolini ([@contolini](https://github.com/contolini))
+- Scott Cranfill ([@Scotchester](https://github.com/Scotchester))
+
+
 ## v8.0.2 (2019-03-29)
 
 #### :bug: Bug Fix
