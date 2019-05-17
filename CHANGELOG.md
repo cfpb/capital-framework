@@ -1,3 +1,19 @@
+## v9.0.1 (2019-05-17)
+
+#### :bug: Bug Fix
+* [#925](https://github.com/cfpb/capital-framework/pull/925) Remove expandables test cruft ([@contolini](https://github.com/contolini))
+
+#### :memo: Documentation
+* `cf-expandables`
+  * [#926](https://github.com/cfpb/capital-framework/pull/926) Properly space expandables' comments ([@contolini](https://github.com/contolini))
+
+#### :house: Internal
+* [#924](https://github.com/cfpb/capital-framework/pull/924) Fix lerna-changelog typo ([@contolini](https://github.com/contolini))
+
+#### Committers: 1
+- Chris Contolini ([@contolini](https://github.com/contolini))
+
+
 ## v9.0.0 (2019-05-17)
 
 #### :boom: Breaking Change
