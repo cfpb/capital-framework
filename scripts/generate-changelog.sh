@@ -5,7 +5,7 @@ mv CHANGELOG.md /tmp/capital-framework-changelog.md
 
 # Generate the latest changelog entries
 # See docs at https://github.com/lerna/lerna-changelog
-lerna-changelog --next-release-from-metadata > CHANGELOG.md
+lerna-changelog --next-version-from-metadata > CHANGELOG.md
 
 # Add a new line to keep releases spaced nicely
 echo "\n" >> CHANGELOG.md
