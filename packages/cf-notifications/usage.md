@@ -16,7 +16,7 @@ for Capital Framework.
 - [Variables](#variables)
     - [Color variables](#color-variables)
     - [Sizing variables](#sizing-variables)
-- [Recommended notification patterns](#recommended-notification-pattern)
+- [Recommended notification patterns](#recommended-notification-patterns)
     - [Action notification](#action-notification)
     - [Success notification](#success-notification)
     - [Warning notification](#warning-notification)
@@ -128,12 +128,12 @@ include them below the message or explanation as a `m-list` unordered list.
         <ul class="m-list m-list__links">
             <li class="m-list_item">
                 <a class="m-list_link" href="/">
-                    This is a link below the message.
+                    This is a link below the message
                 </a>
             </li>
             <li class="m-list_item">
                 <a class="m-list_link" href="/">
-                    This is another link.
+                    This is another link
                 </a>
             </li>
          </ul>
@@ -149,12 +149,12 @@ include them below the message or explanation as a `m-list` unordered list.
         <ul class="m-list m-list__links">
             <li class="m-list_item">
                 <a class="m-list_link" href="/">
-                    This is a link below the message.
+                    This is a link below the message
                 </a>
             </li>
             <li class="m-list_item">
                 <a class="m-list_link" href="/">
-                    This is another link.
+                    This is another link
                 </a>
             </li>
         </ul>
@@ -173,12 +173,12 @@ include them below the message or explanation as a `m-list` unordered list.
         <ul class="m-list m-list__links">
             <li class="m-list_item">
                 <a class="m-list_link" href="/">
-                    This is a link below the explanation.
+                    This is a link below the explanation
                 </a>
             </li>
             <li class="m-list_item">
                 <a class="m-list_link" href="/">
-                    This is another link.
+                    This is another link
                 </a>
             </li>
          </ul>
@@ -197,12 +197,12 @@ include them below the message or explanation as a `m-list` unordered list.
         <ul class="m-list m-list__links">
             <li class="m-list_item">
                 <a class="m-list_link" href="/">
-                    This is a link below the explanation.
+                    This is a link below the explanation
                 </a>
             </li>
             <li class="m-list_item">
                 <a class="m-list_link" href="/">
-                    This is another link.
+                    This is another link
                 </a>
             </li>
         </ul>
