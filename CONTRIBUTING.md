@@ -182,6 +182,8 @@ Ready to publish changes to npm?
 1. If you're pleased with the changelog preview,
    `git checkout CHANGELOG.md` to reset it.
 1. Run `yarn run release` to start the release.
+1. If all packages are shown as having been published,
+   run `git push` to push changes to the remote `master` branch.
 
 Lerna will update the changelog, ask for a new version number, create a git tag,
 push to GitHub and publish to npm.
