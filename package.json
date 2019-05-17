@@ -47,7 +47,7 @@
     "gulp-stylelint": "9.0.0",
     "jest": "24.8.0",
     "jest-cli": "24.8.0",
-    "lerna": "3.13.4",
+    "lerna": "^3.14.1",
     "lerna-changelog": "0.8.2",
     "log-symbols": "^3.0.0",
     "merge-stream": "^1.0.1",
