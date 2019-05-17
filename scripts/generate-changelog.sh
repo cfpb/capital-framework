@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Back up the current changelog
-mv CHANGELOG.md /tmp/cf-changelog.md
+mv CHANGELOG.md /tmp/capital-framework-changelog.md
 
 # Generate the latest changelog entries
 # See docs at https://github.com/lerna/lerna-changelog
@@ -11,7 +11,7 @@ lerna-changelog --next-release-from-metadata > CHANGELOG.md
 echo "\n" >> CHANGELOG.md
 
 # Combine the two
-cat /tmp/cf-changelog.md >> CHANGELOG.md
+cat /tmp/capital-framework-changelog.md >> CHANGELOG.md
 
 # Delete the temporary file for good measure
-rm /tmp/cf-changelog.md
+rm /tmp/capital-framework-changelog.md
