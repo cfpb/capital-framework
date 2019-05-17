@@ -1,3 +1,17 @@
+## v10.0.0 (2019-05-17)
+
+#### :boom: Breaking Change
+* `cf-buttons`, `cf-icons`
+  * [#906](https://github.com/cfpb/capital-framework/pull/906) Removed the deprecated font-icon system from cf-icons ([@anselmbradford](https://github.com/anselmbradford))
+
+#### :house: Internal
+* [#927](https://github.com/cfpb/capital-framework/pull/927) Update lerna dependency ([@contolini](https://github.com/contolini))
+
+#### Committers: 2
+- Ans ([@anselmbradford](https://github.com/anselmbradford))
+- Chris Contolini ([@contolini](https://github.com/contolini))
+
+
 ## v9.0.1 (2019-05-17)
 
 #### :bug: Bug Fix
