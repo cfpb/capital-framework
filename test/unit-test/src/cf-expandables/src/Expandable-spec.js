@@ -69,7 +69,6 @@ let targetDom1;
 let targetDom2;
 let contentDom1;
 let contentDom2;
-let label1;
 
 describe( 'standard Expandable', () => {
 
@@ -82,8 +81,6 @@ describe( 'standard Expandable', () => {
     contentDom1 = expandableDom1.querySelector( '.o-expandable_content' );
     contentDom2 = expandableDom2.querySelector( '.o-expandable_content' );
     contentDom2.classList.add( 'o-expandable_content__onload-open' );
-    const labelDom1 = expandableDom1.querySelector( '.o-expandable_label' );
-    label1 = labelDom1.textContent.trim();
 
     expandable = Expandable.init()[0];
   } );
