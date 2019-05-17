@@ -1,13 +1,13 @@
 {
   "name": "cf-tables",
-  "version": "8.0.1",
+  "version": "9.0.0",
   "description": "Capital Framework tables",
   "main": "src/cf-tables.js",
   "less": "src/cf-tables.less",
   "style": "cf-tables.css",
   "dependencies": {
-    "cf-atomic-component": "^8.0.1",
-    "cf-core": "^8.0.1"
+    "cf-atomic-component": "^9.0.0",
+    "cf-core": "^9.0.0"
   },
   "keywords": [
     "tables"
