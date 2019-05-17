@@ -16,7 +16,7 @@ for Capital Framework.
 - [Variables](#variables)
     - [Color variables](#color-variables)
     - [Sizing variables](#sizing-variables)
-- [Recommended notification patterns](#recommended-notification-pattern)
+- [Recommended notification patterns](#recommended-notification-patterns)
     - [Action notification](#action-notification)
     - [Success notification](#success-notification)
     - [Warning notification](#warning-notification)
@@ -178,7 +178,7 @@ include them below the message or explanation as a `m-list` unordered list.
             </li>
             <li class="m-list_item">
                 <a class="m-list_link" href="/">
-                    This is another link
+                    This is an external link {% include icons/external-link.svg %}
                 </a>
             </li>
          </ul>
@@ -202,7 +202,7 @@ include them below the message or explanation as a `m-list` unordered list.
             </li>
             <li class="m-list_item">
                 <a class="m-list_link" href="/">
-                    This is another link
+                    This is an external link {% raw %}{% include icons/external-link.svg %}{% endraw %}
                 </a>
             </li>
         </ul>

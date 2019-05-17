@@ -178,7 +178,7 @@ include them below the message or explanation as a `m-list` unordered list.
             </li>
             <li class="m-list_item">
                 <a class="m-list_link" href="/">
-                    This is another link
+                    This is an external link {% include icons/external-link.svg %}
                 </a>
             </li>
          </ul>
@@ -202,7 +202,7 @@ include them below the message or explanation as a `m-list` unordered list.
             </li>
             <li class="m-list_item">
                 <a class="m-list_link" href="/">
-                    This is another link
+                    This is an external link {% raw %}{% include icons/external-link.svg %}{% endraw %}
                 </a>
             </li>
         </ul>
