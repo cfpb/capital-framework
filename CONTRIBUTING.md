@@ -179,6 +179,8 @@ Ready to publish changes to npm?
    Pull Requests for specific labels so if you see a PR missing from the changelog,
    ensure it has been labeled `breaking`, `enhancement`, `bug`,
    `documentation` or `internal`.
+1. If you're pleased with the changelog preview,
+   `git checkout CHANGELOG.md` to reset it.
 1. Run `yarn run release` to start the release.
 
 Lerna will update the changelog, ask for a new version number, create a git tag,

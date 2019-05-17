@@ -1,9 +1,5 @@
 #!/bin/sh
 
-# Undo any temporary changelog entries that might have been added if the user
-# recently ran `yarn run changelog`
-git checkout CHANGELOG.md
-
 # Back up the current changelog
 mv CHANGELOG.md /tmp/cf-changelog.md
 
