@@ -31,6 +31,12 @@
     }
 
     &_visual {
+        .respond-to-max( @bp-xs-max, {
+            padding-right: unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em );
+            padding-bottom: unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em );
+            padding-left: unit( ( @grid_gutter-width / 2 ) / @base-font-size-px, em );
+        } );
+
         .respond-to-min( @fcm-bp-min, {
             height: 100%;
             overflow: hidden;
