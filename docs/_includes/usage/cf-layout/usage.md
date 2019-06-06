@@ -49,8 +49,8 @@ dependencies of this component.
     - [.wrapper (base)](#wrapper-base)
     - [Column divider modifiers](#column-divider-modifiers)
 - [Featured content module](#featured-content-module)
-    - [Featured content module - maps](#featured-content-module---maps)
-    - [Featured content module - videos](#featured-content-module---videos)
+    - [Anchoring the visual on the right](#anchoring-the-visual-on-the-right)
+    - [Centering the visual](#centering-the-visual)
 - [Heroes](#heroes)
     - [Standard hero with illustration](standard-hero-with-illustration)
     - [Hero with bleeding illustration](#hero-with-bleeding-illustration)
@@ -1290,184 +1290,175 @@ height of the next parent using `position: relative;`. This means that the
 
 
 ## Featured content module
-{% comment %}
-TODO: Revist the naming of these three modules. The layouts are more about
-positioning the image and less about the type of content they host.
-{% endcomment %}
 
-Featured content module, like a hero, consists of headline/text/optional call
-to action along with a visual. It is intended to be used in a main content
-column next to a sidebar.
+Featured content modules, like a hero, consist of headline and description,
+an optional call to action, and a static or video visual.
+They are intended to be used in a main content column next to a sidebar.
 
 Text is full width & displayed above the visual in the default/mobile view.
-At larger screen sizes, the text occupies a fixed portion of the screen (equal
-to the width of 5 of 12 columns at `701px` & 3 of 12 columns at `901px` for
-desktop). The visual occupies the remaining space. The visual should be
-`640x360` (16x9 ratio) and resize to fit the height of the Featured Content
-Module with a static width and is anchored left when it becomes too wide for
-the available space.
+At larger screen sizes, the image moves to the right of the text,
+occupying a fixed width of 270px (equal to 3 of 12 columns at max page width).
+When creating a static image for the visual, it should be 1076px × 606px
+(a 16:9 aspect ratio), which is 2x the rendered with at the maximum size
+at which the visual will be seen (on a 600px wide display).
 
-<div class="block block__border block__flush-sides">
-    <section class="o-featured-content-module">
-        <div class="o-featured-content-module_text">
-            <h2>Featured content</h2>
-            <p>
-                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-                instructior ex pri. Cu pri inani constituto, cum aeque noster
-                commodo cu.
-            </p>
-            <a class="a-link
-                      a-link__jump
-                      a-link__icon-after-text">
-                <span class="a-link_text">Read more about the feature</span>
-                {% include icons/right.svg %}
-            </a>
-        </div>
-        <div class="o-featured-content-module_visual">
-            <img class="o-featured-content-module_img"
-                 src="http://placekitten.com/g/540/270">
-        </div>
-    </section>
-</div>
+By default, the image is anchored on its left when the FCM is viewed on a
+screen larger than 600px where the visual area is restricted to 270px.
+The right side is cropped and the left remains in view at all screen sizes.
+See below for modifiers that change the image anchoring.
 
-```
-<div class="block block__border block__flush-sides">
-    <section class="o-featured-content-module">
-        <div class="o-featured-content-module_text">
-            <h2>Featured content</h2>
-            <p>
-                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-                instructior ex pri. Cu pri inani constituto, cum aeque noster
-                commodo cu.
-            </p>
-            <a class="a-link
-                      a-link__jump
-                      a-link__icon-after-text">
-                <span class="a-link_text">Read more about the feature</span>
-                {% raw %}{% include icons/right.svg %}{% endraw %}
-            </a>
-        </div>
-        <div class="o-featured-content-module_visual">
-            <img class="o-featured-content-module_img"
-                 src="http://placekitten.com/g/540/270">
-        </div>
-    </section>
-</div>
-```
-
-### Featured content module - Maps
-
-When the featured content module image is a map (or other right-aligned
-content), the `o-featured-content-module__right` modifier class is added to
-the `o-featured-content-module` organism. This anchors the image to the right
-side so that the copyright information is displayed.
-
-<div class="block block__border block__flush-sides">
-    <section class="o-featured-content-module
-                    o-featured-content-module__right">
-        <div class="o-featured-content-module_text">
-            <h2>Featured map</h2>
-            <p>
-                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-                instructior ex pri. Cu pri inani constituto, cum aeque noster
-                commodo cu.
-            </p>
-            <a class="a-link
-                      a-link__jump
-                      a-link__icon-after-text">
-                <span class="a-link_text">Read more about the feature</span>
-                {% include icons/right.svg %}
-            </a>
-        </div>
-        <div class="o-featured-content-module_visual">
-            <img class="o-featured-content-module_img"
-                 src="http://placekitten.com/g/540/270">
-        </div>
-    </section>
-</div>
+<section class="o-featured-content-module">
+    <div class="o-featured-content-module_text">
+        <h2>Featured content</h2>
+        <p>
+            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+            instructior ex pri. Cu pri inani constituto, cum aeque noster
+            commodo cu.
+        </p>
+        <a class="a-link
+                  a-link__jump
+                  a-link__icon-after-text">
+            <span class="a-link_text">Read more about the feature</span>
+            {% include icons/right.svg %}
+        </a>
+    </div>
+    <div class="o-featured-content-module_visual">
+        <img class="o-featured-content-module_img"
+             src="http://placekitten.com/g/540/270">
+    </div>
+</section>
 
 ```
-<div class="block block__border block__flush-sides">
-    <section class="o-featured-content-module
-                    o-featured-content-module__right">
-        <div class="o-featured-content-module_text">
-            <h2>Featured map</h2>
-            <p>
-                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-                instructior ex pri. Cu pri inani constituto, cum aeque noster
-                commodo cu.
-            </p>
-            <a class="a-link
-                      a-link__jump
-                      a-link__icon-after-text">
-                <span class="a-link_text">Read more about the feature</span>
-                {% raw %}{% include icons/right.svg %}{% endraw %}
-            </a>
-        </div>
-        <div class="o-featured-content-module_visual">
-            <img class="o-featured-content-module_img"
-                 src="http://placekitten.com/g/540/270">
-        </div>
-    </section>
-</div>
+<section class="o-featured-content-module">
+    <div class="o-featured-content-module_text">
+        <h2>Featured content</h2>
+        <p>
+            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+            instructior ex pri. Cu pri inani constituto, cum aeque noster
+            commodo cu.
+        </p>
+        <a class="a-link
+                  a-link__jump
+                  a-link__icon-after-text">
+            <span class="a-link_text">Read more about the feature</span>
+            {% raw %}{% include icons/right.svg %}{% endraw %}
+        </a>
+    </div>
+    <div class="o-featured-content-module_visual">
+        <img class="o-featured-content-module_img"
+             src="http://placekitten.com/g/540/270">
+    </div>
+</section>
 ```
 
-### Featured content module - Videos
+### Anchoring the visual on the right
 
-When the featured content module image is a video (or other centered content),
-the `o-featured-content-module__center` modifier class is added to the
-`o-featured-content-module` organism. This anchors the center of the image to
-the center of the available space so that the focal point of the video
-generally remains centered.
+When one wants to anchor a featured content module's visual on the right
+(for example, when displaying a map with a copyright watermark on the right),
+add the `o-featured-content-module__right` modifier class
+to the `o-featured-content-module` organism.
+This anchors the right side of the image to the right of the available space
+so that the right side remains in view at all screen sizes.
 
-<div class="block block__border block__flush-sides">
-    <section class="o-featured-content-module
-                    o-featured-content-module__center">
-        <div class="o-featured-content-module_text">
-            <h2>Featured video</h2>
-            <p>
-                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-                instructior ex pri. Cu pri inani constituto, cum aeque noster
-                commodo cu.
-            </p>
-            <a class="a-link
-                      a-link__jump
-                      a-link__icon-after-text">
-                <span class="a-link_text">Read more about the feature</span>
-                {% include icons/right.svg %}
-            </a>
-        </div>
-        <div class="o-featured-content-module_visual">
-            <img class="o-featured-content-module_img"
-                 src="http://placekitten.com/g/540/270">
-        </div>
-    </section>
-</div>
+<section class="o-featured-content-module
+                o-featured-content-module__right">
+    <div class="o-featured-content-module_text">
+        <h2>Featured map</h2>
+        <p>
+            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+            instructior ex pri. Cu pri inani constituto, cum aeque noster
+            commodo cu.
+        </p>
+        <a class="a-link
+                  a-link__jump
+                  a-link__icon-after-text">
+            <span class="a-link_text">Read more about the feature</span>
+            {% include icons/right.svg %}
+        </a>
+    </div>
+    <div class="o-featured-content-module_visual">
+        <img class="o-featured-content-module_img"
+             src="http://placekitten.com/g/540/270">
+    </div>
+</section>
 
 ```
-<div class="block block__border block__flush-sides">
-    <section class="o-featured-content-module
-                    o-featured-content-module__center">
-        <div class="o-featured-content-module_text">
-            <h2>Featured video</h2>
-            <p>
-                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-                instructior ex pri. Cu pri inani constituto, cum aeque noster
-                commodo cu.
-            </p>
-            <a class="a-link
-                      a-link__jump
-                      a-link__icon-after-text">
-                <span class="a-link_text">Read more about the feature</span>
-                {% raw %}{% include icons/right.svg %}{% endraw %}
-            </a>
-        </div>
-        <div class="o-featured-content-module_visual">
-            <img class="o-featured-content-module_img"
-                 src="http://placekitten.com/g/540/270">
-        </div>
-    </section>
-</div>
+<section class="o-featured-content-module
+                o-featured-content-module__right">
+    <div class="o-featured-content-module_text">
+        <h2>Featured map</h2>
+        <p>
+            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+            instructior ex pri. Cu pri inani constituto, cum aeque noster
+            commodo cu.
+        </p>
+        <a class="a-link
+                  a-link__jump
+                  a-link__icon-after-text">
+            <span class="a-link_text">Read more about the feature</span>
+            {% raw %}{% include icons/right.svg %}{% endraw %}
+        </a>
+    </div>
+    <div class="o-featured-content-module_visual">
+        <img class="o-featured-content-module_img"
+             src="http://placekitten.com/g/540/270">
+    </div>
+</section>
+```
+
+### Centering the visual
+
+When the featured content module visual is a video,
+or a static image composed with its subject in the middle,
+add the `o-featured-content-module__center` modifier class
+to the `o-featured-content-module` organism.
+This anchors the center of the image to the center of the available space
+so that the focal point of the visual remains in view at all screen sizes.
+
+<section class="o-featured-content-module
+                o-featured-content-module__center">
+    <div class="o-featured-content-module_text">
+        <h2>Featured video</h2>
+        <p>
+            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+            instructior ex pri. Cu pri inani constituto, cum aeque noster
+            commodo cu.
+        </p>
+        <a class="a-link
+                  a-link__jump
+                  a-link__icon-after-text">
+            <span class="a-link_text">Read more about the feature</span>
+            {% include icons/right.svg %}
+        </a>
+    </div>
+    <div class="o-featured-content-module_visual">
+        <img class="o-featured-content-module_img"
+             src="http://placekitten.com/g/540/270">
+    </div>
+</section>
+
+```
+<section class="o-featured-content-module
+                o-featured-content-module__center">
+    <div class="o-featured-content-module_text">
+        <h2>Featured video</h2>
+        <p>
+            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+            instructior ex pri. Cu pri inani constituto, cum aeque noster
+            commodo cu.
+        </p>
+        <a class="a-link
+                  a-link__jump
+                  a-link__icon-after-text">
+            <span class="a-link_text">Read more about the feature</span>
+            {% raw %}{% include icons/right.svg %}{% endraw %}
+        </a>
+    </div>
+    <div class="o-featured-content-module_visual">
+        <img class="o-featured-content-module_img"
+             src="http://placekitten.com/g/540/270">
+    </div>
+</section>
 ```
 
 
