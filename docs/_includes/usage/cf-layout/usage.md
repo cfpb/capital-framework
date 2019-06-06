@@ -1324,7 +1324,8 @@ See below for modifiers that change the image anchoring.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270">
+             src="http://placekitten.com/g/540/270"
+             alt="">
     </div>
 </section>
 
@@ -1346,7 +1347,8 @@ See below for modifiers that change the image anchoring.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270">
+             src="http://placekitten.com/g/540/270"
+             alt="">
     </div>
 </section>
 ```
@@ -1378,7 +1380,8 @@ so that the right side remains in view at all screen sizes.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270">
+             src="http://placekitten.com/g/540/270"
+             alt="">
     </div>
 </section>
 
@@ -1401,7 +1404,8 @@ so that the right side remains in view at all screen sizes.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270">
+             src="http://placekitten.com/g/540/270"
+             alt="">
     </div>
 </section>
 ```
@@ -1433,7 +1437,8 @@ so that the focal point of the visual remains in view at all screen sizes.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270">
+             src="http://placekitten.com/g/540/270"
+             alt="">
     </div>
 </section>
 
@@ -1456,7 +1461,8 @@ so that the focal point of the visual remains in view at all screen sizes.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270">
+             src="http://placekitten.com/g/540/270"
+             alt="">
     </div>
 </section>
 ```
