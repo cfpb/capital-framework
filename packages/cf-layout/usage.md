@@ -1077,38 +1077,38 @@ This is an example of combining modifiers to get a flush `padding` and
 
 ### Padded-top modifier
 
-Breaks top `margin` into `margin` & `padding`. Useful in combination with
+Breaks top `margin` into `margin` and `padding`. Useful in combination with
 `block__border-top` to add `padding` between `.block` contents and `border`.
 
 Main content...
 <div class="block block__padded-top block__border-top">
-    Content block with reduced top margin & added top padding
+    Content block with reduced top margin and added top padding
     and border.
 </div>
 
 ```
 Main content...
 <div class="block block__padded-top block__border-top">
-    Content block with reduced top margin & added top padding
+    Content block with reduced top margin and added top padding
     and border.
 </div>
 ```
 
 ### Padded-bottom modifier
 
-Breaks bottom `margin` into `margin` & `padding`. Useful in combination with
+Breaks bottom `margin` into `margin` and `padding`. Useful in combination with
 `block__border-bottom` to add `padding` between `.block` contents and `border`.
 
 Main content...
 <div class="block block__padded-bottom block__border-bottom">
-    Content block with reduced bottom margin & added bottom padding
+    Content block with reduced bottom margin and added bottom padding
     and border.
 </div>
 
 ```
 Main content...
 <div class="block block__padded-bottom block__border-bottom">
-    Content block with reduced bottom margin & added bottom padding
+    Content block with reduced bottom margin and added bottom padding
     and border.
 </div>
 ```
@@ -1295,16 +1295,18 @@ Featured content modules, like a hero, consist of headline and description,
 an optional call to action, and a static or video visual.
 They are intended to be used in a main content column next to a sidebar.
 
-Text is full width & displayed above the visual in the default/mobile view.
-At larger screen sizes, the image moves to the right of the text,
-occupying a fixed width of 270px (equal to 3 of 12 columns at max page width).
+Text is full width and displayed above the visual in the default/mobile view.
 When creating a static image for the visual, it should be 1076px × 606px
-(a 16:9 aspect ratio), which is 2x the rendered with at the maximum size
+(a 16:9 aspect ratio), which is 2x the rendered width at the maximum size
 at which the visual will be seen (on a 600px wide display).
 
-By default, the image is anchored on its left when the FCM is viewed on a
-screen larger than 600px where the visual area is restricted to 270px.
-The right side is cropped and the left remains in view at all screen sizes.
+At larger screen sizes, the image moves to the right of the text,
+occupying a fixed width of 270px (equal to 3 of 12 columns at max page width).
+By default, the left edge of the image is anchored to the left side of the
+visual's 270px-wide area, and the right side is cropped off.
+The height of the visual area decreases as screen size increases,
+resulting in slightly different image cropping at different screen sizes,
+but the left edge of the image remains anchored in view.
 See below for modifiers that change the image anchoring.
 
 <section class="o-featured-content-module">
@@ -1324,7 +1326,7 @@ See below for modifiers that change the image anchoring.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270"
+             src="http://placekitten.com/g/1076/606"
              alt="">
     </div>
 </section>
@@ -1347,7 +1349,7 @@ See below for modifiers that change the image anchoring.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270"
+             src="http://placekitten.com/g/1076/606"
              alt="">
     </div>
 </section>
@@ -1355,7 +1357,7 @@ See below for modifiers that change the image anchoring.
 
 ### Anchoring the visual on the right
 
-When one wants to anchor a featured content module's visual on the right
+To anchor a featured content module's visual on the right
 (for example, when displaying a map with a copyright watermark on the right),
 add the `o-featured-content-module__right` modifier class
 to the `o-featured-content-module` organism.
@@ -1380,7 +1382,7 @@ so that the right side remains in view at all screen sizes.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270"
+             src="http://placekitten.com/g/1076/606"
              alt="">
     </div>
 </section>
@@ -1404,7 +1406,7 @@ so that the right side remains in view at all screen sizes.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270"
+             src="http://placekitten.com/g/1076/606"
              alt="">
     </div>
 </section>
@@ -1437,7 +1439,7 @@ so that the focal point of the visual remains in view at all screen sizes.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270"
+             src="http://placekitten.com/g/1076/606"
              alt="">
     </div>
 </section>
@@ -1461,7 +1463,7 @@ so that the focal point of the visual remains in view at all screen sizes.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/540/270"
+             src="http://placekitten.com/g/1076/606"
              alt="">
     </div>
 </section>
