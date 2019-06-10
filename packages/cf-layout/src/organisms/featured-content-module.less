@@ -56,8 +56,9 @@
         } );
 
         .respond-to-min( @fcm-bp-min, {
-            height: 100%;
             max-width: none;
+            height: 100%;
+            position: absolute;
         } );
     }
 
@@ -65,7 +66,7 @@
     &__right {
         .o-featured-content-module_img {
             .respond-to-min( @fcm-bp-min, {
-                float: right;
+                right: 0;
             } );
         }
     }
@@ -73,7 +74,6 @@
     &__center {
         .o-featured-content-module_img {
             .respond-to-min( @fcm-bp-min, {
-                position: relative;
                 left: 50%;
 
                 transform: translateX( -50% );
