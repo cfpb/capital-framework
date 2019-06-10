@@ -566,13 +566,13 @@ To create a flexible container with only a background (no inner video or object
 element), ommit the inner container.
 
 <div class="u-flexible-container"
-     style="background-image: url(http://placekitten.com/700/394);
+     style="background-image: url(https://dummyimage.com/700x394/addc91/101820);
             background-position: center center;
             background-repeat: no-repeat;"></div>
 
 ```
 <div class="u-flexible-container"
-     style="background-image: url(http://placekitten.com/700/394);
+     style="background-image: url(https://dummyimage.com/700x394/addc91/101820);
             background-position: center center;
             background-repeat: no-repeat;"></div>
 ```
@@ -1172,10 +1172,10 @@ the `cite` attribute._
 
 Gives all images a default `max-width` of `100%` of their container.
 
-<img src="http://placekitten.com/800/40" alt="">
+<img src="https://dummyimage.com/800x40/addc91/101820" alt="">
 
 ```
-<img src="http://placekitten.com/800/40" alt="">
+<img src="https://dummyimage.com/800x40/addc91/101820" alt="">
 ```
 
 ### Figure
@@ -1184,12 +1184,12 @@ Resets browser default side `margins` for `figure` to `0`,
 and removes bottom inline spacing from `img` elements within.
 
 <figure>
-    <img src="http://placekitten.com/340/320">
+    <img src="https://dummyimage.com/340x320/addc91/101820" alt="">
 </figure>
 
 ```
 <figure>
-    <img src="http://placekitten.com/340/320">
+    <img src="https://dummyimage.com/340x320/addc91/101820" alt="">
 </figure>
 ```
 

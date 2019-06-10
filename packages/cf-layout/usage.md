@@ -358,12 +358,12 @@ overlapping since they will span the height of the entire `.content-l` element.
 
 <div class="content-l content-l__large-gutters">
     <div class="content-l_col content-l_col-1-2">
-        <img src="http://placekitten.com/600/320" alt="Placeholder image">
+        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
         <br>
         Half-width column (spans 6/12 columns)
     </div>
     <div class="content-l_col content-l_col-1-2 content-l_col__before-divider">
-        <img src="http://placekitten.com/600/320" alt="Placeholder image">
+        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
         <br>
         Half-width column (spans 6/12 columns)
     </div>
@@ -384,12 +384,12 @@ overlapping since they will span the height of the entire `.content-l` element.
 ```
 <div class="content-l content-l__large-gutters">
     <div class="content-l_col content-l_col-1-2">
-        <img src="http://placekitten.com/600/320" alt="Placeholder image">
+        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
         <br>
         Half-width column (spans 6/12 columns)
     </div>
     <div class="content-l_col content-l_col-1-2 content-l_col__before-divider">
-        <img src="http://placekitten.com/600/320" alt="Placeholder image">
+        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
         <br>
         Half-width column (spans 6/12 columns)
     </div>
@@ -1304,10 +1304,12 @@ At larger screen sizes, the image moves to the right of the text,
 occupying a fixed width of 270px (equal to 3 of 12 columns at max page width).
 By default, the left edge of the image is anchored to the left side of the
 visual's 270px-wide area, and the right side is cropped off.
-The height of the visual area decreases as screen size increases,
+The aspect ratio of the visual area increases as screen size increases,
 resulting in slightly different image cropping at different screen sizes,
 but the left edge of the image remains anchored in view.
-See below for modifiers that change the image anchoring.
+The full height of the image is always in view;
+the top and bottom are never cropped.
+See below for modifiers that change the image's horizontal anchoring.
 
 <section class="o-featured-content-module">
     <div class="o-featured-content-module_text">
@@ -1326,7 +1328,7 @@ See below for modifiers that change the image anchoring.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/1076/606"
+             src="https://dummyimage.com/1076x606/addc91/101820"
              alt="">
     </div>
 </section>
@@ -1349,7 +1351,7 @@ See below for modifiers that change the image anchoring.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/1076/606"
+             src="https://dummyimage.com/1076x606/addc91/101820"
              alt="">
     </div>
 </section>
@@ -1382,7 +1384,7 @@ so that the right side remains in view at all screen sizes.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/1076/606"
+             src="https://dummyimage.com/1076x606/addc91/101820"
              alt="">
     </div>
 </section>
@@ -1406,7 +1408,7 @@ so that the right side remains in view at all screen sizes.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/1076/606"
+             src="https://dummyimage.com/1076x606/addc91/101820"
              alt="">
     </div>
 </section>
@@ -1439,7 +1441,7 @@ so that the focal point of the visual remains in view at all screen sizes.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/1076/606"
+             src="https://dummyimage.com/1076x606/addc91/101820"
              alt="">
     </div>
 </section>
@@ -1463,7 +1465,7 @@ so that the focal point of the visual remains in view at all screen sizes.
     </div>
     <div class="o-featured-content-module_visual">
         <img class="o-featured-content-module_img"
-             src="http://placekitten.com/g/1076/606"
+             src="https://dummyimage.com/1076x606/addc91/101820"
              alt="">
     </div>
 </section>
@@ -1508,17 +1510,17 @@ height. The image should be `195px` in height to conform to this standard.
     <style>
         #hero1 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/570/236');
+                url('https://dummyimage.com/570x236/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/570/236',
+                src='https://dummyimage.com/570x236/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 41.4893617%;
         }
@@ -1526,17 +1528,17 @@ height. The image should be `195px` in height to conform to this standard.
         @media screen and (min-width: 37.5625em) {
             #hero1 .m-hero_image {
                 background-image:
-                    url('http://placekitten.com/g/470/195');
+                    url('https://dummyimage.com/470x195/addc91/101820');
                 background-image: -webkit-image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 background-image: image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src='http://placekitten.com/g/470/195',
+                    src='https://dummyimage.com/470x195/addc91/101820',
                     sizingMethod='scale');
                 padding-bottom: 41.4893617%;
             }
@@ -1563,17 +1565,17 @@ height. The image should be `195px` in height to conform to this standard.
     <style>
         #hero1 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/570/236');
+                url('https://dummyimage.com/570x236/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/570/236',
+                src='https://dummyimage.com/570x236/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 41.4893617%;
         }
@@ -1581,17 +1583,17 @@ height. The image should be `195px` in height to conform to this standard.
         @media screen and (min-width: 37.5625em) {
             #hero1 .m-hero_image {
                 background-image:
-                    url('http://placekitten.com/g/470/195');
+                    url('https://dummyimage.com/470x195/addc91/101820');
                 background-image: -webkit-image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 background-image: image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src='http://placekitten.com/g/470/195',
+                    src='https://dummyimage.com/470x195/addc91/101820',
                     sizingMethod='scale');
                 padding-bottom: 41.4893617%;
             }
@@ -1627,17 +1629,17 @@ switch the text to white.
 
         #hero2 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/570/236');
+                url('https://dummyimage.com/570x236/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/570/236',
+                src='https://dummyimage.com/570x236/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 41.4893617%;
         }
@@ -1645,17 +1647,17 @@ switch the text to white.
         @media screen and (min-width: 37.5625em) {
             #hero2 .m-hero_image {
                 background-image:
-                    url('http://placekitten.com/g/470/195');
+                    url('https://dummyimage.com/470x195/addc91/101820');
                 background-image: -webkit-image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 background-image: image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src='http://placekitten.com/g/470/195',
+                    src='https://dummyimage.com/470x195/addc91/101820',
                     sizingMethod='scale');
                 padding-bottom: 41.4893617%;
             }
@@ -1686,17 +1688,17 @@ switch the text to white.
 
         #hero2 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/570/236');
+                url('https://dummyimage.com/570x236/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/570/236',
+                src='https://dummyimage.com/570x236/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 41.4893617%;
         }
@@ -1704,17 +1706,17 @@ switch the text to white.
         @media screen and (min-width: 37.5625em) {
             #hero2 .m-hero_image {
                 background-image:
-                    url('http://placekitten.com/g/470/195');
+                    url('https://dummyimage.com/470x195/addc91/101820');
                 background-image: -webkit-image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 background-image: image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src='http://placekitten.com/g/470/195',
+                    src='https://dummyimage.com/470x195/addc91/101820',
                     sizingMethod='scale');
                 padding-bottom: 41.4893617%;
             }
@@ -1747,17 +1749,17 @@ add the `__bleeding` modifier to the hero and add an additional
     <style>
         #hero3 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/570/140');
+                url('https://dummyimage.com/570x140/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/570/140') 1x,
-                url('http://placekitten.com/g/1140/280') 2x
+                url('https://dummyimage.com/570x140/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x280/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/570/140') 1x,
-                url('http://placekitten.com/g/1140/280') 2x
+                url('https://dummyimage.com/570x140/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x280/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/570/140',
+                src='https://dummyimage.com/570x140/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 25.1020408%;
         }
@@ -1765,17 +1767,17 @@ add the `__bleeding` modifier to the hero and add an additional
         @media screen and (min-width: 37.5625em) {
             #hero3 .m-hero_image {
                 background-image:
-                    url('http://placekitten.com/g/470/640');
+                    url('https://dummyimage.com/470x640/addc91/101820');
                 background-image: -webkit-image-set(
-                    url('http://placekitten.com/g/470/640') 1x,
-                    url('http://placekitten.com/g/940/1280') 2x
+                    url('https://dummyimage.com/470x640/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x1280/addc91/101820') 2x
                 );
                 background-image: image-set(
-                    url('http://placekitten.com/g/470/640') 1x,
-                    url('http://placekitten.com/g/940/1280') 2x
+                    url('https://dummyimage.com/470x640/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x1280/addc91/101820') 2x
                 );
                 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src='http://placekitten.com/g/470/640',
+                    src='https://dummyimage.com/470x640/addc91/101820',
                     sizingMethod='scale');
             }
         }
@@ -1801,17 +1803,17 @@ add the `__bleeding` modifier to the hero and add an additional
     <style>
         #hero3 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/570/140');
+                url('https://dummyimage.com/570x140/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/570/140') 1x,
-                url('http://placekitten.com/g/1140/280') 2x
+                url('https://dummyimage.com/570x140/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x280/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/570/140') 1x,
-                url('http://placekitten.com/g/1140/280') 2x
+                url('https://dummyimage.com/570x140/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x280/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/570/140',
+                src='https://dummyimage.com/570x140/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 25.1020408%;
         }
@@ -1819,17 +1821,17 @@ add the `__bleeding` modifier to the hero and add an additional
         @media screen and (min-width: 37.5625em) {
             #hero3 .m-hero_image {
                 background-image:
-                    url('http://placekitten.com/g/470/640');
+                    url('https://dummyimage.com/470x640/addc91/101820');
                 background-image: -webkit-image-set(
-                    url('http://placekitten.com/g/470/640') 1x,
-                    url('http://placekitten.com/g/940/1280') 2x
+                    url('https://dummyimage.com/470x640/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x1280/addc91/101820') 2x
                 );
                 background-image: image-set(
-                    url('http://placekitten.com/g/470/640') 1x,
-                    url('http://placekitten.com/g/940/1280') 2x
+                    url('https://dummyimage.com/470x640/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x1280/addc91/101820') 2x
                 );
                 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src='http://placekitten.com/g/470/640',
+                    src='https://dummyimage.com/470x640/addc91/101820',
                     sizingMethod='scale');
             }
         }
@@ -1862,17 +1864,17 @@ with a non-white (or light gray) background.
     <style>
         #hero4 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/600/250');
+                url('https://dummyimage.com/600x250/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/600/250') 1x,
-                url('http://placekitten.com/g/1200/500') 2x
+                url('https://dummyimage.com/600x250/addc91/101820') 1x,
+                url('https://dummyimage.com/1200x500/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/600/250') 1x,
-                url('http://placekitten.com/g/1200/500') 2x
+                url('https://dummyimage.com/600x250/addc91/101820') 1x,
+                url('https://dummyimage.com/1200x500/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/600/250',
+                src='https://dummyimage.com/600x250/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 41.6666667%;
         }
@@ -1916,17 +1918,17 @@ with a non-white (or light gray) background.
     <style>
         #hero4 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/600/250');
+                url('https://dummyimage.com/600x250/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/600/250') 1x,
-                url('http://placekitten.com/g/1200/500') 2x
+                url('https://dummyimage.com/600x250/addc91/101820') 1x,
+                url('https://dummyimage.com/1200x500/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/600/250') 1x,
-                url('http://placekitten.com/g/1200/500') 2x
+                url('https://dummyimage.com/600x250/addc91/101820') 1x,
+                url('https://dummyimage.com/1200x500/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/600/250',
+                src='https://dummyimage.com/600x250/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 41.6666667%;
         }
