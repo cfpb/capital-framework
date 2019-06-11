@@ -50,8 +50,8 @@
 - [ ] Chrome
 - [ ] Firefox
 - [ ] Safari
-- [ ] Internet Explorer 8, 9, 10, and 11
 - [ ] Edge
+- [ ] Internet Explorer 9, 10, and 11
 - [ ] iOS Safari
 - [ ] Chrome for Android
 
