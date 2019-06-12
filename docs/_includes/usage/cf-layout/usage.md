@@ -17,15 +17,16 @@ dependencies of this component.
 - [Content layouts](#content-layouts)
     - [Standard content columns](#standard-content-columns)
     - [Large gutters modifier](#large-gutters-modifier)
-- [Content layout column dividers](#content-layout-column-dividers)
-- [Content bar](#content-bar)
-- [Content line](#content-line)
-- [Main content and sidebar](#main-content-and-sidebar)
-- [Left-hand navigation layout](#left-hand-navigation-layout)
-- [Right-hand sidebar layout](#right-hand-sidebar-layout)
-- [Narrow content column option](#narrow-content-column-option)
-- [Flush bottom modifier](#flush-bottom-modifier)
-- [Flush top modifier (only on small screens)](#flush-top-modifier-only-on-small-screens)
+    - [Content layout column dividers](#content-layout-column-dividers)
+    - [Content line](#content-line)
+    - [Main content and sidebar](#main-content-and-sidebar)
+    - [Left-hand navigation layout](#left-hand-navigation-layout)
+    - [Right-hand sidebar layout](#right-hand-sidebar-layout)
+    - [Narrow content column option](#narrow-content-column-option)
+    - [Flush bottom modifier](#flush-bottom-modifier)
+    - [Flush top modifier (only on small screens)](#flush-top-modifier-only-on-small-screens)
+    - [Flush all modifier (only on small screens)](#flush-all-modifier-only-on-small-screens)
+    - [Bleedbar sidebar styling](#bleedbar-sidebar-styling)
 - [Block](#block)
     - [Standard block example](#standard-block-example)
     - [Border-top modifier](#border-top-modifier)
@@ -34,7 +35,6 @@ dependencies of this component.
     - [Border-left modifier](#border-left-modifier)
     - [Border modifier](#border-modifier)
     - [Flush-top modifier](#flush-top-modifier)
-    - [Flush-top modifier](#flush-bottom-modifier-1)
     - [Flush-bottom modifier](#flush-bottom-modifier-1)
     - [Flush-sides modifier](#flush-sides-modifier)
     - [Flush modifier](#flush-modifier)
@@ -44,7 +44,6 @@ dependencies of this component.
     - [Padded-bottom modifier](#padded-bottom-modifier)
     - [Sub blocks](#sub-blocks)
     - [Mixing content blocks with content layouts](#mixing-content-blocks-with-content-layouts)
-- [Bleedbar sidebar styling](#bleedbar-sidebar-styling)
 - [cf-grid helpers](#cf-grid-helpers)
     - [.wrapper (base)](#wrapper-base)
     - [Column divider modifiers](#column-divider-modifiers)
@@ -65,7 +64,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
+Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/packages/cf-core/src/cf-brand-colors.less).
 
 ```
 // .block
@@ -339,7 +338,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 ```
 
 
-## Content layout column dividers
+### Content layout column dividers
 
 Adds dividers between specified `.content-l_col-X-X` classes.
 
@@ -412,7 +411,7 @@ overlapping since they will span the height of the entire `.content-l` element.
 ```
 
 
-## Content line
+### Content line
 
 A 1 pixel edge to edge bar that can divide content.
 
@@ -423,7 +422,7 @@ A 1 pixel edge to edge bar that can divide content.
 ```
 
 
-## Main content and sidebar
+### Main content and sidebar
 
 Standard layout for the main content area and sidebar.
 
@@ -432,7 +431,7 @@ When using the modifiers described below to create columns,
 the columns will remain stacked for smaller screens and then convert to to
 columns at `801px`.
 
-`.content_bar` must come after `.content_hero` (if it exists) but before
+`.content_line` must come after `.content_hero` (if it exists) but before
 `.content_wrapper`.
 
 _Inline styling is for demonstration purposes only; do not include it in your
@@ -442,7 +441,7 @@ markup._
     <section class="content_hero" style="background: #E3E4E5">
         Content hero
     </section>
-    <div class="content_bar"></div>
+    <div class="content_line"></div>
     <div class="content_wrapper">
         <section class="content_main">
             Main content area
@@ -458,7 +457,7 @@ markup._
     <section class="content_hero" style="background: #E3E4E5">
         Content hero
     </section>
-    <div class="content_bar"></div>
+    <div class="content_line"></div>
     <div class="content_wrapper">
         <section class="content_main">
             Main content area
@@ -471,7 +470,7 @@ markup._
 ```
 
 
-## Left-hand navigation layout
+### Left-hand navigation layout
 
 Add a class of `.content__L-R` to `main.content` to determine the width ratio
 of `.content_main` and `.content_sidebar`, where 'L' is the left-hand item and
@@ -482,7 +481,7 @@ left, sidebar on the right, in a ratio of 2:1).
 It is assumed that the content is wider than the sidebar.
 
 <main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
+    <div class="content_line"></div>
     <div class="content_wrapper">
         <aside class="content_sidebar">
             Section navigation
@@ -506,7 +505,7 @@ It is assumed that the content is wider than the sidebar.
 
 ```
 <main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
+    <div class="content_line"></div>
     <div class="content_wrapper">
         <aside class="content_sidebar">
             Section navigation
@@ -530,7 +529,7 @@ It is assumed that the content is wider than the sidebar.
 ```
 
 
-## Right-hand sidebar layout
+### Right-hand sidebar layout
 
 Add a class of `.content__L-R` to `main.content` to determine the width ratio
 of `.content_main` and `.content_sidebar`, where 'L' is the left-hand item and
@@ -544,7 +543,7 @@ _Inline styling is for demonstration purposes only; do not include it in your
 markup._
 
 <main class="content content__2-1" role="main">
-    <div class="content_bar"></div>
+    <div class="content_line"></div>
     <div class="content_wrapper">
         <section class="content_main">
             <h2>Main content area</h2>
@@ -568,7 +567,7 @@ markup._
 
 ```
 <main class="content content__2-1" role="main">
-    <div class="content_bar"></div>
+    <div class="content_line"></div>
     <div class="content_wrapper">
         <section class="content_main">
             <h2>Main content area</h2>
@@ -592,7 +591,7 @@ markup._
 ```
 
 
-## Narrow content column option
+### Narrow content column option
 
 Add a class of `.content_main__narrow` to `.content_main` to get a one-column
 (in a 12-column grid) gutter on the right side.
@@ -601,7 +600,7 @@ _Inline styling is for demonstration purposes only; do not include it in your
 markup._
 
 <main class="content content__2-1" role="main">
-    <div class="content_bar"></div>
+    <div class="content_line"></div>
     <div class="content_wrapper">
         <section class="content_main content_main__narrow">
             <h2>Main content area</h2>
@@ -625,7 +624,7 @@ markup._
 
 ```
 <main class="content content__2-1" role="main">
-    <div class="content_bar"></div>
+    <div class="content_line"></div>
     <div class="content_wrapper">
         <section class="content_main content_main__narrow">
             <h2>Main content area</h2>
@@ -649,13 +648,13 @@ markup._
 ```
 
 
-## Flush bottom modifier
+### Flush bottom modifier
 
 Add a class of `.content__flush-bottom` to `.content_main` or
 `.content_sidebar` to remove bottom padding.
 
 <main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
+    <div class="content_line"></div>
     <div class="content_wrapper">
         <aside class="content_sidebar content__flush-bottom">
             Side with no bottom padding...
@@ -681,7 +680,7 @@ Add a class of `.content__flush-bottom` to `.content_main` or
 
 ```
 <main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
+    <div class="content_line"></div>
     <div class="content_wrapper">
         <aside class="content_sidebar content__flush-bottom">
             Side with no bottom padding...
@@ -707,7 +706,7 @@ Add a class of `.content__flush-bottom` to `.content_main` or
 ```
 
 
-## Flush top modifier (only on small screens)
+### Flush top modifier (only on small screens)
 
 Add a class of `.content__flush-top-on-small` to `.content_main` or
 `.content_sidebar` to remove top `padding` on small screens only. 'Small'
@@ -715,7 +714,7 @@ screens in this case refers to the breakpoint where `.content_main` and
 `.content_sidebar` single column layout.
 
 <main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
+    <div class="content_line"></div>
     <div class="content_wrapper">
         <aside class="content_sidebar content__flush-top-on-small">
             Side with no top padding on small screens...
@@ -733,7 +732,7 @@ screens in this case refers to the breakpoint where `.content_main` and
 
 ```
 <main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
+    <div class="content_line"></div>
     <div class="content_wrapper">
         <aside class="content_sidebar content__flush-top-on-small">
             Side with no top padding on small screens...
@@ -751,7 +750,7 @@ screens in this case refers to the breakpoint where `.content_main` and
 ```
 
 
-## Flush all modifier (only on small screens)
+### Flush all modifier (only on small screens)
 
 Add a class of `.content__flush-all-on-small` to `.content_main` or
 `.content_sidebar` to remove all `padding` and border-based gutters on small
@@ -759,7 +758,7 @@ screens only. 'Small' screens in this case refers to the breakpoint where
 `.content_main` and `.content_sidebar` single column layout.
 
 <main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
+    <div class="content_line"></div>
     <div class="content_wrapper">
         <aside class="content_sidebar content__flush-all-on-small">
             Side with no padding or border-based gutters on small screens...
@@ -777,7 +776,7 @@ screens only. 'Small' screens in this case refers to the breakpoint where
 
 ```
 <main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
+    <div class="content_line"></div>
     <div class="content_wrapper">
         <aside class="content_sidebar content__flush-all-on-small">
             Side with no padding or border-based gutters on small screens...
@@ -792,6 +791,47 @@ screens only. 'Small' screens in this case refers to the breakpoint where
         Footer
     </div>
 </footer>
+```
+
+
+### Bleedbar sidebar styling
+
+Simply add class `.content__bleedbar` to `main.content`. Only supports
+sidebars on the right, for now.
+
+_Note that inline styling is for demonstration purposes only; do not include
+it in your markup._
+
+<main class="content content__2-1 content__bleedbar" role="main">
+    <section class="content_hero" style="background: #E3E4E5">
+        Content hero
+    </section>
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <section class="content_main">
+            Main content area
+        </section>
+        <aside class="content_sidebar">
+            Bleeding sidebar
+        </aside>
+    </div>
+</main>
+
+```
+<main class="content content__2-1 content__bleedbar" role="main">
+    <section class="content_hero" style="background: #E3E4E5">
+        Content hero
+    </section>
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <section class="content_main">
+            Main content area
+        </section>
+        <aside class="content_sidebar">
+            Bleeding sidebar
+        </aside>
+    </div>
+</main>
 ```
 
 
@@ -1198,47 +1238,6 @@ and should not be used in production._
         </div>
     </div>
 </div>
-```
-
-
-## Bleedbar sidebar styling
-
-Simply add class `.content__bleedbar` to `main.content`. Only supports
-sidebars on the right, for now.
-
-_Note that inline styling is for demonstration purposes only; do not include
-it in your markup._
-
-<main class="content content__2-1 content__bleedbar" role="main">
-    <section class="content_hero" style="background: #E3E4E5">
-        Content hero
-    </section>
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <section class="content_main">
-            Main content area
-        </section>
-        <aside class="content_sidebar">
-            Bleeding sidebar
-        </aside>
-    </div>
-</main>
-
-```
-<main class="content content__2-1 content__bleedbar" role="main">
-    <section class="content_hero" style="background: #E3E4E5">
-        Content hero
-    </section>
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <section class="content_main">
-            Main content area
-        </section>
-        <aside class="content_sidebar">
-            Bleeding sidebar
-        </aside>
-    </div>
-</main>
 ```
 
 
