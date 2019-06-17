@@ -19,8 +19,9 @@
 @import (less) "../../../packages/cf-expandables/src/cf-expandables.less";
 @import (less) "../../../packages/cf-tables/src/cf-tables.less";
 
-// Icon font path
-@cf-icon-path: '../css/fonts';
+// Icon font path.
+// When SVGs are used as e.g. background images, we need a path to them.
+@cf-icon-path: '../icons';
 
 // Webfont variables
 // This is the path for self-hosted fonts.
@@ -33,7 +34,7 @@ html, body {
     height: 100%;
 }
 
-/* for sticky footer */
+// For sticky footer.
 .body-wrapper {
     display: table;
     height: 100%;
@@ -50,7 +51,7 @@ nav ul {
     margin-top: unit( 15px / @base-font-size-px, em );
 }
 
-// custom modules
+// Custom modules.
 @import (less) "header.less";
 @import (less) "hero.less";
 @import (less) "main-content.less";
