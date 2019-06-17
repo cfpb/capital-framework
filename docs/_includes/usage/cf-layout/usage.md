@@ -49,8 +49,8 @@ dependencies of this component.
     - [.wrapper (base)](#wrapper-base)
     - [Column divider modifiers](#column-divider-modifiers)
 - [Featured content module](#featured-content-module)
-    - [Featured content module - maps](#featured-content-module---maps)
-    - [Featured content module - videos](#featured-content-module---videos)
+    - [Anchoring the visual on the right](#anchoring-the-visual-on-the-right)
+    - [Centering the visual](#centering-the-visual)
 - [Heroes](#heroes)
     - [Standard hero with illustration](standard-hero-with-illustration)
     - [Hero with bleeding illustration](#hero-with-bleeding-illustration)
@@ -358,12 +358,12 @@ overlapping since they will span the height of the entire `.content-l` element.
 
 <div class="content-l content-l__large-gutters">
     <div class="content-l_col content-l_col-1-2">
-        <img src="http://placekitten.com/600/320" alt="Placeholder image">
+        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
         <br>
         Half-width column (spans 6/12 columns)
     </div>
     <div class="content-l_col content-l_col-1-2 content-l_col__before-divider">
-        <img src="http://placekitten.com/600/320" alt="Placeholder image">
+        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
         <br>
         Half-width column (spans 6/12 columns)
     </div>
@@ -384,12 +384,12 @@ overlapping since they will span the height of the entire `.content-l` element.
 ```
 <div class="content-l content-l__large-gutters">
     <div class="content-l_col content-l_col-1-2">
-        <img src="http://placekitten.com/600/320" alt="Placeholder image">
+        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
         <br>
         Half-width column (spans 6/12 columns)
     </div>
     <div class="content-l_col content-l_col-1-2 content-l_col__before-divider">
-        <img src="http://placekitten.com/600/320" alt="Placeholder image">
+        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
         <br>
         Half-width column (spans 6/12 columns)
     </div>
@@ -1077,38 +1077,38 @@ This is an example of combining modifiers to get a flush `padding` and
 
 ### Padded-top modifier
 
-Breaks top `margin` into `margin` & `padding`. Useful in combination with
+Breaks top `margin` into `margin` and `padding`. Useful in combination with
 `block__border-top` to add `padding` between `.block` contents and `border`.
 
 Main content...
 <div class="block block__padded-top block__border-top">
-    Content block with reduced top margin & added top padding
+    Content block with reduced top margin and added top padding
     and border.
 </div>
 
 ```
 Main content...
 <div class="block block__padded-top block__border-top">
-    Content block with reduced top margin & added top padding
+    Content block with reduced top margin and added top padding
     and border.
 </div>
 ```
 
 ### Padded-bottom modifier
 
-Breaks bottom `margin` into `margin` & `padding`. Useful in combination with
+Breaks bottom `margin` into `margin` and `padding`. Useful in combination with
 `block__border-bottom` to add `padding` between `.block` contents and `border`.
 
 Main content...
 <div class="block block__padded-bottom block__border-bottom">
-    Content block with reduced bottom margin & added bottom padding
+    Content block with reduced bottom margin and added bottom padding
     and border.
 </div>
 
 ```
 Main content...
 <div class="block block__padded-bottom block__border-bottom">
-    Content block with reduced bottom margin & added bottom padding
+    Content block with reduced bottom margin and added bottom padding
     and border.
 </div>
 ```
@@ -1290,208 +1290,185 @@ height of the next parent using `position: relative;`. This means that the
 
 
 ## Featured content module
-{% comment %}
-TODO: Revist the naming of these three modules. The layouts are more about
-positioning the image and less about the type of content they host.
-{% endcomment %}
 
-Featured content module, like a hero, consists of headline/text/optional call
-to action along with a visual. It is intended to be used in a main content
-column next to a sidebar.
+Featured content modules, like a hero, consist of headline and description,
+an optional call to action, and a static or video visual.
+They are intended to be used in a main content column next to a sidebar.
 
-Text is full width & displayed above the visual in the default/mobile view.
-At larger screen sizes, the text occupies a fixed portion of the screen (equal
-to the width of 5 of 12 columns at `701px` & 3 of 12 columns at `901px` for
-desktop). The visual occupies the remaining space. The visual should be
-`640x360` (16x9 ratio) and resize to fit the height of the Featured Content
-Module with a static width and is anchored left when it becomes too wide for
-the available space.
+Text is full-width and displayed above the visual in the default/mobile view.
+When creating a static image for the visual, it should be 1076px × 606px
+(a 16:9 aspect ratio), which is 2x the rendered width at the maximum size
+at which the visual will be seen (on a 600px wide display).
 
-<div class="block block__border block__flush-sides">
-    <section class="o-featured-content-module">
-        <div class="o-featured-content-module_text">
-            <div class="a-heading a-heading__icon">
-                {% include icons/speech-bubble.svg %}
-                Featured
-            </div>
-            <h2>Feature title</h2>
-            <p>
-                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-                instructior ex pri. Cu pri inani constituto, cum aeque noster
-                commodo cu.
-            </p>
-            <a class="a-link
-                      a-link__jump
-                      a-link__icon-after-text">
-                <span class="a-link_text">Read more about the feature</span>
-                {% include icons/right.svg %}
-            </a>
-        </div>
-        <div class="o-featured-content-module_visual">
-            <img class="o-featured-content-module_img"
-                 src="http://placekitten.com/g/540/270">
-        </div>
-    </section>
-</div>
+At larger screen sizes, the image moves to the right of the text,
+occupying a fixed width of 270px (equal to 3 of 12 columns at max page width).
+By default, the left edge of the image is anchored to the left side of the
+visual's 270px-wide area, and the right side is cropped off.
+The aspect ratio of the visual area increases as screen size increases,
+resulting in slightly different image cropping at different screen sizes,
+but the left edge of the image remains anchored in view.
+The full height of the image is always in view;
+the top and bottom are never cropped.
+See below for modifiers that change the image's horizontal anchoring.
 
-```
-<div class="block block__border block__flush-sides">
-    <section class="o-featured-content-module">
-        <div class="o-featured-content-module_text">
-            <div class="a-heading a-heading__icon">
-                {% raw %}{% include icons/speech-bubble.svg %}{% endraw %}
-                Featured
-            </div>
-            <h2>Feature title</h2>
-            <p>
-                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-                instructior ex pri. Cu pri inani constituto, cum aeque noster
-                commodo cu.
-            </p>
-            <a class="a-link
-                      a-link__jump
-                      a-link__icon-after-text">
-                <span class="a-link_text">Read more about the feature</span>
-                {% raw %}{% include icons/right.svg %}{% endraw %}
-            </a>
-        </div>
-        <div class="o-featured-content-module_visual">
-            <img class="o-featured-content-module_img"
-                 src="http://placekitten.com/g/540/270">
-        </div>
-    </section>
-</div>
-```
-
-### Featured content module - Maps
-
-When the featured content module image is a map (or other right-aligned
-content), the `o-featured-content-module__right` modifier class is added to
-the `o-featured-content-module` organism. This anchors the image to the right
-side so that the copyright information is displayed.
-
-<div class="block block__border block__flush-sides">
-    <section class="o-featured-content-module
-                    o-featured-content-module__right">
-        <div class="o-featured-content-module_text">
-            <div class="a-heading a-heading__icon">
-                {% include icons/speech-bubble.svg %}
-                Featured map
-            </div>
-            <h2>Feature title</h2>
-            <p>
-                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-                instructior ex pri. Cu pri inani constituto, cum aeque noster
-                commodo cu.
-            </p>
-            <a class="a-link
-                      a-link__jump
-                      a-link__icon-after-text">
-                <span class="a-link_text">Read more about the feature</span>
-                {% include icons/right.svg %}
-            </a>
-        </div>
-        <div class="o-featured-content-module_visual">
-            <img class="o-featured-content-module_img"
-                 src="http://placekitten.com/g/540/270">
-        </div>
-    </section>
-</div>
+<section class="o-featured-content-module">
+    <div class="o-featured-content-module_text">
+        <h2>Featured content</h2>
+        <p>
+            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+            instructior ex pri. Cu pri inani constituto, cum aeque noster
+            commodo cu.
+        </p>
+        <a class="a-link
+                  a-link__jump
+                  a-link__icon-after-text">
+            <span class="a-link_text">Read more about the feature</span>
+            {% include icons/right.svg %}
+        </a>
+    </div>
+    <div class="o-featured-content-module_visual">
+        <img class="o-featured-content-module_img"
+             src="https://dummyimage.com/1076x606/addc91/101820"
+             alt="">
+    </div>
+</section>
 
 ```
-<div class="block block__border block__flush-sides">
-    <section class="o-featured-content-module
-                    o-featured-content-module__right">
-        <div class="o-featured-content-module_text">
-            <div class="a-heading a-heading__icon">
-                {% raw %}{% include icons/speech-bubble.svg %}{% endraw %}
-                Featured map
-            </div>
-            <h2>Feature title</h2>
-            <p>
-                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-                instructior ex pri. Cu pri inani constituto, cum aeque noster
-                commodo cu.
-            </p>
-            <a class="a-link
-                      a-link__jump
-                      a-link__icon-after-text">
-                <span class="a-link_text">Read more about the feature</span>
-                {% raw %}{% include icons/right.svg %}{% endraw %}
-            </a>
-        </div>
-        <div class="o-featured-content-module_visual">
-            <img class="o-featured-content-module_img"
-                 src="http://placekitten.com/g/540/270">
-        </div>
-    </section>
-</div>
+<section class="o-featured-content-module">
+    <div class="o-featured-content-module_text">
+        <h2>Featured content</h2>
+        <p>
+            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+            instructior ex pri. Cu pri inani constituto, cum aeque noster
+            commodo cu.
+        </p>
+        <a class="a-link
+                  a-link__jump
+                  a-link__icon-after-text">
+            <span class="a-link_text">Read more about the feature</span>
+            {% raw %}{% include icons/right.svg %}{% endraw %}
+        </a>
+    </div>
+    <div class="o-featured-content-module_visual">
+        <img class="o-featured-content-module_img"
+             src="https://dummyimage.com/1076x606/addc91/101820"
+             alt="">
+    </div>
+</section>
 ```
 
-### Featured content module - Videos
+### Anchoring the visual on the right
 
-When the featured content module image is a video (or other centered content),
-the `o-featured-content-module__center` modifier class is added to the
-`o-featured-content-module` organism. This anchors the center of the image to
-the center of the available space so that the focal point of the video
-generally remains centered.
+To anchor a featured content module's visual on the right
+(for example, when displaying a map with a copyright watermark on the right),
+add the `o-featured-content-module__right` modifier class
+to the `o-featured-content-module` organism.
+This anchors the right side of the image to the right of the available space
+so that the right side remains in view at all screen sizes.
 
-<div class="block block__border block__flush-sides">
-    <section class="o-featured-content-module
-                    o-featured-content-module__center">
-        <div class="o-featured-content-module_text">
-            <div class="a-heading a-heading__icon">
-                {% include icons/play-round.svg %}
-                Featured video
-            </div>
-            <h2>Feature title</h2>
-            <p>
-                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-                instructior ex pri. Cu pri inani constituto, cum aeque noster
-                commodo cu.
-            </p>
-            <a class="a-link
-                      a-link__jump
-                      a-link__icon-after-text">
-                <span class="a-link_text">Read more about the feature</span>
-                {% include icons/right.svg %}
-            </a>
-        </div>
-        <div class="o-featured-content-module_visual">
-            <img class="o-featured-content-module_img"
-                 src="http://placekitten.com/g/540/270">
-        </div>
-    </section>
-</div>
+<section class="o-featured-content-module
+                o-featured-content-module__right">
+    <div class="o-featured-content-module_text">
+        <h2>Featured map</h2>
+        <p>
+            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+            instructior ex pri. Cu pri inani constituto, cum aeque noster
+            commodo cu.
+        </p>
+        <a class="a-link
+                  a-link__jump
+                  a-link__icon-after-text">
+            <span class="a-link_text">Read more about the feature</span>
+            {% include icons/right.svg %}
+        </a>
+    </div>
+    <div class="o-featured-content-module_visual">
+        <img class="o-featured-content-module_img"
+             src="https://dummyimage.com/1076x606/addc91/101820"
+             alt="">
+    </div>
+</section>
 
 ```
-<div class="block block__border block__flush-sides">
-    <section class="o-featured-content-module
-                    o-featured-content-module__center">
-        <div class="o-featured-content-module_text">
-            <div class="a-heading a-heading__icon">
-                {% raw %}{% include icons/play-round.svg %}{% endraw %}
-                Featured video
-            </div>
-            <h2>Feature title</h2>
-            <p>
-                Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
-                instructior ex pri. Cu pri inani constituto, cum aeque noster
-                commodo cu.
-            </p>
-            <a class="a-link
-                      a-link__jump
-                      a-link__icon-after-text">
-                <span class="a-link_text">Read more about the feature</span>
-                {% raw %}{% include icons/right.svg %}{% endraw %}
-            </a>
-        </div>
-        <div class="o-featured-content-module_visual">
-            <img class="o-featured-content-module_img"
-                 src="http://placekitten.com/g/540/270">
-        </div>
-    </section>
-</div>
+<section class="o-featured-content-module
+                o-featured-content-module__right">
+    <div class="o-featured-content-module_text">
+        <h2>Featured map</h2>
+        <p>
+            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+            instructior ex pri. Cu pri inani constituto, cum aeque noster
+            commodo cu.
+        </p>
+        <a class="a-link
+                  a-link__jump
+                  a-link__icon-after-text">
+            <span class="a-link_text">Read more about the feature</span>
+            {% raw %}{% include icons/right.svg %}{% endraw %}
+        </a>
+    </div>
+    <div class="o-featured-content-module_visual">
+        <img class="o-featured-content-module_img"
+             src="https://dummyimage.com/1076x606/addc91/101820"
+             alt="">
+    </div>
+</section>
+```
+
+### Centering the visual
+
+When the featured content module visual is a video,
+or a static image composed with its subject in the middle,
+add the `o-featured-content-module__center` modifier class
+to the `o-featured-content-module` organism.
+This anchors the center of the image to the center of the available space
+so that the focal point of the visual remains in view at all screen sizes.
+
+<section class="o-featured-content-module
+                o-featured-content-module__center">
+    <div class="o-featured-content-module_text">
+        <h2>Featured video</h2>
+        <p>
+            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+            instructior ex pri. Cu pri inani constituto, cum aeque noster
+            commodo cu.
+        </p>
+        <a class="a-link
+                  a-link__jump
+                  a-link__icon-after-text">
+            <span class="a-link_text">Read more about the feature</span>
+            {% include icons/right.svg %}
+        </a>
+    </div>
+    <div class="o-featured-content-module_visual">
+        <img class="o-featured-content-module_img"
+             src="https://dummyimage.com/1076x606/addc91/101820"
+             alt="">
+    </div>
+</section>
+
+```
+<section class="o-featured-content-module
+                o-featured-content-module__center">
+    <div class="o-featured-content-module_text">
+        <h2>Featured video</h2>
+        <p>
+            Lorem ipsum dolor sit amet, ei ius adhuc inani iudico, labitur
+            instructior ex pri. Cu pri inani constituto, cum aeque noster
+            commodo cu.
+        </p>
+        <a class="a-link
+                  a-link__jump
+                  a-link__icon-after-text">
+            <span class="a-link_text">Read more about the feature</span>
+            {% raw %}{% include icons/right.svg %}{% endraw %}
+        </a>
+    </div>
+    <div class="o-featured-content-module_visual">
+        <img class="o-featured-content-module_img"
+             src="https://dummyimage.com/1076x606/addc91/101820"
+             alt="">
+    </div>
+</section>
 ```
 
 
@@ -1533,17 +1510,17 @@ height. The image should be `195px` in height to conform to this standard.
     <style>
         #hero1 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/570/236');
+                url('https://dummyimage.com/570x236/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/570/236',
+                src='https://dummyimage.com/570x236/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 41.4893617%;
         }
@@ -1551,17 +1528,17 @@ height. The image should be `195px` in height to conform to this standard.
         @media screen and (min-width: 37.5625em) {
             #hero1 .m-hero_image {
                 background-image:
-                    url('http://placekitten.com/g/470/195');
+                    url('https://dummyimage.com/470x195/addc91/101820');
                 background-image: -webkit-image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 background-image: image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src='http://placekitten.com/g/470/195',
+                    src='https://dummyimage.com/470x195/addc91/101820',
                     sizingMethod='scale');
                 padding-bottom: 41.4893617%;
             }
@@ -1588,17 +1565,17 @@ height. The image should be `195px` in height to conform to this standard.
     <style>
         #hero1 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/570/236');
+                url('https://dummyimage.com/570x236/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/570/236',
+                src='https://dummyimage.com/570x236/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 41.4893617%;
         }
@@ -1606,17 +1583,17 @@ height. The image should be `195px` in height to conform to this standard.
         @media screen and (min-width: 37.5625em) {
             #hero1 .m-hero_image {
                 background-image:
-                    url('http://placekitten.com/g/470/195');
+                    url('https://dummyimage.com/470x195/addc91/101820');
                 background-image: -webkit-image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 background-image: image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src='http://placekitten.com/g/470/195',
+                    src='https://dummyimage.com/470x195/addc91/101820',
                     sizingMethod='scale');
                 padding-bottom: 41.4893617%;
             }
@@ -1652,17 +1629,17 @@ switch the text to white.
 
         #hero2 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/570/236');
+                url('https://dummyimage.com/570x236/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/570/236',
+                src='https://dummyimage.com/570x236/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 41.4893617%;
         }
@@ -1670,17 +1647,17 @@ switch the text to white.
         @media screen and (min-width: 37.5625em) {
             #hero2 .m-hero_image {
                 background-image:
-                    url('http://placekitten.com/g/470/195');
+                    url('https://dummyimage.com/470x195/addc91/101820');
                 background-image: -webkit-image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 background-image: image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src='http://placekitten.com/g/470/195',
+                    src='https://dummyimage.com/470x195/addc91/101820',
                     sizingMethod='scale');
                 padding-bottom: 41.4893617%;
             }
@@ -1711,17 +1688,17 @@ switch the text to white.
 
         #hero2 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/570/236');
+                url('https://dummyimage.com/570x236/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/570/236') 1x,
-                url('http://placekitten.com/g/1140/472') 2x
+                url('https://dummyimage.com/570x236/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x472/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/570/236',
+                src='https://dummyimage.com/570x236/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 41.4893617%;
         }
@@ -1729,17 +1706,17 @@ switch the text to white.
         @media screen and (min-width: 37.5625em) {
             #hero2 .m-hero_image {
                 background-image:
-                    url('http://placekitten.com/g/470/195');
+                    url('https://dummyimage.com/470x195/addc91/101820');
                 background-image: -webkit-image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 background-image: image-set(
-                    url('http://placekitten.com/g/470/195') 1x,
-                    url('http://placekitten.com/g/940/390') 2x
+                    url('https://dummyimage.com/470x195/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x390/addc91/101820') 2x
                 );
                 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src='http://placekitten.com/g/470/195',
+                    src='https://dummyimage.com/470x195/addc91/101820',
                     sizingMethod='scale');
                 padding-bottom: 41.4893617%;
             }
@@ -1772,17 +1749,17 @@ add the `__bleeding` modifier to the hero and add an additional
     <style>
         #hero3 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/570/140');
+                url('https://dummyimage.com/570x140/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/570/140') 1x,
-                url('http://placekitten.com/g/1140/280') 2x
+                url('https://dummyimage.com/570x140/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x280/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/570/140') 1x,
-                url('http://placekitten.com/g/1140/280') 2x
+                url('https://dummyimage.com/570x140/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x280/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/570/140',
+                src='https://dummyimage.com/570x140/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 25.1020408%;
         }
@@ -1790,17 +1767,17 @@ add the `__bleeding` modifier to the hero and add an additional
         @media screen and (min-width: 37.5625em) {
             #hero3 .m-hero_image {
                 background-image:
-                    url('http://placekitten.com/g/470/640');
+                    url('https://dummyimage.com/470x640/addc91/101820');
                 background-image: -webkit-image-set(
-                    url('http://placekitten.com/g/470/640') 1x,
-                    url('http://placekitten.com/g/940/1280') 2x
+                    url('https://dummyimage.com/470x640/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x1280/addc91/101820') 2x
                 );
                 background-image: image-set(
-                    url('http://placekitten.com/g/470/640') 1x,
-                    url('http://placekitten.com/g/940/1280') 2x
+                    url('https://dummyimage.com/470x640/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x1280/addc91/101820') 2x
                 );
                 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src='http://placekitten.com/g/470/640',
+                    src='https://dummyimage.com/470x640/addc91/101820',
                     sizingMethod='scale');
             }
         }
@@ -1826,17 +1803,17 @@ add the `__bleeding` modifier to the hero and add an additional
     <style>
         #hero3 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/570/140');
+                url('https://dummyimage.com/570x140/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/570/140') 1x,
-                url('http://placekitten.com/g/1140/280') 2x
+                url('https://dummyimage.com/570x140/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x280/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/570/140') 1x,
-                url('http://placekitten.com/g/1140/280') 2x
+                url('https://dummyimage.com/570x140/addc91/101820') 1x,
+                url('https://dummyimage.com/1140x280/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/570/140',
+                src='https://dummyimage.com/570x140/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 25.1020408%;
         }
@@ -1844,17 +1821,17 @@ add the `__bleeding` modifier to the hero and add an additional
         @media screen and (min-width: 37.5625em) {
             #hero3 .m-hero_image {
                 background-image:
-                    url('http://placekitten.com/g/470/640');
+                    url('https://dummyimage.com/470x640/addc91/101820');
                 background-image: -webkit-image-set(
-                    url('http://placekitten.com/g/470/640') 1x,
-                    url('http://placekitten.com/g/940/1280') 2x
+                    url('https://dummyimage.com/470x640/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x1280/addc91/101820') 2x
                 );
                 background-image: image-set(
-                    url('http://placekitten.com/g/470/640') 1x,
-                    url('http://placekitten.com/g/940/1280') 2x
+                    url('https://dummyimage.com/470x640/addc91/101820') 1x,
+                    url('https://dummyimage.com/940x1280/addc91/101820') 2x
                 );
                 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src='http://placekitten.com/g/470/640',
+                    src='https://dummyimage.com/470x640/addc91/101820',
                     sizingMethod='scale');
             }
         }
@@ -1887,17 +1864,17 @@ with a non-white (or light gray) background.
     <style>
         #hero4 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/600/250');
+                url('https://dummyimage.com/600x250/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/600/250') 1x,
-                url('http://placekitten.com/g/1200/500') 2x
+                url('https://dummyimage.com/600x250/addc91/101820') 1x,
+                url('https://dummyimage.com/1200x500/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/600/250') 1x,
-                url('http://placekitten.com/g/1200/500') 2x
+                url('https://dummyimage.com/600x250/addc91/101820') 1x,
+                url('https://dummyimage.com/1200x500/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/600/250',
+                src='https://dummyimage.com/600x250/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 41.6666667%;
         }
@@ -1941,17 +1918,17 @@ with a non-white (or light gray) background.
     <style>
         #hero4 .m-hero_image {
             background-image:
-                url('http://placekitten.com/g/600/250');
+                url('https://dummyimage.com/600x250/addc91/101820');
             background-image: -webkit-image-set(
-                url('http://placekitten.com/g/600/250') 1x,
-                url('http://placekitten.com/g/1200/500') 2x
+                url('https://dummyimage.com/600x250/addc91/101820') 1x,
+                url('https://dummyimage.com/1200x500/addc91/101820') 2x
             );
             background-image: image-set(
-                url('http://placekitten.com/g/600/250') 1x,
-                url('http://placekitten.com/g/1200/500') 2x
+                url('https://dummyimage.com/600x250/addc91/101820') 1x,
+                url('https://dummyimage.com/1200x500/addc91/101820') 2x
             );
             filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                src='http://placekitten.com/g/600/250',
+                src='https://dummyimage.com/600x250/addc91/101820',
                 sizingMethod='scale');
             padding-bottom: 41.6666667%;
         }
