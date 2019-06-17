@@ -1295,7 +1295,7 @@ Featured content modules, like a hero, consist of headline and description,
 an optional call to action, and a static or video visual.
 They are intended to be used in a main content column next to a sidebar.
 
-Text is full width and displayed above the visual in the default/mobile view.
+Text is full-width and displayed above the visual in the default/mobile view.
 When creating a static image for the visual, it should be 1076px × 606px
 (a 16:9 aspect ratio), which is 2x the rendered width at the maximum size
 at which the visual will be seen (on a 600px wide display).
