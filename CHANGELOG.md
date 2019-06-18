@@ -1,4 +1,15 @@
 
+## v10.2.0 (2019-06-18)
+
+#### :bug: Bug Fix
+* `cf-forms`
+  * [#934](https://github.com/cfpb/capital-framework/pull/934) cf-forms: Fix issue where path to icons was hardcoded ([@anselmbradford](https://github.com/anselmbradford))
+
+#### Committers: 1
+- Ans ([@anselmbradford](https://github.com/anselmbradford))
+
+
+
 ## v10.1.0 (2019-06-17)
 
 #### :bug: Bug Fix
