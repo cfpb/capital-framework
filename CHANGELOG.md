@@ -1,3 +1,18 @@
+
+## v10.1.0 (2019-06-17)
+
+#### :bug: Bug Fix
+* `cf-core`, `cf-layout`
+  * [#930](https://github.com/cfpb/capital-framework/pull/930) Update Featured Content Module styling ([@Scotchester](https://github.com/Scotchester))
+
+#### :house: Internal
+* [#929](https://github.com/cfpb/capital-framework/pull/929) Update babel/core, preset-env, babel-loader, merge-stream, terser, and webpack ([@anselmbradford](https://github.com/anselmbradford))
+
+#### Committers: 2
+- Ans ([@anselmbradford](https://github.com/anselmbradford))
+- Scott Cranfill ([@Scotchester](https://github.com/Scotchester))
+
+
 ## v10.0.0 (2019-05-17)
 
 #### :boom: Breaking Change
