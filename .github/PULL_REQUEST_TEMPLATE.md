@@ -1,3 +1,5 @@
+**Heads up:** In an effort to unify our design resources, we will disable this repo and migrate Capital Framework's code to [cfpb/design-system](https://github.com/cfpb/design-system) in Summer 2019. Until the migration occurs, please continue to use this repo.
+
 [Short description explaining the high-level reason for the pull request]
 
 ## Additions
