@@ -11,11 +11,12 @@
     }
 
     &_citation {
-        .heading-5(@text-shadow: @pull-quote_citation);
+        .heading-5( @text-shadow: @pull-quote_citation );
 
         color: @pull-quote_citation;
 
         &:before {
+            // An em dash before the cited author name.
             content: '\2014 ';
         }
     }
