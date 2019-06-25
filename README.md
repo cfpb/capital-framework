@@ -1,10 +1,12 @@
 # Capital Framework [![Travis](https://img.shields.io/travis/cfpb/capital-framework.svg?style=flat-square)](https://travis-ci.org/cfpb/capital-framework) [![npm](https://img.shields.io/npm/v/capital-framework.svg?style=flat-square)](https://www.npmjs.com/package/capital-framework)
 
+:warning: **Heads up:** In an effort to unify our design resources, we will disable this repo and migrate Capital Framework's code to [cfpb/design-system](https://github.com/cfpb/design-system) in Summer 2019. Until the migration occurs, please continue to use this repo.
+
 The Consumer Financial Protection Bureau's user interface framework.
 
 | atomic-component | buttons | core | expandables | forms | grid
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| [![npm](https://img.shields.io/npm/v/cf-atomic-component.svg?style=flat-square)](https://www.npmjs.com/package/cf-atomic-component) | [![npm](https://img.shields.io/npm/v/cf-buttons.svg?style=flat-square)](https://www.npmjs.com/package/cf-buttons)  | [![npm](https://img.shields.io/npm/v/cf-core.svg?style=flat-square)](https://www.npmjs.com/package/cf-core)  | [![npm](https://img.shields.io/npm/v/cf-expandables.svg?style=flat-square)](https://www.npmjs.com/package/cf-expandables)  | [![npm](https://img.shields.io/npm/v/cf-forms.svg?style=flat-square)](https://www.npmjs.com/package/cf-forms)  | [![npm](https://img.shields.io/npm/v/cf-grid.svg?style=flat-square)](https://www.npmjs.com/package/cf-grid)  | 
+| [![npm](https://img.shields.io/npm/v/cf-atomic-component.svg?style=flat-square)](https://www.npmjs.com/package/cf-atomic-component) | [![npm](https://img.shields.io/npm/v/cf-buttons.svg?style=flat-square)](https://www.npmjs.com/package/cf-buttons)  | [![npm](https://img.shields.io/npm/v/cf-core.svg?style=flat-square)](https://www.npmjs.com/package/cf-core)  | [![npm](https://img.shields.io/npm/v/cf-expandables.svg?style=flat-square)](https://www.npmjs.com/package/cf-expandables)  | [![npm](https://img.shields.io/npm/v/cf-forms.svg?style=flat-square)](https://www.npmjs.com/package/cf-forms)  | [![npm](https://img.shields.io/npm/v/cf-grid.svg?style=flat-square)](https://www.npmjs.com/package/cf-grid)  |
 
 | icons | layout | notifications | pagination | tables | typography |
 |:---:|:---:|:---:|:---:|:---:|:---:|
