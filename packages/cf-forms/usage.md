@@ -21,21 +21,22 @@ Capital Framework.
     - [Basic label](#basic-label)
     - [Label heading](#label-heading)
     - [Label helper text](#label-helper-text)
-- [Inputs](#inputs)
+- [Text inputs](#text-inputs)
     - [Basic text inputs](#basic-text-inputs)
         - [Full-width modifier](#full-width-modifier)
+    - [Buttons](#buttons)
+        - [Simple input with a button](#simple-input-with-a-button)
+        - [Button inside an input](#button-inside-an-input)
+        - [Button inside an input with another button](#button-inside-an-input-with-another-button)
+- [Checkboxes and radio inputs](#checkboxes-and-radio-inputs)
     - [Basic checkboxes](#basic-checkboxes)
     - [Basic radio buttons](#basic-radio-buttons)
     - [Large target area checkboxes](#large-target-area-checkboxes)
     - [Large target area radio buttons](#large-target-area-radio-buttons)
     - [Inputs helper text](#inputs-helper-text)
-    - [Form alerts](#form-alerts)
-- [Buttons](#buttons)
-    - [Simple input with a button](#simple-input-with-a-button)
-    - [Button inside an input](#button-inside-an-input)
-    - [Button inside an input with another button](#button-inside-an-input-with-another-button)
 - [Select dropdown](#select-dropdown)
 - [Basic multiselect](#basic-multiselect)
+- [Form alerts](#form-alerts)
 - [Fieldsets](#fieldsets)
 
 
@@ -173,7 +174,7 @@ Appears with labels and label headings.
 ```
 
 
-## Inputs
+## Text inputs
 
 Inputs should always be paired with a `label` for accessibility reasons.
 
@@ -373,6 +374,108 @@ Generally this is only useful for documentation purposes.
 </div>
 ```
 
+
+### Buttons
+
+#### Simple input with a button
+
+These are used for simple forms where a full filter isn't necessary.
+
+<div class="o-form__input-w-btn">
+    <div class="o-form__input-w-btn_input-container">
+        <input class="a-text-input" type="text" title="Test input">
+    </div>
+    <div class="o-form__input-w-btn_btn-container">
+        <button class="a-btn">Search</button>
+    </div>
+</div>
+
+```html
+<div class="o-form__input-w-btn">
+    <div class="o-form__input-w-btn_input-container">
+        <input class="a-text-input" type="text" title="Test input">
+    </div>
+    <div class="o-form__input-w-btn_btn-container">
+        <button class="a-btn">Search</button>
+    </div>
+</div>
+```
+
+#### Button inside an input
+
+These offer the user an action to take related to the input,
+typically to clear the input.
+
+<div class="m-btn-inside-input">
+    <input type="text"
+        value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+        title="Test input"
+        class="a-text-input">
+    <button class="a-btn a-btn__link">
+        {% include icons/error.svg %}
+        <span class="u-visually-hidden">Clear</span>
+    </button>
+</div>
+
+```html
+<div class="m-btn-inside-input">
+    <input type="text"
+        value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+        title="Test input"
+        class="a-text-input">
+    <button class="a-btn a-btn__link">
+        {% raw %}{% include icons/error.svg %}{% endraw %}
+        <span class="u-visually-hidden">Clear</span>
+    </button>
+</div>
+```
+
+
+#### Button inside an input with another button
+
+This example combines both of the previous patterns,
+creating a typical site search form.
+
+<div class="o-form__input-w-btn">
+    <div class="o-form__input-w-btn_input-container">
+        <div class="m-btn-inside-input">
+            <input type="text"
+                value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+                title="Test input"
+                class="a-text-input">
+            <button class="a-btn a-btn__link">
+                {% include icons/error.svg %}
+                <span class="u-visually-hidden">Clear</span>
+            </button>
+        </div>
+    </div>
+    <div class="o-form__input-w-btn_btn-container">
+        <button class="a-btn">Search</button>
+    </div>
+</div>
+
+```html
+<div class="o-form__input-w-btn">
+    <div class="o-form__input-w-btn_input-container">
+        <div class="m-btn-inside-input">
+            <input type="text"
+                value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
+                title="Test input"
+                class="a-text-input">
+            <button class="a-btn a-btn__link">
+                {% raw %}{% include icons/error.svg %}{% endraw %}
+                <span class="u-visually-hidden">Clear</span>
+            </button>
+        </div>
+    </div>
+    <div class="o-form__input-w-btn_btn-container">
+        <button class="a-btn">Search</button>
+    </div>
+</div>
+```
+
+
+## Checkboxes and radio inputs
 
 ### Basic checkboxes
 
@@ -752,245 +855,6 @@ have helper text that appears below the main label text.
 ```
 
 
-### Form alerts
-
-Form alerts provide a light-touch alternative to notifications for inline
-form validation or feedback to a user's input.
-
-<div class="o-form_group">
-    <div class="m-form-field">
-        <label class="a-label__heading" for="form-input-error">Label</label>
-        <input class="a-text-input"
-               type="text"
-               value="Standard input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert" role="alert">
-            {% include icons/info-round.svg %}
-            <span class="a-form-alert_text">
-                This is an inline alert with a default state.
-            </span>
-        </div>
-    </div>
-</div>
-<div class="o-form_group">
-    <div class="m-form-field m-form-field__success">
-        <label class="a-label__heading" for="form-input-error">Label</label>
-        <input class="a-text-input a-text-input__success"
-               type="text"
-               value="Valid input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert a-form-alert__success" role="alert">
-            {% include icons/check-round.svg %}
-            <span class="a-form-alert_text">
-                This is an inline alert with a success state.
-            </span>
-        </div>
-    </div>
-</div>
-<div class="o-form_group">
-    <div class="m-form-field m-form-field__error">
-        <label class="a-label__heading" for="form-input-error">Label</label>
-        <input class="a-text-input a-text-input__error"
-               type="text"
-               value="Invalid input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert a-form-alert__error" role="alert">
-            {% include icons/error-round.svg %}
-            <span class="a-form-alert_text">
-                This is an inline alert with an error state.
-            </span>
-        </div>
-    </div>
-</div>
-<div class="o-form_group">
-    <div class="m-form-field m-form-field__warning">
-        <label class="a-label__heading" for="form-input-error">Label</label>
-        <input class="a-text-input a-text-input__warning"
-               type="text"
-               value="Semi-valid input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert a-form-alert__warning" role="alert">
-            {% include icons/warning-round.svg %}
-            <span class="a-form-alert_text">
-                This is an inline alert with a warning state.
-            </span>
-        </div>
-    </div>
-</div>
-
-```html
-<div class="o-form_group">
-    <div class="m-form-field">
-        <label class="a-label__heading" for="form-input-error">Label</label>
-        <input class="a-text-input"
-               type="text"
-               value="Standard input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert" role="alert">
-            {% raw %}{% include icons/info-round.svg %}{% endraw %}
-            <span class="a-form-alert_text">
-                This is an inline alert with a default state.
-            </span>
-        </div>
-    </div>
-</div>
-<div class="o-form_group">
-    <div class="m-form-field m-form-field__success">
-        <label class="a-label__heading" for="form-input-error">Label</label>
-        <input class="a-text-input a-text-input__success"
-               type="text"
-               value="Valid input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert a-form-alert__success" role="alert">
-            {% raw %}{% include icons/check-round.svg %}{% endraw %}
-            <span class="a-form-alert_text">
-                This is an inline alert with a success state.
-            </span>
-        </div>
-    </div>
-</div>
-<div class="o-form_group">
-    <div class="m-form-field m-form-field__error">
-        <label class="a-label__heading" for="form-input-error">Label</label>
-        <input class="a-text-input a-text-input__error"
-               type="text"
-               value="Invalid input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert a-form-alert__error" role="alert">
-            {% raw %}{% include icons/error-round.svg %}{% endraw %}
-            <span class="a-form-alert_text">
-                This is an inline alert with an error state.
-            </span>
-        </div>
-    </div>
-</div>
-<div class="o-form_group">
-    <div class="m-form-field m-form-field__warning">
-        <label class="a-label__heading" for="form-input-error">Label</label>
-        <input class="a-text-input a-text-input__warning"
-               type="text"
-               value="Semi-valid input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert a-form-alert__warning" role="alert">
-            {% raw %}{% include icons/warning-round.svg %}{% endraw %}
-            <span class="a-form-alert_text">
-                This is an inline alert with a warning state.
-            </span>
-        </div>
-    </div>
-</div>
-```
-
-
-## Buttons
-
-### Simple input with a button
-
-These are used for simple forms where a full filter isn't necessary.
-
-<div class="o-form__input-w-btn">
-    <div class="o-form__input-w-btn_input-container">
-        <input class="a-text-input" type="text" title="Test input">
-    </div>
-    <div class="o-form__input-w-btn_btn-container">
-        <button class="a-btn">Search</button>
-    </div>
-</div>
-
-```html
-<div class="o-form__input-w-btn">
-    <div class="o-form__input-w-btn_input-container">
-        <input class="a-text-input" type="text" title="Test input">
-    </div>
-    <div class="o-form__input-w-btn_btn-container">
-        <button class="a-btn">Search</button>
-    </div>
-</div>
-```
-
-
-### Button inside an input
-
-These offer the user an action to take related to the input,
-typically to clear the input.
-
-<div class="m-btn-inside-input">
-    <input type="text"
-        value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-        title="Test input"
-        class="a-text-input">
-    <button class="a-btn a-btn__link">
-        {% include icons/error.svg %}
-        <span class="u-visually-hidden">Clear</span>
-    </button>
-</div>
-
-```html
-<div class="m-btn-inside-input">
-    <input type="text"
-        value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-        title="Test input"
-        class="a-text-input">
-    <button class="a-btn a-btn__link">
-        {% raw %}{% include icons/error.svg %}{% endraw %}
-        <span class="u-visually-hidden">Clear</span>
-    </button>
-</div>
-```
-
-
-### Button inside an input with another button
-
-This example combines both of the previous patterns,
-creating a typical site search form.
-
-<div class="o-form__input-w-btn">
-    <div class="o-form__input-w-btn_input-container">
-        <div class="m-btn-inside-input">
-            <input type="text"
-                value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-                title="Test input"
-                class="a-text-input">
-            <button class="a-btn a-btn__link">
-                {% include icons/error.svg %}
-                <span class="u-visually-hidden">Clear</span>
-            </button>
-        </div>
-    </div>
-    <div class="o-form__input-w-btn_btn-container">
-        <button class="a-btn">Search</button>
-    </div>
-</div>
-
-```html
-<div class="o-form__input-w-btn">
-    <div class="o-form__input-w-btn_input-container">
-        <div class="m-btn-inside-input">
-            <input type="text"
-                value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-                title="Test input"
-                class="a-text-input">
-            <button class="a-btn a-btn__link">
-                {% raw %}{% include icons/error.svg %}{% endraw %}
-                <span class="u-visually-hidden">Clear</span>
-            </button>
-        </div>
-    </div>
-    <div class="o-form__input-w-btn_btn-container">
-        <button class="a-btn">Search</button>
-    </div>
-</div>
-```
-
-
 ## Select dropdown
 
 The default section below demonstrates how a dropdown would normally
@@ -1160,6 +1024,145 @@ Generally this is only useful for documentation purposes.
     </select>
 </div>
 ```
+
+
+### Form alerts
+
+Form alerts provide a light-touch alternative to notifications for inline
+form validation or feedback to a user's input.
+
+<div class="o-form_group">
+    <div class="m-form-field">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input"
+               type="text"
+               value="Standard input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert" role="alert">
+            {% include icons/info-round.svg %}
+            <span class="a-form-alert_text">
+                This is an inline alert with a default state.
+            </span>
+        </div>
+    </div>
+</div>
+<div class="o-form_group">
+    <div class="m-form-field m-form-field__success">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input a-text-input__success"
+               type="text"
+               value="Valid input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert a-form-alert__success" role="alert">
+            {% include icons/check-round.svg %}
+            <span class="a-form-alert_text">
+                This is an inline alert with a success state.
+            </span>
+        </div>
+    </div>
+</div>
+<div class="o-form_group">
+    <div class="m-form-field m-form-field__error">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input a-text-input__error"
+               type="text"
+               value="Invalid input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert a-form-alert__error" role="alert">
+            {% include icons/error-round.svg %}
+            <span class="a-form-alert_text">
+                This is an inline alert with an error state.
+            </span>
+        </div>
+    </div>
+</div>
+<div class="o-form_group">
+    <div class="m-form-field m-form-field__warning">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input a-text-input__warning"
+               type="text"
+               value="Semi-valid input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert a-form-alert__warning" role="alert">
+            {% include icons/warning-round.svg %}
+            <span class="a-form-alert_text">
+                This is an inline alert with a warning state.
+            </span>
+        </div>
+    </div>
+</div>
+
+```html
+<div class="o-form_group">
+    <div class="m-form-field">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input"
+               type="text"
+               value="Standard input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert" role="alert">
+            {% raw %}{% include icons/info-round.svg %}{% endraw %}
+            <span class="a-form-alert_text">
+                This is an inline alert with a default state.
+            </span>
+        </div>
+    </div>
+</div>
+<div class="o-form_group">
+    <div class="m-form-field m-form-field__success">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input a-text-input__success"
+               type="text"
+               value="Valid input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert a-form-alert__success" role="alert">
+            {% raw %}{% include icons/check-round.svg %}{% endraw %}
+            <span class="a-form-alert_text">
+                This is an inline alert with a success state.
+            </span>
+        </div>
+    </div>
+</div>
+<div class="o-form_group">
+    <div class="m-form-field m-form-field__error">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input a-text-input__error"
+               type="text"
+               value="Invalid input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert a-form-alert__error" role="alert">
+            {% raw %}{% include icons/error-round.svg %}{% endraw %}
+            <span class="a-form-alert_text">
+                This is an inline alert with an error state.
+            </span>
+        </div>
+    </div>
+</div>
+<div class="o-form_group">
+    <div class="m-form-field m-form-field__warning">
+        <label class="a-label__heading" for="form-input-error">Label</label>
+        <input class="a-text-input a-text-input__warning"
+               type="text"
+               value="Semi-valid input"
+               id="form-input-error"
+               aria-describedby="form-input-error_message">
+        <div class="a-form-alert a-form-alert__warning" role="alert">
+            {% raw %}{% include icons/warning-round.svg %}{% endraw %}
+            <span class="a-form-alert_text">
+                This is an inline alert with a warning state.
+            </span>
+        </div>
+    </div>
+</div>
+```
+
 
 ## Fieldsets
 
