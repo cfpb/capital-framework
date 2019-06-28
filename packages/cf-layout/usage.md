@@ -16,17 +16,17 @@ dependencies of this component.
     - [Color variables](#color-variables)
 - [Content layouts](#content-layouts)
     - [Standard content columns](#standard-content-columns)
-    - [Large gutters modifier](#large-gutters-modifier)
-    - [Content layout column dividers](#content-layout-column-dividers)
+        - [Large gutters modifier](#large-gutters-modifier)
+        - [Content layout column dividers](#content-layout-column-dividers)
     - [Content line](#content-line)
     - [Main content and sidebar](#main-content-and-sidebar)
     - [Left-hand navigation layout](#left-hand-navigation-layout)
     - [Right-hand sidebar layout](#right-hand-sidebar-layout)
+        - [Bleedbar sidebar styling](#bleedbar-sidebar-styling)
     - [Narrow content column option](#narrow-content-column-option)
     - [Flush bottom modifier](#flush-bottom-modifier)
     - [Flush top modifier (only on small screens)](#flush-top-modifier-only-on-small-screens)
     - [Flush all modifier (only on small screens)](#flush-all-modifier-only-on-small-screens)
-    - [Bleedbar sidebar styling](#bleedbar-sidebar-styling)
 - [Block](#block)
     - [Standard block example](#standard-block-example)
     - [Border-top modifier](#border-top-modifier)
@@ -275,7 +275,8 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 </div>
 ```
 
-### Large gutters modifier
+
+#### Large gutters modifier
 
 <div class="content-l content-l__main  content-l__large-gutters">
     <div class="content-l_col content-l_col-1">
@@ -338,7 +339,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 ```
 
 
-### Content layout column dividers
+#### Content layout column dividers
 
 Adds dividers between specified `.content-l_col-X-X` classes.
 
@@ -591,6 +592,47 @@ markup._
 ```
 
 
+#### Bleedbar sidebar styling
+
+Simply add class `.content__bleedbar` to `main.content`. Only supports
+sidebars on the right, for now.
+
+_Note that inline styling is for demonstration purposes only; do not include
+it in your markup._
+
+<main class="content content__2-1 content__bleedbar" role="main">
+    <section class="content_hero" style="background: #E3E4E5">
+        Content hero
+    </section>
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <section class="content_main">
+            Main content area
+        </section>
+        <aside class="content_sidebar">
+            Bleeding sidebar
+        </aside>
+    </div>
+</main>
+
+```
+<main class="content content__2-1 content__bleedbar" role="main">
+    <section class="content_hero" style="background: #E3E4E5">
+        Content hero
+    </section>
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <section class="content_main">
+            Main content area
+        </section>
+        <aside class="content_sidebar">
+            Bleeding sidebar
+        </aside>
+    </div>
+</main>
+```
+
+
 ### Narrow content column option
 
 Add a class of `.content_main__narrow` to `.content_main` to get a one-column
@@ -791,47 +833,6 @@ screens only. 'Small' screens in this case refers to the breakpoint where
         Footer
     </div>
 </footer>
-```
-
-
-### Bleedbar sidebar styling
-
-Simply add class `.content__bleedbar` to `main.content`. Only supports
-sidebars on the right, for now.
-
-_Note that inline styling is for demonstration purposes only; do not include
-it in your markup._
-
-<main class="content content__2-1 content__bleedbar" role="main">
-    <section class="content_hero" style="background: #E3E4E5">
-        Content hero
-    </section>
-    <div class="content_line"></div>
-    <div class="content_wrapper">
-        <section class="content_main">
-            Main content area
-        </section>
-        <aside class="content_sidebar">
-            Bleeding sidebar
-        </aside>
-    </div>
-</main>
-
-```
-<main class="content content__2-1 content__bleedbar" role="main">
-    <section class="content_hero" style="background: #E3E4E5">
-        Content hero
-    </section>
-    <div class="content_line"></div>
-    <div class="content_wrapper">
-        <section class="content_main">
-            Main content area
-        </section>
-        <aside class="content_sidebar">
-            Bleeding sidebar
-        </aside>
-    </div>
-</main>
 ```
 
 
