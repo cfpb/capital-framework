@@ -14,18 +14,19 @@ dependencies of this component.
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
-- [Content layouts](#content-layouts)
-    - [Standard content columns](#standard-content-columns)
+- [Standard content formats](#standard-content-formats)
+    - [Content line](#content-line)
+    - [Main content and sidebar](#main-content-and-sidebar)
+    - [Left-hand navigation layout](#left-hand-navigation-layout)
+    - [Right-hand sidebar layout](#right-hand-sidebar-layout)
+        - [Bleedbar sidebar styling](#bleedbar-sidebar-styling)
+    - [Narrow content column option](#narrow-content-column-option)
+    - [Flush bottom modifier](#flush-bottom-modifier)
+    - [Flush top modifier (only on small screens)](#flush-top-modifier-only-on-small-screens)
+    - [Flush all modifier (only on small screens)](#flush-all-modifier-only-on-small-screens)
+- [Custom content layouts](#custom-content-layouts)
     - [Large gutters modifier](#large-gutters-modifier)
-- [Content layout column dividers](#content-layout-column-dividers)
-- [Content bar](#content-bar)
-- [Content line](#content-line)
-- [Main content and sidebar](#main-content-and-sidebar)
-- [Left-hand navigation layout](#left-hand-navigation-layout)
-- [Right-hand sidebar layout](#right-hand-sidebar-layout)
-- [Narrow content column option](#narrow-content-column-option)
-- [Flush bottom modifier](#flush-bottom-modifier)
-- [Flush top modifier (only on small screens)](#flush-top-modifier-only-on-small-screens)
+    - [Content layout column dividers](#content-layout-column-dividers)
 - [Block](#block)
     - [Standard block example](#standard-block-example)
     - [Border-top modifier](#border-top-modifier)
@@ -34,7 +35,6 @@ dependencies of this component.
     - [Border-left modifier](#border-left-modifier)
     - [Border modifier](#border-modifier)
     - [Flush-top modifier](#flush-top-modifier)
-    - [Flush-top modifier](#flush-bottom-modifier-1)
     - [Flush-bottom modifier](#flush-bottom-modifier-1)
     - [Flush-sides modifier](#flush-sides-modifier)
     - [Flush modifier](#flush-modifier)
@@ -44,7 +44,6 @@ dependencies of this component.
     - [Padded-bottom modifier](#padded-bottom-modifier)
     - [Sub blocks](#sub-blocks)
     - [Mixing content blocks with content layouts](#mixing-content-blocks-with-content-layouts)
-- [Bleedbar sidebar styling](#bleedbar-sidebar-styling)
 - [cf-grid helpers](#cf-grid-helpers)
     - [.wrapper (base)](#wrapper-base)
     - [Column divider modifiers](#column-divider-modifiers)
@@ -65,7 +64,7 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 
 ### Color variables
 
-Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/src/cf-core/src/cf-brand-colors.less).
+Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/packages/cf-core/src/cf-brand-colors.less).
 
 ```
 // .block
@@ -108,9 +107,432 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 ```
 
 
-## Content layouts
+## Standard content formats
 
-### Standard content columns
+
+### Content line
+
+A 1 pixel edge to edge bar that can divide content.
+
+<div class="content_line"></div>
+
+```
+<div class="content_line"></div>
+```
+
+
+### Main content and sidebar
+
+Standard layout for the main content area and sidebar.
+
+By default `.content_main` and `.content_sidebar` stack vertically.
+When using the modifiers described below to create columns,
+the columns will remain stacked for smaller screens and then convert to to
+columns at `801px`.
+
+_Inline styling is for demonstration purposes only; do not include it in your
+markup._
+
+<main class="content" role="main">
+    <section class="content_hero" style="background: #E3E4E5">
+        Content hero
+    </section>
+    <div class="content_wrapper">
+        <section class="content_main">
+            Main content area
+        </section>
+        <aside class="content_sidebar" style="background: #F1F2F2">
+            Sidebar
+        </aside>
+    </div>
+</main>
+
+```
+<main class="content" role="main">
+    <section class="content_hero" style="background: #E3E4E5">
+        Content hero
+    </section>
+    <div class="content_wrapper">
+        <section class="content_main">
+            Main content area
+        </section>
+        <aside class="content_sidebar" style="background: #F1F2F2">
+            Sidebar
+        </aside>
+    </div>
+</main>
+```
+
+
+### Left-hand navigation layout
+
+Add a class of `.content__L-R` to `main.content` to determine the width ratio
+of `.content_main` and `.content_sidebar`, where 'L' is the left-hand item and
+'R' is the right-hand item. The two common configurations are `1-3` (sidebar on
+the left, content on the right, in a ratio of 1:3) and `2-1` (content on the
+left, sidebar on the right, in a ratio of 2:1).
+
+It is assumed that the content is wider than the sidebar.
+
+<main class="content content__1-3" role="main">
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <aside class="content_sidebar">
+            Section navigation
+        </aside>
+        <section class="content_main">
+            <h2>Main content area</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cum corrupti tempora nam nihil qui mollitia consectetur
+                corporis nemo culpa dolorum! Laborum at eos deleniti
+                consequatur itaque officiis debitis quisquam! Provident!
+            </p>
+        </section>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+
+```
+<main class="content content__1-3" role="main">
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <aside class="content_sidebar">
+            Section navigation
+        </aside>
+        <section class="content_main">
+            <h2>Main content area</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cum corrupti tempora nam nihil qui mollitia consectetur
+                corporis nemo culpa dolorum! Laborum at eos deleniti
+                consequatur itaque officiis debitis quisquam! Provident!
+            </p>
+        </section>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+```
+
+
+### Right-hand sidebar layout
+
+Add a class of `.content__L-R` to `main.content` to determine the width ratio
+of `.content_main` and `.content_sidebar`, where 'L' is the left-hand item and
+'R' is the right-hand item. The two common configurations are `1-3` (sidebar
+on the left, content on the right, in a ratio of 1:3) and `2-1` (content on the
+left, sidebar on the right, in a ratio of 2:1).
+
+It is assumed that the content is wider than the sidebar.
+
+_Inline styling is for demonstration purposes only; do not include it in your
+markup._
+
+<main class="content content__2-1" role="main">
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <section class="content_main">
+            <h2>Main content area</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cum corrupti tempora nam nihil qui mollitia consectetur
+                corporis nemo culpa dolorum! Laborum at eos deleniti
+                consequatur itaque officiis debitis quisquam! Provident!
+            </p>
+        </section>
+        <aside class="content_sidebar" style="background: #F1F2F2">
+            Sidebar
+        </aside>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+
+```
+<main class="content content__2-1" role="main">
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <section class="content_main">
+            <h2>Main content area</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cum corrupti tempora nam nihil qui mollitia consectetur
+                corporis nemo culpa dolorum! Laborum at eos deleniti
+                consequatur itaque officiis debitis quisquam! Provident!
+            </p>
+        </section>
+        <aside class="content_sidebar" style="background: #F1F2F2">
+            Sidebar
+        </aside>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+```
+
+
+#### Bleedbar sidebar styling
+
+Simply add class `.content__bleedbar` to `main.content`. Only supports
+sidebars on the right, for now.
+
+_Note that inline styling is for demonstration purposes only; do not include
+it in your markup._
+
+<main class="content content__2-1 content__bleedbar" role="main">
+    <section class="content_hero" style="background: #E3E4E5">
+        Content hero
+    </section>
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <section class="content_main">
+            Main content area
+        </section>
+        <aside class="content_sidebar">
+            Bleeding sidebar
+        </aside>
+    </div>
+</main>
+
+```
+<main class="content content__2-1 content__bleedbar" role="main">
+    <section class="content_hero" style="background: #E3E4E5">
+        Content hero
+    </section>
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <section class="content_main">
+            Main content area
+        </section>
+        <aside class="content_sidebar">
+            Bleeding sidebar
+        </aside>
+    </div>
+</main>
+```
+
+
+### Narrow content column option
+
+Add a class of `.content_main__narrow` to `.content_main` to get a one-column
+(in a 12-column grid) gutter on the right side.
+
+_Inline styling is for demonstration purposes only; do not include it in your
+markup._
+
+<main class="content content__2-1" role="main">
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <section class="content_main content_main__narrow">
+            <h2>Main content area</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cum corrupti tempora nam nihil qui mollitia consectetur
+                corporis nemo culpa dolorum! Laborum at eos deleniti
+                consequatur itaque officiis debitis quisquam! Provident!
+            </p>
+        </section>
+        <aside class="content_sidebar" style="background: #F1F2F2">
+            Sidebar
+        </aside>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+
+```
+<main class="content content__2-1" role="main">
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <section class="content_main content_main__narrow">
+            <h2>Main content area</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cum corrupti tempora nam nihil qui mollitia consectetur
+                corporis nemo culpa dolorum! Laborum at eos deleniti
+                consequatur itaque officiis debitis quisquam! Provident!
+            </p>
+        </section>
+        <aside class="content_sidebar" style="background: #F1F2F2">
+            Sidebar
+        </aside>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+```
+
+
+### Flush bottom modifier
+
+Add a class of `.content__flush-bottom` to `.content_main` or
+`.content_sidebar` to remove bottom padding.
+
+<main class="content content__1-3" role="main">
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <aside class="content_sidebar content__flush-bottom">
+            Side with no bottom padding...
+        </aside>
+        <section class="content_main content__flush-bottom">
+            Main content with no bottom padding...
+            <div class="block
+                        block__flush-bottom
+                        block__flush-sides
+                        block__bg">
+                .content__flush-bottom is very useful when you have a
+                content block inside of .content_main with a background
+                and flush sides.
+            </div>
+        </section>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+
+```
+<main class="content content__1-3" role="main">
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <aside class="content_sidebar content__flush-bottom">
+            Side with no bottom padding...
+        </aside>
+        <section class="content_main content__flush-bottom">
+            Main content with no bottom padding...
+            <div class="block
+                        block__flush-bottom
+                        block__flush-sides
+                        block__bg">
+                .content__flush-bottom is very useful when you have a
+                content block inside of .content_main with a background
+                and flush sides.
+            </div>
+        </section>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+```
+
+
+### Flush top modifier (only on small screens)
+
+Add a class of `.content__flush-top-on-small` to `.content_main` or
+`.content_sidebar` to remove top `padding` on small screens only. 'Small'
+screens in this case refers to the breakpoint where `.content_main` and
+`.content_sidebar` single column layout.
+
+<main class="content content__1-3" role="main">
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <aside class="content_sidebar content__flush-top-on-small">
+            Side with no top padding on small screens...
+        </aside>
+        <section class="content_main">
+            Main content
+        </section>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+
+```
+<main class="content content__1-3" role="main">
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <aside class="content_sidebar content__flush-top-on-small">
+            Side with no top padding on small screens...
+        </aside>
+        <section class="content_main">
+            Main content
+        </section>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+```
+
+
+### Flush all modifier (only on small screens)
+
+Add a class of `.content__flush-all-on-small` to `.content_main` or
+`.content_sidebar` to remove all `padding` and border-based gutters on small
+screens only. 'Small' screens in this case refers to the breakpoint where
+`.content_main` and `.content_sidebar` single column layout.
+
+<main class="content content__1-3" role="main">
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <aside class="content_sidebar content__flush-all-on-small">
+            Side with no padding or border-based gutters on small screens...
+        </aside>
+        <section class="content_main">
+            Main content
+        </section>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+
+```
+<main class="content content__1-3" role="main">
+    <div class="content_line"></div>
+    <div class="content_wrapper">
+        <aside class="content_sidebar content__flush-all-on-small">
+            Side with no padding or border-based gutters on small screens...
+        </aside>
+        <section class="content_main">
+            Main content
+        </section>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="wrapper">
+        Footer
+    </div>
+</footer>
+```
+
+
+## Custom content layouts
+
+The `content-l` ("content layout")
+class can be used to lay content out in a grid.
 
 <div class="content-l">
     <div class="content-l_col content-l_col-1">
@@ -275,6 +697,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
     </div>
 </div>
 ```
+
 
 ### Large gutters modifier
 
@@ -339,7 +762,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 ```
 
 
-## Content layout column dividers
+### Content layout column dividers
 
 Adds dividers between specified `.content-l_col-X-X` classes.
 
@@ -409,389 +832,6 @@ overlapping since they will span the height of the entire `.content-l` element.
         Third-width column (spans 4/12 columns)
     </div>
 </div>
-```
-
-
-## Content line
-
-A 1 pixel edge to edge bar that can divide content.
-
-<div class="content_line"></div>
-
-```
-<div class="content_line"></div>
-```
-
-
-## Main content and sidebar
-
-Standard layout for the main content area and sidebar.
-
-By default `.content_main` and `.content_sidebar` stack vertically.
-When using the modifiers described below to create columns,
-the columns will remain stacked for smaller screens and then convert to to
-columns at `801px`.
-
-`.content_bar` must come after `.content_hero` (if it exists) but before
-`.content_wrapper`.
-
-_Inline styling is for demonstration purposes only; do not include it in your
-markup._
-
-<main class="content" role="main">
-    <section class="content_hero" style="background: #E3E4E5">
-        Content hero
-    </section>
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <section class="content_main">
-            Main content area
-        </section>
-        <aside class="content_sidebar" style="background: #F1F2F2">
-            Sidebar
-        </aside>
-    </div>
-</main>
-
-```
-<main class="content" role="main">
-    <section class="content_hero" style="background: #E3E4E5">
-        Content hero
-    </section>
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <section class="content_main">
-            Main content area
-        </section>
-        <aside class="content_sidebar" style="background: #F1F2F2">
-            Sidebar
-        </aside>
-    </div>
-</main>
-```
-
-
-## Left-hand navigation layout
-
-Add a class of `.content__L-R` to `main.content` to determine the width ratio
-of `.content_main` and `.content_sidebar`, where 'L' is the left-hand item and
-'R' is the right-hand item. The two common configurations are `1-3` (sidebar on
-the left, content on the right, in a ratio of 1:3) and `2-1` (content on the
-left, sidebar on the right, in a ratio of 2:1).
-
-It is assumed that the content is wider than the sidebar.
-
-<main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <aside class="content_sidebar">
-            Section navigation
-        </aside>
-        <section class="content_main">
-            <h2>Main content area</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cum corrupti tempora nam nihil qui mollitia consectetur
-                corporis nemo culpa dolorum! Laborum at eos deleniti
-                consequatur itaque officiis debitis quisquam! Provident!
-            </p>
-        </section>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
-
-```
-<main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <aside class="content_sidebar">
-            Section navigation
-        </aside>
-        <section class="content_main">
-            <h2>Main content area</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cum corrupti tempora nam nihil qui mollitia consectetur
-                corporis nemo culpa dolorum! Laborum at eos deleniti
-                consequatur itaque officiis debitis quisquam! Provident!
-            </p>
-        </section>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
-```
-
-
-## Right-hand sidebar layout
-
-Add a class of `.content__L-R` to `main.content` to determine the width ratio
-of `.content_main` and `.content_sidebar`, where 'L' is the left-hand item and
-'R' is the right-hand item. The two common configurations are `1-3` (sidebar
-on the left, content on the right, in a ratio of 1:3) and `2-1` (content on the
-left, sidebar on the right, in a ratio of 2:1).
-
-It is assumed that the content is wider than the sidebar.
-
-_Inline styling is for demonstration purposes only; do not include it in your
-markup._
-
-<main class="content content__2-1" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <section class="content_main">
-            <h2>Main content area</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cum corrupti tempora nam nihil qui mollitia consectetur
-                corporis nemo culpa dolorum! Laborum at eos deleniti
-                consequatur itaque officiis debitis quisquam! Provident!
-            </p>
-        </section>
-        <aside class="content_sidebar" style="background: #F1F2F2">
-            Sidebar
-        </aside>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
-
-```
-<main class="content content__2-1" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <section class="content_main">
-            <h2>Main content area</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cum corrupti tempora nam nihil qui mollitia consectetur
-                corporis nemo culpa dolorum! Laborum at eos deleniti
-                consequatur itaque officiis debitis quisquam! Provident!
-            </p>
-        </section>
-        <aside class="content_sidebar" style="background: #F1F2F2">
-            Sidebar
-        </aside>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
-```
-
-
-## Narrow content column option
-
-Add a class of `.content_main__narrow` to `.content_main` to get a one-column
-(in a 12-column grid) gutter on the right side.
-
-_Inline styling is for demonstration purposes only; do not include it in your
-markup._
-
-<main class="content content__2-1" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <section class="content_main content_main__narrow">
-            <h2>Main content area</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cum corrupti tempora nam nihil qui mollitia consectetur
-                corporis nemo culpa dolorum! Laborum at eos deleniti
-                consequatur itaque officiis debitis quisquam! Provident!
-            </p>
-        </section>
-        <aside class="content_sidebar" style="background: #F1F2F2">
-            Sidebar
-        </aside>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
-
-```
-<main class="content content__2-1" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <section class="content_main content_main__narrow">
-            <h2>Main content area</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cum corrupti tempora nam nihil qui mollitia consectetur
-                corporis nemo culpa dolorum! Laborum at eos deleniti
-                consequatur itaque officiis debitis quisquam! Provident!
-            </p>
-        </section>
-        <aside class="content_sidebar" style="background: #F1F2F2">
-            Sidebar
-        </aside>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
-```
-
-
-## Flush bottom modifier
-
-Add a class of `.content__flush-bottom` to `.content_main` or
-`.content_sidebar` to remove bottom padding.
-
-<main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <aside class="content_sidebar content__flush-bottom">
-            Side with no bottom padding...
-        </aside>
-        <section class="content_main content__flush-bottom">
-            Main content with no bottom padding...
-            <div class="block
-                        block__flush-bottom
-                        block__flush-sides
-                        block__bg">
-                .content__flush-bottom is very useful when you have a
-                content block inside of .content_main with a background
-                and flush sides.
-            </div>
-        </section>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
-
-```
-<main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <aside class="content_sidebar content__flush-bottom">
-            Side with no bottom padding...
-        </aside>
-        <section class="content_main content__flush-bottom">
-            Main content with no bottom padding...
-            <div class="block
-                        block__flush-bottom
-                        block__flush-sides
-                        block__bg">
-                .content__flush-bottom is very useful when you have a
-                content block inside of .content_main with a background
-                and flush sides.
-            </div>
-        </section>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
-```
-
-
-## Flush top modifier (only on small screens)
-
-Add a class of `.content__flush-top-on-small` to `.content_main` or
-`.content_sidebar` to remove top `padding` on small screens only. 'Small'
-screens in this case refers to the breakpoint where `.content_main` and
-`.content_sidebar` single column layout.
-
-<main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <aside class="content_sidebar content__flush-top-on-small">
-            Side with no top padding on small screens...
-        </aside>
-        <section class="content_main">
-            Main content
-        </section>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
-
-```
-<main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <aside class="content_sidebar content__flush-top-on-small">
-            Side with no top padding on small screens...
-        </aside>
-        <section class="content_main">
-            Main content
-        </section>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
-```
-
-
-## Flush all modifier (only on small screens)
-
-Add a class of `.content__flush-all-on-small` to `.content_main` or
-`.content_sidebar` to remove all `padding` and border-based gutters on small
-screens only. 'Small' screens in this case refers to the breakpoint where
-`.content_main` and `.content_sidebar` single column layout.
-
-<main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <aside class="content_sidebar content__flush-all-on-small">
-            Side with no padding or border-based gutters on small screens...
-        </aside>
-        <section class="content_main">
-            Main content
-        </section>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
-
-```
-<main class="content content__1-3" role="main">
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <aside class="content_sidebar content__flush-all-on-small">
-            Side with no padding or border-based gutters on small screens...
-        </aside>
-        <section class="content_main">
-            Main content
-        </section>
-    </div>
-</main>
-<footer class="footer" role="contentinfo">
-    <div class="wrapper">
-        Footer
-    </div>
-</footer>
 ```
 
 
@@ -1198,47 +1238,6 @@ and should not be used in production._
         </div>
     </div>
 </div>
-```
-
-
-## Bleedbar sidebar styling
-
-Simply add class `.content__bleedbar` to `main.content`. Only supports
-sidebars on the right, for now.
-
-_Note that inline styling is for demonstration purposes only; do not include
-it in your markup._
-
-<main class="content content__2-1 content__bleedbar" role="main">
-    <section class="content_hero" style="background: #E3E4E5">
-        Content hero
-    </section>
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <section class="content_main">
-            Main content area
-        </section>
-        <aside class="content_sidebar">
-            Bleeding sidebar
-        </aside>
-    </div>
-</main>
-
-```
-<main class="content content__2-1 content__bleedbar" role="main">
-    <section class="content_hero" style="background: #E3E4E5">
-        Content hero
-    </section>
-    <div class="content_bar"></div>
-    <div class="content_wrapper">
-        <section class="content_main">
-            Main content area
-        </section>
-        <aside class="content_sidebar">
-            Bleeding sidebar
-        </aside>
-    </div>
-</main>
 ```
 
 
