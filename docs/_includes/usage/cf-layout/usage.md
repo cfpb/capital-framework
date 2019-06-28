@@ -130,9 +130,6 @@ When using the modifiers described below to create columns,
 the columns will remain stacked for smaller screens and then convert to to
 columns at `801px`.
 
-`.content_line` must come after `.content_hero` (if it exists) but before
-`.content_wrapper`.
-
 _Inline styling is for demonstration purposes only; do not include it in your
 markup._
 
@@ -140,7 +137,6 @@ markup._
     <section class="content_hero" style="background: #E3E4E5">
         Content hero
     </section>
-    <div class="content_line"></div>
     <div class="content_wrapper">
         <section class="content_main">
             Main content area
@@ -156,7 +152,6 @@ markup._
     <section class="content_hero" style="background: #E3E4E5">
         Content hero
     </section>
-    <div class="content_line"></div>
     <div class="content_wrapper">
         <section class="content_main">
             Main content area
