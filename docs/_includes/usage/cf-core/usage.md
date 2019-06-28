@@ -56,8 +56,8 @@ Color variables referenced in comments are from [cf-core brand-palette.less](htt
 @link-underline:         @pacific;
 @link-text-visited:      @teal;
 @link-underline-visited: @teal;
-@link-text-hover:        @pacific-60;
-@link-underline-hover:   @pacific-60;
+@link-text-hover:        @dark-pacific;
+@link-underline-hover:   @dark-pacific;
 @link-text-active:       @navy;
 @link-underline-active:  @navy;
 
