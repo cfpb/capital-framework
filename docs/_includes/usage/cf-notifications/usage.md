@@ -36,20 +36,20 @@ Overwrite them in your own project by duplicating the variable `@key: value`.
 ### Color variables
 
 ```
-@notification-bg:             #d2d3d5;
-@notification-bg-success:     #e2efd8;
-@notification-bg-warning:     #fff0dd;
-@notification-bg-error:       #f7e0d9;
+@notification-bg:             @gray-5;
+@notification-bg-success:     @green-10;
+@notification-bg-warning:     @gold-10;
+@notification-bg-error:       @red-10;
 
-@notification-border:         #5a5d61;
-@notification-border-success: #20aa3f;
-@notification-border-warning: #ff9e1b;
-@notification-border-error:   #d14124;
+@notification-border:         @gray-40;
+@notification-border-success: @green;
+@notification-border-warning: @gold;
+@notification-border-error:   @red;
 
-@notification-icon:           #5a5d61;
-@notification-icon-success:   #20aa3f;
-@notification-icon-warning:   #ff9e1b;
-@notification-icon-error:     #d14124;
+@notification-icon:           @gray;
+@notification-icon-success:   @green;
+@notification-icon-warning:   @gold;
+@notification-icon-error:     @red;
 ```
 
 ### Sizing variables
