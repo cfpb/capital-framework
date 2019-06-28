@@ -389,14 +389,6 @@ Jump links can also have icons before the text, like icon links.
 </a>
 ```
 
-### Block link
-
-The block link modifier (`.a-link__block`) is used as a mixin in the
-[jump link](#jump-link) and [link list](#link-list-modifier) patterns
-to provide the `padding`, `background`, and `border` styling that is common to
-those two patterns at extra-small screen sizes.
-It is not intended to be used directly.
-
 
 ## Lists
 
