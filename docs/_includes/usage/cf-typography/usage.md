@@ -23,7 +23,6 @@ and has more basic typography patterns.
     - [Meta header](#meta-header)
 - [Link patterns](#link-patterns)
     - [Links with icons](#links-with-icons)
-    - [Block link](#block-link)
     - [Jump link](#jump-link)
 - [Lists](#lists)
     - [Unstyled list modifier](#unstyled-list-modifier)
@@ -298,23 +297,6 @@ For more information, email
 </a>.
 ```
 
-### Block link
-
-The block link class is used as a mixin in the [jump link](#jump-link) and
-[link list](#link-list-modifier) patterns to convert a standard inline link to
-a block-level element with `padding`, `background`, and `border` at extra-small
-screen sizes. It is not intended to be used directly.
-
-<a class="a-link__block" href="#">
-    Default block link
-</a>
-
-```
-<a class="a-link__block" href="#">
-    Default block link
-</a>
-```
-
 ### Jump link
 
 "Jump links" are standalone links that respond to small screens by converting
@@ -406,6 +388,14 @@ Jump links can also have icons before the text, like icon links.
     {% raw %}{% include icons/right.svg %}{% endraw %}
 </a>
 ```
+
+### Block link
+
+The block link modifier (`.a-link__block`) is used as a mixin in the
+[jump link](#jump-link) and [link list](#link-list-modifier) patterns
+to provide the `padding`, `background`, and `border` styling that is common to
+those two patterns at extra-small screen sizes.
+It is not intended to be used directly.
 
 
 ## Lists
