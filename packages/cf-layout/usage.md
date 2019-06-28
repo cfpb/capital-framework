@@ -14,10 +14,7 @@ dependencies of this component.
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
-- [Content layouts](#content-layouts)
-    - [Standard content columns](#standard-content-columns)
-        - [Large gutters modifier](#large-gutters-modifier)
-        - [Content layout column dividers](#content-layout-column-dividers)
+- [Standard content formats](#standard-content-formats)
     - [Content line](#content-line)
     - [Main content and sidebar](#main-content-and-sidebar)
     - [Left-hand navigation layout](#left-hand-navigation-layout)
@@ -27,6 +24,9 @@ dependencies of this component.
     - [Flush bottom modifier](#flush-bottom-modifier)
     - [Flush top modifier (only on small screens)](#flush-top-modifier-only-on-small-screens)
     - [Flush all modifier (only on small screens)](#flush-all-modifier-only-on-small-screens)
+- [Custom content layouts](#custom-content-layouts)
+    - [Large gutters modifier](#large-gutters-modifier)
+    - [Content layout column dividers](#content-layout-column-dividers)
 - [Block](#block)
     - [Standard block example](#standard-block-example)
     - [Border-top modifier](#border-top-modifier)
@@ -107,309 +107,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 ```
 
 
-## Content layouts
-
-### Standard content columns
-
-<div class="content-l">
-    <div class="content-l_col content-l_col-1">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Full-width column (spans 12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-2">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Half-width column (spans 6/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-2">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Half-width column (spans 6/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-3">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Third-width column (spans 4/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-3">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Third-width column (spans 4/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-3">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Third-width column (spans 4/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-2-3">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Two thirds-width column (spans 8/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-3">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Third-width column (spans 4/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-4">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;">
-            Quarter width column (spans 3/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-3-4">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;">
-            Three-quarter width column (spans 9/12 columns)
-        </div>
-    </div>
-</div>
-
-```
-<div class="content-l">
-    <div class="content-l_col content-l_col-1">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Full-width column (spans 12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-2">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Half-width column (spans 6/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-2">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Half-width column (spans 6/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-3">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Third-width column (spans 4/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-3">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Third-width column (spans 4/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-3">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Third-width column (spans 4/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-2-3">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Two thirds-width column (spans 8/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-3">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Third-width column (spans 4/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-4">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;">
-            Quarter width column (spans 3/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-3-4">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;">
-            Three-quarter width column (spans 9/12 columns)
-        </div>
-    </div>
-</div>
-```
-
-
-#### Large gutters modifier
-
-<div class="content-l content-l__main  content-l__large-gutters">
-    <div class="content-l_col content-l_col-1">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Full-width column (spans 12 columns)
-        </div>
-    </div>
-</div>
-<div class="content-l content-l__main  content-l__large-gutters">
-    <div class="content-l_col content-l_col-1-2">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Half-width column (spans 6/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-2">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Half-width column (spans 6/12 columns)
-        </div>
-    </div>
-</div>
-
-```
-<div class="content-l content-l__main  content-l__large-gutters">
-    <div class="content-l_col content-l_col-1">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Full-width column (spans 12 columns)
-        </div>
-    </div>
-</div>
-<div class="content-l content-l__main  content-l__large-gutters">
-    <div class="content-l_col content-l_col-1-2">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Half-width column (spans 6/12 columns)
-        </div>
-    </div>
-    <div class="content-l_col content-l_col-1-2">
-        <div style="background: #F1F2F2;
-                    text-align: center;
-                    padding: 8px;
-                    margin-bottom: 4px;">
-            Half-width column (spans 6/12 columns)
-        </div>
-    </div>
-</div>
-```
-
-
-#### Content layout column dividers
-
-Adds dividers between specified `.content-l_col-X-X` classes.
-
-Layout dividers work in conjunction with `.content-l_col-X-X` elements and have
-specific needs depending on which column element variant they are attached to.
-For example `.content-l_col-1-2` has different divider needs than
-`.content-l_col-1-3` because they may break to single columns at different
-breakpoints.
-
-Dividers use absolute positioning relative to the `.content-l` element
-and depend on `.content-l` using `position: relative;`.
-This allows vertical dividers to span the height of the tallest column.
-Just be aware that if you have more than one row of columns,
-and each row has columns of different widths, the borders will cause unwanted
-overlapping since they will span the height of the entire `.content-l` element.
-
-<div class="content-l content-l__large-gutters">
-    <div class="content-l_col content-l_col-1-2">
-        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
-        <br>
-        Half-width column (spans 6/12 columns)
-    </div>
-    <div class="content-l_col content-l_col-1-2 content-l_col__before-divider">
-        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
-        <br>
-        Half-width column (spans 6/12 columns)
-    </div>
-</div>
-<br>
-<div class="content-l content-l__large-gutters">
-    <div class="content-l_col content-l_col-1-3">
-        Third-width column (spans 4/12 columns)
-    </div>
-    <div class="content-l_col content-l_col-1-3 content-l_col__before-divider">
-        Third-width column (spans 4/12 columns)
-    </div>
-    <div class="content-l_col content-l_col-1-3 content-l_col__before-divider">
-        Third-width column (spans 4/12 columns)
-    </div>
-</div>
-
-```
-<div class="content-l content-l__large-gutters">
-    <div class="content-l_col content-l_col-1-2">
-        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
-        <br>
-        Half-width column (spans 6/12 columns)
-    </div>
-    <div class="content-l_col content-l_col-1-2 content-l_col__before-divider">
-        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
-        <br>
-        Half-width column (spans 6/12 columns)
-    </div>
-</div>
-<br>
-<!-- Starting a new .content-l so that the dividers from
-     .content-l_col.content-l_col-1-2.content-l_col__before-divider
-     won't overlap the .content-l_col-1-3 columns. -->
-<div class="content-l content-l__large-gutters">
-    <div class="content-l_col content-l_col-1-3">
-        Third-width column (spans 4/12 columns)
-    </div>
-    <div class="content-l_col content-l_col-1-3 content-l_col__before-divider">
-        Third-width column (spans 4/12 columns)
-    </div>
-    <div class="content-l_col content-l_col-1-3 content-l_col__before-divider">
-        Third-width column (spans 4/12 columns)
-    </div>
-</div>
-```
+## Standard content formats
 
 
 ### Content line
@@ -833,6 +531,312 @@ screens only. 'Small' screens in this case refers to the breakpoint where
         Footer
     </div>
 </footer>
+```
+
+
+## Custom content layouts
+
+The `content-l` ("content layout")
+class can be used to lay content out in a grid.
+
+<div class="content-l">
+    <div class="content-l_col content-l_col-1">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Full-width column (spans 12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-2">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Half-width column (spans 6/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-2">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Half-width column (spans 6/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-3">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Third-width column (spans 4/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-3">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Third-width column (spans 4/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-3">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Third-width column (spans 4/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-2-3">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Two thirds-width column (spans 8/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-3">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Third-width column (spans 4/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-4">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;">
+            Quarter width column (spans 3/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-3-4">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;">
+            Three-quarter width column (spans 9/12 columns)
+        </div>
+    </div>
+</div>
+
+```
+<div class="content-l">
+    <div class="content-l_col content-l_col-1">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Full-width column (spans 12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-2">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Half-width column (spans 6/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-2">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Half-width column (spans 6/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-3">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Third-width column (spans 4/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-3">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Third-width column (spans 4/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-3">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Third-width column (spans 4/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-2-3">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Two thirds-width column (spans 8/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-3">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Third-width column (spans 4/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-4">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;">
+            Quarter width column (spans 3/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-3-4">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;">
+            Three-quarter width column (spans 9/12 columns)
+        </div>
+    </div>
+</div>
+```
+
+
+### Large gutters modifier
+
+<div class="content-l content-l__main  content-l__large-gutters">
+    <div class="content-l_col content-l_col-1">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Full-width column (spans 12 columns)
+        </div>
+    </div>
+</div>
+<div class="content-l content-l__main  content-l__large-gutters">
+    <div class="content-l_col content-l_col-1-2">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Half-width column (spans 6/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-2">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Half-width column (spans 6/12 columns)
+        </div>
+    </div>
+</div>
+
+```
+<div class="content-l content-l__main  content-l__large-gutters">
+    <div class="content-l_col content-l_col-1">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Full-width column (spans 12 columns)
+        </div>
+    </div>
+</div>
+<div class="content-l content-l__main  content-l__large-gutters">
+    <div class="content-l_col content-l_col-1-2">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Half-width column (spans 6/12 columns)
+        </div>
+    </div>
+    <div class="content-l_col content-l_col-1-2">
+        <div style="background: #F1F2F2;
+                    text-align: center;
+                    padding: 8px;
+                    margin-bottom: 4px;">
+            Half-width column (spans 6/12 columns)
+        </div>
+    </div>
+</div>
+```
+
+
+### Content layout column dividers
+
+Adds dividers between specified `.content-l_col-X-X` classes.
+
+Layout dividers work in conjunction with `.content-l_col-X-X` elements and have
+specific needs depending on which column element variant they are attached to.
+For example `.content-l_col-1-2` has different divider needs than
+`.content-l_col-1-3` because they may break to single columns at different
+breakpoints.
+
+Dividers use absolute positioning relative to the `.content-l` element
+and depend on `.content-l` using `position: relative;`.
+This allows vertical dividers to span the height of the tallest column.
+Just be aware that if you have more than one row of columns,
+and each row has columns of different widths, the borders will cause unwanted
+overlapping since they will span the height of the entire `.content-l` element.
+
+<div class="content-l content-l__large-gutters">
+    <div class="content-l_col content-l_col-1-2">
+        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
+        <br>
+        Half-width column (spans 6/12 columns)
+    </div>
+    <div class="content-l_col content-l_col-1-2 content-l_col__before-divider">
+        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
+        <br>
+        Half-width column (spans 6/12 columns)
+    </div>
+</div>
+<br>
+<div class="content-l content-l__large-gutters">
+    <div class="content-l_col content-l_col-1-3">
+        Third-width column (spans 4/12 columns)
+    </div>
+    <div class="content-l_col content-l_col-1-3 content-l_col__before-divider">
+        Third-width column (spans 4/12 columns)
+    </div>
+    <div class="content-l_col content-l_col-1-3 content-l_col__before-divider">
+        Third-width column (spans 4/12 columns)
+    </div>
+</div>
+
+```
+<div class="content-l content-l__large-gutters">
+    <div class="content-l_col content-l_col-1-2">
+        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
+        <br>
+        Half-width column (spans 6/12 columns)
+    </div>
+    <div class="content-l_col content-l_col-1-2 content-l_col__before-divider">
+        <img src="https://dummyimage.com/600x320/addc91/101820" alt="Placeholder image">
+        <br>
+        Half-width column (spans 6/12 columns)
+    </div>
+</div>
+<br>
+<!-- Starting a new .content-l so that the dividers from
+     .content-l_col.content-l_col-1-2.content-l_col__before-divider
+     won't overlap the .content-l_col-1-3 columns. -->
+<div class="content-l content-l__large-gutters">
+    <div class="content-l_col content-l_col-1-3">
+        Third-width column (spans 4/12 columns)
+    </div>
+    <div class="content-l_col content-l_col-1-3 content-l_col__before-divider">
+        Third-width column (spans 4/12 columns)
+    </div>
+    <div class="content-l_col content-l_col-1-3 content-l_col__before-divider">
+        Third-width column (spans 4/12 columns)
+    </div>
+</div>
 ```
 
 
