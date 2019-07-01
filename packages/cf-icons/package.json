@@ -1,11 +1,11 @@
 {
   "name": "cf-icons",
-  "version": "10.1.0",
+  "version": "10.2.1",
   "description": "Capital Framework icons",
   "less": "src/cf-icons.less",
   "style": "cf-icons.css",
   "dependencies": {
-    "cf-core": "^10.1.0"
+    "cf-core": "^10.2.1"
   },
   "keywords": [
     "icons"

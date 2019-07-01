@@ -1,12 +1,12 @@
 {
   "name": "cf-layout",
-  "version": "10.1.0",
+  "version": "10.2.1",
   "description": "Capital Framework layouts",
   "less": "src/cf-layout.less",
   "style": "cf-layout.css",
   "dependencies": {
-    "cf-core": "^10.1.0",
-    "cf-grid": "^10.0.0"
+    "cf-core": "^10.2.1",
+    "cf-grid": "^10.2.1"
   },
   "keywords": [
     "layout"

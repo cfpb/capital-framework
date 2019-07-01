@@ -1,12 +1,12 @@
 {
   "name": "cf-typography",
-  "version": "10.1.0",
+  "version": "10.2.1",
   "description": "Capital Framework typography",
   "less": "src/cf-typography.less",
   "style": "cf-typography.css",
   "dependencies": {
-    "cf-core": "^10.1.0",
-    "cf-icons": "^10.1.0"
+    "cf-core": "^10.2.1",
+    "cf-icons": "^10.2.1"
   },
   "keywords": [
     "typography"
