@@ -24,7 +24,6 @@ and has more basic typography patterns.
 - [Link patterns](#link-patterns)
     - [Links with icons](#links-with-icons)
     - [Jump link](#jump-link)
-    - [Block link](#block-link)
 - [Lists](#lists)
     - [Unstyled list modifier](#unstyled-list-modifier)
     - [Spaced list modifier](#spaced-list-modifier)
@@ -270,7 +269,6 @@ attached to `.m-meta-header_left` and `.a-heading.a-heading__icon` is attached t
 </p>
 ```
 
-
 #### Non-wrapping icon links
 
 - Warning: Icons added to inline links can sometimes break onto the next line.
@@ -300,6 +298,9 @@ For more information, email
 ```
 
 ### Jump link
+
+"Jump links" are standalone links that respond to small screens by converting
+to full block links that have a finger-friendly touch area.
 
 <a class="a-link
           a-link__jump
@@ -364,7 +365,7 @@ Jump links can also have icons before the text, like icon links.
 </a>
 ```
 
-#### Jump link with bg link modifier (only visible on small screens)
+#### Jump link with background modifier (only visible on small screens)
 
 <a class="a-link
           a-link__jump
@@ -385,24 +386,6 @@ Jump links can also have icons before the text, like icon links.
     <span class="a-link_text">Jump link with grey background and
         solid borders on small screens</span>
     {% raw %}{% include icons/right.svg %}{% endraw %}
-</a>
-```
-
-### Block link
-
-The block link class converts a standard inline link to a block-level element
-with `padding`, `background`, and `border`.
-
-It is primarily used within a max-width `@bp-xs-max` media query
-(see `.link__jump` and `.list__links`).
-
-<a class="a-link__block" href="#">
-    Default block link
-</a>
-
-```
-<a class="a-link__block" href="#">
-    Default block link
 </a>
 ```
 
