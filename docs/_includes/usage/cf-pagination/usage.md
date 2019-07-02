@@ -22,22 +22,25 @@ navigation for Capital Framework.
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project.
-Overwrite them in your own project by duplicating the variable `@key: value`.
+Component variables are used to theme a component.
+They likely will be left as is, but if needed can be overwritten by duplicating
+the variable in a `@key: value` format with a different value.
+This customized variable would be placed in the same file
+where this component's less file is imported.
 
 ### Color variables
 
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/packages/cf-core/src/cf-brand-colors.less).
 
 ```
-@pagination-text:               @gray;
-@pagination-bg:                 @gray-10;
+@pagination-text: @gray;
+@pagination-bg:   @gray-10;
 ```
 
 ### Sizing variables
 
 ```
-@pagination-btn-min-width-px:   130px;
+@pagination-btn-min-width-px: 130px;
 ```
 
 

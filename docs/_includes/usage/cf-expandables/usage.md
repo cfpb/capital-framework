@@ -36,8 +36,11 @@ dependencies of this component.
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project.
-Overwrite them in your own project by duplicating the variable `@key: value`.
+Component variables are used to theme a component.
+They likely will be left as is, but if needed can be overwritten by duplicating
+the variable in a `@key: value` format with a different value.
+This customized variable would be placed in the same file
+where this component's less file is imported.
 
 ### Color variables
 
@@ -46,24 +49,24 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 
 ```
 // .o-expandable
-@expandable-focus:              @black;
+@expandable-focus:             @black;
 
 // .o-expandable_label
-@expandable_label-text:         @black;
+@expandable_label-text:        @black;
 
 // .o-expandable_link
-@expandable_link-text:          @pacific;
+@expandable_link-text:         @pacific;
 
 // .o-expandable__padded
-@expandable__padded-bg:         @gray-10;
-@expandable__padded-bg-hover:   @gray-20;
-@expandable__padded-divider:    @gray-40;
+@expandable__padded-bg:        @gray-10;
+@expandable__padded-bg-hover:  @gray-20;
+@expandable__padded-divider:   @gray-40;
 
 // .o-expandable-group
-@expandable-group_header-text:  @gray;
-@expandable-group_header-bg:    @gray-10;
-@expandable-group-bg:           @white;
-@expandable-group-divider:      @gray-80;
+@expandable-group_header-text: @gray;
+@expandable-group_header-bg:   @gray-10;
+@expandable-group-bg:          @white;
+@expandable-group-divider:     @gray-80;
 ```
 
 ### Sizing variables
@@ -75,7 +78,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 ### Timing variables
 ```
 // Transition timing
-@expandable__transition-speed:  0.25s;
+@expandable__transition-speed: 0.25s;
 ```
 
 

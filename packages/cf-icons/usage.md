@@ -1,9 +1,7 @@
-The cf-icon component provides SVG icons for Capital Framework.
-This component can be used by itself, but is designed to work with Capital
-Framework.
-
-
-
+The cf-icon component provides
+Scalable Vector Graphics (SVG) icons for Capital Framework.
+This component can be used by itself,
+but is designed to work with Capital Framework.
 
 ## Table of contents
 
@@ -24,23 +22,25 @@ Framework.
 
 ## SVG icons
 
-cf-icons now provides each icon as an individual SVG,
+cf-icons provides each icon as an individual SVG,
 in accordance with current industry best practices for implementing icons.
 
 ### Variables
 
-Theme variables for setting the color and sizes throughout the project.
-Overwrite them in your own project by duplicating the variable `@key: value`.
+Component variables are used to theme a component.
+They likely will be left as is, but if needed can be overwritten by duplicating
+the variable in a `@key: value` format with a different value.
+This customized variable would be placed in the same file
+where this component's less file is imported.
 
 #### Size variables
 
-The standard icon height matches the 19px rendered canvas of text
-set in Avenir Next sized at 16px ( 19/16 = 1.1875 ).
+The standard icon height in ems matches the 19px rendered canvas of text
+set in Avenir Next sized at 16px (19/16 = 1.1875).
 
 ```
 @cf-icon-height: 1.1875em;
 ```
-
 
 ### SVG icon basics
 

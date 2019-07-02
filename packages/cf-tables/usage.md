@@ -31,21 +31,24 @@ The [`cf-core`](../core) component is a dependency of this component.
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project.
-Overwrite them in your own project by duplicating the variable `@key: value`.
+Component variables are used to theme a component.
+They likely will be left as is, but if needed can be overwritten by duplicating
+the variable in a `@key: value` format with a different value.
+This customized variable would be placed in the same file
+where this component's less file is imported.
 
 ### Color variables
 
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/packages/cf-core/src/cf-brand-colors.less).
 
 ```less
-@table-head-bg:                 @gray-5;
-@table-cell-bg:                 @white;
-@table-cell-bg_alt:             @gray-5;
-@table-row-link-bg-hover:       @pacific-80;
-@table-row-link-hover-color:    @white;
-@table-scrolling-border:        @gray-40;
-@table-border:                  @gray;
+@table-head-bg:              @gray-5;
+@table-cell-bg:              @white;
+@table-cell-bg_alt:          @gray-5;
+@table-row-link-bg-hover:    @pacific-80;
+@table-row-link-hover-color: @white;
+@table-scrolling-border:     @gray-40;
+@table-border:               @gray;
 ```
 
 

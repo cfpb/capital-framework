@@ -48,8 +48,11 @@ Read on for more details on the variables and mixins this component provides.
 
 ## Variables
 
-The following Less variables are exposed,
-allowing you to easily override them before compiling.
+Component variables are used to theme a component.
+They likely will be left as is, but if needed can be overwritten by duplicating
+the variable in a `@key: value` format with a different value.
+This customized variable would be placed in the same file
+where this component's less file is imported.
 
 ```
 @grid_wrapper-width: 1200px;
