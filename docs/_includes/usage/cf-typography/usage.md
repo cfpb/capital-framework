@@ -37,8 +37,50 @@ and has more basic typography patterns.
 
 ## Variables
 
-Theme variables for setting the color and sizes. Overwrite them in your own
-project by duplicating the variable `@key: value`.
+Component variables are used to theme a component.
+They likely will be left as is, but if needed can be overwritten by duplicating
+the variable in a `@key: value` format with a different value.
+This customized variable would be placed in the same file
+where this component's less file is imported.
+
+### Color variables
+
+Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/packages/cf-core/src/cf-brand-colors.less).
+
+```
+// Running text elements
+
+// .a-micro-copy
+@micro-copy:                @black;
+
+// .a-date
+@date:                      @gray;
+
+// .m-pull-quote
+@pull-quote_body:           @black;
+@pull-quote_citation:       @gray;
+
+// Headings
+
+// .a-heading__icon
+@heading__icon:             @black;
+@heading__icon__hover:      @link-text-hover;
+
+// Headers
+
+// .m-slug-header
+@slug-header_border__thin:  @gray-10;
+@slug-header_border__thick: @green;
+
+// .m-meta-header
+@meta-header_border:        @gray-40;
+
+// Links
+
+// .a-link__jump
+@jump-link_bg:              @gray-10;
+@jump-link_border:          @gray-40;
+```
 
 ### Font variables
 
@@ -49,7 +91,7 @@ project by duplicating the variable `@key: value`.
 @webfont-demi: @webfont-medium;
 ```
 
-**Note:** We decided to stop serving the font file for Avenir Next Italic
+**Note:** We don't serve the font file for Avenir Next Italic
 because we found Avenir Next Regular with browser-created faux italics
 was an acceptable substitute, and it saves a lot of bytes not to serve it.
 
@@ -73,45 +115,6 @@ otherwise set it to `false` to use the self-hosted font path:
 
 ```
 @use-font-cdn: true;
-```
-
-### Color variables
-
-Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/packages/cf-core/src/cf-brand-colors.less).
-
-```
-// Running text elements
-
-// .a-micro-copy
-@micro-copy:                    @black;
-
-// .a-date
-@date:                          @gray;
-
-// .m-pull-quote
-@pull-quote_body:               @black;
-@pull-quote_citation:           @gray;
-
-// Headings
-
-// .a-heading__icon
-@heading__icon:                 @black;
-@heading__icon__hover:          @link-text-hover;
-
-// Headers
-
-// .m-slug-header
-@slug-header_border__thin:      @gray-10;
-@slug-header_border__thick:     @green;
-
-// .m-meta-header
-@meta-header_border:            @gray-40;
-
-// Links
-
-// .a-link__jump
-@jump-link_bg:                  @gray-10;
-@jump-link_border:              @gray-40;
 ```
 
 

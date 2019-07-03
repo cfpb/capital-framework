@@ -1,48 +1,43 @@
-The cf-icon component provides SVG icons for Capital Framework.
-This component can be used by itself, but is designed to work with Capital
-Framework.
-
-
+The cf-icon component provides
+Scalable Vector Graphics (SVG) icons for Capital Framework.
+This component can be used by itself,
+but is designed to work with Capital Framework.
 
 
 ## Table of contents
 
-- [SVG icons](#svg-icons)
-  - [Variables](#variables)
+- [Variables](#variables)
     - [Size variables](#size-variables)
-  - [SVG icon basics](#svg-icon-basics)
-  - [Rotating icons and other special features](#rotating-icons-and-other-special-features)
-  - [The icons](#the-icons)
+- [SVG icon basics](#svg-icon-basics)
+- [Rotating update icon](#rotating-update-icon)
+- [The icons](#the-icons)
     - [Navigation icons](#navigation-icons)
     - [Status icons](#status-icons)
-    - [Social/sharing icons](#social-sharing-icons)
+    - [Social/sharing icons](#socialsharing-icons)
     - [Communications icons](#communications-icons)
     - [Document icons](#document-icons)
     - [Financial products, services, and concepts](#financial-products-services-and-concepts)
     - [Web application icons](#web-application-icons)
 
 
-## SVG icons
+## Variables
 
-cf-icons now provides each icon as an individual SVG,
-in accordance with current industry best practices for implementing icons.
+Component variables are used to theme a component.
+They likely will be left as is, but if needed can be overwritten by duplicating
+the variable in a `@key: value` format with a different value.
+This customized variable would be placed in the same file
+where this component's less file is imported.
 
-### Variables
+### Size variables
 
-Theme variables for setting the color and sizes throughout the project.
-Overwrite them in your own project by duplicating the variable `@key: value`.
-
-#### Size variables
-
-The standard icon height matches the 19px rendered canvas of text
-set in Avenir Next sized at 16px ( 19/16 = 1.1875 ).
+The standard icon height in ems matches the 19px rendered canvas of text
+set in Avenir Next sized at 16px (19/16 = 1.1875).
 
 ```
 @cf-icon-height: 1.1875em;
 ```
 
-
-### SVG icon basics
+## SVG icon basics
 
 We subscribe to the guidance offered by Chris Coyier in his article,
 ["A Pretty Good SVG Icon System"](https://css-tricks.com/pretty-good-svg-icon-system/),
@@ -100,7 +95,7 @@ TODO: Provide better contributing docs for SVG icons,
 including how to run the Node script for processing the source SVGs.
 {% endcomment %}
 
-#### What the Less is doing
+### What the Less is doing
 
 If you look in `cf-icons.less`, below the aforementioned sizing variable,
 you'll see this simple rule:
@@ -126,7 +121,7 @@ we set `vertical-align: text-top;`.
 Finally, setting `fill: currentColor;` tells the SVG to set its path's fill
 color to match the `color` value of its parent element.
 
-#### Caveats
+### Caveats
 
 There are two modifications based on restrictions in Internet Explorer 8 and 9
 (IE8/IE9).
@@ -143,7 +138,7 @@ accurate, but we determined this is an acceptable difference for a legacy
 browser like IE9.
 
 
-### Rotating update icon
+## Rotating update icon
 
 Our previous font icon system provided modifiers to rotate any icon. We found
 in reality this wasn't practical and only one icon is ever animated, `update`.
@@ -152,14 +147,14 @@ to be made aware that the website is working on responding to their actions.
 [See the status icons table below](#status-icons)
 
 
-### The icons
+## The icons
 
 Each icon has a circled variant shown in the second column
 (or square, in the case of the social media icons)
 that can be accessed by appending `-round` (or `-square`) to
 the canonical name or any of its aliases.
 
-#### Navigation icons
+### Navigation icons
 
 | icon | icon-round | canonical name | aliases |
 | ---- | ---------- | -------------- | ------- |
@@ -173,7 +168,7 @@ the canonical name or any of its aliases.
 | {% include icons/arrow-left.svg %} | {% include icons/arrow-left-round.svg %} | arrow-left |  |
 {: class="icon-table"}
 
-#### Status icons
+### Status icons
 
 | icon | icon-round | canonical name | aliases |
 | ---- | ---------- | -------------- | ------- |
@@ -190,7 +185,7 @@ the canonical name or any of its aliases.
 | {% include icons/percentage.svg %} | {% include icons/percentage-round.svg %} | percentage | percent |
 {: class="icon-table"}
 
-#### Social/sharing icons
+### Social/sharing icons
 
 | icon | icon-square | canonical name | aliases |
 | ---- | ---------- | -------------- | ------- |
@@ -203,7 +198,7 @@ the canonical name or any of its aliases.
 | {% include icons/youtube.svg %} | {% include icons/youtube-square.svg %} | youtube |  |
 {: class="icon-table"}
 
-#### Communications icons
+### Communications icons
 
 | icon | icon-round | canonical name | aliases |
 | ---- | ---------- | -------------- | ------- |
@@ -215,7 +210,7 @@ the canonical name or any of its aliases.
 | {% include icons/web.svg %} | {% include icons/web-round.svg %} | web | globe, world |
 {: class="icon-table"}
 
-#### Document icons
+### Document icons
 
 | icon | icon-round | canonical name | aliases |
 | ---- | ---------- | -------------- | ------- |
@@ -232,7 +227,7 @@ the canonical name or any of its aliases.
 | {% include icons/supplement.svg %} | {% include icons/supplement-round.svg %} | supplement |  |
 {: class="icon-table"}
 
-#### Financial products, services, and concepts
+### Financial products, services, and concepts
 
 | icon | icon-round | canonical name | aliases |
 | ---- | ---------- | -------------- | ------- |
@@ -260,7 +255,7 @@ the canonical name or any of its aliases.
 | {% include icons/split.svg %} | {% include icons/split-round.svg %} | split |  |
 {: class="icon-table"}
 
-#### Web application icons
+### Web application icons
 
 | icon | icon-round | canonical name | aliases |
 | ---- | ---------- | -------------- | ------- |

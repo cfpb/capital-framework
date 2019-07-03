@@ -42,8 +42,11 @@ Capital Framework.
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project.
-Overwrite them in your own project by duplicating the variable `@key: value`.
+Component variables are used to theme a component.
+They likely will be left as is, but if needed can be overwritten by duplicating
+the variable in a `@key: value` format with a different value.
+This customized variable would be placed in the same file
+where this component's less file is imported.
 
 ### Color variables
 
@@ -97,7 +100,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 
 ```less
 // .a-select
-@select-height:                           30px;
+@select-height: 30px;
 ```
 
 

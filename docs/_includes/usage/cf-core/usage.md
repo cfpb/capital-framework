@@ -13,9 +13,9 @@ It's made up of four child components `cf-vars`, `cf-media-queries`,
 ## Table of contents
 
 - [Variables](#variables)
+    - [Breakpoint variables](#breakpoint-variables)
     - [Color variables](#color-variables)
     - [Sizing variables](#sizing-variables)
-    - [Breakpoint variables](#breakpoint-variables)
     - [Webfont variables](#webfont-variables)
 - [Media queries](#media-queries)
     - [Respond to min and max mixins](#respond-to-min-and-max-width-mixins)
@@ -40,8 +40,24 @@ It's made up of four child components `cf-vars`, `cf-media-queries`,
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project.
-Overwrite them in your own project by duplicating the variable `@key: value`.
+Component variables are used to theme a component.
+They likely will be left as is, but if needed can be overwritten by duplicating
+the variable in a `@key: value` format with a different value.
+This customized variable would be placed in the same file
+where this component's less file is imported.
+
+### Breakpoint variables
+
+```
+@bp-xs-max:  600px;
+@bp-sm-min:  @bp-xs-max + 1px;
+@bp-sm-max:  900px;
+@bp-med-min: @bp-sm-max + 1px;
+@bp-med-max: 1020px;
+@bp-lg-min:  @bp-med-max + 1px;
+@bp-lg-max:  1230px;
+@bp-xl-min:  @bp-lg-max + 1px;
+```
 
 ### Color variables
 
@@ -82,7 +98,7 @@ Color variables referenced in comments are from [cf-core brand-palette.less](htt
 ```
 @base-font-size-px:   16px;
 @base-line-height-px: 22px;
-@base-line-height:    unit(@base-line-height-px / @base-font-size-px);
+@base-line-height:    unit( @base-line-height-px / @base-font-size-px );
 
 @size-xl:             48px; // Super-size
 
@@ -93,19 +109,6 @@ Color variables referenced in comments are from [cf-core brand-palette.less](htt
 @size-v:              14px; // h5-site
 @size-vi:             12px; // h6-size
 @size-code:           13px; // Custom size only for Mono code blocks
-```
-
-### Breakpoint variables
-
-```
-@bp-xs-max:           600px;
-@bp-sm-min:           @bp-xs-max + 1px;
-@bp-sm-max:           900px;
-@bp-med-min:          @bp-sm-max + 1px;
-@bp-med-max:          1020px;
-@bp-lg-min:           @bp-med-max + 1px;
-@bp-lg-max:           1230px;
-@bp-xl-min:           @bp-lg-max + 1px;
 ```
 
 ### Webfont variables

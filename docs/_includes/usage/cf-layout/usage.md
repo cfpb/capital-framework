@@ -14,6 +14,7 @@ dependencies of this component.
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
+    - [Sizing variables](#sizing-variables)
 - [Standard content formats](#standard-content-formats)
     - [Content line](#content-line)
     - [Main content and sidebar](#main-content-and-sidebar)
@@ -59,8 +60,11 @@ dependencies of this component.
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project.
-Overwrite them in your own project by duplicating the variable `@key: value`.
+Component variables are used to theme a component.
+They likely will be left as is, but if needed can be overwritten by duplicating
+the variable in a `@key: value` format with a different value.
+This customized variable would be placed in the same file
+where this component's less file is imported.
 
 ### Color variables
 
@@ -68,42 +72,43 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 
 ```
 // .block
-@block__bg:                     @gray-5;
-@block__border:                 @gray-40;
-@block__border-top:             @gray-40;
-@block__border-right:           @gray-40;
-@block__border-bottom:          @gray-40;
-@block__border-left:            @gray-40;
+@block__bg:                 @gray-5;
+@block__border:             @gray-40;
+@block__border-top:         @gray-40;
+@block__border-right:       @gray-40;
+@block__border-bottom:      @gray-40;
+@block__border-left:        @gray-40;
 
 // .content_main
-@content_main-border:           @gray-40;
+@content_main-border:       @gray-40;
 
 // .content_sidebar
-@content_sidebar-bg:            @gray-5;
-@content_sidebar-border:        @gray-40;
+@content_sidebar-bg:        @gray-5;
+@content_sidebar-border:    @gray-40;
 
 // .content_line
-@content_line:                  @gray-40;
+@content_line:              @gray-40;
 
 // .grid_column__top-divider
-@grid_column__top-divider:      @gray-40;
+@grid_column__top-divider:  @gray-40;
 
 // .grid_column__top-divider
-@grid_column__left-divider:     @gray-40;
+@grid_column__left-divider: @gray-40;
 
 // Hero variables
-
-@hero-desktop-height: 285px;
-
-@hero-bg:                       @gray-5;
-@hero-knockout-bg:              @gray;
-@hero-knockout-text:            @white;
+@hero-bg:                   @gray-5;
+@hero-knockout-bg:          @gray;
+@hero-knockout-text:        @white;
 
 // Featured Content Module variables
-@fcm-bg:                        @block__bg;
+@fcm-bg:                    @block__bg;
+```
 
-@fcm-bp-max:                    700px;
-@fcm-bp-min:                    701px;
+### Sizing variables
+
+```
+// Hero variables
+@hero-desktop-height: 285px;
 ```
 
 

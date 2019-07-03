@@ -29,8 +29,11 @@ dependencies of this component.
 
 ## Variables
 
-Theme variables for setting the color and sizes throughout the project.
-Overwrite them in your own project by duplicating the variable `@key: value`.
+Component variables are used to theme a component.
+They likely will be left as is, but if needed can be overwritten by duplicating
+the variable in a `@key: value` format with a different value.
+This customized variable would be placed in the same file
+where this component's less file is imported.
 
 ### Color variables
 
@@ -38,41 +41,41 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 
 ```
 // .btn
-@btn-text:                      @white;
-@btn-bg:                        @pacific;
-@btn-bg-hover:                  @dark-pacific;
-@btn-bg-active:                 @navy;
+@btn-text:                  @white;
+@btn-bg:                    @pacific;
+@btn-bg-hover:              @dark-pacific;
+@btn-bg-active:             @navy;
 
 // .btn__secondary
-@btn__secondary-text:           @white;
-@btn__secondary-bg:             @gray;
-@btn__secondary-bg-hover:       @dark-gray;
-@btn__secondary-bg-active:      @black;
+@btn__secondary-text:       @white;
+@btn__secondary-bg:         @gray;
+@btn__secondary-bg-hover:   @dark-gray;
+@btn__secondary-bg-active:  @black;
 
 // .btn__warning
-@btn__warning-text:             @white;
-@btn__warning-bg:               @red;
-@btn__warning-bg-hover:         @dark-red;
-@btn__warning-bg-active:        @dark-gray;
+@btn__warning-text:         @white;
+@btn__warning-bg:           @red;
+@btn__warning-bg-hover:     @dark-red;
+@btn__warning-bg-active:    @dark-gray;
 
 // .btn__disabled
-@btn__disabled-text:            @gray;
-@btn__disabled-bg:              @gray-20;
-@btn__disabled-outline:         @gray-20;
+@btn__disabled-text:        @gray;
+@btn__disabled-bg:          @gray-20;
+@btn__disabled-outline:     @gray-20;
 ```
 
 ### Sizing variables
 
 ```
 // .btn
-@btn-font-size:                 @base-font-size-px;
-@btn-border-radius-size:        4px;
-@btn-v-padding:                 8px;
-@btn-h-padding:                 14px;
-@btn-v-padding-modifier-ie:     0.8;
+@btn-font-size:             @base-font-size-px;
+@btn-border-radius-size:    4px;
+@btn-v-padding:             8px;
+@btn-h-padding:             14px;
+@btn-v-padding-modifier-ie: 0.8;
 
 // .btn__super
-@btn__super-font-size:          18px;
+@btn__super-font-size:      18px;
 ```
 
 ## Atoms
