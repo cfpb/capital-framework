@@ -22,6 +22,7 @@
 //
 
 @import '../../cf-core/src/cf-core.less';
+@import '../../cf-icons/src/cf-icons.less';
 
 // Mixins
 .striped-table() {
@@ -86,9 +87,12 @@
     .sortable:after {
         display: inline-block;
         position: relative;
-        top: -1px;
-        content: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAJCAYAAAACTR1pAAAAXUlEQVR4AWPABZw9/C4A8Qlscvg0LQXi/1A8k1hNjXBNCFxNSFMcXDEmjsOlyQakgAB2RNckD8S/idD4D4jVYZq4gfgJXJIwfgPEIiCNt0ECJOKXII13gPgTifgaAHk0kQqUakHYAAAAAElFTkSuQmCC );
+        top: 4px;
+        content: '';
         visibility: hidden;
+        .u-svg-inline-bg( 'down' );
+        height: @cf-icon-height;
+        width: 1em;
     }
 
     .sortable:hover:after,

@@ -11,13 +11,28 @@
 // Size variables
 //
 
-// Icon height matches the 19px rendered canvas of text set in Avenir Next
-// sized at 16px ( 19/16 = 1.1875 )
+// Icon SVGs viewbox is 1200 (h) x 1000 (w).
+// The height matches the 19px rendered canvas of text set in Avenir Next
+// sized at 16px (19/16 = 1.1875).
 @cf-icon-height: 1.1875em;
 
+//
+// Embedded inline SVG data URLs.
+//
+
+// Mixin to inject an SVG from the ./icons/ directory
+// into a background-image property.
+@plugin "cf-icons-svg-inline";
+.u-svg-inline-bg( @type ) {
+    @svg: cf-icons-svg-inline( @type );
+    background-image: url( 'data:image/svg+xml;charset=UTF-8,@{svg}' );
+    background-size: auto @cf-icon-height;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
 
 //
-// The basics
+// The basics.
 //
 
 .cf-icon-svg {
@@ -25,17 +40,17 @@
     vertical-align: text-top;
     fill: currentColor;
 
-    // IE 10 & 11 require a max-width otherwise the SVG takes up 100%
+    // IE 10 & 11 require a max-width otherwise the SVG takes up 100%.
     max-width: 1em;
 
     .lt-ie10 & {
-        // IE 9 require a width otherwise the SVG takes up 100%
+        // IE 9 require a width otherwise the SVG takes up 100%.
         width: 1em;
     }
 
     .lt-ie9 & {
-        // IE 8 doesn't support currentColor, hide icons and let the paired
-        // text stand on its own
+        // IE 8 doesn't support currentColor,
+        // hide icons and let the paired text stand on its own.
         display: none;
     }
 

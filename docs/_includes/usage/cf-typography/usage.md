@@ -15,6 +15,7 @@ and has more basic typography patterns.
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
+    - [Font variables](#font-variables)
     - [Font source variables](#font-source-variables)
 - [Headings](#headings)
     - [Heading with icon](#heading-with-icon)
