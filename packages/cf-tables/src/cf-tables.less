@@ -21,8 +21,8 @@
 // Import external dependencies
 //
 
-@import '../../cf-core/src/cf-core.less';
-@import '../../cf-icons/src/cf-icons.less';
+@import (reference) '../../cf-core/src/cf-core.less';
+@import (reference) '../../cf-icons/src/cf-icons.less';
 
 // Mixins
 .striped-table() {
@@ -82,17 +82,20 @@
         outline: none;
         text-align: left;
         text-transform: inherit;
-    }
 
-    .sortable:after {
-        display: inline-block;
-        position: relative;
-        top: 4px;
-        content: '';
-        visibility: hidden;
-        .u-svg-inline-bg( 'down' );
-        height: @cf-icon-height;
-        width: 1em;
+        &:after {
+            display: inline-block;
+            position: relative;
+            vertical-align: bottom;
+            content: '';
+            visibility: hidden;
+            .u-svg-inline-bg( 'down' );
+            background-size: auto @cf-icon-height;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: @cf-icon-height;
+            width: 1em;
+        }
     }
 
     .sortable:hover:after,
@@ -103,10 +106,13 @@
 
     .sortable.sorted-down:after,
     .sortable.sorted-up:hover:after {
+        top: 1px;
         transform: rotate( 180deg );
     }
 
+    .sortable.sorted-up:after,
     .sortable.sorted-down:hover:after {
+        top: -1px;
         transform: rotate( 0deg );
     }
 }
