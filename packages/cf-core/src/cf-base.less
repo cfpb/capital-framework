@@ -462,6 +462,11 @@ ol {
 // Tables
 //
 
+caption {
+    margin-bottom: unit( 10px / @base-font-size-px, em);
+    text-align: left;
+}
+
 th,
 td {
     padding: unit( 10px / @base-font-size-px, em );
@@ -470,8 +475,8 @@ td {
         .h5();
 
         padding: unit( 10px / @font-size, em );
-        background: @thead-bg;
-        color: @thead-text;
+        background: @table-head-bg;
+        color: @table-head-text;
     }
 }
 

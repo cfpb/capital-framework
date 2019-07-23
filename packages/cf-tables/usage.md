@@ -14,6 +14,7 @@ The [`cf-core`](../cf-core/) component is a dependency of this component, and
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
+- [Standard tables](#standard-tables)
 - [Striped tables](#striped-tables)
 - [Right-aligned cells](#right-aligned-cells)
 - [Tables with row links](#tables-with-row-links)
@@ -42,7 +43,6 @@ where this component's less file is imported.
 Color variables referenced in comments are from [cf-core cf-brand-colors.less](https://github.com/cfpb/capital-framework/blob/master/packages/cf-core/src/cf-brand-colors.less).
 
 ```less
-@table-head-bg:              @gray-5;
 @table-cell-bg:              @white;
 @table-cell-bg_alt:          @gray-5;
 @table-row-link-bg-hover:    @pacific-80;
@@ -51,6 +51,11 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 @table-border:               @gray;
 ```
 
+
+## Standard tables
+
+A basic `o-table` table is not striped by default and is equivalent to defining
+a classless `<table>` element in `cf-core`, [for example](../cf-core/#standard-table).
 
 ## Striped tables
 
