@@ -21,7 +21,8 @@
 // Import external dependencies
 //
 
-@import '../../cf-core/src/cf-core.less';
+@import (reference) '../../cf-core/src/cf-core.less';
+@import (reference) '../../cf-icons/src/cf-icons.less';
 
 // Mixins
 .striped-table() {
@@ -81,14 +82,20 @@
         outline: none;
         text-align: left;
         text-transform: inherit;
-    }
 
-    .sortable:after {
-        display: inline-block;
-        position: relative;
-        top: -1px;
-        content: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAJCAYAAAACTR1pAAAAXUlEQVR4AWPABZw9/C4A8Qlscvg0LQXi/1A8k1hNjXBNCFxNSFMcXDEmjsOlyQakgAB2RNckD8S/idD4D4jVYZq4gfgJXJIwfgPEIiCNt0ECJOKXII13gPgTifgaAHk0kQqUakHYAAAAAElFTkSuQmCC );
-        visibility: hidden;
+        &:after {
+            display: inline-block;
+            position: relative;
+            vertical-align: bottom;
+            content: '';
+            visibility: hidden;
+            .u-svg-inline-bg( 'down' );
+            background-size: auto @cf-icon-height;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: @cf-icon-height;
+            width: 1em;
+        }
     }
 
     .sortable:hover:after,
@@ -99,10 +106,13 @@
 
     .sortable.sorted-down:after,
     .sortable.sorted-up:hover:after {
+        top: 1px;
         transform: rotate( 180deg );
     }
 
+    .sortable.sorted-up:after,
     .sortable.sorted-down:hover:after {
+        top: -1px;
         transform: rotate( 0deg );
     }
 }
