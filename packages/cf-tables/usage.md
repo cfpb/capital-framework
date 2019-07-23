@@ -14,6 +14,7 @@ The [`cf-core`](../cf-core/) component is a dependency of this component, and
 
 - [Variables](#variables)
     - [Color variables](#color-variables)
+- [Basic tables](#basic-tables)
 - [Striped tables](#striped-tables)
 - [Right-aligned cells](#right-aligned-cells)
 - [Tables with row links](#tables-with-row-links)
@@ -49,6 +50,80 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 @table-row-link-hover-color: @white;
 @table-scrolling-border:     @gray-40;
 @table-border:               @gray;
+```
+
+
+## Basic tables
+
+A basic `o-table` table is not striped by default.
+See [striped tables](#striped-tables).
+
+<table class="o-table">
+    <caption>Table caption describing the data</caption>
+    <thead>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td data-label="Column 1">Row A</td>
+            <td data-label="Column 2">Cell A2</td>
+            <td data-label="Column 3">Cell A3</td>
+        </tr>
+        <tr>
+            <td data-label="Column 1">Row B</td>
+            <td data-label="Column 2">Cell B2</td>
+            <td data-label="Column 3">Cell B3</td>
+        </tr>
+        <tr>
+            <td data-label="Column 1">Row C</td>
+            <td data-label="Column 2">Cell C2</td>
+            <td data-label="Column 3">Cell C3</td>
+        </tr>
+        <tr>
+            <td data-label="Column 1">Row D</td>
+            <td data-label="Column 2">Cell D2</td>
+            <td data-label="Column 3">Cell D3</td>
+        </tr>
+    </tbody>
+</table>
+
+```html
+<table class="o-table">
+    <caption>Table caption describing the data</caption>
+    <thead>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td data-label="Column 1">Row A</td>
+            <td data-label="Column 2">Cell A2</td>
+            <td data-label="Column 3">Cell A3</td>
+        </tr>
+        <tr>
+            <td data-label="Column 1">Row B</td>
+            <td data-label="Column 2">Cell B2</td>
+            <td data-label="Column 3">Cell B3</td>
+        </tr>
+        <tr>
+            <td data-label="Column 1">Row C</td>
+            <td data-label="Column 2">Cell C2</td>
+            <td data-label="Column 3">Cell C3</td>
+        </tr>
+        <tr>
+            <td data-label="Column 1">Row D</td>
+            <td data-label="Column 2">Cell D2</td>
+            <td data-label="Column 3">Cell D3</td>
+        </tr>
+    </tbody>
+</table>
 ```
 
 
