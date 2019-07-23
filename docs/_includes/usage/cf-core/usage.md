@@ -79,10 +79,8 @@ Color variables referenced in comments are from [cf-core brand-palette.less](htt
 
 // table
 
-@thead-text:             @text;
-@thead-bg:               @gray-10;
-
-@table-head-bg:          @thead-bg;
+@table-head-text:        @text;
+@table-head-bg:          @gray-5;
 @table-cell-bg:          @white;
 @table-cell-bg_alt:      @gray-5;
 @table-scrolling-border: @gray-40;
@@ -1079,6 +1077,7 @@ Links within a `nav` element are not underlined.
 #### Standard table
 
 <table>
+    <caption>Table caption describing the data</caption>
     <thead>
         <tr>
             <th>Column 1 header</th>
@@ -1107,6 +1106,7 @@ Links within a `nav` element are not underlined.
 
 ```
 <table>
+    <caption>Table caption describing the data</caption>
     <thead>
         <tr>
             <th>Column 1 header</th>
