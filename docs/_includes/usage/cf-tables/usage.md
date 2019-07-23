@@ -1,7 +1,7 @@
-The cf-tables component formats tables, and provides an easy way to make
-tables sortable.
+The cf-tables component formats tables, and provides an easy way to make tables sortable.
 
-The [`cf-core`](../core) component is a dependency of this component.
+The [`cf-core`](../cf-core/) component is a dependency of this component, and
+[base table styling is defined there](../cf-core/#tables).
 
 > NOTE: If you use `cf-tables.less` directly,
   be sure to run the file through

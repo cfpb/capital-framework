@@ -1134,6 +1134,10 @@ Links within a `nav` element are not underlined.
 </table>
 ```
 
+_Note: While `th` elements normally only contain raw text, they may sometimes
+contain heading elements when that would be beneficial to navigating a page's
+content with a screenreader._
+
 ### Block quote
 
 _Note that the use of a `blockquote` is to quote an external work. See
