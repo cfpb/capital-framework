@@ -485,6 +485,10 @@ th {
     text-align: left;
 
     thead & {
+        // Heading elements may at times appear inside `th` elements
+        // as required for navigating the page's content with screenreaders.
+        // These rules prevent those headings from overriding the desired style
+        // of their parent `th` elements.
         h2, .h2,
         h3, .h3,
         h4, .h4,
