@@ -15,7 +15,7 @@ module.exports = {
 
     /**
      * @param {string} svgName - The canonical name of the icon.
-     * @param {string} svgFillColor - The fill color of the icon in rgb() format (defaults to black).
+     * @param {string} svgFillColor - The fill color of the icon (defaults to CFPB Black).
      * @returns {string} SVG icon markup.
      */
     functions.add( 'cf-icons-svg-inline', ( svgName, svgFillColor ) => {

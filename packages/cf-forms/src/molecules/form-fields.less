@@ -130,7 +130,7 @@
             &:disabled:checked + .a-label:before {
                 // rgb values are CFPB gray-40.
                 // For some reason SVG isn't accepting hex values for the fill.
-                .u-svg-inline-bg( 'approved', 'rgb( 180, 181, 182 )' );
+                .u-svg-inline-bg( 'approved', @gray );
             }
         }
     }
@@ -223,8 +223,14 @@
                 color: @input-text__disabled;
                 box-shadow: none;
 
-                &, &:before {
+                & {
                     background-color: @form-field-input-lg-target-bg__disabled;
+                }
+            }
+
+            &:checked:disabled + .a-label {
+                &, &:before {
+                    border: 1px solid @form-field-input-border__disabled;
                 }
             }
         }

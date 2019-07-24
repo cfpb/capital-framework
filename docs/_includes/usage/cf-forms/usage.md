@@ -560,7 +560,7 @@ Generally this is only useful for documentation purposes.
 </div>
 ```
 
-#### Disabled/checked state
+#### Disabled/selected state
 
 <div class="m-form-field m-form-field__checkbox">
     <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_disabled" disabled checked>
@@ -653,7 +653,7 @@ Generally this is only useful for documentation purposes.
 </div>
 ```
 
-#### Disabled/checked state
+#### Disabled/selected state
 
 <div class="m-form-field m-form-field__radio">
     <input class="a-radio"
@@ -755,7 +755,7 @@ Generally this is only useful for documentation purposes.
 </div>
 ```
 
-#### Disabled/checked state
+#### Disabled/selected state
 
 <div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
     <input class="a-checkbox"
@@ -857,7 +857,7 @@ Generally this is only useful for documentation purposes.
 </div>
 ```
 
-#### Disabled/checked state
+#### Disabled/selected state
 
 <div class="m-form-field m-form-field__radio m-form-field__lg-target">
     <input class="a-radio"
