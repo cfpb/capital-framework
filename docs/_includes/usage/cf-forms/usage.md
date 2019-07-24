@@ -24,7 +24,7 @@ Capital Framework.
 - [Text inputs](#text-inputs)
     - [Basic text inputs](#basic-text-inputs)
         - [Full-width modifier](#full-width-modifier)
-    - [Buttons](#buttons)
+    - [Buttons and inputs](#buttons-and-inputs)
         - [Simple input with a button](#simple-input-with-a-button)
         - [Button inside an input](#button-inside-an-input)
         - [Button inside an input with another button](#button-inside-an-input-with-another-button)
@@ -298,21 +298,21 @@ Generally this is only useful for documentation purposes.
 
 #### Disabled state
 
-<label class="a-label a-label__heading" for="textinput-example-disabled">
+<label class="a-label a-label__heading" for="textinput-example-disabled-demo">
     A text input
 </label>
 <input class="a-text-input"
        type="text"
-       id="textinput-example-focus"
+       id="textinput-example-disabled-demo"
        placeholder="Enter text…"
        value="Lorem ipsum"
        disabled>
 
-<label class="a-label a-label__heading" for="textarea-example-disabled">
+<label class="a-label a-label__heading" for="textarea-example-disabled-demo">
     A textarea input
 </label>
 <textarea class="a-text-input"
-          id="textarea-example-focus"
+          id="textarea-example-disabled-demo"
           placeholder="Enter text…"
           disabled>Lorem Ipsum</textarea>
 ```html
@@ -321,7 +321,7 @@ Generally this is only useful for documentation purposes.
 </label>
 <input class="a-text-input"
        type="text"
-       id="textinput-example-focus"
+       id="textinput-example-disabled"
        placeholder="Enter text…"
        value="Lorem ipsum"
        disabled>
@@ -330,7 +330,7 @@ Generally this is only useful for documentation purposes.
     A textarea input
 </label>
 <textarea class="a-text-input"
-          id="textarea-example-focus"
+          id="textarea-example-disabled"
           placeholder="Enter text…"
           disabled>Lorem Ipsum</textarea>
 ```
@@ -378,7 +378,7 @@ Generally this is only useful for documentation purposes.
 ```
 
 
-### Buttons
+### Buttons and inputs
 
 #### Simple input with a button
 
@@ -386,7 +386,13 @@ These are used for simple forms where a full filter isn't necessary.
 
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
-        <input class="a-text-input" type="text" title="Test input">
+        <label for="button-input-test-demo"
+               class="u-visually-hidden">
+            Test input
+        </label>
+        <input id="button-input-test-demo"
+               class="a-text-input"
+               type="text">
     </div>
     <div class="o-form__input-w-btn_btn-container">
         <button class="a-btn">Search</button>
@@ -396,7 +402,13 @@ These are used for simple forms where a full filter isn't necessary.
 ```html
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
-        <input class="a-text-input" type="text" title="Test input">
+        <label for="button-input-test"
+               class="u-visually-hidden">
+            Test input
+        </label>
+        <input id="button-input-test"
+               class="a-text-input"
+               type="text">
     </div>
     <div class="o-form__input-w-btn_btn-container">
         <button class="a-btn">Search</button>
@@ -410,9 +422,13 @@ These offer the user an action to take related to the input,
 typically to clear the input.
 
 <div class="m-btn-inside-input">
+    <label for="button-inside-test"
+           class="u-visually-hidden">
+        Test input
+    </label>
     <input type="text"
         value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-        title="Test input"
+        id="button-inside-test"
         class="a-text-input">
     <button class="a-btn a-btn__link">
         {% include icons/error.svg %}
@@ -422,9 +438,13 @@ typically to clear the input.
 
 ```html
 <div class="m-btn-inside-input">
+    <label for="button-inside-test-demo"
+           class="u-visually-hidden">
+        Test input
+    </label>
     <input type="text"
         value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-        title="Test input"
+        id="button-inside-test-demo"
         class="a-text-input">
     <button class="a-btn a-btn__link">
         {% raw %}{% include icons/error.svg %}{% endraw %}
@@ -442,9 +462,13 @@ creating a typical site search form.
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
         <div class="m-btn-inside-input">
+            <label for="button-inside-input-test-demo"
+                   class="u-visually-hidden">
+                Test input
+            </label>
             <input type="text"
                 value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-                title="Test input"
+                id="button-inside-input-test-demo"
                 class="a-text-input">
             <button class="a-btn a-btn__link">
                 {% include icons/error.svg %}
@@ -461,9 +485,13 @@ creating a typical site search form.
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
         <div class="m-btn-inside-input">
+            <label for="button-inside-input-test"
+                   class="u-visually-hidden">
+                Test input
+            </label>
             <input type="text"
                 value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-                title="Test input"
+                id="button-inside-input-test"
                 class="a-text-input">
             <button class="a-btn a-btn__link">
                 {% raw %}{% include icons/error.svg %}{% endraw %}
