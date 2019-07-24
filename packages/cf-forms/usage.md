@@ -24,7 +24,7 @@ Capital Framework.
 - [Text inputs](#text-inputs)
     - [Basic text inputs](#basic-text-inputs)
         - [Full-width modifier](#full-width-modifier)
-    - [Buttons](#buttons)
+    - [Buttons and inputs](#buttons-and-inputs)
         - [Simple input with a button](#simple-input-with-a-button)
         - [Button inside an input](#button-inside-an-input)
         - [Button inside an input with another button](#button-inside-an-input-with-another-button)
@@ -299,21 +299,21 @@ Generally this is only useful for documentation purposes.
 
 #### Disabled state
 
-<label class="a-label a-label__heading" for="textinput-example-disabled">
+<label class="a-label a-label__heading" for="textinput-example-disabled-demo">
     A text input
 </label>
 <input class="a-text-input"
        type="text"
-       id="textinput-example-focus"
+       id="textinput-example-disabled-demo"
        placeholder="Enter text…"
        value="Lorem ipsum"
        disabled>
 
-<label class="a-label a-label__heading" for="textarea-example-disabled">
+<label class="a-label a-label__heading" for="textarea-example-disabled-demo">
     A textarea input
 </label>
 <textarea class="a-text-input"
-          id="textarea-example-focus"
+          id="textarea-example-disabled-demo"
           placeholder="Enter text…"
           disabled>Lorem Ipsum</textarea>
 ```html
@@ -322,7 +322,7 @@ Generally this is only useful for documentation purposes.
 </label>
 <input class="a-text-input"
        type="text"
-       id="textinput-example-focus"
+       id="textinput-example-disabled"
        placeholder="Enter text…"
        value="Lorem ipsum"
        disabled>
@@ -331,7 +331,7 @@ Generally this is only useful for documentation purposes.
     A textarea input
 </label>
 <textarea class="a-text-input"
-          id="textarea-example-focus"
+          id="textarea-example-disabled"
           placeholder="Enter text…"
           disabled>Lorem Ipsum</textarea>
 ```
@@ -379,7 +379,7 @@ Generally this is only useful for documentation purposes.
 ```
 
 
-### Buttons
+### Buttons and inputs
 
 #### Simple input with a button
 
@@ -387,7 +387,13 @@ These are used for simple forms where a full filter isn't necessary.
 
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
-        <input class="a-text-input" type="text" title="Test input">
+        <label for="button-input-test-demo"
+               class="u-visually-hidden">
+            Test input
+        </label>
+        <input id="button-input-test-demo"
+               class="a-text-input"
+               type="text">
     </div>
     <div class="o-form__input-w-btn_btn-container">
         <button class="a-btn">Search</button>
@@ -397,7 +403,13 @@ These are used for simple forms where a full filter isn't necessary.
 ```html
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
-        <input class="a-text-input" type="text" title="Test input">
+        <label for="button-input-test"
+               class="u-visually-hidden">
+            Test input
+        </label>
+        <input id="button-input-test"
+               class="a-text-input"
+               type="text">
     </div>
     <div class="o-form__input-w-btn_btn-container">
         <button class="a-btn">Search</button>
@@ -411,9 +423,13 @@ These offer the user an action to take related to the input,
 typically to clear the input.
 
 <div class="m-btn-inside-input">
+    <label for="button-inside-test"
+           class="u-visually-hidden">
+        Test input
+    </label>
     <input type="text"
         value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-        title="Test input"
+        id="button-inside-test"
         class="a-text-input">
     <button class="a-btn a-btn__link">
         {% include icons/error.svg %}
@@ -423,9 +439,13 @@ typically to clear the input.
 
 ```html
 <div class="m-btn-inside-input">
+    <label for="button-inside-test-demo"
+           class="u-visually-hidden">
+        Test input
+    </label>
     <input type="text"
         value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-        title="Test input"
+        id="button-inside-test-demo"
         class="a-text-input">
     <button class="a-btn a-btn__link">
         {% raw %}{% include icons/error.svg %}{% endraw %}
@@ -443,9 +463,13 @@ creating a typical site search form.
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
         <div class="m-btn-inside-input">
+            <label for="button-inside-input-test-demo"
+                   class="u-visually-hidden">
+                Test input
+            </label>
             <input type="text"
                 value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-                title="Test input"
+                id="button-inside-input-test-demo"
                 class="a-text-input">
             <button class="a-btn a-btn__link">
                 {% include icons/error.svg %}
@@ -462,9 +486,13 @@ creating a typical site search form.
 <div class="o-form__input-w-btn">
     <div class="o-form__input-w-btn_input-container">
         <div class="m-btn-inside-input">
+            <label for="button-inside-input-test"
+                   class="u-visually-hidden">
+                Test input
+            </label>
             <input type="text"
                 value="This is some really long text to make sure that the button doesn't overlap the content in such a way that this input becomes unusable."
-                title="Test input"
+                id="button-inside-input-test"
                 class="a-text-input">
             <button class="a-btn a-btn__link">
                 {% raw %}{% include icons/error.svg %}{% endraw %}
@@ -1116,13 +1144,18 @@ form validation or feedback to a user's input.
 
 <div class="o-form_group">
     <div class="m-form-field">
-        <label class="a-label__heading" for="form-input-error">Label</label>
+        <label class="a-label__heading"
+               for="field-validation__default-demo">
+            Label
+        </label>
         <input class="a-text-input"
                type="text"
                value="Standard input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert" role="alert">
+               id="field-validation__default-demo"
+               aria-describedby="field-validation__default-message-demo">
+        <div id="field-validation__default-message-demo"
+             class="a-form-alert"
+             role="alert">
             {% include icons/info-round.svg %}
             <span class="a-form-alert_text">
                 This is an inline alert with a default state.
@@ -1132,13 +1165,18 @@ form validation or feedback to a user's input.
 </div>
 <div class="o-form_group">
     <div class="m-form-field m-form-field__success">
-        <label class="a-label__heading" for="form-input-error">Label</label>
+        <label class="a-label__heading"
+               for="field-validation__success-demo">
+            Label
+        </label>
         <input class="a-text-input a-text-input__success"
                type="text"
                value="Valid input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert a-form-alert__success" role="alert">
+               id="field-validation__success-demo"
+               aria-describedby="field-validation__success-message-demo">
+        <div id="field-validation__success-message-demo"
+             class="a-form-alert a-form-alert__success"
+             role="alert">
             {% include icons/check-round.svg %}
             <span class="a-form-alert_text">
                 This is an inline alert with a success state.
@@ -1148,13 +1186,18 @@ form validation or feedback to a user's input.
 </div>
 <div class="o-form_group">
     <div class="m-form-field m-form-field__error">
-        <label class="a-label__heading" for="form-input-error">Label</label>
+        <label class="a-label__heading"
+               for="field-validation__error-demo">
+            Label
+        </label>
         <input class="a-text-input a-text-input__error"
                type="text"
                value="Invalid input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert a-form-alert__error" role="alert">
+               id="field-validation__error-demo"
+               aria-describedby="field-validation__error-message-demo">
+        <div id="field-validation__error-message-demo"
+             class="a-form-alert a-form-alert__error"
+             role="alert">
             {% include icons/error-round.svg %}
             <span class="a-form-alert_text">
                 This is an inline alert with an error state.
@@ -1164,13 +1207,18 @@ form validation or feedback to a user's input.
 </div>
 <div class="o-form_group">
     <div class="m-form-field m-form-field__warning">
-        <label class="a-label__heading" for="form-input-error">Label</label>
+        <label class="a-label__heading"
+               for="field-validation__warning-demo">
+            Label
+        </label>
         <input class="a-text-input a-text-input__warning"
                type="text"
                value="Semi-valid input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert a-form-alert__warning" role="alert">
+               id="field-validation__warning-demo"
+               aria-describedby="field-validation__warning-message-demo">
+        <div id="field-validation__warning-message-demo"
+             class="a-form-alert a-form-alert__warning"
+             role="alert">
             {% include icons/warning-round.svg %}
             <span class="a-form-alert_text">
                 This is an inline alert with a warning state.
@@ -1182,14 +1230,19 @@ form validation or feedback to a user's input.
 ```html
 <div class="o-form_group">
     <div class="m-form-field">
-        <label class="a-label__heading" for="form-input-error">Label</label>
+        <label class="a-label__heading"
+               for="field-validation__default">
+            Label
+        </label>
         <input class="a-text-input"
                type="text"
                value="Standard input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert" role="alert">
-            {% raw %}{% include icons/info-round.svg %}{% endraw %}
+               id="field-validation__default"
+               aria-describedby="field-validation__default-message">
+        <div id="field-validation__default-message"
+             class="a-form-alert"
+             role="alert">
+            {% include icons/info-round.svg %}
             <span class="a-form-alert_text">
                 This is an inline alert with a default state.
             </span>
@@ -1198,14 +1251,19 @@ form validation or feedback to a user's input.
 </div>
 <div class="o-form_group">
     <div class="m-form-field m-form-field__success">
-        <label class="a-label__heading" for="form-input-error">Label</label>
+        <label class="a-label__heading"
+               for="field-validation__success">
+            Label
+        </label>
         <input class="a-text-input a-text-input__success"
                type="text"
                value="Valid input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert a-form-alert__success" role="alert">
-            {% raw %}{% include icons/check-round.svg %}{% endraw %}
+               id="field-validation__success"
+               aria-describedby="field-validation__success-message">
+        <div id="field-validation__success-message"
+             class="a-form-alert a-form-alert__success"
+             role="alert">
+            {% include icons/check-round.svg %}
             <span class="a-form-alert_text">
                 This is an inline alert with a success state.
             </span>
@@ -1214,14 +1272,19 @@ form validation or feedback to a user's input.
 </div>
 <div class="o-form_group">
     <div class="m-form-field m-form-field__error">
-        <label class="a-label__heading" for="form-input-error">Label</label>
+        <label class="a-label__heading"
+               for="field-validation__error">
+            Label
+        </label>
         <input class="a-text-input a-text-input__error"
                type="text"
                value="Invalid input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert a-form-alert__error" role="alert">
-            {% raw %}{% include icons/error-round.svg %}{% endraw %}
+               id="field-validation__error"
+               aria-describedby="field-validation__error-message">
+        <div id="field-validation__error-message"
+             class="a-form-alert a-form-alert__error"
+             role="alert">
+            {% include icons/error-round.svg %}
             <span class="a-form-alert_text">
                 This is an inline alert with an error state.
             </span>
@@ -1230,14 +1293,19 @@ form validation or feedback to a user's input.
 </div>
 <div class="o-form_group">
     <div class="m-form-field m-form-field__warning">
-        <label class="a-label__heading" for="form-input-error">Label</label>
+        <label class="a-label__heading"
+               for="field-validation__warning">
+            Label
+        </label>
         <input class="a-text-input a-text-input__warning"
                type="text"
                value="Semi-valid input"
-               id="form-input-error"
-               aria-describedby="form-input-error_message">
-        <div class="a-form-alert a-form-alert__warning" role="alert">
-            {% raw %}{% include icons/warning-round.svg %}{% endraw %}
+               id="field-validation__warning"
+               aria-describedby="field-validation__warning-message">
+        <div id="field-validation__warning-message"
+             class="a-form-alert a-form-alert__warning"
+             role="alert">
+            {% include icons/warning-round.svg %}
             <span class="a-form-alert_text">
                 This is an inline alert with a warning state.
             </span>
