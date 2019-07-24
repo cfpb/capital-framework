@@ -84,6 +84,7 @@
 
             &:disabled {
 
+                &:checked + .a-label:before,
                 &:focus + .a-label:before,
                 &.focus + .a-label:before,
                 &:hover + .a-label:before,
@@ -126,6 +127,11 @@
                 background-repeat: no-repeat;
                 background-position: center 0;
             }
+            &:disabled:checked + .a-label:before {
+                // rgb values are CFPB gray-40.
+                // For some reason SVG isn't accepting hex values for the fill.
+                .u-svg-inline-bg( 'approved', 'rgb( 180, 181, 182 )' );
+            }
         }
     }
 
@@ -157,7 +163,12 @@
 
             &:checked + .a-label:before {
                 background-color: @input-bg__selected;
-                box-shadow: inset 0 0 0 2px #fff;
+                box-shadow: inset 0 0 0 2px @white;
+            }
+
+            &:checked:disabled + .a-label:before {
+                background-color: @input-bg__disabled-selected;
+                box-shadow: inset 0 0 0 2px @input-bg__disabled;
             }
 
             &:focus:checked + .a-label:before,
@@ -207,11 +218,12 @@
             }
 
             &:disabled + .a-label,
+            &:checked:disabled + .a-label,
             &:hover:disabled + .a-label {
                 color: @input-text__disabled;
                 box-shadow: none;
 
-                &:before {
+                &, &:before {
                     background-color: @form-field-input-lg-target-bg__disabled;
                 }
             }

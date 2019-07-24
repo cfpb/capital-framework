@@ -23,8 +23,8 @@
 // Mixin to inject an SVG from the ./icons/ directory
 // into a background-image property.
 @plugin "cf-icons-svg-inline";
-.u-svg-inline-bg( @name ) {
-    @svg: cf-icons-svg-inline( @name );
+.u-svg-inline-bg( @name, @color: 'black' ) {
+    @svg: cf-icons-svg-inline( @name, @color );
     background-image: url( 'data:image/svg+xml;charset=UTF-8,@{svg}' );
 }
 
