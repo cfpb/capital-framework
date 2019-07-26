@@ -1,4 +1,15 @@
 
+## v11.0.1 (2019-07-26)
+
+#### :bug: Bug Fix
+* `cf-icons`
+  * [#956](https://github.com/cfpb/capital-framework/pull/956) cf-icons: Change reference to filename ([@anselmbradford](https://github.com/anselmbradford))
+
+#### Committers: 1
+- Ans ([@anselmbradford](https://github.com/anselmbradford))
+
+
+
 ## v11.0.0 (2019-07-26)
 
 #### :boom: Breaking Change
