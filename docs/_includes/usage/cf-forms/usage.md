@@ -1145,15 +1145,15 @@ form validation or feedback to a user's input.
 <div class="o-form_group">
     <div class="m-form-field">
         <label class="a-label__heading"
-               for="field-validation__default">
+               for="field-validation__default-demo">
             Label
         </label>
         <input class="a-text-input"
                type="text"
                value="Standard input"
-               id="field-validation__default"
-               aria-describedby="field-validation__default-message">
-        <div id="field-validation__default-message"
+               id="field-validation__default-demo"
+               aria-describedby="field-validation__default-message-demo">
+        <div id="field-validation__default-message-demo"
              class="a-form-alert"
              role="alert">
             {% include icons/info-round.svg %}
@@ -1166,15 +1166,15 @@ form validation or feedback to a user's input.
 <div class="o-form_group">
     <div class="m-form-field m-form-field__success">
         <label class="a-label__heading"
-               for="field-validation__success">
+               for="field-validation__success-demo">
             Label
         </label>
         <input class="a-text-input a-text-input__success"
                type="text"
                value="Valid input"
-               id="field-validation__success"
-               aria-describedby="field-validation__success-message">
-        <div id="field-validation__success-message"
+               id="field-validation__success-demo"
+               aria-describedby="field-validation__success-message-demo">
+        <div id="field-validation__success-message-demo"
              class="a-form-alert a-form-alert__success"
              role="alert">
             {% include icons/check-round.svg %}
@@ -1187,15 +1187,15 @@ form validation or feedback to a user's input.
 <div class="o-form_group">
     <div class="m-form-field m-form-field__error">
         <label class="a-label__heading"
-               for="field-validation__error">
+               for="field-validation__error-demo">
             Label
         </label>
         <input class="a-text-input a-text-input__error"
                type="text"
                value="Invalid input"
-               id="field-validation__error"
-               aria-describedby="field-validation__error-message">
-        <div id="field-validation__error-message"
+               id="field-validation__error-demo"
+               aria-describedby="field-validation__error-message-demo">
+        <div id="field-validation__error-message-demo"
              class="a-form-alert a-form-alert__error"
              role="alert">
             {% include icons/error-round.svg %}
@@ -1208,15 +1208,15 @@ form validation or feedback to a user's input.
 <div class="o-form_group">
     <div class="m-form-field m-form-field__warning">
         <label class="a-label__heading"
-               for="field-validation__warning">
+               for="field-validation__warning-demo">
             Label
         </label>
         <input class="a-text-input a-text-input__warning"
                type="text"
                value="Semi-valid input"
-               id="field-validation__warning"
-               aria-describedby="field-validation__warning-message">
-        <div id="field-validation__warning-message"
+               id="field-validation__warning-demo"
+               aria-describedby="field-validation__warning-message-demo">
+        <div id="field-validation__warning-message-demo"
              class="a-form-alert a-form-alert__warning"
              role="alert">
             {% include icons/warning-round.svg %}
