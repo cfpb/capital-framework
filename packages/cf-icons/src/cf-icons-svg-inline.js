@@ -12,16 +12,28 @@ const path = require( 'path' );
 
 module.exports = {
   install: function( less, pluginManager, functions ) {
-    functions.add( 'cf-icons-svg-inline', svgName => {
+
+    /**
+     * @param {string} svgName - The canonical name of the icon.
+     * @param {string} svgFillColor - The fill color of the icon (defaults to CFPB Black).
+     * @returns {string} SVG icon markup.
+     */
+    functions.add( 'cf-icons-svg-inline', ( svgName, svgFillColor ) => {
       // Retrieve this plugin script's path so we can fake __dirname.
       const thisScriptPath = less.importManager.context.pluginManager.installedPlugins[0].filename;
 
       // __dirname is not accessible in this script, so this fakes it.
       const __dirname = path.dirname( thisScriptPath );
 
-      const svg = less.fs.readFileSync(
+      let svg = less.fs.readFileSync(
         path.join( __dirname, `./icons/${ svgName.value }.svg` ),
         'utf8'
+      );
+
+      // Replace the cf-icon-svg class (used only in the embedded markup)
+      // with a fill color.
+      svg = svg.replace(
+        'class="cf-icon-svg"', `fill="${ svgFillColor.value }"`
       );
 
       return svg;

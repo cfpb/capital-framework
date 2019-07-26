@@ -67,6 +67,7 @@ Color variables referenced in comments are from [cf-core cf-brand-colors.less](h
 @input-bg:                                @white;
 @input-bg__selected:                      @pacific;
 @input-bg__disabled:                      @gray-10;
+@input-bg__disabled-selected:             @gray-40;
 
 // .a-text-input text
 @input-text:                              @black;
@@ -587,6 +588,19 @@ Generally this is only useful for documentation purposes.
 </div>
 ```
 
+#### Disabled/selected state
+
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_disabled" disabled checked>
+    <label class="a-label" for="test_checkbox_basic_disabled">Label</label>
+</div>
+
+```html
+<div class="m-form-field m-form-field__checkbox">
+    <input class="a-checkbox" type="checkbox" id="test_checkbox_basic_disabled" disabled checked>
+    <label class="a-label" for="test_checkbox_basic_disabled">Label</label>
+</div>
+```
 
 ### Basic radio buttons
 
@@ -663,6 +677,28 @@ Generally this is only useful for documentation purposes.
 ```html
 <div class="m-form-field m-form-field__radio">
     <input class="a-radio" type="radio" id="test_radio_basic_disabled" disabled>
+    <label class="a-label" for="test_radio_basic_disabled">Label</label>
+</div>
+```
+
+#### Disabled/selected state
+
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio"
+           type="radio"
+           id="test_radio_basic_disabled"
+           disabled
+           checked>
+    <label class="a-label" for="test_radio_basic_disabled">Label</label>
+</div>
+
+```html
+<div class="m-form-field m-form-field__radio">
+    <input class="a-radio"
+           type="radio"
+           id="test_radio_basic_disabled"
+           disabled
+           checked>
     <label class="a-label" for="test_radio_basic_disabled">Label</label>
 </div>
 ```
@@ -747,6 +783,28 @@ Generally this is only useful for documentation purposes.
 </div>
 ```
 
+#### Disabled/selected state
+
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox"
+           type="checkbox"
+           id="test_checkbox_lg_disabled"
+           disabled
+           checked>
+    <label class="a-label" for="test_checkbox_lg_disabled">Label</label>
+</div>
+
+```html
+<div class="m-form-field m-form-field__checkbox m-form-field__lg-target">
+    <input class="a-checkbox"
+           type="checkbox"
+           id="test_checkbox_lg_disabled"
+           disabled
+           checked>
+    <label class="a-label" for="test_checkbox_lg_disabled">Label</label>
+</div>
+```
+
 
 ### Large target area radio buttons
 
@@ -823,6 +881,28 @@ Generally this is only useful for documentation purposes.
 ```html
 <div class="m-form-field m-form-field__radio m-form-field__lg-target">
     <input class="a-radio" type="radio" id="test_radio_lg_disabled" disabled>
+    <label class="a-label" for="test_radio_lg_disabled">Label</label>
+</div>
+```
+
+#### Disabled/selected state
+
+<div class="m-form-field m-form-field__radio m-form-field__lg-target">
+    <input class="a-radio"
+           type="radio"
+           id="test_radio_lg_disabled"
+           disabled
+           checked>
+    <label class="a-label" for="test_radio_lg_disabled">Label</label>
+</div>
+
+```html
+<div class="m-form-field m-form-field__radio m-form-field__lg-target">
+    <input class="a-radio"
+           type="radio"
+           id="test_radio_lg_disabled"
+           disabled
+           checked>
     <label class="a-label" for="test_radio_lg_disabled">Label</label>
 </div>
 ```
@@ -995,7 +1075,7 @@ Generally this is only useful for documentation purposes.
 
 <div class="m-form-field m-form-field__select">
     <label class="a-label a-label__heading" for="test_select__disabled">Label</label>
-    <div class="a-select">
+    <div class="a-select a-select__disabled">
         <select id="test_select__disabled" disabled>
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
@@ -1008,7 +1088,7 @@ Generally this is only useful for documentation purposes.
 ```html
 <div class="m-form-field m-form-field__select">
     <label class="a-label a-label__heading" for="test_select__disabled">Label</label>
-    <div class="a-select">
+    <div class="a-select a-select__disabled">
         <select id="test_select__disabled" disabled>
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
