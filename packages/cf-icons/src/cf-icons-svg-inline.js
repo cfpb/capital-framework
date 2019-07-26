@@ -20,7 +20,7 @@ module.exports = {
      */
     functions.add( 'cf-icons-svg-inline', ( svgName, svgFillColor ) => {
       // Retrieve this plugin script's path so we can fake __dirname.
-      const thisScriptPath = less.importManager.context.pluginManager.installedPlugins[0].filename;
+      const thisScriptPath = pluginManager.installedPlugins[0].filename;
 
       // __dirname is not accessible in this script, so this fakes it.
       const __dirname = path.dirname( thisScriptPath );
