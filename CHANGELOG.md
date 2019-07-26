@@ -1,3 +1,36 @@
+
+## v11.0.0 (2019-07-26)
+
+#### :boom: Breaking Change
+* `cf-core`, `cf-tables`
+  * [#951](https://github.com/cfpb/capital-framework/pull/951) cf-tables: Add basic table format with caption ([@anselmbradford](https://github.com/anselmbradford))
+
+#### :rocket: Enhancement
+* `cf-forms`, `cf-icons`
+  * [#955](https://github.com/cfpb/capital-framework/pull/955) cf-forms: Add disabled/checked states to form inputs ([@anselmbradford](https://github.com/anselmbradford))
+* `cf-forms`
+  * [#950](https://github.com/cfpb/capital-framework/pull/950) cf-forms: Remove unused form input variables | add missing one ([@anselmbradford](https://github.com/anselmbradford))
+* `cf-core`, `cf-tables`
+  * [#952](https://github.com/cfpb/capital-framework/pull/952) Style headings within table header cells only as standard table headers ([@Scotchester](https://github.com/Scotchester))
+
+#### :bug: Bug Fix
+* `cf-typography`
+  * [#949](https://github.com/cfpb/capital-framework/pull/949) Change slug border color to gray-40 ([@anselmbradford](https://github.com/anselmbradford))
+* `cf-forms`, `cf-icons`, `cf-tables`
+  * [#938](https://github.com/cfpb/capital-framework/pull/938) Add `u-svg-inline-bg` mixin for inline SVG background ([@anselmbradford](https://github.com/anselmbradford))
+
+#### :memo: Documentation
+* `cf-forms`
+  * [#954](https://github.com/cfpb/capital-framework/pull/954) cf-forms: Labels added for buttons ([@anselmbradford](https://github.com/anselmbradford))
+  * [#953](https://github.com/cfpb/capital-framework/pull/953) cf-forms: Fix accessibility issues in validation states of fields ([@anselmbradford](https://github.com/anselmbradford))
+* `cf-buttons`, `cf-core`, `cf-expandables`, `cf-forms`, `cf-grid`, `cf-icons`, `cf-layout`, `cf-notifications`, `cf-pagination`, `cf-tables`, `cf-typography`
+  * [#945](https://github.com/cfpb/capital-framework/pull/945) Minor variable cleanup ([@anselmbradford](https://github.com/anselmbradford))
+
+#### Committers: 2
+- Ans ([@anselmbradford](https://github.com/anselmbradford))
+- Scott Cranfill ([@Scotchester](https://github.com/Scotchester))
+
+
 ## v10.2.1 (2019-07-01)
 
 #### :bug: Bug Fix
