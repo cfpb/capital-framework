@@ -1064,6 +1064,7 @@ rules:
     - asc
     -
       caseSensitive: true
+      minKey: 2
       natural: false
 
   # Enforces sorting variables within the same declaration block.
