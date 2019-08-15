@@ -123,6 +123,7 @@
 
             &:checked + .a-label:before {
                 .u-svg-inline-bg( 'approved' );
+
                 background-size: auto @cf-icon-height;
                 background-repeat: no-repeat;
                 background-position: center 0;
@@ -174,15 +175,17 @@
             &:focus:checked + .a-label:before,
             &.focus:checked + .a-label:before {
                 border-color: @input-border__focused;
-                box-shadow: 0 0 0 1px @input-border__focused,
-                            inset 0 0 0 2px @form-field-inset;
+                box-shadow:
+                    0 0 0 1px @input-border__focused,
+                    inset 0 0 0 2px @form-field-inset;
             }
 
             &:hover:checked + .a-label:before,
             &.hover:checked + .a-label:before {
                 border-color: @input-border__hover;
-                box-shadow: 0 0 0 1px @input-border__hover,
-                            inset 0 0 0 2px @form-field-inset;
+                box-shadow:
+                    0 0 0 1px @input-border__hover,
+                    inset 0 0 0 2px @form-field-inset;
             }
         }
     }
@@ -224,10 +227,7 @@
             &:hover:disabled + .a-label {
                 color: @input-text__disabled;
                 box-shadow: none;
-
-                & {
-                    background-color: @form-field-input-lg-target-bg__disabled;
-                }
+                background-color: @form-field-input-lg-target-bg__disabled;
             }
 
             &:checked:disabled + .a-label {

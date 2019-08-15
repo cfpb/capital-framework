@@ -63,6 +63,7 @@
         bottom: 0;
         background-color: @select-icon-bg;
         .u-svg-inline-bg( 'down' );
+
         background-size: auto @cf-icon-height;
         background-repeat: no-repeat;
         background-position: center center;
@@ -73,7 +74,7 @@
     // Correctly lighten the down arrow when a-select__disabled is present.
     // Unfortunately, we can't target this to apply when only
     // the select[disabled] is present and need the additional class.
-    &__disabled::after {
+    &__disabled:after {
         .u-svg-inline-bg( 'down', @gray );
     }
 }

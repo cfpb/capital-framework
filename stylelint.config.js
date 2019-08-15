@@ -1,4 +1,8 @@
 /* NOTES:
+at-rule-no-unknown -
+  This rule enforces only @ rules that appear in the CSS spec,
+  however, @plugin appears in Less, so should be ignored.
+
 font-family-no-missing-generic-family-keyword -
   Turned off because there isn't a generic font for the CFPB icons.
 
@@ -26,6 +30,7 @@ module.exports = {
   extends: 'stylelint-config-standard',
   syntax: 'less',
   rules: {
+    'at-rule-no-unknown': [ true, { ignoreAtRules: 'plugin' } ],
     'font-family-no-missing-generic-family-keyword': null,
     'function-name-case': [
       'lower',
