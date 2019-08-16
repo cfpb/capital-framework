@@ -123,6 +123,7 @@
 
             &:checked + .a-label:before {
                 .u-svg-inline-bg( 'approved' );
+
                 background-size: auto @cf-icon-height;
                 background-repeat: no-repeat;
                 background-position: center 0;
@@ -224,10 +225,7 @@
             &:hover:disabled + .a-label {
                 color: @input-text__disabled;
                 box-shadow: none;
-
-                & {
-                    background-color: @form-field-input-lg-target-bg__disabled;
-                }
+                background-color: @form-field-input-lg-target-bg__disabled;
             }
 
             &:checked:disabled + .a-label {

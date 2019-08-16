@@ -25,13 +25,14 @@ module.exports = {
       // __dirname is not accessible in this script, so this fakes it.
       const __dirname = path.dirname( thisScriptPath );
 
+      // eslint-disable-next-line no-sync
       let svg = less.fs.readFileSync(
         path.join( __dirname, `./icons/${ svgName.value }.svg` ),
         'utf8'
       );
 
-      // Replace the cf-icon-svg class (used only in the embedded markup)
-      // with a fill color.
+      /* Replace the cf-icon-svg class (used only in the embedded markup)
+         with a fill color. */
       svg = svg.replace(
         'class="cf-icon-svg"', `fill="${ svgFillColor.value }"`
       );
@@ -39,4 +40,4 @@ module.exports = {
       return svg;
     } );
   }
-}
+};

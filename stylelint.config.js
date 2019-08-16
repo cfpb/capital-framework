@@ -1,6 +1,10 @@
 /* NOTES:
-font-family-no-missing-generic-family-keyword -
-  Turned off because there isn't a generic font for the CFPB icons.
+at-rule-no-unknown -
+  This rule enforces only @ rules that appear in the CSS spec,
+  however, @plugin appears in Less, so should be ignored.
+
+declaration-colon-newline-after -
+  Turned off because it messes with our format for multi-line declarations.
 
 function-parentheses-space-inside -
   Custom setting that differs from stylelint-config-standard.
@@ -26,7 +30,8 @@ module.exports = {
   extends: 'stylelint-config-standard',
   syntax: 'less',
   rules: {
-    'font-family-no-missing-generic-family-keyword': null,
+    'at-rule-no-unknown': [ true, { ignoreAtRules: 'plugin' } ],
+    'declaration-colon-newline-after': null,
     'function-name-case': [
       'lower',
       { ignoreFunctions: [ 'filter' ] }
@@ -39,7 +44,12 @@ module.exports = {
         ignore: [ 'after-comment', 'inside-block' ]
       }
     ],
-    'indentation': [ 4 ],
+    'indentation': [
+      4,
+      {
+        ignore: 'value'
+      }
+    ],
     'max-empty-lines': 2,
     'media-feature-parentheses-space-inside': 'always',
     'no-descending-specificity': null,
