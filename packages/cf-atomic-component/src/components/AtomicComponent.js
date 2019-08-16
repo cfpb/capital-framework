@@ -81,7 +81,7 @@ assign( AtomicComponent.prototype, Events, {
    * Function used to ensure and set / create the base DOM element.
    */
   ensureElement: function() {
-    if ( !this.element ) { // eslint-disable-line no-negated-condition, inline-comments, max-len
+    if ( !this.element ) { // eslint-disable-line no-negated-condition
       const attrs = assign( {}, this.attributes );
       attrs.id = this.id || this.u_id;
       if ( this.className ) attrs.class = this.className;
