@@ -80,12 +80,12 @@ you can just download the source files and import them into your project.
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
-Run `npm install capital-framework`. This will download Capital Framework to your
-project's `node_modules` directory. You can then import the framework into
-your application's primary Less file:
+Run `npm install capital-framework`.
+This will download Capital Framework to your project's `node_modules` directory.
+You can then import the framework into your application's primary Less file:
 
 ```css
-@import (less) "node_modules/capital-framework/src/capital-framework.less";
+@import (less) 'node_modules/capital-framework/src/capital-framework.less';
 
 /* the rest of your stylesheet… */
 ```
@@ -98,8 +98,8 @@ npm install cf-buttons cf-icons
 ```
 
 ```css
-@import (less) "node_modules/cf-buttons/src/cf-buttons.less";
-@import (less) "node_modules/cf-icons/src/cf-icons.less";
+@import (less) 'node_modules/cf-buttons/src/cf-buttons.less';
+@import (less) 'node_modules/cf-icons/src/cf-icons.less';
 
 /* the rest of your stylesheet… */
 ```

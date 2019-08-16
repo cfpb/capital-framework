@@ -51,7 +51,7 @@ This will download Capital Framework to your project's `node_modules` folder.
 You can then import the framework into your application's primary Less file:
 
 ```less
-@import (less) "node_modules/capital-framework/src/capital-framework.less";
+@import (less) 'node_modules/capital-framework/src/capital-framework.less';
 
 // the rest of your stylesheet...
 ```
